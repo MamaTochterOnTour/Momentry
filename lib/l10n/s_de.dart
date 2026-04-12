@@ -1,0 +1,3435 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 's.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for German (`de`).
+class SDe extends S {
+  SDe([String locale = 'de']) : super(locale);
+
+  @override
+  String get pageTitle => 'Mama-Tochter-Tagebuch';
+
+  @override
+  String get tabTagebuecher => 'Tagebücher';
+
+  @override
+  String get tabInsider => 'Insider';
+
+  @override
+  String get tabTipps => 'Tipps';
+
+  @override
+  String get welcomeText =>
+      'Willkommen in unserem Reisetagebuch! Hier sammeln wir all unsere wundervollen Erinnerungen, kleine und große Abenteuer, spontane Erlebnisse und ganz besondere Herzensmomente, die wir als Mama und Tochter gemeinsam erlebt haben. 💖\n\nWir waren unter anderem in Norwegen, Italien, der Karibik, den UAE, USA, Spanien, Portugal, Frankreich und vieles mehr. 🌏\n\nZudem warten Hotelempfehlungen 🏨, Restauranttipps 🍽️ und exklusive Insider-Tipps 🔍 auf dich.';
+
+  @override
+  String get ourDestinations => 'Unsere Reiseziele 🌟';
+
+  @override
+  String get discoverAdventures => 'Entdecke unsere Abenteuer rund um die Welt';
+
+  @override
+  String get note => 'Hinweis';
+
+  @override
+  String get disclaimer =>
+      'Alle in dieser App gezeigten Inhalte und Bilder stammen entweder aus unseren privaten Reisen und persönlichen Erlebnissen oder aus ausdrücklich gekennzeichneten Kooperationen mit Partnerunternehmen.';
+
+  @override
+  String get mallorcaTitle => 'Mallorca';
+
+  @override
+  String get mallorcaSubtitle => 'Insel unserer Herzen';
+
+  @override
+  String get aidaCruisesTitle => 'AIDA-Kreuzfahrten';
+
+  @override
+  String get aidaCruisesSubtitle => 'Meeresabenteuer voller Magie 🌊💫';
+
+  @override
+  String get longDistanceTitle => 'Fernreisen';
+
+  @override
+  String get longDistanceSubtitle => 'Weite Welten, große Träume 🌍❤️';
+
+  @override
+  String get roadtripEuropeTitle => 'Roadtrips Europa';
+
+  @override
+  String get roadtripEuropeSubtitle => 'Mit dem Auto durch Europas Wunder 🚗💜';
+
+  @override
+  String get cityTripsTitle => 'Städtereisen';
+
+  @override
+  String get cityTripsSubtitle =>
+      'Zwischen Türmen, Cafés & Kopfsteinpflaster 🏰✨';
+
+  @override
+  String get seasideGetawaysTitle => 'Auszeiten am Meer';
+
+  @override
+  String get seasideGetawaysSubtitle => 'Meer-Momente zum Träumen 🏖️✨';
+
+  @override
+  String get followOurJourney => 'Begleite unsere Reise 🧭✨';
+
+  @override
+  String get tuiAschaffenburgTitle => 'TUI Aschaffenburg (Reisebüro)';
+
+  @override
+  String get tuiAschaffenburgSubtitle =>
+      'Dein Ansprechpartner für unvergessliche Urlaube – persönlich, kompetent, herzlich.';
+
+  @override
+  String get pageTitleReisebueros => 'Reisebüros';
+
+  @override
+  String get headerTitleTUI => 'TUI Aschaffenburg';
+
+  @override
+  String get fullTextReisebuero =>
+      'Die Welt ist groß – komm, wir zeigen sie dir!\n\nWir sind ein eingespieltes Team aus 15 leidenschaftlichen Reiseexperten, die seit vielen Jahren gemeinsam für unvergessliche Urlaubsmomente sorgen.\n\nEgal, wohin es gehen soll – bei uns findest du immer den passenden Ansprechpartner: kompetent, erfahren und mit einem offenen Ohr für all deine Wünsche.\n\nWas uns besonders macht? Wir lieben, was wir tun. Darum steckt in jeder Beratung nicht nur Fachwissen, sondern auch ganz viel Herzblut und echte Begeisterung.\n\nUnser Reisebüro gibt es schon viele Jahre – und aus Kollegen ist dabei längst unsere ganz eigene kleine TUI-Family geworden. Uns ist wichtig, dass ihr euch bei uns nicht nur professionell beraten, sondern vor allem rundum gut aufgehoben fühlt.\n\nVertraue uns deinen Urlaub an: Wir planen jede Reise so, als wäre es unsere eigene.\nDenn für uns zählt nicht nur Expertise, sondern vor allem Menschlichkeit, Leidenschaft und der Wunsch, aus jeder Reise etwas ganz Besonderes zu machen.';
+
+  @override
+  String get previewTextReisebuero =>
+      'Die Welt ist groß – komm, wir zeigen sie dir!\n\nWir sind ein eingespieltes Team aus 15 leidenschaftlichen Reiseexperten, die seit vielen Jahren gemeinsam für unvergessliche Urlaubsmomente sorgen.';
+
+  @override
+  String get readMore => '... read more';
+
+  @override
+  String get readLess => 'Weniger anzeigen';
+
+  @override
+  String get servicesTitle => 'Leistungen';
+
+  @override
+  String get serviceTravel => 'Reisen rund um die Welt – egal ob fern oder nah';
+
+  @override
+  String get contactTitle => 'Kontakt & Beratung';
+
+  @override
+  String get emailLabel => 'E-Mail schreiben';
+
+  @override
+  String get whatsappLabel => 'WhatsApp';
+
+  @override
+  String get instagramLabel => 'Instagram';
+
+  @override
+  String get googleMapsLabel => 'Bei Google ansehen';
+
+  @override
+  String get onlineConsultation =>
+      'Online- & Videoberatung nach Vereinbarung möglich';
+
+  @override
+  String get disclaimerPartner =>
+      'Anzeige / Partnerreisebüro · Empfehlung von MamaTochterOnTour';
+
+  @override
+  String get featureLongHaul => 'Fernreisen';
+
+  @override
+  String get featurePackage => 'Pauschalreisen';
+
+  @override
+  String get featureIndividual => 'Individualreisen';
+
+  @override
+  String get featureRoundTrips => 'Rundreisen';
+
+  @override
+  String get featureCruises => 'Kreuzfahrten';
+
+  @override
+  String get featureFamily => 'Familienurlaub';
+
+  @override
+  String get featureHoneymoon => 'Honeymoon';
+
+  @override
+  String get featureClub => 'Cluburlaub';
+
+  @override
+  String get featureCityTrips => 'Städtetrips';
+
+  @override
+  String get featureCamper => 'Camperreisen';
+
+  @override
+  String get featureLuxury => 'Luxusurlaub';
+
+  @override
+  String get featureWellness => 'Wellnessurlaub';
+
+  @override
+  String get insiderTitle => 'Unsere Insider-Tipps ✨';
+
+  @override
+  String get searchHint => 'Suche…';
+
+  @override
+  String get noResults => 'Keine Orte gefunden 😕';
+
+  @override
+  String get moreComing =>
+      'Weitere Insider-Tipps für spannende Orte folgen bald! ✨';
+
+  @override
+  String get errorLoading => 'Fehler beim Laden der Einstellungen';
+
+  @override
+  String get countryItaly => 'Italien';
+
+  @override
+  String get countryNorway => 'Norwegen';
+
+  @override
+  String get countrySpain => 'Spanien';
+
+  @override
+  String get cityRome => 'Rom';
+
+  @override
+  String get cityGeiranger => 'Geiranger';
+
+  @override
+  String get cityMallorca => 'Mallorca';
+
+  @override
+  String get descRome =>
+      'Historische Hauptstadt voller antiker Bauwerke, lebendiger Plätze, mediterraner Gassen und kulinarischer Genüsse.';
+
+  @override
+  String get descGeiranger =>
+      'Spektakulärer Fjord, atemberaubende Wasserfälle und malerische Naturkulisse.';
+
+  @override
+  String get descMallorca =>
+      'Mediterrane Trauminsel mit weißen Sandstränden, imposanten Klippen, charmanten Dörfern und lebendigem Nachtleben.';
+
+  @override
+  String get premiumLocked =>
+      'Insider nur für Premium-User verfügbar. Tippe hier, um Premium freizuschalten.';
+
+  @override
+  String get auszeitenAmMeerTitle => 'Auszeiten am Meer';
+
+  @override
+  String get auszeitenAmMeerIntro =>
+      'Unsere schönsten Erlebnisse am Meer 🌊🌅💙\n\nSalzluft, Sonnenuntergänge und dieses Gefühl von Freiheit – das sind unsere liebsten Meeresmomente.';
+
+  @override
+  String get scheveningenTitle => 'Scheveningen';
+
+  @override
+  String get scheveningenSubtitle => 'Wind, Meer & Freiheitsgefühl';
+
+  @override
+  String get noordwijkTitle => 'Noordwijk';
+
+  @override
+  String get noordwijkSubtitle => 'Dünen, Ruhe & Nordseezauber';
+
+  @override
+  String get premiumSnackbarText =>
+      'Du bist kein Premium-Mitglied und kannst deswegen leider nicht unsere Tagebücher lesen. Tippe hier, um Premium freizuschalten ✨';
+
+  @override
+  String get premiumErrorText =>
+      'Fehler beim Laden des Premium-Status. Bitte versuche es erneut.';
+
+  @override
+  String get staedtereisenTitle => 'Unsere Städtereisen';
+
+  @override
+  String get staedtereisenIntro =>
+      'Unsere Städtereisen-Highlights 🏙️💜\n\nHier sammeln wir unsere schönsten Erlebnisse aus den Städten, die wir lieben.';
+
+  @override
+  String get koelnTitle => 'Köln';
+
+  @override
+  String get koelnSubtitle => 'Hätz zwesche Dom un Rhing';
+
+  @override
+  String get parisTitle => 'Paris';
+
+  @override
+  String get parisSubtitle => 'Flair der französischen Metropole';
+
+  @override
+  String get berlinTitle => 'Berlin';
+
+  @override
+  String get berlinSubtitle => 'Hauptstadt & Geschichte';
+
+  @override
+  String get hamburgTitle => 'Hamburg';
+
+  @override
+  String get hamburgSubtitle => 'Tor zur Welt';
+
+  @override
+  String get londonTitle => 'London';
+
+  @override
+  String get londonSubtitle => 'Stadt der Royals & Kultur';
+
+  @override
+  String get romTitle => 'Rom';
+
+  @override
+  String get romSubtitle => 'Ewige Stadt & Geschichte';
+
+  @override
+  String get wienTitle => 'Wien';
+
+  @override
+  String get wienSubtitle => 'Kultur & Kaffeehausflair';
+
+  @override
+  String get genuaTitle => 'Genua';
+
+  @override
+  String get genuaSubtitle => 'Hafenstadt & Ligurien';
+
+  @override
+  String get roadtripEuropaTitle => 'Roadtrip Europa';
+
+  @override
+  String get roadtripEuropaIntro =>
+      'Unsere schönsten Erlebnisse mit dem Auto 🚗✨\n\nRoadtrips quer durch Europa – Freiheit, Musik und unvergessliche Momente unterwegs.';
+
+  @override
+  String get roadtripEuropaGridTitle => 'Roadtrips durch Europa';
+
+  @override
+  String get cotedazurTitle => 'Côte d\'Azur';
+
+  @override
+  String get cotedazurSubtitle => 'Küste unserer Träume';
+
+  @override
+  String get italienTitle => 'Italien';
+
+  @override
+  String get italienSubtitle => 'Bella Italia entdecken';
+
+  @override
+  String get fernreisenTitle => 'Fernreisen';
+
+  @override
+  String get fernreisenIntro =>
+      'Unsere schönsten Erlebnisse in weiter Ferne ✈️🌍\nAbenteuer, Entdeckungen und unvergessliche Momente – lass dich inspirieren für deine nächste Reise!';
+
+  @override
+  String get fernreisenGridTitle => 'Unsere Fernreisen';
+
+  @override
+  String get floridaTitle => 'Florida';
+
+  @override
+  String get floridaSubtitle => 'Roadtrip durchs Paradies';
+
+  @override
+  String get kalifornienTitle => 'Kalifornien';
+
+  @override
+  String get kalifornienSubtitle => 'Roadtrip durch den Golden State';
+
+  @override
+  String get dubaiTitle => 'Dubai';
+
+  @override
+  String get dubaiSubtitle => 'Abenteuer zwischen Wüste & Skyline';
+
+  @override
+  String get newyorkTitle => 'New York';
+
+  @override
+  String get newyorkSubtitle => 'Magie zur Weihnachtszeit';
+
+  @override
+  String get aidaTitle => 'AIDA-Kreuzfahrten';
+
+  @override
+  String get aidaIntro =>
+      'Unsere schönsten Erlebnisse auf hoher See ⛴️🌊\n\nWillkommen auf unserer Kreuzfahrt-Seite! Hier findest du all unsere besonderen Erinnerungen von unseren AIDA-Reisen, von der Karibik bis nach Norwegen. Jede Kreuzfahrt ist ein besonderes Abenteuer voller Entdeckungen, Genuss und Familienzeit auf dem Meer. ⚓';
+
+  @override
+  String get aidaGridTitle => 'Unsere Kreuzfahrten';
+
+  @override
+  String get aidaMediterraneSchaetze => 'Mediterrane Schätze';
+
+  @override
+  String get aidaMediterraneSchaetzeSubtitle => 'Traumhafte Küsten erleben';
+
+  @override
+  String get aidaMediterraneHighlights => 'Mediterrane Highlights';
+
+  @override
+  String get aidaMediterraneHighlightsSubtitle => 'Abenteuerliche Küsten';
+
+  @override
+  String get aidaOrient => 'Orient';
+
+  @override
+  String get aidaOrientSubtitle => 'Abenteuer & Luxus';
+
+  @override
+  String get aidaDaenemarkSchweden => 'Dänemark & Schweden';
+
+  @override
+  String get aidaDaenemarkSchwedenSubtitle => 'Fjorde & Küsten erleben';
+
+  @override
+  String get aidaMetropolen => 'Metropolen';
+
+  @override
+  String get aidaMetropolenSubtitle => 'Unsere Highlights';
+
+  @override
+  String get aidaSpanienPortugal => 'Spanien & Portugal';
+
+  @override
+  String get aidaSpanienPortugalSubtitle => 'Sonne & Kultur entdecken';
+
+  @override
+  String get aidaKaribik => 'Karibische Inseln';
+
+  @override
+  String get aidaKaribikSubtitle => 'Unsere Highlights';
+
+  @override
+  String get aidaNorwegensFjorde => 'Norwegens Fjorde';
+
+  @override
+  String get aidaNorwegensFjordeSubtitle => 'Magie des Nordens';
+
+  @override
+  String get aidaMediterraneMitKorsika => 'Mediterrane Schätze mit Korsika';
+
+  @override
+  String get aidaMediterraneMitKorsikaSubtitle => 'Küste voller Wunder';
+
+  @override
+  String get aidaNorwegensFjordeGeiranger =>
+      'Norwegens Fjorde mit Geiranger & Trondheim';
+
+  @override
+  String get aidaNorwegensFjordeGeirangerSubtitle => 'Majestätische Fjorde';
+
+  @override
+  String get premiumTitle => 'Premium verwalten';
+
+  @override
+  String get premiumBenefitsTitle => 'Deine Premium-Vorteile auf einen Blick';
+
+  @override
+  String get premiumBenefit1 =>
+      'Zugriff auf alle Reisetagebücher von MamaTochterOnTour';
+
+  @override
+  String get premiumBenefit2 =>
+      'Inklusive Insider-Tipps zu den jeweiligen Orten';
+
+  @override
+  String get premiumBenefit3 => 'Packliste für deine Reisen erstellen';
+
+  @override
+  String get premiumBenefit4 => 'Reise-Countdown für deine nächste Reise';
+
+  @override
+  String get premiumBenefit5 => 'Beiträge speichern';
+
+  @override
+  String get premiumComingSoon =>
+      '✨Bald noch mehr!\nWir arbeiten ständig daran, deine Reiserlebnisse noch besser zu machen. Freue dich auf viele neue Features, exklusive Inhalte und spannende Extras – alles automatisch im Premium-Abo enthalten.';
+
+  @override
+  String get premiumStatusTitle => 'Dein Abo-Status';
+
+  @override
+  String get premiumStatusActive =>
+      'Du bist jetzt Premium-Mitglied – alle Features freigeschaltet!';
+
+  @override
+  String get premiumStatusInactive =>
+      'Du nutzt momentan die kostenlose Version der App.';
+
+  @override
+  String get premiumMonthly => 'Premium monatlich';
+
+  @override
+  String get premiumYearly => 'Premium jährlich';
+
+  @override
+  String get premiumRestoreButton => 'Kauf wiederherstellen';
+
+  @override
+  String get premiumPrivacy => 'Datenschutzerklärung';
+
+  @override
+  String get premiumTerms => 'Nutzungsbedingungen';
+
+  @override
+  String get premiumLegalIntro => 'Mit dem Abonnieren stimmen Sie unseren';
+
+  @override
+  String get premiumLegalAnd => 'und';
+
+  @override
+  String get premiumLegalDot => 'zu.';
+
+  @override
+  String get premiumBestPrice => 'Bester Preis';
+
+  @override
+  String get premiumBuyButton => 'Kaufen';
+
+  @override
+  String get premiumPrivacyUrl =>
+      'https://mamatochterontour.com/pages/datenschutzrichtlinie-von-momentry';
+
+  @override
+  String get premiumTermsUrl =>
+      'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/';
+
+  @override
+  String get settingsTitle => 'Einstellungen';
+
+  @override
+  String get accountSettings => 'Kontoeinstellungen';
+
+  @override
+  String get darkMode => 'Dark-Mode';
+
+  @override
+  String get language => 'Sprache';
+
+  @override
+  String get passwordReset => 'Passwort zurücksetzen';
+
+  @override
+  String get signOut => 'Abmelden';
+
+  @override
+  String get deleteAccount => 'Konto löschen';
+
+  @override
+  String get legalHelp => 'Rechtliches & Hilfe';
+
+  @override
+  String get privacyPolicy => 'Datenschutzrichtlinien';
+
+  @override
+  String get termsConditions => 'Nutzungsbedingungen';
+
+  @override
+  String get contactFeedback => 'Kontakt & Feedback';
+
+  @override
+  String get impressum => 'Impressum';
+
+  @override
+  String appVersion(Object version) {
+    return 'App-Version $version';
+  }
+
+  @override
+  String darkModeChanged(Object mode) {
+    return 'Modus wurde auf $mode umgestellt';
+  }
+
+  @override
+  String get passwordDialogTitle => 'Konto endgültig löschen';
+
+  @override
+  String get passwordDialogDescription =>
+      'Bitte gib dein Passwort ein, um dein Konto endgültig zu löschen.';
+
+  @override
+  String get passwordDialogLabel => 'Passwort';
+
+  @override
+  String get cancel => 'Abbrechen';
+
+  @override
+  String get deleteConfirm => 'Willst du diesen Post wirklich löschen?';
+
+  @override
+  String get reauthOAuthError =>
+      'Bitte melde dich erneut an, um dein Konto zu löschen.';
+
+  @override
+  String deleteError(Object error) {
+    return 'Fehler beim Löschen';
+  }
+
+  @override
+  String get passwordResetSuccess =>
+      'Passwort-Zurücksetzungslink wurde per E-Mail gesendet!';
+
+  @override
+  String error(Object error) {
+    return 'Fehler: $error';
+  }
+
+  @override
+  String get privacyTitle => 'Datenschutzerklärung';
+
+  @override
+  String get privacyLastUpdated => 'Datenschutzerklärung – Stand Dezember 2025';
+
+  @override
+  String get privacyIntro =>
+      'Diese Datenschutzerklärung informiert Sie über die Verarbeitung Ihrer personenbezogenen Daten bei der Nutzung unserer App.';
+
+  @override
+  String get privacySection1Title => '1. Verantwortlicher';
+
+  @override
+  String get privacySection1Content =>
+      'Name: Jenny Weinreich\nAdresse: Stettiner Straße 41, 35410 Hungen\nE-Mail: mamatochterontour@outlook.de';
+
+  @override
+  String get privacySection2Title => '2. Erhobene Daten';
+
+  @override
+  String get privacySection2Content =>
+      'Wir erheben folgende Daten:\n• Name und E-Mail-Adresse\n• Profilbild\n• Ihre Beiträge und Tagebucheinträge\n• Gespeicherte Geheimtipps\n• Zeitstempel und Aktivitäten in der App';
+
+  @override
+  String get privacySection3Title => '3. Zweck der Datenverarbeitung';
+
+  @override
+  String get privacySection3Content =>
+      'Wir verarbeiten Ihre Daten für folgende Zwecke:\n• Kontoerstellung und Verwaltung\n• Bereitstellung der App-Funktionalitäten\n• Community-Funktionen und Teilen von Beiträgen\n• Premium-Funktionen innerhalb der App\n• Abwicklung von App-Käufen';
+
+  @override
+  String get privacySection4Title => '4. Rechtsgrundlage';
+
+  @override
+  String get privacySection4Content =>
+      'Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) und zur Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO).';
+
+  @override
+  String get privacySection5Title => '5. Datenübermittlung';
+
+  @override
+  String get privacySection5Content =>
+      'Wir nutzen Firebase-Dienste von Google (Firebase Authentication, Firestore, Storage, Analytics). Die Daten werden ausschließlich auf Servern in Deutschland verarbeitet.';
+
+  @override
+  String get privacySection6Title => '6. Speicherdauer';
+
+  @override
+  String get privacySection6Content =>
+      'Ihre Daten werden gespeichert, solange Ihr Konto aktiv ist oder gesetzliche Aufbewahrungsfristen bestehen. Nach Löschung Ihres Kontos werden alle personenbezogenen Daten entfernt.';
+
+  @override
+  String get privacySection7Title => '7. Ihre Rechte';
+
+  @override
+  String get privacySection7Content =>
+      'Sie haben folgende Rechte bezüglich Ihrer Daten:\n• Auskunft über gespeicherte Daten\n• Berichtigung unrichtiger Daten\n• Löschung Ihrer Daten\n• Datenübertragbarkeit\n• Widerruf Ihrer Einwilligung';
+
+  @override
+  String get privacySection8Title => '8. Premium-Funktionen';
+
+  @override
+  String get privacySection8Content =>
+      'Premium-Funktionen werden über App-Käufe innerhalb der App abgewickelt. Für diese Transaktionen gelten die Datenschutzbestimmungen unserer App.';
+
+  @override
+  String get privacySection9Title => '9. Kontakt';
+
+  @override
+  String get privacySection9Content =>
+      'Bei Fragen zum Datenschutz erreichen Sie uns unter: mamatochterontour@outlook.de. Wir antworten innerhalb einer Woche.';
+
+  @override
+  String get privacySection10Title => '10. Beschwerderecht';
+
+  @override
+  String get privacySection10Content =>
+      'Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde über die Verarbeitung Ihrer Daten zu beschweren.';
+
+  @override
+  String get privacySection11Title => '11. Änderungen der Datenschutzerklärung';
+
+  @override
+  String get privacySection11Content =>
+      'Die Datenschutzerklärung kann bei Änderungen der App oder rechtlichen Anforderungen aktualisiert werden. Die aktuelle Version finden Sie immer in der App.';
+
+  @override
+  String get termsTitle => 'Nutzungsbedingungen';
+
+  @override
+  String get termsLastUpdated => 'Nutzungsbedingungen – Stand Dezember 2025';
+
+  @override
+  String get terms1Title => '1. Anbieter';
+
+  @override
+  String get terms1Content =>
+      'Name: Jenny Weinreich\nAdresse: Stettiner Straße 41, 35410 Hungen\nE-Mail: mamatochterontour@outlook.de\nUmsatzsteuer-ID: DE441919331';
+
+  @override
+  String get terms2Title => '2. Geltungsbereich';
+
+  @override
+  String get terms2Content =>
+      'Die Nutzungsbedingungen gelten für die Nutzung unserer Reise-Community-App. Mit der Registrierung akzeptieren Sie diese Bedingungen vollständig.';
+
+  @override
+  String get terms3Title => '3. Registrierung und Nutzerkonto';
+
+  @override
+  String get terms3Content =>
+      '• Die App ist nur mit Registrierung nutzbar.\n• Sie müssen wahrheitsgemäße Angaben machen.\n• Ihr Passwort ist geheim zu halten.\n• Sie sind für alle Aktivitäten in Ihrem Konto verantwortlich.';
+
+  @override
+  String get terms4Title => '4. Erlaubte Nutzung';
+
+  @override
+  String get terms4Content =>
+      '• Sie dürfen Reisetagebücher und Beiträge erstellen.\n• Eigene Reisetipps teilen.\n• Die App für private, nicht kommerzielle Zwecke nutzen.';
+
+  @override
+  String get terms5Title => '5. Verbotene Inhalte';
+
+  @override
+  String get terms5Content =>
+      'Folgende Inhalte sind nicht erlaubt:\n• Illegale, beleidigende oder diskriminierende Inhalte\n• Spam oder Werbung ohne Erlaubnis\n• Urheberrechtsverletzung\n• Falsche oder irreführende Informationen\n• Inhalte, die andere Nutzer gefährden könnten';
+
+  @override
+  String get terms6Title => '6. Premium-Mitgliedschaft';
+
+  @override
+  String get terms6Content =>
+      'Premium-Funktionen innerhalb der App sind kostenpflichtig und können jederzeit gekündigt werden.';
+
+  @override
+  String get terms7Title => '7. Ihre Inhalte';
+
+  @override
+  String get terms7Content =>
+      '• Sie behalten die Rechte an Ihren Inhalten.\n• Sie gewähren uns das Recht, Ihre Inhalte in der App anzuzeigen.\n• Sie sind für die Rechtsmäßigkeit Ihrer Inhalte verantwortlich.\n• Rechtswidrige Inhalte können ohne Vorwarnung gelöscht werden.';
+
+  @override
+  String get terms8Title => '8. Datenschutz';
+
+  @override
+  String get terms8Content =>
+      'Der Schutz Ihrer Daten ist uns wichtig. Details zur Datenverarbeitung finden Sie in unserer Datenschutzerklärung, die Sie in der App einsehen können.';
+
+  @override
+  String get terms9Title => '9. Haftungsausschluss';
+
+  @override
+  String get terms9Content =>
+      '• Die App wird ohne Gewähr zur Verfügung gestellt.\n• Nutzerinformationen spiegeln nicht unsere Meinung wider.\n• Wir haften nicht für Schäden durch Nutzung der App.\n• Reiseinformationen sind ohne Gewähr, prüfen Sie diese selbst.\n• Bei Vorsatz oder grober Fahrlässigkeit haften wir unbeschränkt.';
+
+  @override
+  String get terms10Title => '10. Kündigung';
+
+  @override
+  String get terms10Content =>
+      '• Sie können Ihr Konto jederzeit in den Einstellungen löschen.\n• Wir können Konten bei Verstößen sperren oder löschen.\n• Nach Löschung werden Ihre Daten gemäß Datenschutzerklärung behandelt.';
+
+  @override
+  String get terms11Title => '11. Änderungen';
+
+  @override
+  String get terms11Content =>
+      'Wir können die Nutzungsbedingungen ändern. Sie werden über wichtige Änderungen in der App informiert. Bei Widerspruch können Sie Ihr Konto löschen.';
+
+  @override
+  String get terms12Title => '12. Schlussbestimmungen';
+
+  @override
+  String get terms12Content =>
+      'Es gilt deutsches Recht. Gerichtsstand wie gesetzlich zulässig. Bei Unwirksamkeit einzelner Bestimmungen bleiben die übrigen gültig.';
+
+  @override
+  String get terms13Title => '13. Kontakt bei Fragen';
+
+  @override
+  String get terms13Content =>
+      'Bei Fragen kontaktieren Sie uns gerne unter: mamatochterontour@outlook.de';
+
+  @override
+  String get termsImportantNotice =>
+      'Wichtiger Hinweis: Die Nutzungsbedingungen sind rechtlich bindend. Bitte lesen Sie sie sorgfältig durch.';
+
+  @override
+  String get impressumTitle => 'Impressum';
+
+  @override
+  String get impressumHeader => 'Angaben gemäß §5 TMG';
+
+  @override
+  String get impressumResponsibleTitle =>
+      'Verantwortlicher für den Inhalt dieser App:';
+
+  @override
+  String get impressumResponsibleContent =>
+      'Jenny Weinreich\nStettiner Straße 41\n35410 Hungen\nDeutschland\nE-Mail: mamatochterontour@outlook.de';
+
+  @override
+  String get impressumVatTitle =>
+      'Umsatzsteuer-ID gemäß §27a Umsatzsteuergesetz:';
+
+  @override
+  String get impressumVatContent => 'DE441919331';
+
+  @override
+  String get impressumLiabilityContentTitle => 'Haftung für Inhalte';
+
+  @override
+  String get impressumLiabilityContentContent =>
+      'Wir übernehmen keine Gewähr für die Aktualität, Korrektheit, Vollständigkeit oder Qualität der bereitgestellten Informationen.';
+
+  @override
+  String get impressumLiabilityLinksTitle => 'Haftung für Links';
+
+  @override
+  String get impressumLiabilityLinksContent =>
+      'Unsere App enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.';
+
+  @override
+  String get impressumCopyrightTitle => 'Urheberrecht';
+
+  @override
+  String get impressumCopyrightContent =>
+      'Die durch die App erstellten Inhalte und Werke unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.';
+
+  @override
+  String get impressumDisputeTitle => 'Streitschlichtung';
+
+  @override
+  String get impressumDisputeContent =>
+      'Die Europäische Kommission hat die Plattform zur Online-Streitbeilegung (OS) zum 31.12.2023 eingestellt.\n\nWir nehmen nicht an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil.';
+
+  @override
+  String get impressumStand => 'Stand: Dezember 2025';
+
+  @override
+  String get feedbackTitle => 'Kontakt & Feedback';
+
+  @override
+  String get feedbackIntro =>
+      'Wir freuen uns auf dich! Du hast Fragen oder möchtest uns Feedback geben? Dann bist du hier genau richtig.';
+
+  @override
+  String get feedbackLabelName => 'Name *';
+
+  @override
+  String get feedbackLabelEmail => 'E-Mail *';
+
+  @override
+  String get feedbackLabelImprovement => 'Verbesserungsvorschläge';
+
+  @override
+  String get feedbackLabelWishes => 'Wünsche für die App';
+
+  @override
+  String get feedbackLabelQuestions => 'Sonstige Fragen';
+
+  @override
+  String get feedbackValidatorName => 'Bitte Name eingeben';
+
+  @override
+  String get feedbackValidatorEmail => 'Bitte E-Mail eingeben';
+
+  @override
+  String get feedbackFillAtLeastOne =>
+      'Bitte fülle mindestens ein Nachrichtenfeld aus';
+
+  @override
+  String get feedbackSubject => 'Feedback von';
+
+  @override
+  String get feedbackBodyName => 'Name';
+
+  @override
+  String get feedbackBodyEmail => 'E-Mail';
+
+  @override
+  String get feedbackBodyImprovement => 'Verbesserungsvorschläge';
+
+  @override
+  String get feedbackBodyWishes => 'Wünsche';
+
+  @override
+  String get feedbackBodyQuestions => 'Sonstige Fragen';
+
+  @override
+  String get feedbackCannotOpenEmail => 'E-Mail konnte nicht geöffnet werden';
+
+  @override
+  String get feedbackButtonSubmit => 'Absenden';
+
+  @override
+  String get feed => 'Feed';
+
+  @override
+  String get diary => 'Tagebuch';
+
+  @override
+  String get guides => 'Guides';
+
+  @override
+  String get profile => 'Profil';
+
+  @override
+  String get createPost => 'Beitrag erstellen';
+
+  @override
+  String get writeDiary => 'Tagebuch schreiben';
+
+  @override
+  String get createStory => 'Story erstellen';
+
+  @override
+  String get addTrip => 'Reise hinzufügen';
+
+  @override
+  String get askQuestion => 'Frage zum Urlaub stellen';
+
+  @override
+  String get tripDestination => 'Reiseziel';
+
+  @override
+  String get selectStartDate => 'Startdatum wählen';
+
+  @override
+  String get selectEndDate => 'Enddatum wählen';
+
+  @override
+  String get startDate => 'Startdatum';
+
+  @override
+  String get endDate => 'Enddatum';
+
+  @override
+  String get fillAllFields => 'Bitte alle Felder ausfüllen';
+
+  @override
+  String get tripLimitReached =>
+      'Du hast das Limit von 2 Reisen erreicht. Tippe hier, um Premium freizuschalten ✨';
+
+  @override
+  String get createTrip => 'Reise erstellen';
+
+  @override
+  String get askQuestionTitle => 'Frage stellen';
+
+  @override
+  String get askQuestionSubtitle =>
+      '✈️ Du hast eine Frage zu deiner Reise? \n💬 Stell deine Fragen gerne im Q&A-Board, damit andere Nutzer dir helfen können! 😊';
+
+  @override
+  String get askQuestionHint => 'Deine Frage hier eingeben…';
+
+  @override
+  String get enterQuestion => 'Bitte gib eine Frage ein!';
+
+  @override
+  String get saveQuestion => 'Frage speichern';
+
+  @override
+  String get saving => 'Speichere…';
+
+  @override
+  String saveError(Object error) {
+    return 'Fehler beim Speichern: $error';
+  }
+
+  @override
+  String get reportUser => 'User melden';
+
+  @override
+  String get reportReason => 'Grund der Meldung';
+
+  @override
+  String get send => 'Senden';
+
+  @override
+  String get userReported => 'User wurde gemeldet';
+
+  @override
+  String get userBlocked => 'User wurde blockiert und entfolgt';
+
+  @override
+  String get userUnblocked => 'User wurde freigegeben';
+
+  @override
+  String get followError => 'Fehler beim Folgen/Entfolgen';
+
+  @override
+  String get user => 'User';
+
+  @override
+  String get noBio => 'Keine Biografie';
+
+  @override
+  String get posts => 'Beiträge';
+
+  @override
+  String get followers => 'Follower';
+
+  @override
+  String get following => 'Gefolgt';
+
+  @override
+  String get followBtn => 'Folgen';
+
+  @override
+  String get followingBtn => 'Gefolgt';
+
+  @override
+  String get report => 'Melden';
+
+  @override
+  String get block => 'Blockieren';
+
+  @override
+  String get unblock => 'Freigeben';
+
+  @override
+  String get uploadPost => 'Beitrag hochladen';
+
+  @override
+  String get addLocation => 'Ort hinzufügen';
+
+  @override
+  String get description => 'Beschreibung';
+
+  @override
+  String get hashtags => 'Hashtags';
+
+  @override
+  String get publishPost => 'Beitrag veröffentlichen';
+
+  @override
+  String get maxMedia => 'Maximal 10 Mediendateien pro Beitrag';
+
+  @override
+  String get uploadError => 'Fehler beim Hochladen des Beitrags';
+
+  @override
+  String get cropImage => 'Bild zuschneiden';
+
+  @override
+  String get travelDiary => 'Reisetagebuch';
+
+  @override
+  String get edit => 'Bearbeiten';
+
+  @override
+  String get delete => 'Löschen';
+
+  @override
+  String get confirmDeleteTitle => 'Löschen bestätigen';
+
+  @override
+  String get confirmDeleteText =>
+      'Bist du dir sicher, dass du dieses Reisetagebuch löschen möchtest?';
+
+  @override
+  String get no => 'Nein';
+
+  @override
+  String get yes => 'Ja';
+
+  @override
+  String get diaryDeleted => 'Reisetagebuch erfolgreich gelöscht';
+
+  @override
+  String get diaryNotFound => 'Reisetagebuch nicht gefunden';
+
+  @override
+  String get noStories => 'Keine Storys vorhanden';
+
+  @override
+  String get justNow => 'gerade eben';
+
+  @override
+  String minutesAgo(Object count) {
+    return 'vor $count Minuten';
+  }
+
+  @override
+  String hoursAgo(Object count) {
+    return 'vor $count Stunden';
+  }
+
+  @override
+  String daysAgo(Object count) {
+    return 'vor $count Tagen';
+  }
+
+  @override
+  String get pickMedia => 'Wähle ein Bild oder Video aus …';
+
+  @override
+  String get enterText => 'Text eingeben';
+
+  @override
+  String get pickColor => 'Farbe auswählen';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get storySaved => 'Story gespeichert!';
+
+  @override
+  String get newText => 'Neuer Text';
+
+  @override
+  String get myProfile => 'Mein Profil';
+
+  @override
+  String get editProfile => 'Profil bearbeiten';
+
+  @override
+  String get journals => 'Tagebücher';
+
+  @override
+  String get planning => 'Planung';
+
+  @override
+  String get travel => 'Reisen';
+
+  @override
+  String get contributions => 'Beiträge';
+
+  @override
+  String get noJournal => 'Noch kein Tagebuch erstellt';
+
+  @override
+  String get noJournalMessage =>
+      'Schreibe dein erstes Reisetagebuch ✍️\n\nHalte deine schönsten Erlebnisse fest – inklusive Bildern & Videos.';
+
+  @override
+  String get noPost => 'Noch kein Post hochgeladen';
+
+  @override
+  String get noPostMessage =>
+      'Lade deinen ersten Post hoch 🌍✨\n\nInspiriere andere mit deinen Reisen und deinen schönsten Momenten.';
+
+  @override
+  String get comments => 'Kommentare';
+
+  @override
+  String get noComments => 'Noch keine Kommentare';
+
+  @override
+  String get editComment => 'Kommentar bearbeiten';
+
+  @override
+  String get save => 'Speichern';
+
+  @override
+  String get deleteComment => 'Kommentar löschen';
+
+  @override
+  String get deleteCommentConfirm =>
+      'Willst du diesen Kommentar wirklich löschen?';
+
+  @override
+  String get reply => 'Antworten';
+
+  @override
+  String get replyTo => 'Antwort an';
+
+  @override
+  String get writeComment => 'Kommentar schreiben...';
+
+  @override
+  String get writeReply => 'Antwort schreiben...';
+
+  @override
+  String get commentReported => 'Kommentar wurde gemeldet';
+
+  @override
+  String get postDetails => 'Post Details';
+
+  @override
+  String get reportPost => 'Beitrag melden';
+
+  @override
+  String get reportReasonHint => 'Grund der Meldung';
+
+  @override
+  String get reportedSuccess => 'Beitrag wurde gemeldet';
+
+  @override
+  String likesCount(Object firstUser, num othersCount) {
+    String _temp0 = intl.Intl.pluralLogic(
+      othersCount,
+      locale: localeName,
+      other: 'und weiteren gefällt der Beitrag',
+      one: 'und weiteren gefällt der Beitrag',
+      zero: 'gefällt der Beitrag',
+    );
+    return '$firstUser $_temp0';
+  }
+
+  @override
+  String get premiumMessage =>
+      'Du bist kein Premium-Mitglied und kannst keine Beiträge speichern. Tippe hier, um Premium freizuschalten ✨';
+
+  @override
+  String get editPost => 'Bearbeiten';
+
+  @override
+  String get deletePost => 'Post löschen';
+
+  @override
+  String get deletePostConfirm => 'Willst du diesen Post wirklich löschen?';
+
+  @override
+  String get premiumSavePost =>
+      'Du bist kein Premium-Mitglied und kannst keine Beiträge speichern. Tippe hier, um Premium freizuschalten ✨';
+
+  @override
+  String get postReported => 'Beitrag wurde gemeldet';
+
+  @override
+  String get newTravelDiary => 'Neues Reisetagebuch';
+
+  @override
+  String get tripTitle => 'Titel der Reise';
+
+  @override
+  String get diaryEntry => 'Tagebucheintrag';
+
+  @override
+  String get selectImage => 'Bild auswählen';
+
+  @override
+  String get selectVideo => 'Video auswählen';
+
+  @override
+  String get saveDiary => 'Reisetagebuch speichern';
+
+  @override
+  String get mallorcaHeroText => 'Unser Mallorca Abenteuer ☀️';
+
+  @override
+  String get mallorcaFeed => 'Mallorca Feed';
+
+  @override
+  String get mallorcaFeedSubtitle => 'Unsere täglichen Erlebnisse';
+
+  @override
+  String get insiderTips => 'Insider Tipps';
+
+  @override
+  String get insiderTipsSubtitle => 'Unsere geheimen Spots';
+
+  @override
+  String get mallorcaMap => 'Mallorca Karte';
+
+  @override
+  String get mallorcaMapSubtitle => 'Alle Orte auf einer Map';
+
+  @override
+  String get checklist => 'Checkliste';
+
+  @override
+  String get checklistSubtitle => 'Must-Dos auf Mallorca';
+
+  @override
+  String get miniGuides => 'Mini Guides';
+
+  @override
+  String get miniGuidesSubtitle => 'Kurze Travel Guides';
+
+  @override
+  String get ourStory => 'Unsere Story';
+
+  @override
+  String get ourStorySubtitle => 'Unsere Reise erleben';
+
+  @override
+  String get comingSoon => 'Dieses Feature kommt bald!';
+
+  @override
+  String get themeLoadError => 'Fehler beim Laden des Themes';
+
+  @override
+  String get editTravelDiaryTitle => 'Reisetagebuch bearbeiten';
+
+  @override
+  String get saveChanges => 'Änderungen speichern';
+
+  @override
+  String get diaryUpdated => 'Reisetagebuch erfolgreich aktualisiert';
+
+  @override
+  String get editProfileTitle => 'Profil bearbeiten';
+
+  @override
+  String get changeProfilePicture => 'Profilbild ändern';
+
+  @override
+  String get saveProfilePicture => 'Profilbild speichern';
+
+  @override
+  String get username => 'Benutzername';
+
+  @override
+  String get usernameHint => 'Dein Benutzername';
+
+  @override
+  String get saveUsername => 'Benutzername speichern';
+
+  @override
+  String get bio => 'Biografie';
+
+  @override
+  String get bioHint => 'Deine Biografie';
+
+  @override
+  String get saveBio => 'Biografie speichern';
+
+  @override
+  String get profilePictureSaved => 'Profilbild erfolgreich gespeichert';
+
+  @override
+  String get profilePictureUploadError =>
+      'Fehler beim Hochladen des Profilbildes';
+
+  @override
+  String get usernameSaved => 'Benutzername erfolgreich gespeichert';
+
+  @override
+  String get usernameSaveError => 'Fehler beim Speichern des Benutzernamens';
+
+  @override
+  String get bioSaved => 'Biografie erfolgreich gespeichert';
+
+  @override
+  String get bioSaveError => 'Fehler beim Speichern der Biografie';
+
+  @override
+  String get profileDataLoadError => 'Fehler beim Laden der Profildaten';
+
+  @override
+  String get editPostTitle => 'Beitrag bearbeiten';
+
+  @override
+  String get caption => 'Caption';
+
+  @override
+  String get location => 'Ort';
+
+  @override
+  String get imageCropTitle => 'Bild zuschneiden';
+
+  @override
+  String get postUpdateSuccess => 'Beitrag erfolgreich aktualisiert';
+
+  @override
+  String get postUpdateError => 'Fehler beim Speichern';
+
+  @override
+  String get noTripsPlanned => 'Noch keine Reisen geplant ✈️';
+
+  @override
+  String get years => 'Jahre';
+
+  @override
+  String get days => 'Tage';
+
+  @override
+  String get hoursShort => 'Std';
+
+  @override
+  String get minutesShort => 'Min';
+
+  @override
+  String get secondsShort => 'Sek';
+
+  @override
+  String get editTrip => 'Reise bearbeiten';
+
+  @override
+  String get tripName => 'Reisename';
+
+  @override
+  String get deleteTripTitle => 'Reise löschen?';
+
+  @override
+  String get deleteTripMessage =>
+      'Möchtest du diese Reise wirklich löschen? Dies kann nicht rückgängig gemacht werden.';
+
+  @override
+  String get tripNotFound => 'Reise nicht gefunden';
+
+  @override
+  String get todos => 'ToDos';
+
+  @override
+  String get packingList => 'Packliste';
+
+  @override
+  String get budget => 'Budget';
+
+  @override
+  String get notes => 'Notizen';
+
+  @override
+  String get contacts => 'Kontakte';
+
+  @override
+  String get myPackingList => 'Meine Packliste';
+
+  @override
+  String get noTitle => 'Ohne Titel';
+
+  @override
+  String get todoTitle => 'To-Do-Liste';
+
+  @override
+  String get todoHint => 'Eintrag...';
+
+  @override
+  String get todosSaved => 'To-Dos gespeichert!';
+
+  @override
+  String get premiumTodoLimit =>
+      'Du bist kein Premium-Mitglied und kannst maximal 5 To-Do-Einträge hinzufügen. Tippe hier, um Premium freizuschalten ✨';
+
+  @override
+  String premiumCheckError(Object error) {
+    return 'Fehler beim Prüfen von Premium: $error';
+  }
+
+  @override
+  String packlistLoadError(Object error) {
+    return 'Fehler beim Laden der Packliste: $error';
+  }
+
+  @override
+  String get premiumItemLimit =>
+      'Du kannst nur 5 Items hinzufügen. Tippe hier, um Premium freizuschalten! ✨';
+
+  @override
+  String get premiumCategoryLimit =>
+      'Du kannst nur 2 Kategorien hinzufügen. Tippe hier, um Premium freizuschalten! ✨';
+
+  @override
+  String get addCategoryTitle => 'Kategorie hinzufügen';
+
+  @override
+  String get categoryNameHint => 'Name der Kategorie';
+
+  @override
+  String get add => 'Hinzufügen';
+
+  @override
+  String get deleteCategoryTitle => 'Kategorie löschen';
+
+  @override
+  String get deleteCategoryMessage =>
+      'Bist du sicher, dass du diese Kategorie löschen möchtest?';
+
+  @override
+  String get packingDoneMessage =>
+      'Du hast fertig gepackt, wir wünschen dir eine schöne Reise! 🌍';
+
+  @override
+  String packingProgress(Object completed, Object total) {
+    return '$completed von $total Items erledigt';
+  }
+
+  @override
+  String get editCategory => 'Kategorie umbenennen';
+
+  @override
+  String get newCategoryName => 'Neuer Name';
+
+  @override
+  String get itemHint => 'Item hinzufügen...';
+
+  @override
+  String get addItem => 'Item hinzufügen';
+
+  @override
+  String get addCategory => 'Kategorie hinzufügen';
+
+  @override
+  String get saveButton => 'Speichern';
+
+  @override
+  String get otherCategory => 'Sonstiges';
+
+  @override
+  String get noteLimitPremium =>
+      'Nicht-Premium-User können nur 2 Notizen erstellen. Tippe hier, um Premium freizuschalten!';
+
+  @override
+  String get noteSaveError => 'Fehler beim Speichern';
+
+  @override
+  String get noteDeleteError => 'Fehler beim Löschen';
+
+  @override
+  String get noteEmptyError => 'Bitte mindestens ein Feld ausfüllen!';
+
+  @override
+  String get tripNotesTitle => 'Trip-Notizen';
+
+  @override
+  String get newNote => 'Neue Notiz';
+
+  @override
+  String get editNote => 'Notiz bearbeiten';
+
+  @override
+  String get titleLabel => 'Titel';
+
+  @override
+  String get contentLabel => 'Inhalt';
+
+  @override
+  String get deleteButton => 'Löschen';
+
+  @override
+  String get emptyNotesPlaceholder =>
+      'Noch keine Notizen vorhanden 📝\n\nHier kannst du Notizen zu deiner Reise\nsammeln ✈️🏖️ – z. B. Lieblingsrestaurants, coole Aktivitäten oder Ideen vor und während deiner Reise.';
+
+  @override
+  String get tripContactsTitle => 'Kontakte';
+
+  @override
+  String get newContact => 'Neuer Kontakt';
+
+  @override
+  String get editContact => 'Kontakt bearbeiten';
+
+  @override
+  String get nameLabel => 'Name';
+
+  @override
+  String get phoneLabel => 'Telefonnummer';
+
+  @override
+  String get categoryLabel => 'Kategorie';
+
+  @override
+  String get fillAllFieldsError => 'Bitte alle Felder ausfüllen!';
+
+  @override
+  String get cancelButton => 'Abbrechen';
+
+  @override
+  String get deleteContactTitle => 'Kontakt löschen';
+
+  @override
+  String get deleteContactConfirmation =>
+      'Bist du sicher, dass du diesen Kontakt löschen möchtest?';
+
+  @override
+  String get callFailed => 'Anruf konnte nicht gestartet werden';
+
+  @override
+  String get emptyContactsPlaceholder => 'Noch keine Kontakte vorhanden.';
+
+  @override
+  String get premiumLimitMessage =>
+      'Nicht-Premium-User können nur 2 Budget-Kategorien erstellen. Tippe hier, um Premium freizuschalten!';
+
+  @override
+  String get unknownContact => 'Unbekannt';
+
+  @override
+  String get emergencyContact => 'Notfallkontakt';
+
+  @override
+  String get allFilter => 'Alle';
+
+  @override
+  String get errorLoadingContacts => 'Fehler beim Laden der Kontakte';
+
+  @override
+  String get callAction => 'Anrufen';
+
+  @override
+  String get editAction => 'Bearbeiten';
+
+  @override
+  String get deleteAction => 'Löschen';
+
+  @override
+  String get categoryEmergency => 'Notfall';
+
+  @override
+  String get categoryHotel => 'Hotel';
+
+  @override
+  String get categoryPrivate => 'Privat';
+
+  @override
+  String get categoryOther => 'Sonstiges';
+
+  @override
+  String get budgetTitle => 'Budget';
+
+  @override
+  String get noBudgetCreated =>
+      'Du hast noch keinen Budgetplan erstellt.\nStarte jetzt und spare auf deinen Traumurlaub hin! 🏖️💰';
+
+  @override
+  String addAmountDialogTitle(Object category) {
+    return 'Einzahlung – $category';
+  }
+
+  @override
+  String get amountLabel => 'Betrag';
+
+  @override
+  String get addButton => 'Hinzufügen';
+
+  @override
+  String get editDepositTitle => 'Einzahlung bearbeiten';
+
+  @override
+  String get invalidInputTitle => 'Ungültige Eingabe';
+
+  @override
+  String get invalidInputMessage =>
+      'Bitte gib eine Kategorie und einen gültigen Betrag ein.';
+
+  @override
+  String goalExceededMessage(Object diff) {
+    return '⚠️ Ziel überschritten!\nDu hast $diff € zu viel eingezahlt.';
+  }
+
+  @override
+  String get deleteMenuItem => 'Löschen';
+
+  @override
+  String get editMenuItem => 'Bearbeƒiten';
+
+  @override
+  String get depositsLabel => 'Einzahlungen:';
+
+  @override
+  String get addBudgetCategorySheetTitle =>
+      'Kategorie zum Budgetplaner hinzufügen';
+
+  @override
+  String get targetAmountLabel => 'Zielbetrag';
+
+  @override
+  String get savingIndicator => 'Speichere…';
+
+  @override
+  String get addCategoryButton => 'Kategorie hinzufügen';
+
+  @override
+  String get goalExceeded => '⚠️ Ziel überschritten';
+
+  @override
+  String get meldButton => 'Melden';
+
+  @override
+  String get editButton => 'Bearbeiten';
+
+  @override
+  String get writeReplyHint => 'Antwort schreiben...';
+
+  @override
+  String get writeCommentHint => 'Kommentar schreiben...';
+
+  @override
+  String replyingTo(Object username) {
+    return 'Antwort an $username';
+  }
+
+  @override
+  String get deleteCommentTitle => 'Kommentar löschen';
+
+  @override
+  String get deleteCommentContent =>
+      'Willst du diesen Kommentar wirklich löschen?';
+
+  @override
+  String get premiumSaveWarning =>
+      'Du bist kein Premium-Mitglied und kannst keine Beiträge speichern. Tippe hier, um Premium freizuschalten ✨';
+
+  @override
+  String likesTextSingle(Object firstUsername) {
+    return '$firstUsername gefällt der Beitrag';
+  }
+
+  @override
+  String likesTextMultiple(Object firstUsername, Object othersCount) {
+    return '$firstUsername und $othersCount weiteren gefällt der Beitrag';
+  }
+
+  @override
+  String likesCount2(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Personen gefällt dieser Beitrag',
+      one: '$count Person gefällt dieser Beitrag',
+      zero: 'Niemandem gefällt dieser Beitrag',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeAgoDays(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'vor # Tagen',
+      one: 'vor # Tag',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeAgoHours(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'vor # Stunden',
+      one: 'vor # Stunde',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String timeAgoMinutes(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'vor # Minuten',
+      one: 'vor # Minute',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get timeAgoJustNow => 'gerade eben';
+
+  @override
+  String get enterNewReply => 'Neue Antwort eingeben';
+
+  @override
+  String get editReplyTitle => 'Antwort bearbeiten';
+
+  @override
+  String get enterNewQuestion => 'Neue Frage eingeben';
+
+  @override
+  String get editQuestion => 'Frage bearbeiten';
+
+  @override
+  String get writeAnswer => 'Antwort schreiben...';
+
+  @override
+  String get noQuestionsYet =>
+      '💬 Es wurden noch keine Fragen gestellt.\nStelle die erste Frage 😊';
+
+  @override
+  String get feedFilterFriends => 'Freunde';
+
+  @override
+  String get feedFilterFavorites => 'Favoriten';
+
+  @override
+  String get tipsAndFavorites => 'Tipps & Lieblingsorte';
+
+  @override
+  String get noPostsFound => 'Keine Beiträge gefunden';
+
+  @override
+  String get romPageTitle => 'Rom';
+
+  @override
+  String get romDescriptionTitle => '🏛 Rom – Historische Hauptstadt Italiens';
+
+  @override
+  String get romDescription =>
+      'Rom fasziniert mit antiken Bauwerken, historischen Plätzen, verwinkelten Gassen, weltberühmten Museen und lebendiger italienischer Kulinarik. Die Stadt bietet unzählige Möglichkeiten für Sightseeing, Kultur, Shopping und Genuss.';
+
+  @override
+  String get sightsAndActivitiesTitle => '🏛 Sehenswürdigkeiten & Aktivitäten';
+
+  @override
+  String get colosseum => 'Kolosseum';
+
+  @override
+  String get colosseumDescription =>
+      'Das weltberühmte Amphitheater, bekannt für Gladiatorenkämpfe und antike Architektur. Good-to-Know: Plane genügend Zeit ein, um auch ins Innere zu gehen und die unterirdischen Bereiche zu erkunden.';
+
+  @override
+  String get forumRomanum => 'Forum Romanum';
+
+  @override
+  String get forumRomanumDescription =>
+      'Archäologisches Herz Roms mit Ruinen antiker Tempel, Verwaltungsgebäude und Triumphbögen. Tipp: Früh morgens oder spät nachmittags besuchen, um den Massen zu entgehen und schöne Fotos zu machen.';
+
+  @override
+  String get pantheon => 'Pantheon';
+
+  @override
+  String get pantheonDescription =>
+      'Antiker Tempel, heute Kirche, mit beeindruckender Kuppel und großer Öffnung im Dach. Good-to-Know: Eintritt ist frei, aber achte auf angemessene Kleidung.';
+
+  @override
+  String get vatican => 'Petersdom & Vatikan';
+
+  @override
+  String get vaticanDescription =>
+      'Petersdom, Sixtinische Kapelle und Vatikanische Museen – Highlights für Kunst- und Kulturliebhaber. Good-to-Know: Wer auf die Kuppel geht, sollte beachten, dass die Wege sehr eng werden, man zwischendurch teilweise schief laufen muss und viel Treppensteigen auf engem Raum hat. Für den Aufstieg Zeit einplanen.';
+
+  @override
+  String get treviFountain => 'Trevi-Brunnen';
+
+  @override
+  String get treviFountainDescription =>
+      'Berühmter Brunnen, an dem Besucher Münzen werfen, um Glück und Rückkehr zu sichern. Tipp: Früh morgens besuchen, um Fotos ohne Touristenmassen zu machen.';
+
+  @override
+  String get piazzaNavona => 'Piazza Navona';
+
+  @override
+  String get piazzaNavonaDescription =>
+      'Barocker Platz mit Brunnen, Straßencafés und lebendiger Atmosphäre. Insider-Tipp: Im Hinterhof kleiner Gassen rund um die Piazza gibt es kleine, authentische Cafés abseits der Touristenpfade.';
+
+  @override
+  String get spanishSteps => 'Spanische Treppe';
+
+  @override
+  String get spanishStepsDescription =>
+      'Beliebter Treffpunkt, ideal zum Bummeln, Fotografieren und Leute beobachten. Good-to-Know: Am frühen Morgen ist der Platz weniger überlaufen und die Lichtverhältnisse zum Fotografieren optimal.';
+
+  @override
+  String get palatineHill => 'Palatin-Hügel';
+
+  @override
+  String get palatineHillDescription =>
+      'Historischer Hügel, auf dem die römischen Kaiser lebten, mit Ruinen und einem fantastischen Blick über Forum Romanum und Circus Maximus. Tipp: Kombiniere den Besuch mit Forum Romanum – Tickets gelten oft gemeinsam.';
+
+  @override
+  String get keyhole => 'Schlüsselloch (Buco della Serratura)';
+
+  @override
+  String get keyholeDescription =>
+      'Geheimes Highlight in Aventino: Durch das Schlüsselloch sieht man den Petersdom perfekt eingerahmt – super Fotomotiv abseits der Touristenmassen. Insider-Tipp: Früh morgens oder spät nachmittags, dann ist kaum jemand da.';
+
+  @override
+  String get trastevere => 'Trastevere';
+
+  @override
+  String get trastevereDescription =>
+      'Charmantes Viertel mit Kopfsteinpflaster, traditionellen Restaurants, Bars und lebendiger Atmosphäre. Good-to-Know: Abends besonders lebendig, aber viele Straßen sind sehr schmal – auf Fahrräder oder Scooter achten!';
+
+  @override
+  String get orangeGarden => 'Giardino degli Aranci (Orangengarten)';
+
+  @override
+  String get orangeGardenDescription =>
+      'Ruhiger Garten mit Panoramablick über die Stadt – ein entspannter Insider-Spot abseits der Menschenmassen. Tipp: Sonnenuntergang hier ist besonders fotogen.';
+
+  @override
+  String get coppede => 'Coppedè Viertel';
+
+  @override
+  String get coppedeDescription =>
+      'Verspielte Architektur aus dem Jugendstil, versteckte Plätze und faszinierende Details – ein echter Geheimtipp für Architektur-Fans. Good-to-Know: Am besten mit Fotoapparat durch die Straßen schlendern, kaum Touristen hier.';
+
+  @override
+  String get santaMariaTrastevere => 'Basilika Santa Maria in Trastevere';
+
+  @override
+  String get santaMariaTrastevereDescription =>
+      'Weniger besucht als die großen Kirchen, aber wunderschön mit beeindruckenden Mosaiken und entspannter Atmosphäre. Tipp: Morgens besuchen, dann ist es besonders ruhig.';
+
+  @override
+  String get culinaryTitle => '🍽️ Kulinarik – Genuss mit Fjordblick';
+
+  @override
+  String get gelateria => '🍦 Gelateria del Teatro';
+
+  @override
+  String get gelateriaDescription =>
+      'Traditions‑Eisdiele in Rom mit kreativen, handgemachten Gelato‑Sorten und tollem Geschmack – perfekt für eine süße Pause beim Erkunden der Altstadt.';
+
+  @override
+  String get laTavernetta => '🍝 La Tavernetta 29 Da Tony e Andrea';
+
+  @override
+  String get laTavernettaDescription =>
+      'Gemütliches, familiengeführtes römisches Restaurant in Trastevere mit klassischen Pasta‑Gerichten, Antipasti und einer authentischen italienischen Atmosphäre.';
+
+  @override
+  String get fontanaBakery => '🥖 L\'Antico Forno di Fontana di Trevi';
+
+  @override
+  String get fontanaBakeryDescription =>
+      'Beliebte Bäckerei und *Forno* direkt an der Fontana di Trevi – ideal für frisches Brot, Pizza‑Stücke und süße Backwaren zwischendurch.';
+
+  @override
+  String get roscioli => '🍷 Roscioli Salumeria con Cucina';
+
+  @override
+  String get roscioliDescription =>
+      'Legendäre römische Salumeria und Küche nahe Campo de’ Fiori – bekannt für hervorragende Pasta, Antipasti, Käse, Wein und klassische römische Spezialitäten.';
+
+  @override
+  String get streetPizza => '🍕 Street‑Food Tipp: Pizza al taglio';
+
+  @override
+  String get streetPizzaDescription =>
+      'Zwischendurch schnell und lecker: Pizza al taglio (Pizza nach Stück) findest du an vielen Ecken Roms – perfekt zum Stehen und Genießen beim Sightseeing. Lokale Favoriten sind z. B. SPIZZICA ROMA - Pizza al Taglio, Alice Pizza oder Pizza A Taglio – günstige, frische Stücke in typischen römischen Variationen.';
+
+  @override
+  String get hotelsTitle => '🏨 Hotels & Übernachten';
+
+  @override
+  String get hotelBolivar => 'Hotel Bolivar – Trevi-Brunnen';
+
+  @override
+  String get hotelBolivarDescription =>
+      'Zentral gelegenes Hotel in der Nähe des Trevi-Brunnens, ideal für Sightseeing und Stadtbesichtigungen.';
+
+  @override
+  String get arrivalTitle => '🚢 Anreise & Camper-Hinweis';
+
+  @override
+  String get flightTrain => 'Flug & Bahn';
+
+  @override
+  String get flightTrainDescription =>
+      'Rom ist gut per Flugzeug erreichbar. Vom Flughafen Fiumicino geht es schnell mit dem Leonardo Express oder Taxi in die Innenstadt.';
+
+  @override
+  String get carParking => 'Auto & Parken';
+
+  @override
+  String get carParkingDescription =>
+      'Rom kann auch mit dem Auto erkundet werden. Parkplätze in der Innenstadt sind begrenzt, daher empfiehlt sich Parken an zentralen Parkhäusern.';
+
+  @override
+  String becomePartnerText(Object email) {
+    return 'Möchtest du auch Partner werden? Schreib uns gerne an $email';
+  }
+
+  @override
+  String get premium => 'Premium';
+
+  @override
+  String get mallorcaDescriptionTitle =>
+      '🌴 Mallorca – Viel mehr als nur Strand';
+
+  @override
+  String get mallorcaDescription =>
+      'Mallorca überrascht mit türkisfarbenen Buchten, spektakulären Klippen, charmanten Dörfern, lebendiger Kultur und kulinarischer Vielfalt. Die Insel eignet sich perfekt für Strandliebhaber, Aktivurlauber, Genießer und Familien.';
+
+  @override
+  String get esTrencDescription =>
+      'Langer, naturbelassener Sandstrand im Süden Mallorcas mit türkisfarbenem Wasser und karibischem Flair.';
+
+  @override
+  String get playaDePalmaDescription =>
+      'Bekannter, mehrere Kilometer langer Sandstrand zwischen Can Pastilla und El Arenal mit klarem Wasser und guter Infrastruktur.';
+
+  @override
+  String get calaAgullaDescription =>
+      'Zentral gelegener Sandstrand in Cala Ratjada mit ruhigem Wasser, ideal zum Baden und für Spaziergänge entlang der Promenade.';
+
+  @override
+  String get calaAgullaNatureDescription =>
+      'Naturstrand nahe Cala Ratjada, umgeben von Pinien und Hügeln, mit feinem Sand und kristallklarem Wasser.';
+
+  @override
+  String get mondragoBeachDescription =>
+      'Geschützte Bucht im Naturpark Mondragó mit zwei wunderschönen Sandbuchten und sehr klarem Wasser.';
+
+  @override
+  String get capFormentorDescription =>
+      'Spektakuläre Steilküste im Norden der Insel mit Serpentinenstraße, Aussichtspunkten und Blick auf das offene Mittelmeer.';
+
+  @override
+  String get formentorViewpointDescription =>
+      'Einer der bekanntesten Aussichtspunkte Mallorcas mit Blick auf die Klippen und Buchten der Formentor-Halbinsel.';
+
+  @override
+  String get saCalobraGorgeDescription =>
+      'Beeindruckende Schlucht im Tramuntana-Gebirge mit steilen Felswänden, die am Meer in Sa Calobra endet.';
+
+  @override
+  String get beachesCovesNatureTitle => '🏖 Strände, Buchten & Natur';
+
+  @override
+  String get excursionTipsTitle => '🏛 Ausflugstipps & Aktivitäten';
+
+  @override
+  String get palmaTitle => 'Palma de Mallorca';
+
+  @override
+  String get palmaDescription =>
+      'Die Inselhauptstadt bietet eine Mischung aus historischen Vierteln, kleinen Gassen, Boutiquen, Cafés und mediterraner Lebensart.';
+
+  @override
+  String get cathedralTitle => 'Kathedrale La Seu';
+
+  @override
+  String get cathedralDescription =>
+      'Monumentale gotische Kathedrale direkt am Meer und eines der bekanntesten Wahrzeichen Mallorcas.';
+
+  @override
+  String get oldTownTitle => 'Altstadt & Viertel Santa Catalina';
+
+  @override
+  String get oldTownDescription =>
+      'Charmante Altstadtgassen rund um La Seu sowie das lebendige Viertel Santa Catalina mit Restaurants, Bars und lokaler Atmosphäre.';
+
+  @override
+  String get islandDriveTitle => 'Inselerkundung mit dem Auto';
+
+  @override
+  String get islandDriveDescription =>
+      'Ein Mietwagen lohnt sich, um abgelegene Buchten, Bergdörfer im Tramuntana-Gebirge und weniger touristische Regionen der Insel zu entdecken.';
+
+  @override
+  String get sollerTrainTitle => 'Ferrocarril de Sóller & Tramvia de Sóller';
+
+  @override
+  String get sollerTrainDescription =>
+      'Historische Zugfahrt von Palma nach Sóller durch Tunnel, Täler und Olivenhaine, anschließend Weiterfahrt mit der Straßenbahn bis Port de Sóller.';
+
+  @override
+  String get boatToursTitle => 'Bootstouren ab Palma';
+
+  @override
+  String get boatToursDescription =>
+      'Küstenfahrten entlang der Südküste mit Badepausen in Buchten und Blick auf die Insel vom Wasser aus.';
+
+  @override
+  String get buggyToursTitle => 'Buggy-Touren im Inselinneren';
+
+  @override
+  String get buggyToursDescription =>
+      'Geführte Buggy-Touren abseits der Hauptstraßen durch ländliche Gebiete, kleine Dörfer und zu Aussichtspunkten.';
+
+  @override
+  String get bellverTitle => 'Castell de Bellver';
+
+  @override
+  String get bellverDescription =>
+      'Rundburg oberhalb von Palma mit Panoramablick über Stadt, Hafen und Bucht – gut erreichbar und weniger überlaufen als die Altstadt.';
+
+  @override
+  String get mallorcanSpecialtiesTitle => 'Mallorquinische Spezialitäten';
+
+  @override
+  String get mallorcanSpecialtiesDescription =>
+      'Die mallorquinische Küche ist einfach, bodenständig und stark von regionalen Produkten geprägt.';
+
+  @override
+  String get paAmbOliTitle => 'Pa amb oli';
+
+  @override
+  String get paAmbOliDescription =>
+      'Traditionelles Brotgericht mit Olivenöl, Tomate und Beilagen wie Käse, Serrano-Schinken oder Sobrasada.';
+
+  @override
+  String get ensaimadaTitle => 'Ensaimada';
+
+  @override
+  String get ensaimadaDescription =>
+      'Typisches süßes Hefegebäck der Insel, häufig zum Frühstück oder als Mitbringsel.';
+
+  @override
+  String get mercatSantaCatalinaTitle => 'Mercat de Santa Catalina';
+
+  @override
+  String get mercatSantaCatalinaDescription =>
+      'Beliebter Markt in Palma mit frischen Lebensmitteln, kleinen Bars und authentischer Atmosphäre.';
+
+  @override
+  String get mercatOlivarTitle => 'Mercat de l’Olivar';
+
+  @override
+  String get mercatOlivarDescription =>
+      'Großer zentraler Markt in Palma mit Fisch-, Fleisch- und Feinkostständen.';
+
+  @override
+  String get littleItalyTitle => 'Little Italy – El Arenal';
+
+  @override
+  String get littleItalyDescription =>
+      'Italienisches Restaurant nahe der Playa de Palma, bekannt für Pizza, Pasta und klassische italienische Küche.';
+
+  @override
+  String get mamaPizzaTitle => 'Mama Pizza – Cala Ratjada';
+
+  @override
+  String get mamaPizzaDescription =>
+      'Beliebtes Restaurant in Cala Ratjada mit Pizza, Pasta und italienischen Spezialitäten.';
+
+  @override
+  String get saPortassaTitle => 'Sa Portassa – Alcúdia';
+
+  @override
+  String get saPortassaDescription =>
+      'Traditionelles mallorquinisches Restaurant in der Altstadt von Alcúdia.';
+
+  @override
+  String get casPatroMarchTitle => 'Ca’s Patró March – Sóller';
+
+  @override
+  String get casPatroMarchDescription =>
+      'Bekanntes Fischrestaurant direkt über dem Meer an der Küste bei Sóller.';
+
+  @override
+  String get timsBarTitle => 'Tim’s Bar – Port d’Andratx';
+
+  @override
+  String get timsBarDescription =>
+      'Beliebte Hafenbar für Drinks und Sonnenuntergänge.';
+
+  @override
+  String get nightlifeTitle => '🎶 Nightlife & Party';
+
+  @override
+  String get nightlifeDescription =>
+      'Megapark und Bierkönig an der Playa de Palma zählen zu den bekanntesten Party-Locations der Insel mit Live-Acts, DJs und ausgelassener Stimmung.';
+
+  @override
+  String get hotelPlayaGolfTitle => 'Hotel Playa Golf – Playa de Palma';
+
+  @override
+  String get hotelPlayaGolfDescription =>
+      'Klassisches Strandhotel direkt an der Playa de Palma mit komfortablen Zimmern und unmittelbarer Nähe zum Sandstrand – ideal für Badeurlauber und Familien.';
+
+  @override
+  String get hotelRiuPlayaParkTitle => 'Hotel Riu Playa Park – Playa de Palma';
+
+  @override
+  String get hotelRiuPlayaParkDescription =>
+      'Beliebtes All‑Inclusive‑Hotel nur wenige Minuten vom Strand entfernt, mit Poolbereich, Bars, Restaurants und Livemusik – perfekt für einen aktiven Urlaub an der Playa de Palma.';
+
+  @override
+  String get sonMollSentitsTitle =>
+      'Son Moll Sentits Hotel & Spa – Cala Ratjada';
+
+  @override
+  String get sonMollSentitsDescription =>
+      'Hoch bewertetes Hotel direkt an der Cala Son Moll in Cala Ratjada, bekannt für seinen erstklassigen Service, moderne Zimmer und Strandlage – ideal für Paare oder Ruhesuchende.';
+
+  @override
+  String get r2LagoPlayaParkTitle => 'R2 Lago Playa Park – Cala Ratjada';
+
+  @override
+  String get r2LagoPlayaParkDescription =>
+      'Komfortable Hotelanlage nahe der Bucht von Son Moll mit großen Poollandschaften, Restaurant, Bars und Freizeitangeboten – besonders familienfreundlich.';
+
+  @override
+  String get arrivalByCarFerryTitle => 'Anreise mit dem Auto & Fähre';
+
+  @override
+  String get arrivalByCarFerryDescription =>
+      'Wer nicht fliegen möchte, kann bequem mit dem eigenen Auto von Barcelona auf die Insel reisen. Die Fährgesellschaft Baleària bietet zuverlässige Verbindungen nach Palma oder Alcúdia. Die Fahrt dauert je nach Route ca. 7–8 Stunden bis Palma. So kannst du flexibel und unabhängig die Insel erkunden.';
+
+  @override
+  String get camperTitle => 'Camper & Camping auf Mallorca';
+
+  @override
+  String get camperDescription =>
+      'Campingplätze gibt es auf Mallorca nur eingeschränkt, und freies Campen ist auf der Insel nicht erlaubt und wird nicht gern gesehen. Wer mit dem Camper unterwegs ist, sollte sich vorher gut informieren und offizielle Campingplätze nutzen.';
+
+  @override
+  String get geirangerPageTitle =>
+      '🌟 Geiranger – Der Fjord, der den Atem raubt';
+
+  @override
+  String get geirangerDescription =>
+      'Geiranger gehört zu den spektakulärsten Fjordlandschaften Norwegens und ist ein Ort, den man mit allen Sinnen erleben sollte – nicht nur als Fotomotiv, sondern als echtes Abenteuer.';
+
+  @override
+  String get ribBoatTitle =>
+      '🚤 RIB-Boot-Adventure – Adrenalinkick auf dem Fjord';
+
+  @override
+  String get ribBoatContentIntro =>
+      'Erlebe den Geirangerfjord mit Tempo und Nervenkitzel! Bei einer High-Speed-RIB-Bootstour (Rigid Inflatable Boat) saust ihr dicht an die berühmten Wasserfälle vorbei: Die Sieben Schwestern, Brautschleier und Der Freier. Ein Live-Guide begleitet euch, erklärt die Umgebung und sorgt für Sicherheit. Die Fahrt bietet außerdem Fotostopps an den schönsten Stellen des Fjords.\n\n';
+
+  @override
+  String get ribBoatDurationTitle => '📍 Dauer & Ablauf:\n';
+
+  @override
+  String get ribBoatDurationContent =>
+      '- Fjordfahrt: ca. 50–60 Minuten\n- Gesamtdauer inkl. Vorbereitung: ca. 75 Minuten\n- Route: Wasserfälle Sieben Schwestern, Brautschleier, Freier, historische Fjordhöfe wie Skageflå und Knivsflå, zurück nach Geiranger\n\n';
+
+  @override
+  String get ribBoatServicesTitle => '🧑‍✈️ Leistungen:\n';
+
+  @override
+  String get ribBoatServicesContent =>
+      '- Sicherheitsausrüstung (Rettungsweste, Neopren-/Flotation-Anzug, Schutzbrille)\n- Live-Guide (meist Englisch)\n- Fotostopps unterwegs\n- Wettergerechte Kleidung empfohlen (Windjacke, warme Layers)\n\n';
+
+  @override
+  String get ribBoatAgeTitle => '👨‍👩‍👧 Mindestalter:\n';
+
+  @override
+  String get ribBoatAgeContent =>
+      '- Ab 3 Jahren (Kinder unter 14 nur in Begleitung eines Erwachsenen)\n\n';
+
+  @override
+  String get ribBoatPriceTitle => '💰 Preise:\n';
+
+  @override
+  String get ribBoatPriceContent =>
+      '- Erwachsene: ca. 895 NOK (~85 €)\n- Kinder (3–15 Jahre): ca. 595 NOK (~55 €)\n- Private Touren: ca. 8.950 NOK für max. 12 Personen\n- Hinweis: Preise können je nach Anbieter leicht variieren\n\n';
+
+  @override
+  String get ribBoatTipsTitle => '💡 Insider-Tipps:\n';
+
+  @override
+  String get ribBoatTipsContent =>
+      '- Frühzeitig online buchen – die Tour ist extrem beliebt, besonders während der Kreuzfahrtsaison\n- Private Touren bieten mehr Flexibilität und Platz für Gruppen\n- Fotomotive: Beste Lichtverhältnisse morgens oder spätnachmittags\n';
+
+  @override
+  String get fjordSightseeingTitle =>
+      '🛥 Klassische Fjord-Sightseeing-Bootstour – Für Genießer';
+
+  @override
+  String get fjordSightseeingIntro =>
+      'Genieße eine gemütliche Sightseeing‑Bootstour auf dem UNESCO‑Welterbe Geirangerfjord, bei der du die berühmten Wasserfälle, steilen Fjordklippen und alten Bergbauernhöfe aus nächster Nähe sehen kannst. Die Fahrt bietet tolle Fotomotive und viel Zeit, die Landschaft in Ruhe zu genießen.\n\n';
+
+  @override
+  String get fjordSightseeingDurationTitle => '⏱ Dauer & Ablauf:\n';
+
+  @override
+  String get fjordSightseeingDurationContent =>
+      '- ca. 60 Min. klassische Fjordtour\n- ca. 90 Min. erweiterte Tour mit zusätzlicher Fjordlandschaft\n\n';
+
+  @override
+  String get fjordSightseeingPriceTitle => '💰 Preise & Kinderermäßigung:\n';
+
+  @override
+  String get fjordSightseeingPriceContent =>
+      '- Erwachsene: ca. 550–600 NOK (~50–55 €)\n- Kinder 4–15 Jahre: 50 % Rabatt vom Erwachsenenpreis\n- Kinder unter 4 Jahren: 90 % Rabatt\n- Preise können je nach Anbieter & Saison variieren\n\n';
+
+  @override
+  String get fjordSightseeingRouteTitle => '🌊 Highlights & Route:\n';
+
+  @override
+  String get fjordSightseeingRouteContent =>
+      '- Wasserfälle „Die Sieben Schwestern“, „Brautschleier“ & „Der Freier“\n- Aussicht auf steile Fjordklippen & historische Fjordhöfe\n\n';
+
+  @override
+  String get fjordSightseeingTipsTitle => '💡 Insider‑Tipps:\n';
+
+  @override
+  String get fjordSightseeingTipsContent =>
+      '- Viele Boote haben Innenbereiche mit Panoramafenstern + Außendeck für Fotos\n- Oft gibt es kostenlose Audio‑Guides in mehreren Sprachen\n- Frühzeitig online buchen, besonders in der Hochsaison\n';
+
+  @override
+  String get kayakTourTitle => '🛶 Kajak‑Touren – Stille Natur hautnah';
+
+  @override
+  String get kayakTourIntro =>
+      'Erlebe den Geirangerfjord ganz nah vom Wasser aus! Am Geiranger Kayak Centre in Homlong kannst du zwischen Einzel‑ und Doppelkajaks wählen und den Fjord in deinem eigenen Tempo erkunden. Das Paddeln hier ist ein echtes Naturerlebnis – mit Blick auf steile Klippen, ruhige Buchten und Wasserfälle direkt vom Kajak aus.\n\n';
+
+  @override
+  String get kayakTourWhereWhenTitle => '📍 Wo & wann:\n';
+
+  @override
+  String get kayakTourWhereWhenContent =>
+      '- Geiranger Kayak Centre, Homlong (südliche Seite des Fjords)\n- Saison: Ende Mai bis Ende September\n\n';
+
+  @override
+  String get kayakTourDurationTitle => '⏱ Mietdauer & Optionen:\n';
+
+  @override
+  String get kayakTourDurationContent =>
+      '- Kajakverleih: 1–6 Stunden buchbar\n- Wähle Einzel‑ oder Doppelkajak je nach Bedarf\n\n';
+
+  @override
+  String get kayakTourPriceTitle => '💰 Preise (ca.):\n';
+
+  @override
+  String get kayakTourPriceContent =>
+      '- Doppelkajak 1 Std.: ~685 NOK\n- Einzelkajak 1 Std.: ~460 NOK\n- Doppelkajak 1–3 Std.: ~1050 NOK\n- Einzelkajak 1–3 Std.: ~685 NOK\n- Doppelkajak 3–6 Std.: ~1575 NOK\n- Einzelkajak 3–6 Std.: ~950 NOK\n- Preise können je nach Saison & Anbieter leicht variieren\n\n';
+
+  @override
+  String get kayakTourAgeTitle => '👶 Mindestalter & Begleitung:\n';
+
+  @override
+  String get kayakTourAgeContent =>
+      '- Mindestalter: 8 Jahre\n- Kinder (8–15 Jahre) müssen von einem Erwachsenen begleitet werden\n\n';
+
+  @override
+  String get kayakTourWeightTitle => '⚖️ Gewicht & Größe:\n';
+
+  @override
+  String get kayakTourWeightContent =>
+      '- Max. Gewicht pro Person: ~100 kg\n- Max. Körpergröße: ~200 cm\n- Hüftbreite darf ~40 cm nicht überschreiten\n- Personen, die nicht aufrecht mit ausgestreckten Beinen sitzen können, finden es möglicherweise unbequem\n\n';
+
+  @override
+  String get kayakTourTipsTitle => '💡 Insider‑Tipps:\n';
+
+  @override
+  String get kayakTourTipsContent =>
+      '- Schwimmwesten, Spritzschutz & Paddel sind inklusive\n- Für Kajak‑Verleih ist keine Online‑Reservierung möglich (kommt früh!)\n- Wetterfeste Kleidung & Wasser sind dringend empfohlen\n- Die Aussicht auf Wasserfälle wie „Die Sieben Schwestern“ vom Kajak aus ist besonders eindrucksvoll\n';
+
+  @override
+  String get viewpointsTitle =>
+      '🏞 Atemberaubende Aussichtspunkte & Wanderrouten';
+
+  @override
+  String get viewpointsIntro =>
+      'Erkunde die spektakulärsten Aussichtspunkte und Wanderwege rund um den Geirangerfjord – perfekt für Naturfans, Fotoliebhaber und Aktivurlauber.\n\n';
+
+  @override
+  String get viewpointsOrnesvingenTitle =>
+      '🌄 Ørnesvingen – Eagle Road Viewpoint:\n';
+
+  @override
+  String get viewpointsOrnesvingenContent =>
+      'Auf der berühmten “Eagle Road” (Ørnevegen) erwartet dich eine der ikonischsten Aussichten über den fjordartigen Geirangerfjord. Die Straße windet sich mit vielen Serpentinen steil bergauf, und oben bietet der Aussichtspunkt einen panoramischen Blick auf die Fjordlandschaft, Geiranger und die Wasserfälle wie „Die Sieben Schwestern“. Ideal für Fotos oder ein Picknick mit Aussicht.\n\n';
+
+  @override
+  String get viewpointsFlydalsjuvetTitle =>
+      '📸 Flydalsjuvet – Postkartenblick:\n';
+
+  @override
+  String get viewpointsFlydalsjuvetContent =>
+      'Flydalsjuvet ist einer der beliebtesten Aussichtspunkte Norwegens – etwa 4 km vom Zentrum von Geiranger entfernt. Von einer kleinen Plattform hast du einen klassischen Blick auf die Fjordlandschaft und das Dorf Geiranger darunter. Dieser Spot ist besonders bei Sonnenaufgang oder Sonnenuntergang spektakulär und eignet sich hervorragend für Fotos.\n\n';
+
+  @override
+  String get viewpointsDalsnibbaTitle => '🌍 Dalsnibba & Geiranger Skywalk:\n';
+
+  @override
+  String get viewpointsDalsnibbaContent =>
+      'Auf über 1 500 m Höhe gelegen, ist Dalsnibba einer der höchsten und beeindruckendsten Aussichtspunkte der Region. Die Straße hinauf führt durch grandiose Landschaften, und oben kannst du über den Fjord bis zu schneebedeckte Gipfel schauen. Der Geiranger Skywalk – eine Plattform mit Glasboden – lässt dich förmlich über der Landschaft schweben und bietet einen einmaligen Weitblick.\n\n';
+
+  @override
+  String get viewpointsHikesTitle =>
+      '🥾 Wanderrouten – Natur intensiv erleben:\n';
+
+  @override
+  String get viewpointsHikesContent =>
+      '- Skageflå‑Wanderung: Kombiniert tendenziell Boots‑ und Wandererlebnis: Ein Boot bringt dich zum Startpunkt, von wo ein Pfad zu verlassenen Bergbauernhöfen führt, inkl. spektakulärer Fjordblicke und alter Kulturlandschaft.\n- Viewpoint‑Hikes: Kleine Trails entlang der Aussichtspunkte ermöglichen Abstecher zu Fotospots direkt über dem Fjord.\n\n';
+
+  @override
+  String get viewpointsPackingTitle => '👟 Packliste für Wanderer:\n';
+
+  @override
+  String get viewpointsPackingContent =>
+      '- Feste, rutschfeste Wanderschuhe\n- Wetterfeste Jacke (Wind & Regen)\n- Wasser und Snacks\n- Kamera für Panorama‑Aufnahmen\n\n';
+
+  @override
+  String get viewpointsTipsTitle => '💡 Insider‑Tipps:\n';
+
+  @override
+  String get viewpointsTipsContent =>
+      '- Plane ausreichend Zeit für jeden Aussichtspunkt ein – viele Spots sind sehr fotogen und lohnen mehrere Aufenthalte.\n- Kombiniere Aussichtspunkt‑Stops mit kurzen Spaziergängen oder kurzen Wanderungen für verschiedene Perspektiven.\n- Dalsnibba kann selbst im Sommer kühl und windig sein – warme Layers sind empfehlenswert.\n';
+
+  @override
+  String get culinaryChocolateTitle =>
+      '🍫 Geiranger Sjokolade – Handgemachte Schokolade & Waffeln mit Fjordblick';
+
+  @override
+  String get culinaryChocolateContent =>
+      'Bei Geiranger Sjokolade findest du handgemachte Schokolade, Schokowaffeln und heiße Schokolade – perfekt für eine süße Pause nach einer Tour oder Wanderung.';
+
+  @override
+  String get culinaryLocalTitle => '🍲 Lokale Spezialitäten';
+
+  @override
+  String get culinaryLocalContent =>
+      'Frischer Fjordfisch wie Lachs oder Forelle – fangfrisch serviert, ideal für ein authentisches norwegisches Erlebnis.';
+
+  @override
+  String get culinaryCafeTitle => '☕ Café-Tipp';
+
+  @override
+  String get culinaryCafeContent =>
+      'CaféOlé – Charmantes Café im Zentrum von Geiranger, perfekt für Kaffee, Kuchen oder einen leichten Snack.';
+
+  @override
+  String get culinaryRestaurantTitle => '🍽️ Restaurant mit Aussicht';
+
+  @override
+  String get culinaryRestaurantContent =>
+      'Hotel Union Geiranger – Das Restaurant bietet traditionelle norwegische Küche mit frischem Fjordfisch und einem fantastischen Blick auf den Fjord.';
+
+  @override
+  String get campingTitle =>
+      '🏕️ Camping & Übernachten – Natur intensiv erleben';
+
+  @override
+  String get campingSiteTitle => '⛺ Geiranger Camping – Mitten im Fjord';
+
+  @override
+  String get campingSiteContent =>
+      'Direkt im Zentrum von Geiranger, ganz nah am Wasser, liegt der klassische Geiranger Campingplatz. Hier findest du Stellplätze für Wohnmobile, Wohnwagen und Zelte – mit oder ohne Stromanschluss. Es gibt eine moderne Sanitäranlage, Ver‑ und Entsorgung, Waschraum, WLAN und eine Rezeption mit kleinem Kiosk. Von hier aus bist du in wenigen Minuten im Ort oder am Fjordufer.';
+
+  @override
+  String get campingHotelTitle =>
+      '🛏️ Hotel Union Geiranger – Komfort & Fjordblick';
+
+  @override
+  String get campingHotelContent =>
+      'Das Hotel Union Geiranger ist eine der bekanntesten Adressen direkt am Fjord. Mit gemütlichen Zimmern, Wellness‑Bereich, Restaurant und tollem Blick über das Wasser bietet es eine komfortable Alternative zum Camping – perfekt für eine stilvolle Auszeit.';
+
+  @override
+  String get campingTipTitle => '📅 Tipp für Planung';
+
+  @override
+  String get campingTipContent =>
+      'In der Hochsaison (Juni – September) sind Plätze und Zimmer sehr gefragt. Eine rechtzeitige Buchung wird empfohlen, vor allem wenn du direkt am Fjord stehen oder wohnen möchtest.';
+
+  @override
+  String get nordwijk =>
+      'Unser Wochenende in Nordwijk im Juni 2023 war ein richtig schöner Kurztrip an die niederländische Küste 🌊☀️. Wir hatten überlegt, wo wir den Geburtstag meiner Mama feiern könnten, und eine Kollegin hat uns Nordwijk empfohlen. Schon die Anreise am Freitag verlief entspannt, und die Vorfreude stieg mit jedem Kilometer 🚗✨.\n\nAls wir ankamen, haben wir spontan ein Hotel gesucht und sind schließlich im Hotel \'de Baak Seaside\' gelandet – und hatten sogar Meerblick in unserem Zimmer. Das war einfach ein richtiges Wow-Gefühl: das Meer direkt vor uns, die frische Luft und diese Ruhe, die man sofort spürt 🏨💛.\n\nNach dem Einchecken sind wir erst einmal spazieren gegangen. Nordwijk fühlte sich an wie eine ruhigere, weniger überlaufene Version von Scheveningen – genau das, was wir gesucht haben. Die Atmosphäre war entspannt, die Dünen und der Strand waren so weitläufig und friedlich 🌊🚶‍♂️.\n\nAbends entdeckten wir das Restaurant \'Mimmo\' und gingen dort essen. Die italienische Küche war einfach unglaublich gut – frisch, aromatisch und richtig gemütlich. Ich erinnere mich noch genau: Ich hatte eine Salami-Pizza mit Burrata. Diese neue Pizza-Kreation war so unglaublich gut, dass ich echt sprachlos war – die beste Pizza ever. Ich würde sie sofort wieder bestellen. Nach dem Essen sind wir noch ein bisschen spazieren gegangen, bevor wir zurück ins Hotel gingen und den Abend ruhig ausklingen ließen.\n\nAm Samstag ging es dann nach Den Haag 🏛️. Wir haben die Stadt erkundet, sind durch die Straßen geschlendert und haben das historische Flair richtig genossen. Mittags gab es holländische Pommes mit Joppie-Soße – ein Snack, der perfekt zu diesem Tag passte 🍟.\n\nAm Abend sind wir zurück nach Nordwijk gefahren und haben noch einmal bei \'Mimmo\' gegessen – ein schöner Abschluss nach einem langen Tag in der Stadt. Danach sind wir müde, aber glücklich, ins Hotel zurückgekehrt.\n\nAm Sonntagmorgen mussten wir leider schon wieder abreisen. Bevor es nach Hause ging, haben wir um 12 Uhr noch im \'Pannekoekenhuisje Noordwijk\' Pfannkuchen gegessen 🥞. Ich hatte den Pfannkuchen Italiano mit Pesto, Tomaten, Mozzarella und Rucola – und das war wirklich ein perfekter Abschluss: 10/10.\n\nNordwijk hat uns mit seiner Ruhe, dem Meer und den schönen Momenten total begeistert – und wir waren uns einig: Wenn wir wiederkommen, dann definitiv wieder ins \'de Baak Seaside\' und natürlich nochmal zu \'Mimmo\'. Dieses Wochenende bleibt uns als wunderschöne Erinnerung an die Nordsee 💛🌊.';
+
+  @override
+  String get titleNordwijk => 'Geburtstagswochenende an der Nordsee 🌊🎉';
+
+  @override
+  String get titleScheveningen => 'Unsere Mini-Auszeit am Meer 🌊✨';
+
+  @override
+  String get scheveningen =>
+      'Unsere Wochenenden in Scheveningen sind wie kleine Mini-Auszeiten vom Alltag 🌊☀️. Wir fahren einfach für ein oder zwei Tage ans Meer, genießen die frische Luft und das entspannte Strand-Feeling. Besonders im Sommer oder an sonnigen Wochenenden fühlt es sich perfekt an.\n\nEin typischer Tag beginnt mit einem gemütlichen Spaziergang an der Strandpromenade. Die Wellen rauschen, Möwen fliegen vorbei, und die Sonne spiegelt sich auf dem Wasser – einfach herrlich 🚶‍♀️🌅. Dabei schlendern wir oft an den kleinen Ständen entlang und holen uns die berühmten holländischen Pommes mit allerlei Toppings 🍟.\n\nNatürlich darf auch ein Besuch in einem der Strandrestaurants nicht fehlen. Wir setzen uns gern direkt ans Wasser, genießen frischen Fisch oder eine kleine Mahlzeit und lassen einfach die Seele baumeln 🐟🍴. Besonders mag ich die Atmosphäre am Pier und die kleinen Läden, die typisch holländische Snacks anbieten.\n\nUnd was bei uns immer dazugehört: Pfannkuchen! 🥞 Wir lieben es, in die kleinen Cafés oder Pfannkuchenhäuser zu gehen, verschiedene süße oder herzhafte Varianten zu probieren und einfach gemütlich zu sitzen 😋.\n\nDie Wochenenden in Scheveningen sind so entspannt, dass man gar nicht merkt, wie schnell die Zeit vergeht. Wir laufen am Strand entlang, beobachten die Menschen, genießen die Sonnenstrahlen und gönnen uns kleine Leckereien zwischendurch. Für uns sind diese Mini-Auszeiten ein echtes Highlight – Erholung pur, Meer, Sonne und gutes Essen 💛🌊.';
+
+  @override
+  String get titleMallorca =>
+      'Ein Traumurlaub auf der Insel der Vielfalt 🌴🏖️';
+
+  @override
+  String get mallorca =>
+      'Mallorca ist für uns nicht einfach nur ein Urlaubsort 🌴☀️. Die Insel begleitet uns schon unser ganzes Leben und fühlt sich jedes Mal ein bisschen wie Nach-Hause-Kommen an. Ich, Katharina, war das erste Mal mit gerade einmal sechs Monaten hier – und seitdem waren wir unzählige Male auf Mallorca. Schon als Kind habe ich immer gesagt, dass ich später einmal nach Mallorca ziehen möchte – für mich war die Insel nie nur ein Reiseziel, sondern immer ein Ort, an den ich gehören wollte. Es gibt kaum einen Ort, an dem sich so viele Erinnerungen gesammelt haben wie hier ❤️.\n\nWir haben Mallorca in ganz unterschiedlichen Lebensphasen erlebt: als Kind, als Familie, später bewusster und mit offenen Augen für Details. Manche Orte sind geblieben, andere haben sich verändert – aber dieses besondere Gefühl ist immer noch da. Schon die Fahrt über die Insel, egal in welche Richtung, fühlt sich jedes Mal wie ein kleines Abenteuer an 🚗💨. Küstenstraßen, spontane Stopps an Aussichtspunkten, versteckte Buchten – man entdeckt immer wieder etwas Neues.\n\nEin Erlebnis, das uns bis heute im Kopf geblieben ist, war der Safari-Zoo bei Cala Millor 🦓🦒. Ich hatte dort tatsächlich einen Affen auf der Schulter sitzen – und niemand hat etwas gesagt 😅. Das war damals einfach normal, ungezwungen und ein bisschen verrückt. Genau solche Momente bleiben hängen.\n\nAuch die Cuevas del Drach in Porto Cristo gehören zu unseren festen Erinnerungen 🏰🌊. Wir waren schon mehrmals dort und sind jedes Mal wieder beeindruckt. Die riesigen Tropfsteinhöhlen, das Licht, der unterirdische See – das fühlt sich jedes Mal besonders an, egal wie oft man es schon gesehen hat.\n\nMallorca war für uns aber nicht immer nur leicht und unbeschwert. Ein sehr prägender Moment war, als ich mit etwa neun Monaten plötzlich Atemnot bekam und wir nach Manacor ins Krankenhaus mussten 🏥. Bewaffnete Sicherheitskräfte an den Türen, volle Flure, eine alte Krankenhaus-Atmosphäre – für meine Eltern sicher ein Schock. Zum Glück wurden wir schnell behandelt, waren nur etwa eine Stunde dort und fühlten uns trotz allem gut aufgehoben. Die deutschsprachigen Ärzte und das strukturierte Vorgehen haben damals viel Sicherheit gegeben.\n\nEin weiteres sehr persönliches Erlebnis verbindet uns mit El Arenal 🖤. In der Nähe des Megaparks haben wir uns bei Mystic Tattoo Beach ein Tattoo stechen lassen – nur etwa 15 Minuten zu Fuß entfernt. Professionell, entspannt und genau der richtige Ort für eine Erinnerung, die bleibt. Dieses Tattoo gehört heute genauso zu unserem Mallorca wie Strand, Sonne und Meer.\n\nWir haben Mallorca auf unterschiedliche Arten erreicht ✈️🚗. Meistens mit dem Flugzeug, aber einmal auch mit dem Auto bis Barcelona und dann mit der Fähre auf die Insel. Zurück sind wir mit Balearia gefahren – moderner, entspannter und für uns deutlich angenehmer als GNV. Gerade mit Auto war das Ein- und Ausfahren viel stressfreier.\n\nNatürlich lief nicht immer alles glatt 😅. Einmal wollten wir nur ganz kurz an einer Klippe anhalten, um ein Foto zu machen. Ein Beach-Club daneben, kurz abgelenkt – und zack: Knöllchen. Mallorca verzeiht viel, aber beim Parken sollte man wirklich aufpassen.\n\nZu den Orten, die sich für uns immer wieder richtig anfühlen, gehören Port de Sóller mit seiner besonderen Atmosphäre, Camp de Mar mit dem klaren Wasser, Playa del Morro mit seinem ruhigen, seichten Meer, die lange Promenade an der Playa de Palma und der kleine Hafen von Porto Cristo 🌊🏖️🍽️. Es sind keine besonderen Geheimtipps – aber Orte, an die wir immer wieder gerne zurückkehren.\n\nMallorca ist für uns keine Insel, die man einfach ‚abhakt‘ 🌺. Sie verändert sich, genauso wie wir. Und vielleicht ist genau das der Grund, warum wir uns hier jedes Mal wieder so angekommen fühlen. Mallorca gehört einfach zu unserer Geschichte – und wird es wahrscheinlich immer tun ❤️🏡.';
+
+  @override
+  String get titleGenua => 'Ein sonniges Wochenende in Genua 🇮🇹☀️';
+
+  @override
+  String get genua =>
+      'Unser Wochenende in Genua Ende August 2024 begann ganz entspannt 🚗☀️. Am Donnerstagabend machten wir uns zuerst auf den Weg nach Bayern zu unserem Bekannten. Von dort ging es am Freitag früh morgens gemeinsam weiter Richtung Italien. Die Autofahrt von Bayern bis nach Genua dauerte etwa sieben Stunden – und sie hätte schöner kaum sein können. Die Strecke führte uns durch die Schweiz, bei bestem Wetter, mit traumhaften Landschaften und ganz viel Vorfreude im Gepäck 🏔️✨.\n\nGegen Mittag kamen wir in Genua an und bezogen unsere Ferienwohnung. Sie war wirklich richtig schön und perfekt für unser Wochenende. Nur das Parken war ein kleines Abenteuer für sich 🚙😅 – alles sehr voll, sodass wir das Auto immer ein Stück entfernt abstellen mussten. Aber mit ein wenig Fußweg ließ sich das gut lösen.\n\nAm Freitagabend ging es für uns direkt zum Hafen 🌊🌅. Die Stimmung dort war typisch italienisch: lebendig, warm und einfach wunderschön. Es gab Stände, Lichter, Kinderattraktionen wie ein kleines Hüpfburgparadies und überall dieses besondere Urlaubsgefühl. Wir schlenderten entspannt am Wasser entlang, gingen essen und genossen den Sonnenuntergang. Ein perfekter erster Abend, ganz ohne Stress.\n\nDer Samstag startete mit einem echten Highlight ☀️🏖️. Für etwa vier Stunden fuhren wir an den Strand. Dort reihten sich mehrere private Strandanlagen aneinander – jede mit eigenen Liegen, Schirmen, Bars und teilweise sogar Pools. Wir entschieden uns bewusst für eine Anlage mit Pool, sodass wir zwischen Meer und Pool wechseln konnten 💦. Ein besonderes Highlight war das große Trampolin draußen auf dem Wasser – einfach nur Spaß pur!\n\nNach unserem Strandvormittag ging es zurück in die Ferienwohnung. Duschen, frisch machen und kurz durchatmen, bevor es am Nachmittag erneut losging 🚿✨. Dieses Mal erkundeten wir Genua richtig – nicht nur den Hafen, sondern auch die wunderschöne Neustadt. Natürlich durfte ein italienisches Eis nicht fehlen 🍦🇮🇹. Wir schlenderten durch kleine Gassen, entdeckten süße Läden und diese typischen, charmanten Straßen, die man einfach nur aus Italien kennt. In der Neustadt kamen wir an einen Brunnen, umgeben von beeindruckenden Gebäuden. Als die Sonne tiefer stand, tauchte sie alles in ein warmes, goldenes Licht ✨. Dieser Moment war einfach magisch und bleibt uns besonders in Erinnerung.\n\nAm Sonntag machten wir uns auf den Heimweg 🛣️. Auf dem Rückweg legten wir in Österreich noch einen kulinarischen Stopp ein und genossen richtig leckere österreichische Schnitzel und Kaiserschmarrn 🍽️🤤 – absolute 10 von 10! Dann ging es frisch gestärkt nach Hause. Genua war für uns das perfekte Wochenendziel: entspannt, sonnig, voller italienischem Flair und wunderschöner Momente 💛🇮🇹.';
+
+  @override
+  String get genoa => 'Genua';
+
+  @override
+  String get vienna => 'Wien';
+
+  @override
+  String get titleWien => 'Wien – Eleganz, Geschichte & Genuss 🇦🇹✨';
+
+  @override
+  String get wien =>
+      'Wien – diese Stadt hat uns einfach verzaubert. Wir waren inzwischen schon dreimal hier und jedes Mal hat sie uns auf eine andere Art begeistert ✨.\n\nUnser erstes Mal in Wien war nur meine Mama und ich. Wir sind damals geflogen und hatten richtig viel Zeit, alles in Ruhe zu erkunden. Wir haben uns keine Sehenswürdigkeit entgehen lassen: vom Stephansdom, über die Ringstraße mit ihren prächtigen Gebäuden, bis hin zur Hofburg und natürlich dem Sisi-Museum 👑. Die Geschichte von Kaiserin Elisabeth hat uns dabei besonders fasziniert – wie eine so junge Frau zwischen Pflichten, Reichtum und Erwartungen gelebt hat, das war unglaublich bewegend. Besonders cool war unsere Hop-on-Hop-off-Bustour 🚌, die uns einen tollen Überblick über die ganze Stadt verschafft hat. Alles wirkte so lebendig, elegant und gleichzeitig so gemütlich. Zwischendurch haben wir natürlich auch geshoppt 🛍️ und uns durch die Stadt treiben lassen. Wien hat uns von Anfang an einfach begeistert 💛.\n\nBeim zweiten Mal waren wir gemeinsam mit meiner Oma und meiner Uroma unterwegs. Dieses Mal sind wir mit dem Auto gefahren 🚗 und hatten wieder eine Menge Spaß. Ein besonderes Highlight war für meine Oma die Kutschenfahrt durch Wien 🐴 – wir sind durch die historischen Straßen, vorbei an barocken Gebäuden und durch die prachtvollen Plätze gefahren. Und auch wir sind wieder ins Sisi-Museum gegangen, weil wir das einfach nicht verpassen konnten. Shoppen durfte natürlich auch nicht fehlen – Wien ist einfach perfekt dafür. Zwischendurch haben wir uns immer wieder Zeit genommen, die Atmosphäre der Stadt zu genießen, die Kaffeehäuser, die Architektur, die Musik 🎶.\n\nUnser drittes Mal in Wien war im Dezember 2024, weil wir gehört hatten, dass Wien zur Weihnachtszeit einfach magisch sein soll 🎄✨. Und wir wurden nicht enttäuscht: Der Christkindlmarkt am Rathaus war einfach atemberaubend. Überall Lichter, festliche Dekorationen, Handwerksstände und dieser warme Duft von Glühwein und gebrannten Mandeln – wir waren verzaubert. Dieses Mal sind wir wieder mit dem Auto gefahren und haben trotzdem alles gesehen, was wir wollten. Zwar waren wir diesmal nicht im Sisi-Museum, aber wir haben die Stadt in Winterstimmung erlebt: Schloss Schönbrunn, die Ringstraße, Stephansdom, alles wirkte im Lichterglanz noch viel schöner. Natürlich durften die typischen Wiener Süßigkeiten nicht fehlen: Manner-Waffeln 🍫 und Mozartkugeln 🍬 wurden fleißig gekauft und naschend probiert.\n\nWas Wien für uns ausmacht, ist diese einzigartige Mischung aus Historie, Eleganz, Gemütlichkeit und Lebensfreude. Man kann die Stadt in den historischen Bauten spüren, in den Geschichten von Sisi, in den prunkvollen Palästen und trotzdem in den kleinen Cafés, auf den Weihnachtsmärkten und beim ziellosen Bummeln durch die Straßen das Leben einfach genießen. Jeder Besuch hat uns ein Stück mehr verzaubert, und egal, ob Sommer oder Winter, Wien bleibt immer eine Stadt voller Gefühle, Erinnerungen und magischer Momente 🖤✨.';
+
+  @override
+  String get rome => 'Rom';
+
+  @override
+  String get titleRome => 'Rom – die Ewige Stadt 🇮🇹✨';
+
+  @override
+  String get rom =>
+      'Rom – diese Stadt ist einfach magisch. Für uns gehört Rom definitiv zu unseren absoluten Lieblingsstädten in Europa – wenn nicht sogar auf Platz 1. Wir waren schon sehr, sehr oft dort, und jedes Mal entdecken wir etwas Neues. Rom ist eine Stadt, die niemals langweilig wird, egal wie oft man schon dort war. Überall gibt es kleine Gassen, versteckte Plätze, beeindruckende Kirchen und Denkmäler, die Geschichten aus Jahrhunderten erzählen. 🏛️✨\n\nBei jedem Rom-Besuch gibt es für uns ein festes Programm. Natürlich gehört der Petersdom ⛪ dazu. Immer wieder fasziniert uns die Größe, die Architektur, die unglaublichen Details und die Atmosphäre in diesem gewaltigen Bauwerk. Wir gehen jedes Mal nach oben – die Aussicht von der Kuppel ist atemberaubend! Man kann die ganze Stadt überblicken, die Sonne spiegelt sich auf den Dächern Roms, und man fühlt sich, als könnte man ewig dort stehen und einfach die Stadt auf sich wirken lassen. Besonders schön ist es bei Sonnenuntergang 🌅 – dann taucht das Licht den Petersplatz in warme Farben, und alles wirkt fast ein bisschen magisch.\n\nNatürlich darf das Kolosseum 🏟️ nicht fehlen. Jedes Mal, wenn wir hineingehen, sind wir fasziniert von der Geschichte: Gladiatoren, antike Spiele, die Ränge, die Jahrtausende überdauert haben. Besonders eindrucksvoll ist es, das Kolosseum bei Dunkelheit ✨ zu sehen, wenn es angestrahlt wird – es wirkt wie ein lebendiges Monument, das Geschichten von Mut, Spannung und Unterhaltung erzählt.\n\nEin weiteres Highlight ist der Trevi-Brunnen 💦. Wir werfen jedes Mal mindestens eine Münze hinein, mit dem festen Glauben, dass wir wieder nach Rom zurückkehren werden – und bisher hat das immer funktioniert! Die Menschenmassen rund um den Brunnen sind zwar groß, aber das Gefühl, das dieser Ort vermittelt, ist einfach einzigartig. Die Wasserfontänen glitzern im Licht, und jeder Blick auf den Brunnen lässt einen für einen Moment alles andere vergessen.\n\nNeben diesen großen Sehenswürdigkeiten lieben wir es, einfach durch die Stadt zu schlendern. Die kleinen Straßen, die Piazzas 🏙️, die kleinen Cafés, in denen man einen Espresso oder ein Gelato genießen kann, machen Rom so lebendig und charmant. Jedes Mal entdecken wir neue Ecken, kleine Läden, wunderschöne Brunnen oder antike Statuen, die man beim ersten Besuch vielleicht gar nicht bemerkt hätte.\n\nRom ist aber nicht nur Sehenswürdigkeiten – es ist ein Lebensgefühl ❤️. Das Essen, die Menschen, die Musik in den Straßen, der Duft von frischem Brot oder Pizza – all das zusammen macht die Stadt unvergesslich. Wir genießen es, uns treiben zu lassen, abends in den kleinen Gassen zu sitzen, die Stadt bei Nacht zu beobachten und einfach zu spüren, wie lebendig Rom ist.\n\nJeder Trip nach Rom ist ein kleines Abenteuer. Wir haben schon mehrere Tage in der Stadt verbracht, und es reicht nie, um alles zu sehen. Aber gerade das ist das Schöne: man entdeckt immer etwas Neues. Ein neuer Blickwinkel auf den Petersdom, eine andere Perspektive auf das Kolosseum, ein Café, das wir vorher noch nie gesehen haben – Rom überrascht uns jedes Mal wieder aufs Neue.\n\nWir wissen schon jetzt: Rom wird immer eine Stadt sein, zu der wir zurückkehren möchten. Sie vereint Geschichte, Schönheit, Kultur und Lebensfreude auf eine Weise, wie es kaum eine andere Stadt kann. Jedes Mal, wenn wir gehen, nehmen wir nicht nur Fotos und Souvenirs mit – wir nehmen Erinnerungen und Momente voller Magie und Gefühl mit, die uns immer wieder ein Lächeln ins Gesicht zaubern. 😍🇮🇹';
+
+  @override
+  String get titleParis => 'Zwischen Seine und Träumen 🌉💫';
+
+  @override
+  String get paris =>
+      'Paris – diese Stadt verzaubert uns jedes Mal aufs Neue ✨🇫🇷.\n\nWir waren schon so oft hier, dass wir die Besuche nicht mehr an zwei Händen abzählen können – und doch entdeckt man in Paris immer wieder neue Ecken, neue Stimmungen und neue kleine magische Momente. Jedes Mal, wenn wir durch die Straßen schlendern, über Plätze staunen oder entlang der Seine spazieren, spüren wir diesen besonderen Rhythmus, der Paris so einzigartig macht. Die Mischung aus Geschichte, Kunst, Eleganz und Leben – sie zieht einen einfach in den Bann.\n\nOft verbinden wir unsere Paris-Aufenthalte mit einem Abstecher nach Disneyland Paris 🎢🏰. Ein magischer Zusatz, voller Nostalgie und Kindheitserinnerungen – aber die Stadt selbst bleibt immer unser Herzstück.\n\nEiner der Momente, der uns jedes Mal aufs Neue sprachlos macht, ist der Blick vom Eiffelturm ✨. Wer Paris besucht, sollte mindestens einmal hinauffahren – dieser Ausblick ist unvergleichlich. Unter einem breiten sich die Dächer der Stadt aus, die Parks, die Boulevards, die Seine… und an ganz klaren Tagen kann man in der Ferne sogar das glitzernde Meer an der Côte d’Azur erahnen. Ein Moment, der sich anfühlt, als würde man kurz über Paris schweben.\n\nBesonders magisch wird es zum Sonnenuntergang 🌅. Die Stadt taucht ins goldene Licht, der Himmel glüht und sobald es dunkel wird, beginnt der Eiffelturm zu funkeln. Jede volle Stunde leuchtet er für etwa fünf Minuten – ein Anblick, der jedes Mal Gänsehaut auslöst. Dieses Glitzern im nächtlichen Paris ist einfach unvergleichlich.\n\nDie Champs-Élysées ist natürlich ein Klassiker: elegantes Flair, Schaufenster voller Luxus, der Duft von Gebäck, Straßenkünstler und das geschäftige Leben 💫. Aber meist sind es die kleinen Seitenstraßen, die uns am meisten begeistern. Winzige Buchläden, Cafés mit jahrzehntelanger Geschichte, kleine Boutiquen, die wir schon bei unseren ersten Besuchen entdeckt haben – Orte, die uns jedes Mal aufs Neue anziehen.\n\nDie Seine erkunden wir am liebsten vom Wasser aus 🚤💙. Eine abendliche Bootsfahrt, während die Stadt in Licht getaucht ist, gehört für uns zu den magischsten Momenten überhaupt. Wenn sich die Brücken im Wasser spiegeln und der Eiffelturm in der Ferne glitzert, fühlt man diese besondere Ruhe mitten in der lebendigen Stadt. Oft sitzen wir einfach still da, schauen aufs Wasser und genießen den Augenblick.\n\nKultur gehört für uns natürlich immer dazu.\n\nDas Louvre fasziniert uns jedes Mal aufs Neue – nicht nur wegen der Mona Lisa, sondern wegen der unglaublichen Vielfalt an Kunst, die in jedem Raum spürbar ist 🎨.\n\nNotre-Dame, auch wenn sie seit dem Brand wieder aufgebaut wird, strahlt eine beeindruckende Geschichte und Schönheit aus.\n\nUnd der Arc de Triomphe – den haben wir schon aus jedem denkbaren Winkel fotografiert. Ein beeindruckendes Monument, das mitten auf dem Place Charles-de-Gaulle thront.\n\nKleiner Paris-Tipp (und Warnung 😉):\n\nViele stellen sich für Fotos gerne auf den großen Kreisel am Arc de Triomphe, um ohne Menschen perfekte Bilder zu machen.\n\nWenn man das macht, gilt: Aufpassen!!!\n\nDie Pariser fahren, wie sie möchten – schnell, spontan, ohne große Rücksicht. Also lieber zehnmal schauen, ob ein Auto kommt, als einmal zu wenig.\n\nDas gilt übrigens auch fürs Autofahren in Paris generell 🚗💨.\n\nDie Pariser verwandeln zweispurige Straßen gerne in drei Spuren, schneiden, hupen und denken selten defensiv. Einfach vorsichtig fahren und immer mit Überraschungen rechnen.\n\nDoch Paris lebt für uns vor allem durch die kleinen Momente, die man nicht planen kann 💛.\n\nEin frisch gebackenes Croissant am Morgen 🥐, der Duft von Kaffee in einer Seitenstraße ☕, Straßenmusiker, die mit Seele spielen, spontane Entdeckungen an Hauswänden, in Hinterhöfen oder auf kleinen Märkten. Abends, wenn die Stadt im warmen Licht erstrahlt, die Boulevards leuchten und die Seine glitzert, lieben wir es, noch ein bisschen zu spazieren, kleine Cafés zu entdecken oder einfach stehen zu bleiben und die Atmosphäre in uns aufzunehmen.\n\nParis schläft nie – und genau das macht die Stadt so besonders 🌙✨.\n\nWir kommen immer wieder zurück, entdecken Neues.';
+
+  @override
+  String get titleLondon =>
+      'London – Geschichte, Royals & Großstadtflair 🇬🇧✨';
+
+  @override
+  String get london =>
+      'London – eine Stadt, die Geschichte, Tradition und moderne Metropole perfekt miteinander verbindet. Ich war zusammen mit meiner Mama für drei oder vier Tage dort, um die Stadt richtig zu erkunden. London hat eine ganz besondere Atmosphäre: alte, ehrwürdige Gebäude stehen neben modernen Wolkenkratzern, überall spürt man die Geschichte der Stadt, aber gleichzeitig die pulsierende Energie des Großstadtlebens.\n\nUnser erster Stop war das London Eye 🎡. Schon beim Anstehen spürten wir diese Aufregung – die Aussicht auf die Themse, auf den Big Ben und die Houses of Parliament war einfach atemberaubend. Oben angekommen, konnten wir die ganze Stadt überblicken: die roten Doppeldeckerbusse, die schwarzen Taxis, die grünen Parks – es wirkte wie ein riesiges, lebendiges Puzzle. Dieser Moment hat uns beide fasziniert und uns sofort in die richtige London-Stimmung versetzt.\n\nNatürlich durfte der Big Ben 🕰️ nicht fehlen. Vor diesem Wahrzeichen zu stehen, hat eine ganz besondere Wirkung. Majestätisch und ruhig trotzt er seit Jahrhunderten dem Trubel der Stadt. Wir haben viele Fotos gemacht, aber es war mehr als nur ein Schnappschuss – es fühlte sich an, als könnte man ein Stück der Geschichte berühren.\n\nDamit wir London richtig kennenlernen, haben wir eine Hop-on-Hop-off-Bustour 🚌 gemacht. Das war perfekt, um entspannt durch die Stadt zu fahren, die wichtigsten Sehenswürdigkeiten zu sehen und zwischendurch aus- und wieder einzusteigen. Wir sind am Tower of London, an der Tower Bridge, am Buckingham Palace 👑 und am Westminster Abbey vorbeigekommen. Jedes Mal, wenn wir ausgestiegen sind, haben wir kleine Spaziergänge gemacht, Cafés entdeckt oder einfach die Atmosphäre auf uns wirken lassen.\n\nNatürlich durfte Shoppen 🛍️ nicht fehlen – ein bisschen Souvenirjagd, ein paar kleine Andenken, typisch britische Snacks. London hat so viele kleine Läden, in denen man Stunden verbringen könnte. Und die bunten Straßenmärkte, die wir unterwegs entdeckt haben, haben ein ganz besonderes Flair – lebendig, laut und gleichzeitig irgendwie charmant.\n\nTrotz all der Highlights müssen wir ehrlich sagen: London hat uns nicht komplett verzaubert. Die Stadt ist riesig, die Menschenmassen oft überwältigend, und an manchen Stellen wirkt sie ziemlich hektisch. Besonders das Gedränge rund um bekannte Plätze wie den Piccadilly Circus oder Oxford Street hat uns manchmal etwas erschlagen. Trotzdem war es spannend, die Geschichte Londons zu spüren – Jahrhunderte alte Gebäude, Geschichten von Königen und Königinnen, Schlachten, Kriege und politische Entwicklungen, die London zu dem gemacht haben, was es heute ist.\n\nEin besonderer Moment war der Spaziergang entlang der Themse 🌊 am Abend. Die Lichter der Stadt spiegelten sich im Wasser, der Wind wehte leicht, und wir konnten für einen Moment den Trubel hinter uns lassen. Wir haben gemerkt: London ist eine Stadt, die man vielleicht nicht sofort lieben muss, aber sie wächst einem ans Herz, wenn man Zeit nimmt, die kleinen Details zu entdecken.\n\nWir haben auch schon überlegt, wie schön es wäre, London einmal zur Weihnachtszeit 🎄✨ zu erleben. Dann sollen die Straßen beleuchtet sein, die Weihnachtsmärkte festlich geschmückt, und die Stadt hat bestimmt einen ganz anderen, magischen Charme. Das ist definitiv ein Plan für die Zukunft!\n\nLondon hat uns neugierig gemacht. Nicht alles hat uns sofort begeistert, aber die Stadt steckt voller Geschichten, Kulturerlebnisse und spannender Momente. Wir haben die wichtigsten Highlights gesehen, viel erlebt, gelacht, Fotos gemacht und ein Gefühl für die Stadt bekommen. Und wir wissen: beim nächsten Besuch werden wir London vielleicht von einer ganz anderen, verzaubernden Seite kennenlernen 🖤🇬🇧.';
+
+  @override
+  String get titleHamburg => 'Hamburg – zwischen Hafenluft & Herzmomenten ⚓️💙';
+
+  @override
+  String get hamburg =>
+      'Hamburg – unsere absolute Lieblingsstadt in Deutschland nach Köln ❤️🇩🇪. Jedes Mal, wenn wir nach Hamburg kommen, fühlen wir uns sofort wie zu Hause, so vertraut und gleichzeitig immer wieder neu und spannend. Hamburg ist einfach ein Traum, so wunderschön am Wasser gelegen, mit dem Hafen, den Elbkanälen und dem besonderen norddeutschen Charme. Wir waren schon so oft hier, dass man es kaum an zwei Händen abzählen kann – sei es vor einer Kreuzfahrt oder einfach nur, um ein Wochenende in der Stadt zu genießen. 🛳️✨\n\nBei jedem Hamburg-Besuch darf ein Musical nicht fehlen 🎭. Wir lieben Musicals einfach, und Hamburg ist dafür der perfekte Ort. Wir haben schon so viele gesehen: Mary Poppins, König der Löwen, Eisprinzessin, Julia, und noch viele mehr. Jedes Mal ist es ein besonderes Erlebnis – die Musik, die Kostüme, die Stimmung im Saal. Für die Zukunft haben wir schon fest vor, beim nächsten Trip Harry Potter zu sehen – wir freuen uns schon riesig darauf!\n\nNatürlich darf bei einem Hamburg-Trip auch die Hop-on-Hop-off-Tour 🚌 nicht fehlen. So bekommt man einen wunderbaren Überblick über die Stadt, entdeckt neue Ecken, erlebt die Architektur und kann flexibel hier und da aussteigen. Egal ob Landungsbrücken, Speicherstadt oder Elbphilharmonie – es ist einfach schön, die Stadt aus dieser Perspektive kennenzulernen.\n\nHamburg ist aber nicht nur Musicals und Sightseeing. Am Hafen spazieren zu gehen ist für uns ein Muss. Das Rauschen des Wassers, die Schiffe, die Kräne, die Möwen – man fühlt sich einfach lebendig. Die Elbphilharmonie 🎶 ist ebenfalls ein Highlight: wir lieben es, hochzugehen und die Aussicht auf Hafen und Stadt zu genießen. Ein Spaziergang durch den alten Elbtunnel gehört ebenfalls zu unseren festen Programmpunkten.\n\nEssen darf natürlich nicht fehlen 😋. Wer Hamburg besucht, sollte unbedingt ins Brauhaus Blockbräu 🍺 an den Landungsbrücken gehen – lecker, rustikal und direkt am Wasser. Für Süßes ist das Cinnaversum im Westfield Einkaufszentrum 🥐 ein Traum: Franzbrötchen mit Zimtcreme oder anderen Toppings – ein absolutes Muss für Naschkatzen wie uns. Das Westfield selbst ist auch super modern, groß und zum Bummeln perfekt.\n\nEine Hafenrundfahrt 🚤 ist ein weiteres Highlight, das man sich nicht entgehen lassen sollte. So kann man die Stadt vom Wasser aus erleben und sieht noch einmal alles aus einem ganz neuen Blickwinkel. Wer einmal in Hamburg ist, sollte auch unbedingt über die Reeperbahn gehen – auch wenn es abends manchmal richtig lebendig und laut wird, gehört sie doch zu Hamburg dazu.\n\nHamburg hat auch tolle Feste: Frühlingsdom, Sommerdom, Herbstdom und Winterdom 🎡 – immer ein Erlebnis. Die Lichter, die Fahrgeschäfte, der Duft von Zuckerwatte und gebrannten Mandeln, die fröhliche Stimmung – das ist Hamburg pur!\n\nFür die Übernachtung können wir auch einige Hotels sehr empfehlen 🏨:\n• Holiday Inn Berliner Tor – perfekt für den Vorabend einer Kreuzfahrt, praktisch und zentral.\n• Hafenhotel Hamburg – direkt am Hafen, ideal für alle, die das maritime Flair lieben.\n• Acotel Onyx – direkt an der Reeperbahn, modern und zentral, perfekt für einen lebendigen Hamburg-Trip.\n\nHamburg ist für uns mehr als nur eine Stadt. Es ist ein Gefühl von Freiheit, Abenteuer und gleichzeitig von Heimat. Die Kombination aus Wasser, Kultur, Musicals, leckerem Essen und spannenden Stadtteilen macht jeden Besuch zu einem unvergesslichen Erlebnis. Wir wissen jetzt schon: Egal wie oft wir kommen – Hamburg wird uns immer wieder begeistern und in seinen Bann ziehen 🌊❤️✨.';
+
+  @override
+  String get titleBerlin =>
+      'Berlin - eine Stadt, die sich immer wieder neu anfühlt ❣️✨';
+
+  @override
+  String get berlin =>
+      'Berlin ist für uns keine Stadt, die man einmal besucht und dann abhakt. Berlin ist ein Ort, zu dem wir immer wieder zurückkehren. Wir waren schon unzählige Male hier – zu verschiedenen Zeiten, in unterschiedlichen Lebensphasen – und jedes Mal hat sich Berlin ein bisschen anders angefühlt. Und genau das macht diese Stadt so besonders.\n\nWenn wir an Berlin denken, denken wir sofort an dieses einzigartige Großstadtgefühl. Breite Straßen, historische Gebäude neben moderner Architektur, Menschen aus aller Welt – und dieses unverwechselbare Berliner Lebensgefühl. Zu unseren festen Stationen gehört immer der Kurfürstendamm 🛍️. Hier zu schlendern, in Schaufenster zu schauen, einen Kaffee zu trinken und einfach das Leben zu beobachten, gehört für uns einfach dazu. Und natürlich darf auch das KaDeWe 🏬 nicht fehlen – ein echtes Berliner Original. Dieses Kaufhaus ist mehr als nur ein Ort zum Einkaufen. Es steht für Eleganz, Geschichte und für das alte West-Berlin. Besonders die berühmte Feinschmeckeretage ist jedes Mal wieder ein Highlight 😍.\n\nBeim Sightseeing lassen wir es gern entspannt angehen. Deshalb haben wir schon mehrfach eine Hop-on-Hop-off-Bustour 🚌 gemacht – eine unserer liebsten Arten, Berlin zu erkunden. Man sitzt bequem, hört spannende Geschichten, steigt hier und da aus und bekommt einen wunderbaren Überblick über die Stadt. Vom Reichstag über den Potsdamer Platz, vorbei an der Siegessäule 🏛️ bis hin zum Brandenburger Tor 🇩🇪 – Berlin zieht an einem vorbei und erzählt dabei seine Geschichte.\n\nDas Brandenburger Tor ist für uns jedes Mal ein besonderer Moment. Vor allem bei Sonnenuntergang 🌅, wenn das Licht weicher wird und die Stadt für einen kurzen Augenblick ruhiger scheint. Kaum ein Ort steht so sehr für die deutsche Geschichte wie dieser. Direkt damit verbunden ist die Geschichte der Berliner Mauer 🧱 – eine Geschichte, die man in Berlin nicht nur liest, sondern spürt. Die Mauer trennte jahrzehntelang Familien, Freunde und ganze Lebenswelten. Heute erinnern Mauerreste, Gedenkstätten und kleine Details im Stadtbild daran, wie wertvoll Freiheit ist. Jeder Spaziergang entlang dieser Orte macht nachdenklich – und dankbar.\n\nNatürlich darf auch der Fernsehturm 🗼 nicht fehlen. Er begleitet einen fast überall in Berlin und ist wie ein stiller Orientierungspunkt. Rund um den Alexanderplatz pulsiert das Leben, und gleichzeitig wird einem dort bewusst, wie vielfältig diese Stadt ist. Nicht weit entfernt liegt der Checkpoint Charlie 📍 – ein weiterer Ort, der die Teilung Berlins sichtbar macht und Geschichte greifbar werden lässt.\n\nBerlin ist für uns aber nicht nur Geschichte und Sehenswürdigkeiten. Wir verbinden die Stadt auch mit besonderen Erlebnissen: Besuche in den Babelsberger Filmstudios 🎬, spontane Abstecher ins Tropical Islands 🌴 oder einfach zielloses Umherlaufen durch verschiedene Viertel, bei dem man kleine Cafés, Parks oder ruhige Hinterhöfe entdeckt.\n\nNicht jeder Berlin-Besuch war gleich. Besonders 2020 hat uns die Stadt sehr bewegt. Die vielen obdachlosen Menschen, die bedrückende Stimmung an manchen Orten – all das hat uns damals sehr nachdenklich gemacht und unser Bild von Berlin kurz erschüttert. Es war eine Seite der Stadt, die uns traurig gemacht hat.\n\nUmso schöner war es, im August 2025 wieder nach Berlin zurückzukehren 💫. Unser Wochenendtrip und der Aufenthalt im Maritim ProArte Hotel Berlin haben uns gezeigt: Berlin fühlt sich wieder anders an. Lebendig, offen, warm. Die Stadt wirkte wieder einladend, voller Energie und Lebensfreude – fast so, wie wir sie früher geliebt haben.\n\nBerlin hat viele Gesichter. Es ist laut und leise, geschichtsträchtig und modern, manchmal rau, aber immer ehrlich. Und vielleicht ist es genau das, was uns immer wieder zurückzieht 🖤.\n\nWir wissen heute: Egal, wie oft wir schon hier waren – Berlin ist nie „fertig“. Es bleibt eine Stadt voller Geschichten, Erinnerungen und neuer Momente, die noch darauf warten, erlebt zu werden.';
+
+  @override
+  String get titleCotedazur => 'Glanz, Meer und unvergessliche Momente 🌊✨';
+
+  @override
+  String get cotedazur =>
+      '2021 starteten wir unseren ganz besonderen Roadtrip an der Côte d’Azur – zwei Wochen voller Sonne, Meer, charmanten Städten und Erinnerungen, die sich tief ins Herz geschrieben haben. Unsere Base war das Hotel Splendid Hotel & Spa in Nizza, perfekt gelegen, um die Riviera Tag für Tag zu erkunden. Rückblickend würden wir es beim nächsten Mal anders machen: Statt jeden Tag wieder nach Nizza zurückzufahren, würden wir mehrere Hotels entlang der Küste wählen – ein paar Tage hier, ein paar Tage dort. Flexibel, entspannt und genau so, wie sich ein Roadtrip an der Côte d’Azur anfühlen sollte. ✨🌊\n\nNizza selbst verzauberte uns sofort mit seinem typisch französischen Charme. Die Promenade des Anglais lädt zu Spaziergängen direkt am Wasser ein, während die Altstadt mit bunten Häusern, kleinen Cafés, Straßenmusikanten und süßen Gassen vor Leben strahlt. Direkt an unserem Hotel machten wir Parasailing – ein absolutes Highlight! Der Start am steinigen Strand war etwas holprig, weil man über einen Teppich auf den Steinen loslaufen musste, aber sobald wir abgehoben sind, war es einfach nur magisch. Über dem türkisblauen Meer zu schweben und Nizza von oben zu sehen, war ein Moment voller Freiheit. Beim nächsten Mal wollen wir Parasailing vom Boot aus machen – das wird bestimmt noch schöner. 🪂💙\n\nVon Nizza aus hatten wir jeden Tag aufs Neue traumhafte Ausblicke auf kleine Buchten und farbenfrohe Orte, die aussahen wie gemalt. Cannes war einer der unvergesslichen Stopps: Die berühmte Croisette mit ihren Palmen, Luxushotels, Yachten und dem typischen Glamour – es fühlte sich an wie ein Filmset. Das kleine Musée de la Castre auf dem Hügel bot Ruhe und Geschichte inmitten des Trubels.\n\nWeiter ging es nach Monaco – Glamour pur. Am Casino-Platz standen wir gefühlt stundenlang und bestaunten die Luxuskarossen, die dort ihre Runden drehten. Und das Beste: Das Parken war überraschend günstig! Für mehrere Stunden zahlten wir gerade einmal einen Euro – in Monaco! Wir gönnten uns im „Shake Shack“ superleckere Burger und saßen anschließend im legendären „Café de Paris“. Eine Cola dort ist zwar nicht gerade günstig, aber dieses Gefühl – draußen sitzen, die Aussicht auf das Casino, die vorbeifahrenden Luxusautos, die ganze Atmosphäre – unbezahlbar. Einfach Monaco pur. 😍🚗✨\n\nSaint-Tropez zeigte sich glamourös und gleichzeitig unglaublich charmant: Eine Altstadt voller kleiner Boutiquen, Kunststände und Cafés, während sich im Hafen riesige Yachten aneinanderreihten. Kulinarisch wollten wir uns etwas gönnen und gingen ins bekannten „L’Opéra“. Mit Blick aufs Wasser bestellten wir Pasta – und bekamen schwarze Nudeln. Ein Erlebnis … geschmacklich nicht ganz unser Ding, aber eine witzige Erinnerung, über die wir heute noch lachen. 🖤🍝\n\nEin besonderes Highlight war die Fahrt nach Saint-Raphaël. Eigentlich dauert die Strecke von Nizza nach Saint-Tropez rund zwei Stunden, aber wir entschieden uns für die Route entlang der Küste – sechs Stunden lang! Und es war jede Minute wert. Das Meer immer im Blick, kleine Buchten, atemberaubende Aussichten und dieses Freiheitsgefühl, das man auf solchen Küstenstraßen nur einmal im Leben erlebt. In Saint-Raphaël angekommen, verbrachten wir entspannte Stunden am Sandstrand, spazierten am Wasser entlang und sahen der Sonne beim Untergehen zu. Einfach perfekt. 🌅\n\nIn Antibes genossen wir mediterrane Lebendigkeit: Der Wasserpark „Aquasplash“ sorgte für Spaß, die Altstadt für Flair, der kleine Markt für Abwechslung und der Hafen für Postkartenmomente. Fischerboote, Yachten, kleine Cafés – eine Mischung aus Leben und Gelassenheit, die man sofort ins Herz schließt.\n\nUnsere gesamte Route legten wir direkt an der Küste entlang zurück. So hatten wir immer das Meer als treuen Begleiter, hielten spontan an Aussichtspunkten und Stränden und ließen uns einfach treiben. Ein kleiner Luxus des Hotels war der Concierge-Service: Sobald wir das Auto brauchten, wurde es vorgefahren – und später wieder eingeparkt. Keine Parkplatzsuche, kein Stress – einfach genießen. 🚗✨\n\nKulinarisch war die Reise genauso traumhaft wie landschaftlich: Vom Hard Rock Café in Nizza über kleine Bistros, Eisdielen, Crepesstände bis hin zu edleren Restaurants in Cannes und Saint-Tropez – jeder Ort bot seinen ganz eigenen Geschmack und Charme.\n\nDiese zwei Wochen an der Côte d’Azur waren eine perfekte Mischung aus Strand, Sightseeing, Genuss, Küstenfeeling, Freiheit und ganz viel Herz. Eine Reise voller Erinnerungen, die uns bis heute begleiten. Unser Tipp für den nächsten Roadtrip: Entlang der Küste mehrere Hotels wählen, flexibel bleiben und jeden Tag ein neues Stück Côte d’Azur entdecken. So fühlt sich die Riviera noch freier, echter und unvergesslicher an. 💙🌴✨';
+
+  @override
+  String get italy => 'Italien';
+
+  @override
+  String get it1Title =>
+      'Tag 1–2: Unser italienischer Auftakt in Mailand – Kunst, Eis & Gassenzauber 🏰🌟';
+
+  @override
+  String get it2Title =>
+      'Tag 3: Von Santa Margarita nach Portofino – Boote, Gassenzauber & Zitronenflair 🍋⛴️✨';
+
+  @override
+  String get it3Title =>
+      'Tag 4–6: Pisa, Rom & Sonnenuntergänge – Ewige Stadt, Kolosseum und Trevi-Zauber 🇮🇹✨';
+
+  @override
+  String get it4Title =>
+      'Tag 7–9: Sorrento, Amalfi & Capri – Zitronen, Meerblick und Bootstouren 🍋🌊✨';
+
+  @override
+  String get it5Title =>
+      'Tag 10–12: Rimini, Venedig & Lido di Jesolo – Strandspaziergänge, Kanäle & Poolträume 🌊🏖️✨';
+
+  @override
+  String get it1Desc =>
+      'Ende August 2024 startete unsere große Italienreise, und wir hatten uns vorgenommen, die knapp zwölf Stunden Fahrt auf einmal durchzuziehen – ja, wirklich durchzufahren, ohne große Stopps, nur einmal kurz in der Schweiz 🌲⛅. Dieser kleine Halt war aber ein echtes Highlight: ein wunderschöner Rastplatz, komplett aus Holz gebaut, mit liebevollen Details, grünen Bäumen drumherum und einfach einer unglaublich gemütlichen Atmosphäre 🪵✨. Dort haben wir uns ein Eis gegönnt 🍦 – der einzige Stopp auf der gesamten Fahrt – und schon dieser Moment fühlte sich wie ein kleiner Mini-Urlaub an, bevor wir weiter Richtung Mailand fuhren.\n\nAm Abend kamen wir dann in Mailand an 🏙️. Wie bei unseren Roadtrips üblich, haben wir spontan ein Hotel gebucht 🏨. Unser Zimmer war perfekt gelegen, nur etwa zehn Minuten zu Fuß von der Kathedrale von Mailand (Duomo di Milano) entfernt. Nach dem Einchecken konnten wir es kaum erwarten, noch ein bisschen die Stadt zu erleben.\n\nDie Kathedrale bei Dunkelheit zu sehen, war einfach magisch 😍⛪. Sie wirkte ruhig und leer, die Lichter tauchten die gotische Fassade in ein warmes Glühen, und die ganzen Details der Statuen und Türme kamen richtig zur Geltung 🌌. Wir standen eine Weile einfach da, haben geschaut und die Atmosphäre auf uns wirken lassen – so still, so schön, ein perfekter Auftakt für unsere Italienreise. Danach schlenderten wir noch durch die Galleria Vittorio Emanuele II 🌟🛍️. Selbst im Dunkeln strahlte die Passage Eleganz aus, mit dem beeindruckenden Glasdach und den glitzernden Schaufenstern – einfach ein Erlebnis für die Sinne. Danach ging es zurück ins Hotel, müde, aber glücklich 😴💛.\n\nAm nächsten Morgen starteten wir frisch in den Tag. Auf dem Weg zur Kathedrale habe ich mir ein Croissant mit Vanillefüllung gegönnt 🥐🍮 – außen knusprig, innen cremig und so lecker, dass es den Morgen perfekt gemacht hat. Die Kathedrale war nun natürlich voller als am Vorabend, aber das machte nichts – die Atmosphäre war trotzdem überwältigend 🏛️✨. Danach ging es noch einmal durch die Galleria Vittorio Emanuele II, diesmal richtig lebendig, mit Menschenmengen, Shoppingtouristen und Straßenmusikern 🌆🎶 – ein echtes italienisches Flair.\n\nMittags stand dann der Aufstieg auf die Kathedrale auf dem Programm 🏰⬆️. Oben angekommen, hatten wir einen atemberaubenden Blick über Mailand – die roten Dächer, die engen Gassen, die winzig wirkenden Menschen unten, die Sonne, die langsam über der Stadt glitzerte – ein Moment, den wir nie vergessen werden 😍🌞. Danach habe ich mir im Café Dante ein Roseneis gegönnt 🌹🍨 – riesig, cremig und perfekt nach dem Aufstieg.\n\nAm Abend ging unsere Reise dann weiter Richtung Campingplatz in der Nähe von Santa Margherita, wo wir die Nacht im Auto verbrachten 🚗💤. Es war zwar etwas eng, aber nach den aufregenden Stunden in Mailand fühlten wir uns glücklich, zufrieden und voller Vorfreude auf die kommenden Abenteuer in Italien ✨🇮🇹.';
+
+  @override
+  String get it2Desc =>
+      'Nach unserer Nacht auf dem Campingplatz in Santa Margarita wachten wir morgens auf und spürten sofort diese besondere italienische Ruhe 🌞. Die Vögel zwitscherten, die Sonne wärmte sanft das Auto, und wir waren bereit für einen neuen Tag voller Entdeckungen. Bevor wir allerdings die Fähre nach Portofino nahmen, gönnten wir uns ein entspanntes Mittagessen 🍝💛 – frisch zubereitete Nudeln mit Pesto und ein knuspriges Baguette. Einfach perfekt, um gestärkt in den Tag zu starten.\n\nNach dem Essen machten wir uns auf den Weg zum Hafen und stiegen auf die kleine Fähre nach Portofino ⛴️🌊. Schon während der Überfahrt konnte man die pastellfarbenen Häuser der kleinen Küstenstadt am Horizont sehen, und die Boote, die sanft im Wasser schaukelten, erzeugten dieses typisch italienische Urlaubsgefühl 🌈🚤. Ich muss sagen: Portofino hat uns sofort verzaubert.\n\nKaum angekommen, schlenderten wir durch die schmalen, charmanten Gassen 🏘️✨. Überall gab es kleine Läden mit handgemachten Souvenirs, bunten Armbändern und frischen Zitronenprodukten 🍋. Wir setzten uns zwischendurch in ein kleines Café und gönnten uns einen richtig leckeren Milchshake 🥤💖, während wir das Treiben um uns herum beobachteten. Die Mischung aus dem Meer, den pastellfarbenen Fassaden und dem leichten Duft von Zitronen in der Luft war einfach magisch 🌊🌞.\n\nWir schlenderten weiter entlang der Hafenpromenade, bewunderten die kleinen Segel- und Fischerboote, machten jede Menge Fotos 📸 und genossen die unaufgeregte, fast verträumte Atmosphäre. Es war einer dieser Momente, in denen man einfach tief durchatmet, lächelt und denkt: „Hier möchte ich unbedingt wieder hin“ 💛. Tatsächlich haben wir uns schon fest vorgenommen, Portofino noch einmal zu besuchen – so süß, so idyllisch, so perfekt.\n\nAm frühen Nachmittag traten wir dann wieder die Rückfahrt mit der Fähre nach Santa Margarita an, bevor es für uns weiter Richtung Rom ging 🛣️🚗. Mit jeder Kurve, jedem Kilometer auf der Straße, stieg die Vorfreude auf die Ewige Stadt, aber gleichzeitig hatten wir dieses kleine, süße Küsten-Abenteuer von Portofino noch lange in unseren Köpfen. Es war ein Tag voller Farben, Düfte und italienischem Flair – genau so, wie man sich Italienträume vorstellt 🇮🇹✨.';
+
+  @override
+  String get it3Desc =>
+      'Auf dem Weg nach Rom machten wir noch einen kurzen Zwischenstopp in Pisa 🌧️🚗. Ich muss ehrlich sagen: Pisa gefällt uns nach wie vor nicht besonders 😅. Wir waren schon einmal hier, und auch diesmal konnte die Stadt uns nicht wirklich begeistern. Dazu kam, dass es leicht regnete und mir unterwegs ziemlich schlecht ging 🤢. Trotzdem wollten wir anhalten – schließlich gehört Pisa zu einem echten Roadtrip durch Italien einfach dazu. Wir waren etwa eine Dreiviertelstunde dort, haben ein paar Fotos gemacht, aber alles eher hastig.\n\nNach Pisa stiegen wir wieder ins Auto und fuhren noch kurz einkaufen 🛒. Wir haben uns ein paar typisch italienische Süßigkeiten und Leckereien geholt 🍬🍫 – ein kleiner Trost und ein bisschen Energie für den Rest der Fahrt. Auf dem Weg nach Rom ging es mir dann leider noch schlechter. Die vielen Mückenstiche, die ich mir auf dem Campingplatz in Santa Margarita eingefangen hatte, waren extrem entzündet 🦟🔥. Mein Körper reagierte stark, und ich musste mehrmals brechen. Es klingt verrückt, aber nach der letzten Runde fühlten sich die Mückenstiche tatsächlich schon viel besser an 😅.\n\nGegen Abend kamen wir schließlich in Rom an 🌇. Unser Hotel lag super zentral – nur fünf Gehminuten vom Trevi-Brunnen entfernt 🏨✨. Aufgrund meiner leichten Krankheit waren wir an diesem Abend nur kurz am Trevi-Brunnen, aber es war schon jetzt beeindruckend, auch wenn es sehr voll war. Danach ging es direkt zurück ins Hotel, um ein bisschen Ruhe zu finden.\n\nAm nächsten Morgen ging es mir wieder richtig gut 😊💪. Voller Vorfreude machten wir uns auf den Weg zum Petersdom ⛪🌞. Natürlich erklommen wir auch dieses Mal wieder die Kuppel – ein Muss bei jedem Rombesuch! Der Blick von oben über die Stadt, die Kuppeln, Dächer und den Vatikan – einfach atemberaubend 😍. Danach gönnten wir uns mittags eine leckere Mahlzeit 🍝🥗 und machten uns dann auf den Weg zur spanischen Treppe. Auch wenn sie heute nicht mehr so prunkvoll mit Blumen verziert war wie früher, bleibt dieser Ort einfach ein Klassiker der Stadt 🌸🪜.\n\nAm Abend wollten wir unbedingt noch einmal den Trevi-Brunnen sehen 💦✨. Überraschenderweise war der Brunnen bereits abgesperrt, da am nächsten Tag eine Reinigung stattfinden sollte. Wir hatten jedoch die clevere Idee, einfach über die Absperrung zu gehen – und das hat sich sowas von gelohnt! Wir standen fast alleine am Brunnen, konnten ungestört Fotos machen 📸❤️ und hatten das Gefühl, die Stadt für uns alleine zu haben. Kurze Zeit später haben tatsächlich auch alle anderen Besucher diese Idee kopiert – die Polizei war vermutlich nicht so begeistert 😅.\n\nSpäter am Abend besuchten wir das Kolosseum 🏛️🌙. Im Dunkeln wirkte es noch magischer als bei Tageslicht. Die beeindruckende Architektur, die Lichter und der Duft der Stadt – einfach unvergesslich. Am nächsten Morgen ging es dann natürlich direkt wieder ins Kolosseum, dieses Mal tagsüber. Auf dem Weg holten wir uns noch ein richtig leckeres Kolosseum-Eis 🍦🏟️ – eine kleine Tradition bei jedem Rom-Besuch. Es gehört einfach dazu, einmal durch die alten Mauern zu schlendern und die Geschichte zu spüren.\n\nGegen Sonnenuntergang kehrten wir noch einmal zum Petersdom zurück 🌇⛪. Die Sonne tauchte die Stadt in ein goldenes Licht, die Kuppeln schimmerten, und die Atmosphäre war schlichtweg traumhaft. Danach fuhren wir eine Stunde aus Rom hinaus zu einem kleinen, familiengeführten Hotel 🏨💛. Es hatte nur etwa 20 Zimmer, war super gemütlich und lag direkt neben einem Outlet – perfekt für unseren Plan am nächsten Tag.\n\nAm folgenden Tag starteten wir voller Vorfreude in einen kleinen Shopping-Trip im Outlet 🛍️✨, bevor es dann weiter nach Sorrento ging. Es war ein schöner Abschluss unserer Rom-Tage, voller Kultur, Magie und unvergesslicher Momente.';
+
+  @override
+  String get it4Desc =>
+      'Nach unseren unvergesslichen Tagen in Rom ging unsere Italienreise weiter Richtung Süden – unser Ziel: das wunderschöne Sorrento 🏖️🚗. Wir kamen abends im Hotel an und waren sofort begeistert 😍. Schon beim Einchecken spürten wir, dass dieses Hotel etwas ganz Besonderes war. Wir hatten unser Zimmer ganz oben, quasi in einem kleinen Turm, und es fühlte sich an wie ein Traum aus einem Märchen 🏰💛. Der Blick vom Balkon aufs glitzernde Meer war einfach atemberaubend 🌊✨ – wir konnten uns kaum sattsehen. Nach dem Einchecken ging es noch kurz hinaus, um abends in Sorrento zu essen 🍝🍷. Danach ließen wir den Tag gemütlich ausklingen, während wir die Aussicht und die warme Meeresluft genossen 🌙💫.\n\nAm nächsten Tag machten wir uns mit dem Auto auf den Weg entlang der Amalfi-Küste 🚗🌅 – und was soll ich sagen? Es war einfach traumhaft! Die Küste schimmerte im Sonnenlicht, das Meer glitzerte in allen Blautönen, und überall waren diese kleinen, pittoresken Dörfer und Zitronenhänge 🍋💛. Die Fahrt allein war schon ein Erlebnis für sich. In Amalfi angekommen, hatten wir einen wunderschönen Blick auf die Stadt und das Meer. Es war ein bisschen anders, als wir es uns vorgestellt hatten – wir hatten gehofft, es wäre noch ein wenig idyllischer – aber trotzdem war es einfach richtig schön, die Küste und das Meer so nah zu erleben 🏞️😍.\n\nAm nächsten Tag ging es dann endlich nach Capri ⛴️🏝️. Unser ursprüngliches Ziel war die berühmte Blaue Grotte, aber leider war das Wetter zu stürmisch 🌊🌬️. Die Grotte konnte nicht angefahren werden, was natürlich ein bisschen schade war. Aber wir ließen uns die Laune nicht verderben und entschieden uns für eine Bootstour rund um die Insel. Und wow – auch das war ein echtes Highlight! Wir fuhren an spektakulären Felsen vorbei, sahen versteckte Buchten und kleine Strände, während die Wellen uns leicht hin und her schaukelten. Es war aufregend, ein bisschen abenteuerlich, aber einfach wunderschön 🌟🚤.\n\nNach der Bootstour machten wir noch einen kleinen Abstecher in Capri selbst. Wir aßen einen leichten Snack – Bruschetta 🍅🥖 – und schlenderten durch die kleinen Gassen. An den Ständen kauften wir ein paar Armbänder als Erinnerungen an diesen magischen Ort ✨💛. Die Atmosphäre, die bunten Häuser und das Meer im Hintergrund – das war wirklich ein Moment, den wir so schnell nicht vergessen werden.\n\nAbends kehrten wir zurück nach Sorrento und hatten im Hotel ein spezielles Dinner gebucht 🍽️🥂. Es war ein wunderschöner Abschluss unserer Tage an der Amalfiküste: leckeres Essen, romantische Stimmung und die entspannte Atmosphäre unseres kleinen Turm-Zimmers über dem Meer 🌙💖. Voller Glück und schöner Erinnerungen gingen wir an diesem Abend schlafen, bevor unsere Reise am nächsten Morgen weiter nach Rimini führen sollte 🛌✨.';
+
+  @override
+  String get it5Desc =>
+      'Nach unseren traumhaften Tagen an der Amalfiküste führte uns unsere Reise weiter Richtung Norden – nach Rimini 🚗☀️. Dort angekommen, checkten wir direkt in unser Hotel ein und waren gespannt, was uns erwarten würde. Rimini war für uns eher ein kurzer Stopp, aber wir nutzten die Gelegenheit, den Abend gemütlich zu verbringen. Wir gingen im Bounty-Restaurant essen 🍝🍷, genossen die entspannte Atmosphäre und machten danach noch einen kleinen Spaziergang entlang der Küste. Die Abendstimmung am Strand war wirklich schön – die Sonne ging langsam unter, das Meer glitzerte und wir fühlten uns einfach wohl 🌅💛.\n\nAm nächsten Morgen ging es weiter Richtung Venedig 🛶🌆. Wir übernachteten dafür auf einem Campingplatz in der Nähe, um am Tag selbst flexibel in die Stadt zu fahren. In Venedig schlenderten wir den ganzen Tag durch die berühmten Gassen und Kanäle 🚤🏰. Die Stadt ist immer wieder beeindruckend mit ihren alten Häusern, den kleinen Brücken und den Gondeln, auch wenn wir ehrlich gesagt Venedig nicht so berauschend schön finden – die vielen Touristen und das Gedränge trüben ein bisschen die romantische Stimmung 😅🌊. Trotzdem war es schön, die Stadt wieder zu sehen, ein bisschen zu shoppen und durch die Straßen zu schlendern, bevor wir abends wieder zum Campingplatz zurückkehrten 🌇.\n\nNach diesem Ausflug ging es weiter zum Lido di Jesolo, wo wir unsere letzten beiden Tage in Italien verbrachten 🏨🌴. Unser Hotel war richtig schön, direkt am Meer mit Blick auf die glitzernde Küste 🌊✨. Besonders der beheizte Pool war ein Highlight – wir konnten entspannen, schwimmen und einfach die Sonne genießen ☀️💦. Die Tage dort waren wunderbar ruhig und erholsam. Wir schlenderten am Strand entlang, genossen die italienische Sonne und ließen die Reise noch einmal Revue passieren 🌅💛.\n\nDiese letzten Tage in Rimini, Venedig und Lido di Jesolo waren perfekt, um die Füße hochzulegen, das Meer zu genießen und noch einmal richtig durchzuatmen, bevor wir wieder Richtung Heimat aufbrachen 🏖️✈️. Es war ein schöner, entspannter Abschluss unserer unvergesslichen Italienreise.';
+
+  @override
+  String get titleNewYork => 'Unser New York Abenteuer zur Weihnachtszeit 🎄🗽';
+
+  @override
+  String get newyork =>
+      'Unsere fünf Tage in New York starteten direkt am zweiten Weihnachtstag. Zwei Tage zuvor hatten wir noch in Deutschland Heiligabend gefeiert – die Weihnachtsstimmung war also noch frisch. Und dann kamen wir in New York an – und die Stadt tauchte uns sofort in ein ganz anderes, funkelndes Weihnachtsgefühl. ✨\n\nDie Lichter an der Fifth Avenue, das glitzernde Rockefeller Center, die liebevoll geschmückten Schaufenster – einfach atemberaubend! Klar, viele Vorgärten waren schon wieder abgebaut, aber die festliche Stimmung hat uns trotzdem komplett verzaubert. 💖\n\nUnser erstes Highlight: die Freiheitsstatue 🗽. Auch wenn wir leider nicht bis zur Krone hoch konnten, war es unglaublich, sie aus nächster Nähe zu sehen. Auf der Insel der Freiheitsstatue zu stehen und dabei den Blick auf die Skyline von Manhattan zu genießen, während die Sonne langsam unterging – unbeschreiblich! 🌇\n\nDanach spazierten wir über die Manhattan Bridge. Die Aussicht auf den East River, die Spiegelungen der Wolkenkratzer im Wasser – einfach traumhaft! 🌉\n\nDer Times Square hat uns dann komplett umgehauen. Riesige Bildschirme, blinkende Reklame, Menschen aus aller Welt – die Energie hier ist einfach einzigartig. Wir standen mitten im Trubel, ließen die Lichter auf uns wirken und fühlten uns wie mitten im Herzen von New York. 💡❤️\n\nGanz anders, aber ebenso beeindruckend, war die 9/11-Gedenkstätte. Ruhig, ehrfürchtig, nachdenklich. Der Brunnen, wo einst die Zwillingstürme standen, hat uns tief berührt. Wir standen lange da, spürten die Stille und die Bedeutung dieses Ortes auf uns wirken. 🕊️\n\nKulinarisch ging es natürlich auch hoch hinaus 😋. Jeden Morgen starteten wir mit einer heißen weißen Schokolade bei Starbucks – perfekt gegen die kalte Winterluft. Wir probierten personalisierte M&M’s, ein richtig lustiges Souvenir, und zwischendurch gab es die besten Bagels überhaupt bei Infinity Bagel 🥯☕.\n\nEin unglaublicher Moment war der Sonnenuntergang vom Empire State Building. Die Stadt glitzerte wie ein Meer aus Lichtern, wir standen oben, klein im Vergleich zur riesigen Metropole, aber gleichzeitig Teil von etwas Großem, Aufregendem und Lebendigem 🌆✨.\n\nAm letzten Tag machten wir noch einen langen Spaziergang entlang der Pier. Wir genossen die frische Luft, die vorbeifahrenden Boote und die Aussicht auf die Skyline. Einfach perfekt. Schon jetzt träumen wir davon, im Frühling zurückzukommen und New York bei Sonnenschein zu erleben. ☀️🚤\n\nNew York hat uns verzaubert – mit seinen Sehenswürdigkeiten, dem Weihnachtsflair, dem Trubel und den kleinen Momenten, die man nur spürt, wenn man wirklich da ist. Diese fünf Tage werden wir nie vergessen. Wir wissen schon jetzt: Wir kommen wieder! 💛';
+
+  @override
+  String get titleDubai => 'Unser Dubai Abenteuer zwischen Luxus & Wüste ✨🏝️';
+
+  @override
+  String get dubai =>
+      'Unsere Woche in Dubai begann ganz entspannt – schon der Flug war ein echtes Highlight ✈️✨. Wir flogen mit Emirates nach Dubai und fühlten uns vom ersten Moment an bestens aufgehoben. Die bequemen Sitze, der großzügige Platz und der angenehme Service machten den Flug unglaublich entspannt. Man merkt sofort: Mit Emirates zu fliegen ist einfach etwas ganz Besonderes und fühlt sich ganz anders an als bei vielen anderen Fluggesellschaften. Schon in der Luft stieg unsere Vorfreude – und bei der Landung wussten wir: Diese Reise wird unvergesslich. 🌴💫\n\nVom Flughafen ging es direkt zu unserem Hotel, dem Sheraton Jumeirah Beach Resort 🏨🌊. Bereits beim Check-in fühlten wir uns sofort willkommen. Unsere Koffer wurden vom Taxi bis aufs Zimmer getragen, während wir entspannt durch die Lobby liefen. Der Service und die luxuriöse Atmosphäre waren der perfekte Start in diese Reise.\n\nTagsüber verbrachten wir die meiste Zeit am Pool ☀️💦. Im Oktober lagen die Temperaturen bei über 35 Grad, Spaziergänge waren kaum möglich. Dafür war der Pool unser Rückzugsort: Sonnenschirme, bequeme Liegen, kühle Getränke und Snacks direkt von der Poolbar 🍹. Einfach abschalten und genießen.\n\nAbends zog es uns hinaus in die Stadt 🌆✨. Ein absolutes Highlight war der Besuch des Burj Khalifa. Kurz vor Sonnenuntergang fuhren wir hinauf und blickten auf die glitzernde Skyline. Die Palmeninsel, das Burj Al Arab in der Ferne und die unzähligen Lichter unter uns – ein Moment, den wir nie vergessen werden. 🌇💛\n\nDirekt daneben liegt die Dubai Mall 🛍️. Nicht nur die größte Shoppingmall der Welt, sondern ein echtes Erlebnis. Besonders beeindruckend war das Dubai Aquarium, durch dessen gläsernen Tunnel wir liefen – umgeben von Haien und Rochen 🦈💙.\n\nEin weiteres Highlight waren die Dubai Fountains 💦🎶. Wenn es dunkel wird, entfaltet die Show ihre volle Magie. Wasser, Licht und Musik verschmelzen zu einem unvergesslichen Erlebnis.\n\nAuch die Mall of the Emirates durfte nicht fehlen. Mitten in der Wüste eine Skipiste zu entdecken, war einfach surreal ❄️⛷️.\n\nEinen ganzen Tag verbrachten wir im Aquaventure Waterpark im Atlantis The Palm 🌊🏝️. Wasserrutschen, Lazy River, Strand und spektakuläre Rutschen durch Haifischbecken – ein echtes Highlight für uns alle.\n\nUnsere Abende ließen wir oft am Jumeirah Beach ausklingen 🌴🌙. Karussells, kleine Spiele und ein Basketballspiel, bei dem ich, Katharina, einen riesigen Stoffhund gewann 🧸💖 – Momente, die bleiben.\n\nDubai hat uns mit seiner Vielseitigkeit begeistert: tagsüber entspannen, abends staunen. Luxuriös, modern, familienfreundlich und voller Wow-Momente ✨. Diese Reise bleibt unvergesslich – und wir wissen jetzt schon: Wir kommen wieder. 💜✈️';
+
+  @override
+  String get fl1title => 'Tag 1 – Ankunft in Florida und erstes Paradies 🏝️☀️';
+
+  @override
+  String get fl2title => 'Tag 2 – Everglades & Richtung Key West 🐊🌴🚤';
+
+  @override
+  String get fl3title => 'Tag 3 – Delfinabenteuer & Key West 🐬🌴☀️';
+
+  @override
+  String get fl4title =>
+      'Tag 4 & 5 – Miami & Fort Lauderdale: Shopping, Strand und karibisches Flair 🛍️🏖️🌊☀️';
+
+  @override
+  String get fl5title => 'Tag 6 – Raumfahrtträume & Disney‑Magie 🚀🏨✨';
+
+  @override
+  String get fl6title =>
+      'Tag 7 – Freizeitpark-Abenteuer & magische Eindrücke 🎢🏰🎬';
+
+  @override
+  String get fl7title =>
+      'Tag 8–13 – Zurück in Cape Coral: Sonne, Pool & Entspannung 🌴☀️🏊‍♂️';
+
+  @override
+  String get fl8title =>
+      'Tag 14 – Letzter Tag & kulinarischer Abschluss in Miami 🍔🎸✈️';
+
+  @override
+  String get fl1Desc =>
+      'Im Sommer 2017 war es endlich soweit: Unser erster Schritt auf amerikanischen Boden! 😍 Das Kribbeln im Bauch, die Vorfreude und die Müdigkeit – alles zugleich. Gleich nach der Ankunft wurde uns klar: Hier heißt es Geduld haben ⏳. Es war unser allererster Langstreckenflug, und wir waren zu fünft unterwegs – ich, Katharina, meine Mama, mein Onkel, meine Oma und mein Opa 👨‍👩‍👧‍👦.\n\nDie Kontrollen zogen sich unendlich hin: Passkontrolle, Fingerabdrücke, noch eine Kontrolle – immer wieder anstellen. Fünf Stunden später hatten wir es endlich geschafft. Koffer in der Hand, raus aus dem Chaos. Wir waren wirklich in Florida! 🌴☀️ Überall weinten Kinder, Familien wirkten erschöpft, doch für uns begann nun das Abenteuer.\n\nUnser Leihwagen wartete schon, fünf Personen, fünf Koffer – fünfmal Erleichterung 🚗💼. Mitten in der Nacht machten wir uns auf den Weg nach Cape Coral. Miami verschwand hinter uns, die Straßen waren ruhig, und die warme, feuchte Nachtluft Floridas umfing uns 🌙🌴. Palmen standen wie stille Wächter am Straßenrand. Wir konnten kaum glauben, dass wir tatsächlich hier waren.\n\nAm Morgen erreichten wir dann unser Cape Coral Zuhause 🏡💦. Müde, aber überglücklich standen wir vor unserem gemieteten Haus – unser kleines Paradies für die nächsten zwei Wochen. Direkt am Wasser gelegen, mit eigenem Kanal, Steg, großer Terrasse und privatem Pool 🏊‍♂️💦, sogar mit Whirlpool. Die Sonne spiegelte sich im Wasser 🌞✨, und es fühlte sich an, als würde Florida uns persönlich begrüßen.\n\nWir packten das Wichtigste aus, fielen aufs Sofa oder an die Betten und genossen unsere erste Nacht, um anzukommen und durchzuschlafen 😴💛. Und obwohl das Haus ein Traum war, hielt es uns nicht lange fest – bald startete unsere einwöchige Florida-Rundreise, bevor wir wieder zurück in unser Cape Coral Paradies kehrten 🌴🚤💖.';
+
+  @override
+  String get fl2Desc =>
+      'Nach unserer ersten entspannten Nacht in Cape Coral starteten wir morgens voller Vorfreude in den Tag 🌞💛. Mit dem Leihwagen ging es direkt in den Everglades Nationalpark, eine faszinierende Welt aus endlosen Wasserflächen, Mangroven und tropischer Luft, die man sofort auf der Haut spürte 🌿💦. Schon die Fahrt durch Floridas weite Straßen ließ uns spüren: Heute wartet etwas ganz Besonderes auf uns 🛣️✨.\n\nVor Ort stiegen wir auf ein Airboat – das Propellerboot rauschte über das Wasser, der Wind peitschte uns ins Gesicht, und wir konnten die Weite der Natur so richtig genießen 🌊💨. Die berühmten Alligatoren zeigten sich zwar nicht im Wasser, doch das Erlebnis war trotzdem unglaublich. Highlight des Tages: Wir durften einen Babyalligator auf die Hand nehmen 🐊💛 – so winzig, so ruhig und trotzdem ein echter Star Floridas. Ein Moment, den wir garantiert nicht vergessen werden.\n\nAuf dem Rückweg zum Auto hielten wir kurz an einer Tankstelle ⛽ – und dann passierte etwas Unglaubliches: Direkt neben der Tanksäule lag ein Alligator, völlig entspannt, als würde er einfach dazugehören 😳🐊. Meine Mama und ich fanden das nach ein paar Sekunden ein bisschen unheimlich, dass da so ein Alligator neben uns lag 😅, deswegen ging es ab ins Auto, Türen zu, Fenster hoch – alles abgesichert 🚗🔒. Mein Onkel war mutiger: Er ging noch näher an den Alligator heran und machte ein Selfie mit ihm 🤳🐊. Plötzlich gähnte der Alligator – der Mund ging auf, und wir wussten nicht, ob es nur ein Gähnen war oder Hunger 🤔. Nach ein paar Momenten entschied sich auch mein Onkel, wieder ins Auto zu steigen, und wir setzten unsere Fahrt fort.\n\nWeiter ging es Richtung Key West 🏝️. Die Straßen führten vorbei an Palmen, Seen, kleinen Brücken und flachen Sümpfen 🌴🌊🌞. Langsam spürten wir dieses Karibik-Feeling, das einen hier überall begleitet. Bis zum Abend erreichten wir unseren Übernachtungsort, gespannt auf die Abenteuer, die die kommenden Tage noch bringen würden ✨💛.';
+
+  @override
+  String get fl3Desc =>
+      'Nach unserer Übernachtung unterwegs starteten wir morgens voller Vorfreude Richtung Key West 🌞🚗. Auf dem Weg legten wir einen ganz besonderen Stopp ein: ein Delfinabenteuer in Bayside 🐬✨. Hier durften wir den Delfinen ganz nahe kommen – sie beobachten, mit ihnen schwimmen und ihre unglaubliche Intelligenz und Anmut erleben. Dieses Erlebnis war einfach magisch 💛🌊. Die Delfine fühlten sich so lebendig und freundlich an, dass wir am liebsten die Zeit angehalten hätten ⏳💫.\n\nGestärkt von diesem Highlight setzten wir unsere Fahrt nach Key West fort 🏝️. Die bunten Häuser, die von Palmen gesäumten Straßen 🌴, und die entspannte Inselatmosphäre – alles wirkte wie aus einem Traum 🌈✨. Wir schlenderten durch die Straßen, stöberten in kleinen Läden 🛍️, genossen das karibische Flair 🍹🌞 und gönnten uns ein leckeres Essen in einem gemütlichen Restaurant 🍽️💛.\n\nAm Abend machten wir uns dann auf den Rückweg nach Miami 🏙️🌊, vorbei an türkisblauen Wasserstraßen und den kleinen Inseln Floridas 🛥️💦. Nach einem langen Tag voller Abenteuer, Sonne, Meer und tierischer Begegnungen waren wir froh, wieder ein bequemes Bett und ein schönes Hotelzimmer zu haben 🛏️✨.\n\nSo endete Tag 3 unseres Florida-Abenteuers – voller Natur, unvergesslicher Tierbegegnungen und karibischer Stimmung 🌴💛🐬.';
+
+  @override
+  String get fl4Desc =>
+      'Nach unserer Übernachtung im Hilton Garden in Miami starteten wir morgens voller Energie in unseren Tag ☀️🚗. Unser Ziel: die riesige Dolphin Mall, eines der größten Einkaufszentren in Miami 🛒✨. Schon beim Betreten spürten wir die lebendige, bunte Atmosphäre 🌈 – unzählige Shops, Cafés und kleine Highlights zum Entdecken und Verweilen.\n\nWir schlenderten durch die Gänge, probierten Kleidung an 👗👕, stöberten in den Regalen und gönnten uns zwischendurch kleine Snacks 🍩☕. Jeder fand etwas nach seinem Geschmack, und die Vielfalt machte den Tag zu einem echten Erlebnis 🎉🛍️. Es war ein entspannter Kontrast zu den vergangenen Tagen voller Abenteuer, Tierbegegnungen und Roadtrip-Action 🌴🚗.\n\nAm Nachmittag fuhren wir noch an den Miami Beach, spürten den warmen Sand unter den Füßen 🏖️🌊 und ließen die entspannte Strandatmosphäre auf uns wirken 🌞🌴. Danach ging es weiter nach Fort Lauderdale, wo wir im Pier 66 Hotel & Marina eincheckten 🛏️⚓. Das Hotel liegt direkt am Wasser mit Blick auf den Yachthafen 🚤💛 und wir fühlten uns sofort wohl.\n\nAm nächsten Tag erkundeten wir Fort Lauderdale näher 🌴🏙️. Die Stadt mit ihren weitläufigen Kanälen, oft auch Venedig Amerikas genannt, verzauberte uns mit maritimem Charme, gemütlichen Cafés ☕, kleinen Boutiquen 🛍️ und entspannter Atmosphäre 🌞💛. Wir schlenderten entlang des Wassers, beobachteten die Yachten 🚤✨, genossen die Sonne ☀️ und tauchten ein in das ruhige, elegante Flair dieser Stadt 🌴💦.\n\nDiese beiden Tage gaben uns die perfekte Mischung aus Entspannung, Sightseeing und karibischem Florida-Feeling 🏖️🌊💛 – ein unvergesslicher Abschnitt unserer Reise.';
+
+  @override
+  String get fl5Desc =>
+      'Nach unserer Übernachtung im Pier 66 Hotel & Marina in Fort Lauderdale starteten wir morgens voller Freude in den Tag 🌞. Nach einem kurzen Frühstück machten wir uns auf den Weg zum Kennedy Space Center – schon die Fahrt dorthin ließ die Spannung steigen 🚗🌴. Ein Tag voller Technik, Geschichte und Raumfahrt wartete auf uns.\n\nIm Space Center tauchten wir ein in die Welt der Astronauten, Raketenstarts und Missionen ins All 🚀🌌. Von historischen Ausstellungsstücken bis zu modernen Simulatoren – das Gefühl, den Raketen und der Raumfahrttechnik so nah zu sein, war überwältigend 🌟. Jeder Schritt durch die Ausstellung weckte Neugier und Staunen, und die Faszination des Weltraums war förmlich greifbar ✨👨‍🚀.\n\nNach diesem inspirierenden Besuch fuhren wir weiter zum Walt Disney World Dolphin Hotel, wo wir für die Nacht einscheckten 🏨💤. Das Hotel liegt zentral im Resort‑Bereich und verbindet Komfort, Stil und Urlaubsstimmung perfekt. Die Zimmer waren geräumig und modern eingerichtet, und der Blick auf die gepflegte Anlage des Resorts sorgte sofort für Wohlgefühl 🛌🌺.\n\nAm Abend ließen wir den Tag entspannt ausklingen und machten einen Spaziergang durch den Resortbereich 🌙🌊. Bunte Restaurants, gemütliche Cafés, kleine Shops und Straßenkünstler reihten sich aneinander 🎶🍦 — überall herrschte eine fröhliche, magische Atmosphäre 🌟.\n\nEin cooles Extra: Vom Hotel kann man mit dem Boot (Wasser‑Shuttle) bequem zu den Parks Epcot und Disney’s Hollywood Studios fahren — super praktisch und entspannt 🚤🛳️.  ￼\n\nWir genossen die Ruhe nach dem aufregenden Tag und ließen die Eindrücke vom Space Center wirken — voller Vorfreude auf die kommenden Walt‑Disney‑Abenteuer 🎢✨.';
+
+  @override
+  String get fl6Desc =>
+      'Unser siebter Tag in Florida stand ganz im Zeichen der Freizeitparks 🌞🎡. Morgens fuhren wir voller Vorfreude zum Walt Disney World Resort in Orlando, wo wir den ganzen Tag zwischen magischen Attraktionsshows und bunten Paraden verbrachten ✨🎠🎆. Jede Ecke des Parks steckte voller liebevoller Details, und es war ein echtes Erlebnis, in diese zauberhafte Welt einzutauchen 🌈🏰.\n\nDanach ging es direkt weiter zu den Universal Studios Florida 🎬🎢. Im Universal Orlando Resort erkundeten wir filmische Kulissen, rasante Fahrgeschäfte und beeindruckende Special Effects 💥🌟. Die Kombination aus Disney-Magie und Hollywood-Abenteuer machte diesen Tag unvergesslich ❤️🎭.\n\nAm Nachmittag setzte dann wie fast jeden Tag während unserer Reise ein kurzer Regenschauer ein 🌧️☔ — typisch für diese Jahreszeit in Florida. Aber das konnte unsere Laune nicht trüben!\n\nAls die Parks schlossen, ließen wir den Abend entspannt am Disney World Walk ausklingen 🌙🚶‍♀️. Die Promenade war stimmungsvoll beleuchtet, Restaurants und Shops luden zum Bummeln ein, und Musik erfüllte die Luft 🎶🍦. Wir schlenderten entlang des Wassers, genossen die bunten Lichter und ließen die Eindrücke des Tages noch einmal Revue passieren ✨🌊.\n\nErschöpft, aber glücklich, kehrten wir ins Hotel zurück 🏨💤. Am nächsten Morgen hieß es auschecken und weiterziehen — bereit für die nächsten Etappen unserer Florida-Reise 🚗🌴.';
+
+  @override
+  String get fl7Desc =>
+      'Nach unserem actiongeladenen Tag in Orlando ging es am 8. Tag endlich zurück nach Cape Coral 🚗🌅. Mein Onkel hatte sich noch einen Mustang gemietet, und wir beide sind ein bisschen durch die Gegend gefahren 🏎️💨. Dabei passierte, was passieren musste: Wir haben uns ein wenig verfahren 😅📍.\n\nWir waren unterwegs mehrere Stunden, mein Onkel am Steuer, ich als Mitfahrer, und währenddessen haben alle zu Hause, Oma, Mama und Co., ständig angerufen 📱😅. Unterwegs hielten wir kurz bei McDonald’s an 🍔🥤, um uns einen Burger zu gönnen und Energie zu tanken. Das Navi auf dem Handy plus die ständigen Anrufe machten die Sache etwas chaotisch, und irgendwann waren unsere Handys leer 🔋❌. Wir mussten eine Tankstelle ansteuern, Ladekabel besorgen und zusätzlich einen Zigarettenanzünder kaufen – alles kleine Abenteuer am Rande der Fahrt 😄. Am späten Nachmittag oder Abend waren wir schließlich wieder zurück in unserem Cape Coral Zuhause 🏡🌊.\n\nSchon bei der Ankunft breitete sich sofort ein Gefühl von Ruhe und Erholung aus 🌴☀️. Wir wussten, hier können wir die Seele baumeln lassen 🧘‍♀️💛. Die kommenden Tage standen ganz im Zeichen von Sonne, Pool und Wasser 🏊‍♂️🌞. Morgens holten wir frische Brötchen beim Deutschen Bäcker 🥐☕, frühstückten gemütlich auf der Terrasse und genossen die friedliche Atmosphäre am Wasser 🌊🌺.\n\nJeder Tag wurde ganz nach Lust und Laune gestaltet: mal Pool, mal Spaziergang entlang der Kanäle, mal ein kleiner Ausflug in die Umgebung 🚶‍♀️🛶. Wir entdeckten charmante Cafés, kleine Shops 🛍️ und ließen uns einfach treiben. Auch ein Besuch im Wollmarkt durfte nicht fehlen – ein absolutes Highlight für mich 🧶❤️.\n\nTagsüber verbrachten wir viel Zeit im Pool, planschten, schwammen, tankten Sonne ☀️🏊‍♀️ und genossen die pure Entspannung. Abends gingen wir oft auswärts essen, probierten lokale Spezialitäten 🍤🥗 und ließen die Tage gemütlich ausklingen 🌅🍹.\n\nDiese Woche war genau das, was wir nach den Abenteuern zuvor gebraucht hatten: Zeit miteinander, Ruhe, Sonne und das Gefühl, wirklich angekommen zu sein 💛🌴. Eine perfekte Mischung aus Entspannung, kleinen Ausflügen und gemeinsamen Momenten im Urlaub, ein würdiger, entspannter Abschluss unserer Florida-Reise 🌞🏡✨.';
+
+  @override
+  String get fl8Desc =>
+      'Der letzte Tag unserer Florida-Reise begann noch einmal mit einem echten Highlight 🌞✨. Bevor wir zum Flughafen aufbrachen, machten wir einen Stopp in Miami und kehrten ins Hard Rock Café zum Mittagessen ein 🍔🎸.\n\nUnd was sollen wir sagen? Es war der bisher beste Hard Rock Café, den wir je erlebt haben 😍. Wir haben schon in vielen Städten Hard Rock Cafés besucht, aber in Miami passte einfach alles perfekt: Atmosphäre, Musik, Essen – ein rundum gelungener Abschluss unserer Reise 🎶🍽️.\n\nNach diesem kulinarischen Höhepunkt ging es dann endgültig zum Flughafen ✈️. Wir gaben unseren Leihwagen zurück, checkten unsere Koffer ein und bereiteten uns auf den Heimflug vor 🧳💺. Mit vielen unvergesslichen Erinnerungen, schönen Fotos und besonderen Erlebnissen, die wir noch lange im Herzen tragen werden ❤️📸, hieß es Abschied nehmen.\n\nHopp – unser Flugzeug hob ab, und unsere traumhafte Florida-Reise fand ihr Ende 🌴🌅✈️.';
+
+  @override
+  String get california => 'Kalifornien';
+
+  @override
+  String get ca1title =>
+      'Tag 1–3 – Ankunft in Las Vegas & Start des Kalifornien-Abenteuers ✈️🎰🌵';
+
+  @override
+  String get ca2title =>
+      'Tag 4 – Roadtrip zum Grand Canyon & Helikopter-Abenteuer 🚗🌵🛩️';
+
+  @override
+  String get ca3title => 'Tag 5 – Santa Cruz & Küstenflair 🌊☀️🏄‍♂️';
+
+  @override
+  String get ca4title => 'Tag 6 & 7 – San Francisco erleben 🌊🏙️';
+
+  @override
+  String get ca5title => 'Tag 8 – San Diego entdecken 🌴☀️🏖️';
+
+  @override
+  String get ca6title =>
+      'Tag 9–11 – Abenteuer in Freizeitparks & Los Angeles 🎢🌟';
+
+  @override
+  String get ca7title =>
+      'Tag 12–14 – Roadtrip, Wüste & Hochzeit in Las Vegas 🚗🌵💍✨';
+
+  @override
+  String get ca1Desc =>
+      'Unser Kalifornienabenteuer begann chaotisch – und das, bevor wir überhaupt richtig in Las Vegas angekommen waren 😅. Wir flogen zu fünft, weil ein befreundetes Paar heiraten wollte 💍✨. Alles war perfekt geplant: drei Tage in Las Vegas, mitten in der glitzernden Wüste, mit der Hochzeit als Höhepunkt 🎉.\n\nDoch kaum saßen wir im Flugzeug, kam die erste Überraschung: Verspätung und unsere Koffer wurden unauffällig ausgeladen 😳. Niemand erklärte uns den Grund. Erst später, am Gepäckband in Las Vegas, erfuhren wir, dass die Startbahn in Köln verkürzt war – zu kurz für unser gesamtes Gepäck ✈️🚧. Die Koffer würden erst in drei Tagen nachgeliefert.\n\nUnser Hotel für die ersten Tage war das legendäre Circus Circus 🎪🏨: bunt, schrill und voller Leben. Schon beim Betreten der riesigen Lobby fühlten wir uns wie in einer anderen Welt 🌈🎠 – Karussells, kleine Shows, Clowns, Lichter überall. Chaotisch, aufregend und typisch Las Vegas 😍.\n\nAlso hieß es improvisieren: Duschgel, Zahnpasta, Kleidung – alles wurde kurzfristig besorgt 🛍️. Für Kleidung ging es direkt zu den South Premium Outlets, wo wir shoppen, lachen und uns ein Stück weit wieder wie wir selbst fühlen konnten 🛒💖.\n\nTrotz Chaos ließen wir uns treiben und tauchten ein in die glitzernde Welt von Las Vegas 🌟. Im Caesars Palace staunten wir über das Venedig-inspirierte Atrium, die Gondelfahrten und unzählige Shops 🛶🏛️. Im New York New York Hotel verfolgten wir begeistert die Achterbahn, die sich durch das Gebäude schlängelte 🎢. Die berühmten Wasserspiele am Bellagio durften natürlich nicht fehlen 💦✨ – ein magischer Moment, der perfekt für Fotos war 📸. Natürlich gab es auch den Klassiker: ein Foto am Las Vegas Sign 😎.\n\nZwischen all den Lichtern, Geräuschen und Eindrücken fühlten wir uns wie in einem Traum 🌆💫. Wir schlenderten durch die Hotels, probierten kleine Snacks 🍿, und gönnten uns im New York New York Hotel eine legendäre Brezel-Pizza 🥨🍕 – unser kulinarisches Highlight.\n\nMit unserem Leihwagen, den wir direkt am Flughafen abgeholt hatten 🚗💨, fühlten wir uns langsam wie echte Entdecker. Auch wenn die Hochzeit verschoben werden musste, wurden diese drei Tage zu einem besonderen Kapitel voller Energie, Chaos und Spaß 💃🕺.\n\nAls am Montagmittag endlich unsere Koffer ankamen, fiel die Anspannung ab 🧳🙌. Alles fühlte sich wieder komplett an – und genau in diesem Moment begann unser richtiger Kalifornien-Roadtrip 🌞🛣️. Ein neues Abenteuer voller Sonne, Freiheit und unvergesslicher Momente 🏖️🌴.';
+
+  @override
+  String get ca2Desc =>
+      'Am Montagmittag war es endlich soweit: Nach den chaotischen ersten Tagen fühlte sich alles auf einmal wieder komplett an ✨. Mit all unseren Sachen verstaut stiegen wir in den Leihwagen 🚗 und machten uns auf den Weg Richtung Grand Canyon, einem der absoluten Highlights unserer Reise 🌄.\n\nSchon die ersten Kilometer durch die Wüste Nevadas beeindruckten uns: endlose Straßen, flimmernde Hitze, weite Horizonte ☀️🌵. Die Sonne brannte vom Himmel, und jedes Stück Straße schien ein neues Stück Freiheit zu bedeuten 🛣️💨. Einfach loszufahren, ohne Stress, ohne Ziel außer dem Abenteuer selbst – unbeschreiblich.\n\nAls wir den Grand Canyon erreichten, verschlug es uns den Atem 😮. Die gewaltigen rot-orangefarbenen Felsen, die schroffen Klippen und die unglaubliche Tiefe – kaum zu glauben, dass das alles echt ist 🏞️.\n\nDann kam das absolute Highlight: Unser Helikopterflug über die Schlucht 🛩️🌄. Von oben wirkte der Canyon noch majestätischer. Die Farben, die stille Dimension, der Wind, das Dröhnen des Rotors – das Gefühl, über eine der spektakulärsten Landschaften der Welt zu gleiten, war einfach magisch ✨💖.\n\nNach der Landung verbrachten wir noch einige Stunden am Canyonrand, spazierten entlang der Aussichtspunkte, machten Fotos 📸 und genossen jeden Moment dieses unvergesslichen Tages.\n\nAm Abend setzten wir unsere Fahrt fort Richtung Bakersfield, wo wir übernachteten 🌇. Die Stadt begrüßte uns mit ihrem ruhigen kalifornischen Charme, gemütlichen Restaurants 🍴 und entspannter Atmosphäre. Der perfekte Kontrast zur überwältigenden Natur des Tages 🌄.\n\nMit einem letzten Blick auf den Sonnenuntergang wussten wir: Das Abenteuer Kalifornien hatte gerade erst richtig begonnen 🌅💫.';
+
+  @override
+  String get ca3Desc =>
+      'Am nächsten Morgen starteten wir früh in Bakersfield, gut ausgeruht und voller Vorfreude auf den nächsten Abschnitt unseres Abenteuers 🚗✨. Die Fahrt führte uns vorbei an endlosen Highways, goldgelben Feldern 🌾 und kleinen Wäldern 🌳 – diese typisch kalifornische Weite schenkt einem immer wieder das Gefühl, frei zu sein 🛣️💨.\n\nAls wir in Santa Cruz ankamen, änderte sich die Stimmung sofort. Statt trockener Wüstenhitze lag jetzt salzige Meerluft in der Luft 🌊. Das Rauschen der Wellen, Möwenrufe 🐦 und über uns Surfer, die elegant über das Wasser glitten 🏄‍♀️, ließen uns sofort in den entspannten Küstenrhythmus eintauchen.\n\nWir spazierten den Santa Cruz Beach Boardwalk entlang, bestaunten die bunten Fahrgeschäfte 🎡, schlenderten durch kleine Shops 🛍️ und spürten den warmen Sand unter den Füßen 👣. Überall lag dieses typische California-Flair in der Luft: sonnig ☀️, locker 😎, lebendig ✨. Die Stadt vereint alles, was man an der Westküste liebt: Surfervibes, charmante Cafés ☕ und kreative Boutiquen, in denen man einfach hängenbleiben möchte 🏖️.\n\nAm Abend, als die Sonne langsam in den Pazifik versank 🌅, ließen wir den Tag ruhig ausklingen. Der Himmel färbte sich golden-orange, das Meer glitzerte im letzten Licht ✨, und wir fühlten uns angekommen, frei, glücklich und voller neue Eindrücke 💛.\n\nSanta Cruz war der perfekte Zwischenstopp, ein Ort, der einem zeigt, wie wunderschön das einfache Leben am Meer sein kann 🏄‍♂️🌴. Am nächsten Tag sollte es weitergehen Richtung San Francisco, zum legendären Golden Gate Bridge, nach Alcatraz und in die nebelige, magische Küstenwelt Nordkaliforniens 🌁🌲.';
+
+  @override
+  String get ca4Desc =>
+      'Nach einer entspannten Nacht in Santa Cruz starteten wir früh in Richtung San Francisco 🌅. Die Fahrt entlang der kalifornischen Küste war einfach traumhaft: sanfte Hügel, grüne Wiesen 🌿, das Funkeln des Pazifiks 🌊, endlose Straßen und das Gefühl, die Welt könnte ewig so weitergehen 🛣️✨.\n\nAls wir in San Francisco ankamen, empfing uns die kühle, frische Luft 🍃. Nach den brütenden 45 Grad in Las Vegas fühlten sich die 14 Grad hier fast wie eine kleine Schocktherapie an ❄️🥶 – und natürlich hatten wir keine Jacken dabei 😅. Unser erster Halt war die Golden Gate Bridge 🌉. An diesem Tag war die berühmte Brücke teilweise im Nebel versteckt, nur ihre kräftigen roten Türme ragten durch die weiße Wolkendecke. Die Kombination aus Nebel, Wasser und majestätischer Architektur wirkte fast magisch ✨. Wir standen da fröstelnd, aber überwältigt und saugten jeden Moment in uns auf 💛.\n\nNatürlich durfte auch Alcatraz nicht fehlen ⚓. Die Bootsfahrt hinaus zur Insel bot atemberaubende Blicke zurück auf die Stadt 🌁. Auf der Insel selbst herrschte ein fast gespenstischer Charme 👻. Alte Zellen, die Geschichte berühmter Ausbruchsversuche und die kühlen Steinwände machten den Besuch zu einem intensiven, unvergesslichen Erlebnis 🏛️.\n\nAm Pier 39 tobte wieder das bunte Leben der Stadt 🌈. Die berühmten Seelöwen lagen entspannt auf den Stegen, brummten und schubsten sich, als wären sie die heimischen Herrscher dieses kleinen Kosmos 🦭. Möwen kreisten, Musiker spielten 🎶, kleine Läden öffneten ihre Türen und wir tauchten ein in die lebendige, gleichzeitig charmante Atmosphäre San Franciscos 🏖️☕.\n\nDiese beiden Tage in San Francisco mit der kühlen Luft nach der Wüstenhitze, den beeindruckenden Sehenswürdigkeiten und dem Gefühl, nun wirklich mitten in California Worldhood zu sein, werden wir für immer in Erinnerung behalten 💛. San Francisco empfing uns mit offenen Armen, Nebel und Meer 🌫️🌊, und wir fühlten uns, als wären wir direkt ins Herz dieser Stadt gezogen worden ❤️.';
+
+  @override
+  String get ca5Desc =>
+      'Nach den beeindruckenden Tagen entlang der kalifornischen Küste erreichten wir endlich San Diego und freuten uns auf eine kleine Pause vom ständigen Unterwegssein 🚗💨. Unser Zuhause für die Nacht war das Town & Country Resort, ein echter Ruhepol mitten in der Stadt 🏨. Schon beim Eintreten spürte man sofort die warme, freundliche Atmosphäre 🌺. Retro-Design trifft auf moderne Annehmlichkeiten – die Zimmer waren komfortabel und einladend, mit weichen Betten 🛏️ und hochwertiger Bettwäsche, perfekt, um die Füße hochzulegen und die Eindrücke der letzten Tage sacken zu lassen.\n\nSan Diego selbst hat einen ganz eigenen Charme 🌞. Die Stadt besticht durch ihre entspannte, sonnige Atmosphäre, die sofort auf einen übergeht 😎. Wir spazierten durch die Altstadt, wo bunte Häuser 🏘️, Kopfsteinpflaster und kleine Cafés ☕ ein Gefühl von Geschichte und Lebensfreude vermitteln. Das Gaslamp Quarter präsentierte sich als quirliges Herz der Stadt mit Restaurants, Bars und kleinen Läden 🍴🍹, die zum Verweilen einluden. Besonders beeindruckend war die Nähe zum Pazifik 🌊 – wunderschöne Strände, Surfer auf den Wellen 🏄 und die Sonne, die das Wasser in funkelnde Farben eintauchte ✨. Man spürte die frische Meeresluft, hörte das Rauschen der Wellen 🌬️ und genoss diese gelassene, fast mediterrane Stimmung.\n\nDie Kombination aus Stadtleben, Kulturen und Küstenflair machte San Diego zu einem perfekten Zwischenstopp auf unserem Roadtrip 🌴🚗. Am Abend kehrten wir zurück ins Town & Country Resort, schlenderten noch ein wenig durch die gepflegten Gartenanlagen 🌿🌺 und setzten uns an den Pool 🏊. Die Ruhe und der Komfort des Resorts kombiniert mit der lebendigen, sonnigen Stadt draußen machten diesen Aufenthalt besonders angenehm. Es war eine Nacht der Erholung 🌙, ein kleiner Kontrapunkt zum Abenteuer auf der Straße, und wir fühlten uns bereit für die nächsten Etappen unseres California Roadtrips 🛣️✨.';
+
+  @override
+  String get ca6Desc =>
+      'Nach unserem entspannten Zwischenstopp in San Diego starteten wir voller Vorfreude in die kommenden Tage voller Action, Magie und Hollywood-Feeling 🚗💨. Unser erstes Ziel: Disneyland in Anaheim 🏰✨. Schon beim Betreten des Parks waren wir überwältigt von der Detailverliebtheit, den bunten Attraktionen und den magischen Shows 🎆. Es fühlte sich an, als würden wir direkt in ein Märchen eintauchen. Besonders beeindruckend war nicht nur das klassische Disney-Schloss, sondern auch das Hogwarts-Schloss, das uns sofort in die Welt von Harry Potter entführte 🧙‍♂️🪄.\n\nEin besonderes Highlight für mich war der Besuch in der Winkelgasse, wo Harry Potter seine magischen Utensilien kauft 🌟. Dort habe ich mir sogar meinen eigenen Zauberstab gesichert: den von Harry Potter selbst 🪄✨. Dieses kleine Stück Magie wird mich noch lange an diesen unglaublichen Tag erinnern.\n\nZwischendurch ging es direkt weiter zu den Universal Studios 🎬🎢. Hier durften wir die filmischen Kulissen erleben, spektakuläre Special Effects bestaunen und mit viel Adrenalin die rasanten Fahrgeschäfte genießen. Es war unglaublich, wie die Filme plötzlich lebendig wurden und man mittendrin war – ein echtes Hollywood-Erlebnis!\n\nNach diesen fantastischen Park-Tagen zog es uns weiter nach Los Angeles 🌴🌞. Die Stadt pulsierte vor Leben, Kultur und berühmten Sehenswürdigkeiten. Unser erster Stopp: Hollywood mit dem legendären Walk of Fame ⭐🌟. Wir spazierten zwischen den Sternen der Stars, bewunderten berühmte Handabdrücke und spürten das ganz besondere Hollywood-Feeling hautnah. Danach ging es durch die glamourösen Straßen von Beverly Hills, wo wir eine Pause in einem echten, hochklassigen italienischen Restaurant 🍝🍷 einlegten. Ein kulinarisches Erlebnis, das wir so schnell nicht vergessen werden – lecker, elegant und ein bisschen extravagant 😋✨.\n\nNatürlich durfte ein entspannter Spaziergang durch Los Angeles selbst nicht fehlen 🏙️. Wir bewunderten die Stadt, die Mischung aus Kultur, Strandflair und urbaner Energie, und spürten, wie aufregend und abwechslungsreich Kalifornien sein kann. Jede Ecke erzählte eine eigene Geschichte: von palmenbestandenen Straßen über moderne Architektur bis hin zu den sonnigen Stränden, die immer wieder zum Verweilen einluden 🌊🌴☀️.\n\nDiese Tage waren ein perfekter Mix aus Magie, Abenteuer, Kulinarik und Hollywood-Glamour. Disneyland, Hogwarts, Zauberstabkauf in der Winkelgasse, Universal Studios, Hollywood, Beverly Hills – jeder Moment steckte voller Erinnerungen, die uns noch lange begleiten werden 🎢🏰🎬✨.';
+
+  @override
+  String get ca7Desc =>
+      'Am zwölften Tag starteten wir morgens in Hollywood, noch im leichten Morgennebel, während die Palmen hoch in den Himmel ragten 🌴☀️. Wir fühlten, dass wir die Stadt noch längst nicht genug erlebt hatten, doch unser Roadtrip rief und die Straßen versprachen neue Abenteuer 🚗💨.\n\nAUnser erster Halt führte uns nach Palm Springs, eine Oase mitten in der kalifornischen Wüste 🏜️. Die von der Sonne beschienenen Palmen, die kargen Hügel und die weite Landschaft schenkten uns ein Gefühl von Freiheit und Aufbruch – als würde die Wüste uns persönlich willkommen heißen.\n\nAVon Palm Springs aus ging es weiter Richtung Oatman, Arizona, ein echtes Highlight unserer Route. Auf dem Weg fuhren wir ein Stück der legendären Route 66 🛣️, vorbei an historischen Häusern, alten Diner, Tankstellen und atemberaubender Landschaft. Die Straße erzählte Geschichten vergangener Zeiten und versetzte uns sofort in ein Abenteuergefühl.\n\nAIn Oatman angekommen, tauchten wir ein in die Westernstadt mitten in der Mojave-Wüste 🤠. Wilde Esel liefen neugierig und frech durch die Straßen, die alten Holzhäuser, Souvenirläden im Westernstil und Straßenmusik machten den Stopp unvergesslich. Wir fütterten die Esel, machten Fotos an jeder Ecke und genossen das einmalige Flair dieses Ortes.\n\nANach diesem besonderen Ausflug fuhren wir weiter nach Las Vegas 🌆🎰. Über die I-15 schlängelten wir uns durch die Wüste, während die Sonne langsam hinter den Bergen verschwand und die Stadtlichter in der Ferne aufblitzten ✨. Im Excalibur Hotel checkten wir für die letzten beiden Nächte ein und ließen uns noch einmal von der verrückten, glitzernden Welt von Vegas verzaubern.\n\nAEin absolutes Highlight war die Hochzeit in der Graceland Wedding Chapel 💒🎸. Das Brautpaar wurde in der liebevoll dekorierten Kapelle getraut, begleitet von einem Elvis-Imitator – ein unvergesslicher Moment voller Emotionen. Danach wurden wir alle mit einer Limousine abgeholt, genossen den Abend und tauchten noch einmal in das bunte Lichtermeer von Las Vegas ein 🌃✨.\n\nAAm letzten Tag hieß es dann endgültig Abschied nehmen. Wir packten unsere Koffer, setzten uns ins Flugzeug und blickten ein letztes Mal auf die glitzernden Lichter von Las Vegas, die endlosen Straßen Kaliforniens und die majestätischen Landschaften, die uns zwei Wochen lang begleitet hatten 🌄✈️.\n\nAIm Herzen trugen wir all diese Erinnerungen: die Hitze der Wüste, die kühle Brise San Franciscos, die fröhlichen Seelöwen am Pier, die wilden Esel in Oatman, die Magie von Disneyland, die berühmten Strände von Venice Beach und Santa Monica und natürlich das Lächeln, die Freude und die Emotionen der Hochzeit 💖. Ein Worldtrip voller Kontraste, Geschichten und unvergesslicher Erlebnisse, Erinnerungen, die uns noch lange begleiten werden. Mit Herzen voller Dankbarkeit und Koffern voller Erlebnisse flogen wir zurück nach Köln, bereit, die Abenteuer noch einmal Revue passieren zu lassen und schon wieder vom nächsten Abenteuer zu träumen 🌍✨.';
+
+  @override
+  String get cruiseSpainDay1 =>
+      '🏝️ Tag 1 – Endlich unterwegs: Mallorca, Meer & das vertraute Gefühl an Bord';
+
+  @override
+  String get cruiseSpainDay2 =>
+      '🌊 Tag 2 – Seetag: Ankommen, Ausschlafen & einfach treiben lassen';
+
+  @override
+  String get cruiseSpainDay3 =>
+      '☀️ Tag 3 – Málaga: Auf eigene Faust durch die Stadt';
+
+  @override
+  String get cruiseSpainDay4 =>
+      '⚓ Tag 4 – Cádiz: Andalusisches Lebensgefühl & historische Altstadt';
+
+  @override
+  String get cruiseSpainDay5_6 =>
+      '🏰 Civitavecchia erkunden – kurzer Spaziergang am Hafen';
+
+  @override
+  String get cruiseSpainDay7 =>
+      '🌊 Tag 7 – Seetag: Einfach mal die Seele baumeln lassen';
+
+  @override
+  String get cruiseSpainDay8 =>
+      '🏖️ Tag 8 – Cartagena: Ein sonniger Spaziergang am Hafen';
+
+  @override
+  String get cruiseSpainDay9 =>
+      '🌅 Tag 9 – Valencia: Spaziergang durch die Altstadt und am Hafen';
+
+  @override
+  String get cruiseSpainDay10 =>
+      '🏙️ Tag 10 – Barcelona: Traumhafte Eindrücke in der katalanischen Metropole';
+
+  @override
+  String get cruiseSpainDay11 =>
+      '✈️ Tag 11 – Palma de Mallorca: Heimkehr & letzte Urlaubstage';
+
+  @override
+  String get cruiseSpainDayStart =>
+      'Endlich stand die nächste Kreuzfahrt an. Nach Wochen voller Vorfreude saßen wir im Auto und machten uns auf den Weg – zunächst Richtung Barcelona, um von dort mit der Fähre nach Mallorca überzusetzen 🚗✨. Schon während der Fahrt war die Stimmung besonders: dieses Kribbeln, wenn man weiß, dass etwas Großes bevorsteht. Die rund 12-stündige Autofahrt nutzten wir zum Reden, Lachen und Träumen von den kommenden Tagen.\n\nAm Abend erreichten wir Barcelona und gingen an Bord der GNV-Fähre. Die Überfahrt nach Palma dauerte etwa acht Stunden über Nacht – leider kein Highlight 😅. Die Fähre brummte, rüttelte und war insgesamt alles andere als angenehm. Wirklich wohlgefühlt haben wir uns dort nicht. Aber manchmal gehören solche Etappen einfach dazu.\n\nWas dann kam, machte jedoch alles wieder wett: die Ankunft in Palma bei Sonnenaufgang 🌞🌊. Als wir mit unserem Auto von der Fähre fuhren und das Licht langsam über dem weiten Meer aufging, war der Moment einfach nur wunderschön. Genau dafür liebt man das Reisen.\n\nDa wir unser Hotel ganz spontan gebucht hatten, fuhren wir zunächst durch El Arenal, hielten an mehreren Hotels – entweder ausgebucht oder preislich jenseits von gut und böse. Schließlich standen wir vor dem Hotel Playa Golf an der Playa de Palma – und hatten sofort ein gutes Gefühl. Und das bestätigte sich: Unser Zimmer war ein absoluter Traum 😍. Frontaler Meerblick, Blick auf den Pool und hinaus auf das offene, weite Meer. Ruhig, hell und einfach wunderschön. Das Hotel lag perfekt: fünf Minuten zu Fuß zum Megapark, zwei Minuten zum Bierkönig – genau dazwischen. Trotz der Lage war es überraschend ruhig, was den Aufenthalt noch angenehmer machte.\n\nDie folgenden Tage auf Mallorca verbrachten wir ganz entspannt – und dennoch voller Erlebnisse. Da wir unser eigenes Auto dabei hatten, machten wir im Prinzip eine kleine Inselumrundung 🚘🏝️: An einem Tag fuhren wir in die eine Richtung, am nächsten in die andere. Wir entdeckten atemberaubende Klippen, traumhafte Aussichtspunkte und genossen immer wieder den Blick aufs Meer.\n\nAn einem dieser Tage hielten wir an einem Beachclub an einer Klippe. Wir stellten das Auto ab, gingen nur ein paar Meter Richtung Meer und genossen für vielleicht fünf Minuten die Aussicht 🌊📸. In dieser kurzen Zeit – wirklich nur ein paar Minuten – war das Ordnungsamt schneller als gedacht. Als wir uns wieder zum Auto drehten, steckte bereits eine Knolle am Scheibenwischer 😅. Ein bisschen ärgerlich, aber im Nachhinein auch irgendwie typisch Urlaub: gelernt fürs nächste Mal – auf Mallorca wird nicht lange gezögert.\n\nNatürlich durfte Cala Ratjada nicht fehlen. Wir lieben diesen Ort – er begleitet uns schon seit unserer Kindheit, denn wir haben hier früher fast jedes Jahr Urlaub gemacht. Ein Besuch in der Pizzeria Mama Pizza war daher Pflicht 🍕❤️. Dieses Restaurant ist bis heute eines unserer absoluten Lieblingsrestaurants: Steinofenpizza, Meerblick und dieses ganz besondere Gefühl von Zuhause im Urlaub.\n\nAuch El Arenal hatte kulinarisch wieder einiges zu bieten: Wir waren im Little Italy, ebenfalls eines unserer Lieblingsrestaurants. Jedes Mal ein Genuss – genau solche Orte machen einen Urlaub für uns komplett 🍝✨.\n\nZwischendurch verbrachten wir Zeit an der Playa de Palma, fuhren mit der Bimmelbahn, waren im Meer baden 🏖️, genossen einfach das Leben. Ein weiterer Tag führte uns nach Palma selbst: Kathedrale bestaunen, durch die Altstadt schlendern, Eis essen 🍦⛪. Und natürlich durften auch Megapark und Bierkönig nicht fehlen – Mallorca-Feeling pur 🎶🍹. Sogar beim Tätowierer waren wir und machten direkt einen Termin für nach der Kreuzfahrt aus – Vorfreude deluxe 😄.\n\nAm 20. Juli 2023 war es dann so weit: Unsere Kreuzfahrt mit der AIDA Stella begann 🛳️✨. Wir fuhren zunächst mit dem Auto direkt an den Hafen, gaben unsere Koffer bequem am Schiff ab und machten uns anschließend auf den Weg zu einem Parkplatz in der Nähe des Flughafens, auf dem wir unser Auto für die Dauer der Kreuzfahrt abstellten. Von dort aus brachte uns ein Shuttlebus zum Flughafen.\n\nEigentlich dachten wir, wir könnten von dort einfach den AIDA-Shuttle zum Schiff nehmen – das funktionierte allerdings leider nicht. Am Flughafen lernten wir dann einen Vater mit seiner Tochter kennen, die ebenfalls individuell anreisten und vor dem gleichen Problem standen. Kurzerhand schlossen wir uns zusammen und fuhren gemeinsam mit dem Taxi zurück zum Hafen. So kamen wir schließlich entspannt am Schiff an – manchmal ergeben sich die besten Lösungen eben spontan 😊.\n\nUnd dann war es wieder da: dieses Gefühl von Vertrautheit 💙.\n\nWir kannten die AIDA Stella bereits von einer Mittelmeer-Kreuzfahrt im Jahr 2019, und genau deshalb fühlte sich das Ankommen fast wie ein Heimkommen an. Nach der Rettungsübung genossen wir das erste Mittagessen an Bord, erkundeten die Decks und ließen alles ganz entspannt auf uns wirken.\n\nUnsere Kabine 8239 auf Deck 8, eine Balkonkabine auf der Backbordseite, lag perfekt – schön mittig, ruhige Lage, einfach ideal 🛏️🌊. Wir verbrachten viel Zeit dort, blickten aufs Meer, ließen die letzten Tage Revue passieren und freuten uns auf alles, was noch kommen würde.\n\nDer erste Abend an Bord war ruhig, angenehm und genau richtig. Wir genossen die Atmosphäre, die frische Meeresluft und das Wissen: Der Urlaub hatte gerade erst begonnen. ✨';
+
+  @override
+  String get cruiseSpainDaySea1 =>
+      'Der erste Seetag begann herrlich entspannt – so entspannt, dass wir das Frühstück komplett verschliefen 😄. Aber ganz ehrlich: Genau dafür waren wir ja hier. Also standen wir in Ruhe auf und gingen direkt zum Mittagessen, ganz ohne Stress und ohne Zeitplan.\n\nDer Rest des Tages fühlte sich einfach nur nach Ankommen an. Bei bestem Wetter verbrachten wir viel Zeit auf unserem Balkon, ließen den Blick über das Meer schweifen und genossen dieses besondere Gefühl, wenn das Schiff ruhig über die Wellen gleitet ☀️🌊. Es war warm, die Sonne schien, und wir hatten endlich Zeit, nichts tun zu müssen.\n\nZwischendurch schauten wir uns ein paar Shows an, machten einen kleinen Mittagsschlaf und schlenderten entspannt über das Schiff. Natürlich durften auch ein paar Runden durch die Shops an Bord nicht fehlen – einfach treiben lassen und schauen, was es Neues gibt. Da wir die AIDA Stella ja schon kannten, fühlte sich alles direkt vertraut an, fast wie ein zweites Zuhause.\n\nAm Abend gingen wir gemütlich Abendessen und ließen den Tag ruhig ausklingen. Kein großes Programm, kein Muss – nur genießen. Dieser Seetag war genau das, was wir nach der Anreise gebraucht hatten: Ruhe, Sonne, Meer und ganz viel Entspannung ✨🛳️.';
+
+  @override
+  String get cruiseSpainDayMalaga =>
+      'Am dritten Tag unserer Kreuzfahrt legten wir morgens um 8:00 Uhr in Malaga an. Bei angenehmen 31 Grad und leicht bewölktem Himmel herrschten perfekte Bedingungen, um die Stadt ganz entspannt auf eigene Faust zu erkunden ☀️🌤️. Da wir bis 18:00 Uhr Liegezeit hatten, konnten wir den Tag ohne Zeitdruck genießen.\n\nNach dem Verlassen des Schiffs machten wir uns zu Fuß auf den Weg in die Stadt. Ohne festen Plan ließen wir uns einfach treiben – genau so, wie wir es am liebsten mögen 😊. Schon nach den ersten Schritten spürten wir den mediterranen Flair: warme Luft, palmenreiche Wege und dieses besondere Urlaubsgefühl, das sofort einsetzt.\n\nAuf unserem Spaziergang kamen wir am Centre Pompidou Málaga vorbei, das wir uns von außen anschauten. Die bunte, moderne Architektur war ein echter Hingucker und hob sich wunderbar vom restlichen Stadtbild ab 🎨✨.\n\nAnschließend schlenderten wir gemütlich am Hafen entlang, beobachteten das Treiben, die Schiffe und genossen einfach die Atmosphäre. Auch wenn wir an diesem Tag kein klassisches Sightseeing-Programm hatten, gefiel uns Malaga ausgesprochen gut. Die Stadt wirkte offen, entspannt und unglaublich sympathisch – definitiv ein Ort, an den wir gerne noch einmal zurückkehren würden 💛.\n\nAm späten Nachmittag gingen wir zurück an Bord und suchten uns einen schönen Platz, um das Auslaufen um 18:00 Uhr zu beobachten. Der Blick auf Malaga vom Wasser aus, im warmen Licht des Tages, war einfach wunderschön 🛳️✨.\n\nWährend die AIDA Stella langsam Kurs auf den nächsten Hafen nahm, freuten wir uns bereits auf das kommende Ziel: Cádiz in Spanien. Vor uns lagen noch 156 Seemeilen, das entspricht rund 289 Kilometern auf See – Zeit zum Entspannen, Genießen und Vorfreude sammeln 🌊💙.\n\nAbends ließen wir den Tag bei einem gemütlichen Abendessen an Bord ausklingen und freuten uns auf die nächsten Erlebnisse unserer Reise – zufrieden, entspannt und voller schöner Eindrücke ❤️.';
+
+  @override
+  String get cruiseSpainDayCadiz =>
+      'Am vierten Tag unserer Reise legten wir morgens um 8:00 Uhr in Cádiz an. Bei 26 Grad und strahlendem Sonnenschein erwartete uns eine Stadt, die sofort dieses typische andalusische Urlaubsgefühl versprühte ☀️🌴. Da wir bis 17:00 Uhr Liegezeit hatten, konnten wir Cádiz ganz entspannt und auf eigene Faust entdecken.\n\nNach dem Verlassen des Schiffs machten wir uns zu Fuß auf den Weg in Richtung Altstadt. Schon der erste Eindruck war beeindruckend: Cádiz wirkte lebendig, geschichtsträchtig und gleichzeitig herrlich gelassen. Unser Weg führte uns zunächst durch die Puerta de Tierra, das historische Stadttor, das den Übergang von der Neustadt in die Altstadt markiert. Hier hatte man sofort das Gefühl, in eine andere Zeit einzutauchen 🕰️✨.\n\nWeiter ging es zur Plaza de San Juan de Dios, einem wunderschönen, weitläufigen Platz mit Palmen, Cafés und dem Rathaus. Wir blieben kurz stehen, beobachteten das bunte Treiben und genossen einfach die Atmosphäre – genau diese Momente machen Reisen für uns aus 💛.\n\nAnschließend spazierten wir zur Plaza de Mina, einem ruhigen, grünen Platz mitten in der Stadt. Hier befindet sich auch das Museo de Cádiz, das wir von außen betrachteten. Allein die Lage und das historische Gebäude machten diesen Ort besonders charmant und luden zum Verweilen ein.\n\nEin weiteres Highlight unseres Rundgangs war das Gran Teatro Falla. Das rot-goldene Gebäude mit seiner außergewöhnlichen Fassade war ein echter Hingucker und eines der markantesten Bauwerke der Stadt 🎭. Auch hier merkten wir wieder, wie viel Geschichte und Kultur Cádiz zu bieten hat.\n\nDanach ließen wir uns einfach treiben und erkundeten die Altstadt von Cádiz mit ihren engen Gassen, kleinen Plätzen und historischen Häusern. Überall gab es etwas zu entdecken – mal ein schöner Balkon, mal ein kleiner Laden oder ein schattiger Platz, der zum kurzen Verweilen einlud.\n\nNatürlich durfte auch ein Besuch an der Kathedrale von Cádiz (Catedral de Cádiz) nicht fehlen. Die imposante Kathedrale mit ihrer goldfarbenen Kuppel war wirklich beeindruckend und ein absolutes Wahrzeichen der Stadt ⛪✨. Allein davor zu stehen und das Bauwerk auf sich wirken zu lassen, war ein ganz besonderer Moment.\n\nCádiz hat uns insgesamt unglaublich gut gefallen. Die Mischung aus Geschichte, Meer, Sonne und entspannter Atmosphäre machte diesen Tag zu einem echten Highlight. Am Nachmittag machten wir uns langsam wieder auf den Rückweg zum Schiff – erfüllt von vielen Eindrücken und diesem typisch südländischen Lebensgefühl 🌊💛.\n\nUm 17:00 Uhr hieß es schließlich wieder „Leinen los“. Vom Deck aus beobachteten wir das Auslaufen und ließen Cádiz langsam hinter uns, während wir uns bereits auf die nächsten Erlebnisse unserer Kreuzfahrt freuten 🛳️✨.';
+
+  @override
+  String get cruiseSpainDayLisbon =>
+      'Nach unserem wundervollen Aufenthalt in Cadiz setzte die AIDA Stella Kurs auf Lissabon. Schon während der Überfahrt spürten wir die Vorfreude: Wir konnten es kaum erwarten, diese lebendige Stadt voller Geschichte, Hügel und faszinierender Architektur zu erkunden. 🛳️✨\n\nAm Nachmittag von Tag 5 (ca. 16:00 Uhr) liefen wir in den Hafen von Lissabon ein. Schon das Einlaufen war ein Highlight für sich: Unser Schiff glitt majestätisch unter der imposanten Brücke des 25. April (Ponte 25 de Abril) hindurch, deren rote Stahlkonstruktion uns sofort beeindruckte – ein bisschen wie eine kleine Version der Golden Gate Bridge. Auch die mächtige Cristo-Rei-Statue war von Weitem zu sehen und wir fühlten uns sofort willkommen in dieser Stadt voller Charme und Atmosphäre. 🌅\n\nNach dem Anlegen machten wir uns direkt auf, die Stadt auf eigene Faust zu erkunden. Lissabon empfing uns mit seinen typischen Hügeln – man lief bergauf und bergab, spürte die Kopfsteinpflaster unter den Füßen und war gleichzeitig fasziniert von den wunderschönen Ausblicken über die Stadt. Wir starteten bei der Praça do Comércio, spazierten zur Kathedrale von Lissabon und besuchten die beeindruckende Igreja de Santa Engrácia, bevor wir durch das historische Viertel Bairro Alto schlenderten. Überall gab es kleine Gassen, charmante Häuserfassaden und die typischen bunten Kacheln zu entdecken.\n\nNatürlich durfte auch ein kulinarisches Highlight nicht fehlen: Am Vormittag von Tag 6 hatte der Kapitän in einer Durchsage Pastéis de Nata empfohlen – ein Muss in Lissabon! Wir machten uns auf den Weg zu Pastéis de Belém und genossen diese köstlichen, cremigen Leckerbissen mit knusprigem Blätterteig. 😋\n\nZwischendurch fuhren wir mit der berühmten Straßenbahnlinie 28E durch die Stadt. Das war ein echtes Erlebnis – die kleinen, historischen Waggons schaukelten gemütlich durch die engen Straßen, vorbei an bunten Häusern und kleinen Plätzen. Wir fühlten uns wie mitten in einem Postkartenmotiv. 🚋💛\n\nAm Abend von Tag 5 genossen wir das Abendessen an Bord, blickten auf die Lichter der Stadt und waren fasziniert von der Mischung aus historischem Flair und moderner Lebendigkeit. Am Tag 6 legten wir morgens wieder ab (16:00 Uhr), voller Erinnerungen an diese beiden eindrucksvollen Tage, während wir auf die nächste Etappe unserer Kreuzfahrt Richtung Cartagena in Spanien blickten.\n\nLissabon hat uns mit seinen Hügeln, dem Meerblick, den historischen Gebäuden, den leckeren Pastéis de Nata und der besonderen Atmosphäre wirklich verzaubert. Wir wissen schon jetzt: Wir möchten unbedingt wiederkommen! ❤️';
+
+  @override
+  String get cruiseSpainDaySea2 =>
+      'Nach den beiden ereignisreichen Tagen in Lissabon ging es für die AIDA Stella wieder hinaus aufs offene Meer. Dieser Seetag stand ganz im Zeichen von Entspannung, Sonne und Meeresrauschen. 🛳️☀️\n\nWir starteten den Tag ganz gemütlich – das Frühstück haben wir verschlafen, sodass es für uns direkt Mittagessen gab. Danach zogen wir uns auf unseren Balkon zurück und ließen einfach die warme Sonne auf uns wirken. Das sanfte Schaukeln des Schiffs, die frische Meeresluft und der endlose Horizont sorgten sofort für ein wohliges Urlaubsgefühl. 🌅💛\n\nZwischendurch schlenderten wir ein wenig über das Schiff, schauten in die Shops, genossen einen kleinen Mittagsschlaf und ließen uns treiben. Auch ein bisschen Showprogramm haben wir mitgenommen, bevor wir uns am Abend wieder zum Abendessen setzten.\n\nEs war ein Tag voller Ruhe, Zufriedenheit und kleiner Freuden – genau das, was man an einem Seetag liebt. Wir genossen es, einfach mal nichts zu müssen und uns komplett vom Rhythmus des Meeres treiben zu lassen. 🌊🛌✨';
+
+  @override
+  String get cruiseSpainDayCartagena =>
+      'In Cartagena legte die AIDA Stella an einem strahlend schönen Tag an – die Sonne schien den ganzen Tag bei angenehmen 31 Grad, und wir hatten Liegezeit von 9 Uhr bis 17 Uhr. 🌞🛳️\n\nWir entschieden uns, Cartagena auf eigene Faust zu erkunden und machten einen entspannten Spaziergang am Hafen entlang. Die Sonne glitzerte auf dem Wasser, die Möwen kreisten über uns, und die Atmosphäre war einfach wunderbar mediterran. 🌊✨\n\nBesonders beeindruckend war die Kathedrale San Pedro Claver, die wir uns genau ansahen. Ihre imposante Fassade und die ruhige Stimmung rundherum haben uns richtig beeindruckt und verzaubert. Danach ließen wir uns einfach treiben, genossen die kleinen Gassen und den Blick auf das Hafenbecken – ein perfekter, ruhiger Tag, um die Seele baumeln zu lassen. ⛵💛\n\nAbends legte die AIDA Stella wieder ab, und wir freuten uns auf die nächste Etappe unserer Reise, gespannt, welche Eindrücke uns in Valencia erwarten würden. 🏙️';
+
+  @override
+  String get cruiseSpainDayValencia =>
+      'In Valencia legte die AIDA Stella an einem sonnigen Tag an, und wir hatten ausreichend Zeit, die Stadt zu erkunden. 🏙️☀️\n\nWir starteten unseren Spaziergang durch die Altstadt und schlenderten entspannt durch die charmanten Gassen. Besonders beeindruckend war die Kathedrale von Valencia mit ihrem hohen Micalet-Turm, den wir aus der Ferne bewunderten. ⛪✨\n\nDanach führte uns unser Weg zum Mercat Central, einem der größten Lebensmittelmärkte Europas, wo wir die lebendige Atmosphäre und die vielen frischen Produkte bestaunten. Weiter ging es zum Palacio del Marqués de Dos Aguas, ein prächtiges Barockgebäude, dessen kunstvolle Fassade uns sofort in ihren Bann zog.\n\nAuf unserem Spaziergang kamen wir auch an den Torres de Serranos vorbei, einem der alten Stadttore, das die Geschichte Valencias spürbar macht. Anschließend schlenderten wir durch den Jardín del Turia, ein wunderschöner Park in einem ehemaligen Flussbett, der eine willkommene grüne Oase in der Stadt bietet. 🌳💛\n\nZum Abschluss genossen wir noch einen ruhigen Spaziergang am Hafen von Valencia, beobachteten die Schiffe und das glitzernde Wasser und ließen den Tag gemütlich ausklingen.\n\nValencia hinterließ bei uns einen sehr positiven Eindruck, die Stadt war lebendig, charmant und einfach wunderschön – definitiv ein Ort, den wir gern noch einmal besuchen würden. 🌊❤️';
+
+  @override
+  String get cruiseSpainDayBarcelona =>
+      'In Barcelona legte die AIDA Stella an einem strahlenden Tag bei 30 Grad und Sonne an, mit Liegezeit von 8:00 bis 18:00 Uhr. ☀️🌡️\n\nSchon beim Verlassen des Schiffes spürten wir die lebendige Atmosphäre der Stadt – Barcelona ist einfach ein Traum. ❤️ Wir starteten unseren Tag mit einem Spaziergang über La Rambla, genossen die bunten Stände, Straßenkünstler und die quirlige Stimmung der Stadt. Danach ging es weiter zum Mercat de Boqueria, wo wir die Vielfalt an frischem Obst, Fisch und lokalen Spezialitäten bestaunten – ein absolutes Highlight für alle Sinne. 🍓🐟\n\nNatürlich durfte auch ein Besuch der Kathedrale von Barcelona nicht fehlen, deren gotische Architektur uns sofort in ihren Bann zog. Anschließend bummelten wir gemütlich durch die Stadt, machten einen Abstecher in kleine Boutiquen und genossen das Shoppen in Barcelona, denn hier findet man wirklich alles, was das Herz begehrt. 🛍️✨\n\nZwischen den Sehenswürdigkeiten genossen wir kleine Pausen in den charmanten Cafés, schlenderten durch verwinkelte Gassen und ließen einfach die Atmosphäre auf uns wirken. Barcelona zeigte sich von seiner wunderschön sonnigen Seite, die Stadt hat uns einmal mehr verzaubert.\n\nAm Abend kehrten wir zurück zum Schiff, voller schöner Erinnerungen, glücklich über die letzten Eindrücke dieser unvergesslichen Kreuzfahrt. 🌊🛳️';
+
+  @override
+  String get cruiseSpainDayEndMallorca =>
+      'Nach elf unvergesslichen Tagen auf See landeten wir am frühen Morgen um 5:00 Uhr in Palma de Mallorca. Die Sonne kroch langsam über den Horizont, es waren 32 Grad, und die Insel präsentierte sich von ihrer schönsten Seite. 🌅☀️ Wir spürten sofort wieder das besondere Mallorca-Feeling – die salzige Luft, das Meer, die ersten Sonnenstrahlen auf der Haut.\n\nDa wir noch zwei Tage auf Mallorca eingeplant hatten, checkten wir spontan im HM Tropical in El Arenal ein. 🏨 Unser Zimmer war modern und gemütlich, die Atmosphäre entspannend – perfekt, um nach der Kreuzfahrt noch einmal Ruhe zu tanken. Zwar lag das Hotel weit entfernt vom Megapark und Bierkönig, aber das war völlig egal. Wir hatten nun Zeit, die Insel ganz entspannt auf unsere Art zu genießen.\n\nDie Tage vergingen wie im Flug: Wir verbrachten Stunden am Pool, ließen die Seele baumeln, genossen das Rauschen der Wellen am nahegelegenen Strand und schlenderten durch die Straßen von El Arenal. 🌴💦 Ein besonderes Highlight war ein weiterer Besuch in Cala Ratjada, unserem persönlichen Lieblingsort auf Mallorca. Dort gönnten wir uns steinofenfrische Pizza in unserer Lieblingspizzeria, wie wir sie schon aus unserer Kindheit kannten. 🍕❤️\n\nEin weiterer, unvergesslicher Moment war das Tattoo. Für mich war es mein erstes, und gemeinsam mit meiner Mutter wurde dieser kleine, aber bedeutungsvolle Schritt zu einem bleibenden Erinnerungsstück an unsere Reise. 🖤 Jede Nadel, jeder Blick auf das fertige Motiv erinnerte uns an diese intensive, wunderschöne Zeit – an Sonne, Meer, Städte, Lachen und Abenteuer.\n\nNach zwei entspannten Tagen auf der Insel traten wir schließlich die Heimreise an. Diesmal wählten wir die Balearia-Fähre, die uns tagsüber sicher nach Barcelona brachte. ⛴️ Schon beim Einsteigen spürten wir den Unterschied zur GNV-Fähre: ruhig, komfortabel und angenehm, ein echter Luxus nach der eher unruhigen Überfahrt zu Beginn unserer Reise. Wir genossen die Sonne auf dem Deck, die vorbeiziehende Küste und spürten noch einmal die Weite des Meeres, bevor wir wieder aufs Festland zurückkehrten.\n\nIn Barcelona angekommen, begann unsere 12-stündige Nachtfahrt nach Hause. 🚗💤 Müde, aber erfüllt von tausend Eindrücken, Erinnerungen und schönen Momenten, fuhren wir durch die Nacht. Jeder Kilometer brachte uns dem Alltag näher, doch in unseren Herzen trugen wir das Gefühl von Freiheit, Sommer und Meer weiter. 🌊💖\n\nSo endete unsere Reise – eine Mischung aus Abenteuer, Entspannung und unvergesslichen Momenten, die wir für immer in Erinnerung behalten werden. Von den ersten Sonnenstrahlen in Palma bis zum letzten Blick auf die Balearischen Inseln war jeder Tag ein kleines Abenteuer, das wir gemeinsam erlebt haben. ✨';
+
+  @override
+  String get titleStellaSpainPortugal => 'Spanien & Portugal';
+
+  @override
+  String get cruiseHighlights1 =>
+      '🌊 Start in die zweite Kreuzfahrt – AIDA Stella, Kabine 8133';
+
+  @override
+  String get cruiseHighlights2 =>
+      '🚢 Schiff erkunden & Seele baumeln lassen – Seetag auf der AIDA Stella';
+
+  @override
+  String get cruiseHighlights3 =>
+      '🛺 Olbia entdecken – Tuk-Tuk-Abenteuer auf Sardinien';
+
+  @override
+  String get cruiseHighlights4 =>
+      '🍕 Neapel genießen – die beste Pizza unseres Lebens';
+
+  @override
+  String get cruiseHighlights7 =>
+      '♟️ Livorno erleben – Schachbrettplatz & Meerblick';
+
+  @override
+  String get cruiseHighlights8 => '🚤 Côte d’Azur erleben – Tendern in Cannes';
+
+  @override
+  String get cruiseHighlights9 =>
+      '⚓ Toulon entdecken – Hinter den Kulissen der AIDA Stella';
+
+  @override
+  String get cruiseHighlights10 =>
+      '🛍️ Barcelona genießen – shoppen & La Rambla erkunden';
+
+  @override
+  String get cruiseHighlights11 => '✈️ Abschied nehmen – Rückflug nach Hause';
+
+  @override
+  String get cruiseHighlightsTitle1 =>
+      'The second cruise began for us with a slight tingling feeling in our stomachs – my mother was still a bit skeptical after the first trip. Would she enjoy this second cruise more? Would she feel comfortable? I, on the other hand, was full of excitement and curious to see how we would like the AIDA Stella.\n\nAfter our flight from Cologne-Bonn, we landed in Palma de Mallorca 🌞. From the airport, we took a taxi to our hotel in El Arenal, checked in, and quickly settled in. After that, we headed to Cala Ratjada, where we enjoyed a special experience: Garra Rufa fish gently nibbling on the dead skin of our feet 🐟. We then ended the day in the sun with a delicious lunch before returning to El Arenal in the evening. After a relaxed walk and some beach air, we went back to the hotel and ended our first day in a calm and cozy way.\n\nThe next morning started early: we took a taxi to the port to check in on the AIDA Stella 🚢. Since our cabin was not yet ready, we used the time for a short trip to El Arenal. We visited the café of Iris Klein, which she was still running at the time, and treated ourselves to one of her ice cream waffles 🍦. It was a nice little moment of anticipation before we finally moved into our cabin 8133 – a balcony cabin on the starboard side. By noon, we were back on board and comfortably settled in.\n\nDuring our first walk around the ship, we immediately noticed the difference compared to the AIDA Nova: the Stella felt much more compact, friendly, and welcoming. My mother slowly started to feel more comfortable, her initial skepticism began to fade, and we enjoyed our first impressions of the Stella. In the evening, we set sail and enjoyed our first dinner on board 🍝 – a beautiful start to our ten-day route through Mediterranean highlights, which would show whether this might be our last cruise together or the beginning of many more adventures at sea.';
+
+  @override
+  String get cruiseHighlightsTitle2 =>
+      'Der nächste Tag war ein Seetag und schon hier spürten wir einen deutlichen Unterschied zur letzten Reise. Das Meer lag ruhig da, sanfte Wellen wiegten das Schiff, und sofort breitete sich ein Gefühl der Entspannung aus 🌊. Meine Mutter, die auf der ersten Kreuzfahrt noch skeptisch gewesen war, begann sich immer wohler zu fühlen. Es war, als würde sie die Kreuzfahrt nach und nach lieben lernen – und für mich war klar: Es war die richtige Entscheidung, diese zweite Reise zu machen. Die Chance, dass wir irgendwann noch weitere Kreuzfahrten unternehmen würden, stieg damit deutlich.\n\nAn diesem Seetag nahmen wir uns Zeit, die AIDA Stella in Ruhe zu erkunden. Was uns sofort gefiel: Das Schiff war weder zu groß noch zu klein – genau richtig, um sich zurechtzufinden und alles zu genießen, ohne sich verloren zu fühlen. Wir schlenderten über Decks, entdeckten kleine Ecken, die uns vorher noch gar nicht aufgefallen waren, und genossen die Aussicht auf das endlose Blau des Meeres.\n\nFür den kleinen Hunger zwischendurch probierten wir den Best Burger@Sea 🍔 – und der war tatsächlich richtig lecker! Zwischendurch gönnten wir uns eine Pause auf der Kabine, ein kleiner Mittagsschlaf, bevor wir am Nachmittag noch ein bisschen Shows guckten 🎭.\n\nEs war ein herrlicher, ruhiger Start in den eigentlichen Urlaub: kein Trubel, keine Hektik, einfach nur Zeit zu zweit, Entspannung und das Schiff genießen. Ein perfekter Auftakt, bevor die ersten Hafentage mit neuen Orten, Eindrücken und Erlebnissen auf uns warteten.';
+
+  @override
+  String get cruiseHighlightsTitle3 =>
+      'Nach dem ersten Seetag erreichten wir am nächsten Morgen Olbia auf Sardinien 🇮🇹⚓. Die Stadt selbst ist nicht besonders groß, aber unglaublich charmant – süß, ruhig und irgendwie gemütlich. Wir waren gespannt, was uns dort erwarten würde.\n\nKaum hatten wir den Hafen verlassen, fiel uns direkt auf, dass Tuk-Tuks durch die Straßen fuhren 🚕. Spontan entschieden wir uns für eine kleine Tuk-Tuk-Tour, um die Stadt ein wenig kennenzulernen. Die Fahrt war herrlich entspannt, und wir bekamen gleich einen ersten Eindruck von Olbia: kleine Gassen, bunte Häuser, ein bisschen Trubel – aber alles sehr überschaubar und gemütlich 🏘️✨.\n\nNach der Tuk-Tuk-Tour machten wir noch einen kleinen Spaziergang durch die Straßen, genossen die Sonne und die ruhige Atmosphäre. Es war schön, die Stadt auf eigene Faust ein bisschen zu entdecken, ohne Zeitdruck, einfach schauen, staunen und ein paar Fotos machen 📸🌞.\n\nOlbia war zwar nur ein kurzer Stopp, aber genau das Richtige: locker, charmant und voller kleiner Eindrücke, die im Herzen bleiben. So konnten wir den nächsten Hafen entspannt erwarten und die Kreuzfahrt auf der Stella weiterhin in vollen Zügen genießen ❤️🚢.';
+
+  @override
+  String get cruiseHighlightsTitle4 =>
+      'Der nächste Halt auf unserer Route war Neapel 🇮🇹⚓. Ehrlich gesagt, die Stadt hat uns nicht wirklich verzaubert – es wirkte alles ein bisschen hektisch und unruhig, und die Straßen waren ziemlich wuselig 🏙️😅. Wir entschieden uns, uns nicht zu lange aufzuhalten und stattdessen einen kleinen Spaziergang durch die Stadt zu machen, einfach um ein Gefühl für Neapel zu bekommen.\n\nSchon nach kurzer Zeit merkten wir, dass wir eigentlich nur ein Ziel hatten: Pizza essen 🍕❤️. Und was soll ich sagen – das war ein echtes Highlight! Für gerade mal vier Euro pro Pizza bekamen wir die absolut beste Pizza, die wir je gegessen haben. Dünner Boden, perfekt gebacken, frische Zutaten – einfach unglaublich lecker 😋🔥. Mehr brauchten wir an diesem Tag auch gar nicht. \n\nNach dem Pizza-Genuss spazierten wir noch ein wenig durch die Straßen, ließen die Atmosphäre kurz auf uns wirken, und machten uns dann zurück zum Schiff. Es war ein eher kurzer, aber unvergesslicher Aufenthalt – vor allem wegen der Pizza! 🍴✨\n\nZurück an Bord ließen wir den Tag entspannt ausklingen, genossen den Blick aufs Meer von unserer Balkonkabine und freuten uns schon auf die nächsten Häfen der AIDA Stella 🚢💙.';
+
+  @override
+  String get cruiseHighlightsTitle5 =>
+      'Unser nächster Hafen war Civitavecchia 🇮🇹⚓ – das Tor nach Rom, doch diesmal hatten wir keinen Ausflug in die Hauptstadt geplant. Stattdessen entschieden wir uns, die Stadt selbst ein wenig zu erkunden und einfach gemütlich spazieren zu gehen 🚶‍♀️💛.\n\nWir schlenderten ungefähr ein bis zwei Stunden durch die Straßen von Civitavecchia und schauten uns die kleinen Gassen an. Ein besonderes Highlight war die Forte Michelangelo, eine imposante Festung direkt am Hafen 🏰. Wir genossen die Aussicht, machten ein paar Fotos und ließen die Atmosphäre auf uns wirken. Ansonsten hielten wir es eher entspannt und machten keinen großen Sightseeing-Marathon – einfach ein ruhiger Tag an Land, der perfekt zur bisherigen Reise passte 🌊✨.\n\nNach unserem Spaziergang kehrten wir zurück zum Schiff, wo wir noch ein wenig die Sonne auf dem Balkon genossen und das Auslaufen von Civitavecchia beobachteten 🚢💙. Abends ging es wie gewohnt lecker zum Abendessen, und wir ließen den Tag gemütlich ausklingen, bereit für die nächsten Abenteuer auf der AIDA Stella 🌅🍴.';
+
+  @override
+  String get cruiseHighlightsTitle6 =>
+      'Als wir in Livorno 🇮🇹⚓ ankamen, waren wir sofort fasziniert von einem Ort, der uns noch lange im Gedächtnis bleiben sollte – der Terrazza Mascagni mit seinem einzigartigen schwarz‑weißen Schachbrettmuster direkt am Meer. Dieser große Platz am Wasser ist mit über 34.000 schwarz‑weißen Fliesen gepflastert und bietet einen atemberaubenden Blick auf die Küste und das Meer – ein Ort, der uns beide direkt verzauberte und an den wir noch oft zurückdenken werden 💭🌊.  \n\nWir machten einen gemütlichen Spaziergang über genau diese Terrasse, spürten den warmen Stein unter den Füßen und genossen das Licht, das auf die endlosen Fliesen fiel. Der Platz wirkte so weit und offen, dass es sich fast anfühlte, als würde man direkt mit dem Himmel und dem Meer verschmelzen ✨. Danach schlenderten wir weiter durch die Straße am Wasser entlang – Livorno ist nicht sehr groß, aber genau das machte den Besuch so angenehm und entspannt. Wir ließen uns einfach treiben, nahmen die Atmosphäre in uns auf und genossen diesen besonderen Moment zu zweit 🚶‍♀️🚶‍♂️.\n\nNach diesem Spaziergang kehrten wir zurück an Bord der AIDA Stella. Den Rest des Tages verbrachten wir entspannt auf dem Schiff, beobachteten das Auslaufen von Livorno vom Balkon aus und ließen den Abend bei einem gemütlichen Abendessen ausklingen 🍽️💙.\n\nLivorno wird uns vor allem wegen der Terrazza Mascagni immer in Erinnerung bleiben – dieser Platz mit dem Schachbrettboden und dem Blick aufs Meer gehört definitiv zu den Eindrücken, die diese Reise so einzigartig machen 🖤🤍.';
+
+  @override
+  String get cruiseHighlightsTitle7 =>
+      'Unser Tag an der Côte d’Azur 🇫🇷☀️ begann mit einem besonderen Erlebnis: Wir wurden in Cannes getendert. Das war wirklich aufregend und hat uns total gut gefallen – so ein kleiner Bootstransfer vom Schiff in den Hafen fühlt sich gleich nach Abenteuer an 🚤✨. In Cannes hatten wir ein bisschen Zeit, um die Stadt zu erkunden. Wir schlenderten entlang der Promenade de la Croisette, genossen den warmen Sonnenschein und das Flair der Stadt – wirklich ein wunderschöner erster Eindruck der Côte d’Azur 🌴🏙️.\n\nDanach stand unser Ausflug nach Monaco 🇲🇨 auf dem Programm, den wir über AIDA gebucht hatten. Das war richtig, richtig lustig: Wir hatten noch ein bisschen Zeit und wollten spontan eine Hop-on-Hop-off-Bustour machen – doch der Verkehr in Monaco machte uns einen Strich durch die Rechnung 🚦😅. Unser Bus stand im Stau, und wir kamen erst etwas verspätet zum AIDA-Ausflugsbus. Zum Glück warteten die Guides, sodass alles gut klappte. In Monaco genossen wir die Aussicht auf die Yachten im Hafen, die luxuriösen Autos und die prachtvollen Gebäude – wirklich beeindruckend ✨🏎️⛵.\n\nSpäter ging es weiter nach Saint-Tropez 🇫🇷. Hier verbrachten wir den Aufenthalt sehr entspannt: Wir spazierten ein bisschen durch die Stadt und entlang des Hafens, genossen die Atmosphäre, aber unser kulinarisches Highlight war eher … na ja, die Pizza 🍕😅. Wir zahlten stolze 20 Euro für eine Pizza – die wirklich nicht besonders lecker war. Ein krasser Gegensatz zu Neapel, wo wir für 4 Euro die beste Pizza unseres Lebens gegessen hatten 😄.\n\nAm Abend kehrten wir zurück an Bord der AIDA Stella, glücklich über diesen abwechslungsreichen Tag an der Côte d’Azur 🌊💙. Cannes, Monaco und Saint-Tropez – jeder Ort auf seine Weise besonders, jeder Ort hinterlässt eigene Eindrücke und Erinnerungen. Besonders das Tendern in Cannes und die spontanen Abenteuer in Monaco werden uns noch lange in Erinnerung bleiben 🚢✨.';
+
+  @override
+  String get cruiseHighlightsTitle8 =>
+      'Unser Tag in Toulon 🇫🇷 begann entspannt am Hafen, doch statt viel Zeit in der Stadt zu verbringen, hatten wir etwas ganz Besonderes gebucht: eine exklusive Schiffsführung auf der AIDA Stella 🚢✨. Für 70 Euro pro Person durften wir hinter die Kulissen schauen und bekamen einen einzigartigen Einblick in den Alltag an Bord.\n\nAls Erstes führte uns die Crew auf die Brücke – ein unglaubliches Gefühl, von dort aus das Schiff zu überblicken und die Steuerung einmal aus nächster Nähe zu sehen 🛳️👀. Danach ging es behind the scenes in die Küche, wo uns gezeigt wurde, wie die Crew die zahlreichen Gerichte für die Gäste vorbereitet 🍽️👨‍🍳. Anschließend durften wir sogar den Jacuzzi-Bereich besichtigen, der normalerweise den Gästen vorbehalten ist 🛁✨. Ein Highlight war die Bierverkostung im Brauhaus, bei der wir verschiedene Sorten probieren konnten 🍺😄.\n\nNatürlich war auch das Abendessen im Rossini inklusive – ein kulinarisches Erlebnis, das den Tag perfekt abrundete 🍝🍷. \n\nFür einen kleinen Spaziergang an Land blieb zwar nur wenig Zeit, aber das reichte vollkommen, um ein bisschen frische Luft zu schnappen 🌞🚶‍♀️. Der Fokus lag an diesem Tag eindeutig auf dem Schiff selbst – und es war unglaublich spannend, so viele Einblicke zu bekommen, die man sonst nie zu sehen bekommt. Toulon hat uns so nicht nur als Hafenstadt gefallen, sondern vor allem als Ausgangspunkt für ein unvergessliches Erlebnis auf der Stella 💙🚢.';
+
+  @override
+  String get cruiseHighlightsTitle9 =>
+      'In Barcelona 🇪🇸 fühlten wir uns direkt wieder wie zu Hause – die Stadt kannten wir ja bereits von unserer ersten Kreuzfahrt und liebten sie seitdem ❤️✨. Diesmal wollten wir es besonders entspannt angehen und verzichteten auf die Hop-on-Hop-off-Bustour. Stattdessen nutzten wir wieder den Shuttle vom Hafen in die Stadt, 12 Euro pro Person 🚌💨 – praktisch, schnell und unkompliziert.\n\nWir schlenderten gemütlich durch die Straßen, genossen die Atmosphäre und besuchten erneut den Mercat de la Boqueria 🥭🍊🥩. Dort schmeckte alles fantastisch, und wir holten uns frisches Obst, Snacks und ein paar Leckereien für zwischendurch. Anschließend ging es weiter über die La Rambla, vorbei an Straßenkünstlern, bunten Ständen und den typischen Eindrücken Barcelonas 🎨🌞.\n\nZwischendurch nutzten wir die Zeit, um ein bisschen Shoppen zu gehen 🛍️😄 – kleine Boutiquen, Souvenirs und besondere Dinge, die man nur hier findet. Insgesamt war es ein sehr entspannter Tag, an dem wir einfach die Stadt genießen konnten, ohne Hektik oder straffes Programm 🏙️💛.\n\nBarcelona hat uns erneut gezeigt, warum wir diese Stadt so lieben: lebendig, bunt, kulinarisch fantastisch und einfach ein Ort, an dem man sich sofort wohlfühlt 🌟❤️. Ein perfekter Abschluss für unsere mediterrane Highlights-Tour.';
+
+  @override
+  String get cruiseHighlightsTitle10 =>
+      'Am Ende unserer 10-tägigen Reise ging es wieder zurück nach Mallorca 🇪🇸✈️. Diesmal war alles entspannt und routiniert – wir hatten keinen großen Plan mehr, denn der Rückflug nach Hause stand an. Nach der Landung am Flughafen in Palma de Mallorca holten wir unsere Koffer ab 🧳 und machten uns auf den Weg nach Hause.\n\nEs war ein stiller, gemütlicher Abschluss unserer Kreuzfahrt: Kein Sightseeing, keine Ausflüge, einfach nur die Heimkehr nach einer unvergesslichen Reise 🌞❤️. Zu Hause angekommen hieß es Koffer auspacken, die Erinnerungen noch einmal Revue passieren lassen und feststellen, wie viel Schönes wir in diesen 10 Tagen erlebt hatten ✨🏠.\n\nDer Alltag hatte uns wieder, aber mit einem riesigen Schatz an Erinnerungen, Eindrücken und gemeinsamen Momenten mit meiner Mama – und dem Wissen, dass dies hoffentlich nicht unsere letzte Kreuzfahrt war 🚢💛.';
+
+  @override
+  String get orientDay1 =>
+      '🛳️ Unsere Silvester-Kreuzfahrt startet – Anreise nach Dubai';
+
+  @override
+  String get orientDay2 =>
+      '🌞 Erster richtiger Tag in Dubai – Bummeln & Staunen';
+
+  @override
+  String get orientDay3 => '🌇 Abenteuer auf eigene Faust in Abu Dhabi';
+
+  @override
+  String get orientDay4 =>
+      '🕌 Ein Tag in Muscat – Souks & orientalisches Flair';
+
+  @override
+  String get orientDay5 =>
+      '🎆 Silvester in Dubai – Wasserflugzeug & Wüstenabenteuer';
+
+  @override
+  String get orientDay6 =>
+      '✈️ Abschied von Dubai – Heimreise voller Erinnerungen';
+
+  @override
+  String get orient1 =>
+      'Unsere allererste Kreuzfahrt durch den Orient und gleichzeitig unsere erste Silvesterreise begann endlich! 🌴✨ Zwar hatten wir Dubai schon einmal besucht, aber diesmal sollte alles anders werden – auf See, auf der AIDA Prima, die wir zum ersten Mal erlebten.\n\nWeil wir die Reise so spontan, nur drei Tage vorher, gebucht hatten, ging es diesmal nicht wie gewohnt mit Emirates, sondern mit einem von AIDA organisierten Charter-Flug nach Dubai. Und was sollen wir sagen – das war ein echtes Abenteuer, noch bevor wir überhaupt an Bord der AIDA Prima waren.\n\nDie Maschine war wirklich klein, überschaubar und irgendwie… nostalgisch. 😅 Kein Vergleich zu modernen Linienfliegern – sie kam tatsächlich aus einer Garage und hatte schon einige Jahre auf dem Buckel. Sie fasste etwa 150 Passagiere, das Flugtempo war deutlich langsamer, und anstatt der üblichen sechs Stunden nach Dubai, verbrachten wir satte zwölf Stunden in der Luft, inklusive einer ungeplanten Zwischenlandung zum Tanken. Ganz ehrlich, es war schon kurios, aber genau solche Momente machen eine Reise doch unvergesslich. Wir hatten jede Menge Gesprächsstoff und können jetzt über die ungewöhnliche Flugerfahrung lachen. 😎✈️\n\nIn Dubai angekommen, lief alles dann wieder wie am Schnürchen. Unser Transfer zum Hafen funktionierte reibungslos, und wir wurden direkt auf die AIDA Prima gebracht. Schon beim ersten Blick auf das Schiff war klar: Wir würden uns hier richtig wohlfühlen. 😍 Vom ersten Moment an hat uns die AIDA Prima richtig gut gefallen – so geräumig, modern und gleichzeitig gemütlich. Noch am ersten Tag haben wir die öffentlichen Bereiche erkundet, die Atmosphäre auf dem Schiff auf uns wirken lassen und den ersten Blick aufs glitzernde Wasser genossen. 🌊🛳️\n\nWir durften sofort unsere Kabine 9150 beziehen – eine Verandakabine auf der Steuerbordseite, sehr, sehr mittig im Schiff – perfekt gelegen, um alles im Blick zu haben. Die erste Nacht verbrachten wir noch im Hafen von Dubai. Für uns der perfekte Start in unseren Silvesterurlaub: Dubai bei Nacht, das glitzernde Lichtermeer, die warme Abendluft – einfach magisch. ✨🌃\n\nSo begann unser Abenteuer im Orient: aufregend, überraschend und voller Vorfreude auf Sonne, Meer und unvergessliche Momente. Meine Mama und ich, bereit für jede Menge Entdeckungen und gemeinsame Erinnerungen. ❤️⚓';
+
+  @override
+  String get orient2 =>
+      'Nach einer entspannten ersten Nacht an Bord der AIDA Prima starteten wir voller Vorfreude in unseren ersten richtigen Tag in Dubai. Da wir die Stadt bereits ein Jahr zuvor intensiv erkundet hatten, wollten wir es diesmal etwas ruhiger angehen lassen und den Tag gemütlich auf eigene Faust gestalten.\n\nUnser Ziel: die Dubai Mall, eines der größten Shoppingcenter der Welt. 🛍️✨ Hier kann man problemlos mehrere Stunden verbringen – bummeln, essen, staunen oder einfach das bunte Treiben beobachten. Wir ließen uns treiben, schlenderten durch die beeindruckenden Hallen und gönnten uns kleine Pausen bei leckeren Snacks und Getränken. Alles ganz entspannt, ohne festes Programm, einfach genießen. 😌\n\nFür alle, die Dubai vielleicht noch nicht kennen: es gibt hier fantastische Highlights, die wir bereits im Vorjahr erlebt haben und nur wärmstens empfehlen können. Zum Beispiel der Burj Khalifa – At The Top: einmal auf den Wolkenkratzer hochsteigen und den Blick über die Stadt, die Palm Islands und die Skyline genießen – einfach unvergesslich. 🌆\n\nOder das Dubai Mall Aquarium & Underwater Zoo, ein riesiges, spektakuläres Aquarium mitten in der Mall – perfekt für Familien, Fotoliebhaber und alle, die staunen wollen. 🐠🐟 Nicht zu vergessen die Dubai Fountain Show direkt vor dem Burj Khalifa, eine atemberaubende Kombination aus Wasser, Licht und Musik, die täglich abends im Halbstundentakt zu sehen ist. 💦🎶\n\nWer Lust auf noch mehr Abenteuer hat, kann im Ski Dubai in der Mall of the Emirates echte Skipisten mitten in der Wüste erleben 🎿❄️ oder im Atlantis Aquaventure Waterpark auf The Palm die spektakulärsten Wasserrutschen der Welt ausprobieren. 🐬💦\n\nFür uns stand jedoch Entspannung und Vorfreude auf die Kreuzfahrt im Vordergrund. Wir schlenderten durch die Mall, genossen die Atmosphäre, gönnten uns kleine Leckereien und ließen die Eindrücke der Stadt noch einmal auf uns wirken. Durch unsere Vorerfahrungen in Dubai konnten wir alles ganz entspannt angehen, ohne Stress oder Hektik – einfach der perfekte Start in den Urlaub. ✨❤️\n\nAm Ende des Tages legten wir schließlich von Dubai ab in Richtung Abu Dhabi, gespannt auf die Abenteuer, die noch vor uns lagen. 🛳️🌊';
+
+  @override
+  String get orient3 =>
+      'Unser erster richtiger Tag in Abu Dhabi begann voller Neugier und Entdeckerlust. Wir wollten die Stadt auf eigene Faust erkunden – von modernen Glaspalästen bis hin zu traditionellen Oasen – und uns einfach treiben lassen.\n\nUnser erster Stopp führte uns zur Sheikh Zayed Moschee, einem der beeindruckendsten Gotteshäuser der Welt. 🕌💫 Schon beim Betreten stockte uns der Atem: die strahlend weißen Marmorkuppeln, die filigranen Verzierungen, die kunstvoll gestalteten Böden und die riesigen Spiegelungen im Wasserbecken – einfach magisch. Ein absolutes Must-See für jede Reise in die Emirate. Wir konnten gar nicht genug staunen und haben jede Ecke fotografisch festgehalten. 📸\n\nAm nächsten Punkt stand dann ein bisschen Adrenalin auf dem Programm: Yas Island mit der Ferrari World – ein spektakulärer Indoor-Themenpark, der Motorsport- und Achterbahn-Fans gleichermaßen begeistert. 🏎️🎢 Auch wer, wie wir, kein Hardcore-Motorsport-Fan ist, kommt hier voll auf seine Kosten: gigantische Achterbahnen, coole Themenwelten und die pure Atmosphäre lassen einen den Alltag vergessen.\n\nNatürlich durfte bei so viel Glanz und Glamour auch der Emirates Palace / Mandarin Oriental nicht fehlen. Viele Gäste besuchen das berühmte Le-Café, um den legendären Gold-Cappuccino mit 24-Karat-Gold-Flocken zu probieren. ✨☕ Wir haben uns den Besuch draußen gegönnt, aber allein die Pracht des Hotels von außen ist beeindruckend – ein wahres architektonisches Meisterwerk und ein Traum für Fotos.\n\nFür zukünftige Reisen nach Abu Dhabi haben wir außerdem ein paar Highlights auf unsere persönliche Liste gesetzt:\n• Warner Bros. World – riesiger Indoor-Freizeitpark mit Filmcharakteren, Shows und Themenwelten 🎬🎡\n• Yas Waterworld – einer der größten Wasserparks der Region mit spektakulären Rutschen, Lazy River und Wellenpool 🌊💦\n\nAbu Dhabi überraschte uns mit einer perfekten Mischung aus Kultur, Architektur und Abenteuer. Am Abend legten wir schließlich von Abu Dhabi ab in Richtung Muskat, gespannt auf die nächsten Etappen unserer Reise. 🛳️🌊';
+
+  @override
+  String get orient4 =>
+      'Am Morgen legte die AIDA Prima in Muscat, der faszinierenden Hauptstadt Omans, an. 🌅 Schon beim ersten Blick auf die Stadt spürten wir die besondere Atmosphäre: die majestätischen Berge, das türkisfarbene Wasser und die orientalische Architektur – einfach beeindruckend.\n\nUnser Ziel führte uns direkt zu einem der bekanntesten und lebendigsten Märkte der Stadt, dem Mutrah Souk. 🛍️💫 Die verwinkelten Gassen des Souks sind ein wahres Fest für die Sinne: dicht an dicht reihen sich Stände mit bunten Gewürzen, exotischen Parfüms, handgefertigten Textilien, Silber und kunstvollen Souvenirs. Überall gibt es etwas zu entdecken und zu bestaunen – ein Paradies für alle, die das bunte Treiben des Orients lieben.\n\nBesonders amüsant war die Flexibilität der Händler: Omani Rial, US-Dollar, Euro – und sogar Monopoly-Spielgeld wurde akzeptiert! 😄 Ein echter Einblick in die entspannte Mentalität vor Ort, die den Handel hier so besonders macht. Wir haben viel gelacht, kleine Mitbringsel entdeckt und uns einfach treiben lassen.\n\nNach unserem ausgiebigen Bummel durch den Mutrah Souk kehrten wir wieder aufs Schiff zurück. 🚢 Die Geräusche der Stadt, das Stimmengewirr und die lebendige Hektik verblassten langsam hinter uns, während wir die Ruhe und den Komfort an Bord genossen.\n\nDer restliche Nachmittag stand ganz entspannt auf dem Programm: Balkonmomente, frische Meeresluft und kleine Snacks, einfach die Seele baumeln lassen. 🌊☀️ Muscat beeindruckte uns mit einem ganz anderen Charme – ruhig, orientalisch, authentisch – und hinterließ ein Gefühl von stiller Schönheit, das sich von den glitzernden Metropolen der Emirate deutlich abhob.\n\nAm Abend legten wir schließlich von Muscat ab zurück in Richtung Dubai, voller Vorfreude auf die nächsten Etappen unserer Reise. 🛳️🌙';
+
+  @override
+  String get orient5 =>
+      'Unser Tag in Dubai begann voller Vorfreude auf die festliche Silvesternacht. Zwei Tage standen uns noch zur Verfügung, um die Stadt aus einer besonderen Perspektive zu erleben und das Jahr stilvoll ausklingen zu lassen. ✨🌴\n\nEin absolutes Highlight war für uns der Ausflug im Wasserflugzeug. 🛩️ Direkt vom Wasser startend, hatten wir die einmalige Gelegenheit, die Stadt aus der Luft zu bestaunen: die berühmte Palmeninsel, die imposanten Wolkenkratzer und die glitzernde Küstenlinie. Der Ausblick war schlichtweg atemberaubend – ein Erlebnis, das wir so schnell nicht vergessen werden. 🌇💙\n\nGanz ehrlich: Wasserflugzeug fliegen war für uns auch etwas gruselig. 😅 Das Rattern der Propeller und das leichte Schaukeln beim Start und Landen machten uns schon ein wenig mulmig. Für den nächsten Dubai-Trip würden wir definitiv wieder auf Helikopter oder Propellermaschine setzen – sicherer und entspannter!\n\nAm Abend erwartete uns an Bord ein festliches Silvesterdinner. 🍽️✨ Die Buffetrestaurants waren liebevoll dekoriert, die Tische mit eleganten Tischdecken geschmückt, und überall lag ein Hauch von Feierlichkeit in der Luft. Perfekt, um sich auf den Jahreswechsel einzustimmen.\n\nNatürlich durfte das Feuerwerk über Dubai nicht fehlen. 🎆 Vom Deck aus hatten wir einen guten Blick, auch wenn wir uns ehrlich gesagt ein noch spektakuläreres Spektakel erhofft hatten. Dennoch war es ein wunderschöner Moment: mit Sekt in der Hand, umgeben vom Schiff und der funkelnden Stadt im Hintergrund. 🥂\n\nNach der Silvesternacht folgte ein ganz besonderes Abenteuer: unsere Wüstenübernachtung. 🏜️ Wir wurden mit einem Bus direkt abgeholt – ein Ausflug von AIDA. In der Wüste angekommen, wurden wir mit Musik, kühlen Getränken und viel Gastfreundschaft empfangen. Wir übernachteten in einer kleinen Hütte und genossen die Ruhe und die unendliche Weite der Wüste.\n\nAm nächsten Morgen hieß es früh aufstehen: Kamelreiten 🐪 und eine aufregende Jeep-Tour durch die Dünen standen auf dem Programm. Für einige, besonders meine Mutter, wurde es ganz schön turbulent – wer hinten im Jeep saß, wurde ordentlich durchgeschüttelt. 😅 Trotz kleinerer Übelkeiten war es ein unvergessliches Abenteuer inmitten der endlosen Wüste – ein Erlebnis, das uns noch lange in Erinnerung bleiben wird.\n\nDen letzten Tag in Dubai nutzten wir, um die Stadt noch einmal in aller Ruhe zu genießen. 🌴🛍️ Kleine Spaziergänge, letzte Einkäufe und das bewusste Aufsaugen der Atmosphäre rundeten unseren Aufenthalt perfekt ab, bevor es wieder Richtung Heimat ging. ✈️❤️';
+
+  @override
+  String get orient6 =>
+      'Nach zwei aufregenden Tagen in Dubai neigte sich unsere Orient-Kreuzfahrt schließlich dem Ende zu. 🌴✨ Am Morgen hatten wir noch einmal die Gelegenheit, die letzten Eindrücke der Stadt in Ruhe aufzusaugen – das glitzernde Lichtermeer, die modernen Wolkenkratzer und die lebhaften Einkaufsmeilen. Ein letzter Spaziergang, ein paar Fotos und ein tiefer Atemzug der warmen Luft – so verabschiedet man sich von einer Stadt, die man schon ein bisschen ins Herz geschlossen hat. 💙\n\nUnser Transfer brachte uns pünktlich zum Flughafen, wo wir eincheckten und uns auf den Rückflug vorbereiteten. Alles verlief reibungslos, die Atmosphäre war entspannt, und während wir im Flugzeug Platz nahmen, ließen wir die letzten Tage noch einmal Revue passieren: die Erlebnisse über den Wolken, die unvergesslichen Ausblicke auf Dubai, Abu Dhabi und Muscat, die kleinen Abenteuer in den Basaren und die magischen Momente auf dem Schiff – all das schuf Erinnerungen, die wir für immer behalten werden. 🌅✈️\n\nSo endete unsere Reise voller faszinierender Eindrücke, kulinarischer Highlights und unvergesslicher Momente – mit dem schönen Gefühl, dass diese Orient-Kreuzfahrt noch lange in unseren Herzen nachwirken wird. ❤️';
+
+  @override
+  String get titleNorwegen => 'Norwegens Fjorde';
+
+  @override
+  String get norwegenDayTitle1 =>
+      'Auf nach Hamburg – Unsere Vorfreude kannte keine Grenzen! 🛳️✨';
+
+  @override
+  String get norwegenDayTitle2 =>
+      'Ein Tag nur für uns – Entschleunigung auf hoher See ☕🛳️';
+
+  @override
+  String get norwegenDayTitle3 =>
+      'Bergen – Wiedersehen mit einer Stadt, die wir ins Herz geschlossen haben 🏔️⚓';
+
+  @override
+  String get norwegenDayTitle4 =>
+      'Magische Momente in Ålesund – Jugendstil und Ausblicke 🌊✨';
+
+  @override
+  String get norwegenDayTitle5 =>
+      'Verzaubert vom Geirangerfjord – Majestätische Wasserfälle & unvergessliche Aussichten 🌊🏔️';
+
+  @override
+  String get norwegenDayTitle6 =>
+      'Trondheim entdecken – Bunte Holzhäuser & Sonnenuntergang am Fjord 🌅🏘️';
+
+  @override
+  String get norwegenDayTitle7 =>
+      'Molde – Die Stadt der Rosen & ein Panorama voller Eindrücke 🌹🏞️';
+
+  @override
+  String get norwegenDayTitle8 =>
+      'Måløy – Abenteuer, Naturwunder und der Kannestein 🌊🪨🌞';
+
+  @override
+  String get norwegenDayTitle9 =>
+      'Flåm – Kleine Bimmelbahn, große Stimmung & ein Tag voller Norwegen-Feeling 🚂🌄';
+
+  @override
+  String get norwegenDayTitle10 =>
+      'Stavanger – Weiße Häuser, Shopping-Erfolg & ein entspannter Abend 🌤️🌊';
+
+  @override
+  String get norwegenDayTitle11 =>
+      'Seetag auf See – Auf dem Weg nach Hamburg 🌊🛳️🌅';
+
+  @override
+  String get norwegenDayTitle12 =>
+      'Abreisetag – Heimreise nach einer unvergesslichen Kreuzfahrt 🚗🛳️💖';
+
+  @override
+  String get norwegenDay1 =>
+      'Our second Norway cruise was finally about to begin, booked once again quite spontaneously about two weeks in advance. Together with my mum and my great-grandmother, we made our way to Hamburg, a city we have visited many times and that has become one of our favourites ❤️.\n\nOn our first day in Hamburg, we arrived at midday and immediately headed to the Blockbräu brewery restaurant 🍺, which is a must on every visit. The food, as always, was excellent – hearty dishes, freshly prepared and beautifully served. We enjoyed our meal together in a relaxed atmosphere, a perfect start to our stay in Hamburg. Afterwards, we took a walk through the old Elbe Tunnel, which is always impressive. On the other side, we had a stunning view of the Elbphilharmonie, the harbour, and the passing ships. We took our time to really soak in the scenery before walking back through the tunnel. Later, we returned to the hotel and ended the day in peace.\n\nOn the second day, we went on a hop-on hop-off bus tour. We started at the Landungsbrücken and enjoyed a great overview of Hamburg’s harbour 🌊. The tour passed the Überseequartier, the modern district with its elegant buildings, and we enjoyed the mix of old and contemporary architecture. We continued past the main train station, where we briefly got off to watch the busy city life. The tour also took us along the Alster, where the water and surrounding parks created a beautiful, typical Hamburg atmosphere 🌿.\n\nWe also passed elegant villa districts such as Uhlenhorst, admiring the historic buildings and gardens. A highlight was HafenCity, the modern waterfront district with its futuristic architecture. We drove past the City Hall and St. Michael’s Church – two landmarks that make Hamburg so special. A funny insider on the tour was learning that one one-way street actually changes direction once a day 😄. We also passed the exhibition halls and explored parts of the city on foot before returning to the Landungsbrücken. After grabbing a small bite to eat, we visited the Reeperbahn in the Penny Kiez before heading back to the hotel.\n\nOn the third day, we explored Hamburg from a different perspective. We walked through HafenCity and the Speicherstadt, taking in the water, the old warehouses, and modern architecture. Our main destination was the Westfield shopping centre 🛍️, where we enjoyed some shopping. I treated myself to a Franzbrötchen with Smarties at Cinnaversum – absolutely delicious 😋. Afterwards, we returned to the hotel for a short nap before heading to the musical “& Julia” in the evening 🎭, located right next to our hotel. The show was entertaining, beautifully staged, and we all really enjoyed it.\n\nOn the fourth morning, it was finally time to board the AIDA Prima 🛳️. We had booked the AIDA early check-in and were able to board already at 10:30 a.m., which we really appreciate as it makes the start of the cruise so much more relaxed. Everything went smoothly without any stress.\n\nWe were especially happy to hear that our cabin was already ready, so we went straight to our veranda cabin 9286 on the port side, located quite far aft. It was actually the first time we stayed so far back on the ship. It was absolutely fine and we felt comfortable, but we also realised that we prefer cabins more in the middle of the ship.\n\nThe cabin itself was very practical: a double bed, a sofa bed, a nice balcony, and two bathrooms, which is incredibly convenient when travelling as three generations. One bathroom had the toilet and sink, the other the shower and sink – making life onboard much easier.\n\nAfter settling in, we went for lunch around noon, and shortly after returning to the cabin, our suitcases arrived. We unpacked, got comfortable, and truly arrived onboard. Even though we already knew the AIDA Prima, it always feels special walking the decks and experiencing that cruise atmosphere again.\n\nIn the early evening, around 6 p.m., we finally set sail from Hamburg. Departing there is always something special: the Elbe, the cranes, the slowly disappearing city, and the feeling that the holiday has truly begun. For dinner, we went to the Buffalo Steakhouse 🍽️, which was once again excellent. Afterwards, I couldn’t resist and bought a few AIDA charms for my Pandora bracelet – a lovely memory of the trip.\n\nWe ended the evening quietly on our balcony, even bringing a small string of lights to create a cozy atmosphere ✨🌊. Sitting outside, listening to the sea and watching the darkness, these are exactly the moments that make cruising so special.';
+
+  @override
+  String get norwegenDay2 =>
+      'Our first sea day felt exactly like what a holiday should feel like: calm, unhurried, and completely stress-free. No schedules, no pressure – just arriving and enjoying the moment.\n\nWe started the day very relaxed with breakfast at the Buffalo Steakhouse ☕🥐. The breakfast there is paid, but that is exactly what makes it special for us: a quiet atmosphere, a small but refined buffet, and overall much more peaceful than the main buffet restaurants. It was the perfect start to a sea day.\n\nAfterwards, we took the time to show my great-grandmother the AIDA Prima, as she had only sailed on the AIDA Nova with us before. So we slowly walked across the different decks, explored restaurants, lounges, and outdoor areas, and kept stopping to enjoy the view of the open sea. It was lovely to see her discovering the ship step by step and how much she liked the Prima.\n\nOf course, no sea day would be complete without a classic: currywurst from the Scharfe Ecke 🌭🔥. The currywurst on AIDA is always a highlight – really tasty, perfect for a snack, and something that has become a fixed part of our sea day routine.\n\nIn between, we simply drifted through the day: some quiet time on the balcony, the sound of the sea in the background, small walks around the ship, and plenty of moments just sitting and breathing 🌊. This is exactly the kind of sea day we love – no need to achieve anything, just being present.\n\nThis day was the perfect start to the cruise. Before the upcoming sightseeing days and new ports, we were able to fully arrive onboard – in the holiday, on the ship, and in our minds ❤️.';
+
+  @override
+  String get norwegenDay3 =>
+      'Nach dem entspannten Seetag am Vortag wachten wir voller Vorfreude auf, denn uns erwartete Bergen – eine Stadt, die wir schon kannten und die uns beim ersten Besuch so begeistert hatte, dass für uns sofort klar war: Hier wollen wir unbedingt noch einmal hin. Umso schöner war es, nun wieder hier zu sein 🧡.\n\nSchon am Morgen merkten wir, wie viel Glück wir mit dem Wetter hatten. Für Bergen fast schon ungewöhnlich: es war richtig schön warm, so warm, dass ich nur einen Pullover und eine Weste darüber trug. Kein Regen, kein Wind – einfach perfektes Wetter, um die Stadt zu Fuß zu entdecken ☀️✨.\n\nWie schon am Tag zuvor starteten wir entspannt mit einem Frühstück im Buffalo Steakhouse. Ruhig, gemütlich und genau richtig, bevor es für uns an Land ging. Danach hieß es: Jacken an, Kamera griffbereit – Bergen wartete 📸.\n\nUnser erster Programmpunkt war eine Hop-on-Hop-off-Bustour, ideal, um Bergen wieder kennenzulernen und sich gleichzeitig bequem einen Überblick zu verschaffen 🚌. An den berühmten bunten Häusern im Hanseviertel Bryggen stiegen wir aus. Dieses Viertel ist einfach etwas ganz Besonderes: die schmalen, farbigen Holzhäuser, die Geschichte, die man hier förmlich spürt, und direkt daneben der Hafen – Bergen zeigt sich hier von seiner schönsten Seite ⚓🏠.\n\nWir schlenderten über den Fischmarkt (Fisketorget), ließen die Atmosphäre auf uns wirken, schauten uns die Stände an und spazierten anschließend noch ein Stück am Hafen entlang. Mit der Sonne im Gesicht, dem Blick aufs Wasser und die umliegenden Berge war das einfach nur schön 🌊☀️.\n\nDanach ging es für uns zu einem echten Highlight des Tages – der Fløibanen. Beim letzten Besuch hatten wir es zeitlich nicht nach oben geschafft, diesmal wollten wir uns diese Aussicht auf keinen Fall entgehen lassen. Die Fahrt nach oben war schon ein Erlebnis für sich, aber als wir oben ankamen, waren wir einfach nur sprachlos 😍.\n\nDer Blick über Bergen, die umliegenden Berge, das Wasser – und die AIDA von oben zu sehen – war einfach überwältigend. So eine Aussicht hat man wirklich nicht oft. Wir verbrachten bestimmt eine gute Stunde dort oben, schlenderten herum, schauten in die kleinen Shops, setzten uns zwischendurch und genossen diesen Moment ganz bewusst. Einer dieser Augenblicke, die man abspeichert und nicht mehr vergisst 💙.\n\nWieder unten angekommen gönnten wir uns noch etwas Süßes: ein Softeis im Eisladen Tjommis in der Stadt 🍦. Eigentlich war ich erst skeptisch, doch ein älteres Ehepaar schwärmte so sehr davon, dass wir es einfach probieren mussten. Ich entschied mich für Softeis mit Erdbeeren und Erdbeersoße – und ich habe es wirklich nicht bereut. Es war richtig, richtig lecker 🍓😋.\n\nAnschließend bummelten wir noch durch ein paar Geschäfte, unter anderem durch einen kleinen Christmas Shop, den man über eine schmale, steile Treppe erreicht. Ein bisschen abenteuerlich – aber total süß und definitiv einen Besuch wert 🎄.\n\nAm Nachmittag ging es dann mit dem Hop-on-Hop-off-Bus wieder zurück zum Schiff. Perfektes Timing, denn um 15 Uhr wartete an Bord schon der Kuchen 🍰. Es gab Erdbeerkuchen mit Erdbeeren vom Karls Erdbeerhof – frisch, fruchtig und genau das Richtige nach einem erlebnisreichen Tag.\n\nUm 17 Uhr hieß es schließlich Abschied nehmen von Bergen. Das Auslaufen ist hier jedes Mal etwas Besonderes, vor allem wenn das Schiff unter der Askøybrua hindurchfährt. Wir standen auf unserem Balkon und genossen noch einmal die Aussicht, während Bergen langsam hinter uns verschwand 🌉⚓.\n\nAm Abend kehrten wir wieder im Buffalo Steakhouse ein. Ich gönnte mir erneut einen Burger, meine Mama ein Steak – beides wie immer richtig gut 🍔🥩. Danach schlenderten wir noch ein wenig durch die Shops an Bord, unter anderem durch den LEGO Store, bevor wir den Tag ganz ruhig ausklingen ließen.\n\nSpät am Abend saßen wir noch lange auf unserem Balkon, beobachteten den Sonnenuntergang, hörten das Meeresrauschen und ließen diesen wunderschönen Tag Revue passieren 🌅🌊. Bergen hat uns auch beim zweiten Besuch nicht enttäuscht – im Gegenteil. Es fühlte sich ein bisschen an wie Nachhausekommen 🧡.';
+
+  @override
+  String get norwegenDay4 =>
+      'Am nächsten Morgen legten wir in Ålesund an, und wir freuten uns riesig, wieder in dieser wunderschönen Stadt zu sein. Schon vor Ankunft hatten wir online Tickets für die Bimmelbahn gebucht 🚋, damit wir vorne sitzen konnten und die Tour entspannt starten würden. So stiegen wir direkt nach dem Aussteigen vom Schiff in die Bimmelbahn ein und fuhren hinauf zum Aksla Aussichtspunkt 🌄.\n\nOben angekommen hatten wir etwa 20 Minuten, um die Aussicht zu genießen. Die bunten Dächer der Stadt, der glitzernde Hafen und das sanft schaukelnde Wasser darunter – alles wirkte so friedlich und idyllisch. Ich musste zugeben, dass die Aussicht in Bergen noch spektakulärer war, aber diese hier hatte ihren ganz eigenen Charme 💛. Wir atmeten tief durch, machten Fotos und ließen einfach den Moment auf uns wirken.\n\nNach der Bimmelbahnfahrt gingen wir zu Fuß durch die Straßen von Ålesund und bewunderten die wunderschöne Jugendstil-Architektur 🏛️. Überall waren kunstvolle Fassaden, kleine Balkone und liebevolle Details, die die Stadt so besonders machten. Zwischendurch schauten wir in ein paar Souvenirshops hinein, bestaunten kleine Handwerkskunstwerke und genossen die entspannte Atmosphäre. Anschließend schlenderten wir noch am Hafen entlang, beobachteten die Boote und ließen die frische Meeresluft auf uns wirken 🚤🌊.\n\nAm Abend kehrten wir aufs Schiff zurück und um 20 Uhr legten wir ab ⛴️. Wir setzten uns auf unseren Balkon, tranken unsere Getränke und lauschten dem Meeresrauschen, während die Sonne den Himmel in leuchtende Orange- und Rosatöne tauchte 🌅💛. So ließen wir den Tag in Ålesund gemütlich ausklingen, voller schöner Eindrücke, entspannter Momente und dem typischen Gefühl, dass Norwegen einfach immer wieder verzaubert 🛳️✨.';
+
+  @override
+  String get norwegenDay5 =>
+      'Am nächsten Morgen erreichten wir endlich wieder Geirangerfjord, einen Ort, den wir einfach lieben 💛. Dieses Mal war alles ein bisschen anders: Wir legten zwei Stunden früher an als im Jahr zuvor und haben dadurch die ersten Momente der Einfahrt verschlafen 😅. Glücklicherweise wachten wir genau zur Passage der Sieben Schwestern auf – perfekt getimt, um die Wasserfälle noch in voller Pracht zu sehen. Die Sieben Schwestern – sieben einzelne Wasserfälle, die über die steilen Felsen stürzen – haben eine alte Legende: Ein Troll wollte einst die sieben Schwestern heiraten, doch sie entkamen ihm, indem sie sich in Wasserfälle verwandelten. Diese Geschichte hat den Fjord für uns noch magischer gemacht, während wir staunend aus dem Fenster schauten 🌟💦.\n\nKaum angelegt, ging es direkt ins Buffalo Steakhouse zum Frühstück 🍳🥓. Das kleine Frühstücksbuffet dort war zwar extra, aber es hat sich absolut gelohnt. Wir haben gemütlich gesessen, die Aussicht auf den Fjord genossen und uns auf den Tag eingestimmt. Anschließend stiegen wir vom Schiff und schlenderten durch die kleinen Gassen des Ortes Geiranger. Wir schauten in Souvenirshops, besuchten den Joker-Laden und probierten die berühmte Schokowaffel von Geiranger Sjokolade 🍫🧇 – außen knusprig, innen saftig, mit weißer Schokolade überzogen, einfach ein Traum! Auch der kleine Christmas-Laden war richtig süß 🎄✨.\n\nEin richtig cooles Highlight war der Seawalk, der vom Schiff aus in den Fjord hinausführt. Man läuft quasi über das Wasser, das Schiff liegt in der Mitte des Fjords, während um einen herum die majestätischen Berge aufragen. Es war zwar windig, selbst bei unserem sonnigen, warmen Wetter 🌞, und der Steg wackelte leicht, aber genau das machte den Spaziergang so besonders – ein echtes Abenteuer mit atemberaubender Aussicht 🏔️💨.\n\nZurück an Bord gönnten wir uns einen Milchshake, den ein besonders netter Kellner für uns extra zubereitet hat 🥤💛. Ich und meine Uroma hatten einen Milkshake, meine Mama einen Cocktail 🍹. Danach setzten wir uns auf den Balkon, atmeten die frische Fjordluft ein und ließen einfach alles auf uns wirken.\n\nUm 18 Uhr legten wir wieder ab, und wir saßen gemütlich auf dem Balkon, während wir an den Felsen und dem Troll vorbeifuhren. Die Sonne tauchte den Fjord in warme Farben, das Wasser glitzerte, und wir genossen das Meeresrauschen in vollen Zügen 🌅💖.\n\nAbends gab es wieder ein köstliches Dinner auf der AIDA – ich gönnte mir einen Burger, meine Mutter ein Steak 🍽️ – und danach ließen wir den Tag auf dem Balkon ausklingen. So viele Eindrücke, so viel Ruhe, so viel Schönheit – Geirangerfjord hat uns erneut verzaubert und uns wieder einmal bewusst gemacht, warum wir immer wieder hierher zurückkehren wollen.';
+
+  @override
+  String get norwegenDay6 =>
+      'Am nächsten Morgen legten wir um 10 Uhr in Trondheim an ⛴️. Bevor wir das Schiff verließen, ging es wie immer zuerst ins Buffalo Steakhouse zum Frühstück 🍳🥐. Auch wenn das Frühstück dort extra kostet, lohnt es sich wirklich: frisch zubereitete Leckereien, gemütliches Ambiente und ein perfekter Start in den Tag, während draußen langsam die Sonne über Trondheim aufging 🌞.\n\nAnschließend machten wir uns auf den Weg, Trondheim auf eigene Faust zu erkunden 🚶‍♀️🚶‍♀️. Unser erster Spaziergang führte uns am Hafen entlang, vorbei an den bunten Lagerhäusern, die auf Stelzen direkt am Wasser stehen. Diese alten Holzhäuser, so typisch für Norwegen, strahlen einfach einen besonderen Charme aus – man fühlt sich sofort wie in einer anderen Zeit 🌊🏘️.\n\nDanach liefen wir zur Gamle Bybro, der alten Stadtbrücke von Trondheim, auch „Die Rote Brücke“ genannt. Von hier aus hatte man einen wunderbaren Blick auf die Holzhäuser auf der anderen Seite des Flusses Nidelva und die Umgebung der Altstadt. Die Brücke selbst ist ein beliebtes Fotomotiv und man spürt die Geschichte, die an diesem Ort in den Mauern und Holzbohlen steckt 📸✨.\n\nWir schlenderten anschließend noch ein bisschen durch die Straßen der Stadt. Trondheim ist zwar etwas größer als die kleinen Fjordhäfen, die wir bisher besucht hatten, aber trotzdem sehr charmant und gemütlich. Überall gab es kleine Cafés, Geschäfte und die typischen nordischen Häuser zu entdecken. Meine Mama und ich kannten die Stadt schon von früheren Besuchen, trotzdem hat es uns Spaß gemacht, noch ein paar neue Ecken zu erkunden 💛.\n\nUm 19 Uhr legten wir wieder ab, und wir konnten einen wunderschönen Sonnenuntergang über dem Fjord beobachten 🌅💖. Auf dem Schiff ging es anschließend noch in die AIDA Shops, wo ich mir eine richtig schöne Handtasche gekauft habe – ein kleines Souvenir, das mich immer an diesen Tag erinnern wird 👜✨.\n\nDen Abend ließen wir auf unserem Balkon ausklingen, tranken unsere Getränke, hörten das sanfte Meeresrauschen und genossen die Ruhe, während das Schiff langsam Trondheim hinter sich ließ 🌊💫. Es war ein perfekter Tag zwischen Stadtbummel, nordischem Charme und der entspannten Kreuzfahrt-Atmosphäre – einer dieser Tage, die man einfach in Erinnerung behält ❤️.';
+
+  @override
+  String get norwegenDay7 =>
+      'Am nächsten Morgen legten wir bereits um 8 Uhr in Molde an ⛴️. Beim Einlaufen konnten wir schon aus der Ferne das markante Gebäude Scandic Seilet erkennen – ein architektonisches Highlight der Stadt. Von unserem Balkon aus hatten wir außerdem sofort einen Blick auf die Kathedrale von Molde, die majestätisch zwischen den Rosenbeeten der Stadt hervorstach ⛪🌹.\n\nNachdem wir von Bord gegangen waren, begrüßte uns direkt Dodo 🐾 – natürlich musste sofort ein kleines TikTok-Video her! Molde kannten wir schon ein wenig von früher, aber es ist einfach immer wieder wunderschön. Die Stadt trägt nicht umsonst den Beinamen „Stadt der Rosen“, überall blühten Rosen in allen Farben und verbreiteten einen herrlich frischen Duft 🌹💛.\n\nZuallererst spazierten wir zum Steg direkt vor dem Schiff, der um diese Uhrzeit noch ruhig und leer war. Besonders schön waren die Rosenkübel entlang des Stegs, die den Ort so idyllisch und gemütlich machten 🌸✨. Danach ging es weiter Richtung Kathedrale, am Rathaus vorbei und zum kleinen Blumentchen-Pavillon, an dem Touren angeboten wurden. Wir entschieden uns für die kürzere Tour, die uns zu einer spektakulären Aussicht führen sollte – das Molde-Panorama. Oben angekommen, wurden wir mit einem wunderschönen Blick über die Stadt, das Meer und die umliegenden Berge belohnt 🏞️😍. Es war ein toller Moment, die frische Luft zu genießen, die Sonne auf der Haut zu spüren und einfach die Schönheit Norwegens auf sich wirken zu lassen.\n\nAuf dem Rückweg hielten wir noch am Romsdal Museum. Das war wirklich interessant und ein bisschen verrückt zugleich – man konnte durch die Fenster sehen, dass dort tatsächlich früher Menschen lebten, mit Küchenutensilien, Möbeln und sogar Hunden 🏠🐶. Diese kleine Zeitreise war spannend und hat uns einen guten Eindruck vom Leben in Molde früher vermittelt.\n\nNach der Tour ging es zurück zum Rathaus, und nun passierte etwas Besonderes: Ich betrat mein erstes Café in Molde – das Macé Café AS ☕🥪🍓. Eigentlich gehe ich selten in Cafés, aber dieses hier hat mich magisch angezogen. Das Angebot war einfach unglaublich: frische belegte Brote, Waffeln, Smoothies und Kuchen. Wir haben belegte Brote gegessen und Smoothies getrunken – alles war frisch, lecker und mit viel Liebe zubereitet 😋💛. Das Café war zwar nicht ganz günstig, aber absolut empfehlenswert und ich kann mir jetzt schon vorstellen, dass wir bei zukünftigen Besuchen in Molde auf jeden Fall wieder hierher kommen werden.\n\nAm späten Nachmittag ging es zurück an Bord, und um 18 Uhr legten wir aus Molde wieder ab. Zum Abendessen ging es wie immer ins Buffalo Steakhouse, wo wir den Tag noch einmal Revue passieren ließen 🥩🍽️. Anschließend genossen wir noch die Abendstunden auf unserem Balkon, hörten das sanfte Meeresrauschen, ließen die warmen Farben des Sonnenuntergangs auf uns wirken 🌅🌊 und beendeten so einen rundum gelungenen Tag in Molde voller schöner Eindrücke, leckerem Essen und nordischem Flair ❤️✨.';
+
+  @override
+  String get norwegenDay8 =>
+      'Am nächsten Morgen legten wir um 8 Uhr in Måløy (auf der Insel Måløyna) an, einem Hafen, wo wir zum ersten Mal überhaupt waren, und wir freuten uns total, etwas Neues zu entdecken 🌟. Schon beim Einlaufen behielten wir die ganze Zeit den Blick auf den Hafen und auf die Aussicht – alles wirkte so ruhig und typisch nordisch, dass wir sofort wussten: Heute wird ein richtig besonderer Tag 📍.\n\nDa die Freigabe auf 9 Uhr festgelegt war, gingen wir vorher noch ins Buffalo Steakhouse frühstücken 🥐☕. Das war super gemütlich, und wir waren danach entspannt und voller Energie, bevor wir endlich von Bord durften. Als wir dann vom Schiff runtergingen, warteten auch schon direkt einige nette Einheimische und Touranbieter, die ihre Touren anboten – und wir entschieden uns ganz spontan für eine geführte Tour mit dem Kleinbus 🚐.\n\nDer Busfahrer war einfach ein Highlight für sich 😄! Er war super sympathisch, hatte laute gute Musik an, brachte ab und zu ein Mikrofon raus und machte mit uns Karaoke – wir saßen direkt hinter ihm und es fühlte sich an wie ein kleines Mini‑Roadtrip‑Konzert 🎤🎶. Insgesamt waren wir so mit ca. 15 Leuten unterwegs und es war einfach total lustig.\n\nUnser erster Stopp war bei einem lila Haus 🟣, an dem wir anhielten, weil der Busfahrer uns erzählte, dass dort eine Frau aus Thailand wohnt, die ihr Haus mit einem Stein‑Motiv bemalt hat. In dieser Straße standen auch mehrere bunte Häuser – ein echter Hingucker und sooo fotogen 📸.\n\nDer nächste Halt war einer der wichtigsten Punkte des Tages: der Kannesteinen – eine ganz besondere Felsformation, die über Jahrtausende vom Wind und von den Wellen des Nordatlantiks geformt wurde 🪨💦. Dieser pilzförmige Stein in Oppedal ist etwa drei Meter hoch und zeigt ganz eindrucksvoll, was die Natur hier geleistet hat. Unser Busfahrer zeigte uns Bilder, die er dort gemacht hatte: einmal bei Sonnenuntergang, einmal mit Polarlichtern – einfach wunderschön ✨. Der Kalk der Wellen, die dagegenschlagen, hat dem Felsen seine einzigartige Form gegeben – ein echtes Naturkunstwerk 📷.  \n\nWeiter ging es zum Kråkenes fyr – dem Leuchtturm von Kråkenes 🗼, wo wir für etwa drei Viertelstunde anhielten und die etwa 10‑minütige Wanderung zum Aussichtspunkt machten. Der Weg dorthin war schon so schön: wilde Natur, die frische Luft, der Blick übers weite Meer – einfach Norwegen pur 🌬️🌊. Oben angekommen hatten wir Zeit, die Aussicht zu genießen und einige Fotos zu machen, bevor wir den Weg zurück zum Bus antraten. Leider war der Platz für Menschen mit Rollatoren nicht gut geeignet, was ein wenig schade war, aber für uns war es ein echtes Natur‑Erlebnis 🌿.\n\nDer letzte Stopp war der Strand Refviksanden 🏖️ – ein weißer Sandstrand, der oft als einer der schönsten Strände Norwegens beschrieben wird und mit seiner Länge von etwa 1,5 km wirklich beeindruckend ist 💙. Da stand es auf unserer Bucket‑List, zumindest einmal im Fjord „schwimmen“ zu gehen – also liefen wir einfach in unsere Sachen ins Wasser. Mit etwa 15 Grad Wassertemperatur war es zwar etwas frisch, aber überraschend angenehm und überhaupt nicht unangenehm ❄️😊. Wir hatten richtig Glück mit dem Wetter – Sonne, blauer Himmel und diese unglaubliche nordische Strandkulisse.  \n\nDie gesamte Tour dauerte etwa vier Stunden und war einfach ein Highlight des Tages – Landschaft, Lachen im Bus, Natur, Meer und ein super sympathischer Fahrer, der uns zwischendurch Geschichten erzählt hat 🚌✨.\n\nUm 16 Uhr legten wir wieder ab, und beim Ablegen gab es sogar eine kleine Strand‑Party 🎉: ein Elvis‑Imitator sang mit vollem Einsatz, und es wurden deutsche und norwegische Flaggen geschwungen 🇩🇪🇳🇴. Ein so verrückter, schöner Moment, den wir so schnell nicht vergessen werden.\n\nAbends gingen wir in der Tapas‑Bar auf der AIDA essen 🍽️ – so lecker und gemütlich – und danach ließen wir den Tag wieder auf unserem Balkon ausklingen 🌅🌊. Wir hörten das sanfte Meeresrauschen, blickten aufs Wasser und waren einfach dankbar für diesen wunderschönen, abwechslungsreichen Tag ❤️.';
+
+  @override
+  String get norwegenDay9 =>
+      'Am nächsten Morgen legten wir pünktlich um 8 Uhr in Flåm an ⛴️. Schon der Hafen selbst ist ein Erlebnis: eingebettet zwischen den steilen, grünen Bergen und direkt am Aurlandsfjord – ein Ort, der sofort dieses besondere Norwegen‑Gefühl weckt 🌲🖼️.\n\nNatürlich wollten wir mit der berühmten Flåmsbana fahren – der legendären Bahnstrecke, die als eine der spektakulärsten Zugfahrten der Welt gilt. Doch leider war sie an diesem Tag bereits ausverkauft, und wir konnten keine Tickets mehr bekommen 😕. Das war zwar etwas schade, aber wir wollten trotzdem nicht tatenlos dastehen.\n\nAlso schauten wir uns um, was man sonst machen konnte – denn Flåm ist zwar nicht groß, dafür aber ausgesprochen gemütlich und einladend. Wir entdeckten eine Bimmelbahn‑Tour, die um 10 Uhr starten sollte 🚋, und buchten spontan mit. Bis dahin hatten wir noch etwas Zeit, also gingen wir noch einmal zurück an Bord und frühstückten wieder im Buffalo Steakhouse 🥐☕ – unser Standard‑Start in die Hafentage, wenn wir schon früh anlegen.\n\nNach dem Frühstück stiegen wir mit guter Laune in die Bimmelbahn ein. Die Fahrt dauerte etwa eine Stunde und führte uns in gemütlichem Tempo durch den Ortskern und ein kleines Stück der umliegenden Naturlandschaft 🌳🚂. Unterwegs sahen wir unter anderem die hübsche Flåmskyrkja – die kleine Kirche von Flåm –, deren weißer Turm sich malerisch vor den Bergen abzeichnete ⛪. Wirklich steile Berge oder dramatische Wasserfälle wie bei der Flåmsbana gab es hier nicht, aber gerade das machte es so angenehm und entspannt: vorbei an kleinen Häusern, Wiesen und immer wieder dieser klaren norwegischen Luft um uns herum 🌬️💚.\n\nWieder im Hafen angekommen, spazierten wir noch ein bisschen direkt vor dem Schiff über die Felsen. Wir suchten uns ein schönes Plätzchen, saßen nebeneinander und genossen den Blick aufs Wasser 🌊. Dabei mussten wir aufpassen, nicht aus Versehen auf einen losgelösten Felsen zu treten 🪨😅 – kleine Risiken gehören eben irgendwie auch zu solchen Naturerlebnissen dazu. Anschließend bummelten wir durch die Souvenir‑Shops, sahen uns ein paar lokale Sachen an und genossen das einfache, entspannte Flair in Flåm 🛍️✨.\n\nGegen 13 Uhr waren wir wieder auf dem Schiff und gönnten uns eine richtig leckere Currywurst 🌭, bevor es am Nachmittag weiterging. Doch auch der Abend hatte noch einiges zu bieten:\n\nZum Abendessen kehrten wir wieder im Buffalo Steakhouse ein 🍽️ – einfach unser Lieblingsplatz an Hafentagen, weil es dort immer so gemütlich ist und man sich nach einem langen Tag direkt willkommen fühlt. Danach zog es uns noch zur Eisbar, wo ich mir einen riesigen Erdbeerbecher mit Erdbeeren vom Karls Erdbeerhof 🍓🍨 gönnte – und ja, der war so gut, dass ich ihn auf der Reise später noch öfter hatte 😍.\n\nAm Abend nahmen wir an der Silent Party teil 🎧 – ein richtiges Highlight an Bord: Musik, die man über Kopfhörer direkt in den Ohren hat, Leute, die mitwippen, lachen und einfach Spaß haben. Danach war es Zeit für den gemütlichen Abschluss des Tages. Wir setzten uns wieder auf unseren Balkon, hörten das sanfte Meeresrauschen, blickten in den Sternenhimmel und ließen diesen wunderschönen Flåm‑Tag ganz in Ruhe ausklingen 🌌💫.';
+
+  @override
+  String get norwegenDay10 =>
+      'Als wir am nächsten Morgen in Stavanger ankamen, waren wir sofort wieder begeistert. Wir kannten diesen Hafen schon von einer früheren Reise, aber jedes Mal, wenn man die Stadt erreicht und die weißen Häuser direkt am Wasser sieht, bleibt das ein wunderschöner Anblick 🏘️✨. Schon beim Einlaufen hatten wir diesen kleinen magischen Moment: die Sonne fiel auf die Dächer, der Himmel war klar, und die Kombination aus Altstadt und Meer wirkte wie ein klassisches Postkartenbild 📸.\n\nWir legten um 10 Uhr an und konnten es kaum erwarten, die Stadt zu erkunden. Direkt nach dem Ausschiffen liefen wir an den Straßenständen vorbei Richtung Innenstadt 🚶‍♀️🚶‍♀️. Irgendwie zog uns der erste Schuhladen magisch an 😉 – und was soll ich sagen… wir hatten einen echten Shopping‑Treffer! 🛍️👟✨ Insgesamt nahmen wir vier Paar Schuhe mit: zwei für mich und zwei für meine Mama. Der Tag war damit für uns schon erfolgreich gestartet – wenn man schöne Schuhe findet, macht das einfach gute Laune 😄.\n\nAnschließend spazierten wir weiter durch die Stadt, ließen uns treiben und genossen das urbane Flair. Besonders schön war das Gebiet mit den typischen weißen, malerischen Häusern, die Stavanger so ihren besonderen Charakter geben 🏡🤍. Diese Gegend heißt Gamle Stavanger – ein historisches Viertel mit engen Gassen, alten Gebäuden und einer Atmosphäre, die einen sofort zum Verweilen einlädt. Hier entdeckten wir auch wieder die Wichteltür, ein kleines, charmantes Detail, das wir schon vom letzten Besuch kannten und das uns dieses Mal wieder zum Schmunzeln brachte 🧝‍♂️🚪.\n\nWir schlenderten durch die engen Straßen von Gamle Stavanger, schauten in kleine Boutiquen und genossen einfach die Mischung aus Geschichte, modernen Shops und nordischer Lebensfreude 🌤️. Stavanger hat für uns genau diesen Mix: charmant, nicht zu groß, aber voller schöner Ecken.\n\nAm späten Nachmittag kehrten wir zurück zum Schiff, und um 19:30 Uhr legten wir wieder ab 🌅⚓. Das Auslaufen aus Stavanger war wieder wunderschön – sun setting, leichte Brise, das glitzernde Meer vor uns – ein perfekter Abschluss für einen wirklich gelungenen Tag in der Stadt.\n\nDen Abend ließen wir an Bord ausklingen: Wir waren noch ein bisschen in der Disco D6, haben getanzt, gelacht und den Tag einfach genossen 🕺🎶. Anschließend setzten wir uns auf unseren Balkon, hörten das entspannte Meeresrauschen, blickten auf das dunkle Wasser hinaus und ließen den Tag ganz ruhig ausklingen 🌊💜✨.';
+
+  @override
+  String get norwegenDay11 =>
+      'Der Tag begann eigentlich wie ein entspannter Seetag, doch schon am Vorabend hatte der Kapitän uns informiert, dass wir uns so schnell wie möglich nach Hamburg bewegen müssen, da die Elbe wegen eines möglichen Sturms geschlossen werden könnte ⛈️😯. Eigentlich sollten wir erst am Morgen nach Hamburg kommen, aber nun war klar: wir mussten den Tag auf See genießen, aber gleichzeitig das Tempo halten.\n\nWir starteten entspannt in den Tag und gingen frühstücken ins Buffalo Steakhouse 🥓🥐☕. Dort gab es wieder das leckere kleine Frühstücksbuffet, und wir haben es richtig genossen, in Ruhe in den Tag zu starten. Danach hieß es Koffer packen und ein letztes Mal die AIDA Prima erkunden. Wir schlenderten durch die Shops, schauten uns noch ein paar Souvenirs an und machten das Schiff so richtig unsicher 😄🛍️.\n\nAm Nachmittag nutzten wir die Gelegenheit, es uns auf unserem Balkon gemütlich zu machen, den Blick auf das weite Meer zu genießen und einfach ein bisschen zu entspannen 🌊💺. Es war ein herrlicher Tag auf See, die Sonne schien, und wir hatten die frische Meeresbrise um die Nase.\n\nAm Abend kehrten wir erneut ins Buffalo Steakhouse zum Abendessen ein 🥩🍔 – ein perfekter Abschluss für einen Tag auf See. Danach setzten wir uns noch einmal auf unseren Balkon, denn die Elbe rief schon nach uns. Schon während wir auf dem Balkon saßen, konnten wir beobachten, wie die MSC an uns vorbeifuhr und kurz danach ein norwegisches Kreuzfahrtschiff. Es war spannend zu sehen, wie sich die großen Schiffe aneinander vorbeibewegten – ein richtiges Kreuzfahrt‑Highlight 🚢✨.\n\nGegen 23 Uhr erreichten wir schließlich Hamburg – noch vor der geplanten Morgenankunft. Wir fuhren am Containerhafen vorbei, sahen Planten un Blomen und die Lichter der Stadt glitzerten bereits im Dunkeln 🌃🌟. Um Mitternacht legten wir dann offiziell an. Endlich Hamburg! Es war so ein schönes Gefühl, die Stadt wiederzusehen und nach der langen Reise wieder festen Boden unter den Füßen zu haben 😍🏙️.\n\nNach diesem aufregenden Abend ging es dann für uns nur noch für ein paar Stunden schlafen, denn der Wecker würde früh klingeln, um die letzte Etappe unseres Hamburg-Aufenthaltes zu starten ⏰💤.';
+
+  @override
+  String get norwegenDay12 =>
+      'Der letzte Tag unserer zweiten Norwegen-Kreuzfahrt begann noch einmal entspannt, aber auch ein kleines bisschen wehmütig. Wir starteten in den Tag mit einem Frühstück im Buffalo Steakhouse 🥓🥐☕ – unser allerletztes Frühstück an Bord der AIDA Prima. Es war wieder richtig lecker, und während wir da saßen, konnte ich gar nicht fassen, wie schnell die elf Tage vergangen waren. 😌💭\n\nUm 10 Uhr hieß es dann endgültig Abschied nehmen. Wir verließen das Schiff, stiegen ins Auto ein und machten uns bereit für die Heimreise nach Köln 🚗💨. Das Packen war ein kleines Abenteuer für sich – wir hatten so unglaublich viel mitgenommen, dass wir uns gefühlt wie echte Tetris-Meister vorkamen, bis alles irgendwie ins Auto passte 😅📦.\n\nEndlich alles verstaut, starteten wir die lange Fahrt – viereinhalb Stunden lagen vor uns. Doch während wir auf der Autobahn unterwegs waren, konnten wir richtig dankbar sein: Wir hatten Glück mit der Elbe und dem Wetter, konnten rechtzeitig in Hamburg anlegen und mussten keine Häfen auslassen. Tatsächlich hatte es für die nächste Kreuzfahrt dort richtiges Unwetter gegeben 🌧️⚡. Die Schiffe mussten mehrere Tage im Hamburger Hafen bleiben, konnten erst verspätet starten, und manche Häfen wurden sogar gestrichen. Wir konnten uns wirklich glücklich schätzen, dass wir unsere Route so problemlos genießen konnten – und dass wir die Stadt noch einmal in Ruhe erleben durften.\n\nWährend wir über die Autobahn fuhren, war es ein richtiges Gefühl der Ruhe und des Nachklingens: Wir redeten noch über unsere Lieblingsmomente, lachten über kleine Pannen, erinnerten uns an wunderschöne Sonnenuntergänge auf dem Balkon 🌅🛳️, die Aussicht auf die Fjorde, das leckere Essen an Bord und in den Häfen, und an all die besonderen Augenblicke, die wir zu dritt – ich, meine Mama und meine Uroma – erleben durften. 💖\n\nSo ging ein weiterer unvergesslicher Abschnitt unserer Kreuzfahrt zu Ende. Wir fuhren aus Hamburg heraus, weg vom Sturm, Richtung Heimat – voller glücklicher Erinnerungen und schon mit Plänen im Kopf für die nächste Reise 🛳️✨.';
+
+  @override
+  String get titleHighlights => 'Mediterrane Highlights';
+
+  @override
+  String get titleMetropolen => 'Metropolen ab Hamburg';
+
+  @override
+  String get metropolenDay1 =>
+      '⚓ Hamburg & Start unserer Metropolenkreuzfahrt – AIDA Prima';
+
+  @override
+  String get metropolenDay2 =>
+      '✨ Tag 2 auf der AIDA Prima – Entspannung pur auf See';
+
+  @override
+  String get metropolenDay3 => '🛳️ Tag 3 – Southampton & Portsmouth entdecken';
+
+  @override
+  String get metropolenDay4 =>
+      '🚢 Tag 4 – Le Havre: Entspanntes Hafenerlebnis an der französischen Küste';
+
+  @override
+  String get metropolenDay5 =>
+      '🇧🇪 Tag 5 – Zeebrügge & Brüssel: Hafenflair trifft Hauptstadt-Charme';
+
+  @override
+  String get metropolenDay6 =>
+      '⚓ Tag 6 – Rotterdam: Skyline, Kubushäuser & urbane Highlights';
+
+  @override
+  String get metropolenDay7 =>
+      '🌇 Tag 7 – Zurück nach Hamburg: Abschied & letzte Hafenmomente';
+
+  @override
+  String get metropolen1 =>
+      'Unsere Metropolenkreuzfahrt mit der AIDA Prima begann mit der Anreise nach Hamburg 🚗🌆. Wir reisten bereits am Vortag an, um am Morgen entspannt starten zu können. Für die Nacht wählten wir das Holiday Inn Berliner Tor, ein Hotel, das wir sehr schätzen. Es liegt relativ nah am Steinwerder Hafen, sodass die Fahrt zum Schiff am nächsten Morgen angenehm kurz ist. Die Zimmer sind modern, hell und freundlich eingerichtet – perfekt, um nach der Anreise anzukommen und Energie für die Kreuzfahrt zu tanken ✨.\n\nAm Morgen des Kreuzfahrtstarts ging es direkt zum Hafen. Hamburg bietet hier einen großen Vorteil: Parkplätze direkt vor dem Schiff ermöglichen ein bequemes Ausladen des Gepäcks und einen schnellen Check-in. Wir hatten 12 Uhr als Check-in-Zeit reserviert – alles lief reibungslos, ohne lange Wartezeiten ⏱️.\n\nNach dem Einchecken ging es zunächst zum Mittagessen. Kurz darauf kamen unsere Koffer an, und wir bezogen unsere Kabine 11.122 auf Deck 11, eine Verandakabine auf der Steuerbordseite, mittel zwischen Mitte und vorne des Schiffes. Wir packten unsere Koffer aus, richteten die Kabine ein und fühlten uns sofort wohl. Kein Wunder, dass die AIDA Prima unser Lieblingsschiff ist: perfekte Größe, nicht zu groß, nicht zu klein, und der Skywalk ist ein Highlight, das wir besonders lieben 🛳️❤️. Es war unsere zweite Kreuzfahrt mit der Prima, aber die erste Metropolenkreuzfahrt, und wir freuten uns riesig, wieder an Bord zu sein.\n\nNach dem Einrichten erkundeten wir kurz das Schiff, genossen die Atmosphäre an Bord und starteten voller Vorfreude in die Kreuzfahrt. Um 17 Uhr legten wir in Hamburg ab, und wie immer ist das Ablegen in Hamburg ein ganz besonderes Erlebnis. Wir blieben lange draußen auf Deck stehen und genossen das Panorama, bis wir bei Cuxhaven vorbeifuhren – die Stunden auf der Elbe, mit den Lichtern der Stadt und dem Wasser um uns herum, sind einfach unvergesslich 🌊✨.\n\nAm Abend stand dann noch der Willkommens-Empfang und die erste Show auf dem Programm. Wir ließen den Tag schließlich gemütlich auf dem Balkon ausklingen, genossen die frische Luft und das leichte Abendlicht über dem Hafen, bevor wir müde, aber glücklich, ins Bett gingen 🌅💤.';
+
+  @override
+  String get metropolen2 =>
+      'Der zweite Tag unserer Kreuzfahrt stand ganz im Zeichen der Entspannung – perfekt, um nach der Anreise richtig anzukommen und das Schiff in aller Ruhe zu entdecken ✨. Wir starteten den Morgen ganz gemütlich, ließen uns Zeit und genossen ein ausgiebiges, langes Ausschlafen 🛌💛.\n\nDanach erkundeten wir entspannt die AIDA Prima. Das Schiff lädt einfach zum Schlendern ein: über die Decks, vorbei am Poolbereich, die Bars und gemütlichen Lounges – überall gibt es etwas zu entdecken. Wir machten es uns auf den Liegestühlen am Pool bequem, ließen die Sonne auf uns wirken und atmeten die frische Meeresluft ein 🌞🍃. Da es Osterzeit war, herrschte eine besonders ruhige, fast magische Stimmung an Bord, die den Tag noch angenehmer machte.\n\nZwischenzeitlich wechselten wir entspannt zwischen Balkon, Kabine, Hängematten und Poolliegen, genossen die Ruhe auf See und ließen die Seele baumeln 🌊💛. Mittagessen gab es im Buffetrestaurant – vielfältig, lecker und genau das Richtige für einen entspannten Seetag. Danach ein kleiner Spaziergang über das Schiff oder ein gemütlicher Moment in der Kabine, bevor wir den Tag langsam ausklingen ließen.\n\nAm Abend genossen wir ein köstliches Dinner an Bord und ließen den Tag ruhig ausklingen 🍽️✨. Solche Seetage sind einfach herrlich: die perfekte Mischung aus Ruhe, Genuss und Zeit für sich selbst, um sich auf die kommenden spannenden Hafenstopps vorzubereiten.';
+
+  @override
+  String get metropolen3 =>
+      'Am dritten Tag unserer Kreuzfahrt legten wir im Hafen von Southampton an, einem der wichtigsten Kreuzfahrthäfen Englands. Die Stadt ist nicht nur für ihre Kreuzfahrt-Historie bekannt, sondern auch als Ausgangspunkt zahlreicher berühmter Schiffe – ein Ort, an dem Geschichte förmlich spürbar ist 🛳️✨.\n\nDie Uferpromenade von Southampton ist wunderschön: historische Gebäude reihen sich neben modernen Einkaufszentren, und überall spürt man das maritime Flair. Viele Gäste nutzten die Gelegenheit, nach London zu fahren. AIDA bot dafür einen Busausflug an – etwa zwei Stunden Hin- und Rückfahrt. Wir entschieden uns dagegen, da wir London bereits kannten und nicht so lange im Bus sitzen wollten 🚍💨. Eine tolle Alternative für Familien ist die direkte Zugverbindung vom Hafen ins Londoner Stadtzentrum – bequem, schnell und stressfrei. Das wäre beim nächsten Mal sicher auch eine Option für uns.\n\nStattdessen fuhren wir nach Portsmouth zum Gunwharf Quays Designer Outlet. Ein modernes Einkaufsviertel direkt am Wasser, perfekt für alle Shopping-Fans 🛍️🌊. Markenläden, Restaurants und die maritime Atmosphäre machten unseren Besuch besonders schön. Anschließend kehrten wir zurück nach Southampton und besuchten das Titanic Museum. Spannende Geschichten, beeindruckende Exponate und Einblicke in das berühmte Schiffsunglück machten den Besuch zu einem echten Highlight des Tages 🛳️💡.\n\nEin kleines Abenteuer erwartete uns dann auf dem Rückweg zum Schiff: Aufgrund des stürmischen Wetters rissen die Leinen, während das Schiff im Hafen lag. Zum Glück konnten wir rechtzeitig aufs Schiff gelangen, während andere Passagiere mehrere Stunden warten mussten und die Hafengastronomie nicht mehr nutzen konnten 🌬️⚓.\n\nDieser Tag zeigte eindrucksvoll, wie wichtig Flexibilität auf Kreuzfahrten ist. Auch bei unvorhergesehenen Ereignissen wie Sturm oder verspäteter Abfahrt bleibt man entspannt, genießt die Zeit und sammelt besondere Erinnerungen. Southampton und Portsmouth haben uns mit ihrer historischen Atmosphäre, der Architektur und dem maritimen Charme begeistert – ein perfekter Mix aus Kultur, Geschichte und Shoppingfreuden ❤️.';
+
+  @override
+  String get metropolen4 =>
+      'Am nächsten Tag legten wir in Le Havre an, einem charmanten Hafen an der französischen Küste. Schon beim Aussteigen spürten wir die frische Meeresbrise, hörten das sanfte Plätschern der Wellen gegen die Hafenmauern und fühlten sofort das maritime Lebensgefühl 🌊✨.\n\nVor Ort bestand die Möglichkeit, einen Ausflug nach Paris zu buchen – etwa zweieinhalb Stunden hin und zurück. Wir entschieden uns dagegen, da wir die Strecke ohnehin bequem mit dem Auto in vier bis viereinhalb Stunden zurücklegen könnten und Paris bereits sehr gut kennen 🏙️🚗.\n\nStattdessen genossen wir die Ruhe und Gelassenheit des Hafens. Wir schlenderten entlang der Promenade, beobachteten die vorbeiziehenden Schiffe und ließen die maritime Atmosphäre einfach auf uns wirken. Der leichte Salzgeruch in der Luft, die Möwenrufe und das warme Sonnenlicht machten den Aufenthalt besonders angenehm ☀️🕊️.\n\nFür alle, die den Paris-Ausflug buchen möchten: Die Fahrt bietet die perfekte Gelegenheit, die Stadt der Lichter zu erleben – die weltberühmten Sehenswürdigkeiten, die lebendige Atmosphäre und das französische Flair warten hier auf euch. Für uns war es jedoch wunderbar, den Tag am Hafen zu verbringen, die Ruhe zu genießen und neue Energie für die kommenden Abenteuer auf unserer Kreuzfahrt zu tanken ❤️⚓.';
+
+  @override
+  String get metropolen5 =>
+      'Nach Le Havre führte unser Weg nach Zeebrügge, dem charmanten belgischen Hafen an der Nordsee. Schon beim Aussteigen spürten wir die frische Meeresluft, hörten das leise Rauschen des Wassers und fühlten sofort die entspannte Atmosphäre dieses kleinen Hafens 🌊✨.\n\nVon Zeebrügge aus hatten wir die Möglichkeit, mit einem Shuttlebus direkt nach Brüssel zu fahren – eine sehr bequeme Option, um die belgische Hauptstadt für einen Tagesausflug zu erkunden 🚌.\n\nIn Brüssel angekommen, schlenderten wir gemütlich durch die Straßen und ließen das pulsierende Leben der Stadt auf uns wirken. Natürlich durfte ein Besuch auf dem Grote Markt nicht fehlen – dem wunderschönen historischen Marktplatz mit den prächtigen Gildehäusern. Das beeindruckende Rathaus mit seiner gotischen Fassade stach schon von weitem ins Auge 🏰.\n\nEin weiteres Highlight war das Atomium, das berühmte Wahrzeichen Brüssels, das mit seiner futuristischen Architektur begeistert. Auch die kleine, weltberühmte Manneken-Pis-Statue stand auf unserer Liste – ein charmantes Symbol der Stadt, das man einfach gesehen haben muss 👫✨.\n\nKulinarisch ging es ebenfalls hoch her: Belgische Pommes, traditionell doppelt frittiert und herrlich knusprig, durften ebenso wenig fehlen wie frisch zubereitete Waffeln – ein Genuss, den wir uns nicht entgehen ließen 😋🍴.\n\nBesonders schön an Brüssel ist die harmonische Mischung aus mittelalterlichem Charme und moderner Architektur. Überall entdeckten wir kleine Cafés, bunte Gassen und beeindruckende Plätze, die zum Verweilen einluden. Die kunstvollen Fassaden, historischen Brunnen und liebevoll gestalteten Straßencafés machten den Spaziergang durch die Stadt zu einem kleinen Abenteuer voller Details und schöner Eindrücke 🌿🏙️.\n\nNach einigen Stunden voller Entdeckungen fuhren wir entspannt zurück nach Zeebrügge, um wieder an Bord zu gehen. Der Ausflug war ein perfektes Zusammenspiel aus Kultur, Geschichte, Kulinarik und entspanntem Sightseeing – ein Tag, der uns noch lange in Erinnerung bleiben wird ❤️⚓.';
+
+  @override
+  String get metropolen6 =>
+      'Am letzten Tag legten wir in Rotterdam an, direkt an der berühmten Erasmusbrücke, die oft auch „Die Schwanenbrücke“ genannt wird 🌉. Schon beim Aussteigen vom Schiff fiel der Blick auf die imposante Skyline der Stadt, die ihr den Spitznamen „Klein-Manhattan“ eingebracht hat. Hohe Glasfassaden, moderne Architektur und futuristische Bauten prägen das Stadtbild und vermitteln sofort ein Gefühl von Dynamik und urbanem Flair 🏙️✨.\n\nVom Hafen aus schlenderten wir direkt über die Erasmusbrücke und genossen den atemberaubenden Blick auf die Europahafenanlagen, die modernen Wolkenkratzer und die weite Maas. Das Lichtspiel auf den Glasfronten in Verbindung mit dem Wasser war einfach faszinierend – ein echtes Highlight für alle Fotografie-Fans 📸💛.\n\nIn der Stadt angekommen, tauchten wir in Rotterdams besonderes Stadtleben ein. Die Mischung aus modernen Bauten, historischen Hafenanlagen und kleinen, charmanten Gassen macht die Stadt so einzigartig. Besonders beeindruckend waren die Kubushäuser (Cube Houses), die schräg auf Ständern gebaut sind – ein architektonisches Meisterwerk, das man unbedingt gesehen haben sollte 🏠✨. Auch die Markthalle mit ihren riesigen Glasfronten und dem beeindruckenden Innenraum war ein absolutes Muss.\n\nWir spazierten gemütlich durch die Innenstadt, ließen uns treiben, entdeckten kleine Cafés und genossen die besondere Atmosphäre. Rotterdam beeindruckt durch seinen Mut zur modernen Architektur, und gleichzeitig spürt man die maritime Geschichte der Stadt, die durch den Hafen und die Schifffahrt eng mit der Stadt verbunden ist 🌊⚓.\n\nRotterdam ist ein Ort, an dem Tradition auf Moderne trifft – und genau das macht diesen Ausflug so besonders. Die Kombination aus Erasmusbrücke, Skyline, Kubushäusern und den lebendigen Straßen sorgte für ein unvergessliches Erlebnis, das diesen Tag zu einem perfekten Abschluss unserer Kreuzfahrt machte ❤️✨.';
+
+  @override
+  String get metropolen7 =>
+      'Nach einem ereignisreichen Tag in Rotterdam führte uns unsere Reise zurück nach Hamburg. Am Morgen mussten wir unsere Kabine bis 9:00 Uhr verlassen und den Check-out bis 10:30 Uhr erledigen – Standardregel an deutschen Häfen ⏰. Bevor wir endgültig von Bord gingen, genossen wir noch ein entspanntes Frühstück im Buffalo Steakhouse, um den Tag ruhig und genussvoll zu starten 🥐☕.\n\nDie Organisation bei der Abreise ist wirklich praktisch: Im Manifest kann man vorab auswählen, ob man die Bordausgaben per EC- oder Kreditkarte begleichen möchte – dann wird alles automatisch von der Bordkarte abgebucht 💳. Wer bar bezahlen möchte, muss dies bereits am Vorabend erledigen, wir bevorzugen aber immer die bargeldlose Variante – einfach bequem und stressfrei.\n\nEin weiteres Highlight ist der praktische Kofferservice: Die Koffer können am letzten Abend bis 2:00 Uhr nachts vor die Kabinentür gestellt werden. Wenn man die Kabine wie wir bis 9:00 Uhr verlässt, werden die Koffer automatisch zum Terminal gebracht – ein echter Luxus, der die Abreise deutlich entspannter macht 🧳✨. Wer früher abreist, muss die Koffer allerdings selbst vom Schiff holen.\n\nNach dem Frühstück holten wir unsere Koffer am Terminal ab, luden sie ins Auto und nutzten die verbleibende Zeit, um noch ein wenig die Stadt Hamburg zu genießen. Die letzten Stunden boten Gelegenheit für einen Spaziergang entlang der Elbe oder einen Blick auf die historischen Speicherhäuser – ein schöner Abschluss einer unvergesslichen Kreuzfahrt 🌇🚢.\n\nSo endete unsere Reise von Hamburg aus, voller besonderer Momente, atemberaubender Häfen und unvergesslicher Erlebnisse – Erinnerungen, die uns noch lange begleiten werden ❤️✨.';
+
+  @override
+  String get aidaDay1_de =>
+      'Tag 1 - Anreise nach Hamburg & Einschiffung auf die AIDA Perla 🛳️';
+
+  @override
+  String get aidaDay2_de => 'Tag 2 - Seetag auf dem Weg nach Bergen 🌊🛳️';
+
+  @override
+  String get aidaDay3_de => 'Tag 3 - Willkommen in Bergen 🧌🇳🇴';
+
+  @override
+  String get aidaDay4_de =>
+      'Tag 4 - Geirangerfjord: Ein Tag wie im Bilderbuch 🗻🇳🇴';
+
+  @override
+  String get aidaDay5_de => 'Tag 5 - Zwei Häfen, ein Tag: Åndalsnes & Molde 🌹';
+
+  @override
+  String get aidaDay6_de =>
+      'Tag 6 - Trondheim - Norwegisches Flair & Wasserfronten 🏠';
+
+  @override
+  String get aidaDay7_de =>
+      'Tag 7 - Ålesund: Farben, Jugendstil & eine Bimmelbahn 🇳🇴';
+
+  @override
+  String get aidaDay8_de =>
+      'Tag 8 - Eidfjord: Nebelzauber und Trollzug-Romantik 😶‍🌫️🇳🇴';
+
+  @override
+  String get aidaDay9_de =>
+      'Tag 9 - Zwischen weißen Häusern und Wichteltüren: Stavanger erleben 🧚🏼';
+
+  @override
+  String get aidaDay10_de => 'Tag 10 - Letzter Tag auf hoher See 🌊🛳️';
+
+  @override
+  String get aidaDay11_de => 'Tag 11 - Back in Hamburg ⚓️';
+
+  @override
+  String get norwegenPrequelDay1 =>
+      'Unsere allererste Norwegen-Kreuzfahrt – wir waren ehrlich gesagt ziemlich gespannt! Norwegen wurde uns von so vielen Menschen als absolutes Highlight empfohlen: 🌲❄️ Atemberaubende Natur und unendliche Ruhe. Wir waren skeptisch, ob das wirklich zu uns passt, da wir sonst eher Sonne, Action und Trubel lieben. Trotzdem wollten wir es endlich selbst erleben und uns auf etwas ganz anderes einlassen.\n\nAm 14. September 2024 reisten wir entspannt nach Hamburg und übernachteten im Hotel Holiday Inn Berliner Tor 🏨 – ein wirklich gutes Hotel, perfekt gelegen in der Nähe vom Steinwerder Hafen, sodass wir am nächsten Morgen ganz entspannt zum Schiff fahren konnten.\n\nAm 15. September 2024 begann unser Abenteuer auf der AIDA Perla. Wir waren früh vor Ort und gaben unsere Koffer ab (nach unserem dreiwöchigen Roadtrip durch Italien hatten wir sowohl Sommer- als auch warme Kleidung für Norwegen dabei). Glücklicherweise war unsere Kabine dank Früh Check-in direkt bezugsbereit. Sie war richtig schön, mit einem begehbaren Kleiderschrank – etwas eng für all unsere Jacken, aber trotzdem cool. 😊\nRückblickend würden wir aber nie wieder einen begehbaren Kleiderschrank buchen. Viel lieber würden wir wieder zwei Badezimmer wählen, also Dusche und Toilette getrennt, wie wir es schon oft hatten. Ein normaler Kleiderschrank in der Kabine reicht vollkommen aus – in einem begehbaren Kleiderschrank hat man in Norwegen mit all der Kleidung einfach keinen Platz, um sich frei zu bewegen.\n\nNach dem Einchecken ging es direkt ins Markt-Restaurant zum Mittagessen. Kurz darauf kamen auch unsere Koffer – alles perfekt organisiert. Um 18 Uhr hieß es dann Leinen los! ⚓ Die AIDA Perla verließ den Hamburger Hafen, vorbei an Blankenese und Cuxhaven, bis wir auf das offene Meer hinausfuhren – ein traumhafter Start in unser Abenteuer!\n\nAbends genossen wir ein köstliches Dinner im Buffalo Steakhouse 🥩, unserem Lieblingsrestaurant an Bord, gefolgt von der AIDA Primetime mit Eva 🎤, wo die schönsten Social Media Beiträge des Tages prämiert wurden. Anschließend schauten wir die Show Shine im Theatrium – sehr empfehlenswert – und die Laser-Show im Beach Club 🌌. Besonders magisch war, wie spätabends die Costa an uns vorbeifuhr – komplett beleuchtet, ein wunderschöner Anblick.\n\nMüde, aber glücklich, gingen wir schließlich ins Bett. Ein ruhiger, aber perfekter Start – voller Vorfreude auf Norwegen! 💛';
+
+  @override
+  String get norwegenPrequelDay2 =>
+      'Der restliche Nachmittag stand ganz im Zeichen von purer Entspannung. Wir relaxten, gönnten uns einen kleinen Mittagsschlaf und wurden dann von einer süßen Überraschung verwöhnt. Unsere Kabine war liebevoll hergerichtet, und das Reinigungsteam hatte aus unseren Decken ein wunderschönes Herz geformt ❤️ – so aufmerksam und detailverliebt, einfach zauberhaft!\n\nEin echtes Highlight des Tages war die Croissantwaffel mit frischen Erdbeeren aus der Eisbar. 🍓 Die Erdbeeren stammten vom Karls Erlebnis-Erdbeerhof, und zusammen mit einer leichten Puderzucker-Schicht war das ein himmlischer Genuss – perfekt süß und einfach unwiderstehlich.\n\nAm Nachmittag wagten wir uns dann an etwas Unterhaltung und spielten bei der großen AIDA-Bingo-Show mit. 🎉 Auch wenn wir leider nicht gewonnen haben, freuten wir uns von Herzen für die glücklichen Gewinner – der Spaß stand eindeutig im Vordergrund!\n\nAbends ging es für uns in die Tapas-Bar, wo viele kleine Leckereien auf uns warteten – ideal zum Teilen, Genießen und einfach nur Verwöhnen lassen. 😋 Danach besuchten wir die Show des Zauberers Brayden Morris, und was soll man sagen: Wir haben Tränen gelacht. Seine einzigartige Mischung aus Magie und Comedy war einfach genial und hat uns absolut begeistert.\n\nAnschließend folgte wie gewohnt die Primetime, diesmal mit einem ganz besonderen Gast – dem Kapitän persönlich. ⛴️ Super sympathisch, locker und mit vielen spannenden Einblicken in seinen Alltag an Bord hat er den Abend für uns noch einmal ganz besonders gemacht.\n\nZum Abschluss des Tages machten wir noch einen kleinen Spaziergang über das Deck, atmeten die frische Seeluft ein und ließen den Blick über das glitzernde Meer schweifen. 🌅 Danach gönnten wir uns noch etwas Zeit auf dem Balkon, genossen den Moment und fielen schließlich zufrieden und glücklich ins Bett. Ein perfekter, entspannter Seetag voller kleiner Highlights – genau das, was wir gebraucht haben. Wir lieben Seetage einfach über alles! 💛\n\n';
+
+  @override
+  String get norwegenPrequelDay3 =>
+      'Am dritten Tag war es endlich soweit – unsere erste Station in Norwegen! 😍 Wir setzten unseren allerersten Fuß auf norwegischen Boden und waren gespannt, ob das Land unseren Erwartungen gerecht werden würde. Ein wenig Bammel hatten wir schon, doch Bergen hat uns sofort positiv überrascht. Um 9 Uhr legte die AIDA Perla im Hafen von Bergen an, und wir konnten es kaum erwarten, die Stadt zu erkunden.\n\nDa wir erst etwas später angekommen waren, nutzten wir den Vormittag für ein ausgiebiges Frühstück im Buffalo Steakhouse. 🥓🍳🥐 Wir lieben einfach diese gemütliche Atmosphäre, den Blick aufs Wasser und das ruhige Ambiente – für uns der perfekte Start in den Tag. Besonders beliebt bei uns: das saftige Frühstücksteak, der frische Obstteller und die leckeren Pfannkuchen.\n\nNach dem Frühstück ging es direkt von Bord, und keine zwei Minuten später standen wir schon am Hop-on-Hop-Off-Bus, der direkt am Hafen hält. 🚍 Einfach vom Schiff links aus dem Hafen gehen, dem Schild „Willkommen“ folgen, und schon ist man am Bus. Praktisch: Man konnte ganz einfach mit der Bordkarte bezahlen – super easy!\n\nUnser erster Stopp war das berühmte Hanseviertel mit seinen bunten Häusern. 🏘️ Ein wirklich malerischer Ort, der zum Schlendern und Entdecken einlädt. In einer kleinen Bäckerei gönnten wir uns ein paar norwegische Leckereien 🥐, und beim Bummel durch die verwinkelten Gassen entdeckten wir typische norwegische Trolle und viele kleine, charmante Läden – richtig süß und authentisch.\n\nZurück ging es erstmal wieder zum Schiff, doch unterwegs erblickten wir einen Aussichtspunkt, den wir unbedingt besuchen wollten. Leider waren wir zunächst zu langsam zum Aussteigen, also fuhren wir zurück und gingen vom Schiff aus zu Fuß los – und es hat sich absolut gelohnt! Vom Hafen aus läuft man einfach nach links, ein paar Treppen hoch, ein leichter Anstieg – insgesamt keine 10 Minuten Fußweg. Oben angekommen, wurden wir mit einem traumhaften Ausblick auf die AIDA Perla und den Hafen von Bergen belohnt. 📸\n\nNach diesem Highlight ging es wieder an Bord. Um 18 Uhr hieß es „Leinen los!“, und wir beobachteten das Auslaufen vom Schiff aus. Ein wunderschöner Moment, wie Bergen langsam hinter uns verschwand, während die AIDA Kurs auf neue Abenteuer nahm. ⚓\n\nDen Abend ließen wir ganz gemütlich im Buffetrestaurant ausklingen. 🍽️ Nach einem erlebnisreichen Tag fielen wir müde, aber glücklich ins Bett – voller Vorfreude auf die kommenden Abenteuer in Norwegen. 💛\n\n';
+
+  @override
+  String get norwegenPrequelDay4 =>
+      'Nach einem wunderschönen Tag in Bergen ging es nun endlich tief hinein in Norwegens Herzstück der Natur – den Geiranger Fjord. 💚 Und dieser Tag war wirklich etwas ganz Besonderes! Bereits am frühen Morgen um 5:49 Uhr durchfuhren wir die ersten Windungen des Fjords. Natürlich standen wir schon auf unserem Balkon, warm eingepackt, und konnten das spektakuläre Einlaufen kaum fassen. Die Kulisse war einfach überwältigend: steile, moosbewachsene Felsen, tosende Wasserfälle, glitzerndes Wasser und absolute Stille – man fühlte sich fast wie in einer anderen Welt. 🌊🏞️\n\nWährend wir langsam durch den Fjord glitten, erzählte der Lektor an Bord über Lautsprecher die berühmte norwegische Legende der „Sieben Schwestern und des Freiers“. 👑 Sieben Wasserfälle stürzen wie Schwestern nebeneinander ins Tal, während ein einzelner, mächtiger Wasserfall – der Freier – ihnen gegenüber liegt und um ihre Gunst wirbt. Die Kombination aus dieser alten Sage und der atemberaubenden Naturkulisse sorgte bei uns für absolute Gänsehaut. Man konnte sich richtig vorstellen, wie die Schwestern tanzten und der Freier ihnen nachstellte, während das Wasser tosend ins Tal rauschte.\n\nDa wir erst gegen 11 Uhr in Geiranger anlegten, nutzten wir die Zeit vorher noch für ein entspanntes Frühstück im Buffalo Steakhouse. 🥐🥓 Unser Lieblingsort an Bord für ein hochwertiges Frühstück mit ruhigem Ambiente und direktem Blick aufs Wasser. Während draußen der Seawalk ausgefahren wurde – eine Art beweglicher Steg, der vom Schiff ans Ufer führt – konnten wir ganz entspannt speisen und den Moment genießen.\n\nGeiranger selbst ist ein winziges, aber unglaublich charmantes Dörfchen. Keine Hektik, kein Trubel – nur Natur, Holzfassaden und Ruhe. Wir schlenderten gemütlich durchs Dorf, vorbei an kleinen Souvenirläden und Cafés. Dann kam unser Highlight: die legendäre Schokowaffel, von der uns gleich mehrere Crewmitglieder vorgeschwärmt hatten. 🍫🧇 Und sie hatten so recht! In einem kleinen Laden, geführt von einer älteren Dame, holten wir uns diese Waffel: warm, süß und mit ganz viel Schokolade – ein echtes Gedicht! Hinter dem kleinen Laden entdeckten wir einen fast menschenleeren Spot mit einem gekenterten alten Boot, das dort als Deko lag. Von dort hatten wir einen einzigartigen Blick auf die AIDA Perla – ein echtes Fotoparadies, ruhig, entspannt und fernab vom Trubel. 📸\n\nEin kleiner Hinweis noch zu unserer Kabine: Wir hatten unsere Kabine auf der linken Seite des Schiffes, also Backbord. ⚓ Bei der Einfahrt nach Geiranger hatten wir von dort aus den perfekten Blick auf die Sieben Schwestern, und beim Auslaufen konnten wir den beeindruckenden Trollwasserfall bewundern – ein Kontrast, der diesen Tag noch magischer machte.\n\nGegen 20 Uhr hieß es dann wieder „Leinen los!“. Natürlich verfolgten wir das Auslaufen noch einmal vom Balkon aus. 🌅 Die Kulisse war einfach einmalig, das Wetter perfekt: blauer Himmel, klare Sicht auf die Felswände, Sonnenstrahlen, die das Wasser glitzern ließen. Norwegen zeigte sich an diesem Tag von seiner allerbesten Seite.\n\nEs war ein wirklich magischer Tag, den wir so schnell nicht vergessen werden. Geiranger war ruhig, ursprünglich und einfach wunderschön – genau das, wofür man Norwegen liebt. 💛\n\n';
+
+  @override
+  String get norwegenDoublePortDay =>
+      'Ein ganz besonderer Reisetag erwartete uns, denn wir steuerten gleich zwei Häfen in Norwegen an einem einzigen Tag an: Andersness und Molde. ✨ Auch wenn beide Orte eher klein sind, war der Tag für uns wieder vollgepackt mit Eindrücken, Ruhe und wunderschönen Momenten.\n\nBereits gegen 8 Uhr morgens legten wir in Andersness an. Das kleine Dörfchen liegt eingebettet in traumhafte Fjordlandschaften. 🌄 Der Blick auf die AIDA Perla vom Land aus war einfach atemberaubend: klare Farben, sattes Grün, ruhiges Wasser – Norwegen ließ uns wieder einmal staunen. In Andersness gibt es eine Seilbahn, die auf eine Aussichtsplattform hochführt – für viele sicherlich ein Highlight. Wir haben uns diesmal bewusst dagegen entschieden, weil wir den Tag lieber ruhig gestalten und das Örtchen in aller Ruhe erkunden wollten. Wir schlenderten durch die kleinen Gassen, atmeten die frische Fjordluft ein und genossen einfach den Moment. 🌿\n\nUm 13 Uhr hieß es dann schon wieder „Leinen los!“, denn Molde wartete bereits. ⚓ Das Auslaufen ließen wir uns natürlich nicht entgehen – wieder mit Blick auf die beeindruckenden Berge und Fjorde, ein unvergesslicher Anblick! Bevor wir in Molde anlegten, gönnten wir uns noch ein kleines Mittagshighlight: ein entspanntes Mittagessen im Brauhaus an Bord, eine gemütliche Location mit leckerem Essen 🍽️ und anschließend ein Cocktail an der Bar – was wäre ein Urlaub ohne ein bisschen Genuss? 🍹\n\nGegen 16 Uhr legten wir in Molde an. Die Stadt ist ebenfalls eher ruhig, aber wunderschön gelegen, mit einem langen Steg direkt am Wasser, von dem aus man die AIDA perfekt fotografieren kann. 📸 Molde wird auch „Stadt der Rosen“ genannt, und das merkt man sofort: Überall blühen prächtige Rosen, in Blumenbeeten, Rosenkübeln entlang des Stegs – ein traumhafter Fotospot, besonders mit der AIDA im Hintergrund. Wir schlenderten gemütlich durch die Stadt, saugten die entspannte Atmosphäre auf und genossen die Ruhe. Molde hat vielleicht keine spektakulären Sehenswürdigkeiten, aber genau das machte den Tag so besonders: langsam, entspannt und voller kleiner Momente, die bleiben. 🌸\n\nDas Auslaufen erfolgte gegen 20:30 Uhr in dieser einzigartigen Abendstimmung: goldenes Licht über dem Wasser, sanfte Brise, der Fjord glitzerte – einfach Norwegen pur. 🌅 Für uns war es ein unglaubliches Erlebnis, an einem Tag gleich zweimal einlaufen und auslaufen zu dürfen. Einfach nur perfekt!\n\nAbends ließen wir den Tag noch gemütlich im Buffet-Restaurant ausklingen und anschließend auf dem Balkon, ein bisschen träumen und den Tag Revue passieren lassen. 💛 Ein Tag mit zwei Stationen, ohne Stress, voller Natur, Ruhe und kleinen Momenten, die für immer in Erinnerung bleiben.\n\n';
+
+  @override
+  String get norwegenTrondheimDay =>
+      'Nach den ruhigen, kleineren Fjordorten der letzten Tage stand heute eine größere Stadt auf dem Plan: Trondheim. Und wir waren richtig gespannt, was uns hier erwarten würde. ✨\n\nWie fast jeden Morgen auf dieser Reise starteten wir auch heute wieder mit einem gemütlichen Frühstück im Buffalo Steakhouse. 🥐🍳 Die entspannte Atmosphäre, der Blick nach draußen aufs Wasser und das leckere Frühstücksangebot – für uns einfach der perfekte Start in den Tag.\n\nTrondheim war deutlich größer als die Häfen, die wir bisher besucht hatten, und das merkte man sofort: breitere Straßen, mehr Leben in der Stadt, viele kleine Museen und wunderschöne alte Gebäude. Besonders beeindruckt hat uns die Wasserfront mit den farbigen Häusern, die auf Holzstelzen im Wasser standen und sich dort perfekt spiegelten. 🌈🏠 Ein richtig toller Fotospot, genau das, was man sich unter einem charmanten skandinavischen Städtchen vorstellt.\n\nWir schlenderten einfach ein bisschen durch die Stadt, bewunderten die Architektur und saugten die besondere Stimmung auf – ganz ohne Zeitdruck oder festen Plan. 🏞️ Trondheim ist für uns keine Stadt der großen Sehenswürdigkeiten, sondern vielmehr ein Ort zum Spazieren, Schauen und Genießen.\n\nNach einem entspannten Tag in der Stadt checkten wir am Nachmittag wieder an Bord ein. Pünktlich zum Auslaufen genossen wir vom Balkon aus in aller Ruhe, wie sich das Schiff langsam vom Hafen löste. Das Licht lag weich über dem Wasser, die Stadt verschwand allmählich im Hintergrund – ein unbeschreiblich schönes Gefühl. 🌅\n\nTrondheim hat uns wirklich überrascht. Nicht durch Action oder spektakuläre Attraktionen, sondern durch seine Authentizität, die bunten Farben, die Atmosphäre und dieses ganz besondere Licht, das die Stadt einhüllte. 💛 Ein Ort, an den wir definitiv noch einmal zurückkehren möchten.\n\n';
+
+  @override
+  String get norwegenAlesundDay =>
+      'Nach dem entspannten Stadtbesuch in Trondheim hieß unser nächster Halt Ålesund. Direkt vor dem Schiff wartete schon ein kleines Highlight auf uns: eine charmante Bimmelbahn 🚋. Wir lieben Bimmelbahnfahren und konnten natürlich nicht widerstehen! Ganz gemütlich fuhren wir durch die Gassen von Ålesund, ließen die Stadt auf uns wirken und genossen den entspannten Überblick. 🏘️🌊\n\nWichtig zu wissen: Wenn man vorne sitzen möchte oder einen bestimmten Platz bevorzugt, empfiehlt es sich, das Ticket vorher online zu buchen 🎫. Vor Ort gibt es aber auch Plätze, also keine Sorge.\n\nUnser Ziel war der Aksla Viewpoint (oft auch als Fjellstua bezeichnet) ⛰️. Von dort oben bot sich uns ein atemberaubender Blick über die Stadt, das Meer, die vorgelagerten Inseln und die umliegenden Berge 🏞️🌅. Ein echter Postkarten‑Moment! 📸\n\nDie Stadt zeigte sich von ihrer schönsten Seite: bunte Jugendstil-Häuser, glitzerndes Wasser im Fjord und das ruhige norwegische Licht ✨. Es fühlte sich einfach perfekt norwegisch an.\n\nDer Rest des Tages war entspannt: Mittagessen im Buffet-Restaurant 🍽️, ein bisschen an Bord flanieren 🚶‍♀️, den Blick aufs Wasser genießen 🌊 und schließlich das Auslaufen beobachten. Die Sonne schien, das Wasser glitzerte, die Stadt lag friedlich hinter uns — ein Traumtag! ☀️💙\n\nÅlesund war zwar nur ein kurzer Stopp, aber dieser Tag hat einen bleibenden Eindruck hinterlassen: die Farben der Stadt, der Blick von oben, die ruhige Atmosphäre — alles zusammen ergab ein unvergessliches Erlebnis. 🌸🛳️\n\n';
+
+  @override
+  String get norwegenEidfjordDay =>
+      'Ausschlafen? Nein, nicht in Eidfjord – zumindest für fast alle an Bord. In der Nacht wurde das gesamte Schiff immer wieder vom tiefen, vibrierenden Nebelhorn geweckt 🌫️📢. Der Nebel war so dicht, dass man kaum einen Meter weit sehen konnte. Das Schiff glitt langsam durch diese milchige Wand, eingehüllt in Stille… nur durchbrochen vom Nebelhorn.\n\nUnd das Lustigste? Alle waren wach – nur ich (Katharina) nicht 😴😂. Meine Mutter hatte sogar die Tür offen, das Nebelhorn war ohrenbetäubend laut… und ich? Habe einfach weitergeschlafen wie ein Stein. Das ganze Schiff hat darüber gesprochen – und ich war die Einzige, die „super geschlafen“ hat.\n\nNach dem Frühstück ging es für uns an Land, und zwar mit dem Trollzug 🚂💚. Eine supersüße kleine Tour, die durch das idyllische Eidfjord führt – vorbei an Flüssen, Bergen und dieser ruhigen, kraftvollen norwegischen Natur.\n\nDer Ort selbst wirkte an diesem Tag wie aus einem Fantasy-Film: Dichter Nebel über dem Wasser 🌫️, die steilen Berghänge ragten nur schemenhaft aus dem Grau hervor ⛰️, und das grün-blaue Wasser lag still wie ein Spiegel. Einfach magisch – eine Mischung aus Märchenwald, Fjordromantik und Naturzauber. ✨ Besonders der Blick auf die AIDA Perla im Nebel, eingebettet in diese dramatische Kulisse… ein Traum! 🛳️💕 Wir haben so viele wunderschöne Fotos gemacht – jeder Winkel sah aus wie gemalt.\n\nZurück an Bord haben wir uns erstmal beim Mittagessen aufgewärmt 🍲❄️, denn die Fjordluft war frisch. Doch Eidfjord hatte noch ein kleines Highlight für uns: Vom Balkon aus entdeckten wir eine große Holzschaukel direkt am Wasser! Natürlich mussten wir nochmal runter vom Schiff und ein bisschen schaukeln gehen 🙌🎠. Die Aussicht dabei? Unbezahlbar. Fjord, Berge, Nebel, Stille – ein absoluter Gänsehautmoment.\n\nGegen 20 Uhr hieß es dann wieder Tschüss Eidfjord 👋. Wir standen an Deck, der Nebel lichtete sich langsam, und wir konnten kaum glauben, wie schnell dieser besondere Tag vergangen ist.\n\n Eidfjord war für uns ein echtes Highlight – vielleicht gerade wegen des Nebels. Diese Stimmung, diese Ruhe, diese besonderen kleinen Momente… das bleibt. 💛\n\nUnd noch eine spannende Anekdote, die uns der Kapitän erzählt hatte: Direkt vor unserem Schiff stand ein Hotel, und die Zimmer dort kosten gerne mal über 500 € pro Nacht 😳💸. Und dann zahlen die Gäste so viel – nur um morgens die Vorhänge zu öffnen und… eine riesige AIDA direkt vor dem Fenster stehen zu haben 😂🛳️. Das fanden wir richtig krass und irgendwie auch witzig.\n\nEidfjord hat uns verzaubert – und wir kommen definitiv wieder. 🌫️💙⛰️\n\n';
+
+  @override
+  String get norwegenStavangerDay =>
+      'Stavanger war einfach richtig schön — fast wie aus einem Bilderbuch 😊. Wir stiegen von Bord und starteten direkt mit einer Hop-on-Hop-off-Tour, um die Stadt etwas kennenzulernen. 🚍 Aber ganz ehrlich: Obwohl der Bus gemütlich durch die Stadt fuhr und wir viele schöne Ecken gesehen haben — wir würden in Stavanger nie wieder so eine Tour machen. Und wir würden sie auch niemandem empfehlen, weil Stavanger sich so wunderbar zu Fuß erkunden lässt.\n\nAlso stiegen wir runter — und liefen los. Wir genossen einen Spaziergang durch die Altstadt von Stavanger, vorbei an den charmanten, weißen Holzhäusern im Viertel Gamle Stavanger 🏠✨ — ganz charakteristisch für die Stadt und unglaublich fotogen.  \n\nAuf dem Weg entdeckten wir eine süße kleine Tür — eine Art Mini-„Wichteltür“ an einem der Häuser 😊 — und das hat uns so zum Schmunzeln gebracht. Dazu gab’s kleine Überraschungen für das innere Kind: Auf einem kleinen Spielplatz sind wir sogar wippen und rutschen gegangen, obwohl wir längst erwachsen sind — aber genau solche Momente zeigen: Kindsein steckt in jedem von uns! 🎠💛\n\nDann gönnten wir uns etwas zwischendurch — ein Getränk bei Starbucks, nicht unbedingt Kaffee, eher etwas anderes zum Runterkommen ☕ — einfach genießen und schauen, wie das Leben um uns herum läuft.\n\nSpäter am Abend standen wir auf unserem Balkon, sahen das Schiff ablegen, beobachteten den Sonnenuntergang über dem Wasser 🌅 und fühlten: Ja — dieser Tag war einfach schön. Stavanger mit seinen weißen Häusern, der Mischung aus Alt und Neu, dem lockeren Stadt-Vibe und unserem Spaziergang — das werden wir so schnell nicht vergessen.\n\n';
+
+  @override
+  String get norwegenSeetagFinalDay =>
+      'Der letzte Tag unserer Reise war ein typischer Seetag – ruhig, entspannt und irgendwie schon ein bisschen wehmütig, weil wir wussten, dass alles bald vorbei ist. Frühstück haben wir wieder einmal verschlafen 🙈 … aber das gehört bei uns ja fast schon dazu. Dafür ging’s mittags zur Tapas Bar, und das Essen war richtig lecker – genau das Richtige für einen gemütlichen letzten Tag 😋.\n\nDen Nachmittag haben wir hauptsächlich mit Kofferpacken verbracht. Nicht unbedingt der Lieblingspart, aber irgendwie gehört es einfach dazu. Zwischendurch haben wir eine kleine Pause eingelegt und sind zur AIDA Shopping World gegangen. Dort gab es ein Glücksrad, bei dem man immer einen Rabatt gewinnt 🎡💸. Man dreht einfach – und schaut, wie viel Prozent man mitnimmt. Natürlich haben wir die Chance genutzt und sind danach noch ein bisschen durch die Shops geschlendert. Ein paar Magnete der Route mussten natürlich mit – ohne Souvenirs geht es bei uns einfach nicht 🧲❤️.\n\nZwischendurch haben wir uns noch einen kleinen Mittagsschlaf gegönnt 😴 – der letzte Seetag lädt ja quasi dazu ein. Einmal durchatmen, ein bisschen dösen, einfach nichts tun.\n\nAm Abend ging es dann für uns ins Buffalo Steakhouse 🥩✨. Ein schöner Abschluss mit leckerem Essen, guter Stimmung und dem Gefühl, die Reise noch einmal so richtig zu genießen.\n\nSo ging unser letzter Tag auf See ganz entspannt zu Ende – ruhig, gemütlich und mit einem kleinen Hauch Abschiedsgefühl. Ein perfekter Abschluss, bevor die Reise am nächsten Morgen leider vorbei war. 💙🌅\n\n';
+
+  @override
+  String get norwegenFinalDeparture =>
+      'Der letzte Tag unserer Reise begann ziemlich früh – viel zu früh eigentlich, wenn man bedenkt, wie sehr wir diese Reise genossen haben. Doch bevor es zurück nach Hause ging, mussten wir uns einfach noch einmal etwas gönnen: ein letztes Frühstück im Buffalo Steakhouse 😍🥞✨.\n\nWir lieben dieses Frühstück so sehr, dass es quasi schon Tradition ist, den letzten Tag damit zu starten. Warmes Brot, frische Speisen, diese entspannte Atmosphäre … und gleichzeitig das leise Gefühl, dass es diesmal das letzte Mal für eine ganze Weile ist. Bis zur nächsten Reise eben. Wir saßen da, haben jeden Bissen genossen und dachten uns nur: Wie schön wäre jetzt einfach ein Reset-Knopf? 💛\n\nNach dem Frühstück ging dann alles ganz schnell. Auschecken. Unsere Koffer, die wir am Vorabend vor die Tür gestellt hatten, lagen bereits in der großen Abholhalle bereit. Ein kurzer Blick, Koffer geschnappt – und schon wenige Minuten später saßen wir im Auto 🚗💨.\n\nUnd so endete ein wunderbarer Urlaub: fünf Wochen voller Eindrücke, bestehend aus unserem großen Italien-Worldtrip und direkt danach zehn traumhaften Tagen in Norwegen. Ein schneller, fast schon abrupter Abschluss nach so viel Zeit unterwegs – aber voller Erinnerungen, die bleiben 🇮🇹🇳🇴✨.\n\nPS: Wer unseren ersten Teil der Reise, den Italien Worldtrip, lesen möchte, findet ihn in der Kategorie Worldtrips Europa unter Italien Worldtrip 🌍📖.\n\n';
+
+  @override
+  String get titleDenmark => 'Dänemark & Schweden';
+
+  @override
+  String get aidaDenmarkDay1 =>
+      '⚓ Tag 1 & 2 – Warnemünde & Start der Kreuzfahrt Dänemark/Schweden mit der AIDA Diva';
+
+  @override
+  String get aidaDenmarkDay2 =>
+      '🌞 Tag 3 – Århus: Bunte Gassen, Kunst & Hafenflair';
+
+  @override
+  String get aidaDenmarkDay3 =>
+      '🏰 Kopenhagen: Schlösser, Nyhavn & endlose Spaziergänge';
+
+  @override
+  String get aidaDenmarkDay4 => '🌊 Seetag: Entspannung & Sonnenuntergang';
+
+  @override
+  String get aidaDenmarkDay5 =>
+      '🏰 Visby: Pippi-Langstrumpf-Stadt & gemütliche Erkundungen';
+
+  @override
+  String get aidaDenmarkDay6 =>
+      '🎶 Stockholm: Abba, Zimtschnecken & schwedische Highlights';
+
+  @override
+  String get aidaDenmarkDay7 =>
+      '🛳️ Seetag: Abschied von einer unvergesslichen Kreuzfahrt';
+
+  @override
+  String get aidaDenmarkDay8 =>
+      '🏠 Abreisetag: Heimkehr nach einer unvergesslichen Reise';
+
+  @override
+  String get aidaDenmark1 =>
+      'Am 7. Oktober 2022 begann unser kleines Abenteuer 🌟. Voller Vorfreude machten wir uns auf den Weg nach Warnemünde, unserem allerersten Besuch in diesem charmanten Küstenort 🌊. Früh am Morgen kamen wir an, checkten im Hotel „Am alten Strom“ ein und konnten es kaum erwarten, die Umgebung zu erkunden.\n\nNachdem wir unsere Koffer abgelegt hatten, starteten wir direkt mit einem gemütlichen Spaziergang entlang des Hafens. Das Wetter war für Oktober wirklich traumhaft: 17 Grad, sonnig und angenehm 🍂☀️ – perfekt, um nur im Pulli die frische Luft zu genießen.\n\nUnterwegs entdeckten wir eine süße Eisdiele namens „Fröhlich“, wo wir uns Frozen Joghurt-Eis mit Toppings wie Smarties, Marshmallows, Erdbeeren und Erdbeersoße gönnten 🍓🍦. Einfach himmlisch! Danach schlenderten wir über die kleine Kirmes am Hafen, wo meine Mutter einen Cocktail und ich einen Wildberry Lillet genossen 🍹.\n\nWir liefen weiter zum Leuchtturm und entdeckten unterwegs sogar kleine Pinguine 🐧 – so süß! Den Sonnenuntergang am Wasser konnten wir perfekt beobachten und es war ein richtig magischer Moment 🌅. Danach ging es zum Abendessen zu Peter Pane, wo wir die leckersten Burger seit Langem probierten 🍔😋 – wirklich der beste Peter Pane, den wir je erlebt haben!\n\nAm Abend unternahmen wir noch einen kleinen Spaziergang zurück zum Hotel, entlang des Hafens im Dunkeln – und tatsächlich hörten wir Wale! 🐋 Ein so unvergessliches Erlebnis. Danach fielen wir müde, aber glücklich, ins Bett.\n\nAm Morgen des 8. Oktober 2022 wachten wir auf und traten auf unseren Balkon 🏨✨. Von dort hatten wir direkten Blick auf den Hafen und konnten schon die AIDA Diva im Wasser stehen sehen – ein richtig schöner Start in den Tag 🚢💛.\n\nAnschließend checkten wir aus dem Hotel aus. Das Hotel „Am alten Strom“ hat uns wirklich sehr, sehr gut gefallen und wir können es nur weiterempfehlen.\n\nDanach ging es Richtung Hafen: Das Parkhaus war direkt am Schiff. Wir entschieden uns, unsere Koffer beim Shuttle am Parkhaus abzugeben, damit wir sie nicht mit zum Schiff schleppen mussten. Anschließend sind wir zu Fuß zum Schiff geschlendert – alles super organisiert und stressfrei 🚶‍♀️🚢.\n\nAuf dem Schiff angekommen, gingen wir erstmal frühstücken, bevor wir unsere Kabine 6107, eine Balkonkabine, bezogen. Sie war richtig schön eingerichtet und gemütlich, wir fühlten uns direkt wohl 🛏️✨.\n\nWir erkundeten das Schiff und waren gespannt, wie unsere vierte Kreuzfahrt mit AIDA auf einem kleineren Schiff sein würde, nachdem wir schon auf der AIDA Prima, Stella und Nova unterwegs waren. Nachmittags gab es kleine Desserts – darunter süße Kussmünder – und wir genossen etwas Zeit zum Entspannen 🍰💛.\n\nAm Abend folgte ein Steakhouse-Dinner, bevor das Schiff in Richtung Århus ablegte. Das Auslaufen aus Warnemünde war ein Traum 🌊⚓, und wir waren uns einig: Warnemünde hat uns richtig, richtig gut gefallen. Ein Ort, an den wir auf jeden Fall zurückkehren möchten.';
+
+  @override
+  String get aidaDenmark2 =>
+      'Der zweite Tag unserer Kreuzfahrt begann genauso wunderschön wie der erste – mit herrlich warmem, sonnigem Wetter, angenehm für einen leichten Pulli ☀️🧥.\n\nWir erkundeten Århus auf eigene Faust und starteten unseren kleinen Stadtrundgang beim Dom von Århus ⛪. Schon der Anblick und die Atmosphäre im Dom waren beeindruckend und machten Lust, noch tiefer in die Stadt einzutauchen.\n\nWeiter ging es zur Møllestien, einer farbenfrohen, charmanten Gasse voller kleiner Häuser 🏘️🎨. Die bunten Fassaden und der gemütliche Flair haben uns sofort verzaubert. Es war richtig angenehm, dort zu schlendern, und wir fühlten uns ein bisschen wie in einer kleinen, bunten Stadtwelt für uns allein.\n\nSpontan entschieden wir uns, das ARoS Aarhus Kunstmuseum zu besuchen 🖼️. Das Museum war nicht nur voller beeindruckender Kunstwerke, sondern hatte oben auch eine kleine Aussichtsplattform. Von dort konnten wir die ganze Stadt überblicken – und sogar auf die AIDA Diva im Hafen schauen 🚢✨. Besonders faszinierend war die runde Regenbogeninstallation auf dem Dach, durch die wir hindurchlaufen konnten. Dieses Farbenspiel war einfach magisch und machte den Museumsbesuch zu etwas ganz Besonderem.\n\nAm Abend legten wir ab und passierten beim Auslaufen noch die beeindruckende, moderne Architektur von Århus – unter anderem den Isbjerget, den „Eisberg“ mitten in der Stadt ❄️🏢. Vom Schiff aus zu sehen, wie die Stadt im Abendlicht an uns vorbeizog, war richtig schön und stimmte uns auf die nächsten Tage ein.\n\nÅrhus hat uns wirklich begeistert – die bunten Gassen, die moderne Architektur und die kleine Portion Kunst mitten in der Stadt machten den Tag unvergesslich. Wir wissen jetzt schon: hierher wollen wir unbedingt noch einmal zurückkommen 💛.';
+
+  @override
+  String get aidaDenmark3 =>
+      'Der dritte Tag unserer Kreuzfahrt führte uns in das wunderschöne Kopenhagen – und schon beim Aufwachen spürten wir die Vorfreude auf einen ganzen Tag voller Erkundungen. 🌞 Wir hatten richtig viel Zeit, die Stadt in unserem eigenen Tempo zu entdecken, und das bedeutete: unglaublich viele Schritte, aber auch unendlich viele schöne Eindrücke.\n\nUnser erster Halt war natürlich die berühmte kleine Meerjungfrau am Hafen. 🧜‍♀️ Obwohl sie viel kleiner war, als wir sie uns vorgestellt hatten, war es ein magischer Moment, dort zu stehen und die Statue direkt am Wasser zu sehen. Die Kombination aus dem Meer, den Möwen und der charmanten Statue machte den Start in unseren Tag perfekt.\n\nDann ging es weiter auf Schloss-Entdeckungstour. Kopenhagen ist wirklich eine Stadt der Schlösser! Wir spazierten zuerst zum Schloss Amalienborg, der Residenz der dänischen Königsfamilie. Die elegante Architektur und die perfekt gepflegten Plätze drumherum haben uns sofort in ihren Bann gezogen. Danach führte uns unser Weg zum Rosenborg Castle – ein kleines, märchenhaftes Schloss aus dem 17. Jahrhundert, das einst als Sommerresidenz für König Christian IV. diente. Dort konnte man wunderschöne Gärten und kunstvolle Details bewundern, die einen richtig in vergangene Zeiten versetzten. Schloss Christiansborg, die Frederikskirke und der Rathausplatz standen ebenfalls auf unserer Route – überall gab es kleine Details und Geschichten, die uns faszinierten.\n\nNatürlich durften wir auch Nyhavn nicht auslassen – die bunten Häuser am Kanal, die kleinen Cafés und die Schiffe gaben dem ganzen Viertel einen so lebendigen, fröhlichen Charme. Wir haben jeden Moment auf uns wirken lassen, die Atmosphäre aufgesogen und die Kamera gezückt, um all die schönen Ecken festzuhalten. 📸\n\nNach Stunden voller Eindrücke, Sonne im Gesicht und unzähligen Schritten, legten wir erst gegen 22 Uhr wieder ab. Müde, aber glücklich, mit vielen neuen Erinnerungen im Herzen, ließen wir die Lichter Kopenhagens am Hafen hinter uns. Kopenhagen hat uns wirklich verzaubert – eine Stadt, in die wir definitiv zurückkehren möchten. ❤️';
+
+  @override
+  String get aidaDenmark4 =>
+      'Nach dem aufregenden Tag in Kopenhagen tat der nächste Tag auf See richtig gut. 🌞 Nach all den Schritten und dem vielen Laufen war es wie eine kleine Verschnaufpause in der Mitte unserer Kreuzfahrt. Wir konnten endlich einmal so richtig abschalten und die Seele baumeln lassen.\n\nWir haben zuerst ausgeschlafen – so richtig schön, ohne Wecker. 😴 Das Frühstück haben wir verschlafen, aber dafür ging es direkt zum Mittagessen, das wir in aller Ruhe genießen konnten. Danach folgte der perfekte Mix aus Entspannung und kleinen Aktivitäten: Wir haben bei einem Fotoshooting auf der AIDA mitgemacht 📸 – eine tolle Erinnerung an diesen entspannten Tag. Außerdem gab es einen kleinen Mittagsschlaf auf unserer Kabine, um noch mehr Energie für den Abend zu tanken.\n\nAm Nachmittag haben wir ein paar Shows im Theatrium angeschaut, die Stimmung an Bord war entspannt und fröhlich. Gegen 18 Uhr ging es dann zum Abendessen ins Steakhouse – ich habe mir einen richtig leckeren Burger gegönnt 🍔, meine Mama hat ein köstliches Steak genossen 🥩. Zum Nachtisch gab es eine zarte Crème Brûlée, die perfekt den Tag abrundete.\n\nBevor wir uns in die Kabine zurückzogen, haben wir noch den wunderschönen Sonnenuntergang über dem Meer beobachtet 🌅. Es war ein magischer Moment, der den Tag perfekt abgeschlossen hat. Der Seetag hat uns neue Energie geschenkt und wir waren voller Vorfreude auf die kommenden Abenteuer in Visby und Stockholm.';
+
+  @override
+  String get aidaDenmark5 =>
+      'Nach dem entspannten Seetag ging es für uns weiter nach Visby – und ich war schon richtig, richtig gespannt. 😍 Visby ist ja das Städtchen, in dem die Pippi-Langstrumpf-Filme gedreht wurden, und als Kind habe ich diese Geschichten geliebt. Es war einfach so schön, jetzt einmal durch diese historischen Straßen zu laufen und all die kleinen Details zu entdecken.\n\nWir haben in Visby eine Hop-On-Hop-Off-Bustour gemacht 🚍, um die Stadt in Ruhe zu erkunden. Zuallererst führte uns der Bus zur Villa Kunterbunt – die bekannte Pippi-Langstrumpf-Villa, die in einem Freizeitpark steht. Leider hatte der Park an diesem Tag geschlossen, sodass wir die Villa nur von außen bestaunen konnten. Aber allein das Ansehen hat schon Spaß gemacht und ein richtiges Kinder-Feeling geweckt. 🎈\n\nDanach ging die Fahrt weiter am Wasser entlang, wo wir immer wieder einen tollen Blick auf unsere AIDA Diva hatten 🚢. Die Stadt wirkte so idyllisch vom Bus aus – bunte Häuser, kleine Gassen, der Hafen – alles richtig malerisch. Ein Highlight war unser Stopp an der Wisby-Kathedrale ⛪: Von dort oben hatten wir eine wunderschöne Aussicht über die Dächer der Stadt und konnten die Umgebung richtig auf uns wirken lassen.\n\nDie Bustour hat uns super gefallen, und Visby selbst war einfach ein zauberhafter Ort. 🌸 Es war ein sehr entspannter Tag, wir haben die Ruhe und den Charme der Stadt richtig genossen. Am Abend legte die AIDA Diva ab Richtung Stockholm, während wir auf unserem Balkon den Sonnenuntergang und das Auslaufen aus Visby beobachteten 🌅 – ein perfekter Abschluss für diesen wunderschönen Tag.';
+
+  @override
+  String get aidaDenmark6 =>
+      'Nach unserem zauberhaften Tag in Visby ging es für uns weiter nach Stockholm – der Stadt, die ja quasi untrennbar mit ABBA verbunden ist. 🇸🇪 Schon beim Anlegen freuten wir uns riesig auf die Erkundung der Stadt und starteten direkt mit einer Hop-On-Hop-Off-Bustour 🚍, um die vielen Sehenswürdigkeiten in Ruhe zu entdecken.\n\nWährend der Tour stiegen wir am ABBA-Museum aus, denn das stand für uns ganz oben auf der Must-See-Liste. 🎤✨ Und es hat uns wirklich so, so gut gefallen! Man konnte auf der Bühne mit den Figuren der Band stehen, sich Fotos machen lassen und ein bisschen die Geschichte von ABBA kennenlernen. Es war richtig interaktiv und total spaßig – ein absolutes Highlight unseres Tages.\n\nNach dem Museumsbesuch gönnten wir uns eine Zimtschnecke 🥐 – ein absolutes Muss in Stockholm! Die waren riesig und super lecker, fast schon zu groß für uns beide, aber einfach himmlisch im Geschmack. Ich würde sie sofort wieder essen!\n\nAls wir dann zurück zum Schiff gingen, wartete Dodo schon auf uns für ein Foto 📸 – das war ein schönes kleines Erinnerungsstück an unseren Stockholm-Tag. Am Abend legte die AIDA Diva ab, schon wieder in Richtung Warnemünde, aber wir wussten: Ein weiterer entspannter Seetag lag noch vor uns, um neue Energie für die letzten Tage der Reise zu sammeln. 🌅';
+
+  @override
+  String get aidaDenmark7 =>
+      'Nach unserem fantastischen Tag in Stockholm begann unser letzter Seetag an Bord der AIDA Diva. 🌊 Wir nutzten die Zeit, um uns noch einmal auf dem Schiff umzusehen – und stellten fest, dass uns das Design der AIDA Diva überhaupt nicht gefallen hat. 😅 Sie wirkte auf uns viel zu klein, und irgendwie konnten wir uns mit ihr nicht so richtig anfreunden. Die größeren Schiffe waren zwar auch nicht perfekt – die Nova fanden wir fast schon zu groß – aber für uns bleibt die AIDA Prima nach wie vor der absolute Favorit, weil die einfach die perfekte Größe hatte. ❤️\n\nAnsonsten stand der Tag ganz im Zeichen von Koffer packen und gemütlichem Bordleben. 🧳 Wir haben das Frühstück verschlafen, aber dafür entspannt Mittag gegessen. Zwischendurch gönnten wir uns ein kleines Mittagsschläfchen, schauten ein paar Shows und ließen die Eindrücke der Reise noch einmal Revue passieren.\n\nAm Abend wurde es dann richtig besonders, denn es gab eine lecker Torte, auf der unsere Reise und der Zeitraum der Kreuzfahrt stand – ein so schöner Abschluss. 🎂 Danach genossen wir noch ein köstliches Abendessen im Steakhouse: Ich habe Burger gegessen, meine Mama ein saftiges Steak – alles war einfach perfekt.\n\nNachdem wir unsere fertig gepackten Koffer vor die Kabinentür gestellt hatten, wurde uns bewusst, dass diese wunderschöne Kreuzfahrt leider bald zu Ende geht. 😢 Die Reise hat uns so, so gut gefallen – die Orte waren traumhaft, jeder Tag voller Abenteuer, Erlebnisse und unvergesslicher Momente. Wir wissen jetzt schon, dass wir definitiv an viele dieser Orte noch einmal zurückkehren wollen. Und wir würden diese Kreuzfahrt genauso noch einmal machen, so perfekt war sie für uns. 💖';
+
+  @override
+  String get aidaDenmark8 =>
+      'Am Abreisetag hieß es für uns leider Abschied nehmen von der AIDA Diva und all den wunderschönen Orten, die wir in den letzten Tagen besucht hatten. 😢 Früh morgens sind wir vom Bord gegangen, haben ausgecheckt und unsere Koffer wieder eingesammelt. Danach liefen wir gemeinsam zu unserem Auto, das bereitstand.\n\nBevor wir uns auf die Heimfahrt machten, haben wir uns noch gedacht, dass wir den Tag ein kleines bisschen verlängern wollen – und sind deshalb ins Designer-Outlet in Neumünster gefahren. 🛍️ Dort verbrachten wir noch zwei bis drei entspannte Stunden, schlenderten durch die Geschäfte, stöberten nach kleinen Schätzen und genossen einfach die letzten Stunden unseres Urlaubs.\n\nUnd dann begann endgültig die Heimfahrt. 🚗💨 Mit vielen schönen Erinnerungen, Fotos, kleinen Souvenirs und vor allem einem glücklichen Herzen endete diese Reise. Die Kreuzfahrt war einfach so, so schön – die perfekte Mischung aus aufregenden Städten, entspannten Seetagen, leckerem Essen und unvergesslichen Momenten. 💖 Wir werden noch lange von diesem Abenteuer schwärmen und wissen jetzt schon: Das war definitiv nicht unsere letzte Kreuzfahrt!';
+
+  @override
+  String get titleMedTreasures => 'Mediterrane Schätze';
+
+  @override
+  String get novaTitleDay1 =>
+      '🚢 Tag 1 – Unsere erste Kreuzfahrt: Vier Generationen, ein Schiff & ganz viel Aufregung';
+
+  @override
+  String get novaTitleDay2 => '🌊 Tag 2 – Seetag auf hoher See';
+
+  @override
+  String get novaTitleDay3 =>
+      '🏛️ Tag 3 – Rom erleben: Sightseeing & XXL-Shopping';
+
+  @override
+  String get novaTitleDay4 =>
+      '🗼 Tag 4 – Pisa & Florenz: Viel Bus, wenig Gefühl';
+
+  @override
+  String get novaTitleDay5 =>
+      '🌊 Tag 5 – Ein unerwarteter Seetag & ganz viel Familienzeit';
+
+  @override
+  String get novaTitleDay6 =>
+      '🌆 Tag 6 & 7 – Barcelona: Großstadtgefühl, Tapas & erste Eindrücke';
+
+  @override
+  String get novaTitleDay7 =>
+      '🌅 Tag 8 – Rückkehr nach Mallorca: Abschied & Vorfreude auf Neues';
+
+  @override
+  String get novaTitleDay8 =>
+      '🌅 Day 8 – Return to Mallorca: goodbye & anticipation for what’s next';
+
+  @override
+  String get novaDay1 =>
+      'Unsere allererste Kreuzfahrt stand in den Osterferein 2019 an – und das gleich mit der AIDAnova, dem damals größten Schiff der AIDA-Flotte 🚢✨.\n\nEigentlich hätten wir nie gedacht, dass es uns einmal auf ein Kreuzfahrtschiff verschlägt. Meine Mama und ich waren anfangs extrem skeptisch. Doch meine Oma hatte eine klare Ansage: „Lasst uns das einfach mal machen!“ – und so waren wir plötzlich mit vier Generationen unterwegs: Ich, meine Mama, meine Oma und sogar meine Uroma 💕👵👩‍👧.\n\nMitten in der Nacht ging es für uns los zum Köln-Bonner Flughafen, von dort aus flogen wir mit der Eurowings nach Palma de Mallorca ✈️🌴. Alles verlief reibungslos, und direkt nach der Ankunft auf der Insel wurden wir vom Shuttle zum Schiff gebracht. An Bord der AIDAnova starteten wir unseren Tag entspannt mit Frühstück im Marktrestaurant 🍳🥐 – während wir noch auf unsere Koffer warteten. Danach konnten wir unsere Balkonkabine auf Deck 15 (Kabine 15.121) beziehen – mittig gelegen, auf der rechten Seite des Schiffes. Zu viert hatten wir erstaunlich viel Platz: Doppelbett, Schlafcouch und ein ausklappbares Hochbett – für uns perfekt 🛏️✨.\n\nAm Abend verfolgten wir das Auslaufen aus Palma, ein ganz besonderer Moment auf unserer ersten Kreuzfahrt 🌅⚓. Danach ging es zum Abendessen, bevor wir müde, aber glücklich, in unsere erste Nacht an Bord starteten.\n\nDer Tag war geprägt von Aufregung, Staunen und ganz viel Vorfreude – wir waren unglaublich gespannt, was diese Reise für uns bereithalten würde 💫❤️.';
+
+  @override
+  String get novaDay2 =>
+      'Der zweite Tag unserer Kreuzfahrt war ein echter Seetag – und was für einer! ⚓🌊\n\nSchon morgens beim Frühstück merkte man den extremen Seegang. Es war so stürmisch, dass meine Mama und meine Oma noch während des Frühstücks zurück in die Kabine gingen, weil ihnen richtig schlecht war 🤢. Meine Mama meinte sogar, sie kotzt gleich über den Tisch – und sagte in diesem Moment ganz überzeugt:\n„Ich mache nie wieder eine Kreuzfahrt!“\n\nMeine Uroma und ich ließen uns davon allerdings überhaupt nicht aus der Ruhe bringen und blieben entspannt sitzen. Nach dem Frühstück spazierten wir gemütlich über das Schiff, schauten uns um und besuchten sogar noch eine kleine Show im Theatrium 🎭✨.\n\nZwischendurch holten wir an der Rezeption vorsorglich Tabletten gegen Übelkeit für Mama und Oma – sicher ist sicher. Die beiden blieben weiterhin in der Kabine, wo es ihnen deutlich besser ging.\n\nMittags waren meine Uroma und ich erneut alleine unterwegs, bevor wir uns abends wieder alle zum Abendessen im Steakhouse 🥩🍷 trafen. Trotz Sturm und starkem Seegang hatten wir einen richtig besonderen Tag an Bord und freuten uns schon riesig auf den nächsten Tag – denn es ging immer näher Richtung Rom, einer Stadt, die wir beide so sehr lieben ❤️🏛️.';
+
+  @override
+  String get novaDay3 =>
+      'Am nächsten Morgen erreichten wir Civitavecchia – unser Tor nach Rom 🏛️❤️. Für diesen Tag hatten wir einen Ausflug über Get Your Guide gebucht: ein Bustransfer in die Ewige Stadt, den wir ganz entspannt auf eigene Faust nutzen konnten.\n\nGemeinsam fuhren wir vom Hafen Richtung Rom. Schon auf der Fahrt wurde uns bewusst, wie weit die Stadt eigentlich vom Hafen entfernt liegt – je nach Verkehr dauert die Busfahrt anderthalb bis zwei Stunden pro Strecke. Trotzdem freuten wir uns riesig, endlich wieder in Rom zu sein, einer Stadt, die wir wirklich lieben.\n\nIn Rom angekommen, wurden wir mitten in der Stadt abgesetzt und hatten insgesamt etwa viereinhalb Stunden Aufenthalt. Für meine Oma und meine Uroma war es der erste Besuch in Rom, während meine Mama und ich die Stadt bereits kannten. Umso schöner war es, ihnen die wichtigsten Highlights zu zeigen: das Kolosseum, die Spanische Treppe, den Petersdom und natürlich den Trevi-Brunnen, an dem wir eine Münze ins Wasser warfen – für ein Wiedersehen mit dieser besonderen Stadt 💦✨.\n\nZwischen den Sehenswürdigkeiten ließen wir uns treiben, schlenderten durch die Straßen und genossen das typische Rom-Gefühl. Und wie es sich für uns gehört, wurde dieser Tag auch zu einem ausgedehnten Shoppingtag 😄🛍️. Am Ende waren wir mit mehreren – und vor allem ziemlich großen – Tüten unterwegs und machten uns damit langsam auf den Rückweg zum Bus.\n\nDie Rückfahrt zum Hafen zog sich etwas wegen des Verkehrs. Insgesamt verbrachten wir an diesem Tag fast vier Stunden im Bus, wenn man Hin- und Rückfahrt zusammenrechnet. Am Hafen angekommen erwartete uns dann eine lange Schlange beim Wiedereinchecken. Es war extrem voll, hektisch und mit unseren großen Einkaufstaschen zogen wir einige neugierige Blicke auf uns 😅.\n\nAuch wenn alles gut geklappt hat, merkten wir spätestens jetzt, wie kurz und intensiv dieser Rom-Besuch eigentlich war. Für uns ist Rom keine Stadt, die man „mal eben“ besucht. Wenn wir nach Rom reisen, dann normalerweise für drei oder vier Tage, mit Zeit zum Schlendern, Staunen und Genießen – und nicht nur für ein paar Stunden zwischen Busfahrt und Abfahrtszeit. Wir sind froh, diese Erfahrung einmal gemacht zu haben, würden diesen Ausflug aber so kein zweites Mal planen, einfach weil er doch ziemlich stressig ist.\n\nZurück an Bord ließen wir den Tag ruhiger ausklingen. Kurz darauf lief die AIDAnova aus Civitavecchia aus, wir gingen gemeinsam essen und blickten auf einen intensiven, aber auch sehr schönen Familientag in Rom zurück. ❤️👨‍👩‍👧‍👵';
+
+  @override
+  String get novaDay4 =>
+      'Am Morgen legten wir in La Spezia an 🚢⚓ – ein weiterer Hafen auf unserer Route durch das Mittelmeer. Für diesen Tag hatten wir einen Ausflug über AIDA gebucht, der uns zuerst nach Pisa und anschließend weiter nach Florenz führen sollte 🚌🇮🇹.\n\nVom Hafen aus ging es zunächst mit dem Bus Richtung Pisa. Die Fahrt dauerte etwa eine Stunde ⏳🚌. Es war unser erstes Mal in Pisa, und natürlich waren wir gespannt, den berühmten schiefen Turm endlich einmal mit eigenen Augen zu sehen 🗼📸. Vor Ort hatten wir etwas Zeit, um uns umzuschauen – doch ehrlich gesagt stellte sich schnell Ernüchterung ein. Pisa konnte uns beide überhaupt nicht begeistern 😕. Es wirkte sehr touristisch, wenig einladend, und wir waren tatsächlich eher froh, als es bald schon wieder weiterging.\n\nNach dem kurzen Aufenthalt stiegen wir erneut in den Bus – diesmal Richtung Florenz 🚌➡️🌆. Die Fahrt von Pisa nach Florenz dauerte nochmal rund anderthalb Stunden, und langsam wurde deutlich, wie sehr sich dieser Tag zu einem echten Bus-Tag entwickelte 😅.\n\nIn Florenz angekommen, waren die Eindrücke dann ganz unterschiedlich: Meine Mama fand die Stadt schön und beeindruckend 🥰, ich persönlich dagegen konnte mit Florenz nicht wirklich etwas anfangen. Für mich fühlte es sich nicht besonders an – sehr voll, hektisch und einfach nicht nach einem Ort, an dem ich mich wohlfühle 🚶‍♀️🏙️.\n\nNach unserem Aufenthalt ging es schließlich zurück zum Schiff. Die Rückfahrt von Florenz nach La Spezia dauerte nochmal etwa zwei Stunden 🚌⏰. Insgesamt saßen wir an diesem Tag extrem viel im Bus – deutlich mehr als an unserem Tag in Rom. Dabei wurde uns klar, dass solche langen Ausflüge einfach nicht unser Ding sind 🙈.\n\nSpätestens jetzt stand für uns fest: Wenn wir noch einmal in Civitavecchia oder La Spezia anlegen, würden wir die Zeit lieber direkt vor Ort verbringen 🌊⚓. Städte wie Pisa oder Florenz möchten wir – wenn überhaupt – lieber separat mit dem Auto oder Flugzeug besuchen, um ihnen wirklich gerecht zu werden ✈️🚗.\n\nAm Abend kehrten wir müde, aber auch erleichtert zurück an Bord der AIDAnova ❤️🚢. Langsam machten wir uns auf den Weg Richtung Barcelona, und wir freuten uns sehr, dass uns am nächsten Tag erst einmal ein Seetag erwartete – Zeit zum Durchatmen, Ausruhen und Verarbeiten all der Eindrücke 🌊💙.';
+
+  @override
+  String get novaDay5 =>
+      'Eigentlich hätte uns dieser Tag nach Marseille führen sollen 🇫🇷⚓ – doch aufgrund eines Streiks konnte der Hafen nicht angelaufen werden. Stattdessen wurde kurzerhand umgeplant: Marseille fiel aus, wir bekamen einen zusätzlichen Seetag geschenkt und sollten dafür später einen Tag länger in Barcelona bleiben 🛳️✨.\n\nFür uns war das ehrlich gesagt gar kein Nachteil – im Gegenteil! 💙\n\nNach den sehr vollen und anstrengenden Tagen in Civitavecchia und La Spezia, an denen wir fast nur unterwegs gewesen waren, kam dieser zusätzliche Seetag genau zur richtigen Zeit.\n\nDas Meer zeigte sich an diesem Tag von seiner ruhigen Seite 🌊☀️. Kein Sturm, kein starker Seegang – und endlich konnten wir uns alle vier gemeinsam ganz entspannt an Bord bewegen. Besonders schön war, dass meine Mama und meine Oma nun endlich die Zeit hatten, die AIDAnova richtig kennenzulernen. Die Tage zuvor waren wir immer früh von Bord und spät zurück gewesen, doch jetzt blieb Raum zum Erkunden, Staunen und Ankommen 🧭🚢.\n\nWir schlenderten gemeinsam über die Decks, entdeckten neue Ecken des Schiffs und stellten dabei schnell fest:\nJa – die AIDAnova ist riesig. Für uns fast schon ein bisschen zu groß! 😅\nTrotzdem hatte das Schiff etwas Beeindruckendes, und es machte Spaß, alles in Ruhe zu entdecken.\n\nDer Tag verlief herrlich entspannt:\nWir frühstückten zusammen 🥐☕, gönnten uns mittags etwas Leckeres 🍽️, machten zwischendurch sogar einen kleinen Mittagsschlaf 😴 und verbrachten Zeit auf dem Balkon, während das Meer ruhig an uns vorbeizog 🌊💙. Dazu schauten wir uns noch ein paar Shows an 🎭✨ und ließen den Tag abends bei einem gemeinsamen Abendessen gemütlich ausklingen 🍷🍝.\n\nKein Ausschlafen, kein Zeitdruck, kein Programm – einfach Familienzeit ❤️\n\nManchmal sind es genau diese unerwarteten Tage, die sich im Nachhinein als besonders wertvoll herausstellen.\n\nUnd während die AIDAnova weiter Richtung Barcelona glitt, wuchs die Vorfreude schon wieder – denn dank der Umplanung wartete dort nun mehr Zeit auf uns 🇪🇸✨.';
+
+  @override
+  String get novaDay6 =>
+      'In Barcelona anzulegen fühlte sich besonders an – denn es war tatsächlich unser allererstes Mal in dieser Stadt 🇪🇸✨. Wir hatten schon so viel gehört: wie schön, wie lebendig, wie besonders Barcelona sein soll. Entsprechend groß war die Neugier, als wir morgens im Hafen festmachten ⚓💙.\n\nVom Kreuzfahrthafen ging es für uns ganz entspannt mit dem Shuttlebus in die Stadt 🚌. Die Fahrt dauerte wirklich nur etwa fünf Minuten, also super schnell. Der Shuttle kostete 12 € pro Person für Hin- und Rückfahrt, was für die kurze Strecke zwar nicht ganz günstig war, aber dafür unkompliziert.\n\nDa wir Barcelona noch überhaupt nicht kannten, entschieden wir uns für eine Hop-on-Hop-off-Bustour 🧭🚍 – perfekt für einen ersten Überblick. Praktischerweise startete der Bus genau dort, wo uns der Shuttle abgesetzt hatte. In Barcelona gibt es zwei Routen, wir entschieden uns für die grüne Route.\nUnd die hatte es wirklich in sich 😍\nWir fuhren einmal quer durch die Stadt, vorbei am Camp Nou, durch verschiedene Viertel, sahen viele der bekannten Highlights und hatten sogar einen kleinen Aussichtspunkt, von dem aus man Barcelona von oben sehen konnte 🌇✨. Für ein erstes Kennenlernen war diese Tour wirklich ideal – entspannt sitzen, schauen, staunen und einfach aufnehmen.\n\nIrgendwann meldete sich dann aber der Hunger 😅🍽️\nAlso stiegen wir aus und suchten spontan etwas zum Essen. Nach ein bisschen Googeln landeten wir bei El Pintxo De Petritxol, direkt an der Kathedrale, nur zwei Minuten Fußweg entfernt – super praktisch 🤍🥘. Kleine Pintxos, Tapas, Paella – alles super lecker und genau das, was man sich unter spanischer Küche vorstellt.\n\nGestärkt ging es noch über La Rambla und den Mercat de la Boqueria 🥩🍖🍓. Dort holten wir uns spanische Salami, spanischen Schinken und auch frische Smoothies – alles richtig, richtig lecker. Anschließend schlenderten wir weiter durch die Straßen, ließen uns treiben und genossen dieses typische Barcelona-Gefühl: lebendig, warm, laut, bunt 🌞🎶.\n\nDas Besondere: \nWir blieben über Nacht im Hafen von Barcelona 🚢🌙. Am nächsten Tag nutzten wir die zusätzliche Zeit nochmal voll aus. Ohne großes Programm schlenderten wir erneut durch die Stadt, ließen uns treiben – und gingen natürlich shoppen 🛍️😄. Barcelona eignet sich dafür einfach perfekt, und wir waren uns schnell einig:\n👉 Hier kann man richtig, richtig gut shoppen.\n\nAm Abend hieß es dann Abschied nehmen. Mit vielen Eindrücken, vollen Einkaufstaschen und dem Gefühl, Barcelona zwar zum ersten Mal, aber definitiv nicht zum letzten Mal gesehen zu haben ❤️🇪🇸. Als wir schließlich ablegten, glitt die Stadt langsam hinter uns zurück – und wir wussten: Diese zwei Tage waren ein echtes Highlight unserer ersten Kreuzfahrt ✨🛳️.';
+
+  @override
+  String get novaDay7 =>
+      'Am letzten Tag unserer Reise legten wir auf Mallorca an ⚓🇪🇸 und langsam neigte sich unsere erste Kreuzfahrt dem Ende zu. Rückblickend können wir sagen: Es war eine wirklich wunderschöne Route, voller neuer Eindrücke, spannender Städte und unvergesslicher Momente 🛳️✨.\n\nWir checkten vom Schiff aus aus, sammelten unsere Koffer ein und stiegen in den Shuttle zum Flughafen 🚌. Auf dem Weg dorthin meinte meine Mutter noch einmal ganz bestimmt: „Nie wieder mache ich eine Kreuzfahrt“ 🙈😂.\n\nIm Flugzeug angekommen änderte sich die Stimmung dann allerdings sofort: „Wenn wir gleich zu Hause sind, bevor wir die Koffer auspacken, buchen wir direkt die nächste Reise“ 📲❤️.\n\nUnd so geschah es: Kaum zu Hause angekommen, setzten wir uns gemeinsam auf die Couch mit dem iPad 🛋️📱 und haben direkt die nächste Route gebucht. Dieses Mal fiel die Wahl auf die „Mediterrane Highlights 2“ mit der AIDA Stella, inklusive der Côte d’Azur 🌊🏖️. Denn meine Mutter wusste: Wenn wir nicht sofort buchen, würde sie wohl nie wieder an Bord eines Kreuzfahrtschiffs steigen.\n\nSo endete unsere erste Kreuzfahrt mit einem ruhigen, aber spannenden Abschluss, voller Familienmomente, Lachen und Vorfreude auf das nächste Abenteuer 🌞💜.';
+
+  @override
+  String get schatzeTitleDay1 =>
+      'Tag 1 - Anreise nach Mallorca & Einschiffung auf die AIDA Cosma';
+
+  @override
+  String get schatzeTitleDay2 =>
+      'Tag 2 - Entspannung auf See: Unser perfekter Seetag 🌊🛳️';
+
+  @override
+  String get schatzeTitleDay3 =>
+      'Tag 3 - Entspannter Bummel durch La Spezia 🌿';
+
+  @override
+  String get schatzeTitleDay4 =>
+      'Tag 4 - Spontanes Sightseeing in Civitavecchia trotz Streik 🌿';
+
+  @override
+  String get schatzeTitleDay5 =>
+      'Tag 5 - Verliebt in Korsika: Sonnenglück und Genussmomente ☀️';
+
+  @override
+  String get schatzeTitleDay6 =>
+      'Tag 6 - Letzter Seetag: Unser kleines AIDA-Ritual 🌊🛳️';
+
+  @override
+  String get schatzeTitleDay7 =>
+      'Tag 7 - Barcelona: Marktgenuss und Shopping-Glück ☀️';
+
+  @override
+  String get schatzeTitleDay8 => 'Tag 8 - Tschüss AIDA 👋🏽🛳️';
+
+  @override
+  String get schaetzeDay1 =>
+      'Unser Kreuzfahrtabenteuer auf der AIDA Cosma begann diesmal mit etwas ganz Besonderem – einem echten 3-Generationen-Trip 👵👩‍🧑❤️. Ich war unterwegs mit meiner Mama und meiner Uroma, ein Herzensprojekt, das wir schon lange geplant hatten. Drei Generationen, ein Ziel: Sonne, Meer und unvergessliche Erinnerungen 🌊✨.\n\nGegen 12 Uhr startete unser Flug vom Flughafen Köln/Bonn in Richtung Mallorca – und was sollen wir sagen? Wir lieben diese Insel einfach über alles ❤️🇪🇸. Die Aufregung war groß, aber der Flug verlief total entspannt und ohne Probleme. Auf Mallorca angekommen, holten wir schnell unser Gepäck und wurden wie immer herzlich von den AIDA-Mitarbeitenden empfangen. Direkt am Flughafenausgang standen sie bereit, leiteten uns freundlich zum passenden Shuttlebus und versorgten uns mit allen wichtigen Infos. Alles perfekt organisiert, wie man es von AIDA kennt 🙌.\n\nUnd dieses eine Mallorca-Gefühl – du weißt schon, wenn man durch die berühmte Glas-Schiebetür ins Freie tritt, die warme Luft einen begrüßt und man sofort in Urlaubsmodus schaltet – einfach typisch Mallorca! ☀️💛 Aber Partyurlaub war diesmal nicht angesagt – unsere Reise führte uns aufs Meer.\n\nIm Shuttle konnten wir es schon kaum erwarten, endlich an Bord zu gehen. Und als wir am Hafen ankamen, wurde alles herrlich unkompliziert: Koffer einfach im Bus lassen (AIDA macht’s möglich), entspannt einchecken – und zack, unsere Kabine war bereits bezugsbereit. Kein Wunder, wir waren erst gegen 16:30 Uhr an Bord.\n\nWir hatten eine Veranda-Deluxe-Kabine, und was sollen wir sagen? Ein absoluter Traum 😍⚓. Der Balkon war riesig – bestimmt 4 × 6 Meter, wunderschön geschwungen und ausgestattet mit zwei Liegen und zwei Stühlen. Ein Ort zum Durchatmen, Ankommen und Wohlfühlen. Wir waren sofort verliebt.\n\nDa es schon später war, ließen wir alles ruhig angehen: duschen, auspacken, sortieren – ganz entspannt. Danach haben wir uns dann erstmal einen Drink gegönnt 🍹 und uns ein wenig ins Bordleben gestürzt. Die ersten kleinen Erkundungsschritte, die ersten Eindrücke, dieses vertraute Gefühl: Endlich wieder AIDA! Und für uns sogar das erste Mal auf der Cosma – doppelte Vorfreude ✨.\n\nDas Highlight des Abends war natürlich das Auslaufen – unser liebster Moment jeder Reise. Wir haben es uns auf unserem traumhaften Balkon gemütlich gemacht und zugeschaut, wie die AIDA Cosma sich langsam vom Hafen löste und ihre Reise begann. Dieser magische Augenblick, wenn die Motoren brummen, das Schiff sich bewegt und man die ersten Meter Richtung Meer fährt… einfach Gänsehaut. Jedes Mal wieder 🛳️💫.\n\nDass wir diesmal nicht mehr nach Palma reinfahren konnten, weil es schon spät war? Nicht schlimm. Wir kennen Mallorca in- und auswendig, waren früher fast jedes Jahr dort. Heute ging es ums Ankommen, ums Gemeinsam-sein, ums Loslassen. Und genau das haben wir an diesem Abend in vollen Zügen genossen ✨❤️.';
+
+  @override
+  String get schaetzeDay2 =>
+      'Am nächsten Morgen begann unser erster Seetag – Zeit zum Ankommen, Runterkommen und einfach mal nichts tun müssen 🛳️💛. Normalerweise verschlafen wir Frühstück an Seetagen ja gern mal und landen eher spontan im Buffetrestaurant zum Mittagessen. Aber an diesem Morgen waren wir ausnahmsweise früh wach – und das haben wir direkt genutzt.\n\nUnser Weg führte uns ins Steakhouse zum Frühstück 🥐☕ – eine wirklich gute Entscheidung. Die ruhige, fast schon meditative Atmosphäre, der endlose Blick auf das glitzernde Meer, die liebevoll angerichteten Speisen und der erste Kakao des Tages – einfach perfekt. So lässt sich ein Seetag starten! Danach ging es genauso weiter, wie man es sich an einem Seetag nur wünschen kann: gemütlich auf unserem riesigen Balkon entspannen, die warme Sonne auf der Haut genießen und die Seele einfach baumeln lassen 🌞✨. Ab und zu ein Blick über das unendliche Blau, das leise Rauschen des Wassers, und schon fühlt man sich angekommen, losgelöst und rundum glücklich.\n\nSpäter am Nachmittag gönnten wir uns ein Getränk an der Bar 🍹. Während meine Mama noch ein kleines Nickerchen machte, zog es meine Uroma und mich zum Kuchenbuffet – denn um 15 Uhr ist auf der AIDA Kuchenzeit 🍰💛. Ein bisschen süßer Genuss, ein Lächeln hier, ein Plausch dort – einfach Seetagsglück in Reinform.\n\nAm Abend wartete dann die große AIDA-Bingo-Show 🎉. Leider hatten wir diesmal kein Glück, aber das machte gar nichts – der Spaßfaktor war riesig, das Mitfiebern spannend und die Freude der Gewinner steckte uns alle an. Anschließend schauten wir uns noch die Show „Nashville – Just Good Music“ an 🎶. Perfekte Unterhaltung, stimmungsvolle Musik und jede Menge gute Laune. Zum Tagesabschluss gab es noch ein Abendessen bei Best Burger at Sea 🍔, bevor wir wie so oft den Abend gemütlich auf unserem Balkon ausklingen ließen.\n\nDas Meer rauschte leise, der Himmel funkelte sternenklar ✨, und wir saßen da, erfüllt von Ruhe, Dankbarkeit und Vorfreude auf alles, was noch kommen würde. Ein Seetag, wie er im Buche steht – einfach perfekt.';
+
+  @override
+  String get schaetzeDay3 =>
+      'Nach einem ruhigen Seetag erreichten wir am nächsten Morgen den kleinen, charmanten Ort La Spezia an der ligurischen Küste 🇮🇹. Viele nutzen den Hafen hier als Ausgangspunkt für Tagesausflüge nach Pisa oder Florenz, doch da wir beide Städte schon gut kennen, entschieden wir uns diesmal bewusst für etwas Entspannteres: einfach La Spezia selbst entdecken – und das war genau die richtige Wahl!\n\nDirekt am Hafen wartete schon eine liebevoll geschmückte Bummelbahn auf uns, verziert mit bunten Blumen 🌸. Richtig süß! Mit ihr fuhren wir gemütlich in die kleine Stadt hinein. Dort legten wir einen kleinen Zwischenstopp ein, der uns genügend Zeit ließ, durch die Gassen zu schlendern, Fotos zu machen und die Atmosphäre einfach aufzusaugen. Die Bahn fuhr eine kleine Rundtour und kam etwa alle 50 Minuten zurück – perfekt für einen entspannten Spaziergang durch La Spezia und ein bisschen italienisches Lebensgefühl.\n\nZurück an Bord gönnten wir uns erst einmal einen leckeren Milchshake an der Bar, alle drei zusammen 🥤💛. Mein persönliches Highlight: der Erdbeermilchshake – frisch, cremig, ein absolutes Must-Have auf jeder Reise. Später konnten wir uns sogar noch ein Eis aus der Eisbar nicht entgehen lassen – weil, warum nicht? 🍦\n\nDas Auslaufen aus La Spezia gegen 18 Uhr verfolgten wir wie gewohnt auf unserem Balkon. Auch wenn der Blick auf die Container eher unscheinbar war, das Gefühl beim Ablegen bleibt einfach magisch. Gänsehaut pur, begleitet vom leisen Rauschen des Meeres.\n\nAm Abend verschlug es uns ins Mamma Mia, das italienische Spezialitätenrestaurant an Bord 🇮🇹🍝. Was sollen wir sagen? Zehn von zehn Punkten! Die Pasta, die Vorspeisen, das Ambiente – alles einfach perfekt und rundum stimmig.\n\nDen Tag ließen wir anschließend ganz entspannt ausklingen, natürlich wieder mit einem Moment der Ruhe auf unserem großen Balkon unter dem Sternenhimmel 🌌 und begleitet vom sanften Rauschen des Meeres. Ein Tag voller Genuss, Entspannung und italienischem Flair – genau das, was wir an einer Kreuzfahrt so lieben.';
+
+  @override
+  String get schaetzeDay4 =>
+      'Unser vierter Tag an Bord der AIDA Cosma begann wie gewohnt mit einem entspannten Frühstück im Steakhouse 🥐🍳. Mittlerweile fast schon Tradition. Die Atmosphäre dort ist einfach etwas ganz Besonderes: ruhig, gemütlich, mit Blick aufs Wasser – der perfekte Start in den Tag.\n\nUrsprünglich hatten wir geplant, Rom zu besuchen, wie es viele Gäste an Bord tun – entweder über einen gebuchten AIDA-Ausflug oder auf eigene Faust. Wir wollten mit dem Zug von Civitavecchia nach Rom fahren. Doch ausgerechnet an diesem Tag streikte die italienische Bahn, und unser geplanter Rom-Trip fiel ins Wasser 🚫.\n\nAber wie das Leben so spielt, ergibt sich oft eine schöne Alternative. Direkt vor dem Hafenausgang entdeckten wir einen kleinen Stand für eine Hop-on-Hop-Bus-Tour 🚌. Ganz unkompliziert entschieden wir uns dafür, und schon ging es los – der Bus fuhr gemütlich durch die Stadt und bot uns einen entspannten ersten Eindruck der charmanten Hafenstadt.\n\nCivitavecchia hat uns positiv überrascht. Zwar kein Weltwunder, aber deutlich schöner als erwartet. Besonders der Hafen gefiel uns sogar noch besser als der in Lasvecchia. Nach der kleinen Stadtrunde kehrten wir gemütlich an Bord zurück. Dort gönnten wir uns erst einmal einen leckeren Drink an der Bar und ließen uns im Theatrium nieder – genau der richtige Ort, um den Tag ruhig ausklingen zu lassen 🍹.\n\nZum Auslaufen gegen 20 Uhr machten wir es uns wie gewohnt auf unserem Balkon gemütlich. Ein Gänsehautmoment: das warme Licht, das leise Tuckern des Schiffes, das sanfte Rauschen des Meeres – einfach unbeschreiblich 🌅💛. Den Abend ließen wir ganz ruhig ausklingen, die Gedanken entspannt, das Herz zufrieden, begleitet von diesem unvergleichlichen Kreuzfahrtgefühl.';
+
+  @override
+  String get schaetzeDay5 =>
+      'Korsika, willkommen! Und zwar zunächst im Regen 🌧️. Beim Einlaufen in Ajaccio, der Hauptstadt der Insel, schüttete es wie aus Eimern – wir dachten schon: na super, alle schwärmen von Korsika und wir stehen hier im Regen. Doch kaum hatten wir angelegt, verzog sich das Grau wie von Zauberhand, und wir wurden mit strahlendem Sonnenschein begrüßt ☀️.\n\nSchon beim ersten Blick vom Schiff aus waren wir hin und weg: bunte Häuser an den Hängen, das glitzernde Meer, die Berge im Hintergrund – Ajaccio wirkte wie aus einem Märchenbuch.\n\nDirekt nach dem Verlassen des Schiffes erkundeten wir die Umgebung am Hafen. Dort entdeckten wir einen Anbieter für eine kleine Sightseeing-Busrunde, die vormittags ohne Stopps durch die Stadt führt. Die Bimmelbahn fuhr erst ab Mittag, daher war die Busrunde perfekt. Die Tour führte uns vorbei an hübschen Gassen, am Wasser entlang und durch kleine Wohnviertel – richtig charmant und entspannt 🌿.\n\nNach der Tour kamen wir direkt am Hafen an einem kleinen Markt vorbei. Dort gab es einen Stand mit krossen, panierten Bällchen, gefüllt mit Oliven, Nutella, Käse und vielem mehr. Erst waren wir skeptisch, aber eine andere AIDA-Gästin überzeugte uns – und wir waren begeistert! So sehr, dass wir gleich nochmal Nachschub holten 😋.\n\nEin weiterer kulinarischer Tipp kam direkt von einer Followerin: die Konditorei Galeani, nur einen kleinen Hügel zu Fuß entfernt. Und sie hatte recht – das Erdbeertörtchen, das wir dort probierten, war ein absoluter Traum 🍓✨.\n\nWir bummelten noch ein wenig durch die Stadt, entdeckten kleine Souvenirs (ich habe Uno von Lilo & Stitch gefunden – so süß!) und naschten hier und da kleine Leckereien vom Markt. Gegen Mittag kehrten wir zurück an Bord, gönnten uns im Brauhaus ein typisch kölsches Menü – Nudeln mit Gulasch und Apfelmus, wie es sich für uns Rheinländer gehört 😄 – und tankten anschließend etwas Sonne auf dem Balkon ☀️.\n\nAm Abend ging es wieder ins Mamma Mia, das italienische Restaurant an Bord – wie immer 10 von 10 Punkten. Zwischendurch streiften wir noch einmal durch die Stadt, genossen die Stimmung am Hafen, den Sonnenuntergang über den Booten und die AIDA im goldenen Licht 🌅. Ein Moment, um tief durchzuatmen und Corsica ganz in sich aufzunehmen.\n\nSpäter zurück an Bord warteten wir mit einem Drink auf das Auslaufen um 22 Uhr. Und was für ein Anblick das war! Korsika im Dunkeln, die Lichter des Schiffes, der Blick zurück auf die beleuchteten Hügel – Gänsehaut pur ✨. Wir wussten sofort: hierher wollen wir unbedingt wieder – vielleicht für ein Wochenende, vielleicht einfach so. Corsica hat einen festen Platz in unserem Herzen ❤️.';
+
+  @override
+  String get schaetzeDay6 =>
+      'Unser letzter Seetag begann wie immer entspannt und mit Vorfreude auf die kleinen Rituale, die eine AIDA-Reise so besonders machen. Den Morgen starteten wir, wie schon an so vielen Tagen zuvor, mit einem leckerem Frühstück im Steakhouse. Die Atmosphäre dort ist einfach unschlagbar: ruhig, gemütlich und mit Blick aufs endlose Meer. Für uns der perfekte Start in einen entspannten Urlaubstag 🌅.\n\nAnschließend führte uns unser Weg direkt in den AIDA-Shop, denn am letzten Seetag gehört das Glücksrad drehen einfach dazu. Ein kleines Ritual von uns: Drehen, Prozente auf den Einkauf ergattern und sich noch ein paar schöne Erinnerungen sichern. Dieses Mal haben wir Magnete von den angefahrenen Häfen gekauft – ein fester Bestandteil jeder unserer Reisen 🧲.\n\nEin echtes Highlight war diesmal der Pandora-Shop an Bord. Dort entdeckten wir tatsächlich AIDA-Charms und die kleinen AIDA-Maskottchen – und schwupps, da war es um uns geschehen 😍. Verliebt, gekauft, glücklich! (Kleiner Hinweis: Die AIDA-Charms sind nicht offiziell von Pandora, passen aber perfekt auf das Pandora-Armband 😉.)\n\nDer Rest des Tages stand dann ganz im Zeichen der Entspannung. Wir haben uns zurückgezogen, die Koffer gepackt, den Balkon genossen, die Meeresluft eingeatmet und einfach noch einmal das Gefühl von Freiheit und Ruhe ausgekostet 🌊✨.\n\nZum Abend hin gönnten wir uns ein ganz besonderes Highlight: ein Dinner im Steakhouse. Und was sollen wir sagen? Es war einfach himmlisch. Für unseren letzten Seetag ein kulinarischer Höhepunkt, der diesen entspannten Tag perfekt abrundete 🥩🍷.';
+
+  @override
+  String get schaetzeDay7 =>
+      'Frühmorgens legten wir in Barcelona an, und es zog uns direkt in die Stadt. Vom Hafen aus ging es mit dem Shuttlebus Richtung Zentrum. Kleiner Tipp: Es gibt auch einen günstigeren Shuttle, der direkt vorm Schiff hält und euch genauso ins Zentrum bringt – den haben wir leider erst zu spät entdeckt 😉.\n\nUnser erstes Ziel war der Mercat de la Boqueria. Was für ein Erlebnis! Frische Farben, köstliche Düfte und wir mittendrin. Mit einem eiskalten Smoothie in der Hand, der einfach himmlisch schmeckte, fühlten wir uns direkt angekommen. Dazu gab es spanische Salami aus einem der unzähligen Stände – ein wahrer Traum. Und dann die frischen Erdbeeren mit Nutella – mehr Kommentar braucht es da nicht, einfach pure Liebe 🍓🍫.\n\nIm Anschluss wollte ich eigentlich ein FC Barcelona-Trikot kaufen und landete stattdessen im offiziellen Real Madrid Store. Und was soll ich sagen? Ich verliebte mich sofort in einen lila Trainingsanzug – zu schön, um ihn hängen zu lassen. Also gekauft und direkt angezogen. Ja, ausgerechnet in Barcelona im Real-Outfit durch die Straßen – geschenkt 😅.\n\nBeim Stadtbummel stießen wir noch auf einen echten Volltreffer: die Rituals Lina Edition „The Ritual of Yozakura“. Damals schwer zu bekommen, diesmal ein Must-Have für uns.\n\nAn der Katedrale von Barcelona angekommen, war diese leider abgesperrt, denn es fand ein traditioneller Kindertanz statt. So schön anzusehen, dass wir einen Moment verweilten und den Tänzern zusahen, bevor es weiter zum Mittagessen ging.\n\nKulinarisch erlebten wir ein Déjà-vu: Im Restaurant „El Pintxo de Petritxol“, direkt in der Nähe der Katedrale, hatten wir bereits während unserer Mittelmeerreise 2019 gegessen. Die Tapas waren immer noch genauso lecker – ein kleines kulinarisches Stück Nostalgie 🍽️.\n\nAm Nachmittag ging es zurück an Bord, wo wir uns erst einmal einen Milchshake gönnten und dann den Balkon genossen. Ein besonderer Moment erwartete uns: Ein kleiner, wunderschöner Schmetterling hatte sich am Seil unserer Hängematte niedergelassen – so ein stiller, süßer Besucher 🦋.\n\nUm 18 Uhr hieß es dann Adios Barcelona. Das Auslaufen war wieder ein wunderschönes Erlebnis. Danach ging es ans Kofferpacken, ein letztes Getränk auf dem Balkon, ein bisschen Meeresrauschen genießen – und dann früh ins Bett, bereit für die Rückkehr nach Mallorca 🛳️🌙.';
+
+  @override
+  String get schaetzeDay8 =>
+      'Frühmorgens legten wir wieder auf Mallorca an – zurück an dem Ort, an dem unser Abenteuer begonnen hatte. Und diesmal hieß es leider: Abschied nehmen.\n\nDa unser Shuttlebus schon um 5:30 Uhr fuhr, mussten wir unsere Koffer selbst von Bord nehmen. Normalerweise stellt man sie am Vorabend einfach vor die Kabinentür, und sie werden gesammelt an Land bereitgestellt – super bequem. Aber bei so einem frühen Abflug ging das nicht. Also schnappten wir ganz früh unsere Koffer, checkten aus und machten uns auf den Weg. Der Shuttlebus brachte uns direkt zum Flughafen Palma de Mallorca. Alles total entspannt – am Flughafen war kaum etwas los. Der Check-In ging schnell, und unsere Koffer waren direkt auf dem Weg.\n\nDann hieß es schon: Abflug nach Köln. Ein besonderes Highlight auf unserem Rückflug: Wir hatten zum ersten Mal eine Pilotin. Und sie war großartig! Der Start war ruhig, der Flug angenehm und die Landung sanft wie selten zuvor – ein perfekter Abschluss, vor allem im Vergleich zu unserem eher ruckeligen Hinflug.\n\nZu Hause angekommen, hieß es natürlich: Koffer auspacken, Wäsche waschen, Urlaubsmodus aus. Aber bevor wir ganz in den Alltag zurückkehrten, gönnten wir uns noch einen kleinen kulinarischen Genuss: ein leckeres Mittagessen im Habakkus Steakhouse in Köln.\n\nSo ging unsere Drei-Generationen-Kreuzfahrt mit der AIDA Cosma offiziell zu Ende. Doch die Erinnerungen bleiben – unvergesslich, voller Sonne, Meer, Genuss und gemeinsamer Momente. Wir sagen also: Auf AIDAsehen! ⚓✨';
+
+  @override
+  String get caribeanTitle => 'Karibische Inseln';
+
+  @override
+  String get aidaKaribikDay1 =>
+      'Tag 1 – Ankunft in La Romana & Einchecken auf der AIDA 🛳️🌴';
+
+  @override
+  String get aidaKaribikDay2 =>
+      'Tag 2 – Ein entspannter Seetag auf der AIDA 🌊☀️';
+
+  @override
+  String get aidaKaribikDay3 => 'Tag 3 – Oranjestad, Aruba 🏖️🇦🇼';
+
+  @override
+  String get aidaKaribikDay4 =>
+      'Tag 4 – Curaçao: Willemstad, Strände & Naturerlebnisse 🌺🌊';
+
+  @override
+  String get aidaKaribikDay5 =>
+      'Tag 5 – Bonaire: Salt Lake, Flamingos & Sorobon Beach 🦩🏝️';
+
+  @override
+  String get aidaKaribikDay6 => 'Tag 6 – Seetag: Entspannung auf See ☀️🛳️';
+
+  @override
+  String get aidaKaribikDay7 =>
+      'Tag 7 – Grenada: Bimmelbahnfahrt in St. George’s 🚂🌿';
+
+  @override
+  String get aidaKaribikDay8 =>
+      'Tag 8 – Barbados: Harrison’s Cave & Hafentag 🏞️🍹';
+
+  @override
+  String get aidaKaribikDay9 =>
+      'Tag 9 – St. Vincent: Wallilabou Heritage Park & Pirates of the Caribbean 🏝️⚓';
+
+  @override
+  String get aidaKaribikDay10 =>
+      'Tag 10 – St. Lucia: Entspannung an der Patio Bar 🍹🌅';
+
+  @override
+  String get aidaKaribikDay11 =>
+      'Tag 11 – Dominica: Roseau & Naturhighlights 🌴💦';
+
+  @override
+  String get aidaKaribikDay12 =>
+      'Tag 12 – Pointe-à-Pitre, Guadeloupe: Stadt & Rikscha-Tour 🚲🏙️';
+
+  @override
+  String get aidaKaribikDay13 =>
+      'Tag 13 – Antigua: English Harbour, Saint Mary Beach & Dickenson Bay 🏖️⛵';
+
+  @override
+  String get aidaKaribikDay14 =>
+      'Tag 14 – Seetag & Vorbereitung auf die Abreise 🛳️🧳';
+
+  @override
+  String get aidaKaribikDay15 =>
+      'Tag 15 – Abreisetag: Abschied von der Karibik ✈️🏠';
+
+  @override
+  String get aidaKaribik1 =>
+      'Endlich war es soweit – unser Karibikabenteuer mit karibischen Inseln ab der Dominikanischen Republik begann! Wir starteten frühmorgens in Köln ✈️ und landeten gegen 15 Uhr in La Romana. Schon beim Aussteigen aus dem Flugzeug spürten wir: Jetzt beginnt Urlaub pur 🌺.\n\nDer Flughafen von La Romana ist klein, charmant und fühlt sich eher wie ein tropisches Häuschen mit Palmendach 🌴🏠 an – keine langen Wege, keine Menschenmassen. Direkt nach der Flugzeugtreppe standen wir vor dem Shuttlebus zur AIDA Perla 🚍🛳️. Total entspannt! Unsere Koffer wurden bereits vom Personal aus dem Flugzeug geholt und direkt in unsere Junior-Suite geliefert 🎒✨.\n\nDie Fahrt vom Flughafen zum Hafen dauerte nur etwa 15 Minuten. Schon beim Ankommen spürten wir die karibische Atmosphäre: Palmen wiegen sich im Wind 🌴🍃, bunte Häuschen säumen den Hafen 🏘️, kleine Souvenirläden und Streetfoodstände verbreiten Urlaubsstimmung 🌞🍹. Ein Pool direkt am Hafen erlaubte sogar einen ersten Blick auf unser Schiff – einfach traumhaft 🏊‍♂️💦.\n\nDer Check-in auf die AIDA ging blitzschnell – keine Warteschlangen, keine Hektik, nur freundliche Gesichter 😊. Kurz darauf konnten wir unsere Junior-Suite auf Deck 8 auf der Backbordseite betreten. Dank der Suite hatten wir auch Zutritt zum exklusiven Patchouli-Deck 🌊🍸, einem separaten Bereich für Suite-Gäste mit Infinity-Pools, Liegen, Strandkörben und eigener Bar – perfekt für entspannte Momente über den Decks der AIDA.\n\nUnsere Kabine war hell, modern und geräumig eingerichtet 🛏️🌺. Frische Handtücher, gemütliche Betten und ein kleiner Balkon mit Blick aufs Meer 🌅 ließen uns sofort ankommen. Einziger kleiner Nachteil: Zwischen dem Bett und dem Balkon befindet sich ein Lounge-Bereich, sodass man vom Bett nicht direkt aufs Meer schaut. Trotzdem fühlten wir uns in der Kabine sofort wohl.\n\nEtwa zwei Stunden nach unserer Ankunft wurden die Koffer geliefert, sodass wir sie auspackten und eine erfrischende Dusche nahmen 🚿💦. Danach erkundeten wir das Schiff: Decks, Restaurants 🍽️, Bars 🍹 – alles wirkte einladend und machte Lust auf die kommenden Tage. Dank unseres Suite-Zugangs hatten wir Zugang zu einem exklusiven Bereich auf Deck 8, mit bequemen Sitzmöglichkeiten drinnen und draußen 🪑☀️ sowie kostenlosen Getränken 🥤.\n\nAbends genossen wir unser kostenloses Dinner als Suite-Gäste 🥂. Standardmäßig ist man für das Rossini eingeteilt, aber wir fragten beim Empfang, ob wir stattdessen einmal ins Buffalo Steakhouse gehen dürften, da wir dort regelmäßig essen und das Rossini nicht so unseres ist. Die AIDA erlaubte das problemlos ✅ – also konnten wir den ersten Abend in unserem Lieblingsrestaurant verbringen 🥩🍷.\n\nFrisch gestärkt erlebten wir dann das Auslaufen aus La Romana um 22 Uhr 🌙✨: Musik an Bord 🎶, warmer Wind im Gesicht 🌬️ und die Lichter des Hafens 🌟 – der perfekte Auftakt für unsere Karibikreise.';
+
+  @override
+  String get aidaKaribik2 =>
+      'Nach dem aufregenden Anreisetag und unserem ersten Abend auf der AIDA tat der heutige Seetag einfach richtig gut. Wir lieben Seetage über alles – eins bis zwei Tage hintereinander sind ein Traum, ab dem dritten könnte es schon langweilig werden 😅. Heute hatten wir zum Glück nur einen, und der war perfekt.\n\nDa wir Junior-Suite-Gäste waren, starteten wir den Morgen mit einem Frühstück im French Kiss 🥐☕. Wir hatten unseren festen Platz für jeden Morgen, alles war sehr entspannt und lecker. Es gab frische Baguettes 🥖, Pancakes 🥞, französische Spezialitäten und vieles mehr. Natürlich haben wir uns ab und zu auch mal einen kleinen Ausflug ins Buffalo Steakhouse gegönnt, aber das Frühstück im French Kiss war ohnehin ein Genuss 😋.\n\nGegen Mittag machten wir uns gemütlich fertig und schlenderten zum Mittagessen. Das Gefühl, über das Schiff zu laufen, während draußen die Karibik in tiefem Blau vorbeizieht 🌊💙, ist einfach magisch. Der Wind streicht sanft übers Deck, das leise Schaukeln und das Knarren der Reling unterstreichen sofort das Urlaubsgefühl 🌴✨.\n\nDen restlichen Tag verbrachten wir ganz entspannt und abwechslungsreich. Auf dem Patchouli-Deck das Sonnenlicht genießen ☀️, frische Meerluft am Heck des Schiffes einatmen 🌬️, in unserer Kabine mit geöffneter Balkontür das sanfte Meeresrauschen hören 🌊 – das pure Entspannungsgefühl. Zwischendurch erkundeten wir weiter das Schiff: kleine Bars 🍹, gemütliche Lounges 🪑 und die wunderschönen Decks. Die AIDA Perla ist einfach unser Lieblingsschiff ❤️, und die Entdeckungstour machte richtig Spaß.\n\nZwischen all dem Tun haben wir einfach auch mal gar nichts gemacht – nur die Sonne genießen, den Blick aufs Meer schweifen lassen und die Vorfreude auf die kommenden Inselabenteuer wachsen lassen 🌺🌴.\n\nAm Abend genossen wir ein leckeres Dinner 🍽️ und ließen den Tag in absolut entspannter Stimmung ausklingen. Ein perfekter Seetag, genau richtig, um Kraft zu tanken und die Karibikreise in vollen Zügen zu genießen 🌊✨.';
+
+  @override
+  String get aidaKaribik3 =>
+      'Wir legten morgens in Oranjestad an — der lebhaften Hauptstadt Arubas — und machten uns direkt auf den Weg. Vom Hafen aus war alles super unkompliziert: Gemeinsam mit anderen Passagieren stiegen wir in ein Taxi, abgelesen vom offiziellen Preisschild am Hafenausgang — kein Verhandeln, alles sauber geregelt ✅.\n\nUnser Ziel war der traumhafte Strand am Eagle Beach. Beim Betreten des Strandes fühlte es sich sofort wie Urlaub pur an: weißer Sand, tiefblaues Meer, Sonne im Gesicht ☀️. Dort steht auch ein ganz besonderer Baum – der Divi‑Divi Baum – bekannt für seine schief gewachsene Form, geformt vom Wind der Insel und ein echtes Wahrzeichen Arubas 🌿. Ein perfektes Fotomotiv und sofort dieses karibische Gefühl.\n\nSpäter zog es uns weiter zum Palm Beach. Dort stand Parasailing auf dem Plan 🪂. Der Ablauf war richtig entspannt und komfortabel: Wir fuhren vom Strand aus mit einem Boot aufs offene Meer, stiegen auf ein zweites Boot um, bekamen unsere Weste angelegt, und dann ging es hoch in die Luft. Hoch über dem türkisfarbenen Wasser, mit Blick auf die Küste, fühlten wir uns wie Vögel im Flug 🐦🌊. Danach landeten wir wieder sicher auf dem Boot und wurden schließlich zurück zum Strand gebracht. Viel komfortabler und entspannter als früher an der Côte d’Azur!\n\nNach dem Adrenalinkick kehrten wir kurz zurück zum Schiff: erfrischender Cocktail an der Bar 🍹, eine Dusche und dann ging’s weiter. Am Nachmittag schlenderten wir durch die Royal Plaza Mall – das bekannte pinkfarbene Einkaufszentrum direkt am Wasser. Von der oberen Etage hatten wir einen tollen Blick auf die AIDA und den Hafen — super als Fotomotiv 📸. Danach entdeckten wir die Renaissance Mall und das bunte Treiben in Downtown Oranjestad mit seinen pastellfarbenen Häusern in Gelb, Pink, Mint und Blau — Aruba pur 🌈.\n\nEbenfalls entdeckten wir das historische Fort Zoutman (manchmal auch „Fort Southman“ genannt), die älteste Festung Arubas. Von dort hatten wir eine tolle Aussicht über Hafen und Stadt — ein Stück Inselgeschichte und trotzdem ganz entspannt 🏰🌅.\n\nZum Sonnenuntergang landeten wir in einer kleinen Bar direkt am Wasser — Flamingos am Strand, eine romantische Schaukel mit Blumen, sanftes Licht, Meeresrauschen… Perfekt, um den Tag ausklingen zu lassen 🌺🦩.\n\nAm Abend kehrten wir zurück auf die AIDA und genossen ein gemütliches Dinner, reflektierten die Erlebnisse des Tages und freuten uns schon auf die nächsten Inseln und Abenteuer unserer Karibikroute 🛳️✨.';
+
+  @override
+  String get aidaKaribik4 =>
+      'Am nächsten Tag legten wir morgens in Willemstad an — der farbenfrohen Hauptstadt Curacaos — und stürzten uns direkt hinein in das karibische Insel‑Feeling. Palmen über uns, bunte Häuser überall, das entspannte Flair einer Inselstadt — sofort gute Laune 🌴🎨.\n\nSchon beim Aussteigen warteten Taxifahrer am Hafen. Wir hatten zwei Wünsche: 🐢 mit Meeresschildkröten schwimmen und 🦩 Flamingos sehen. Doch die Angebote waren jenseits von gut und böse — keine festen Preise, ständige Diskussionen, und je mehr wir verhandelten, desto höher wurde der Preis. Das war uns zu unseriös, also haben wir entschieden: lieber nicht — wir wollten den Tag genießen und keine Nervenschlacht starten 🚫💸.\n\nStattdessen trafen wir am Hafenausgang auf einen deutschen Reiseführer — nennen wir ihn „Nils“ — der eine ganztägige Tour anbot für 100 Euro pro Person. Alles inklusive: Transport im alten, gemütlichen amerikanischen Schulbus, mehrere abwechslungsreiche Stopps, Verpflegung und Betreuung — also eine ehrliche, transparente Sache. Wir sagten zu ✅.\n\nWir holten unsere Badesachen, stiegen in den Bus und los ging es. Das erste Highlight war ein markanter pinkfarbener Baum, der sofort auffiel 🌳 — Kunst oder Landmarke, ein tolles Fotomotiv. Dann ging es weiter ins kreative Viertel Pietermaai: ein buntes Künstlerviertel mit charmanten Straßen, kleinen Cafés, Street‑Art und verspielten Kunstinstallationen — genau das, was wir uns bei Reise und Entdeckung erhofft hatten. Holzkisten, Blumen, Kunst überall — sehr herzlich, sehr karibisch 🎨🌺.  \n\nEtwas später besuchten wir eine kleine Likör‑Manufaktur namens Kuraschau Likörfabrik. Dort sahen wir, wie der berühmte Insel‑Likör hergestellt wird. Wir durften probieren — und konnten uns gleich ein paar Fläschchen als Souvenir sichern 🍹.\n\nDer Ausflug führte uns anschließend in ein Naturschutzgebiet, wo wir tatsächlich Flamingos sahen — wunderschöne, elegante Tiere im rosa‑weißen Gefieder 🦩. Ein echter Traum für alle Tier‑ und Naturfans. Danach ging es weiter zu Playa Grandi (auch bekannt als „Fischerdorfstrand“ / „Playa Piskado“) — mit ein bisschen Glück haben wir Meeresschildkröten gesehen und schwammen im klaren Wasser 🐢🌊.  \n\nMittag gab es im Restaurant Playa Forti: Wir saßen draußen auf einer Plattform mit Blick aufs Meer, fühlten die Brise und genossen das Wasser, das unter uns glitzerte. Und — ja — ich glaube, ich hab sogar einen Delfin gesehen 🐬. Die Stimmung, das Wasser, die Aussicht — Gänsehaut!\n\nEbenfalls wagten manche von uns einen kurzen Sprung von der Felskante — ein kleiner, spontaner Adrenalinkick, bevor wir uns Richtung Strand bewegten zum chillen, Sonne tanken und Ruhe genießen 🌞. Danach fuhren wir weiter zum Strand Grote Knip – einer der schönsten Strände Curacaos mit türkisfarbenem Wasser, weißem Sand und felsiger Kulisse. Perfekt zum Schnorcheln, Schwimmen und einfach Seele baumeln lassen 🏖️💙.  \n\nZum Abschluss brachte uns der Bus zurück nach Willemstad. Einige aus der Gruppe stiegen bei der Queen Emma Bridge aus, um Fotos zu machen und die beleuchtete Stadt bei Nacht zu sehen — pastellfarbene Häuser, Lichter, Hafen, Wasser — typisch karibisch, typisch Curacao 🌉🌙. Schließlich ging es zurück zum Schiff, voller Eindrücke und inspiriert von einem Tag voller Abenteuer, Natur und kultureller Vielfalt.\n\nAm Abend ließen wir den Tag mit einem leckeren Dinner ausklingen — müde, glücklich und voller Vorfreude auf das, was noch kommt. Ein Tag, den wir so schnell nicht vergessen werden ❤️✨';
+
+  @override
+  String get aidaKaribik5 =>
+      'Anschließend legten wir in Kralendijk auf Bonaire an, voller Vorfreude auf einen spürbar anderen Tag — nicht nur Badeurlaub, sondern Natur, Geschichte und echtes Insel‑Feeling.\n\nAls wir aus dem Hafen rausgingen, standen da Pavillons verschiedener Anbieter — alle boten Insel‑Touren an. Für uns gab es zwei Optionen: eine Nordtour und eine Südtour. Die Nordtour wurde an diesem Tag nicht angeboten — und ehrlich gesagt: Die Anbieter waren so transparent und ehrlich, dass sie gleich sagten: Die Südtour lohnt sich allein richtig. Also buchten wir diese Hälfte der Insel — mit Minibus, begleitet von einem super netten Fahrer 🚌.\n\nUnser erster Halt: die berühmten Salzseen und Salzwiesen am südlichen Teil der Insel — die Salzpfannen von Bonaire. Dort erlebten wir beeindruckende Landschaften: strahlend weiße Salzflächen, kristallklares Wasser und zwischen all dem — pink‑rosa Töne. 😍 Eine Landschaft wie aus dem Bilderbuch. Die alten Salzpfannen sind nicht nur schön, sondern auch historisch bedeutsam — sie stehen für die jahrhundertelange Salzgewinnung auf Bonaire.  \n\nNicht weit entfernt lagen auch die Überreste der ehemaligen Sklavenhütten — die sogenannten White Slave Huts (und die rötlichen „Red Slave Huts“). Diese kleinen, schlichten Häuser wurden Mitte des 19. Jahrhunderts gebaut und dienten als Unterkünfte für Menschen, die in der Salzindustrie arbeiteten — eine Erinnerung an eine düstere Seite der Inselgeschichte.  \n\nWir nutzten eine kreative Idee für Fotos: Eine alte Hütte mit zwei gegenüberliegenden Fenster‑ bzw. Türöffnungen → hinter dir das Meer, vor dir die Öffnung. Wenn jemand dich vorne fotografiert und die andere Person hinten aus der anderen Öffnung, bekommst du einen starken Kontrast: Innen alte Mauern, draußen türkisfarbenes Meer — ein einzigartiges Motiv.\n\nWeiter ging es — und unterwegs entdeckten wir tatsächlich Flamingos. Kein festes Schutzgebiet, sondern frei in der Natur — einfach elegant, rosa‑weiß im Wasser stehend, perfekt für Fotos und ein Naturhighlight 🦩. Das hatte sowas Magisches.\n\nSpäter steuerten wir den Küstenabschnitt zum Sorobon Beach an — ein Paradies für Windsurfer und Gelegenheitsgucker. Einige in unserer Gruppe blieben und surften, wir anderen genossen einfach Sonne, Sand und Relaxen. Wieder zurück nach Kralendijk.\n\nAm Ende bummelten wir durch die Stadt: bunte Häuser, kleine Boutiquen, entspannte karibische Stimmung — einfach diesen Mix aus Ruhe, Farben und Gelassenheit genießen.\n\nAm Abend gingen wir zurück aufs Schiff. Wir waren erfüllt von all dem: Salzseen, Geschichte, Natur, Flamingos — ein Tag voller Eindrücke, der uns Bonaire in seiner ganzen Vielfalt gezeigt hat 🌅.';
+
+  @override
+  String get aidaKaribik6 =>
+      'Nach dem aufregenden Tag auf Bonaire folgte heute ein wohlverdienter Seetag, den wir ganz entspannt genießen konnten. Früh aufstehen war nicht nötig — wir schliefen aus, gönnten uns ein gemütliches Frühstück im French Kiss und ließen uns vom sanften Schaukeln des Meeres treiben 🌴☕.\n\nDen Vormittag verbrachten wir damit, das Schiff weiter zu erkunden. Neue Restaurants, gemütliche Lounges und kleine versteckte Ecken, die wir bisher noch nicht entdeckt hatten, wurden inspiziert. Zwischendurch gab es ein erfrischendes Getränk auf dem Sonnendeck, ein kleiner Spaziergang entlang der Shops — einfach die frische Karibikluft inhalieren und das endlose Blau des Ozeans genießen 🌊🍹.\n\nMittags gönnten wir uns etwas Leckeres in einem der Buffetrestaurants, bevor wir den Nachmittag entspannt auf der Kabine verbrachten. Ein kleines Nickerchen, das Meeresrauschen hören und einfach die Aussicht aufs Meer genießen — das Gefühl, unterwegs zu sein, ohne Termine oder Verpflichtungen, machte diesen Tag besonders erholsam 😌💛.\n\nAm Abend, als die Sonne langsam im Meer versank, ließen wir uns von der Lichterpracht des Schiffes verzaubern. Auf dem Deck genossen wir den ersten Cocktail des Tages 🍸, plauderten und freuten uns auf die kommenden Karibikinseln, die in den nächsten Tagen auf uns warteten.\n\nEin Tag voller Entspannung, Ruhe und purer Vorfreude — perfekt, um neue Kraft zu tanken und die besondere Atmosphäre an Bord in vollen Zügen zu genießen ✨🛳️.';
+
+  @override
+  String get aidaKaribik7 =>
+      'An Tag 7 unserer Karibikreise legten wir in St. George, der Hauptstadt von Grenada, an. Eine charmante Stadt in einer geschützten Bucht, eingerahmt von grünen Hügeln und bunten Häusern, die sofort ins Auge fallen 🌿🏘️. Grenada, auch die Gewürzinsel genannt, begeisterte uns mit tropischer Natur, endlosen Sandstränden und der berühmten Muskatnuss, die überall in der Stadt und auf den Märkten präsent ist 🌰🌺.\n\nUnser erster Programmpunkt war eine Bimmelbahnfahrt durch die Stadt 🚋. Die kleine Bahn führte uns vorbei an den farbenfrohen Häusern, durch die Hügel und zu herrlichen Aussichtspunkten, von denen wir einen traumhaften Blick auf den Hafen und das glitzernde Karibikmeer genießen konnten 🌊☀️. Unterwegs erzählte unser Guide spannende Geschichten über die Geschichte der Insel, die koloniale Vergangenheit und die Gewürzplantagen, die Grenada so einzigartig machen.\n\nAuch die tropische Vegetation beeindruckte uns: Überall blühten exotische Pflanzen, und man entdeckte kleine Details der Kultur und Architektur, die einem sonst leicht entgehen würden 🌺🌴. Die Bimmelbahn war perfekt, um die Stadt in Ruhe zu erkunden, ohne lange Strecken laufen zu müssen, und trotzdem das authentische Flair Grenadas hautnah zu erleben.\n\nEin entspannter, bunter Tag, an dem wir die besondere Mischung aus Natur, Kultur und karibischem Charme der Insel voll auskosten konnten 💛✨. Ein schöner Abschluss unserer unvergesslichen Karibikreise.';
+
+  @override
+  String get aidaKaribik8 =>
+      'An Tag 8 legten wir in Bridgetown, Barbados an. Die Sonne strahlte, die Palmen wiegten sich sanft im Wind, und die Karibik präsentierte sich von ihrer schönsten Seite 🌞🌴.\n\nFür unseren Landgang entschieden wir uns spontan für die besuchenswerte Harrison’s Cave — eine der eindrucksvollsten Tropfsteinhöhlen der Insel. Mit dem Taxi ging es direkt dorthin 🚖. Besonders schön: unser Fahrer wartete so lange, wie wir wollten, und er klärte uns ganz ehrlich: Erst wenn wir sicher zurück sind und zufrieden – dann bezahlt man. Solche ehrlichen Menschen sind Gold wert 😊.\n\nDie Fahrt war ein wenig abenteuerlich, denn unser Taxi war voll — viele AIDA‑Gäste wurden an unterschiedlichen Stränden oder Orten herausgelassen. Da war klar: Wer zuletzt einsteigt, fährt zuletzt wieder zurück. Für uns bedeutete das: Der letzte Stopp war Harrison’s Cave — perfekt geplant.\n\nAn der Höhle angekommen, mussten wir kurz warten — Tickets waren gerade ausverkauft. Kein Stress: Pragmatisch wie wir sind, haben wir gewartet, andere Gäste getroffen, ein paar nette Gespräche geführt. Als unser Slot kam, ging’s los: Mit einem kleinen „Zug“ fuhren wir durch dunkle Gänge, besahen Stalaktiten und Stalagmiten, entdeckten unterirdische Wasserläufe — und sogar einen Wasserfall mit hellblauem Wasser 🌊🕳️. Wir bekamen Helme auf (Sicherheit first), und der Mix aus kühler Höhle und spannender Lichtshow war eine wunderschöne Abwechslung zum warmen Sonnenschein draußen.\n\nDer Höhlenausflug war ein echtes Highlight — Natur pur, geheimnisvoll und beeindruckend.\n\nAuf dem Rückweg zum Hafen passierte dann noch etwas Aufregendes: Der Reifen vom Taxi lockerte sich — mitten auf der Straße 🚗😮. Aber unser Fahrer reagierte sofort: Er hielt an, rief einen Kollegen, wir bezahlten, und kurze Zeit später kam ein Ersatztaxi — kostenlos und sicher — um uns zurückzubringen. Also: statt Panik, eher ein kleines Abenteuer mit Happy End 🚖👍.\n\nZurück am Hafen hatten wir noch Zeit für ein paar Fotos, einen Spaziergang, ein bisschen Sonne — und genossen die entspannte Hafenkulisse Barbados’ 🌅📸. Ein Tag voller Staunen, Abenteuer und karibischem Flair — genau so, wie Urlaub sein sollte 🏝️❤️.';
+
+  @override
+  String get aidaKaribik9 =>
+      'Heute legten wir in Kingstown, St. Vincent an – die Sonne strahlte, die Karibik glitzerte in tiefem Blau, und die tropische Landschaft begrüßte uns mit sattem Grün und bunten Häusern 🌴☀️🌊.\n\nWir hatten keinen Ausflug vorab gebucht, sondern entschieden uns spontan für eine kleine Gruppe mit neun Personen. So blieb alles flexibel, persönlich und entspannt – genau unser Stil ✨👫.\n\nZunächst fuhren wir zu mehreren Aussichtspunkten, von denen man einen tollen Blick auf die AIDA und die Küste St. Vincents hatte – ein perfektes Fotomotiv 📸🌅. Danach ging es weiter zum Wallilabou Heritage Park, wo wir einen kleinen Wasserfall erkundeten und genügend Zeit für Fotos und zum Genießen der Natur hatten 💦🌺.\n\nEin besonderes Highlight war der Besuch der Pirates of the Caribbean Drehorte: historische Kulissen, das angrenzende Strandgebiet mit schwarzem Sand – man fühlte sich fast wie in einem Filmset 🏖️⚓🎬. Die Tour dauerte etwa zweieinhalb Stunden und war eine perfekte Mischung aus Natur, Geschichte und Filmabenteuer.\n\nZurück an Bord genossen wir den Rest des Tages an Deck, schlenderten über die Promenade und ließen uns die karibische Brise um die Nase wehen 🌬️🌴. Zum Sonnenuntergang machten wir erneut Fotos: die AIDA im Hafen, die Sonne färbte den Himmel in Orange und Rosa – pure Urlaubsstimmung 🌅🚢✨.\n\nDer Abend endete entspannt an Bord mit leckerem Dinner und dem Gefühl, wieder einmal einen unvergesslichen Karibiktag erlebt zu haben ❤️🍹🌴.';
+
+  @override
+  String get aidaKaribik10 =>
+      'Am nächsten Tag legten wir in Port Castries, Point Seraphim, auf St. Lucia an. Schon beim Verlassen des Schiffes fiel unser Blick auf das bekannte St. Lucia-Schild direkt am Hafen — ein Muss für ein Erinnerungsfoto 📸🌴.\n\nFür diesen Tag hatten wir uns bewusst keine Ausflüge vorgenommen. Stattdessen stand pure Entspannung auf dem Programm. Wir zogen uns auf unsere Junior-Suite mit Patchouli-Zugang zurück und genossen Ruhe, Komfort und die frische Meeresbrise 🌊💨.\n\nKurz überlegten wir, die Zip-Line durch den Dschungel zu wagen, wo sogar Affen leben 🐒. Ein Abenteuer, das richtig cool klingt — aber wir hätten dafür eine Stunde fahren müssen und nach den vergangenen Tagen voller Ausflüge entschieden wir uns, dieses Highlight für das nächste Mal aufzusparen.\n\nSo verbrachten wir den Großteil des Tages bei kühlen Drinks und kleinen Snacks auf dem Patchouli-Deck 🍹☀️. Das Schiff war angenehm leer, die Atmosphäre entspannt und die Sonne wärmte sanft die Haut. Wir ließen unsere Blicke über das endlose karibische Meer gleiten, spürten die leichte Brise und lauschten dem sanften Plätschern der Wellen 🌊✨.\n\nEin Tag, um die Seele baumeln zu lassen, das Karibik-Flair in vollen Zügen zu genießen und den Alltag komplett hinter sich zu lassen. Ein ruhiger, luxuriöser Tag an Bord, der uns neue Energie für die kommenden Abenteuer schenkte ❤️🛳️.';
+
+  @override
+  String get aidaKaribik11 =>
+      'An Tag 11 legten wir in Rosseau, der Hauptstadt von Dominica, an. Die Insel hat uns sofort verzaubert – so grün, so ursprünglich und voller tropischer Schönheit 🌴💚.\n\nDirekt vom Hafen starteten wir eine spontane zweieinhalbstündige Tour, die wir vor Ort gebucht hatten. Unsere kleine Gruppe bestand nur aus wenigen Personen, was die Fahrt sehr angenehm und persönlich machte 🚐✨.\n\nUnser erster Stopp war der Dominica Botanic Garden, ein wahres Paradies voller exotischer Pflanzen, farbenfroher Blüten und tropischer Ruhe 🌺🍃. Dort spazierten wir zwischen üppigem Grün und ließen uns die botanischen Highlights von unserem Guide erklären.\n\nAnschließend ging es zu den Trafalgar Falls, einem beeindruckenden Naturwunder. Zwei Wasserfälle stürzen hier in eine tiefe, smaragdgrüne Schlucht. Das Rauschen des Wassers, die leuchtenden Farben der Natur und die frische Brise machten diesen Moment unvergesslich 🌊💚.\n\nWeiter führte uns die Tour zu den Wotten Waven, den heißen Quellen der Insel. Das mineralreiche Wasser dampfte aus dem Boden, umgeben von üppiger tropischer Vegetation. Ein Ort, an dem man die Energie der Insel förmlich spüren konnte 🔥🌿.\n\nNach der Tour kehrten wir zurück zum Schiff und ließen den Rest des Tages entspannt auf dem Patchouli-Deck ausklingen 🍹☀️. Bei einem kühlen Getränk reflektierten wir die Eindrücke des Tages, genossen die Sonne und die sanfte Brise.\n\nDominica beeindruckte uns durch seine wilde Natur, die sanft geschwungenen grünen Berge und die unzähligen kleinen Wasserfälle. Jeder Moment auf der Insel fühlte sich intensiv, lebendig und wie ein echter Naturtraum an 🌴💦.';
+
+  @override
+  String get aidaKaribik12 =>
+      'An Tag 12 unserer Karibik-Kreuzfahrt legten wir in Ponta Pitre auf Guadeloupe an. Direkt am Hafen erwarteten uns verschiedene Touranbieter. Wir entschieden uns spontan für eine Ritscherfahrt, die etwa eine Stunde dauerte 🚲💨.\n\nUnser Fahrer führte uns auf persönliche und charmante Weise durch die Stadt, erzählte spannende Details zur Geschichte und Kultur der Insel und ließ uns die Atmosphäre hautnah erleben 🌺🏘️. Ein absolutes Highlight war das Ponta Pitre-Schild, das aus recycelten Autoteilen, Fahrradteilen und allerlei Materialien gefertigt ist ♻️📸 – ein einzigartiges und kreatives Fotomotiv!\n\nWir schlängelten uns durch die bunten Straßen, entdeckten das Museum von Ponta Pitre und bewunderten eine große Wand mit aufgemalter Uhr und verschiedenen Symbolen – ein ungewöhnliches Kunstwerk, das den Charme der Stadt perfekt widerspiegelt 🎨🖌️.\n\nDie Ritscherfahrt war kurzweilig, entspannt und eine wunderbare Möglichkeit, die Stadt in Ruhe kennenzulernen. Unser Fahrer wollte zunächst warten, bis sein Ritscher voll war, doch dank der Polizei direkt am Hafenausgang konnte die Fahrt rechtzeitig starten – super organisiert und völlig stressfrei 👮‍♀️👍.\n\nNach der Tour kehrten wir zurück zum Schiff und ließen den Nachmittag entspannt ausklingen. Sonne genießen, das leise Schaukeln des Meeres spüren und die Eindrücke der Stadt Revue passieren lassen – genau das richtige Gefühl, um karibische Lebensfreude zu tanken 🌞🍹.\n\nPonta Pitre zeigte sich an diesem Tag von seiner bunten, lebendigen und charmanten Seite – ein perfekter Mix aus Kultur, Kreativität und karibischem Flair 🌴✨.';
+
+  @override
+  String get aidaKaribik13 =>
+      'An Tag 13 unserer Karibikreise legten wir in St. John’s, Antigua an. Nach dem Ausschiffen buchten wir spontan einen privaten Ausflug mit einer kleinen Gruppe von Mitreisenden – perfekt, um die Insel entspannt zu erkunden 🛥️✨.\n\nUnsere erste Station war der English Harbour, ein historischer Jachthafen. Dort hielten wir kurz an, machten ein paar Fotos und bewunderten die prächtigen Segel- und Luxusschiffe ⛵📸.\n\nWeiter ging es zum St. Mary Beach, wo wir die atemberaubende Aussicht genossen und ein paar Erinnerungsbilder machten 🌊🌞. Danach fuhren wir zum Raleigh Church Beach, wo man optional die Füße ins Wasser strecken und den Sand genießen konnte. Einige unserer Mitreisenden blieben hier, wir entschieden uns jedoch weiterzufahren 🏖️.\n\nUnser Highlight des Tages war der Dickinson Bay, bekannt für die markante rote Telefonzelle am Strand ☎️📸 – ein ungewöhnliches, aber absolut fotogenes Motiv. Anfangs wollte unser Fahrer dort nicht hin, da es ihm zu kompliziert war, weil andere Teilnehmer an verschiedenen Stränden geblieben waren. Nach ein wenig Überzeugung konnten wir ihn jedoch davon überzeugen, uns hinzufahren. Wir vereinbarten, dass wir zwei Stunden hierbleiben würden, bevor er uns wieder abholt ⏳🚤.\n\nDie Zeit am Dickinson Bay war traumhaft: wir genossen das türkisblaue Wasser, den feinen Sand und die Atmosphäre des kleinen Restaurants mit Bar direkt am Strand 🍹🏖️. Zwei Stunden vergingen wie im Flug, dann holte uns der Fahrer ab und brachte uns sicher zurück zum Schiff.\n\nAuf der Rückfahrt nutzten wir die verbleibende Zeit, um noch ein wenig durch die Hafenstadt von St. John’s zu schlendern, Souvenirs zu shoppen und die karibische Gelassenheit in vollen Zügen zu genießen 🛍️🌴.\n\nEin abwechslungsreicher Tag voller Natur, Strand, Geschichte und karibischem Flair – genau das, wofür wir diese Reise so lieben ❤️✨.';
+
+  @override
+  String get aidaKaribik14 =>
+      'Am 14. Tag unserer Karibikkreuzfahrt stand ein letzter Seetag auf dem Programm – perfekt, um noch einmal die Annehmlichkeiten der AIDA in Ruhe zu genießen 🛳️☀️.\n\nWir starteten gemütlich in den Morgen, frühstückten entspannt und schlenderten danach über das Schiff. Alle Decks wurden noch einmal erkundet, Fotos vom glitzernden Meer gemacht und die ruhige Atmosphäre genossen 📸🌊. Zwischendurch fanden wir ein sonniges Plätzchen, gönnten uns kleine Snacks 🍓🥐 und ließen die letzten Stunden auf See einfach auf uns wirken.\n\nDer Tag war der perfekte Ausgleich nach den ereignisreichen Landgängen der letzten Tage. Besonders schön fanden wir, dass wir in La Romana zugestiegen waren: So hatten wir zu Beginn die vollen Urlaubstage und am Ende die entspannteren – ein echter Vorteil gegenüber denen, die in Bebedos zugestiegen sind, und zuerst ruhige Tage hatten 🌴🛳️.\n\nAm Nachmittag begannen wir schon mit dem Kofferpacken, sortierten unsere Sachen und bereiteten alles für die Heimreise vor 🧳✨. Zum Abschluss genossen wir ein letztes Dinner im Buffalo Steakhouse, während wir den Blick über das endlose Karibikblau schweifen ließen 🍽️🌅.\n\nVorm Schlafengehen stellten wir unsere Koffer vor die Kabinentür, damit sie über Nacht abgeholt werden konnten. Ein ruhiger, schöner Abschluss einer unvergesslichen Kreuzfahrt voller Erinnerungen, Entspannung und magischer Momente 🌟❤️.';
+
+  @override
+  String get aidaKaribik15 =>
+      'Am letzten Tag unserer Karibikreise hieß es Abschied nehmen von Sonne, Meer und der AIDA. Unser Rückflug war für 17 Uhr geplant, und um 14 Uhr wurden wir vom Shuttle zum Flughafen abgeholt 🚌. Bereits am Vormittag, zwischen 10 und 11 Uhr, gaben wir unsere Koffer direkt am Hafen ab. Praktisch: Provisorische Schalter standen direkt am Schiff, an denen die Koffer gewogen und die Flugetiketten angebracht wurden 🧳. Die meisten Koffer wurden einfach durchgewunken, nur ein paar wurden kurz gewogen – sehr kulant und unkompliziert.\n\nDanach hatten wir noch etwas Zeit an Bord, um die letzten Momente auf der AIDA zu genießen ☀️🛳️. Dann brachte uns der Shuttle zum Flughafen. Bereits während der Fahrt erfuhren wir, dass unser Flug drei Stunden Verspätung haben würde – also statt 17 Uhr erst 20 Uhr ✈️. Trotz der Verspätung wurden wir schon zum Flughafen gebracht, damit das Schiff rechtzeitig leer war.\n\nDer Flughafen in La Romana war klein, mit begrenzten Sitzmöglichkeiten, sehr wenigen Toiletten 🚻 (die leider verstopft waren) und einem extrem teuren Getränkepreis 💸 – eine echte Herausforderung für Familien mit Kindern. Dennoch verlief der Check-in unkompliziert und wir gaben unsere Koffer ab.\n\nAls wir endlich in die Maschine steigen konnten, waren wir die Ersten an Bord. Normalerweise steigen wir immer als Letzte ein 😅. Wir baten die Stewardess noch um einen schnellen Toilettenbesuch, bevor wir unsere Plätze einnahmen – kein Problem, sie kannte die Situation aus La Romana.\n\nDer Flug selbst war ein echtes Abenteuer: Statt der geplanten 11 Stunden flogen wir nur 7 Stunden, mit einer Geschwindigkeit von rund 800 km/h und einer Höhe von etwa 15.000 Metern ✈️💨. Das Gefühl im Flugzeug war fast wie in einem Formel-1-Auto – man wurde ordentlich in den Sitz gedrückt, aber die Zeit verging wie im Flug. Dank des Piloten, der sichtlich nur noch nach Hause wollte, landeten wir schließlich genau zu der Zeit, zu der wir ohne Verspätung hätten ankommen sollen – ein echter Profi! 👏\n\nAm nächsten Morgen erreichten wir Köln, müde, aber überglücklich 😴❤️. Der Temperaturunterschied war krass – nach zwei Wochen Sonne nur Pullover und Jacke, brrrr 🥶. Doch die Erinnerungen an zwei unvergessliche Wochen voller Abenteuer, Entspannung und traumhafter Karibikmomente werden uns noch lange begleiten 🌴🌊✨.';
+
+  @override
+  String get titleOrientDubai => 'Orient ab Dubai';
+
+  @override
+  String get share => 'Teilen';
+}

@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "85269677127",
+    "project_id": "reiseapp-mamatocherontour",
+    "storage_bucket": "reiseapp-mamatocherontour.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85269677127:android:89af600ec4bfa8df9a1d62",
+        "android_client_info": {
+          "package_name": "com.mycompany.reisetagebuch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85269677127-vct6lp039h00r298q6f9egio32jq03ql.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.reisetagebuch",
+            "certificate_hash": "43b8f28cca0ec4b0993ec0e76bfda7494f1f4418"
+          }
+        },
+        {
+          "client_id": "85269677127-437b94k3f15nssrdu570cdcl9v1d89tj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWFktcXXUtFG5rePrq6Wq_heDMo3cYBrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85269677127-437b94k3f15nssrdu570cdcl9v1d89tj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "85269677127-s20qhf4m07pl3d01upnc3rlrt7cd2bcn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.reisetagebuch"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

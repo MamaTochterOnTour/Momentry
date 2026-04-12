@@ -1,0 +1,6000 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/intl.dart' as intl;
+
+import 's_de.dart';
+import 's_en.dart';
+
+// ignore_for_file: type=lint
+
+/// Callers can lookup localized strings with an instance of S
+/// returned by `S.of(context)`.
+///
+/// Applications need to include `S.delegate()` in their app's
+/// `localizationDelegates` list, and the locales they support in the app's
+/// `supportedLocales` list. For example:
+///
+/// ```dart
+/// import 'l10n/s.dart';
+///
+/// return MaterialApp(
+///   localizationsDelegates: S.localizationsDelegates,
+///   supportedLocales: S.supportedLocales,
+///   home: MyApplicationHome(),
+/// );
+/// ```
+///
+/// ## Update pubspec.yaml
+///
+/// Please make sure to update your pubspec.yaml to include the following
+/// packages:
+///
+/// ```yaml
+/// dependencies:
+///   # Internationalization support.
+///   flutter_localizations:
+///     sdk: flutter
+///   intl: any # Use the pinned version from flutter_localizations
+///
+///   # Rest of dependencies
+/// ```
+///
+/// ## iOS Applications
+///
+/// iOS applications define key application metadata, including supported
+/// locales, in an Info.plist file that is built into the application bundle.
+/// To configure the locales supported by your app, you’ll need to edit this
+/// file.
+///
+/// First, open your project’s ios/Runner.xcworkspace Xcode workspace file.
+/// Then, in the Project Navigator, open the Info.plist file under the Runner
+/// project’s Runner folder.
+///
+/// Next, select the Information Property List item, select Add Item from the
+/// Editor menu, then select Localizations from the pop-up menu.
+///
+/// Select and expand the newly-created Localizations item then, for each
+/// locale your application supports, add a new item and select the locale
+/// you wish to add from the pop-up menu in the Value field. This list should
+/// be consistent with the languages listed in the S.supportedLocales
+/// property.
+abstract class S {
+  S(String locale)
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+
+  final String localeName;
+
+  static S? of(BuildContext context) {
+    return Localizations.of<S>(context, S);
+  }
+
+  static const LocalizationsDelegate<S> delegate = _SDelegate();
+
+  /// A list of this localizations delegate along with the default localizations
+  /// delegates.
+  ///
+  /// Returns a list of localizations delegates containing this delegate along with
+  /// GlobalMaterialLocalizations.delegate, GlobalCupertinoLocalizations.delegate,
+  /// and GlobalWidgetsLocalizations.delegate.
+  ///
+  /// Additional delegates can be added by appending to this list in
+  /// MaterialApp. This list does not have to be used at all if a custom list
+  /// of delegates is preferred or required.
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
+
+  /// A list of this localizations delegate's supported locales.
+  static const List<Locale> supportedLocales = <Locale>[
+    Locale('de'),
+    Locale('en'),
+  ];
+
+  /// No description provided for @pageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mom-Daughter Journal'**
+  String get pageTitle;
+
+  /// No description provided for @tabTagebuecher.
+  ///
+  /// In en, this message translates to:
+  /// **'Journals'**
+  String get tabTagebuecher;
+
+  /// No description provided for @tabInsider.
+  ///
+  /// In en, this message translates to:
+  /// **'Insider'**
+  String get tabInsider;
+
+  /// No description provided for @tabTipps.
+  ///
+  /// In en, this message translates to:
+  /// **'Tips'**
+  String get tabTipps;
+
+  /// No description provided for @welcomeText.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to our travel journal! Here we collect all our wonderful memories, big and small adventures, spontaneous experiences, and very special moments we shared as mom and daughter. 💖\n\nWe traveled to Norway, Italy, the Caribbean, UAE, USA, Spain, Portugal, France, and much more. 🌏\n\nYou will also find hotel recommendations 🏨, restaurant tips 🍽️, and exclusive insider tips 🔍.'**
+  String get welcomeText;
+
+  /// No description provided for @ourDestinations.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Destinations 🌟'**
+  String get ourDestinations;
+
+  /// No description provided for @discoverAdventures.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover our adventures around the world'**
+  String get discoverAdventures;
+
+  /// No description provided for @note.
+  ///
+  /// In en, this message translates to:
+  /// **'Note'**
+  String get note;
+
+  /// No description provided for @disclaimer.
+  ///
+  /// In en, this message translates to:
+  /// **'All content and images shown in this app originate either from our private trips and personal experiences or from explicitly marked partnerships with partner companies.'**
+  String get disclaimer;
+
+  /// No description provided for @mallorcaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mallorca'**
+  String get mallorcaTitle;
+
+  /// No description provided for @mallorcaSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Island of our hearts'**
+  String get mallorcaSubtitle;
+
+  /// No description provided for @aidaCruisesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AIDA Cruises'**
+  String get aidaCruisesTitle;
+
+  /// No description provided for @aidaCruisesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ocean adventures full of magic 🌊💫'**
+  String get aidaCruisesSubtitle;
+
+  /// No description provided for @longDistanceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Long-Distance Trips'**
+  String get longDistanceTitle;
+
+  /// No description provided for @longDistanceSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Wide worlds, big dreams 🌍❤️'**
+  String get longDistanceSubtitle;
+
+  /// No description provided for @roadtripEuropeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Road Trips Europe'**
+  String get roadtripEuropeTitle;
+
+  /// No description provided for @roadtripEuropeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Driving through Europe\'s wonders 🚗💜'**
+  String get roadtripEuropeSubtitle;
+
+  /// No description provided for @cityTripsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'City Trips'**
+  String get cityTripsTitle;
+
+  /// No description provided for @cityTripsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Between towers, cafés & cobblestones 🏰✨'**
+  String get cityTripsSubtitle;
+
+  /// No description provided for @seasideGetawaysTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Seaside Getaways'**
+  String get seasideGetawaysTitle;
+
+  /// No description provided for @seasideGetawaysSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sea moments to dream 🏖️✨'**
+  String get seasideGetawaysSubtitle;
+
+  /// No description provided for @followOurJourney.
+  ///
+  /// In en, this message translates to:
+  /// **'Join our journey 🧭✨'**
+  String get followOurJourney;
+
+  /// No description provided for @tuiAschaffenburgTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'TUI Aschaffenburg (Travel Agency)'**
+  String get tuiAschaffenburgTitle;
+
+  /// No description provided for @tuiAschaffenburgSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your contact for unforgettable vacations – personal, competent, warm-hearted.'**
+  String get tuiAschaffenburgSubtitle;
+
+  /// No description provided for @pageTitleReisebueros.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel Agencies'**
+  String get pageTitleReisebueros;
+
+  /// No description provided for @headerTitleTUI.
+  ///
+  /// In en, this message translates to:
+  /// **'TUI Aschaffenburg'**
+  String get headerTitleTUI;
+
+  /// No description provided for @fullTextReisebuero.
+  ///
+  /// In en, this message translates to:
+  /// **'The world is huge – come, we will show it to you!\n\nWe are a well-coordinated team of 15 passionate travel experts, who have been creating unforgettable vacation moments together for many years.\n\nNo matter where you want to go – with us, you\'ll always find the right contact person: competent, experienced, and attentive to all your wishes.\n\nWhat makes us special? We love what we do. That\'s why every consultation contains not only expertise but also a lot of heart and real enthusiasm.\n\nOur travel agency has existed for many years – and from colleagues, our very own little TUI family has long been formed. It is important to us that you feel not only professionally advised but also completely well taken care of.\n\nTrust us with your vacation: we plan every trip as if it were our own.\nFor us, not only expertise matters but above all humanity, passion, and the desire to make every trip something truly special.'**
+  String get fullTextReisebuero;
+
+  /// No description provided for @previewTextReisebuero.
+  ///
+  /// In en, this message translates to:
+  /// **'The world is huge – come, we will show it to you!\n\nWe are a well-coordinated team of 15 passionate travel experts, who have been creating unforgettable vacation moments together for many years.'**
+  String get previewTextReisebuero;
+
+  /// No description provided for @readMore.
+  ///
+  /// In en, this message translates to:
+  /// **'... read more'**
+  String get readMore;
+
+  /// No description provided for @readLess.
+  ///
+  /// In en, this message translates to:
+  /// **'Read less'**
+  String get readLess;
+
+  /// No description provided for @servicesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Services'**
+  String get servicesTitle;
+
+  /// No description provided for @serviceTravel.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel around the world – near or far'**
+  String get serviceTravel;
+
+  /// No description provided for @contactTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact & Consultation'**
+  String get contactTitle;
+
+  /// No description provided for @emailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Email'**
+  String get emailLabel;
+
+  /// No description provided for @whatsappLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'WhatsApp'**
+  String get whatsappLabel;
+
+  /// No description provided for @instagramLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Instagram'**
+  String get instagramLabel;
+
+  /// No description provided for @googleMapsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'View on Google'**
+  String get googleMapsLabel;
+
+  /// No description provided for @onlineConsultation.
+  ///
+  /// In en, this message translates to:
+  /// **'Online & video consultation available by appointment'**
+  String get onlineConsultation;
+
+  /// No description provided for @disclaimerPartner.
+  ///
+  /// In en, this message translates to:
+  /// **'Advertisement / Partner Travel Agency · Recommended by MamaTochterOnTour'**
+  String get disclaimerPartner;
+
+  /// No description provided for @featureLongHaul.
+  ///
+  /// In en, this message translates to:
+  /// **'Long-haul travel'**
+  String get featureLongHaul;
+
+  /// No description provided for @featurePackage.
+  ///
+  /// In en, this message translates to:
+  /// **'Package holidays'**
+  String get featurePackage;
+
+  /// No description provided for @featureIndividual.
+  ///
+  /// In en, this message translates to:
+  /// **'Individual trips'**
+  String get featureIndividual;
+
+  /// No description provided for @featureRoundTrips.
+  ///
+  /// In en, this message translates to:
+  /// **'Round trips'**
+  String get featureRoundTrips;
+
+  /// No description provided for @featureCruises.
+  ///
+  /// In en, this message translates to:
+  /// **'Cruises'**
+  String get featureCruises;
+
+  /// No description provided for @featureFamily.
+  ///
+  /// In en, this message translates to:
+  /// **'Family vacations'**
+  String get featureFamily;
+
+  /// No description provided for @featureHoneymoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Honeymoon'**
+  String get featureHoneymoon;
+
+  /// No description provided for @featureClub.
+  ///
+  /// In en, this message translates to:
+  /// **'Club holidays'**
+  String get featureClub;
+
+  /// No description provided for @featureCityTrips.
+  ///
+  /// In en, this message translates to:
+  /// **'City trips'**
+  String get featureCityTrips;
+
+  /// No description provided for @featureCamper.
+  ///
+  /// In en, this message translates to:
+  /// **'Camper travel'**
+  String get featureCamper;
+
+  /// No description provided for @featureLuxury.
+  ///
+  /// In en, this message translates to:
+  /// **'Luxury travel'**
+  String get featureLuxury;
+
+  /// No description provided for @featureWellness.
+  ///
+  /// In en, this message translates to:
+  /// **'Wellness & spa'**
+  String get featureWellness;
+
+  /// No description provided for @insiderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Insider Tips ✨'**
+  String get insiderTitle;
+
+  /// No description provided for @searchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search…'**
+  String get searchHint;
+
+  /// No description provided for @noResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No places found 😕'**
+  String get noResults;
+
+  /// No description provided for @moreComing.
+  ///
+  /// In en, this message translates to:
+  /// **'More insider tips for exciting destinations coming soon! ✨'**
+  String get moreComing;
+
+  /// No description provided for @errorLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading settings'**
+  String get errorLoading;
+
+  /// No description provided for @countryItaly.
+  ///
+  /// In en, this message translates to:
+  /// **'Italy'**
+  String get countryItaly;
+
+  /// No description provided for @countryNorway.
+  ///
+  /// In en, this message translates to:
+  /// **'Norway'**
+  String get countryNorway;
+
+  /// No description provided for @countrySpain.
+  ///
+  /// In en, this message translates to:
+  /// **'Spain'**
+  String get countrySpain;
+
+  /// No description provided for @cityRome.
+  ///
+  /// In en, this message translates to:
+  /// **'Rome'**
+  String get cityRome;
+
+  /// No description provided for @cityGeiranger.
+  ///
+  /// In en, this message translates to:
+  /// **'Geiranger'**
+  String get cityGeiranger;
+
+  /// No description provided for @cityMallorca.
+  ///
+  /// In en, this message translates to:
+  /// **'Mallorca'**
+  String get cityMallorca;
+
+  /// No description provided for @descRome.
+  ///
+  /// In en, this message translates to:
+  /// **'Historic capital full of ancient architecture, vibrant squares, charming streets and amazing food.'**
+  String get descRome;
+
+  /// No description provided for @descGeiranger.
+  ///
+  /// In en, this message translates to:
+  /// **'Spectacular fjord with breathtaking waterfalls and stunning natural scenery.'**
+  String get descGeiranger;
+
+  /// No description provided for @descMallorca.
+  ///
+  /// In en, this message translates to:
+  /// **'Mediterranean dream island with white sandy beaches, dramatic cliffs, charming villages and vibrant nightlife.'**
+  String get descMallorca;
+
+  /// No description provided for @premiumLocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Insider content is only available for premium users. Tap here to unlock premium.'**
+  String get premiumLocked;
+
+  /// No description provided for @auszeitenAmMeerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Seaside Getaways'**
+  String get auszeitenAmMeerTitle;
+
+  /// No description provided for @auszeitenAmMeerIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Our most beautiful seaside experiences 🌊🌅💙\n\nSalt air, sunsets and that feeling of freedom – these are our favorite sea moments.'**
+  String get auszeitenAmMeerIntro;
+
+  /// No description provided for @scheveningenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Scheveningen'**
+  String get scheveningenTitle;
+
+  /// No description provided for @scheveningenSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Wind, sea & feeling of freedom'**
+  String get scheveningenSubtitle;
+
+  /// No description provided for @noordwijkTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Noordwijk'**
+  String get noordwijkTitle;
+
+  /// No description provided for @noordwijkSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dunes, calm & North Sea magic'**
+  String get noordwijkSubtitle;
+
+  /// No description provided for @premiumSnackbarText.
+  ///
+  /// In en, this message translates to:
+  /// **'You are not a premium member and cannot read our journals. Tap here to unlock premium ✨'**
+  String get premiumSnackbarText;
+
+  /// No description provided for @premiumErrorText.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading premium status. Please try again.'**
+  String get premiumErrorText;
+
+  /// No description provided for @staedtereisenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'City Trips'**
+  String get staedtereisenTitle;
+
+  /// No description provided for @staedtereisenIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Our city trip highlights 🏙️💜\n\nHere we collect our most beautiful experiences from the cities we love.'**
+  String get staedtereisenIntro;
+
+  /// No description provided for @koelnTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cologne'**
+  String get koelnTitle;
+
+  /// No description provided for @koelnSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Heart between Cathedral and Rhine'**
+  String get koelnSubtitle;
+
+  /// No description provided for @parisTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Paris'**
+  String get parisTitle;
+
+  /// No description provided for @parisSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Flair of the French metropolis'**
+  String get parisSubtitle;
+
+  /// No description provided for @berlinTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Berlin'**
+  String get berlinTitle;
+
+  /// No description provided for @berlinSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Capital & History'**
+  String get berlinSubtitle;
+
+  /// No description provided for @hamburgTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Hamburg'**
+  String get hamburgTitle;
+
+  /// No description provided for @hamburgSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Gateway to the world'**
+  String get hamburgSubtitle;
+
+  /// No description provided for @londonTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'London'**
+  String get londonTitle;
+
+  /// No description provided for @londonSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'City of Royals & Culture'**
+  String get londonSubtitle;
+
+  /// No description provided for @romTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rome'**
+  String get romTitle;
+
+  /// No description provided for @romSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Eternal city & history'**
+  String get romSubtitle;
+
+  /// No description provided for @wienTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Vienna'**
+  String get wienTitle;
+
+  /// No description provided for @wienSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Culture & coffeehouse charm'**
+  String get wienSubtitle;
+
+  /// No description provided for @genuaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Genoa'**
+  String get genuaTitle;
+
+  /// No description provided for @genuaSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Port city & Liguria'**
+  String get genuaSubtitle;
+
+  /// No description provided for @roadtripEuropaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Europe Roadtrip'**
+  String get roadtripEuropaTitle;
+
+  /// No description provided for @roadtripEuropaIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Our best experiences by car 🚗✨\n\nRoadtrips across Europe – freedom, music, and unforgettable moments on the way.'**
+  String get roadtripEuropaIntro;
+
+  /// No description provided for @roadtripEuropaGridTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Roadtrips across Europe'**
+  String get roadtripEuropaGridTitle;
+
+  /// No description provided for @cotedazurTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Côte d\'Azur'**
+  String get cotedazurTitle;
+
+  /// No description provided for @cotedazurSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Coast of our dreams'**
+  String get cotedazurSubtitle;
+
+  /// No description provided for @italienTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Italy'**
+  String get italienTitle;
+
+  /// No description provided for @italienSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover Bella Italia'**
+  String get italienSubtitle;
+
+  /// No description provided for @fernreisenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Long-Haul Trips'**
+  String get fernreisenTitle;
+
+  /// No description provided for @fernreisenIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Our best experiences far away ✈️🌍\nAdventures, discoveries, and unforgettable moments – get inspired for your next trip!'**
+  String get fernreisenIntro;
+
+  /// No description provided for @fernreisenGridTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Long-Haul Trips'**
+  String get fernreisenGridTitle;
+
+  /// No description provided for @floridaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Florida'**
+  String get floridaTitle;
+
+  /// No description provided for @floridaSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Roadtrip through paradise'**
+  String get floridaSubtitle;
+
+  /// No description provided for @kalifornienTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'California'**
+  String get kalifornienTitle;
+
+  /// No description provided for @kalifornienSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Roadtrip through the Golden State'**
+  String get kalifornienSubtitle;
+
+  /// No description provided for @dubaiTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dubai'**
+  String get dubaiTitle;
+
+  /// No description provided for @dubaiSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adventure between desert & skyline'**
+  String get dubaiSubtitle;
+
+  /// No description provided for @newyorkTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New York'**
+  String get newyorkTitle;
+
+  /// No description provided for @newyorkSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Magic at Christmas time'**
+  String get newyorkSubtitle;
+
+  /// No description provided for @aidaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'AIDA Cruises'**
+  String get aidaTitle;
+
+  /// No description provided for @aidaIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Our best experiences on the high seas ⛴️🌊\n\nWelcome to our cruise page! Here you’ll find all our special memories from our AIDA trips, from the Caribbean to Norway. Every cruise is a unique adventure full of discovery, enjoyment, and family time at sea. ⚓'**
+  String get aidaIntro;
+
+  /// No description provided for @aidaGridTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Cruises'**
+  String get aidaGridTitle;
+
+  /// No description provided for @aidaMediterraneSchaetze.
+  ///
+  /// In en, this message translates to:
+  /// **'Mediterranean Treasures'**
+  String get aidaMediterraneSchaetze;
+
+  /// No description provided for @aidaMediterraneSchaetzeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Experience dreamlike coasts'**
+  String get aidaMediterraneSchaetzeSubtitle;
+
+  /// No description provided for @aidaMediterraneHighlights.
+  ///
+  /// In en, this message translates to:
+  /// **'Mediterranean Highlights'**
+  String get aidaMediterraneHighlights;
+
+  /// No description provided for @aidaMediterraneHighlightsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adventurous coasts'**
+  String get aidaMediterraneHighlightsSubtitle;
+
+  /// No description provided for @aidaOrient.
+  ///
+  /// In en, this message translates to:
+  /// **'Orient'**
+  String get aidaOrient;
+
+  /// No description provided for @aidaOrientSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adventure & luxury'**
+  String get aidaOrientSubtitle;
+
+  /// No description provided for @aidaDaenemarkSchweden.
+  ///
+  /// In en, this message translates to:
+  /// **'Denmark & Sweden'**
+  String get aidaDaenemarkSchweden;
+
+  /// No description provided for @aidaDaenemarkSchwedenSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Experience fjords & coasts'**
+  String get aidaDaenemarkSchwedenSubtitle;
+
+  /// No description provided for @aidaMetropolen.
+  ///
+  /// In en, this message translates to:
+  /// **'Metropolises'**
+  String get aidaMetropolen;
+
+  /// No description provided for @aidaMetropolenSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Our highlights'**
+  String get aidaMetropolenSubtitle;
+
+  /// No description provided for @aidaSpanienPortugal.
+  ///
+  /// In en, this message translates to:
+  /// **'Spain & Portugal'**
+  String get aidaSpanienPortugal;
+
+  /// No description provided for @aidaSpanienPortugalSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover sun & culture'**
+  String get aidaSpanienPortugalSubtitle;
+
+  /// No description provided for @aidaKaribik.
+  ///
+  /// In en, this message translates to:
+  /// **'Caribbean Islands'**
+  String get aidaKaribik;
+
+  /// No description provided for @aidaKaribikSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Our highlights'**
+  String get aidaKaribikSubtitle;
+
+  /// No description provided for @aidaNorwegensFjorde.
+  ///
+  /// In en, this message translates to:
+  /// **'Norwegian Fjords'**
+  String get aidaNorwegensFjorde;
+
+  /// No description provided for @aidaNorwegensFjordeSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Magic of the North'**
+  String get aidaNorwegensFjordeSubtitle;
+
+  /// No description provided for @aidaMediterraneMitKorsika.
+  ///
+  /// In en, this message translates to:
+  /// **'Mediterranean Treasures with Corsica'**
+  String get aidaMediterraneMitKorsika;
+
+  /// No description provided for @aidaMediterraneMitKorsikaSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Coast full of wonders'**
+  String get aidaMediterraneMitKorsikaSubtitle;
+
+  /// No description provided for @aidaNorwegensFjordeGeiranger.
+  ///
+  /// In en, this message translates to:
+  /// **'Norwegian Fjords with Geiranger & Trondheim'**
+  String get aidaNorwegensFjordeGeiranger;
+
+  /// No description provided for @aidaNorwegensFjordeGeirangerSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Majestic fjords'**
+  String get aidaNorwegensFjordeGeirangerSubtitle;
+
+  /// No description provided for @premiumTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage Premium'**
+  String get premiumTitle;
+
+  /// No description provided for @premiumBenefitsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Premium Benefits at a Glance'**
+  String get premiumBenefitsTitle;
+
+  /// No description provided for @premiumBenefit1.
+  ///
+  /// In en, this message translates to:
+  /// **'Access to all travel journals from MamaTochterOnTour'**
+  String get premiumBenefit1;
+
+  /// No description provided for @premiumBenefit2.
+  ///
+  /// In en, this message translates to:
+  /// **'Includes insider tips for each location'**
+  String get premiumBenefit2;
+
+  /// No description provided for @premiumBenefit3.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a packing list for your trips'**
+  String get premiumBenefit3;
+
+  /// No description provided for @premiumBenefit4.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel countdown for your next trip'**
+  String get premiumBenefit4;
+
+  /// No description provided for @premiumBenefit5.
+  ///
+  /// In en, this message translates to:
+  /// **'Save posts'**
+  String get premiumBenefit5;
+
+  /// No description provided for @premiumComingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'✨More coming soon!\nWe are constantly working to make your travel experiences even better. Look forward to many new features, exclusive content, and exciting extras – all automatically included in the Premium subscription.'**
+  String get premiumComingSoon;
+
+  /// No description provided for @premiumStatusTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Subscription Status'**
+  String get premiumStatusTitle;
+
+  /// No description provided for @premiumStatusActive.
+  ///
+  /// In en, this message translates to:
+  /// **'You are now a Premium member – all features unlocked!'**
+  String get premiumStatusActive;
+
+  /// No description provided for @premiumStatusInactive.
+  ///
+  /// In en, this message translates to:
+  /// **'You are currently using the free version of the app.'**
+  String get premiumStatusInactive;
+
+  /// No description provided for @premiumMonthly.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium Monthly'**
+  String get premiumMonthly;
+
+  /// No description provided for @premiumYearly.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium Yearly'**
+  String get premiumYearly;
+
+  /// No description provided for @premiumRestoreButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore Purchase'**
+  String get premiumRestoreButton;
+
+  /// No description provided for @premiumPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get premiumPrivacy;
+
+  /// No description provided for @premiumTerms.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get premiumTerms;
+
+  /// No description provided for @premiumLegalIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'By subscribing, you agree to our'**
+  String get premiumLegalIntro;
+
+  /// No description provided for @premiumLegalAnd.
+  ///
+  /// In en, this message translates to:
+  /// **'and'**
+  String get premiumLegalAnd;
+
+  /// No description provided for @premiumLegalDot.
+  ///
+  /// In en, this message translates to:
+  /// **'.'**
+  String get premiumLegalDot;
+
+  /// No description provided for @premiumBestPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Best Price'**
+  String get premiumBestPrice;
+
+  /// No description provided for @premiumBuyButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy'**
+  String get premiumBuyButton;
+
+  /// No description provided for @premiumPrivacyUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'https://mamatochterontour.com/pages/datenschutzrichtlinie-von-momentry'**
+  String get premiumPrivacyUrl;
+
+  /// No description provided for @premiumTermsUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/'**
+  String get premiumTermsUrl;
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// No description provided for @accountSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Account Settings'**
+  String get accountSettings;
+
+  /// No description provided for @darkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark Mode'**
+  String get darkMode;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @passwordReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Password'**
+  String get passwordReset;
+
+  /// No description provided for @signOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Out'**
+  String get signOut;
+
+  /// No description provided for @deleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account'**
+  String get deleteAccount;
+
+  /// No description provided for @legalHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal & Help'**
+  String get legalHelp;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @termsConditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms & Conditions'**
+  String get termsConditions;
+
+  /// No description provided for @contactFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact & Feedback'**
+  String get contactFeedback;
+
+  /// No description provided for @impressum.
+  ///
+  /// In en, this message translates to:
+  /// **'Imprint'**
+  String get impressum;
+
+  /// No description provided for @appVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'App Version {version}'**
+  String appVersion(Object version);
+
+  /// No description provided for @darkModeChanged.
+  ///
+  /// In en, this message translates to:
+  /// **'Mode changed to {mode}'**
+  String darkModeChanged(Object mode);
+
+  /// No description provided for @passwordDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account Permanently'**
+  String get passwordDialogTitle;
+
+  /// No description provided for @passwordDialogDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your password to permanently delete your account.'**
+  String get passwordDialogDescription;
+
+  /// No description provided for @passwordDialogLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get passwordDialogLabel;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @deleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you really want to delete this post?'**
+  String get deleteConfirm;
+
+  /// No description provided for @reauthOAuthError.
+  ///
+  /// In en, this message translates to:
+  /// **'Please sign in again to delete your account.'**
+  String get reauthOAuthError;
+
+  /// No description provided for @deleteError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error while deleting'**
+  String deleteError(Object error);
+
+  /// No description provided for @passwordResetSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Password reset link sent via email!'**
+  String get passwordResetSuccess;
+
+  /// No description provided for @error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error: {error}'**
+  String error(Object error);
+
+  /// No description provided for @privacyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyTitle;
+
+  /// No description provided for @privacyLastUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy – Updated December 2025'**
+  String get privacyLastUpdated;
+
+  /// No description provided for @privacyIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'This privacy policy informs you about the processing of your personal data when using our app.'**
+  String get privacyIntro;
+
+  /// No description provided for @privacySection1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'1. Controller'**
+  String get privacySection1Title;
+
+  /// No description provided for @privacySection1Content.
+  ///
+  /// In en, this message translates to:
+  /// **'Name: Jenny Weinreich\nAddress: Stettiner Straße 41, 35410 Hungen\nEmail: mamatochterontour@outlook.de'**
+  String get privacySection1Content;
+
+  /// No description provided for @privacySection2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'2. Collected Data'**
+  String get privacySection2Title;
+
+  /// No description provided for @privacySection2Content.
+  ///
+  /// In en, this message translates to:
+  /// **'We collect the following data:\n• Name and email address\n• Profile picture\n• Your posts and diary entries\n• Saved tips\n• Timestamps and activities within the app'**
+  String get privacySection2Content;
+
+  /// No description provided for @privacySection3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'3. Purpose of Data Processing'**
+  String get privacySection3Title;
+
+  /// No description provided for @privacySection3Content.
+  ///
+  /// In en, this message translates to:
+  /// **'We process your data for the following purposes:\n• Account creation and management\n• Provision of app functionalities\n• Community features and sharing posts\n• Premium features within the app\n• Handling of in-app purchases'**
+  String get privacySection3Content;
+
+  /// No description provided for @privacySection4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'4. Legal Basis'**
+  String get privacySection4Title;
+
+  /// No description provided for @privacySection4Content.
+  ///
+  /// In en, this message translates to:
+  /// **'Processing is based on your consent (Art. 6(1)(a) GDPR) and for contract performance (Art. 6(1)(b) GDPR).'**
+  String get privacySection4Content;
+
+  /// No description provided for @privacySection5Title.
+  ///
+  /// In en, this message translates to:
+  /// **'5. Data Transfer'**
+  String get privacySection5Title;
+
+  /// No description provided for @privacySection5Content.
+  ///
+  /// In en, this message translates to:
+  /// **'We use Google Firebase services (Firebase Authentication, Firestore, Storage, Analytics). Data is processed exclusively on servers in Germany.'**
+  String get privacySection5Content;
+
+  /// No description provided for @privacySection6Title.
+  ///
+  /// In en, this message translates to:
+  /// **'6. Storage Duration'**
+  String get privacySection6Title;
+
+  /// No description provided for @privacySection6Content.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data is stored as long as your account is active or statutory retention periods exist. After deletion of your account, all personal data is removed.'**
+  String get privacySection6Content;
+
+  /// No description provided for @privacySection7Title.
+  ///
+  /// In en, this message translates to:
+  /// **'7. Your Rights'**
+  String get privacySection7Title;
+
+  /// No description provided for @privacySection7Content.
+  ///
+  /// In en, this message translates to:
+  /// **'You have the following rights regarding your data:\n• Access to stored data\n• Correction of incorrect data\n• Deletion of your data\n• Data portability\n• Withdrawal of your consent'**
+  String get privacySection7Content;
+
+  /// No description provided for @privacySection8Title.
+  ///
+  /// In en, this message translates to:
+  /// **'8. Premium Features'**
+  String get privacySection8Title;
+
+  /// No description provided for @privacySection8Content.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium features are handled via in-app purchases. For these transactions, the app’s privacy policy applies.'**
+  String get privacySection8Content;
+
+  /// No description provided for @privacySection9Title.
+  ///
+  /// In en, this message translates to:
+  /// **'9. Contact'**
+  String get privacySection9Title;
+
+  /// No description provided for @privacySection9Content.
+  ///
+  /// In en, this message translates to:
+  /// **'For questions regarding data protection, reach us at: mamatochterontour@outlook.de. We respond within one week.'**
+  String get privacySection9Content;
+
+  /// No description provided for @privacySection10Title.
+  ///
+  /// In en, this message translates to:
+  /// **'10. Right to Complain'**
+  String get privacySection10Title;
+
+  /// No description provided for @privacySection10Content.
+  ///
+  /// In en, this message translates to:
+  /// **'You have the right to lodge a complaint with a data protection supervisory authority regarding the processing of your data.'**
+  String get privacySection10Content;
+
+  /// No description provided for @privacySection11Title.
+  ///
+  /// In en, this message translates to:
+  /// **'11. Changes to Privacy Policy'**
+  String get privacySection11Title;
+
+  /// No description provided for @privacySection11Content.
+  ///
+  /// In en, this message translates to:
+  /// **'The privacy policy may be updated due to app changes or legal requirements. The current version is always available in the app.'**
+  String get privacySection11Content;
+
+  /// No description provided for @termsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms and Conditions'**
+  String get termsTitle;
+
+  /// No description provided for @termsLastUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms and Conditions – Updated December 2025'**
+  String get termsLastUpdated;
+
+  /// No description provided for @terms1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'1. Provider'**
+  String get terms1Title;
+
+  /// No description provided for @terms1Content.
+  ///
+  /// In en, this message translates to:
+  /// **'Name: Jenny Weinreich\nAddress: Stettiner Straße 41, 35410 Hungen\nEmail: mamatochterontour@outlook.de\nVAT ID: DE441919331'**
+  String get terms1Content;
+
+  /// No description provided for @terms2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'2. Scope'**
+  String get terms2Title;
+
+  /// No description provided for @terms2Content.
+  ///
+  /// In en, this message translates to:
+  /// **'These terms and conditions apply to the use of our travel community app. By registering, you fully accept these terms.'**
+  String get terms2Content;
+
+  /// No description provided for @terms3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'3. Registration and User Account'**
+  String get terms3Title;
+
+  /// No description provided for @terms3Content.
+  ///
+  /// In en, this message translates to:
+  /// **'• The app is only usable with registration.\n• You must provide truthful information.\n• Keep your password confidential.\n• You are responsible for all activities in your account.'**
+  String get terms3Content;
+
+  /// No description provided for @terms4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'4. Permitted Use'**
+  String get terms4Title;
+
+  /// No description provided for @terms4Content.
+  ///
+  /// In en, this message translates to:
+  /// **'• You may create travel diaries and posts.\n• Share your own travel tips.\n• Use the app for private, non-commercial purposes.'**
+  String get terms4Content;
+
+  /// No description provided for @terms5Title.
+  ///
+  /// In en, this message translates to:
+  /// **'5. Prohibited Content'**
+  String get terms5Title;
+
+  /// No description provided for @terms5Content.
+  ///
+  /// In en, this message translates to:
+  /// **'The following content is not allowed:\n• Illegal, offensive, or discriminatory content\n• Spam or advertising without permission\n• Copyright infringement\n• False or misleading information\n• Content that could endanger other users'**
+  String get terms5Content;
+
+  /// No description provided for @terms6Title.
+  ///
+  /// In en, this message translates to:
+  /// **'6. Premium Membership'**
+  String get terms6Title;
+
+  /// No description provided for @terms6Content.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium features within the app are paid and can be cancelled at any time.'**
+  String get terms6Content;
+
+  /// No description provided for @terms7Title.
+  ///
+  /// In en, this message translates to:
+  /// **'7. Your Content'**
+  String get terms7Title;
+
+  /// No description provided for @terms7Content.
+  ///
+  /// In en, this message translates to:
+  /// **'• You retain rights to your content.\n• You grant us the right to display your content in the app.\n• You are responsible for the legality of your content.\n• Illegal content may be deleted without notice.'**
+  String get terms7Content;
+
+  /// No description provided for @terms8Title.
+  ///
+  /// In en, this message translates to:
+  /// **'8. Data Protection'**
+  String get terms8Title;
+
+  /// No description provided for @terms8Content.
+  ///
+  /// In en, this message translates to:
+  /// **'Protecting your data is important to us. Details on data processing can be found in our Privacy Policy available in the app.'**
+  String get terms8Content;
+
+  /// No description provided for @terms9Title.
+  ///
+  /// In en, this message translates to:
+  /// **'9. Disclaimer'**
+  String get terms9Title;
+
+  /// No description provided for @terms9Content.
+  ///
+  /// In en, this message translates to:
+  /// **'• The app is provided without warranty.\n• User information does not reflect our opinion.\n• We are not liable for damages from app usage.\n• Travel information is without guarantee; verify it yourself.\n• We are fully liable in cases of intent or gross negligence.'**
+  String get terms9Content;
+
+  /// No description provided for @terms10Title.
+  ///
+  /// In en, this message translates to:
+  /// **'10. Termination'**
+  String get terms10Title;
+
+  /// No description provided for @terms10Content.
+  ///
+  /// In en, this message translates to:
+  /// **'• You can delete your account at any time in settings.\n• We may suspend or delete accounts in case of violations.\n• After deletion, your data will be handled according to the Privacy Policy.'**
+  String get terms10Content;
+
+  /// No description provided for @terms11Title.
+  ///
+  /// In en, this message translates to:
+  /// **'11. Changes'**
+  String get terms11Title;
+
+  /// No description provided for @terms11Content.
+  ///
+  /// In en, this message translates to:
+  /// **'We may change the terms and conditions. You will be informed about important changes in the app. In case of objection, you can delete your account.'**
+  String get terms11Content;
+
+  /// No description provided for @terms12Title.
+  ///
+  /// In en, this message translates to:
+  /// **'12. Final Provisions'**
+  String get terms12Title;
+
+  /// No description provided for @terms12Content.
+  ///
+  /// In en, this message translates to:
+  /// **'German law applies. Jurisdiction as legally permitted. If individual provisions are invalid, the remaining provisions remain valid.'**
+  String get terms12Content;
+
+  /// No description provided for @terms13Title.
+  ///
+  /// In en, this message translates to:
+  /// **'13. Contact'**
+  String get terms13Title;
+
+  /// No description provided for @terms13Content.
+  ///
+  /// In en, this message translates to:
+  /// **'For questions, please contact us at: mamatochterontour@outlook.de'**
+  String get terms13Content;
+
+  /// No description provided for @termsImportantNotice.
+  ///
+  /// In en, this message translates to:
+  /// **'Important notice: The terms and conditions are legally binding. Please read them carefully.'**
+  String get termsImportantNotice;
+
+  /// No description provided for @impressumTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Imprint'**
+  String get impressumTitle;
+
+  /// No description provided for @impressumHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Information according to §5 TMG'**
+  String get impressumHeader;
+
+  /// No description provided for @impressumResponsibleTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Person responsible for the content of this app:'**
+  String get impressumResponsibleTitle;
+
+  /// No description provided for @impressumResponsibleContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Jenny Weinreich\nStettiner Straße 41\n35410 Hungen\nGermany\nEmail: mamatochterontour@outlook.de'**
+  String get impressumResponsibleContent;
+
+  /// No description provided for @impressumVatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'VAT ID according to §27a of the German VAT Act:'**
+  String get impressumVatTitle;
+
+  /// No description provided for @impressumVatContent.
+  ///
+  /// In en, this message translates to:
+  /// **'DE441919331'**
+  String get impressumVatContent;
+
+  /// No description provided for @impressumLiabilityContentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Liability for content'**
+  String get impressumLiabilityContentTitle;
+
+  /// No description provided for @impressumLiabilityContentContent.
+  ///
+  /// In en, this message translates to:
+  /// **'We do not guarantee the timeliness, correctness, completeness or quality of the information provided.'**
+  String get impressumLiabilityContentContent;
+
+  /// No description provided for @impressumLiabilityLinksTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Liability for links'**
+  String get impressumLiabilityLinksTitle;
+
+  /// No description provided for @impressumLiabilityLinksContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Our app contains links to external third-party websites, over whose content we have no influence. The respective provider or operator of the pages is always responsible for the content of the linked pages.'**
+  String get impressumLiabilityLinksContent;
+
+  /// No description provided for @impressumCopyrightTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Copyright'**
+  String get impressumCopyrightTitle;
+
+  /// No description provided for @impressumCopyrightContent.
+  ///
+  /// In en, this message translates to:
+  /// **'The content and works created through the app are subject to German copyright law. Reproduction, editing, distribution and any kind of use outside the limits of copyright require the written consent of the respective author or creator.'**
+  String get impressumCopyrightContent;
+
+  /// No description provided for @impressumDisputeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Dispute resolution'**
+  String get impressumDisputeTitle;
+
+  /// No description provided for @impressumDisputeContent.
+  ///
+  /// In en, this message translates to:
+  /// **'The European Commission has discontinued the online dispute resolution (ODR) platform as of 31.12.2023.\n\nWe do not participate in dispute resolution proceedings before a consumer arbitration board.'**
+  String get impressumDisputeContent;
+
+  /// No description provided for @impressumStand.
+  ///
+  /// In en, this message translates to:
+  /// **'Status: December 2025'**
+  String get impressumStand;
+
+  /// No description provided for @feedbackTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact & Feedback'**
+  String get feedbackTitle;
+
+  /// No description provided for @feedbackIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'We’re happy to hear from you! Do you have questions or would you like to share feedback? Then you’re in the right place.'**
+  String get feedbackIntro;
+
+  /// No description provided for @feedbackLabelName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name *'**
+  String get feedbackLabelName;
+
+  /// No description provided for @feedbackLabelEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email *'**
+  String get feedbackLabelEmail;
+
+  /// No description provided for @feedbackLabelImprovement.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggestions for improvement'**
+  String get feedbackLabelImprovement;
+
+  /// No description provided for @feedbackLabelWishes.
+  ///
+  /// In en, this message translates to:
+  /// **'App feature requests'**
+  String get feedbackLabelWishes;
+
+  /// No description provided for @feedbackLabelQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'Other questions'**
+  String get feedbackLabelQuestions;
+
+  /// No description provided for @feedbackValidatorName.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your name'**
+  String get feedbackValidatorName;
+
+  /// No description provided for @feedbackValidatorEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your email'**
+  String get feedbackValidatorEmail;
+
+  /// No description provided for @feedbackFillAtLeastOne.
+  ///
+  /// In en, this message translates to:
+  /// **'Please fill in at least one message field'**
+  String get feedbackFillAtLeastOne;
+
+  /// No description provided for @feedbackSubject.
+  ///
+  /// In en, this message translates to:
+  /// **'Feedback from'**
+  String get feedbackSubject;
+
+  /// No description provided for @feedbackBodyName.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get feedbackBodyName;
+
+  /// No description provided for @feedbackBodyEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get feedbackBodyEmail;
+
+  /// No description provided for @feedbackBodyImprovement.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggestions for improvement'**
+  String get feedbackBodyImprovement;
+
+  /// No description provided for @feedbackBodyWishes.
+  ///
+  /// In en, this message translates to:
+  /// **'Requests'**
+  String get feedbackBodyWishes;
+
+  /// No description provided for @feedbackBodyQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'Other questions'**
+  String get feedbackBodyQuestions;
+
+  /// No description provided for @feedbackCannotOpenEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to open email app'**
+  String get feedbackCannotOpenEmail;
+
+  /// No description provided for @feedbackButtonSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get feedbackButtonSubmit;
+
+  /// No description provided for @feed.
+  ///
+  /// In en, this message translates to:
+  /// **'Feed'**
+  String get feed;
+
+  /// No description provided for @diary.
+  ///
+  /// In en, this message translates to:
+  /// **'Diary'**
+  String get diary;
+
+  /// No description provided for @guides.
+  ///
+  /// In en, this message translates to:
+  /// **'Guides'**
+  String get guides;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @createPost.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Post'**
+  String get createPost;
+
+  /// No description provided for @writeDiary.
+  ///
+  /// In en, this message translates to:
+  /// **'Write Diary'**
+  String get writeDiary;
+
+  /// No description provided for @createStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Story'**
+  String get createStory;
+
+  /// No description provided for @addTrip.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Trip'**
+  String get addTrip;
+
+  /// No description provided for @askQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask a Question'**
+  String get askQuestion;
+
+  /// No description provided for @tripDestination.
+  ///
+  /// In en, this message translates to:
+  /// **'Destination'**
+  String get tripDestination;
+
+  /// No description provided for @selectStartDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Start Date'**
+  String get selectStartDate;
+
+  /// No description provided for @selectEndDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Select End Date'**
+  String get selectEndDate;
+
+  /// No description provided for @startDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Start date'**
+  String get startDate;
+
+  /// No description provided for @endDate.
+  ///
+  /// In en, this message translates to:
+  /// **'End date'**
+  String get endDate;
+
+  /// No description provided for @fillAllFields.
+  ///
+  /// In en, this message translates to:
+  /// **'Please fill out all fields'**
+  String get fillAllFields;
+
+  /// No description provided for @tripLimitReached.
+  ///
+  /// In en, this message translates to:
+  /// **'You have reached the limit of 2 trips. Tap here to unlock Premium ✨'**
+  String get tripLimitReached;
+
+  /// No description provided for @createTrip.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Trip'**
+  String get createTrip;
+
+  /// No description provided for @askQuestionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask a Question'**
+  String get askQuestionTitle;
+
+  /// No description provided for @askQuestionSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'✈️ Do you have a question about your trip?\n💬 Feel free to ask it on the Q&A board so other users can help you! 😊'**
+  String get askQuestionSubtitle;
+
+  /// No description provided for @askQuestionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your question here…'**
+  String get askQuestionHint;
+
+  /// No description provided for @enterQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a question!'**
+  String get enterQuestion;
+
+  /// No description provided for @saveQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Question'**
+  String get saveQuestion;
+
+  /// No description provided for @saving.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving…'**
+  String get saving;
+
+  /// No description provided for @saveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error saving: {error}'**
+  String saveError(Object error);
+
+  /// No description provided for @reportUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Report User'**
+  String get reportUser;
+
+  /// No description provided for @reportReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason for report'**
+  String get reportReason;
+
+  /// No description provided for @send.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get send;
+
+  /// No description provided for @userReported.
+  ///
+  /// In en, this message translates to:
+  /// **'User has been reported'**
+  String get userReported;
+
+  /// No description provided for @userBlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'User has been blocked and unfollowed'**
+  String get userBlocked;
+
+  /// No description provided for @userUnblocked.
+  ///
+  /// In en, this message translates to:
+  /// **'User has been unblocked'**
+  String get userUnblocked;
+
+  /// No description provided for @followError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error while following/unfollowing'**
+  String get followError;
+
+  /// No description provided for @user.
+  ///
+  /// In en, this message translates to:
+  /// **'User'**
+  String get user;
+
+  /// No description provided for @noBio.
+  ///
+  /// In en, this message translates to:
+  /// **'No biography'**
+  String get noBio;
+
+  /// No description provided for @posts.
+  ///
+  /// In en, this message translates to:
+  /// **'Posts'**
+  String get posts;
+
+  /// No description provided for @followers.
+  ///
+  /// In en, this message translates to:
+  /// **'Followers'**
+  String get followers;
+
+  /// No description provided for @following.
+  ///
+  /// In en, this message translates to:
+  /// **'Following'**
+  String get following;
+
+  /// No description provided for @followBtn.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow'**
+  String get followBtn;
+
+  /// No description provided for @followingBtn.
+  ///
+  /// In en, this message translates to:
+  /// **'Following'**
+  String get followingBtn;
+
+  /// No description provided for @report.
+  ///
+  /// In en, this message translates to:
+  /// **'Report'**
+  String get report;
+
+  /// No description provided for @block.
+  ///
+  /// In en, this message translates to:
+  /// **'Block'**
+  String get block;
+
+  /// No description provided for @unblock.
+  ///
+  /// In en, this message translates to:
+  /// **'Unblock'**
+  String get unblock;
+
+  /// No description provided for @uploadPost.
+  ///
+  /// In en, this message translates to:
+  /// **'Beitrag hochladen'**
+  String get uploadPost;
+
+  /// No description provided for @addLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Ort hinzufügen'**
+  String get addLocation;
+
+  /// No description provided for @description.
+  ///
+  /// In en, this message translates to:
+  /// **'Beschreibung'**
+  String get description;
+
+  /// No description provided for @hashtags.
+  ///
+  /// In en, this message translates to:
+  /// **'Hashtags'**
+  String get hashtags;
+
+  /// No description provided for @publishPost.
+  ///
+  /// In en, this message translates to:
+  /// **'Beitrag veröffentlichen'**
+  String get publishPost;
+
+  /// No description provided for @maxMedia.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximal 10 Medien pro Beitrag erlaubt'**
+  String get maxMedia;
+
+  /// No description provided for @uploadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Fehler beim Hochladen'**
+  String get uploadError;
+
+  /// No description provided for @cropImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Bild zuschneiden'**
+  String get cropImage;
+
+  /// No description provided for @travelDiary.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel Diary'**
+  String get travelDiary;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @confirmDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Deletion'**
+  String get confirmDeleteTitle;
+
+  /// No description provided for @confirmDeleteText.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this travel diary?'**
+  String get confirmDeleteText;
+
+  /// No description provided for @no.
+  ///
+  /// In en, this message translates to:
+  /// **'No'**
+  String get no;
+
+  /// No description provided for @yes.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes'**
+  String get yes;
+
+  /// No description provided for @diaryDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel diary deleted successfully'**
+  String get diaryDeleted;
+
+  /// No description provided for @diaryNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel diary not found'**
+  String get diaryNotFound;
+
+  /// No description provided for @noStories.
+  ///
+  /// In en, this message translates to:
+  /// **'No stories available'**
+  String get noStories;
+
+  /// No description provided for @justNow.
+  ///
+  /// In en, this message translates to:
+  /// **'just now'**
+  String get justNow;
+
+  /// No description provided for @minutesAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} minutes ago'**
+  String minutesAgo(Object count);
+
+  /// No description provided for @hoursAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} hours ago'**
+  String hoursAgo(Object count);
+
+  /// No description provided for @daysAgo.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} days ago'**
+  String daysAgo(Object count);
+
+  /// No description provided for @pickMedia.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick an image or video …'**
+  String get pickMedia;
+
+  /// No description provided for @enterText.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter text'**
+  String get enterText;
+
+  /// No description provided for @pickColor.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a color'**
+  String get pickColor;
+
+  /// No description provided for @ok.
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
+  /// No description provided for @storySaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Story saved!'**
+  String get storySaved;
+
+  /// No description provided for @newText.
+  ///
+  /// In en, this message translates to:
+  /// **'New Text'**
+  String get newText;
+
+  /// No description provided for @myProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'My Profile'**
+  String get myProfile;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// No description provided for @journals.
+  ///
+  /// In en, this message translates to:
+  /// **'Journals'**
+  String get journals;
+
+  /// No description provided for @planning.
+  ///
+  /// In en, this message translates to:
+  /// **'Planning'**
+  String get planning;
+
+  /// No description provided for @travel.
+  ///
+  /// In en, this message translates to:
+  /// **'Travels'**
+  String get travel;
+
+  /// No description provided for @contributions.
+  ///
+  /// In en, this message translates to:
+  /// **'Contributions'**
+  String get contributions;
+
+  /// No description provided for @noJournal.
+  ///
+  /// In en, this message translates to:
+  /// **'No journal created yet'**
+  String get noJournal;
+
+  /// No description provided for @noJournalMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Write your first travel diary ✍️\n\nCapture your best experiences – including photos & videos.'**
+  String get noJournalMessage;
+
+  /// No description provided for @noPost.
+  ///
+  /// In en, this message translates to:
+  /// **'No post uploaded yet'**
+  String get noPost;
+
+  /// No description provided for @noPostMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload your first post 🌍✨\n\nInspire others with your travels and favorite moments.'**
+  String get noPostMessage;
+
+  /// No description provided for @comments.
+  ///
+  /// In en, this message translates to:
+  /// **'Comments'**
+  String get comments;
+
+  /// No description provided for @noComments.
+  ///
+  /// In en, this message translates to:
+  /// **'No comments yet'**
+  String get noComments;
+
+  /// No description provided for @editComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Comment'**
+  String get editComment;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @deleteComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Comment'**
+  String get deleteComment;
+
+  /// No description provided for @deleteCommentConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you really want to delete this comment?'**
+  String get deleteCommentConfirm;
+
+  /// No description provided for @reply.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply'**
+  String get reply;
+
+  /// No description provided for @replyTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Replying to'**
+  String get replyTo;
+
+  /// No description provided for @writeComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a comment...'**
+  String get writeComment;
+
+  /// No description provided for @writeReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a reply...'**
+  String get writeReply;
+
+  /// No description provided for @commentReported.
+  ///
+  /// In en, this message translates to:
+  /// **'Comment has been reported'**
+  String get commentReported;
+
+  /// No description provided for @postDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Post Details'**
+  String get postDetails;
+
+  /// No description provided for @reportPost.
+  ///
+  /// In en, this message translates to:
+  /// **'Report post'**
+  String get reportPost;
+
+  /// No description provided for @reportReasonHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Reason for reporting'**
+  String get reportReasonHint;
+
+  /// No description provided for @reportedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Post has been reported'**
+  String get reportedSuccess;
+
+  /// No description provided for @likesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{firstUser} {othersCount, plural, =0{likes this post} one{and other like this} other{and others like this}}'**
+  String likesCount(Object firstUser, num othersCount);
+
+  /// No description provided for @premiumMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You are not a premium member and cannot save posts. Tap here to upgrade ✨'**
+  String get premiumMessage;
+
+  /// No description provided for @editPost.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get editPost;
+
+  /// No description provided for @deletePost.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Post'**
+  String get deletePost;
+
+  /// No description provided for @deletePostConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you really want to delete this post?'**
+  String get deletePostConfirm;
+
+  /// No description provided for @premiumSavePost.
+  ///
+  /// In en, this message translates to:
+  /// **'You are not a premium member and cannot save posts. Tap here to unlock Premium ✨'**
+  String get premiumSavePost;
+
+  /// No description provided for @postReported.
+  ///
+  /// In en, this message translates to:
+  /// **'Post was been reported'**
+  String get postReported;
+
+  /// No description provided for @newTravelDiary.
+  ///
+  /// In en, this message translates to:
+  /// **'New Travel Diary'**
+  String get newTravelDiary;
+
+  /// No description provided for @tripTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Trip Title'**
+  String get tripTitle;
+
+  /// No description provided for @diaryEntry.
+  ///
+  /// In en, this message translates to:
+  /// **'Diary Entry'**
+  String get diaryEntry;
+
+  /// No description provided for @selectImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Image'**
+  String get selectImage;
+
+  /// No description provided for @selectVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Video'**
+  String get selectVideo;
+
+  /// No description provided for @saveDiary.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Travel Diary'**
+  String get saveDiary;
+
+  /// No description provided for @mallorcaHeroText.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Mallorca Adventure ☀️'**
+  String get mallorcaHeroText;
+
+  /// No description provided for @mallorcaFeed.
+  ///
+  /// In en, this message translates to:
+  /// **'Mallorca Feed'**
+  String get mallorcaFeed;
+
+  /// No description provided for @mallorcaFeedSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Our daily experiences'**
+  String get mallorcaFeedSubtitle;
+
+  /// No description provided for @insiderTips.
+  ///
+  /// In en, this message translates to:
+  /// **'Insider Tips'**
+  String get insiderTips;
+
+  /// No description provided for @insiderTipsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Our secret spots'**
+  String get insiderTipsSubtitle;
+
+  /// No description provided for @mallorcaMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Mallorca Map'**
+  String get mallorcaMap;
+
+  /// No description provided for @mallorcaMapSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'All locations on a map'**
+  String get mallorcaMapSubtitle;
+
+  /// No description provided for @checklist.
+  ///
+  /// In en, this message translates to:
+  /// **'Checklist'**
+  String get checklist;
+
+  /// No description provided for @checklistSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Must-dos in Mallorca'**
+  String get checklistSubtitle;
+
+  /// No description provided for @miniGuides.
+  ///
+  /// In en, this message translates to:
+  /// **'Mini Guides'**
+  String get miniGuides;
+
+  /// No description provided for @miniGuidesSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Short travel guides'**
+  String get miniGuidesSubtitle;
+
+  /// No description provided for @ourStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Story'**
+  String get ourStory;
+
+  /// No description provided for @ourStorySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Experience our journey'**
+  String get ourStorySubtitle;
+
+  /// No description provided for @comingSoon.
+  ///
+  /// In en, this message translates to:
+  /// **'This feature is coming soon!'**
+  String get comingSoon;
+
+  /// No description provided for @themeLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading theme'**
+  String get themeLoadError;
+
+  /// No description provided for @editTravelDiaryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Travel Diary'**
+  String get editTravelDiaryTitle;
+
+  /// No description provided for @saveChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Changes'**
+  String get saveChanges;
+
+  /// No description provided for @diaryUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Travel diary updated successfully'**
+  String get diaryUpdated;
+
+  /// No description provided for @editProfileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfileTitle;
+
+  /// No description provided for @changeProfilePicture.
+  ///
+  /// In en, this message translates to:
+  /// **'Change Profile Picture'**
+  String get changeProfilePicture;
+
+  /// No description provided for @saveProfilePicture.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Profile Picture'**
+  String get saveProfilePicture;
+
+  /// No description provided for @username.
+  ///
+  /// In en, this message translates to:
+  /// **'Username'**
+  String get username;
+
+  /// No description provided for @usernameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Your username'**
+  String get usernameHint;
+
+  /// No description provided for @saveUsername.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Username'**
+  String get saveUsername;
+
+  /// No description provided for @bio.
+  ///
+  /// In en, this message translates to:
+  /// **'Bio'**
+  String get bio;
+
+  /// No description provided for @bioHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Your biography'**
+  String get bioHint;
+
+  /// No description provided for @saveBio.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Bio'**
+  String get saveBio;
+
+  /// No description provided for @profilePictureSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile picture saved successfully'**
+  String get profilePictureSaved;
+
+  /// No description provided for @profilePictureUploadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error uploading profile picture'**
+  String get profilePictureUploadError;
+
+  /// No description provided for @usernameSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Username saved successfully'**
+  String get usernameSaved;
+
+  /// No description provided for @usernameSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error saving username'**
+  String get usernameSaveError;
+
+  /// No description provided for @bioSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Bio saved successfully'**
+  String get bioSaved;
+
+  /// No description provided for @bioSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error saving bio'**
+  String get bioSaveError;
+
+  /// No description provided for @profileDataLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading profile data'**
+  String get profileDataLoadError;
+
+  /// No description provided for @editPostTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Post'**
+  String get editPostTitle;
+
+  /// No description provided for @caption.
+  ///
+  /// In en, this message translates to:
+  /// **'Caption'**
+  String get caption;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @imageCropTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Crop Image'**
+  String get imageCropTitle;
+
+  /// No description provided for @postUpdateSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Post successfully updated'**
+  String get postUpdateSuccess;
+
+  /// No description provided for @postUpdateError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error saving post'**
+  String get postUpdateError;
+
+  /// No description provided for @noTripsPlanned.
+  ///
+  /// In en, this message translates to:
+  /// **'No trips planned yet ✈️'**
+  String get noTripsPlanned;
+
+  /// No description provided for @years.
+  ///
+  /// In en, this message translates to:
+  /// **'Years'**
+  String get years;
+
+  /// No description provided for @days.
+  ///
+  /// In en, this message translates to:
+  /// **'Days'**
+  String get days;
+
+  /// No description provided for @hoursShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Hrs'**
+  String get hoursShort;
+
+  /// No description provided for @minutesShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Min'**
+  String get minutesShort;
+
+  /// No description provided for @secondsShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Sec'**
+  String get secondsShort;
+
+  /// No description provided for @editTrip.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit trip'**
+  String get editTrip;
+
+  /// No description provided for @tripName.
+  ///
+  /// In en, this message translates to:
+  /// **'Trip name'**
+  String get tripName;
+
+  /// No description provided for @deleteTripTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete trip?'**
+  String get deleteTripTitle;
+
+  /// No description provided for @deleteTripMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you really want to delete this trip? This cannot be undone.'**
+  String get deleteTripMessage;
+
+  /// No description provided for @tripNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Trip not found'**
+  String get tripNotFound;
+
+  /// No description provided for @todos.
+  ///
+  /// In en, this message translates to:
+  /// **'To-dos'**
+  String get todos;
+
+  /// No description provided for @packingList.
+  ///
+  /// In en, this message translates to:
+  /// **'Packing list'**
+  String get packingList;
+
+  /// No description provided for @budget.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget'**
+  String get budget;
+
+  /// No description provided for @notes.
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get notes;
+
+  /// No description provided for @contacts.
+  ///
+  /// In en, this message translates to:
+  /// **'Contacts'**
+  String get contacts;
+
+  /// No description provided for @myPackingList.
+  ///
+  /// In en, this message translates to:
+  /// **'My packing list'**
+  String get myPackingList;
+
+  /// No description provided for @noTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No title'**
+  String get noTitle;
+
+  /// No description provided for @todoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'To-Do List'**
+  String get todoTitle;
+
+  /// No description provided for @todoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter item...'**
+  String get todoHint;
+
+  /// No description provided for @todosSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'To-dos saved!'**
+  String get todosSaved;
+
+  /// No description provided for @premiumTodoLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'You are not a premium member and can only add up to 5 to-do items. Tap here to unlock premium ✨'**
+  String get premiumTodoLimit;
+
+  /// No description provided for @premiumCheckError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error checking premium status: {error}'**
+  String premiumCheckError(Object error);
+
+  /// No description provided for @packlistLoadError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading packing list: {error}'**
+  String packlistLoadError(Object error);
+
+  /// No description provided for @premiumItemLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'You can only add 5 items. Tap here to unlock premium! ✨'**
+  String get premiumItemLimit;
+
+  /// No description provided for @premiumCategoryLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'You can only add 2 categories. Tap here to unlock premium! ✨'**
+  String get premiumCategoryLimit;
+
+  /// No description provided for @addCategoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add category'**
+  String get addCategoryTitle;
+
+  /// No description provided for @categoryNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Category name'**
+  String get categoryNameHint;
+
+  /// No description provided for @add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get add;
+
+  /// No description provided for @deleteCategoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete category'**
+  String get deleteCategoryTitle;
+
+  /// No description provided for @deleteCategoryMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this category?'**
+  String get deleteCategoryMessage;
+
+  /// No description provided for @packingDoneMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re fully packed, have a great trip! 🌍'**
+  String get packingDoneMessage;
+
+  /// No description provided for @packingProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{completed} of {total} items completed'**
+  String packingProgress(Object completed, Object total);
+
+  /// No description provided for @editCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Rename category'**
+  String get editCategory;
+
+  /// No description provided for @newCategoryName.
+  ///
+  /// In en, this message translates to:
+  /// **'New name'**
+  String get newCategoryName;
+
+  /// No description provided for @itemHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add item...'**
+  String get itemHint;
+
+  /// No description provided for @addItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Add item'**
+  String get addItem;
+
+  /// No description provided for @addCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Add category'**
+  String get addCategory;
+
+  /// No description provided for @saveButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get saveButton;
+
+  /// No description provided for @otherCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Others'**
+  String get otherCategory;
+
+  /// No description provided for @noteLimitPremium.
+  ///
+  /// In en, this message translates to:
+  /// **'Non-premium users can create only 2 notes. Tap here to unlock Premium!'**
+  String get noteLimitPremium;
+
+  /// No description provided for @noteSaveError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error saving note'**
+  String get noteSaveError;
+
+  /// No description provided for @noteDeleteError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error deleting note'**
+  String get noteDeleteError;
+
+  /// No description provided for @noteEmptyError.
+  ///
+  /// In en, this message translates to:
+  /// **'Please fill at least one field!'**
+  String get noteEmptyError;
+
+  /// No description provided for @tripNotesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Trip Notes'**
+  String get tripNotesTitle;
+
+  /// No description provided for @newNote.
+  ///
+  /// In en, this message translates to:
+  /// **'New Note'**
+  String get newNote;
+
+  /// No description provided for @editNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Note'**
+  String get editNote;
+
+  /// No description provided for @titleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get titleLabel;
+
+  /// No description provided for @contentLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Content'**
+  String get contentLabel;
+
+  /// No description provided for @deleteButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteButton;
+
+  /// No description provided for @emptyNotesPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'No notes yet 📝\n\nHere you can collect notes for your trip ✈️🏖️ – e.g. favorite restaurants, cool activities or ideas before and during your trip.'**
+  String get emptyNotesPlaceholder;
+
+  /// No description provided for @tripContactsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Contacts'**
+  String get tripContactsTitle;
+
+  /// No description provided for @newContact.
+  ///
+  /// In en, this message translates to:
+  /// **'New Contact'**
+  String get newContact;
+
+  /// No description provided for @editContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Contact'**
+  String get editContact;
+
+  /// No description provided for @nameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get nameLabel;
+
+  /// No description provided for @phoneLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phoneLabel;
+
+  /// No description provided for @categoryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get categoryLabel;
+
+  /// No description provided for @fillAllFieldsError.
+  ///
+  /// In en, this message translates to:
+  /// **'Please fill out all fields!'**
+  String get fillAllFieldsError;
+
+  /// No description provided for @cancelButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancelButton;
+
+  /// No description provided for @deleteContactTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Contact'**
+  String get deleteContactTitle;
+
+  /// No description provided for @deleteContactConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this contact?'**
+  String get deleteContactConfirmation;
+
+  /// No description provided for @callFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not start the call'**
+  String get callFailed;
+
+  /// No description provided for @emptyContactsPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'No contacts yet.'**
+  String get emptyContactsPlaceholder;
+
+  /// No description provided for @premiumLimitMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Non-premium users can only create 2 budget categories. Tap here to unlock premium!'**
+  String get premiumLimitMessage;
+
+  /// No description provided for @unknownContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get unknownContact;
+
+  /// No description provided for @emergencyContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency contact'**
+  String get emergencyContact;
+
+  /// No description provided for @allFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get allFilter;
+
+  /// No description provided for @errorLoadingContacts.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading contacts'**
+  String get errorLoadingContacts;
+
+  /// No description provided for @callAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Call'**
+  String get callAction;
+
+  /// No description provided for @editAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get editAction;
+
+  /// No description provided for @deleteAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteAction;
+
+  /// No description provided for @categoryEmergency.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency'**
+  String get categoryEmergency;
+
+  /// No description provided for @categoryHotel.
+  ///
+  /// In en, this message translates to:
+  /// **'Hotel'**
+  String get categoryHotel;
+
+  /// No description provided for @categoryPrivate.
+  ///
+  /// In en, this message translates to:
+  /// **'Private'**
+  String get categoryPrivate;
+
+  /// No description provided for @categoryOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get categoryOther;
+
+  /// No description provided for @budgetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Budget'**
+  String get budgetTitle;
+
+  /// No description provided for @noBudgetCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven\'t created a budget yet.\nStart now and save for your dream vacation! 🏖️💰'**
+  String get noBudgetCreated;
+
+  /// No description provided for @addAmountDialogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposit – {category}'**
+  String addAmountDialogTitle(Object category);
+
+  /// No description provided for @amountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Amount'**
+  String get amountLabel;
+
+  /// No description provided for @addButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get addButton;
+
+  /// No description provided for @editDepositTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Deposit'**
+  String get editDepositTitle;
+
+  /// No description provided for @invalidInputTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid Input'**
+  String get invalidInputTitle;
+
+  /// No description provided for @invalidInputMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a category and a valid amount.'**
+  String get invalidInputMessage;
+
+  /// No description provided for @goalExceededMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'⚠️ Goal exceeded!\nYou deposited {diff} € too much.'**
+  String goalExceededMessage(Object diff);
+
+  /// No description provided for @deleteMenuItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get deleteMenuItem;
+
+  /// No description provided for @editMenuItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get editMenuItem;
+
+  /// No description provided for @depositsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Deposits:'**
+  String get depositsLabel;
+
+  /// No description provided for @addBudgetCategorySheetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Add category to budget planner'**
+  String get addBudgetCategorySheetTitle;
+
+  /// No description provided for @targetAmountLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Target amount'**
+  String get targetAmountLabel;
+
+  /// No description provided for @savingIndicator.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving…'**
+  String get savingIndicator;
+
+  /// No description provided for @addCategoryButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add category'**
+  String get addCategoryButton;
+
+  /// No description provided for @goalExceeded.
+  ///
+  /// In en, this message translates to:
+  /// **'⚠️ Goal exceeded'**
+  String get goalExceeded;
+
+  /// No description provided for @meldButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Report'**
+  String get meldButton;
+
+  /// No description provided for @editButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get editButton;
+
+  /// No description provided for @writeReplyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a reply...'**
+  String get writeReplyHint;
+
+  /// No description provided for @writeCommentHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a comment...'**
+  String get writeCommentHint;
+
+  /// No description provided for @replyingTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply to {username}'**
+  String replyingTo(Object username);
+
+  /// No description provided for @deleteCommentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete comment'**
+  String get deleteCommentTitle;
+
+  /// No description provided for @deleteCommentContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Do you really want to delete this comment?'**
+  String get deleteCommentContent;
+
+  /// No description provided for @premiumSaveWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'You are not a premium member and cannot save posts. Tap here to unlock Premium ✨'**
+  String get premiumSaveWarning;
+
+  /// No description provided for @likesTextSingle.
+  ///
+  /// In en, this message translates to:
+  /// **'{firstUsername} likes this post'**
+  String likesTextSingle(Object firstUsername);
+
+  /// No description provided for @likesTextMultiple.
+  ///
+  /// In en, this message translates to:
+  /// **'{firstUsername} and {othersCount} others like this post'**
+  String likesTextMultiple(Object firstUsername, Object othersCount);
+
+  /// No description provided for @likesCount2.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No one likes this post} =1{{count} person likes this post} other{{count} people like this post}}'**
+  String likesCount2(int count);
+
+  /// No description provided for @timeAgoDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{# day ago} other{# days ago}}'**
+  String timeAgoDays(num count);
+
+  /// No description provided for @timeAgoHours.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{# hour ago} other{# hours ago}}'**
+  String timeAgoHours(num count);
+
+  /// No description provided for @timeAgoMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{# minute ago} other{# minutes ago}}'**
+  String timeAgoMinutes(num count);
+
+  /// No description provided for @timeAgoJustNow.
+  ///
+  /// In en, this message translates to:
+  /// **'just now'**
+  String get timeAgoJustNow;
+
+  /// No description provided for @enterNewReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter new reply'**
+  String get enterNewReply;
+
+  /// No description provided for @editReplyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit reply'**
+  String get editReplyTitle;
+
+  /// No description provided for @enterNewQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter new question'**
+  String get enterNewQuestion;
+
+  /// No description provided for @editQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit question'**
+  String get editQuestion;
+
+  /// No description provided for @writeAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Write an answer...'**
+  String get writeAnswer;
+
+  /// No description provided for @noQuestionsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'💬 No questions have been asked yet.\nAsk the first question 😊'**
+  String get noQuestionsYet;
+
+  /// No description provided for @feedFilterFriends.
+  ///
+  /// In en, this message translates to:
+  /// **'Friends'**
+  String get feedFilterFriends;
+
+  /// No description provided for @feedFilterFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get feedFilterFavorites;
+
+  /// No description provided for @tipsAndFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Tips & Favorites'**
+  String get tipsAndFavorites;
+
+  /// No description provided for @noPostsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No posts found'**
+  String get noPostsFound;
+
+  /// No description provided for @romPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Rome'**
+  String get romPageTitle;
+
+  /// No description provided for @romDescriptionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🏛 Rome – Historical Capital of Italy'**
+  String get romDescriptionTitle;
+
+  /// No description provided for @romDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Rome fascinates with ancient buildings, historic squares, winding streets, world-famous museums, and vibrant Italian cuisine. The city offers countless opportunities for sightseeing, culture, shopping, and enjoyment.'**
+  String get romDescription;
+
+  /// No description provided for @sightsAndActivitiesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🏛 Sights & Activities'**
+  String get sightsAndActivitiesTitle;
+
+  /// No description provided for @colosseum.
+  ///
+  /// In en, this message translates to:
+  /// **'Colosseum'**
+  String get colosseum;
+
+  /// No description provided for @colosseumDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The world-famous amphitheater, known for gladiator fights and ancient architecture. Good-to-Know: Allow enough time to also enter the interior and explore the underground areas.'**
+  String get colosseumDescription;
+
+  /// No description provided for @forumRomanum.
+  ///
+  /// In en, this message translates to:
+  /// **'Roman Forum'**
+  String get forumRomanum;
+
+  /// No description provided for @forumRomanumDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Archaeological heart of Rome with ruins of ancient temples, administrative buildings, and triumphal arches. Tip: Visit early morning or late afternoon to avoid crowds and take great photos.'**
+  String get forumRomanumDescription;
+
+  /// No description provided for @pantheon.
+  ///
+  /// In en, this message translates to:
+  /// **'Pantheon'**
+  String get pantheon;
+
+  /// No description provided for @pantheonDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Ancient temple, now a church, with an impressive dome and large opening in the roof. Good-to-Know: Entry is free, but dress appropriately.'**
+  String get pantheonDescription;
+
+  /// No description provided for @vatican.
+  ///
+  /// In en, this message translates to:
+  /// **'St. Peter\'s Basilica & Vatican'**
+  String get vatican;
+
+  /// No description provided for @vaticanDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Highlights for art and culture lovers: St. Peter\'s Basilica, Sistine Chapel, and Vatican Museums. Good-to-Know: Going up the dome can be narrow and steep; allow time for the ascent.'**
+  String get vaticanDescription;
+
+  /// No description provided for @treviFountain.
+  ///
+  /// In en, this message translates to:
+  /// **'Trevi Fountain'**
+  String get treviFountain;
+
+  /// No description provided for @treviFountainDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Famous fountain where visitors throw coins for luck and return. Tip: Visit early morning for photos without crowds.'**
+  String get treviFountainDescription;
+
+  /// No description provided for @piazzaNavona.
+  ///
+  /// In en, this message translates to:
+  /// **'Piazza Navona'**
+  String get piazzaNavona;
+
+  /// No description provided for @piazzaNavonaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Baroque square with fountains, street cafés, and lively atmosphere. Insider Tip: In the back alleys around the piazza, there are small authentic cafés away from tourists.'**
+  String get piazzaNavonaDescription;
+
+  /// No description provided for @spanishSteps.
+  ///
+  /// In en, this message translates to:
+  /// **'Spanish Steps'**
+  String get spanishSteps;
+
+  /// No description provided for @spanishStepsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular meeting point, perfect for strolling, photographing, and people-watching. Good-to-Know: Early morning is less crowded with optimal light for photos.'**
+  String get spanishStepsDescription;
+
+  /// No description provided for @palatineHill.
+  ///
+  /// In en, this message translates to:
+  /// **'Palatine Hill'**
+  String get palatineHill;
+
+  /// No description provided for @palatineHillDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Historic hill where Roman emperors lived, with ruins and fantastic views over the Roman Forum and Circus Maximus. Tip: Combine with the Roman Forum visit — tickets often cover both.'**
+  String get palatineHillDescription;
+
+  /// No description provided for @keyhole.
+  ///
+  /// In en, this message translates to:
+  /// **'Keyhole (Buco della Serratura)'**
+  String get keyhole;
+
+  /// No description provided for @keyholeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Secret highlight in Aventine: The keyhole perfectly frames St. Peter\'s Basilica — great photo spot away from crowds. Insider Tip: Early morning or late afternoon is quiet.'**
+  String get keyholeDescription;
+
+  /// No description provided for @trastevere.
+  ///
+  /// In en, this message translates to:
+  /// **'Trastevere'**
+  String get trastevere;
+
+  /// No description provided for @trastevereDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Charming district with cobblestones, traditional restaurants, bars, and lively atmosphere. Good-to-Know: Very lively in the evenings; streets can be narrow — watch out for bikes and scooters!'**
+  String get trastevereDescription;
+
+  /// No description provided for @orangeGarden.
+  ///
+  /// In en, this message translates to:
+  /// **'Giardino degli Aranci (Orange Garden)'**
+  String get orangeGarden;
+
+  /// No description provided for @orangeGardenDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiet garden with panoramic city views — a relaxed insider spot away from the crowds. Tip: Sunset is especially photogenic.'**
+  String get orangeGardenDescription;
+
+  /// No description provided for @coppede.
+  ///
+  /// In en, this message translates to:
+  /// **'Coppedè Quarter'**
+  String get coppede;
+
+  /// No description provided for @coppedeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Playful Art Nouveau architecture, hidden squares, and fascinating details — a real tip for architecture fans. Good-to-Know: Best explored with a camera; few tourists here.'**
+  String get coppedeDescription;
+
+  /// No description provided for @santaMariaTrastevere.
+  ///
+  /// In en, this message translates to:
+  /// **'Basilica Santa Maria in Trastevere'**
+  String get santaMariaTrastevere;
+
+  /// No description provided for @santaMariaTrastevereDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Less visited than the major churches, but beautiful with impressive mosaics and relaxed atmosphere. Tip: Visit in the morning for calmness.'**
+  String get santaMariaTrastevereDescription;
+
+  /// No description provided for @culinaryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🍽️ Culinary – Enjoy with Fjord View'**
+  String get culinaryTitle;
+
+  /// No description provided for @gelateria.
+  ///
+  /// In en, this message translates to:
+  /// **'🍦 Gelateria del Teatro'**
+  String get gelateria;
+
+  /// No description provided for @gelateriaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Traditional gelato shop in Rome with creative, handmade flavors — perfect for a sweet break while exploring the old town.'**
+  String get gelateriaDescription;
+
+  /// No description provided for @laTavernetta.
+  ///
+  /// In en, this message translates to:
+  /// **'🍝 La Tavernetta 29 Da Tony e Andrea'**
+  String get laTavernetta;
+
+  /// No description provided for @laTavernettaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Cozy family-run Roman restaurant in Trastevere with classic pasta dishes, antipasti, and authentic Italian atmosphere.'**
+  String get laTavernettaDescription;
+
+  /// No description provided for @fontanaBakery.
+  ///
+  /// In en, this message translates to:
+  /// **'🥖 L\'Antico Forno di Fontana di Trevi'**
+  String get fontanaBakery;
+
+  /// No description provided for @fontanaBakeryDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular bakery right by the Trevi Fountain — ideal for fresh bread, pizza slices, and sweet treats on the go.'**
+  String get fontanaBakeryDescription;
+
+  /// No description provided for @roscioli.
+  ///
+  /// In en, this message translates to:
+  /// **'🍷 Roscioli Salumeria con Cucina'**
+  String get roscioli;
+
+  /// No description provided for @roscioliDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Legendary Roman delicatessen and kitchen near Campo de’ Fiori — famous for excellent pasta, antipasti, cheese, wine, and Roman specialties.'**
+  String get roscioliDescription;
+
+  /// No description provided for @streetPizza.
+  ///
+  /// In en, this message translates to:
+  /// **'🍕 Street-Food Tip: Pizza al taglio'**
+  String get streetPizza;
+
+  /// No description provided for @streetPizzaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Quick and tasty: Pizza al taglio (by the slice) is found all over Rome — perfect for standing and enjoying while sightseeing. Local favorites include SPIZZICA ROMA, Alice Pizza, and Pizza A Taglio.'**
+  String get streetPizzaDescription;
+
+  /// No description provided for @hotelsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🏨 Hotels & Accommodation'**
+  String get hotelsTitle;
+
+  /// No description provided for @hotelBolivar.
+  ///
+  /// In en, this message translates to:
+  /// **'Hotel Bolivar – Trevi Fountain'**
+  String get hotelBolivar;
+
+  /// No description provided for @hotelBolivarDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Centrally located hotel near Trevi Fountain, ideal for sightseeing and city tours.'**
+  String get hotelBolivarDescription;
+
+  /// No description provided for @arrivalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🚢 Arrival & Camper Info'**
+  String get arrivalTitle;
+
+  /// No description provided for @flightTrain.
+  ///
+  /// In en, this message translates to:
+  /// **'Flight & Train'**
+  String get flightTrain;
+
+  /// No description provided for @flightTrainDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Rome is easily accessible by plane. From Fiumicino Airport, take the Leonardo Express or taxi to the city center.'**
+  String get flightTrainDescription;
+
+  /// No description provided for @carParking.
+  ///
+  /// In en, this message translates to:
+  /// **'Car & Parking'**
+  String get carParking;
+
+  /// No description provided for @carParkingDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Rome can also be explored by car. Downtown parking is limited, so central parking garages are recommended.'**
+  String get carParkingDescription;
+
+  /// Hinweis-Text für Partner werden, inkl. klickbarer Email
+  ///
+  /// In en, this message translates to:
+  /// **'Would you also like to become a partner? Feel free to contact us at {email}'**
+  String becomePartnerText(Object email);
+
+  /// No description provided for @premium.
+  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
+  String get premium;
+
+  /// No description provided for @mallorcaDescriptionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🌴 Mallorca – Much more than just beaches'**
+  String get mallorcaDescriptionTitle;
+
+  /// No description provided for @mallorcaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Mallorca surprises with turquoise coves, spectacular cliffs, charming villages, vibrant culture, and culinary diversity. The island is perfect for beach lovers, active travelers, food enthusiasts, and families.'**
+  String get mallorcaDescription;
+
+  /// No description provided for @esTrencDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Long, unspoiled sandy beach in the south of Mallorca with turquoise water and a Caribbean vibe.'**
+  String get esTrencDescription;
+
+  /// No description provided for @playaDePalmaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Well-known sandy beach stretching several kilometers between Can Pastilla and El Arenal, with clear water and good infrastructure.'**
+  String get playaDePalmaDescription;
+
+  /// No description provided for @calaAgullaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Centrally located sandy beach in Cala Ratjada with calm waters, ideal for swimming and walks along the promenade.'**
+  String get calaAgullaDescription;
+
+  /// No description provided for @calaAgullaNatureDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Natural beach near Cala Ratjada, surrounded by pine trees and hills, with fine sand and crystal-clear water.'**
+  String get calaAgullaNatureDescription;
+
+  /// No description provided for @mondragoBeachDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Sheltered cove in Mondragó Natural Park with two beautiful sandy bays and very clear water.'**
+  String get mondragoBeachDescription;
+
+  /// No description provided for @capFormentorDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Spectacular cliff coast in the north of the island with winding roads, viewpoints, and views of the open Mediterranean.'**
+  String get capFormentorDescription;
+
+  /// No description provided for @formentorViewpointDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'One of Mallorca\'s most famous viewpoints, offering views of the cliffs and coves of the Formentor Peninsula.'**
+  String get formentorViewpointDescription;
+
+  /// No description provided for @saCalobraGorgeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Impressive gorge in the Tramuntana mountains with steep cliffs, ending at the sea in Sa Calobra.'**
+  String get saCalobraGorgeDescription;
+
+  /// No description provided for @beachesCovesNatureTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🏖 Beaches, Coves & Nature'**
+  String get beachesCovesNatureTitle;
+
+  /// No description provided for @excursionTipsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🏛 Excursion Tips & Activities'**
+  String get excursionTipsTitle;
+
+  /// No description provided for @palmaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Palma de Mallorca'**
+  String get palmaTitle;
+
+  /// No description provided for @palmaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'The island’s capital offers a mix of historic districts, narrow streets, boutiques, cafés, and Mediterranean lifestyle.'**
+  String get palmaDescription;
+
+  /// No description provided for @cathedralTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Cathedral La Seu'**
+  String get cathedralTitle;
+
+  /// No description provided for @cathedralDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Monumental Gothic cathedral right by the sea and one of Mallorca\'s most famous landmarks.'**
+  String get cathedralDescription;
+
+  /// No description provided for @oldTownTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Old Town & Santa Catalina District'**
+  String get oldTownTitle;
+
+  /// No description provided for @oldTownDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Charming old town streets around La Seu and the lively Santa Catalina district with restaurants, bars, and local atmosphere.'**
+  String get oldTownDescription;
+
+  /// No description provided for @islandDriveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Exploring the Island by Car'**
+  String get islandDriveTitle;
+
+  /// No description provided for @islandDriveDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'A rental car is recommended to discover remote coves, mountain villages in the Tramuntana range, and less touristy areas of the island.'**
+  String get islandDriveDescription;
+
+  /// No description provided for @sollerTrainTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ferrocarril de Sóller & Tramvia de Sóller'**
+  String get sollerTrainTitle;
+
+  /// No description provided for @sollerTrainDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Historic train ride from Palma to Sóller through tunnels, valleys, and olive groves, followed by a tram ride to Port de Sóller.'**
+  String get sollerTrainDescription;
+
+  /// No description provided for @boatToursTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Boat Tours from Palma'**
+  String get boatToursTitle;
+
+  /// No description provided for @boatToursDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Coastal rides along the south coast with swimming stops in coves and views of the island from the water.'**
+  String get boatToursDescription;
+
+  /// No description provided for @buggyToursTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Buggy Tours Inland'**
+  String get buggyToursTitle;
+
+  /// No description provided for @buggyToursDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Guided buggy tours off the main roads through rural areas, small villages, and viewpoints.'**
+  String get buggyToursDescription;
+
+  /// No description provided for @bellverTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Castell de Bellver'**
+  String get bellverTitle;
+
+  /// No description provided for @bellverDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Circular castle above Palma with panoramic views over the city, harbor, and bay – easily accessible and less crowded than the old town.'**
+  String get bellverDescription;
+
+  /// No description provided for @mallorcanSpecialtiesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mallorcan Specialties'**
+  String get mallorcanSpecialtiesTitle;
+
+  /// No description provided for @mallorcanSpecialtiesDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Mallorcan cuisine is simple, hearty, and heavily influenced by regional products.'**
+  String get mallorcanSpecialtiesDescription;
+
+  /// No description provided for @paAmbOliTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pa amb oli'**
+  String get paAmbOliTitle;
+
+  /// No description provided for @paAmbOliDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Traditional bread dish with olive oil, tomato, and toppings like cheese, Serrano ham, or Sobrasada.'**
+  String get paAmbOliDescription;
+
+  /// No description provided for @ensaimadaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ensaimada'**
+  String get ensaimadaTitle;
+
+  /// No description provided for @ensaimadaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Typical sweet yeast pastry of the island, often eaten for breakfast or as a souvenir.'**
+  String get ensaimadaDescription;
+
+  /// No description provided for @mercatSantaCatalinaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mercat de Santa Catalina'**
+  String get mercatSantaCatalinaTitle;
+
+  /// No description provided for @mercatSantaCatalinaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular market in Palma with fresh foods, small bars, and authentic atmosphere.'**
+  String get mercatSantaCatalinaDescription;
+
+  /// No description provided for @mercatOlivarTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mercat de l’Olivar'**
+  String get mercatOlivarTitle;
+
+  /// No description provided for @mercatOlivarDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Large central market in Palma with fish, meat, and gourmet stalls.'**
+  String get mercatOlivarDescription;
+
+  /// No description provided for @littleItalyTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Little Italy – El Arenal'**
+  String get littleItalyTitle;
+
+  /// No description provided for @littleItalyDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Italian restaurant near Playa de Palma, known for pizza, pasta, and classic Italian cuisine.'**
+  String get littleItalyDescription;
+
+  /// No description provided for @mamaPizzaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Mama Pizza – Cala Ratjada'**
+  String get mamaPizzaTitle;
+
+  /// No description provided for @mamaPizzaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular restaurant in Cala Ratjada serving pizza, pasta, and Italian specialties.'**
+  String get mamaPizzaDescription;
+
+  /// No description provided for @saPortassaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sa Portassa – Alcúdia'**
+  String get saPortassaTitle;
+
+  /// No description provided for @saPortassaDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Traditional Mallorcan restaurant in the old town of Alcúdia.'**
+  String get saPortassaDescription;
+
+  /// No description provided for @casPatroMarchTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ca’s Patró March – Sóller'**
+  String get casPatroMarchTitle;
+
+  /// No description provided for @casPatroMarchDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Famous seafood restaurant directly above the sea on the coast near Sóller.'**
+  String get casPatroMarchDescription;
+
+  /// No description provided for @timsBarTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tim’s Bar – Port d’Andratx'**
+  String get timsBarTitle;
+
+  /// No description provided for @timsBarDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular harbor bar for drinks and sunsets.'**
+  String get timsBarDescription;
+
+  /// No description provided for @nightlifeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🎶 Nightlife & Party'**
+  String get nightlifeTitle;
+
+  /// No description provided for @nightlifeDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Megapark and Bierkönig at Playa de Palma are among the island\'s most famous party venues, featuring live acts, DJs, and a lively atmosphere.'**
+  String get nightlifeDescription;
+
+  /// No description provided for @hotelPlayaGolfTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Hotel Playa Golf – Playa de Palma'**
+  String get hotelPlayaGolfTitle;
+
+  /// No description provided for @hotelPlayaGolfDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Classic beach hotel right on Playa de Palma with comfortable rooms and immediate access to the sandy beach – ideal for sunbathers and families.'**
+  String get hotelPlayaGolfDescription;
+
+  /// No description provided for @hotelRiuPlayaParkTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Hotel Riu Playa Park – Playa de Palma'**
+  String get hotelRiuPlayaParkTitle;
+
+  /// No description provided for @hotelRiuPlayaParkDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular all-inclusive hotel just minutes from the beach, with pool area, bars, restaurants, and live music – perfect for an active holiday at Playa de Palma.'**
+  String get hotelRiuPlayaParkDescription;
+
+  /// No description provided for @sonMollSentitsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Son Moll Sentits Hotel & Spa – Cala Ratjada'**
+  String get sonMollSentitsTitle;
+
+  /// No description provided for @sonMollSentitsDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Highly rated hotel right at Cala Son Moll in Cala Ratjada, known for excellent service, modern rooms, and beach location – ideal for couples or those seeking tranquility.'**
+  String get sonMollSentitsDescription;
+
+  /// No description provided for @r2LagoPlayaParkTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'R2 Lago Playa Park – Cala Ratjada'**
+  String get r2LagoPlayaParkTitle;
+
+  /// No description provided for @r2LagoPlayaParkDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Comfortable hotel complex near Son Moll Bay with large pool areas, restaurant, bars, and leisure facilities – especially family-friendly.'**
+  String get r2LagoPlayaParkDescription;
+
+  /// No description provided for @arrivalByCarFerryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Arrival by Car & Ferry'**
+  String get arrivalByCarFerryTitle;
+
+  /// No description provided for @arrivalByCarFerryDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'If you prefer not to fly, you can travel comfortably with your own car from Barcelona to the island. The ferry company Baleària provides reliable connections to Palma or Alcúdia. Depending on the route, the trip takes approximately 7–8 hours to Palma. This allows you to explore the island flexibly and independently.'**
+  String get arrivalByCarFerryDescription;
+
+  /// No description provided for @camperTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Camper & Camping in Mallorca'**
+  String get camperTitle;
+
+  /// No description provided for @camperDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Campsites on Mallorca are limited, and wild camping is not allowed and generally discouraged. If traveling with a camper, make sure to research in advance and use official campsites.'**
+  String get camperDescription;
+
+  /// No description provided for @geirangerPageTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🌟 Geiranger – The Fjord that takes your breath away'**
+  String get geirangerPageTitle;
+
+  /// No description provided for @geirangerDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Geiranger is one of Norway\'s most spectacular fjord landscapes and a place to experience with all your senses – not just as a photo opportunity, but as a true adventure.'**
+  String get geirangerDescription;
+
+  /// No description provided for @ribBoatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🚤 RIB Boat Adventure – Adrenaline on the Fjord'**
+  String get ribBoatTitle;
+
+  /// No description provided for @ribBoatContentIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Experience the Geirangerfjord at speed and with thrills! On a high-speed RIB (Rigid Inflatable Boat) tour, you’ll zoom close to the famous waterfalls: The Seven Sisters, Bridal Veil, and The Suitor. A live guide accompanies you, explains the surroundings, and ensures safety. The tour also includes photo stops at the fjord’s most beautiful spots.\n\n'**
+  String get ribBoatContentIntro;
+
+  /// No description provided for @ribBoatDurationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'📍 Duration & Schedule:\n'**
+  String get ribBoatDurationTitle;
+
+  /// No description provided for @ribBoatDurationContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Fjord ride: approx. 50–60 minutes\n- Total time including preparation: approx. 75 minutes\n- Route: Seven Sisters, Bridal Veil, The Suitor waterfalls, historic fjord farms like Skageflå and Knivsflå, return to Geiranger\n\n'**
+  String get ribBoatDurationContent;
+
+  /// No description provided for @ribBoatServicesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🧑‍✈️ Services:\n'**
+  String get ribBoatServicesTitle;
+
+  /// No description provided for @ribBoatServicesContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Safety equipment (life jacket, neoprene/flotation suit, goggles)\n- Live guide (mostly in English)\n- Photo stops along the way\n- Weather-appropriate clothing recommended (wind jacket, warm layers)\n\n'**
+  String get ribBoatServicesContent;
+
+  /// No description provided for @ribBoatAgeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'👨‍👩‍👧 Minimum Age:\n'**
+  String get ribBoatAgeTitle;
+
+  /// No description provided for @ribBoatAgeContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- From 3 years old (children under 14 must be accompanied by an adult)\n\n'**
+  String get ribBoatAgeContent;
+
+  /// No description provided for @ribBoatPriceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'💰 Prices:\n'**
+  String get ribBoatPriceTitle;
+
+  /// No description provided for @ribBoatPriceContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Adults: approx. 895 NOK (~85 €)\n- Children (3–15 years): approx. 595 NOK (~55 €)\n- Private tours: approx. 8,950 NOK for max. 12 people\n- Note: Prices may vary slightly depending on the provider\n\n'**
+  String get ribBoatPriceContent;
+
+  /// No description provided for @ribBoatTipsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'💡 Insider Tips:\n'**
+  String get ribBoatTipsTitle;
+
+  /// No description provided for @ribBoatTipsContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Book online early – the tour is extremely popular, especially during cruise season\n- Private tours offer more flexibility and space for groups\n- Photo spots: best lighting in the morning or late afternoon\n'**
+  String get ribBoatTipsContent;
+
+  /// No description provided for @fjordSightseeingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🛥 Classic Fjord Sightseeing Boat Tour – For Leisure'**
+  String get fjordSightseeingTitle;
+
+  /// No description provided for @fjordSightseeingIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Enjoy a leisurely sightseeing boat tour on the UNESCO World Heritage Geirangerfjord, where you can see the famous waterfalls, steep fjord cliffs, and old mountain farms up close. The ride offers great photo opportunities and plenty of time to enjoy the scenery at your own pace.\n\n'**
+  String get fjordSightseeingIntro;
+
+  /// No description provided for @fjordSightseeingDurationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'⏱ Duration & Schedule:\n'**
+  String get fjordSightseeingDurationTitle;
+
+  /// No description provided for @fjordSightseeingDurationContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Approx. 60 min classic fjord tour\n- Approx. 90 min extended tour with additional fjord scenery\n\n'**
+  String get fjordSightseeingDurationContent;
+
+  /// No description provided for @fjordSightseeingPriceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'💰 Prices & Child Discounts:\n'**
+  String get fjordSightseeingPriceTitle;
+
+  /// No description provided for @fjordSightseeingPriceContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Adults: approx. 550–600 NOK (~50–55 €)\n- Children 4–15 years: 50% off adult price\n- Children under 4 years: 90% off\n- Prices may vary depending on provider & season\n\n'**
+  String get fjordSightseeingPriceContent;
+
+  /// No description provided for @fjordSightseeingRouteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🌊 Highlights & Route:\n'**
+  String get fjordSightseeingRouteTitle;
+
+  /// No description provided for @fjordSightseeingRouteContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Waterfalls “The Seven Sisters”, “Bridal Veil” & “The Suitor”\n- Views of steep fjord cliffs & historic fjord farms\n\n'**
+  String get fjordSightseeingRouteContent;
+
+  /// No description provided for @fjordSightseeingTipsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'💡 Insider Tips:\n'**
+  String get fjordSightseeingTipsTitle;
+
+  /// No description provided for @fjordSightseeingTipsContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Many boats have interior areas with panoramic windows + outdoor deck for photos\n- Often there are free audio guides in multiple languages\n- Book online early, especially in high season\n'**
+  String get fjordSightseeingTipsContent;
+
+  /// No description provided for @kayakTourTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🛶 Kayak Tours – Close to Nature'**
+  String get kayakTourTitle;
+
+  /// No description provided for @kayakTourIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Experience the Geirangerfjord up close from the water! At the Geiranger Kayak Centre in Homlong, you can choose between single or double kayaks and explore the fjord at your own pace. Paddling here is a true nature experience – with views of steep cliffs, quiet bays, and waterfalls directly from the kayak.\n\n'**
+  String get kayakTourIntro;
+
+  /// No description provided for @kayakTourWhereWhenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'📍 Where & When:\n'**
+  String get kayakTourWhereWhenTitle;
+
+  /// No description provided for @kayakTourWhereWhenContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Geiranger Kayak Centre, Homlong (southern side of the fjord)\n- Season: Late May to late September\n\n'**
+  String get kayakTourWhereWhenContent;
+
+  /// No description provided for @kayakTourDurationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'⏱ Rental Duration & Options:\n'**
+  String get kayakTourDurationTitle;
+
+  /// No description provided for @kayakTourDurationContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Kayak rental: 1–6 hours available\n- Choose single or double kayak depending on your needs\n\n'**
+  String get kayakTourDurationContent;
+
+  /// No description provided for @kayakTourPriceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'💰 Prices (approx.):\n'**
+  String get kayakTourPriceTitle;
+
+  /// No description provided for @kayakTourPriceContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Double kayak 1 hr: ~685 NOK\n- Single kayak 1 hr: ~460 NOK\n- Double kayak 1–3 hrs: ~1050 NOK\n- Single kayak 1–3 hrs: ~685 NOK\n- Double kayak 3–6 hrs: ~1575 NOK\n- Single kayak 3–6 hrs: ~950 NOK\n- Prices may vary slightly depending on season & provider\n\n'**
+  String get kayakTourPriceContent;
+
+  /// No description provided for @kayakTourAgeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'👶 Minimum Age & Supervision:\n'**
+  String get kayakTourAgeTitle;
+
+  /// No description provided for @kayakTourAgeContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Minimum age: 8 years\n- Children (8–15 years) must be accompanied by an adult\n\n'**
+  String get kayakTourAgeContent;
+
+  /// No description provided for @kayakTourWeightTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'⚖️ Weight & Size:\n'**
+  String get kayakTourWeightTitle;
+
+  /// No description provided for @kayakTourWeightContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Max. weight per person: ~100 kg\n- Max. height: ~200 cm\n- Hip width must not exceed ~40 cm\n- Persons who cannot sit upright with legs extended may find it uncomfortable\n\n'**
+  String get kayakTourWeightContent;
+
+  /// No description provided for @kayakTourTipsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'💡 Insider Tips:\n'**
+  String get kayakTourTipsTitle;
+
+  /// No description provided for @kayakTourTipsContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Life jackets, splash guards & paddles included\n- No online reservation for kayak rental (arrive early!)\n- Weatherproof clothing & water strongly recommended\n- The view of waterfalls like \'The Seven Sisters\' from the kayak is particularly impressive\n'**
+  String get kayakTourTipsContent;
+
+  /// No description provided for @viewpointsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🏞 Breathtaking Viewpoints & Hiking Trails'**
+  String get viewpointsTitle;
+
+  /// No description provided for @viewpointsIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore the most spectacular viewpoints and hiking trails around the Geirangerfjord – perfect for nature lovers, photography enthusiasts, and active travelers.\n\n'**
+  String get viewpointsIntro;
+
+  /// No description provided for @viewpointsOrnesvingenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🌄 Ørnesvingen – Eagle Road Viewpoint:\n'**
+  String get viewpointsOrnesvingenTitle;
+
+  /// No description provided for @viewpointsOrnesvingenContent.
+  ///
+  /// In en, this message translates to:
+  /// **'On the famous “Eagle Road” (Ørnevegen) you’ll find one of the most iconic views of the fjord-like Geirangerfjord. The road winds steeply with many hairpin bends, and the viewpoint at the top offers a panoramic view of the fjord, Geiranger, and waterfalls like \'The Seven Sisters.\' Ideal for photos or a picnic with a view.\n\n'**
+  String get viewpointsOrnesvingenContent;
+
+  /// No description provided for @viewpointsFlydalsjuvetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'📸 Flydalsjuvet – Postcard View:\n'**
+  String get viewpointsFlydalsjuvetTitle;
+
+  /// No description provided for @viewpointsFlydalsjuvetContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Flydalsjuvet is one of Norway’s most popular viewpoints – about 4 km from the center of Geiranger. From a small platform you get the classic view of the fjord landscape and the village of Geiranger below. This spot is especially spectacular at sunrise or sunset and perfect for photography.\n\n'**
+  String get viewpointsFlydalsjuvetContent;
+
+  /// No description provided for @viewpointsDalsnibbaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🌍 Dalsnibba & Geiranger Skywalk:\n'**
+  String get viewpointsDalsnibbaTitle;
+
+  /// No description provided for @viewpointsDalsnibbaContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Situated over 1,500 m above sea level, Dalsnibba is one of the highest and most impressive viewpoints in the region. The road up passes through magnificent landscapes, and from the top you can see over the fjord to snow-capped peaks. The Geiranger Skywalk – a glass-bottom platform – lets you almost float above the landscape and offers a unique wide view.\n\n'**
+  String get viewpointsDalsnibbaContent;
+
+  /// No description provided for @viewpointsHikesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🥾 Hiking Trails – Immersive Nature Experience:\n'**
+  String get viewpointsHikesTitle;
+
+  /// No description provided for @viewpointsHikesContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Skageflå hike: Combines boat and hiking experiences: A boat takes you to the starting point, from where a path leads to abandoned mountain farms, including spectacular fjord views and historic landscapes.\n- Viewpoint hikes: Small trails along the viewpoints allow detours to photo spots directly above the fjord.\n\n'**
+  String get viewpointsHikesContent;
+
+  /// No description provided for @viewpointsPackingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'👟 Packing List for Hikers:\n'**
+  String get viewpointsPackingTitle;
+
+  /// No description provided for @viewpointsPackingContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Sturdy, non-slip hiking shoes\n- Weatherproof jacket (wind & rain)\n- Water and snacks\n- Camera for panoramic shots\n\n'**
+  String get viewpointsPackingContent;
+
+  /// No description provided for @viewpointsTipsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'💡 Insider Tips:\n'**
+  String get viewpointsTipsTitle;
+
+  /// No description provided for @viewpointsTipsContent.
+  ///
+  /// In en, this message translates to:
+  /// **'- Allow enough time for each viewpoint – many spots are very photogenic and worth multiple visits.\n- Combine viewpoint stops with short walks or hikes for different perspectives.\n- Dalsnibba can be cool and windy even in summer – warm layers recommended.\n'**
+  String get viewpointsTipsContent;
+
+  /// No description provided for @culinaryChocolateTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🍫 Geiranger Sjokolade – Handmade Chocolate & Waffles with Fjord View'**
+  String get culinaryChocolateTitle;
+
+  /// No description provided for @culinaryChocolateContent.
+  ///
+  /// In en, this message translates to:
+  /// **'At Geiranger Sjokolade you’ll find handmade chocolate, chocolate waffles, and hot chocolate – perfect for a sweet break after a tour or hike.'**
+  String get culinaryChocolateContent;
+
+  /// No description provided for @culinaryLocalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🍲 Local Specialties'**
+  String get culinaryLocalTitle;
+
+  /// No description provided for @culinaryLocalContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Fresh fjord fish like salmon or trout – served fresh, ideal for an authentic Norwegian experience.'**
+  String get culinaryLocalContent;
+
+  /// No description provided for @culinaryCafeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'☕ Café Tip'**
+  String get culinaryCafeTitle;
+
+  /// No description provided for @culinaryCafeContent.
+  ///
+  /// In en, this message translates to:
+  /// **'CaféOlé – Charming café in the center of Geiranger, perfect for coffee, cake, or a light snack.'**
+  String get culinaryCafeContent;
+
+  /// No description provided for @culinaryRestaurantTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🍽️ Restaurant with a View'**
+  String get culinaryRestaurantTitle;
+
+  /// No description provided for @culinaryRestaurantContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Hotel Union Geiranger – The restaurant offers traditional Norwegian cuisine with fresh fjord fish and fantastic views over the fjord.'**
+  String get culinaryRestaurantContent;
+
+  /// No description provided for @campingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🏕️ Camping & Accommodation – Experience Nature Up Close'**
+  String get campingTitle;
+
+  /// No description provided for @campingSiteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'⛺ Geiranger Camping – In the Heart of the Fjord'**
+  String get campingSiteTitle;
+
+  /// No description provided for @campingSiteContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Right in the center of Geiranger, close to the water, lies the classic Geiranger campsite. You’ll find pitches for motorhomes, caravans, and tents – with or without electricity. Modern sanitary facilities, waste disposal, laundry, Wi-Fi, and a reception with a small kiosk are available. The village and fjord shore are just a few minutes away.'**
+  String get campingSiteContent;
+
+  /// No description provided for @campingHotelTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'🛏️ Hotel Union Geiranger – Comfort & Fjord View'**
+  String get campingHotelTitle;
+
+  /// No description provided for @campingHotelContent.
+  ///
+  /// In en, this message translates to:
+  /// **'Hotel Union Geiranger is one of the most famous addresses right on the fjord. With cozy rooms, a wellness area, restaurant, and fantastic water views, it’s a comfortable alternative to camping – perfect for a stylish getaway.'**
+  String get campingHotelContent;
+
+  /// No description provided for @campingTipTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'📅 Planning Tip'**
+  String get campingTipTitle;
+
+  /// No description provided for @campingTipContent.
+  ///
+  /// In en, this message translates to:
+  /// **'During the high season (June–September), pitches and rooms are in high demand. Booking in advance is recommended, especially if you want to stay right at the fjord.'**
+  String get campingTipContent;
+
+  /// No description provided for @nordwijk.
+  ///
+  /// In en, this message translates to:
+  /// **'Our weekend in Noordwijk in June 2023 was a really beautiful short trip to the Dutch coast 🌊☀️. We had been thinking about where we could celebrate my mom’s birthday, and a colleague recommended Noordwijk to us. The journey on Friday was already relaxed, and the anticipation grew with every kilometer 🚗✨.\n\nWhen we arrived, we spontaneously looked for a hotel and eventually ended up at the ‘de Baak Seaside’ hotel – and we even had a sea view from our room. It was such a wow feeling: the ocean right in front of us, the fresh air, and that calmness you immediately feel 🏨💛.\n\nAfter checking in, we went for a walk. Noordwijk felt like a quieter, less crowded version of Scheveningen – exactly what we were looking for. The atmosphere was relaxed, and the dunes and beach were so wide and peaceful 🌊🚶‍♂️.\n\nIn the evening, we discovered the restaurant ‘Mimmo’ and went there for dinner. The Italian cuisine was absolutely incredible – fresh, aromatic, and very cozy. I still remember it clearly: I had a salami pizza with burrata. This new pizza creation was so unbelievably good that I was honestly speechless – the best pizza ever. I would order it again immediately. After dinner, we went for another short walk before heading back to the hotel and ending the evening quietly.\n\nOn Saturday, we went to The Hague 🏛️. We explored the city, strolled through the streets, and really enjoyed the historic atmosphere. For lunch, we had Dutch fries with Joppie sauce – a snack that perfectly matched the day 🍟.\n\nIn the evening, we returned to Noordwijk and ate at ‘Mimmo’ again – a nice ending after a long day in the city. After that, we went back to the hotel tired but happy.\n\nOn Sunday morning, we unfortunately had to leave again. Before heading home, we had pancakes at the ‘Pannekoekenhuisje Noordwijk’ at 12 o’clock 🥞. I had the ‘Italiano’ pancake with pesto, tomatoes, mozzarella, and arugula – and it was truly the perfect ending: 10/10.\n\nNoordwijk completely impressed us with its calmness, the sea, and all the beautiful moments – and we all agreed: if we come back, definitely again to ‘de Baak Seaside’ and of course to ‘Mimmo’. This weekend remains a wonderful memory of the North Sea 💛🌊.'**
+  String get nordwijk;
+
+  /// No description provided for @titleNordwijk.
+  ///
+  /// In en, this message translates to:
+  /// **'Birthday weekend at the North Sea 🌊🎉'**
+  String get titleNordwijk;
+
+  /// No description provided for @titleScheveningen.
+  ///
+  /// In en, this message translates to:
+  /// **'Our little getaway by the sea 🌊✨'**
+  String get titleScheveningen;
+
+  /// No description provided for @scheveningen.
+  ///
+  /// In en, this message translates to:
+  /// **'Our weekends in Scheveningen feel like little mini getaways from everyday life 🌊☀️. We simply go to the sea for one or two days, enjoy the fresh air, and soak in the relaxed beach atmosphere. It feels perfect, especially in summer or on sunny weekends.\n\nA typical day starts with a peaceful walk along the promenade. The waves are crashing, seagulls are flying by, and the sun reflects on the water – simply beautiful 🚶‍♀️🌅. While walking, we often stroll past the small stands and grab the famous Dutch fries with all kinds of toppings 🍟.\n\nOf course, a visit to one of the beach restaurants is also a must. We like to sit right by the water, enjoy fresh fish or a small meal, and simply relax 🐟🍴. I especially love the atmosphere at the pier and the little shops offering typical Dutch snacks.\n\nAnd what is always part of our trips: pancakes! 🥞 We love going to small cafés or pancake houses, trying different sweet or savory variations, and just enjoying the cozy atmosphere 😋.\n\nOur weekends in Scheveningen are so relaxing that time just flies by. We walk along the beach, watch people, enjoy the sunshine, and treat ourselves to little snacks along the way. For us, these mini getaways are a real highlight – pure relaxation, sea, sun, and great food 💛🌊.'**
+  String get scheveningen;
+
+  /// No description provided for @titleMallorca.
+  ///
+  /// In en, this message translates to:
+  /// **'A dream vacation on the island of diversity 🌴🏖️'**
+  String get titleMallorca;
+
+  /// No description provided for @mallorca.
+  ///
+  /// In en, this message translates to:
+  /// **'Mallorca is not just a holiday destination for us 🌴☀️. The island has been part of our lives for as long as we can remember, and every time we return, it feels a little like coming home. I, Katharina, was here for the first time when I was only six months old – and since then, we’ve been to Mallorca countless times. Even as a child, I always said I wanted to move to Mallorca one day – for me, the island was never just a travel destination, but always a place I felt I belonged to. There are hardly any places where so many memories have been collected as here ❤️.\n\nWe have experienced Mallorca in many different stages of life: as a child, as a family, and later more consciously, paying attention to the details. Some places have stayed the same, others have changed – but that special feeling is still there. Even the drive across the island, no matter in which direction, always feels like a little adventure 🚗💨. Coastal roads, spontaneous stops at viewpoints, hidden coves – there is always something new to discover.\n\nOne experience that has stayed with us until today was the safari zoo near Cala Millor 🦓🦒. I once had a monkey sitting on my shoulder there – and nobody even said anything 😅. Back then, it just felt normal, relaxed, and a little bit crazy. Moments like that stay with you.\n\nThe Cuevas del Drach in Porto Cristo are also part of our core memories 🏰🌊. We have been there several times, and each visit is just as impressive as the first. The huge stalactite caves, the lighting, the underground lake – it always feels special, no matter how often you’ve seen it.\n\nHowever, Mallorca was not always just easy and carefree for us. One very defining moment was when I suddenly developed breathing difficulties at around nine months old and we had to go to the hospital in Manacor 🏥. Armed security at the entrances, crowded corridors, an old hospital atmosphere – for my parents, it must have been a shock. Fortunately, I was treated quickly, we were only there for about an hour, and despite everything, we felt well taken care of. The German-speaking doctors and structured procedures gave a lot of reassurance at the time.\n\nAnother very personal experience connects us with El Arenal 🖤. Near the Megapark, we got a tattoo done at Mystic Tattoo Beach – only about a 15-minute walk away. Professional, relaxed, and exactly the right place for a lasting memory. That tattoo is now just as much a part of our Mallorca as the beach, sun, and sea.\n\nWe have reached Mallorca in different ways ✈️🚗. Most of the time by plane, but once also by car to Barcelona and then by ferry to the island. On the way back, we traveled with Balearia – more modern, more relaxed, and much more comfortable for us than GNV. Especially with a car, boarding and disembarking felt much less stressful.\n\nOf course, not everything always went smoothly 😅. Once we just wanted to stop briefly on a cliff to take a photo. A beach club nearby, a short distraction – and boom: a parking ticket. Mallorca is forgiving, but you really have to be careful where you park.\n\nSome of the places that always feel right for us include Port de Sóller with its special atmosphere, Camp de Mar with its clear water, Playa del Morro with its calm, shallow sea, the long promenade at Playa de Palma, and the small harbor of Porto Cristo 🌊🏖️🍽️. They are not hidden secrets – but places we always love coming back to.\n\nMallorca is not an island you simply “check off” 🌺. It changes, just like we do. And maybe that is exactly why we always feel so at home there. Mallorca is simply part of our story – and will probably always remain so ❤️🏡.'**
+  String get mallorca;
+
+  /// No description provided for @titleGenua.
+  ///
+  /// In en, this message translates to:
+  /// **'A sunny weekend in Genoa 🇮🇹☀️'**
+  String get titleGenua;
+
+  /// No description provided for @genua.
+  ///
+  /// In en, this message translates to:
+  /// **'Our weekend in Genoa at the end of August 2024 started in a very relaxed way 🚗☀️.\n\nOn Thursday evening, we first made our way to Bavaria to visit an acquaintance. From there, we continued together early on Friday morning towards Italy. The drive from Bavaria to Genoa took about seven hours – and it could hardly have been more beautiful. The route took us through Switzerland, in perfect weather, with stunning landscapes and lots of anticipation along the way 🏔️✨.\n\nWe arrived in Genoa around midday and checked into our holiday apartment. It was really beautiful and perfect for our weekend. The only small adventure was parking 🚙😅 – everything was very full, so we always had to park the car a bit further away. But with a short walk, that worked out just fine.\n\nOn Friday evening, we went straight to the harbor 🌊🌅. The atmosphere there was typically Italian: lively, warm, and simply beautiful. There were stalls, lights, children’s attractions like a small bouncy castle area, and everywhere that special holiday feeling. We strolled along the water, went out for dinner, and enjoyed the sunset. A perfect first evening, completely stress-free.\n\nSaturday started with a real highlight ☀️🏖️. We spent about four hours at the beach. There were several private beach clubs lined up – each with its own sunbeds, umbrellas, bars, and some even with pools. We chose one with a pool so we could switch between the sea and the pool 💦. A special highlight was the large trampoline floating on the water – pure fun!\n\nAfter our beach morning, we went back to the apartment. Showered, got ready, and took a short break before heading out again in the afternoon 🚿✨. This time, we really explored Genoa – not just the harbor, but also the beautiful newer part of the city. Of course, we couldn’t miss some Italian ice cream 🍦🇮🇹. We wandered through small alleys, discovered cute shops, and those typical charming streets you only find in Italy. In the newer district, we came across a fountain surrounded by impressive buildings. As the sun began to set, everything was bathed in warm golden light ✨. That moment was simply magical and remains one of our most special memories.\n\nOn Sunday, we started our journey home 🛣️. On the way back, we made a culinary stop in Austria and enjoyed delicious Austrian schnitzel and Kaiserschmarrn 🍽️🤤 – absolutely 10 out of 10! Refreshed and satisfied, we continued our way home. Genoa was the perfect weekend destination for us: relaxed, sunny, full of Italian flair, and filled with beautiful moments 💛🇮🇹.'**
+  String get genua;
+
+  /// No description provided for @genoa.
+  ///
+  /// In en, this message translates to:
+  /// **'Genoa'**
+  String get genoa;
+
+  /// No description provided for @vienna.
+  ///
+  /// In en, this message translates to:
+  /// **'Vienna'**
+  String get vienna;
+
+  /// No description provided for @titleWien.
+  ///
+  /// In en, this message translates to:
+  /// **'Vienna – elegance, history & indulgence 🇦🇹✨'**
+  String get titleWien;
+
+  /// No description provided for @wien.
+  ///
+  /// In en, this message translates to:
+  /// **'Vienna – this city has simply enchanted us. We have now been here three times, and every single visit has fascinated us in a different way ✨.\n\nOur first time in Vienna was just my mom and me. We flew there and had plenty of time to explore everything at a relaxed pace. We didn’t miss a single landmark: from St. Stephen’s Cathedral, along the Ringstrasse with its magnificent buildings, to the Hofburg Palace and of course the Sisi Museum 👑. The story of Empress Elisabeth especially fascinated us – how a young woman lived between duty, wealth, and expectations was incredibly moving. One of the highlights was our hop-on hop-off bus tour 🚌, which gave us a great overview of the entire city. Everything felt so lively, elegant, and at the same time so cozy. In between, we naturally went shopping 🛍️ and simply let ourselves drift through the city. From the very beginning, Vienna completely amazed us 💛.\n\nThe second time, we traveled with my grandmother and great-grandmother. This time we went by car 🚗 and had just as much fun. A special highlight for my grandmother was the horse-drawn carriage ride through Vienna 🐴 – we rode through historic streets, past baroque buildings, and across magnificent squares. We also visited the Sisi Museum again because we simply couldn’t miss it. Shopping was, of course, part of the trip again – Vienna is perfect for it. In between, we always took time to enjoy the city’s atmosphere, its coffee houses, architecture, and music 🎶.\n\nOur third visit to Vienna was in December 2024 because we had heard that Vienna is magical during Christmas time 🎄✨. And we were not disappointed: the Christmas market at the City Hall was absolutely breathtaking. Everywhere were lights, festive decorations, handmade stalls, and the warm scent of mulled wine and roasted almonds – we were enchanted. This time we went by car again and still managed to see everything we wanted. Although we didn’t visit the Sisi Museum this time, we experienced the city in its winter mood: Schönbrunn Palace, the Ringstrasse, and St. Stephen’s Cathedral all looked even more beautiful in the glow of the lights. Of course, the typical Viennese sweets couldn’t be missed either: Manner wafers 🍫 and Mozartkugeln 🍬 were happily bought and enjoyed.\n\nWhat makes Vienna so special for us is this unique mix of history, elegance, coziness, and joie de vivre. You can feel the city in its historic buildings, in the stories of Sisi, and in its magnificent palaces – and yet still enjoy life in its small cafés, at Christmas markets, or simply while strolling through the streets. Every visit has enchanted us a little more, and whether in summer or winter, Vienna will always remain a city full of emotions, memories, and magical moments 🖤✨.'**
+  String get wien;
+
+  /// No description provided for @rome.
+  ///
+  /// In en, this message translates to:
+  /// **'Rome'**
+  String get rome;
+
+  /// No description provided for @titleRome.
+  ///
+  /// In en, this message translates to:
+  /// **'Rome - the Eternal City 🇮🇹✨'**
+  String get titleRome;
+
+  /// No description provided for @rom.
+  ///
+  /// In en, this message translates to:
+  /// **'Rome – this city is simply magical. For us, Rome is definitely one of our absolute favorite cities in Europe – if not even number one. We have already been there many, many times, and every single time we discover something new. Rome is a city that never gets boring, no matter how often you’ve visited. Everywhere you find small alleyways, hidden squares, impressive churches, and monuments that tell stories from centuries past 🏛️✨.\n\nWith every trip to Rome, we have a fixed program. Of course, St. Peter’s Basilica ⛪ is always part of it. We are fascinated every time by its size, its architecture, its incredible details, and the atmosphere inside this massive building. We always go up to the dome – the view from the top is breathtaking! You can see the entire city, the sun reflecting on Rome’s rooftops, and you feel like you could stand there forever, simply taking in the city. Especially at sunset 🌅 – when the light turns St. Peter’s Square into warm colors, everything feels almost magical.\n\nOf course, the Colosseum 🏟️ is also a must. Every time we enter, we are fascinated by its history: gladiators, ancient games, the stands that have survived thousands of years. It is especially impressive at night ✨, when it is illuminated – it feels like a living monument, telling stories of courage, excitement, and entertainment.\n\nAnother highlight is the Trevi Fountain 💦. Every time, we throw at least one coin into it, with the firm belief that we will return to Rome – and so far, it has always worked! The crowds around the fountain may be large, but the feeling this place gives you is truly unique. The water sparkles in the light, and every glance at the fountain makes you forget everything else for a moment.\n\nBeyond these major sights, we love simply wandering through the city. The small streets, the piazzas 🏙️, the cafés where you can enjoy an espresso or gelato, all make Rome feel so alive and charming. Every time, we discover new corners, small shops, beautiful fountains, or ancient statues that we might have missed on our first visit.\n\nBut Rome is not just about sightseeing – it is a feeling of life ❤️. The food, the people, the music in the streets, the smell of fresh bread or pizza – all of this together makes the city unforgettable. We love letting ourselves drift, sitting in small alleys in the evening, watching the city at night, and simply feeling how alive Rome is.\n\nEvery trip to Rome is a little adventure. We have already spent several days in the city, and it is never enough to see everything. But that is exactly the beauty of it: there is always something new to discover. A new angle of St. Peter’s Basilica, a different view of the Colosseum, a café we have never noticed before – Rome surprises us every time again.\n\nWe already know now: Rome will always be a city we want to return to. It combines history, beauty, culture, and joy of life in a way that hardly any other city can. Every time we leave, we don’t just take photos and souvenirs with us – we take memories and moments full of magic and emotion that always bring a smile to our faces 😍🇮🇹.'**
+  String get rom;
+
+  /// No description provided for @titleParis.
+  ///
+  /// In en, this message translates to:
+  /// **'Between the Seine and dreams 🌉💫'**
+  String get titleParis;
+
+  /// No description provided for @paris.
+  ///
+  /// In en, this message translates to:
+  /// **'Paris – this city enchants us every single time ✨🇫🇷.\n\nWe’ve been here so often that we can no longer count the visits on both hands – and yet, in Paris you always discover new corners, new moods, and new little magical moments. Every time we wander through the streets, admire the squares, or stroll along the Seine, we feel that special rhythm that makes Paris so unique. The blend of history, art, elegance, and life – it simply pulls you in.\n\nWe often combine our Paris trips with a visit to Disneyland Paris 🎢🏰. A magical addition, full of nostalgia and childhood memories – but the city itself always remains our heart.\n\nOne of the moments that leaves us speechless every single time is the view from the Eiffel Tower ✨. Anyone visiting Paris should go up at least once – the panorama is incomparable. Below you, the rooftops of the city unfold, along with parks, boulevards, and the Seine… and on very clear days, you can even glimpse the shimmering sea of the Côte d’Azur in the distance. A moment that feels like floating above Paris.\n\nIt becomes especially magical at sunset 🌅. The city turns golden, the sky glows, and as night falls, the Eiffel Tower begins to sparkle. Every full hour, it lights up for about five minutes – a sight that gives us goosebumps every time. This glittering nighttime Paris is simply unmatched.\n\nThe Champs-Élysées is, of course, a classic: elegant flair, shop windows full of luxury, the scent of pastries, street performers, and the lively buzz of the city 💫. But it’s usually the small side streets that excite us most. Tiny bookshops, cafés with decades of history, small boutiques we discovered on our very first visits – places that keep drawing us back.\n\nWe love exploring the Seine most from the water 🚤💙. An evening boat ride while the city is bathed in light is one of the most magical experiences for us. When the bridges reflect in the water and the Eiffel Tower sparkles in the distance, you feel a rare sense of calm in the middle of this vibrant city. We often just sit quietly, watch the water, and enjoy the moment.\n\nCulture is always part of it for us.\n\nThe Louvre fascinates us every time – not only because of the Mona Lisa, but because of the incredible diversity of art you feel in every room 🎨.\n\nNotre-Dame, even while still being rebuilt after the fire, radiates impressive history and beauty.\n\nAnd the Arc de Triomphe – we’ve photographed it from every possible angle. An impressive monument standing proudly in the middle of Place Charles-de-Gaulle.\n\nSmall Paris tip (and warning 😉):\n\nMany people like to step onto the roundabout at the Arc de Triomphe for photos to get perfect shots without crowds.\n\nIf you do that: be careful!!!\n\nParis drivers do what they want – fast, spontaneous, and not always very considerate. So it’s better to look ten times before stepping out rather than once too little.\n\nThat also applies to driving in Paris in general 🚗💨.\n\nParisians often turn two-lane roads into three, cut in, honk, and rarely drive defensively. Just drive carefully and always expect surprises.\n\nBut for us, Paris truly lives through the small, unplanned moments 💛.\n\nA freshly baked croissant in the morning 🥐, the smell of coffee in a side street ☕, street musicians playing with soul, spontaneous discoveries on walls, in courtyards, or at small markets. In the evening, when the city glows in warm light, the boulevards shine, and the Seine sparkles, we love to keep walking, discover small cafés, or simply stop and take in the atmosphere.\n\nParis never sleeps – and that is exactly what makes it so special 🌙✨.\n\nWe always come back, always discovering something new.'**
+  String get paris;
+
+  /// No description provided for @titleLondon.
+  ///
+  /// In en, this message translates to:
+  /// **'London – history, royals & big-city vibes 🇬🇧✨'**
+  String get titleLondon;
+
+  /// No description provided for @london.
+  ///
+  /// In en, this message translates to:
+  /// **'London – a city that perfectly combines history, tradition, and modern metropolis life 🇬🇧✨.\n\nI travelled there with my mum for three or four days to really explore the city. London has a very special atmosphere: old, majestic buildings stand side by side with modern skyscrapers, and everywhere you can feel the city’s history while also sensing its vibrant, fast-paced energy.\n\nOur first stop was the London Eye 🎡. Even while waiting in line, there was this excitement building up – the view over the River Thames, Big Ben, and the Houses of Parliament was simply breathtaking. Once at the top, we could see the entire city: red double-decker buses, black taxis, green parks – it looked like a giant, living puzzle. That moment really set the perfect London mood for us.\n\nOf course, Big Ben 🕰️ was a must-see. Standing in front of this landmark has a very special feeling. Majestic and calm, it has been overlooking the city for centuries, surviving all the hustle and bustle around it. We took many photos, but it felt like more than just a snapshot – it was like touching a piece of history.\n\nTo get to know London properly, we took a hop-on hop-off bus tour 🚌. It was perfect for exploring the city in a relaxed way, seeing the main sights, and hopping on and off whenever something caught our attention. We passed the Tower of London, Tower Bridge, Buckingham Palace 👑, and Westminster Abbey. Every time we got off, we went for small walks, discovered cafés, or simply absorbed the atmosphere.\n\nOf course, shopping 🛍️ was part of it too – a bit of souvenir hunting, some small keepsakes, and typical British snacks. London has so many little shops where you could easily spend hours. And the colourful street markets we found along the way had a very special vibe – lively, loud, and still somehow charming.\n\nDespite all the highlights, we have to be honest: London didn’t completely enchant us. The city is huge, the crowds can be overwhelming, and in some areas it feels quite hectic. Especially places like Piccadilly Circus or Oxford Street felt a bit too crowded at times. Still, it was fascinating to feel the history of London – centuries-old buildings, stories of kings and queens, battles, wars, and political events that shaped the city into what it is today.\n\nOne special moment was our evening walk along the Thames 🌊. The city lights reflected on the water, a gentle breeze was blowing, and for a moment we could leave the rush behind us. We realised: London is a city you might not fall in love with immediately, but it grows on you when you take the time to notice the small details.\n\nWe even talked about how beautiful it would be to visit London during Christmas time 🎄✨. The streets are supposed to be beautifully lit, Christmas markets are everywhere, and the city must have a completely different, magical charm. That’s definitely a plan for the future!\n\nLondon made us curious. Not everything impressed us right away, but the city is full of stories, cultural experiences, and exciting moments. We saw the main highlights, experienced a lot, laughed, took photos, and got a real feeling for the city. And we know: next time, we might discover a completely different, more enchanting side of London 🖤🇬🇧.'**
+  String get london;
+
+  /// No description provided for @titleHamburg.
+  ///
+  /// In en, this message translates to:
+  /// **'Hamburg between habor vibes & heartfelt moments ⚓️💙'**
+  String get titleHamburg;
+
+  /// No description provided for @hamburg.
+  ///
+  /// In en, this message translates to:
+  /// **'Hamburg – our absolute favorite city in Germany after Cologne ❤️🇩🇪. Every time we come to Hamburg, we immediately feel at home – so familiar, yet always new and exciting. Hamburg is simply a dream, beautifully located by the water, with its harbor, the Elbe canals, and that special northern German charm. We’ve been here so many times that you can hardly count them on two hands – whether before a cruise or just to enjoy a weekend in the city 🛳️✨.\n\nA musical is a must on every Hamburg trip 🎭. We simply love musicals, and Hamburg is the perfect place for them. We’ve already seen so many: Mary Poppins, The Lion King, Frozen, & Juliet, and many more. Every time it’s a special experience – the music, the costumes, the atmosphere in the theater. For the future, we’re already planning to see Harry Potter on our next trip – we’re really looking forward to it!\n\nOf course, a hop-on hop-off bus tour 🚌 is also part of every visit. It gives you a wonderful overview of the city, helps you discover new places, experience the architecture, and hop on and off wherever you like. Whether it’s the Landungsbrücken, Speicherstadt, or the Elbphilharmonie – it’s simply great to explore the city from this perspective.\n\nBut Hamburg is not just about musicals and sightseeing. Walking along the harbor is a must for us. The sound of the water, the ships, the cranes, the seagulls – it just makes you feel alive. The Elbphilharmonie 🎶 is another highlight: we love going up and enjoying the view over the harbor and the city. A walk through the old Elbe Tunnel is also always part of our plan.\n\nOf course, food is a big part too 😋. Anyone visiting Hamburg should definitely go to the Blockbräu brewery 🍺 at the Landungsbrücken – delicious, rustic, and right by the water. For something sweet, the Cinnaversum in the Westfield shopping center 🥐 is a dream: Franzbrötchen with cinnamon cream or other toppings – an absolute must for anyone with a sweet tooth like us. The Westfield itself is also very modern, large, and perfect for strolling.\n\nA harbor boat tour 🚤 is another highlight you shouldn’t miss. It lets you experience the city from the water and see everything from a completely new perspective. And if you’re in Hamburg, you should definitely walk along the Reeperbahn – even if it gets quite lively and loud in the evening, it’s simply part of Hamburg.\n\nHamburg also has amazing festivals: Spring Dome, Summer Dome, Autumn Dome, and Winter Dome 🎡 – always an experience. The lights, the rides, the smell of cotton candy and roasted almonds, the cheerful atmosphere – that’s Hamburg at its best!\n\nFor accommodation, we can highly recommend a few hotels 🏨:\n• Holiday Inn Berliner Tor – perfect for the night before a cruise, practical and central.\n• Hafenhotel Hamburg – right by the harbor, ideal for anyone who loves the maritime vibe.\n• Acotel Onyx – right on the Reeperbahn, modern and central, perfect for a lively Hamburg trip.\n\nFor us, Hamburg is more than just a city. It’s a feeling of freedom, adventure, and at the same time, a sense of home. The combination of water, culture, musicals, great food, and exciting neighborhoods makes every visit unforgettable. We already know: no matter how often we come back – Hamburg will always inspire us and draw us in 🌊❤️✨.'**
+  String get hamburg;
+
+  /// No description provided for @titleBerlin.
+  ///
+  /// In en, this message translates to:
+  /// **'Berlin - a city that always feels new ❣️✨'**
+  String get titleBerlin;
+
+  /// No description provided for @berlin.
+  ///
+  /// In en, this message translates to:
+  /// **'Berlin is not a city you visit once and then check off your list. Berlin is a place we keep coming back to. We’ve been here countless times – at different times and in different phases of life – and each time, Berlin has felt a little different. And that’s exactly what makes this city so special.\n\nWhen we think of Berlin, we immediately think of that unique big-city feeling. Wide streets, historic buildings next to modern architecture, people from all over the world – and that unmistakable Berlin vibe. One of our regular stops is always Kurfürstendamm 🛍️. Walking along it, looking into shop windows, grabbing a coffee, and simply watching life go by is just part of the experience for us. And of course, KaDeWe 🏬 is a must – a true Berlin original. This department store is more than just a place to shop. It stands for elegance, history, and the spirit of old West Berlin. Especially the famous gourmet floor is a highlight every single time 😍.\n\nWhen it comes to sightseeing, we like to take it easy. That’s why we’ve done a hop-on hop-off bus tour 🚌 several times – one of our favorite ways to explore Berlin. You sit comfortably, hear interesting stories, hop on and off whenever you like, and get a great overview of the city. From the Reichstag to Potsdamer Platz, past the Victory Column 🏛️ all the way to the Brandenburg Gate 🇩🇪 – Berlin passes by while telling its story.\n\nThe Brandenburg Gate is always a special moment for us. Especially at sunset 🌅, when the light softens and the city seems quieter for a brief moment. Hardly any place represents German history as strongly as this one. Closely connected to it is the history of the Berlin Wall 🧱 – a story you don’t just read about in Berlin, you feel it. The wall divided families, friends, and entire lives for decades. Today, remnants of the wall, memorials, and small details throughout the city remind us how valuable freedom is. Every walk along these places makes you reflect – and feel grateful.\n\nOf course, the TV Tower 🗼 is also a must. You can see it from almost everywhere in Berlin, like a quiet point of orientation. Around Alexanderplatz, life is bustling, and at the same time, you realize how diverse this city is. Not far from there is Checkpoint Charlie 📍 – another place that makes the division of Berlin visible and history tangible.\n\nBut for us, Berlin is not just about history and sightseeing. We also associate the city with special experiences: visits to the Babelsberg Film Studios 🎬, spontaneous trips to Tropical Islands 🌴, or simply wandering aimlessly through different neighborhoods, discovering small cafés, parks, or quiet courtyards.\n\nNot every visit to Berlin has been the same. Especially in 2020, the city moved us deeply. The number of homeless people, the heavy atmosphere in some places – it made us very thoughtful and briefly changed how we saw Berlin. It was a side of the city that made us sad.\n\nAll the more beautiful it was to return to Berlin in August 2025 💫. Our weekend trip and our stay at the Maritim ProArte Hotel Berlin showed us: Berlin feels different again. Lively, open, warm. The city felt welcoming again, full of energy and joy for life – almost like we used to love it.\n\nBerlin has many faces. It is loud and quiet, historic and modern, sometimes rough, but always honest. And maybe that’s exactly what keeps drawing us back 🖤.\n\nToday we know: no matter how often we’ve been here – Berlin is never “finished.” It remains a city full of stories, memories, and new moments waiting to be experienced.'**
+  String get berlin;
+
+  /// No description provided for @titleCotedazur.
+  ///
+  /// In en, this message translates to:
+  /// **'Glamour, sea, and unforgettable moments 🌊✨'**
+  String get titleCotedazur;
+
+  /// No description provided for @cotedazur.
+  ///
+  /// In en, this message translates to:
+  /// **'Our very special road trip along the Côte d’Azur began in 2021 – two weeks full of sunshine, sea, charming towns, and memories that deeply touched our hearts. Our base was the Splendid Hotel & Spa in Nice, perfectly located to explore the Riviera day by day. Looking back, we would do it differently next time: instead of driving back to Nice every day, we would choose multiple hotels along the coast – a few days here, a few days there. Flexible, relaxed, and exactly how a road trip along the Côte d’Azur should feel. ✨🌊\n\nNice itself enchanted us immediately with its typical French charm. The Promenade des Anglais invites you to take walks right by the water, while the old town bursts with life through its colorful houses, small cafés, street musicians, and charming alleys. Right at our hotel, we went parasailing – an absolute highlight! The start from the rocky beach was a bit tricky, as you had to run over a carpet laid across the stones, but once we lifted off, it was simply magical. Floating above the turquoise sea and seeing Nice from above was a moment full of freedom. Next time, we’d love to try parasailing from a boat – that will probably be even better. 🪂💙\n\nFrom Nice, we enjoyed breathtaking views every single day of small bays and colorful places that looked like they were painted. Cannes was one of the unforgettable stops: the famous Croisette with its palm trees, luxury hotels, yachts, and that unmistakable glamour – it felt like being on a movie set. The small Musée de la Castre on the hill offered peace and history in the middle of all the buzz.\n\nNext stop: Monaco – pure glamour. We stood for what felt like hours at Casino Square, watching the luxury cars pass by. And the best part: parking was surprisingly cheap! For several hours, we paid just one euro – in Monaco! We treated ourselves to delicious burgers at “Shake Shack” and later sat at the legendary “Café de Paris.” A cola there isn’t exactly cheap, but the feeling – sitting outside, the view of the casino, the luxury cars passing by, the whole atmosphere – priceless. Pure Monaco vibes. 😍🚗✨\n\nSaint-Tropez showed itself as both glamorous and incredibly charming: an old town full of small boutiques, art stalls, and cafés, while huge yachts lined up in the harbor. For a special culinary experience, we went to the well-known “L’Opéra.” With a view of the water, we ordered pasta – and got black noodles. An experience… not quite our taste, but a funny memory we still laugh about today. 🖤🍝\n\nOne of the highlights was the drive to Saint-Raphaël. Normally, the route from Nice to Saint-Tropez takes about two hours, but we chose the coastal road – six hours in total! And every single minute was worth it. The sea always in sight, small bays, breathtaking views, and that feeling of freedom you only experience on coastal roads like this. Once in Saint-Raphaël, we spent relaxing hours at the sandy beach, walked along the water, and watched the sunset. Simply perfect. 🌅\n\nIn Antibes, we enjoyed Mediterranean liveliness: the “Aquasplash” water park was great fun, the old town had lots of charm, the small market offered variety, and the harbor delivered postcard-perfect moments. Fishing boats, yachts, small cafés – a mix of life and relaxation that you instantly fall in love with.\n\nWe drove our entire route directly along the coast. That way, the sea was always by our side, and we could stop spontaneously at viewpoints and beaches, just going with the flow. A small luxury of the hotel was the concierge service: whenever we needed the car, it was brought to us – and later parked again. No searching for parking, no stress – just enjoying the moment. 🚗✨\n\nCulinary-wise, the trip was just as amazing as the scenery: from the Hard Rock Café in Nice to small bistros, ice cream shops, crêpe stands, and more upscale restaurants in Cannes and Saint-Tropez – every place had its own unique taste and charm.\n\nThese two weeks on the Côte d’Azur were a perfect mix of beach, sightseeing, enjoyment, coastal vibes, freedom, and lots of heart. A journey full of memories that still stay with us today. Our tip for your next road trip: choose multiple hotels along the coast, stay flexible, and discover a new part of the Côte d’Azur every day. That way, the Riviera feels even freer, more authentic, and truly unforgettable. 💙🌴✨'**
+  String get cotedazur;
+
+  /// No description provided for @italy.
+  ///
+  /// In en, this message translates to:
+  /// **'Italy'**
+  String get italy;
+
+  /// No description provided for @it1Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Days 1–2: Our Italian start in Milan – art, ice cream & city charm 🏰🌟'**
+  String get it1Title;
+
+  /// No description provided for @it2Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 3: From Santa Margherita to Portofino – boats, charm & lemon vibes 🍋⛴️✨'**
+  String get it2Title;
+
+  /// No description provided for @it3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Days 4–6: Pisa, Rome & sunsets – Eternal City, Colosseum & Trevi magic 🇮🇹✨'**
+  String get it3Title;
+
+  /// No description provided for @it4Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Days 7–9: Sorrento, Amalfi & Capri – lemons, sea views & boat trips 🍋🌊✨'**
+  String get it4Title;
+
+  /// No description provided for @it5Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Days 10–12: Rimini, Venice & Lido di Jesolo – beach walks, canals & pool dreams 🌊🏖️✨'**
+  String get it5Title;
+
+  /// No description provided for @it1Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'At the end of August 2024, we started our big trip to Italy, planning to drive the full nearly twelve hours in one go – yes, really without major stops, just a short break in Switzerland 🌲⛅. That small stop, however, turned out to be a real highlight: a beautiful rest area built entirely out of wood, with lovely details, green trees all around, and an incredibly cozy atmosphere 🪵✨. We treated ourselves to an ice cream 🍦 – the only stop on the entire journey – and even that moment already felt like a little mini holiday before continuing towards Milan.\n\nIn the evening, we arrived in Milan 🏙️. As usual on our road trips, we spontaneously booked a hotel 🏨. Our room was perfectly located, just about a ten-minute walk from Milan Cathedral (Duomo di Milano). After checking in, we couldn’t wait to explore the city a bit.\n\nSeeing the cathedral at night was simply magical 😍⛪. It felt calm and empty, the lights bathed the Gothic façade in a warm glow, and all the details of the statues and towers truly stood out 🌌. We just stood there for a while, watching and taking in the atmosphere – so quiet, so beautiful, a perfect start to our Italy journey. Afterwards, we strolled through the Galleria Vittorio Emanuele II 🌟🛍️. Even at night, the passage radiated elegance, with its impressive glass roof and sparkling shop windows – a true sensory experience. Then we headed back to the hotel, tired but happy 😴💛.\n\nThe next morning, we started the day fresh. On the way to the cathedral, I treated myself to a vanilla-filled croissant 🥐🍮 – crispy on the outside, creamy inside, and so delicious it made the morning perfect. The cathedral was of course much busier than the evening before, but that didn’t matter – the atmosphere was still overwhelming 🏛️✨. We then walked through the Galleria Vittorio Emanuele II again, this time fully alive with crowds, tourists, and street musicians 🌆🎶 – a true Italian vibe.\n\nAt midday, we climbed the cathedral terrace 🏰⬆️. Once at the top, we were rewarded with a breathtaking view over Milan – red rooftops, narrow streets, tiny-looking people below, and the sun slowly sparkling over the city – a moment we will never forget 😍🌞. Afterwards, I enjoyed a rose-flavored ice cream at Café Dante 🌹🍨 – huge, creamy, and perfect after the climb.\n\nIn the evening, our journey continued towards a campsite near Santa Margherita, where we spent the night in the car 🚗💤. It was a bit tight, but after the exciting hours in Milan, we felt happy, content, and full of anticipation for the adventures ahead in Italy ✨🇮🇹.'**
+  String get it1Desc;
+
+  /// No description provided for @it2Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'After our night at the campsite in Santa Margherita, we woke up in the morning and immediately felt that special Italian calm 🌞. The birds were singing, the sun gently warmed the car, and we were ready for a new day full of discoveries. Before taking the ferry to Portofino, however, we treated ourselves to a relaxed lunch 🍝💛 – freshly made pesto pasta and a crispy baguette. Simply perfect to start the day feeling energized.\n\nAfter eating, we made our way to the harbor and boarded the small ferry to Portofino ⛴️🌊. Even during the crossing, we could already see the pastel-colored houses of the little coastal town on the horizon, and the boats gently rocking on the water created that typical Italian holiday feeling 🌈🚤. I have to say: Portofino enchanted us immediately.\n\nAs soon as we arrived, we wandered through the narrow, charming alleys 🏘️✨. Everywhere there were small shops with handmade souvenirs, colorful bracelets, and fresh lemon products 🍋. We sat down in a small café and treated ourselves to a really delicious milkshake 🥤💖, while watching the life around us. The mix of the sea, the pastel-colored facades, and the light scent of lemons in the air was simply magical 🌊🌞.\n\nWe continued strolling along the harbor promenade, admiring the small sailing and fishing boats, taking lots of photos 📸, and enjoying the calm, almost dreamy atmosphere. It was one of those moments where you simply take a deep breath, smile, and think: “I really want to come back here” 💛. In fact, we already decided that we will definitely visit Portofino again – so sweet, so idyllic, so perfect.\n\nIn the early afternoon, we took the ferry back to Santa Margherita before continuing our journey towards Rome 🛣️🚗. With every curve, every kilometer on the road, the excitement for the Eternal City grew, but at the same time, we still carried that small, sweet coastal adventure of Portofino with us. It was a day full of colors, scents, and Italian flair – exactly how you imagine Italian dreams 🇮🇹✨.'**
+  String get it2Desc;
+
+  /// No description provided for @it3Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'On the way to Rome, we made a short stop in Pisa 🌧️🚗. I have to be honest: we still don’t particularly like Pisa 😅. We’ve been here before, and once again the city didn’t really impress us. On top of that, it was lightly raining and I felt quite unwell on the way 🤢. Still, we wanted to stop – after all, Pisa is simply part of a real road trip through Italy. We spent about 45 minutes there, took a few photos, but everything was rather rushed.\n\nAfter Pisa, we got back in the car and quickly went grocery shopping 🛒. We picked up some typical Italian sweets and treats 🍬🍫 – a little comfort and some energy for the rest of the drive. On the way to Rome, I unfortunately started feeling even worse. The many mosquito bites I had gotten at the campsite in Santa Margherita had become severely inflamed 🦟🔥. My body reacted strongly, and I had to vomit several times. It sounds crazy, but after the last time, the mosquito bites actually felt much better 😅.\n\nBy evening, we finally arrived in Rome 🌇. Our hotel was perfectly central – just a five-minute walk from the Trevi Fountain 🏨✨. Because I was still slightly unwell, we only briefly visited the Trevi Fountain that evening, but it was already impressive despite being very crowded. After that, we went straight back to the hotel to rest a bit.\n\nThe next morning, I was feeling much better again 😊💪. Full of excitement, we headed to St. Peter’s Basilica ⛪🌞. Of course, we climbed the dome again – a must on every Rome visit! The view from the top over the city, the domes, rooftops, and the Vatican – absolutely breathtaking 😍. After that, we enjoyed a delicious lunch 🍝🥗 and then made our way to the Spanish Steps. Even though they were no longer decorated with flowers like in the past, this place remains a true classic of the city 🌸🪜.\n\nIn the evening, we really wanted to see the Trevi Fountain again 💦✨. Surprisingly, the fountain was already closed off because it was scheduled for cleaning the next day. However, we had the clever idea to simply step over the barrier – and it was absolutely worth it! We were almost alone at the fountain, able to take photos without interruption 📸❤️ and felt like we had the city to ourselves. Shortly after, other visitors started copying our idea – the police probably weren’t too happy about it 😅.\n\nLater that evening, we visited the Colosseum 🏛️🌙. At night, it looked even more magical than during the day. The impressive architecture, the lights, and the scent of the city – simply unforgettable. The next morning, we went back to the Colosseum again, this time during the day. On the way, we treated ourselves to a really delicious Colosseum ice cream 🍦🏟️ – a small tradition on every Rome visit. It’s simply a must to walk through the ancient walls and feel the history.\n\nAt sunset, we returned once more to St. Peter’s Basilica 🌇⛪. The sun bathed the city in golden light, the domes were glowing, and the atmosphere was simply magical. Afterwards, we drove about an hour outside of Rome to a small family-run hotel 🏨💛. It had only about 20 rooms, was very cozy, and was located right next to an outlet – perfect for our plan the next day.\n\nThe following day, we started full of excitement with a small shopping trip at the outlet 🛍️✨, before continuing our journey to Sorrento. It was a beautiful conclusion to our days in Rome, full of culture, magic, and unforgettable moments.'**
+  String get it3Desc;
+
+  /// No description provided for @it4Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'After our unforgettable days in Rome, our Italy trip continued further south – our destination: the beautiful Sorrento 🏖️🚗. We arrived at the hotel in the evening and were immediately amazed 😍. Even at check-in, we could feel that this hotel was something truly special. Our room was located all the way at the top, almost like a small tower, and it felt like a fairy-tale dream 🏰💛. The view from the balcony over the sparkling sea was absolutely breathtaking 🌊✨ – we could hardly take our eyes off it. After checking in, we went out briefly to have dinner in Sorrento 🍝🍷. Afterwards, we ended the day in a relaxed way while enjoying the view and the warm sea air 🌙💫.\n\nThe next day, we set off by car along the Amalfi Coast 🚗🌅 – and what can I say? It was simply magical! The coastline shimmered in the sunlight, the sea sparkled in every shade of blue, and everywhere there were picturesque little villages and lemon groves 🍋💛. The drive alone was already an experience in itself. Once we arrived in Amalfi, we had a beautiful view over the town and the sea. It was a bit different from what we had imagined – we had hoped it would be a little more idyllic – but still, it was absolutely wonderful to experience the coastline and the sea so closely 🏞️😍.\n\nThe next day, we finally went to Capri ⛴️🏝️. Our original goal was the famous Blue Grotto, but unfortunately the weather was too stormy 🌊🌬️. The grotto could not be visited, which was a bit disappointing. But we didn’t let that ruin our mood and decided to go on a boat tour around the island instead. And wow – that was another real highlight! We sailed past spectacular cliffs, saw hidden coves and small beaches, while the waves gently rocked us back and forth. It was exciting, a bit adventurous, but simply beautiful 🌟🚤.\n\nAfter the boat tour, we made a short stop in Capri itself. We had a light snack – bruschetta 🍅🥖 – and wandered through the small alleys. At the stalls, we bought a few bracelets as souvenirs of this magical place ✨💛. The atmosphere, the colorful houses, and the sea in the background – it was truly a moment we will not forget anytime soon.\n\nIn the evening, we returned to Sorrento and had a special dinner booked at the hotel 🍽️🥂. It was a beautiful conclusion to our days on the Amalfi Coast: delicious food, a romantic atmosphere, and the relaxed feeling of our little tower room above the sea 🌙💖. Full of happiness and beautiful memories, we fell asleep that night before continuing our journey to Rimini the next morning 🛌✨.'**
+  String get it4Desc;
+
+  /// No description provided for @it5Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'After our dreamy days on the Amalfi Coast, our journey continued north – to Rimini 🚗☀️. Once we arrived, we checked into our hotel right away and were curious about what awaited us. Rimini was more of a short stop for us, but we used the opportunity to spend a relaxed evening. We went out for dinner at the Bounty restaurant 🍝🍷, enjoyed the laid-back atmosphere, and afterwards took a short walk along the coast. The evening mood at the beach was really beautiful – the sun was slowly setting, the sea was shimmering, and we simply felt at ease 🌅💛.\n\nThe next morning, we continued towards Venice 🛶🌆. We stayed overnight at a campsite nearby so we could be flexible when visiting the city the next day. In Venice, we spent the whole day wandering through the famous alleys and canals 🚤🏰. The city is always impressive with its old buildings, small bridges, and gondolas, although to be honest we don’t find Venice overwhelmingly beautiful – the many tourists and crowds slightly take away from the romantic atmosphere 😅🌊. Still, it was nice to see the city again, do a bit of shopping, and stroll through the streets before heading back to the campsite in the evening 🌇.\n\nAfter this visit, we continued to Lido di Jesolo, where we spent our last two days in Italy 🏨🌴. Our hotel was really beautiful, right by the sea with a view of the sparkling coast 🌊✨. The heated pool in particular was a highlight – we could relax, swim, and simply enjoy the sunshine ☀️💦. The days there were wonderfully calm and restorative. We walked along the beach, enjoyed the Italian sun, and reflected on our journey one last time 🌅💛.\n\nThese final days in Rimini, Venice, and Lido di Jesolo were perfect for putting our feet up, enjoying the sea, and taking a deep breath before heading back home 🏖️✈️. It was a beautiful and relaxing ending to our unforgettable trip through Italy.'**
+  String get it5Desc;
+
+  /// No description provided for @titleNewYork.
+  ///
+  /// In en, this message translates to:
+  /// **'Our New York adventure during the Christmas season 🎄🗽'**
+  String get titleNewYork;
+
+  /// No description provided for @newyork.
+  ///
+  /// In en, this message translates to:
+  /// **'Our five days in New York started right after Boxing Day. Just two days earlier, we had been celebrating Christmas Eve in Germany – so the Christmas spirit was still very fresh. And then we arrived in New York – and the city immediately wrapped us in a completely different, sparkling festive feeling. ✨\n\nThe lights on Fifth Avenue, the glittering Rockefeller Center, the beautifully decorated shop windows – simply breathtaking! Of course, many front yards had already been taken down, but the festive atmosphere still completely enchanted us. 💖\n\nOur first highlight was the Statue of Liberty 🗽. Even though we unfortunately couldn’t go all the way up to the crown, it was incredible to see her up close. Standing on Liberty Island and enjoying the view of the Manhattan skyline while the sun slowly set – indescribable! 🌇\n\nAfter that, we walked across the Manhattan Bridge. The view of the East River, the reflections of the skyscrapers in the water – absolutely stunning! 🌉\n\nTimes Square completely blew us away. Huge screens, flashing billboards, people from all over the world – the energy here is truly unique. We stood right in the middle of the hustle and bustle, took in the lights, and felt like we were right in the heart of New York. 💡❤️\n\nCompletely different, but just as impressive, was the 9/11 Memorial. Quiet, respectful, reflective. The fountain where the Twin Towers once stood moved us deeply. We stood there for a long time, absorbing the silence and the meaning of this place. 🕊️\n\nOf course, there were also some culinary highlights 😋. Every morning we started with a hot white chocolate from Starbucks – perfect for the cold winter air. We tried personalized M&M’s, a really fun souvenir, and in between we had some of the best bagels ever at Infinity Bagel 🥯☕.\n\nAn incredible moment was watching the sunset from the Empire State Building. The city sparkled like a sea of lights, and standing up there, small compared to the huge metropolis, we still felt like part of something big, exciting, and alive 🌆✨.\n\nOn our last day, we took a long walk along the pier. We enjoyed the fresh air, the passing boats, and the view of the skyline. Simply perfect. We are already dreaming of coming back in spring to experience New York in sunshine. ☀️🚤\n\nNew York enchanted us – with its sights, its Christmas atmosphere, its energy, and the small moments you only feel when you are really there. We will never forget these five days. We already know: we will come back! 💛'**
+  String get newyork;
+
+  /// No description provided for @titleDubai.
+  ///
+  /// In en, this message translates to:
+  /// **'Our Dubai adventure between luxury & desert ✨🏝️'**
+  String get titleDubai;
+
+  /// No description provided for @dubai.
+  ///
+  /// In en, this message translates to:
+  /// **'Our week in Dubai started very relaxed – even the flight was a real highlight ✈️✨. We flew with Emirates to Dubai and felt well taken care of from the very first moment. The comfortable seats, generous space and pleasant service made the flight incredibly relaxing. You immediately notice: flying with Emirates is something very special and feels completely different from many other airlines. Already in the air our excitement grew – and on landing we knew: this trip would be unforgettable. 🌴💫\n\nFrom the airport we went directly to our hotel, the Sheraton Jumeirah Beach Resort 🏨🌊. Right at check-in we immediately felt welcome. Our luggage was taken from the taxi up to our room, while we walked relaxed through the lobby. The service and luxurious atmosphere were the perfect start to this trip.\n\nDuring the day we spent most of our time by the pool ☀️💦. In October, temperatures were above 35 degrees, making walks almost impossible. The pool became our retreat: sun umbrellas, comfortable loungers, cold drinks and snacks directly from the pool bar 🍹. Simply switch off and enjoy.\n\nIn the evenings we headed out into the city 🌆✨. A true highlight was visiting the Burj Khalifa. Just before sunset we went up and looked out over the sparkling skyline. The Palm Island, the Burj Al Arab in the distance and countless lights below us – a moment we will never forget. 🌇💛\n\nRight next to it is the Dubai Mall 🛍️. Not only the largest shopping mall in the world, but a real experience. Especially impressive was the Dubai Aquarium, through whose glass tunnel we walked – surrounded by sharks and rays 🦈💙.\n\nAnother highlight was the Dubai Fountains 💦🎶. When it gets dark, the show unfolds its full magic. Water, light and music merge into an unforgettable experience.\n\nThe Mall of the Emirates was also a must-see. Finding a ski slope in the middle of the desert felt completely surreal ❄️⛷️.\n\nWe spent an entire day at Aquaventure Waterpark at Atlantis The Palm 🌊🏝️. Water slides, lazy river, beach and spectacular slides through shark-filled tanks – a real highlight for all of us.\n\nOur evenings often ended at Jumeirah Beach 🌴🌙. Rides, small games and a basketball game where I, Katharina, won a huge plush dog 🧸💖 – moments that stay with us.\n\nDubai impressed us with its versatility: relaxing during the day, amazed in the evening. Luxurious, modern, family-friendly and full of wow moments ✨. This trip remains unforgettable – and we already know: we will come back. 💜✈️'**
+  String get dubai;
+
+  /// No description provided for @fl1title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 1 – Arrival in Florida and first paradise 🏝️☀️'**
+  String get fl1title;
+
+  /// No description provided for @fl2title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 2 – Everglades & heading towards Key West 🐊🌴🚤'**
+  String get fl2title;
+
+  /// No description provided for @fl3title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 3 – Dolphin adventure & Key West 🐬🌴☀️'**
+  String get fl3title;
+
+  /// No description provided for @fl4title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 4 & 5 – Miami & Fort Lauderdale: shopping, beach and Caribbean vibes 🛍️🏖️🌊☀️'**
+  String get fl4title;
+
+  /// No description provided for @fl5title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 6 – Space dreams & Disney magic 🚀🏨✨'**
+  String get fl5title;
+
+  /// No description provided for @fl6title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 7 – Theme park adventure & magical impressions 🎢🏰🎬'**
+  String get fl6title;
+
+  /// No description provided for @fl7title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 8–13 – Back in Cape Coral: sun, pool & relaxation 🌴☀️🏊‍♂️'**
+  String get fl7title;
+
+  /// No description provided for @fl8title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 14 – Last day & culinary finale in Miami 🍔🎸✈️'**
+  String get fl8title;
+
+  /// No description provided for @fl1Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'In the summer of 2017, the moment had finally come: our first step onto American soil! 😍 The butterflies in our stomachs, the excitement and the exhaustion – all at once. Right after arrival, we quickly realized: patience would be key ⏳. It was our very first long-haul flight, and we were traveling as a group of five – me, Katharina, my mom, my uncle, my grandma and my grandpa 👨‍👩‍👧‍👦.\n\nThe controls seemed endless: passport control, fingerprints, another check – lining up again and again. Five hours later, we finally made it through. Suitcases in hand, out of the chaos. We were truly in Florida! 🌴☀️ Children were crying everywhere, families looked exhausted, but for us the adventure was just beginning.\n\nOur rental car was already waiting, five people, five suitcases – five times relief 🚗💼. In the middle of the night, we set off towards Cape Coral. Miami faded behind us, the roads were quiet, and the warm, humid Florida night surrounded us 🌙🌴. Palm trees stood like silent guardians along the roadside. We could hardly believe we were actually here.\n\nIn the morning, we finally arrived at our Cape Coral home 🏡💦. Tired but overjoyed, we stood in front of our rented house – our little paradise for the next two weeks. Located directly on the water, with its own canal, dock, large terrace and private pool 🏊‍♂️💦, even a jacuzzi. The sun reflected on the water 🌞✨, and it felt like Florida was personally welcoming us.\n\nWe unpacked the essentials, collapsed onto the sofa or beds and enjoyed our first night to settle in and sleep properly 😴💛. And although the house was a dream, it didn’t keep us for long – soon our one-week Florida road trip began, before we returned back to our Cape Coral paradise 🌴🚤💖.'**
+  String get fl1Desc;
+
+  /// No description provided for @fl2Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'After our first relaxing night in Cape Coral, we started the morning full of excitement 🌞💛. With our rental car we headed straight into the Everglades National Park, a fascinating world of endless waterways, mangroves and tropical air that you could immediately feel on your skin 🌿💦. Even the drive through Florida’s wide open roads made us sense: something truly special awaits today 🛣️✨.\n\nOnce there, we got on an airboat – the propeller boat raced across the water, the wind hit our faces, and we could fully enjoy the vastness of nature 🌊💨. The famous alligators didn’t really show themselves in the water, but the experience was still incredible. Highlight of the day: we got to hold a baby alligator in our hands 🐊💛 – so tiny, so calm, and still a true star of Florida. A moment we will definitely never forget.\n\nOn the way back to the car, we stopped briefly at a gas station ⛽ – and then something unbelievable happened: right next to the fuel pump there was an alligator, completely relaxed, as if it just belonged there 😳🐊. My mom and I found it a bit creepy after a few seconds having such an alligator right next to us 😅, so we quickly got back into the car, doors closed, windows up – fully secured 🚗🔒. My uncle was braver: he went closer to the alligator and even took a selfie with it 🤳🐊. Suddenly, the alligator yawned – its mouth opened, and we weren’t sure whether it was just a yawn or hunger 🤔. After a while, even my uncle decided to get back into the car, and we continued our journey.\n\nWe then continued towards Key West 🏝️. The roads led past palm trees, lakes, small bridges and flat swamps 🌴🌊🌞. Slowly we started to feel that Caribbean vibe that accompanies you everywhere here. By the evening we reached our overnight stop, excited for the adventures the next days would bring ✨💛.'**
+  String get fl2Desc;
+
+  /// No description provided for @fl3Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'After our overnight stay on the road, we started the morning full of excitement towards Key West 🌞🚗. On the way, we made a very special stop: a dolphin adventure in Bayside 🐬✨. Here we were able to get really close to the dolphins – observe them, swim with them, and experience their incredible intelligence and grace. This experience was simply magical 💛🌊. The dolphins felt so alive and friendly that we wished we could pause time ⏳💫.\n\nRefreshed from this highlight, we continued our drive to Key West 🏝️. The colorful houses, palm-lined streets 🌴, and relaxed island atmosphere – everything felt like something out of a dream 🌈✨. We strolled through the streets, browsed small shops 🛍️, enjoyed the Caribbean vibe 🍹🌞 and treated ourselves to a delicious meal in a cozy restaurant 🍽️💛.\n\nIn the evening, we then headed back to Miami 🏙️🌊, passing turquoise waterways and the small islands of Florida 🛥️💦. After a long day full of adventure, sun, sea and animal encounters, we were happy to return to a comfortable bed and a nice hotel room 🛏️✨.\n\nSo ended day 3 of our Florida adventure – full of nature, unforgettable animal encounters and Caribbean vibes 🌴💛🐬.'**
+  String get fl3Desc;
+
+  /// No description provided for @fl4Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'After our overnight stay at the Hilton Garden in Miami, we started the morning full of energy ☀️🚗. Our destination: the huge Dolphin Mall, one of the largest shopping centers in Miami 🛒✨. From the moment we entered, we felt the lively, colorful atmosphere 🌈 – countless shops, cafés, and little highlights to discover and enjoy.\n\nWe strolled through the corridors, tried on clothes 👗👕, browsed the shelves, and treated ourselves to small snacks along the way 🍩☕. Everyone found something they liked, and the variety made the day a truly special experience 🎉🛍️. It was a relaxed contrast to the previous days full of adventures, animal encounters, and road trip action 🌴🚗.\n\nIn the afternoon, we went to Miami Beach, felt the warm sand under our feet 🏖️🌊, and enjoyed the relaxed beach atmosphere 🌞🌴. Afterwards, we continued to Fort Lauderdale, where we checked into the Pier 66 Hotel & Marina 🛏️⚓. The hotel is located directly on the water with a view of the marina 🚤💛, and we immediately felt at home.\n\nThe next day we explored Fort Lauderdale further 🌴🏙️. The city, with its extensive canals often called the Venice of America, enchanted us with its maritime charm, cozy cafés ☕, small boutiques 🛍️, and relaxed atmosphere 🌞💛. We strolled along the water, watched the yachts 🚤✨, enjoyed the sun ☀️, and immersed ourselves in the calm, elegant vibe of the city 🌴💦.\n\nThese two days gave us the perfect mix of relaxation, sightseeing, and Caribbean Florida feeling 🏖️🌊💛 – an unforgettable part of our journey.'**
+  String get fl4Desc;
+
+  /// No description provided for @fl5Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'After our overnight stay at the Pier 66 Hotel & Marina in Fort Lauderdale, we started the morning full of joy 🌞. After a quick breakfast, we made our way to the Kennedy Space Center – and even the drive there built up the excitement 🚗🌴. A day full of technology, history, and space exploration awaited us.\n\nAt the Space Center, we immersed ourselves in the world of astronauts, rocket launches, and missions into space 🚀🌌. From historic exhibits to modern simulators, the feeling of being so close to rockets and space technology was overwhelming 🌟. Every step through the exhibition sparked curiosity and amazement, and the fascination of space was almost tangible ✨👨‍🚀.\n\nAfter this inspiring visit, we continued to the Walt Disney World Dolphin Hotel, where we checked in for the night 🏨💤. The hotel is centrally located in the resort area and perfectly combines comfort, style, and holiday atmosphere. The rooms were spacious and modern, and the view over the well-kept resort grounds immediately created a feeling of well-being 🛌🌺.\n\nIn the evening, we relaxed and took a walk through the resort area 🌙🌊. Colorful restaurants, cozy cafés, small shops, and street performers lined the paths 🎶🍦 — everywhere there was a cheerful, magical atmosphere 🌟.\n\nA cool extra: From the hotel you can take a water shuttle directly to Epcot and Disney’s Hollywood Studios — super convenient and relaxing 🚤🛳️.\n\nWe enjoyed the calm after such an exciting day and let the impressions from the Space Center sink in — full of anticipation for the upcoming Walt Disney adventures 🎢✨.'**
+  String get fl5Desc;
+
+  /// No description provided for @fl6Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Our seventh day in Florida was all about theme parks 🌞🎡. In the morning, we headed full of excitement to the Walt Disney World Resort in Orlando, where we spent the entire day surrounded by magical attractions, shows, and colorful parades ✨🎠🎆. Every corner of the park was filled with loving details, and it was a truly special experience to immerse ourselves in this enchanting world 🌈🏰.\n\nAfterwards, we continued straight to Universal Studios Florida 🎬🎢. At the Universal Orlando Resort, we explored cinematic sets, thrilling rides, and impressive special effects 💥🌟. The combination of Disney magic and Hollywood adventure made this day unforgettable ❤️🎭.\n\nIn the afternoon, as almost every day during our trip, a short rain shower passed through 🌧️☔ — typical for this season in Florida. But it didn’t affect our mood at all!\n\nWhen the parks closed, we ended the evening relaxing at Disney Springs 🌙🚶‍♀️. The promenade was beautifully lit, restaurants and shops invited us to stroll around, and music filled the air 🎶🍦. We walked along the water, enjoyed the colorful lights, and reflected on the impressions of the day ✨🌊.\n\nTired but happy, we returned to the hotel 🏨💤. The next morning meant checking out and moving on — ready for the next stages of our Florida journey 🚗🌴.'**
+  String get fl6Desc;
+
+  /// No description provided for @fl7Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'After our action-packed day in Orlando, we finally headed back to Cape Coral on day 8 🚗🌅. My uncle had rented a Mustang, and the two of us drove around the area for a bit 🏎️💨. And of course, what had to happen did happen: we got a little lost 😅📍.\n\nWe were on the road for several hours, my uncle driving and me as the passenger, while everyone back home – grandma, mom, and the rest – kept calling us constantly 📱😅. Along the way, we stopped briefly at McDonald’s 🍔🥤 to grab a burger and recharge. The combination of the phone navigation and constant calls made things a bit chaotic, and at some point our phones ran out of battery 🔋❌. We had to stop at a gas station, buy charging cables, and even get a car charger – little roadside adventures along the way 😄. By late afternoon or evening, we finally made it back to our Cape Coral home 🏡🌊.\n\nAs soon as we arrived, a feeling of calm and relaxation set in 🌴☀️. We knew this was the place where we could truly unwind 🧘‍♀️💛. The following days were all about sun, pool, and water 🏊‍♂️🌞. In the mornings, we picked up fresh bread rolls from the German bakery 🥐☕, enjoyed a relaxed breakfast on the terrace, and soaked in the peaceful waterfront atmosphere 🌊🌺.\n\nEvery day was shaped spontaneously: sometimes pool time, sometimes walks along the canals, sometimes small trips in the area 🚶‍♀️🛶. We discovered charming cafés, small shops 🛍️, and simply went with the flow. A visit to the wool market was also a highlight for me 🧶❤️.\n\nDuring the day we spent lots of time in the pool, swimming, splashing around, and soaking up the sun ☀️🏊‍♀️, enjoying pure relaxation. In the evenings, we often went out for dinner, tried local specialties 🍤🥗, and ended the days in a cozy, relaxed way 🌅🍹.\n\nThis week was exactly what we needed after all the adventures before it: time together, peace, sunshine, and the feeling of truly arriving 💛🌴. A perfect mix of relaxation, small excursions, and shared holiday moments – a fitting and peaceful ending to our Florida journey 🌞🏡✨.'**
+  String get fl7Desc;
+
+  /// No description provided for @fl8Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'The last day of our Florida trip started with a real highlight 🌞✨. Before heading to the airport, we made a stop in Miami and went to the Hard Rock Café for lunch 🍔🎸.\n\nAnd what can we say? It was the best Hard Rock Café we have ever experienced 😍. We have already visited many Hard Rock Cafés in different cities, but in Miami everything was just perfect: atmosphere, music, food – a truly perfect ending to our journey 🎶🍽️.\n\nAfter this culinary highlight, it was finally time to head to the airport ✈️. We returned our rental car, checked in our luggage, and prepared for our flight home 🧳💺. With so many unforgettable memories, beautiful photos, and special experiences that we will carry in our hearts for a long time ❤️📸, it was time to say goodbye.\n\nHopp – our plane took off, and our dream Florida trip came to an end 🌴🌅✈️.'**
+  String get fl8Desc;
+
+  /// No description provided for @california.
+  ///
+  /// In en, this message translates to:
+  /// **'California'**
+  String get california;
+
+  /// No description provided for @ca1title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 1–3 – Arrival in Las Vegas & Start of the California Adventure ✈️🎰🌵'**
+  String get ca1title;
+
+  /// No description provided for @ca2title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 4 – Road Trip to the Grand Canyon & Helicopter Adventure 🚗🌵🛩️'**
+  String get ca2title;
+
+  /// No description provided for @ca3title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 5 – Santa Cruz & Coastal Vibes 🌊☀️🏄‍♂️'**
+  String get ca3title;
+
+  /// No description provided for @ca4title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 6 & 7 – Exploring San Francisco 🌊🏙️'**
+  String get ca4title;
+
+  /// No description provided for @ca5title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 8 – Discovering San Diego 🌴☀️🏖️'**
+  String get ca5title;
+
+  /// No description provided for @ca6title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 9–11 – Theme Park Adventures & Los Angeles 🎢🌟'**
+  String get ca6title;
+
+  /// No description provided for @ca7title.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 12–14 – Road Trip, Desert & Wedding in Las Vegas 🚗🌵💍✨'**
+  String get ca7title;
+
+  /// No description provided for @ca1Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Our California adventure started off a bit chaotic – and that was before we had even properly arrived in Las Vegas 😅. The five of us were traveling together because a close couple of friends were planning to get married 💍✨. Everything was perfectly planned: three days in Las Vegas, right in the middle of the glittering desert, with the wedding as the highlight 🎉.\n\nBut as soon as we were seated on the plane, the first surprise hit: a delay – and our luggage was quietly unloaded 😳. No one explained why. It wasn’t until we stood at the baggage claim in Las Vegas that we found out the reason: the runway in Cologne had been shortened – too short for all our luggage ✈️🚧. Our suitcases would only arrive three days later.\n\nOur hotel for the first few days was the legendary Circus Circus 🎪🏨: colorful, loud, and full of life. The moment we stepped into the massive lobby, we felt like we had entered another world 🌈🎠 – carousels, small shows, clowns, lights everywhere. Chaotic, exciting, and so typically Las Vegas 😍.\n\nSo we had to improvise: shower gel, toothpaste, clothes – everything had to be bought on short notice 🛍️. For clothing, we headed straight to the South Premium Outlets, where we shopped, laughed, and slowly started to feel like ourselves again 🛒💖.\n\nDespite the chaos, we went with the flow and immersed ourselves in the sparkling world of Las Vegas 🌟. At Caesars Palace, we were amazed by the Venice-inspired atrium, the gondola rides, and countless shops 🛶🏛️. At the New York New York Hotel, we watched in awe as the roller coaster twisted its way through the building 🎢. Of course, we couldn’t miss the famous Bellagio fountains 💦✨ – a magical moment, perfect for photos 📸. And naturally, we snapped a classic photo at the Las Vegas sign 😎.\n\nBetween all the lights, sounds, and impressions, we felt like we were in a dream 🌆💫. We wandered through the hotels, tried little snacks 🍿, and treated ourselves to a legendary pretzel pizza at the New York New York Hotel 🥨🍕 – our culinary highlight.\n\nWith our rental car, which we picked up directly at the airport 🚗💨, we slowly began to feel like true explorers. Even though the wedding had to be postponed, these three days turned into a special chapter full of energy, chaos, and fun 💃🕺.\n\nWhen our suitcases finally arrived on Monday afternoon, all the tension faded away 🧳🙌. Everything felt complete again – and at that very moment, our real California road trip began 🌞🛣️. A new adventure full of sunshine, freedom, and unforgettable moments 🏖️🌴.'**
+  String get ca1Desc;
+
+  /// No description provided for @ca2Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'By Monday midday, the time had finally come: after the chaotic first days, everything suddenly felt complete again ✨. With all our belongings packed away, we got into our rental car 🚗 and set off towards the Grand Canyon – one of the absolute highlights of our trip 🌄.\n\nEven the first miles through the Nevada desert impressed us: endless roads, shimmering heat, and vast horizons ☀️🌵. The sun was blazing down, and every stretch of road felt like a new piece of freedom 🛣️💨. Just driving, no stress, no destination except the adventure itself – indescribable.\n\nWhen we arrived at the Grand Canyon, it literally took our breath away 😮. The massive red-orange rock formations, the rugged cliffs, and the incredible depth – it was hard to believe that all of this was real 🏞️.\n\nThen came the absolute highlight: our helicopter flight over the canyon 🛩️🌄. From above, the canyon looked even more majestic. The colors, the silence, the sheer scale, the wind, and the sound of the rotor – the feeling of gliding over one of the most spectacular landscapes in the world was simply magical ✨💖.\n\nAfter landing, we spent a few more hours at the canyon rim, walking along the viewpoints, taking photos 📸, and soaking in every moment of this unforgettable day.\n\nIn the evening, we continued our journey towards Bakersfield, where we stayed overnight 🌇. The city welcomed us with its calm Californian charm, cozy restaurants 🍴, and a relaxed atmosphere. The perfect contrast to the overwhelming nature of the day 🌄.\n\nWith one last look at the sunset, we knew: the California adventure had only just truly begun 🌅💫.'**
+  String get ca2Desc;
+
+  /// No description provided for @ca3Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'The next morning, we set off early from Bakersfield, well-rested and full of excitement for the next part of our adventure 🚗✨. The drive took us past endless highways, golden fields 🌾, and small forests 🌳 – this typical Californian vastness always gives you a sense of freedom 🛣️💨.\n\nWhen we arrived in Santa Cruz, the atmosphere changed instantly. Instead of dry desert heat, there was now salty ocean air 🌊. The sound of the waves, seagulls calling 🐦, and surfers gliding gracefully across the water 🏄‍♀️ immediately drew us into the relaxed coastal rhythm.\n\nWe walked along the Santa Cruz Beach Boardwalk, admired the colorful rides 🎡, strolled through small shops 🛍️, and felt the warm sand beneath our feet 👣. Everywhere you could feel that typical California vibe: sunny ☀️, laid-back 😎, and full of life ✨. The city combines everything you love about the West Coast: surfer vibes, charming cafés ☕, and creative boutiques that make you want to stay forever 🏖️.\n\nIn the evening, as the sun slowly set into the Pacific Ocean 🌅, we ended the day in a calm and relaxed way. The sky turned golden-orange, the ocean sparkled in the last light ✨, and we felt truly arrived – free, happy, and full of new impressions 💛.\n\nSanta Cruz was the perfect stop along the way, a place that shows just how beautiful simple life by the sea can be 🏄‍♂️🌴. The next day, we would continue towards San Francisco, to the legendary Golden Gate Bridge, Alcatraz, and into the foggy, magical coastal world of Northern California 🌁🌲.'**
+  String get ca3Desc;
+
+  /// No description provided for @ca4Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'After a relaxing night in Santa Cruz, we set off early towards San Francisco 🌅. The drive along the Californian coast was simply breathtaking: rolling hills, green meadows 🌿, the sparkling Pacific Ocean 🌊, endless roads, and the feeling that the world could go on like this forever 🛣️✨.\n\nWhen we arrived in San Francisco, we were greeted by cool, fresh air 🍃. After the scorching 45 degrees in Las Vegas, the 14 degrees here felt almost like a shock therapy ❄️🥶 – and of course, we hadn’t brought any jackets 😅. Our first stop was the Golden Gate Bridge 🌉. On that day, the famous bridge was partly hidden in the fog, with only its bold red towers rising through the white clouds. The combination of fog, water, and majestic architecture felt almost magical ✨. We stood there shivering but amazed, soaking in every single moment 💛.\n\nOf course, Alcatraz was a must-see ⚓. The boat ride out to the island offered breathtaking views back toward the city 🌁. On the island itself, there was an almost eerie charm 👻. Old prison cells, the stories of famous escape attempts, and the cold stone walls made the visit an intense and unforgettable experience 🏛️.\n\nAt Pier 39, the vibrant life of the city came alive again 🌈. The famous sea lions lay relaxed on the docks, growling and nudging each other as if they were the true rulers of this little world 🦭. Seagulls circled above, musicians played 🎶, small shops opened their doors, and we immersed ourselves in the lively yet charming atmosphere of San Francisco 🏖️☕.\n\nThese two days in San Francisco – with the cool air after the desert heat, the impressive sights, and the feeling of truly being in the heart of California – will stay with us forever 💛. San Francisco welcomed us with open arms, fog, and ocean 🌫️🌊, and we felt as if we had been drawn right into the heart of the city ❤️.'**
+  String get ca4Desc;
+
+  /// No description provided for @ca5Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'Nach den beeindruckenden Tagen entlang der kalifornischen Küste erreichten wir endlich San Diego und freuten uns auf eine kleine Pause vom ständigen Unterwegssein 🚗💨. Unser Zuhause für die Nacht war das Town & Country Resort, ein echter Ruhepol mitten in der Stadt 🏨. Schon beim Eintreten spürte man sofort die warme, freundliche Atmosphäre 🌺. Retro-Design trifft auf moderne Annehmlichkeiten – die Zimmer waren komfortabel und einladend, mit weichen Betten 🛏️ und hochwertiger Bettwäsche, perfekt, um die Füße hochzulegen und die Eindrücke der letzten Tage sacken zu lassen.\n\nSan Diego selbst hat einen ganz eigenen Charme 🌞. Die Stadt besticht durch ihre entspannte, sonnige Atmosphäre, die sofort auf einen übergeht 😎. Wir spazierten durch die Altstadt, wo bunte Häuser 🏘️, Kopfsteinpflaster und kleine Cafés ☕ ein Gefühl von Geschichte und Lebensfreude vermitteln. Das Gaslamp Quarter präsentierte sich als quirliges Herz der Stadt mit Restaurants, Bars und kleinen Läden 🍴🍹, die zum Verweilen einluden. Besonders beeindruckend war die Nähe zum Pazifik 🌊 – wunderschöne Strände, Surfer auf den Wellen 🏄 und die Sonne, die das Wasser in funkelnde Farben eintauchte ✨. Man spürte die frische Meeresluft, hörte das Rauschen der Wellen 🌬️ und genoss diese gelassene, fast mediterrane Stimmung.\n\nDie Kombination aus Stadtleben, Kulturen und Küstenflair machte San Diego zu einem perfekten Zwischenstopp auf unserem Roadtrip 🌴🚗. Am Abend kehrten wir zurück ins Town & Country Resort, schlenderten noch ein wenig durch die gepflegten Gartenanlagen 🌿🌺 und setzten uns an den Pool 🏊. Die Ruhe und der Komfort des Resorts kombiniert mit der lebendigen, sonnigen Stadt draußen machten diesen Aufenthalt besonders angenehm. Es war eine Nacht der Erholung 🌙, ein kleiner Kontrapunkt zum Abenteuer auf der Straße, und wir fühlten uns bereit für die nächsten Etappen unseres California Roadtrips 🛣️✨.'**
+  String get ca5Desc;
+
+  /// No description provided for @ca6Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'After our relaxing stop in San Diego, we set off full of excitement for the upcoming days filled with action, magic, and Hollywood vibes 🚗💨. Our first destination: Disneyland in Anaheim 🏰✨. As soon as we entered the park, we were overwhelmed by the attention to detail, the colorful attractions, and the magical shows 🎆. It felt like we were stepping straight into a fairytale. What impressed us the most was not only the classic Disney castle, but also the Hogwarts castle, which instantly transported us into the world of Harry Potter 🧙‍♂️🪄.\n\nA special highlight for me was visiting Diagon Alley, where Harry Potter buys his magical items 🌟. There, I even got my own wand – Harry Potter’s wand himself 🪄✨. This little piece of magic will remind me of this incredible day for a long time.\n\nIn between, we headed straight to Universal Studios 🎬🎢. Here, we experienced real movie sets, admired spectacular special effects, and enjoyed thrilling rides full of adrenaline. It was amazing how movies suddenly came to life and we were right in the middle of it – a true Hollywood experience!\n\nAfter these fantastic park days, we continued on to Los Angeles 🌴🌞. The city was bursting with life, culture, and famous sights. Our first stop: Hollywood with the legendary Walk of Fame ⭐🌟. We walked among the stars, admired famous handprints, and felt the unique Hollywood atmosphere up close. Afterwards, we drove through the glamorous streets of Beverly Hills, where we took a break at a real high-end Italian restaurant 🍝🍷. A culinary experience we won’t forget anytime soon – delicious, elegant, and a little extravagant 😋✨.\n\nOf course, a relaxed walk through Los Angeles itself was a must 🏙️. We admired the city, its mix of culture, beach vibes, and urban energy, and felt how exciting and diverse California can be. Every corner told its own story: from palm-lined streets to modern architecture and sunny beaches that constantly invited us to stay a little longer 🌊🌴☀️.\n\nThese days were a perfect mix of magic, adventure, cuisine, and Hollywood glamour. Disneyland, Hogwarts, buying a wand in Diagon Alley, Universal Studios, Hollywood, Beverly Hills – every moment was filled with memories that will stay with us for a long time 🎢🏰🎬✨.'**
+  String get ca6Desc;
+
+  /// No description provided for @ca7Desc.
+  ///
+  /// In en, this message translates to:
+  /// **'On the twelfth day, we set off from Hollywood in the morning, still wrapped in light morning fog while the palm trees stretched high into the sky 🌴☀️. We felt like we hadn’t experienced nearly enough of the city yet, but our road trip was calling and the roads promised new adventures 🚗💨.\n\nOur first stop took us to Palm Springs, an oasis in the middle of the Californian desert 🏜️. The sunlit palms, the barren hills and the vast landscape gave us a feeling of freedom and new beginnings—as if the desert itself was welcoming us.\n\nFrom Palm Springs, we continued towards Oatman, Arizona, a true highlight of our route. Along the way, we drove a part of the legendary Route 66 🛣️, passing historic houses, old diners, gas stations and breathtaking landscapes. The road told stories of the past and instantly gave us a sense of adventure.\n\nArriving in Oatman, we stepped into a Western town in the middle of the Mojave Desert 🤠. Wild donkeys wandered curiously and cheekily through the streets, while old wooden buildings, Western-style souvenir shops and street music made this stop unforgettable. We fed the donkeys, took photos everywhere and enjoyed the unique atmosphere of this place.\n\nAfter this special excursion, we continued on to Las Vegas 🌆🎰. Along the I-15, we drove through the desert while the sun slowly disappeared behind the mountains and the city lights began to shimmer in the distance ✨. We checked into the Excalibur Hotel for our final two nights and once again let ourselves be enchanted by the crazy, glittering world of Vegas.\n\nAn absolute highlight was the wedding at the Graceland Wedding Chapel 💒🎸. The couple got married in the lovingly decorated chapel, accompanied by an Elvis impersonator—an unforgettable moment full of emotions. Afterwards, we were all picked up in a limousine, enjoyed the evening and once again immersed ourselves in the colorful sea of lights of Las Vegas 🌃✨.\n\nOn the last day, it was finally time to say goodbye. We packed our suitcases, boarded the plane and took one last look at the glittering lights of Las Vegas, the endless roads of California and the majestic landscapes that had accompanied us for two weeks 🌄✈️.\n\nIn our hearts, we carried all these memories: the heat of the desert, the cool breeze of San Francisco, the cheerful sea lions at the pier, the wild donkeys in Oatman, the magic of Disneyland, the famous beaches of Venice Beach and Santa Monica, and of course the smiles, joy and emotions of the wedding 💖. A world trip full of contrasts, stories and unforgettable experiences—memories that will stay with us for a long time. With hearts full of gratitude and suitcases full of experiences, we flew back to Cologne, ready to relive it all again and already dreaming of the next adventure 🌍✨.'**
+  String get ca7Desc;
+
+  /// No description provided for @cruiseSpainDay1.
+  ///
+  /// In en, this message translates to:
+  /// **'🏝️ Day 1 – Finally on the way: Mallorca, sea & that familiar feeling on board'**
+  String get cruiseSpainDay1;
+
+  /// No description provided for @cruiseSpainDay2.
+  ///
+  /// In en, this message translates to:
+  /// **'🌊 Day 2 – Sea day: arriving, sleeping in & just drifting along'**
+  String get cruiseSpainDay2;
+
+  /// No description provided for @cruiseSpainDay3.
+  ///
+  /// In en, this message translates to:
+  /// **'☀️ Day 3 – Málaga: exploring the city on our own'**
+  String get cruiseSpainDay3;
+
+  /// No description provided for @cruiseSpainDay4.
+  ///
+  /// In en, this message translates to:
+  /// **'⚓ Day 4 – Cádiz: Andalusian lifestyle & historic old town'**
+  String get cruiseSpainDay4;
+
+  /// No description provided for @cruiseSpainDay5_6.
+  ///
+  /// In en, this message translates to:
+  /// **'🏰 Explore Civitavecchia – short walk at the harbour'**
+  String get cruiseSpainDay5_6;
+
+  /// No description provided for @cruiseSpainDay7.
+  ///
+  /// In en, this message translates to:
+  /// **'🌊 Day 7 – Sea day: just letting the soul unwind'**
+  String get cruiseSpainDay7;
+
+  /// No description provided for @cruiseSpainDay8.
+  ///
+  /// In en, this message translates to:
+  /// **'🏖️ Day 8 – Cartagena: a sunny walk along the harbour'**
+  String get cruiseSpainDay8;
+
+  /// No description provided for @cruiseSpainDay9.
+  ///
+  /// In en, this message translates to:
+  /// **'🌅 Day 9 – Valencia: stroll through the old town and along the port'**
+  String get cruiseSpainDay9;
+
+  /// No description provided for @cruiseSpainDay10.
+  ///
+  /// In en, this message translates to:
+  /// **'🏙️ Day 10 – Barcelona: unforgettable impressions in the Catalan metropolis'**
+  String get cruiseSpainDay10;
+
+  /// No description provided for @cruiseSpainDay11.
+  ///
+  /// In en, this message translates to:
+  /// **'✈️ Day 11 – Palma de Mallorca: return & last days of vacation'**
+  String get cruiseSpainDay11;
+
+  /// No description provided for @cruiseSpainDayStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Finally, the next cruise was about to begin. After weeks of anticipation, we got into the car and set off – first towards Barcelona to take the ferry to Mallorca 🚗✨. Even during the drive, the atmosphere was special: that tingling feeling when you know something big is about to happen. We used the roughly 12-hour drive to talk, laugh, and dream about the days ahead.\n\nIn the evening, we arrived in Barcelona and boarded the GNV ferry. The overnight crossing to Palma took about eight hours – unfortunately not a highlight 😅. The ferry was loud, shaky, and overall not very comfortable. We didn’t really feel at ease there. But sometimes, those stages are simply part of the journey.\n\nWhat followed made up for everything: arriving in Palma at sunrise 🌞🌊. As we drove off the ferry with our car and the light slowly rose over the open sea, the moment was simply beautiful. This is exactly why we love traveling.\n\nSince we had booked our hotel spontaneously, we first drove through El Arenal and checked several hotels – either fully booked or extremely overpriced. Eventually, we stood in front of the Hotel Playa Golf at Playa de Palma – and immediately had a good feeling. And it turned out to be perfect: our room was a dream 😍. Direct sea view, view of the pool and the open ocean. Quiet, bright, and simply beautiful. The hotel was perfectly located: five minutes on foot to Megapark, two minutes to Bierkönig – right in between. Despite its location, it was surprisingly quiet, which made the stay even more pleasant.\n\nThe following days in Mallorca were relaxed – yet full of experiences. Since we had our own car, we basically did a small island tour 🚘🏝️: one day in one direction, the next in the other. We discovered breathtaking cliffs, stunning viewpoints, and kept enjoying the view of the sea.\n\nOn one of these days, we stopped at a beach club on a cliff. We parked the car, walked just a few meters towards the sea and enjoyed the view for maybe five minutes 🌊📸. In that short time – really only a few minutes – the local authorities were faster than expected. When we turned back to the car, a parking ticket was already on the windshield 😅. A bit annoying, but in hindsight also typical holiday experience: lesson learned – in Mallorca, you don’t hesitate for long.\n\nOf course, Cala Ratjada could not be missed. We love this place – it has accompanied us since childhood, as we used to spend almost every summer holiday here. A visit to the pizzeria Mama Pizza was therefore a must 🍕❤️. This restaurant is still one of our absolute favorites: wood-fired pizza, sea view, and that special feeling of home while on vacation.\n\nEl Arenal also had plenty to offer in terms of food: we visited Little Italy, another one of our favorite restaurants. Always a pleasure – places like this make a holiday complete 🍝✨.\n\nIn between, we spent time at Playa de Palma, rode the little tourist train, went swimming in the sea 🏖️, and simply enjoyed life. Another day took us to Palma itself: admiring the cathedral, strolling through the old town, eating ice cream 🍦⛪. And of course, Megapark and Bierkönig were a must – pure Mallorca vibes 🎶🍹. We even went to a tattoo studio and made an appointment for after the cruise – anticipation level: high 😄.\n\nOn July 20th, 2023, the time had finally come: our cruise with the AIDA Stella began 🛳️✨. We drove directly to the port, dropped off our luggage conveniently at the ship, and then headed to a nearby parking area close to the airport, where we left our car for the duration of the cruise. From there, a shuttle bus took us to the airport.\n\nWe originally thought we could simply take the AIDA shuttle to the ship – but unfortunately, that didn’t work out. At the airport, we met a father and his daughter who were also traveling independently and faced the same issue. Spontaneously, we teamed up and took a taxi back to the port together. That’s how we eventually arrived at the ship relaxed – sometimes the best solutions happen spontaneously 😊.\n\nAnd then it was there again: that feeling of familiarity 💙.\n\nWe already knew the AIDA Stella from a Mediterranean cruise in 2019, and because of that, arriving felt almost like coming home. After the safety drill, we enjoyed our first lunch on board, explored the decks, and took everything in calmly.\n\nOur cabin 8239 on deck 8, a balcony cabin on the port side, was perfectly located – nicely central, quiet, simply ideal 🛏️🌊. We spent a lot of time there, looking out at the sea, reflecting on the past days, and looking forward to everything ahead.\n\nThe first evening on board was calm, pleasant, and exactly right. We enjoyed the atmosphere, the fresh sea air, and the feeling that the holiday had only just begun. ✨'**
+  String get cruiseSpainDayStart;
+
+  /// No description provided for @cruiseSpainDaySea1.
+  ///
+  /// In en, this message translates to:
+  /// **'The first sea day began wonderfully relaxed – so relaxed that we completely slept through breakfast 😄. But honestly: that’s exactly what we were here for. So we got up calmly and went straight to lunch, completely without stress and without a schedule.\n\nThe rest of the day simply felt like arriving. With perfect weather, we spent a lot of time on our balcony, gazing out over the sea and enjoying that special feeling of the ship gently gliding across the waves ☀️🌊. It was warm, the sun was shining, and we finally had time to do absolutely nothing.\n\nIn between, we watched a few shows, took a short nap, and casually strolled around the ship. Of course, a few rounds through the onboard shops were also a must – just letting ourselves drift and see what’s new. Since we already knew the AIDA Stella, everything felt instantly familiar, almost like a second home.\n\nIn the evening, we enjoyed a relaxed dinner and ended the day peacefully. No big program, no obligations – just pure enjoyment. This sea day was exactly what we needed after the journey: calm, sun, sea, and plenty of relaxation ✨🛳️.'**
+  String get cruiseSpainDaySea1;
+
+  /// No description provided for @cruiseSpainDayMalaga.
+  ///
+  /// In en, this message translates to:
+  /// **'On the third day of our cruise, we docked in Malaga at 8:00 a.m. With pleasant 31 degrees and slightly cloudy skies, conditions were perfect to explore the city at a relaxed pace on our own ☀️🌤️. Since we had a layover until 6:00 p.m., we could enjoy the day without any time pressure.\n\nAfter leaving the ship, we set off on foot into the city. Without a fixed plan, we simply let ourselves drift – exactly the way we love it 😊. From the very first steps, we could feel the Mediterranean flair: warm air, palm-lined paths, and that instant holiday feeling that kicks in right away.\n\nDuring our walk, we passed the Centre Pompidou Málaga, which we admired from the outside. Its colorful, modern architecture was a real eye-catcher and stood out beautifully from the rest of the cityscape 🎨✨.\n\nWe then strolled leisurely along the harbour, watched the activity, the ships, and simply enjoyed the atmosphere. Even though we didn’t follow a classic sightseeing program that day, we really liked Malaga. The city felt open, relaxed, and incredibly friendly – definitely a place we would love to return to 💛.\n\nIn the late afternoon, we returned on board and found a nice spot to watch the departure at 6:00 p.m. The view of Malaga from the sea, bathed in warm daylight, was simply beautiful 🛳️✨.\n\nAs the AIDA Stella slowly set course for the next port, we were already looking forward to our next destination: Cádiz in Spain. Ahead of us lay 156 nautical miles, which equals around 289 kilometers at sea – time to relax, enjoy, and build anticipation 🌊💙.\n\nIn the evening, we ended the day with a cozy dinner on board and looked forward to the next experiences of our journey – satisfied, relaxed, and full of beautiful impressions ❤️.'**
+  String get cruiseSpainDayMalaga;
+
+  /// No description provided for @cruiseSpainDayCadiz.
+  ///
+  /// In en, this message translates to:
+  /// **'On the fourth day of our journey, we docked in Cádiz at 8:00 a.m. With 26 degrees and bright sunshine, we were welcomed by a city that instantly radiated that typical Andalusian holiday feeling ☀️🌴. Since we had a layover until 5:00 p.m., we could explore Cádiz completely relaxed and on our own.\n\nAfter leaving the ship, we set off on foot towards the old town. The first impression was already impressive: Cádiz felt lively, rich in history, and at the same time wonderfully relaxed. Our route first took us through the Puerta de Tierra, the historic city gate marking the transition from the new town to the old town. Right there, we immediately felt like we had stepped into another time 🕰️✨.\n\nWe continued to the Plaza de San Juan de Dios, a beautiful, spacious square with palm trees, cafés, and the town hall. We stopped for a moment, watched the lively atmosphere, and simply enjoyed the surroundings – these are exactly the moments that make traveling so special for us 💛.\n\nNext, we walked to the Plaza de Mina, a calm, green square in the middle of the city. The Museo de Cádiz is also located here, which we admired from the outside. The location and the historic building alone made this place especially charming and inviting.\n\nAnother highlight of our walk was the Gran Teatro Falla. The red-and-gold building with its unique façade was a real eye-catcher and one of the most distinctive landmarks of the city 🎭. Once again, we could feel how much history and culture Cádiz has to offer.\n\nAfterwards, we simply let ourselves drift and explored the old town of Cádiz with its narrow streets, small squares, and historic houses. There was something to discover everywhere – a beautiful balcony, a small shop, or a shaded spot inviting us to pause for a moment.\n\nOf course, a visit to the Cathedral of Cádiz (Catedral de Cádiz) was a must. The impressive cathedral with its golden dome was truly breathtaking and a real landmark of the city ⛪✨. Just standing in front of it and taking in the building was a very special moment.\n\nOverall, we absolutely loved Cádiz. The mix of history, sea, sun, and relaxed atmosphere made this day a real highlight. In the afternoon, we slowly made our way back to the ship – filled with impressions and that typical southern European lifestyle feeling 🌊💛.\n\nAt 5:00 p.m., it was time to set sail again. From the deck, we watched the departure and slowly left Cádiz behind while already looking forward to the next experiences of our cruise 🛳️✨.'**
+  String get cruiseSpainDayCadiz;
+
+  /// No description provided for @cruiseSpainDayLisbon.
+  ///
+  /// In en, this message translates to:
+  /// **'After our wonderful stay in Cádiz, the AIDA Stella set course for Lisbon. Even during the voyage, we felt the anticipation: we could hardly wait to explore this vibrant city full of history, hills, and fascinating architecture 🛳️✨.\n\nOn the afternoon of Day 5 (around 4:00 p.m.), we entered the port of Lisbon. The arrival itself was already a highlight: our ship majestically sailed under the impressive 25th of April Bridge (Ponte 25 de Abril), whose red steel structure immediately impressed us – a bit like a smaller version of the Golden Gate Bridge. We could also see the mighty Cristo Rei statue from afar and immediately felt welcomed in this city full of charm and atmosphere 🌅.\n\nAfter docking, we set off right away to explore the city on our own. Lisbon welcomed us with its typical hills – walking up and down, feeling the cobblestones under our feet, and at the same time being fascinated by the beautiful views over the city. We started at Praça do Comércio, walked to Lisbon Cathedral, and visited the impressive Igreja de Santa Engrácia before strolling through the historic Bairro Alto district. Everywhere there were narrow alleys, charming façades, and the famous colorful tiles to discover.\n\nOf course, a culinary highlight was a must as well: on the morning of Day 6, the captain had recommended Pastéis de Nata in an announcement – a must in Lisbon! We made our way to Pastéis de Belém and enjoyed these delicious, creamy treats with crispy puff pastry 😋.\n\nIn between, we took the famous tram line 28E through the city. It was a real experience – the small, historic trams gently rattled through narrow streets, past colorful houses and small squares. We felt like we were inside a postcard 🚋💛.\n\nIn the evening of Day 5, we enjoyed dinner on board, watched the city lights, and were fascinated by the mix of historic charm and modern vibrancy. On Day 6, we set sail again in the morning (4:00 p.m.), full of memories of these two impressive days, while looking ahead to the next stage of our cruise towards Cartagena in Spain.\n\nLisbon truly enchanted us with its hills, sea views, historic buildings, delicious Pastéis de Nata, and its special atmosphere. We already know one thing: we definitely want to come back! ❤️'**
+  String get cruiseSpainDayLisbon;
+
+  /// No description provided for @cruiseSpainDaySea2.
+  ///
+  /// In en, this message translates to:
+  /// **'After the two eventful days in Lisbon, the AIDA Stella headed back out into the open sea. This sea day was all about relaxation, sunshine, and the sound of the ocean 🛳️☀️.\n\nWe started the day very calmly – we slept through breakfast, so for us it went straight to lunch. After that, we retreated to our balcony and simply enjoyed the warm sun. The gentle rocking of the ship, the fresh sea breeze, and the endless horizon immediately created a comforting holiday feeling 🌅💛.\n\nIn between, we strolled a bit around the ship, browsed the shops, enjoyed a short nap, and just let ourselves drift. We also caught a bit of the onboard entertainment before sitting down for dinner in the evening.\n\nIt was a day full of peace, contentment, and small joys – exactly what you love about a sea day. We enjoyed not having to do anything and simply letting ourselves be carried by the rhythm of the ocean 🌊🛌✨.'**
+  String get cruiseSpainDaySea2;
+
+  /// No description provided for @cruiseSpainDayCartagena.
+  ///
+  /// In en, this message translates to:
+  /// **'In Cartagena, the AIDA Stella docked on a beautifully sunny day – the sun was shining all day with pleasant 31 degrees, and we had a layover from 9 a.m. to 5 p.m. 🌞🛳️\n\nWe decided to explore Cartagena on our own and took a relaxed walk along the harbour. The sun was sparkling on the water, seagulls were circling above us, and the atmosphere was simply wonderfully Mediterranean 🌊✨.\n\nThe Cathedral of San Pedro Claver was especially impressive, which we took a close look at. Its imposing façade and the peaceful atmosphere around it truly fascinated and enchanted us. After that, we simply let ourselves drift, enjoyed the small alleys and the view of the harbour basin – a perfect, calm day to unwind ⛵💛.\n\nIn the evening, the AIDA Stella set sail again, and we looked forward to the next stage of our journey, excited for the impressions awaiting us in Valencia 🏙️.'**
+  String get cruiseSpainDayCartagena;
+
+  /// No description provided for @cruiseSpainDayValencia.
+  ///
+  /// In en, this message translates to:
+  /// **'In Valencia, the AIDA Stella docked on a sunny day, and we had plenty of time to explore the city 🏙️☀️.\n\nWe started our walk through the old town and strolled relaxed through its charming narrow streets. The Cathedral of Valencia with its tall Micalet tower was especially impressive, which we admired from a distance ⛪✨.\n\nWe then continued to the Mercat Central, one of the largest food markets in Europe, where we were amazed by the lively atmosphere and the many fresh products. Our next stop was the Palacio del Marqués de Dos Aguas, a magnificent Baroque building whose ornate façade immediately captivated us.\n\nDuring our walk, we also passed the Torres de Serranos, one of the old city gates that makes Valencia’s history truly tangible. Afterwards, we strolled through the Jardín del Turia, a beautiful park built in a former riverbed, offering a refreshing green oasis in the city 🌳💛.\n\nTo finish the day, we enjoyed a peaceful walk along the port of Valencia, watched the ships and the shimmering water, and ended the day in a relaxed way.\n\nValencia left a very positive impression on us – the city was lively, charming, and simply beautiful. Definitely a place we would love to visit again 🌊❤️.'**
+  String get cruiseSpainDayValencia;
+
+  /// No description provided for @cruiseSpainDayBarcelona.
+  ///
+  /// In en, this message translates to:
+  /// **'In Barcelona, the AIDA Stella docked on a bright sunny day with 30 degrees and sunshine, with a layover from 8:00 a.m. to 6:00 p.m. ☀️🌡️\n\nAs soon as we left the ship, we immediately felt the lively atmosphere of the city – Barcelona is simply a dream ❤️. We started our day with a walk along La Rambla, enjoying the colorful stalls, street artists, and the vibrant energy of the city. Next, we visited the Mercat de Boqueria, where we were amazed by the variety of fresh fruit, fish, and local specialties – an absolute highlight for all the senses 🍓🐟.\n\nOf course, a visit to Barcelona Cathedral was also a must, whose Gothic architecture immediately captivated us. After that, we strolled through the city, browsed small boutiques, and enjoyed shopping in Barcelona, because here you can truly find everything your heart desires 🛍️✨.\n\nBetween sightseeing stops, we enjoyed little breaks in charming cafés, wandered through winding streets, and simply soaked in the atmosphere. Barcelona showed itself from its beautiful sunny side and once again enchanted us.\n\nIn the evening, we returned to the ship, full of wonderful memories and happy about the final impressions of this unforgettable cruise 🌊🛳️.'**
+  String get cruiseSpainDayBarcelona;
+
+  /// No description provided for @cruiseSpainDayEndMallorca.
+  ///
+  /// In en, this message translates to:
+  /// **'After eleven unforgettable days at sea, we arrived in Palma de Mallorca early in the morning at 5:00 a.m. The sun was slowly rising over the horizon, temperatures were 32 degrees, and the island was showing itself from its most beautiful side 🌅☀️. We immediately felt that special Mallorca atmosphere again – the salty air, the sea, the first rays of sunlight on our skin.\n\nSince we had planned two more days on Mallorca, we spontaneously checked into the HM Tropical in El Arenal 🏨. Our room was modern and cozy, the atmosphere relaxing – perfect to unwind after the cruise. Although the hotel was quite far from Megapark and Bierkönig, that didn’t matter at all. We now had time to enjoy the island in our own relaxed way.\n\nThe days passed quickly: we spent hours by the pool, relaxed completely, enjoyed the sound of the waves at the nearby beach, and strolled through the streets of El Arenal 🌴💦. A special highlight was another visit to Cala Ratjada, our personal favorite place on Mallorca. There we treated ourselves to wood-fired pizza at our favorite pizzeria, just like we remembered from our childhood 🍕❤️.\n\nAnother unforgettable moment was the tattoo. For me, it was my first one, and together with my mother this small but meaningful step became a lasting memory of our journey 🖤. Every needle, every glance at the finished design reminded us of this intense, beautiful time – of sun, sea, cities, laughter, and adventure.\n\nAfter two relaxing days on the island, we finally began our journey home. This time we took the Balearia ferry, which brought us safely to Barcelona during the day ⛴️. Even upon boarding, we immediately noticed the difference compared to the GNV ferry: calm, comfortable, and pleasant – true luxury after the rather rough crossing at the beginning of our trip. We enjoyed the sun on deck, the passing coastline, and once again felt the vastness of the sea before returning to the mainland.\n\nOnce in Barcelona, our 12-hour night drive home began 🚗💤. Tired but filled with thousands of impressions, memories, and beautiful moments, we drove through the night. Every kilometer brought us closer to everyday life again, but in our hearts we carried the feeling of freedom, summer, and the sea 🌊💖.\n\nAnd so our journey came to an end – a mix of adventure, relaxation, and unforgettable moments that we will cherish forever. From the first sunrise in Palma to the last view of the Balearic Islands, every day was a small adventure we experienced together ✨.'**
+  String get cruiseSpainDayEndMallorca;
+
+  /// No description provided for @titleStellaSpainPortugal.
+  ///
+  /// In en, this message translates to:
+  /// **'Spain & Portugal'**
+  String get titleStellaSpainPortugal;
+
+  /// No description provided for @cruiseHighlights1.
+  ///
+  /// In en, this message translates to:
+  /// **'🌊 Start of the second cruise – AIDA Stella, cabin 8133'**
+  String get cruiseHighlights1;
+
+  /// No description provided for @cruiseHighlights2.
+  ///
+  /// In en, this message translates to:
+  /// **'🚢 Explore the ship & unwind – sea day on the AIDA Stella'**
+  String get cruiseHighlights2;
+
+  /// No description provided for @cruiseHighlights3.
+  ///
+  /// In en, this message translates to:
+  /// **'🛺 Discover Olbia – tuk-tuk adventure in Sardinia'**
+  String get cruiseHighlights3;
+
+  /// No description provided for @cruiseHighlights4.
+  ///
+  /// In en, this message translates to:
+  /// **'🍕 Enjoy Naples – the best pizza of our lives'**
+  String get cruiseHighlights4;
+
+  /// No description provided for @cruiseHighlights7.
+  ///
+  /// In en, this message translates to:
+  /// **'♟️ Experience Livorno – Piazza dei Miracoli & seaside views'**
+  String get cruiseHighlights7;
+
+  /// No description provided for @cruiseHighlights8.
+  ///
+  /// In en, this message translates to:
+  /// **'🚤 Côte d’Azur experience – tendering in Cannes'**
+  String get cruiseHighlights8;
+
+  /// No description provided for @cruiseHighlights9.
+  ///
+  /// In en, this message translates to:
+  /// **'⚓ Discover Toulon – behind the scenes of the AIDA Stella'**
+  String get cruiseHighlights9;
+
+  /// No description provided for @cruiseHighlights10.
+  ///
+  /// In en, this message translates to:
+  /// **'🛍️ Enjoy Barcelona – shopping & exploring La Rambla'**
+  String get cruiseHighlights10;
+
+  /// No description provided for @cruiseHighlights11.
+  ///
+  /// In en, this message translates to:
+  /// **'✈️ Saying goodbye – flight back home'**
+  String get cruiseHighlights11;
+
+  /// No description provided for @cruiseHighlightsTitle1.
+  ///
+  /// In en, this message translates to:
+  /// **'The second cruise began for us with a slight tingling feeling in our stomachs – my mother was still a bit skeptical after the first trip. Would she enjoy this second cruise more? Would she feel comfortable? I, on the other hand, was full of excitement and curious to see how we would like the AIDA Stella.\n\nAfter our flight from Cologne-Bonn, we landed in Palma de Mallorca 🌞. From the airport, we took a taxi to our hotel in El Arenal, checked in, and quickly settled in. After that, we headed to Cala Ratjada, where we enjoyed a special experience: Garra Rufa fish gently nibbling on the dead skin of our feet 🐟. We then ended the day in the sun with a delicious lunch before returning to El Arenal in the evening. After a relaxed walk and some beach air, we went back to the hotel and ended our first day in a calm and cozy way.\n\nThe next morning started early: we took a taxi to the port to check in on the AIDA Stella 🚢. Since our cabin was not yet ready, we used the time for a short trip to El Arenal. We visited the café of Iris Klein, which she was still running at the time, and treated ourselves to one of her ice cream waffles 🍦. It was a nice little moment of anticipation before we finally moved into our cabin 8133 – a balcony cabin on the starboard side. By noon, we were back on board and comfortably settled in.\n\nDuring our first walk around the ship, we immediately noticed the difference compared to the AIDA Nova: the Stella felt much more compact, friendly, and welcoming. My mother slowly started to feel more comfortable, her initial skepticism began to fade, and we enjoyed our first impressions of the Stella. In the evening, we set sail and enjoyed our first dinner on board 🍝 – a beautiful start to our ten-day route through Mediterranean highlights, which would show whether this might be our last cruise together or the beginning of many more adventures at sea.'**
+  String get cruiseHighlightsTitle1;
+
+  /// No description provided for @cruiseHighlightsTitle2.
+  ///
+  /// In en, this message translates to:
+  /// **'The next day was a sea day, and even here we already noticed a clear difference compared to the previous cruise. The sea lay calm, gentle waves rocked the ship, and an immediate feeling of relaxation spread 🌊. My mother, who had still been skeptical on the first cruise, began to feel more and more comfortable. It was as if she was gradually learning to love cruising – and for me it was clear: it was the right decision to take this second trip. The chance that we would go on more cruises in the future increased significantly.\n\nOn this sea day, we took our time to explore the AIDA Stella in peace. What we immediately liked: the ship was neither too big nor too small – just right to find your way around and enjoy everything without feeling lost. We strolled across the decks, discovered small corners we hadn’t noticed before, and enjoyed the view of the endless blue sea.\n\nFor a little snack in between, we tried the Best Burger@Sea 🍔 – and it was actually really good! We also took a break in our cabin, enjoyed a short nap, and later watched a bit of the onboard shows 🎭.\n\nIt was a wonderful, calm start to the actual holiday: no rush, no stress, just time together, relaxation, and enjoying the ship. A perfect beginning before the first port days with new places, impressions, and experiences awaited us.'**
+  String get cruiseHighlightsTitle2;
+
+  /// No description provided for @cruiseHighlightsTitle3.
+  ///
+  /// In en, this message translates to:
+  /// **'After the first sea day, we arrived the next morning in Olbia on Sardinia 🇮🇹⚓. The town itself is not very big, but incredibly charming – cute, calm, and somehow cozy. We were curious to see what awaited us there.\n\nAs soon as we left the port, we immediately noticed tuk-tuks driving through the streets 🚕. On a spontaneous decision, we went on a small tuk-tuk tour to get to know the town a little better. The ride was wonderfully relaxed, and we got a first impression of Olbia: small alleys, colorful houses, a bit of hustle and bustle – but all very manageable and laid-back 🏘️✨.\n\nAfter the tuk-tuk tour, we took a short walk through the streets, enjoyed the sun, and soaked in the calm atmosphere. It was nice to explore the town on our own, without any time pressure – just looking around, admiring, and taking a few photos 📸🌞.\n\nOlbia was only a short stop, but exactly the right one: relaxed, charming, and full of small impressions that stay in your heart. This allowed us to look forward to the next port in a relaxed way and continue enjoying the cruise on the Stella to the fullest ❤️🚢.'**
+  String get cruiseHighlightsTitle3;
+
+  /// No description provided for @cruiseHighlightsTitle4.
+  ///
+  /// In en, this message translates to:
+  /// **'The next stop on our route was Naples 🇮🇹⚓. To be honest, the city didn’t really enchant us – everything felt a bit hectic and restless, and the streets were quite busy 🏙️😅. We decided not to stay too long and instead took a short walk through the city, just to get a feel for Naples.\n\nIt didn’t take long before we realized we basically had only one goal: pizza 🍕❤️. And what can I say – it was an absolute highlight! For just four euros per pizza, we had the best pizza we had ever eaten. Thin crust, perfectly baked, fresh ingredients – simply unbelievably delicious 😋🔥. We didn’t need anything more that day.\n\nAfter enjoying our pizza, we walked a little more through the streets, soaked in the atmosphere for a moment, and then made our way back to the ship. It was a rather short but unforgettable stop – especially because of the pizza! 🍴✨\n\nBack on board, we ended the day in a relaxed way, enjoying the sea view from our balcony cabin and already looking forward to the next ports of the AIDA Stella 🚢💙.'**
+  String get cruiseHighlightsTitle4;
+
+  /// No description provided for @cruiseHighlightsTitle5.
+  ///
+  /// In en, this message translates to:
+  /// **'Our next port was Civitavecchia 🇮🇹⚓ – the gateway to Rome, but this time we had not planned an excursion to the capital. Instead, we decided to explore the town a little and simply go for a relaxed walk 🚶‍♀️💛.\n\nWe strolled for about one to two hours through the streets of Civitavecchia and looked around the small alleys. A particular highlight was Forte Michelangelo, an impressive fortress right by the harbour 🏰. We enjoyed the view, took a few photos, and simply let the atmosphere sink in. Otherwise, we kept things very relaxed and didn’t do a big sightseeing marathon – just a quiet day ashore that perfectly matched the rest of our trip 🌊✨.\n\nAfter our walk, we returned to the ship, where we enjoyed a bit of sunshine on the balcony and watched the departure from Civitavecchia 🚢💙. In the evening, we had our usual delicious dinner and ended the day in a cozy way, ready for the next adventures on the AIDA Stella 🌅🍴.'**
+  String get cruiseHighlightsTitle5;
+
+  /// No description provided for @cruiseHighlightsTitle6.
+  ///
+  /// In en, this message translates to:
+  /// **'When we arrived in Livorno 🇮🇹⚓, we were immediately fascinated by a place that would stay in our memories for a long time – the Terrazza Mascagni with its unique black-and-white chessboard pattern right by the sea. This large waterfront square is paved with over 34,000 black-and-white tiles and offers a breathtaking view of the coast and the ocean – a place that instantly enchanted both of us and one we will often think back to 💭🌊.\n\nWe took a relaxed walk across this terrace, felt the warm stone under our feet, and enjoyed the light falling on the endless tiles. The square felt so vast and open that it almost seemed as if you were merging with the sky and the sea ✨. Afterwards, we continued strolling along the waterfront street – Livorno is not very big, but that made the visit even more pleasant and relaxed. We simply let ourselves drift, absorbed the atmosphere, and enjoyed this special moment together 🚶‍♀️🚶‍♂️.\n\nAfter this walk, we returned on board the AIDA Stella. We spent the rest of the day relaxing on the ship, watched Livorno’s departure from our balcony, and ended the evening with a cozy dinner 🍽️💙.\n\nLivorno will always be remembered especially for the Terrazza Mascagni – this square with its chessboard floor and sea view is definitely one of those impressions that make this journey so unique 🖤🤍.'**
+  String get cruiseHighlightsTitle6;
+
+  /// No description provided for @cruiseHighlightsTitle7.
+  ///
+  /// In en, this message translates to:
+  /// **'Our day on the Côte d’Azur 🇫🇷☀️ began with a special experience: we were tendered into Cannes. It was really exciting and we absolutely loved it – that little boat transfer from the ship to the harbour instantly feels like an adventure 🚤✨. In Cannes, we had some time to explore the city. We strolled along the Promenade de la Croisette, enjoyed the warm sunshine and the city’s atmosphere – a truly beautiful first impression of the Côte d’Azur 🌴🏙️.\n\nAfter that, our excursion to Monaco 🇲🇨 began, which we had booked through AIDA. It was really, really funny: we still had a bit of time and spontaneously wanted to do a hop-on hop-off bus tour – but traffic in Monaco had other plans 🚦😅. Our bus got stuck in a traffic jam, and we arrived a bit late at the AIDA excursion bus. Luckily, the guides waited, so everything worked out fine. In Monaco, we enjoyed the view of the yachts in the harbour, the luxury cars, and the impressive buildings – truly stunning ✨🏎️⛵.\n\nLater we continued to Saint-Tropez 🇫🇷. Here we spent our time very relaxed: we walked a bit through the town and along the harbour, enjoyed the atmosphere, but our culinary highlight was rather… well, the pizza 🍕😅. We paid a proud 20 euros for a pizza that honestly wasn’t very tasty. A huge contrast to Naples, where we had the best pizza of our lives for just 4 euros 😄.\n\nIn the evening we returned on board the AIDA Stella, happy about this varied day on the Côte d’Azur 🌊💙. Cannes, Monaco, and Saint-Tropez – each place special in its own way, each leaving its own impressions and memories. Especially the tendering in Cannes and the spontaneous adventures in Monaco will stay with us for a long time 🚢✨.'**
+  String get cruiseHighlightsTitle7;
+
+  /// No description provided for @cruiseHighlightsTitle8.
+  ///
+  /// In en, this message translates to:
+  /// **'Our day in Toulon 🇫🇷 started relaxed at the harbour, but instead of spending much time in the city, we had booked something very special: an exclusive ship tour on the AIDA Stella 🚢✨. For 70 euros per person, we got to go behind the scenes and gained a unique insight into life on board.\n\nFirst, the crew took us to the bridge – an incredible feeling to overlook the entire ship from there and see the navigation up close 🛳️👀. After that, we went behind the scenes into the kitchen, where we were shown how the crew prepares the many meals for the guests 🍽️👨‍🍳. We also got to visit the jacuzzi area, which is normally reserved for guests 🛁✨. One highlight was the beer tasting in the brewery, where we tried different varieties 🍺😄.\n\nOf course, dinner at Rossini was also included – a culinary experience that perfectly rounded off the day 🍝🍷.\n\nThere was only a little time left for a short walk on land, but it was enough to get some fresh air 🌞🚶‍♀️. The focus of this day was clearly the ship itself – and it was incredibly exciting to gain so many insights that you would normally never get to see. Toulon didn’t just impress us as a port city, but especially as the starting point for an unforgettable experience on the Stella 💙🚢.'**
+  String get cruiseHighlightsTitle8;
+
+  /// No description provided for @cruiseHighlightsTitle9.
+  ///
+  /// In en, this message translates to:
+  /// **'In Barcelona 🇪🇸, we immediately felt at home again – we already knew the city from our first cruise and had loved it ever since ❤️✨. This time we wanted to take things more relaxed and skipped the hop-on hop-off bus tour. Instead, we used the shuttle from the port into the city again, 12 euros per person 🚌💨 – practical, quick, and uncomplicated.\n\nWe strolled leisurely through the streets, enjoyed the atmosphere, and visited the Mercat de la Boqueria again 🥭🍊🥩. Everything tasted amazing there, and we picked up fresh fruit, snacks, and a few treats for later. Afterwards, we continued along La Rambla, passing street artists, colorful stalls, and the typical vibrant sights of Barcelona 🎨🌞.\n\nIn between, we took some time for a bit of shopping 🛍️😄 – small boutiques, souvenirs, and special items you can only find here. Overall, it was a very relaxed day where we simply enjoyed the city without any rush or strict schedule 🏙️💛.\n\nBarcelona once again showed us why we love this city so much: lively, colorful, full of amazing food, and simply a place where you instantly feel comfortable 🌟❤️. A perfect closing to our Mediterranean highlights tour.'**
+  String get cruiseHighlightsTitle9;
+
+  /// No description provided for @cruiseHighlightsTitle10.
+  ///
+  /// In en, this message translates to:
+  /// **'At the end of our 10-day journey, we headed back to Mallorca 🇪🇸✈️. This time everything felt relaxed and routine – we no longer had any big plans, as our return flight home was approaching. After landing at Palma de Mallorca Airport, we collected our luggage 🧳 and made our way home.\n\nIt was a quiet and peaceful ending to our cruise: no sightseeing, no excursions, just the journey back home after an unforgettable trip 🌞❤️. Once we arrived home, it was time to unpack, reflect on all the memories, and realize how many beautiful experiences we had gathered over these 10 days ✨🏠.\n\nEveryday life was waiting again, but we carried with us a huge treasure of memories, impressions, and shared moments with my mom – and the hope that this would not be our last cruise 🚢💛.'**
+  String get cruiseHighlightsTitle10;
+
+  /// No description provided for @orientDay1.
+  ///
+  /// In en, this message translates to:
+  /// **'🛳️ Our New Year’s cruise begins – arrival in Dubai'**
+  String get orientDay1;
+
+  /// No description provided for @orientDay2.
+  ///
+  /// In en, this message translates to:
+  /// **'🌞 First real day in Dubai – strolling & exploring'**
+  String get orientDay2;
+
+  /// No description provided for @orientDay3.
+  ///
+  /// In en, this message translates to:
+  /// **'🌇 Exploring Abu Dhabi on our own adventure'**
+  String get orientDay3;
+
+  /// No description provided for @orientDay4.
+  ///
+  /// In en, this message translates to:
+  /// **'🕌 A day in Muscat – souks & oriental atmosphere'**
+  String get orientDay4;
+
+  /// No description provided for @orientDay5.
+  ///
+  /// In en, this message translates to:
+  /// **'🎆 New Year’s Eve in Dubai – seaplane & desert adventure'**
+  String get orientDay5;
+
+  /// No description provided for @orientDay6.
+  ///
+  /// In en, this message translates to:
+  /// **'✈️ Goodbye Dubai – journey home full of memories'**
+  String get orientDay6;
+
+  /// No description provided for @orient1.
+  ///
+  /// In en, this message translates to:
+  /// **'Our very first cruise through the Orient – and at the same time our first New Year’s cruise – finally began! 🌴✨ Although we had already visited Dubai once before, this time everything was going to be different: at sea, on the AIDA Prima, which we were experiencing for the very first time.\n\nBecause we booked the trip so spontaneously, just three days in advance, we didn’t fly with Emirates as usual. Instead, we took an AIDA charter flight to Dubai – and that alone turned into a real adventure before we even stepped on board the AIDA Prima.\n\nThe plane was really small, simple, and somehow… nostalgic 😅. Nothing like modern long-haul aircraft – it literally felt like it had come straight out of a different era. It had space for about 150 passengers, flew noticeably slower, and instead of the usual six hours to Dubai, we spent a full twelve hours in the air, including an unexpected refueling stop. Honestly, it was a bit unusual, but exactly the kind of experience you later laugh about and never forget. 😎✈️\n\nOnce we arrived in Dubai, everything went smoothly again. Our transfer to the port worked perfectly, and we were taken straight to the AIDA Prima. The first sight of the ship made everything clear: we were going to feel very comfortable here. 😍 From the very first moment, we loved the AIDA Prima – spacious, modern, and at the same time cozy. We explored the public areas, soaked in the atmosphere, and enjoyed our first view of the sparkling water. 🌊🛳️\n\nWe were able to move into cabin 9150 immediately – a veranda cabin on the starboard side, very centrally located in the ship – absolutely perfect for keeping an overview of everything. We spent our first night still in the port of Dubai. For us, it was the perfect start to our New Year’s holiday: Dubai at night, the glittering skyline, the warm evening air – simply magical. ✨🌃\n\nAnd so our adventure in the Orient began: exciting, surprising, and full of anticipation for sun, sea, and unforgettable moments. Just my mom and me, ready for discoveries and shared memories. ❤️⚓'**
+  String get orient1;
+
+  /// No description provided for @orient2.
+  ///
+  /// In en, this message translates to:
+  /// **'After a relaxed first night on board the AIDA Prima, we started our first real day in Dubai full of anticipation. Since we had already explored the city in detail the year before, we decided to take it easy this time and enjoy a relaxed, self-guided day.\n\nOur destination: the Dubai Mall 🛍️✨, one of the largest shopping malls in the world. It’s a place where you can easily spend hours – strolling, eating, exploring, or simply watching the vibrant atmosphere. We let ourselves drift through the impressive halls, took our time, and enjoyed small breaks with tasty snacks and drinks. Everything was calm and unhurried – just pure enjoyment. 😌\n\nFor anyone who hasn’t been to Dubai yet: there are incredible highlights worth experiencing. One of them is Burj Khalifa – At The Top 🌆, where you go up one of the world’s tallest skyscrapers and enjoy breathtaking views over the city, the Palm Islands, and the skyline – truly unforgettable.\n\nAnother highlight is the Dubai Mall Aquarium & Underwater Zoo 🐠🐟, a massive aquarium located right inside the mall – perfect for families, photography lovers, and anyone who enjoys being amazed. And of course, the Dubai Fountain Show 💦🎶 right in front of the Burj Khalifa, an incredible combination of water, light, and music that runs every evening in short intervals.\n\nIf you’re looking for even more adventure, you can experience real snow at Ski Dubai 🎿❄️ inside the Mall of the Emirates or enjoy some of the world’s most spectacular water slides at Atlantis Aquaventure Waterpark on The Palm 🐬💦.\n\nFor us, however, the focus was on relaxation and anticipation for the cruise. We strolled through the mall, enjoyed the atmosphere, treated ourselves to small delicacies, and took in the impressions of the city once more. Having already experienced Dubai before, everything felt very relaxed and stress-free – the perfect start to our holiday. ✨❤️\n\nAt the end of the day, we finally set sail from Dubai towards Abu Dhabi, excited for the adventures that still awaited us. 🛳️🌊'**
+  String get orient2;
+
+  /// No description provided for @orient3.
+  ///
+  /// In en, this message translates to:
+  /// **'Our first real day in Abu Dhabi began full of curiosity and a sense of discovery. We wanted to explore the city on our own – from futuristic glass towers to traditional cultural landmarks – and simply let ourselves drift through the day.\n\nOur first stop was the Sheikh Zayed Mosque 🕌💫, one of the most breathtaking places of worship in the world. From the moment we entered, we were speechless: the bright white marble domes, the delicate decorations, the beautifully designed floors, and the stunning reflections in the water pools – simply magical. It’s an absolute must-see when visiting the UAE. We could hardly stop admiring it and took photos from every angle 📸.\n\nNext, we added a bit of adrenaline with Yas Island and Ferrari World 🏎️🎢 – a spectacular indoor theme park that excites both motorsport fans and thrill-seekers. Even if you’re not a hardcore racing fan, like us, you still get completely drawn in by the giant roller coasters, themed worlds, and the overall atmosphere that makes you forget everyday life.\n\nOf course, a visit to the iconic Emirates Palace / Mandarin Oriental ✨ was also part of the day. Many visitors stop by the famous Le Café to try the legendary gold cappuccino with 24-karat gold flakes ☕. We only admired the exterior, but even that alone is incredibly impressive – a true architectural masterpiece and a dream for photos.\n\nFor future trips to Abu Dhabi, we also added a few highlights to our personal list:\n• Warner Bros. World 🎬🎡 – a massive indoor theme park with movie characters, shows, and immersive worlds\n• Yas Waterworld 🌊💦 – one of the largest water parks in the region with spectacular slides, a lazy river, and wave pools\n\nAbu Dhabi surprised us with a perfect blend of culture, architecture, and adventure. In the evening, we finally set sail from Abu Dhabi towards Muscat, excited for the next chapters of our journey. 🛳️🌊'**
+  String get orient3;
+
+  /// No description provided for @orient4.
+  ///
+  /// In en, this message translates to:
+  /// **'In the morning, the AIDA Prima arrived in Muscat, the fascinating capital of Oman 🌅. Even at first sight, the city impressed us with its unique atmosphere: majestic mountains, turquoise water, and traditional Arabian architecture – simply breathtaking.\n\nOur destination was the famous and vibrant Mutrah Souk 🛍️💫. Its narrow alleys are a true feast for the senses: stalls packed closely together offer colorful spices, exotic perfumes, handmade textiles, silver jewelry, and beautifully crafted souvenirs. Everywhere you look, there is something new to discover – a paradise for anyone who loves the vibrant spirit of the Orient.\n\nOne of the most amusing details was the flexibility of the vendors: Omani Rial, US Dollars, Euros – and even Monopoly money was accepted 😄. It gave us a fun insight into the relaxed and humorous trading culture here. We laughed a lot, found some small souvenirs, and simply enjoyed wandering through the market.\n\nAfter our extended stroll through Mutrah Souk, we returned to the ship 🚢. The sounds of the city, the chatter, and the lively atmosphere slowly faded away as we enjoyed the comfort and calm on board.\n\nThe rest of the afternoon was all about relaxation: moments on the balcony, fresh sea air, and small snacks while simply unwinding 🌊☀️. Muscat left us with a very different impression compared to the glittering cities of the UAE – quieter, more authentic, and deeply atmospheric, with a sense of calm beauty.\n\nIn the evening, we finally set sail from Muscat back towards Dubai, full of anticipation for the next chapters of our journey. 🛳️🌙'**
+  String get orient4;
+
+  /// No description provided for @orient5.
+  ///
+  /// In en, this message translates to:
+  /// **'Our day in Dubai began full of anticipation for the festive New Year’s Eve night ✨🌴. We still had two days left to experience the city from a special perspective and to end the year in style.\n\nOne absolute highlight for us was the seaplane tour 🛩️. Taking off directly from the water, we had the unique chance to admire the city from above: the famous Palm Island, the impressive skyscrapers, and the sparkling coastline. The view was simply breathtaking – an experience we will never forget 🌇💙.\n\nTo be honest, flying in a seaplane was also a bit scary for us 😅. The rattling of the propellers and the gentle rocking during takeoff and landing made us a little uneasy. For a future Dubai trip, we would definitely prefer a helicopter or a conventional aircraft – more stable and relaxed!\n\nIn the evening, a festive New Year’s Eve dinner awaited us on board 🍽️✨. The buffet restaurants were beautifully decorated, the tables were elegantly set, and there was a special festive atmosphere everywhere – perfect to get into the New Year’s mood.\n\nOf course, the fireworks over Dubai were not to be missed 🎆. From the deck we had a good view, although honestly we had expected an even more spectacular show. Still, it was a beautiful moment: with a glass of sparkling wine in hand, surrounded by the ship and the glittering city in the background 🥂.\n\nAfter New Year’s Eve came a very special adventure: our desert overnight stay 🏜️. We were picked up directly by bus as part of an AIDA excursion. In the desert, we were welcomed with music, cold drinks, and warm hospitality. We spent the night in a small hut and enjoyed the silence and endless vastness of the desert.\n\nThe next morning started early with camel riding 🐪 and an exciting jeep safari through the dunes. For some of us, especially my mother, it got quite turbulent – those sitting in the back were shaken up quite a bit 😅. Despite a bit of discomfort, it was an unforgettable adventure in the middle of the endless desert – an experience that will stay with us for a long time.\n\nWe used our last day in Dubai to enjoy the city once more at a relaxed pace 🌴🛍️. Small walks, final shopping, and consciously soaking up the atmosphere rounded off our stay perfectly before heading back home ✈️❤️.'**
+  String get orient5;
+
+  /// No description provided for @orient6.
+  ///
+  /// In en, this message translates to:
+  /// **'After two exciting days in Dubai, our Orient cruise was finally coming to an end 🌴✨. In the morning, we had one last chance to take in the impressions of the city at a relaxed pace – the glittering skyline, the modern skyscrapers, and the bustling shopping streets. A final walk, a few photos, and a deep breath of the warm air – that’s how you say goodbye to a city that has already found a place in your heart 💙.\n\nOur transfer took us smoothly to the airport, where we checked in and prepared for our return flight. Everything went without a hitch, the atmosphere was calm, and as we settled into our seats on the plane, we looked back on the past days: the experiences high above the clouds, the unforgettable views of Dubai, Abu Dhabi, and Muscat, the small adventures in the souks, and the magical moments on board the ship – all of it created memories we will carry with us forever 🌅✈️.\n\nAnd so our journey came to an end, filled with fascinating impressions, culinary highlights, and unforgettable moments – with the comforting feeling that this Orient cruise will continue to live on in our hearts for a long time ❤️.'**
+  String get orient6;
+
+  /// No description provided for @titleNorwegen.
+  ///
+  /// In en, this message translates to:
+  /// **'Norwegian Fjords'**
+  String get titleNorwegen;
+
+  /// No description provided for @norwegenDayTitle1.
+  ///
+  /// In en, this message translates to:
+  /// **'Setting off for Hamburg – Our excitement knew no bounds! 🛳️✨'**
+  String get norwegenDayTitle1;
+
+  /// No description provided for @norwegenDayTitle2.
+  ///
+  /// In en, this message translates to:
+  /// **'A day just for us – Slowing down at sea ☕🛳️'**
+  String get norwegenDayTitle2;
+
+  /// No description provided for @norwegenDayTitle3.
+  ///
+  /// In en, this message translates to:
+  /// **'Bergen – Reuniting with a city we’ve come to love 🏔️⚓'**
+  String get norwegenDayTitle3;
+
+  /// No description provided for @norwegenDayTitle4.
+  ///
+  /// In en, this message translates to:
+  /// **'Magical moments in Ålesund – Art Nouveau charm and stunning views 🌊✨'**
+  String get norwegenDayTitle4;
+
+  /// No description provided for @norwegenDayTitle5.
+  ///
+  /// In en, this message translates to:
+  /// **'Enchanted by Geirangerfjord – Majestic waterfalls & unforgettable views 🌊🏔️'**
+  String get norwegenDayTitle5;
+
+  /// No description provided for @norwegenDayTitle6.
+  ///
+  /// In en, this message translates to:
+  /// **'Exploring Trondheim – Colorful wooden houses & sunset by the fjord 🌅🏘️'**
+  String get norwegenDayTitle6;
+
+  /// No description provided for @norwegenDayTitle7.
+  ///
+  /// In en, this message translates to:
+  /// **'Molde – The City of Roses & a panorama full of impressions 🌹🏞️'**
+  String get norwegenDayTitle7;
+
+  /// No description provided for @norwegenDayTitle8.
+  ///
+  /// In en, this message translates to:
+  /// **'Måløy – Adventure, natural wonders and the Kannestein rock 🌊🪨🌞'**
+  String get norwegenDayTitle8;
+
+  /// No description provided for @norwegenDayTitle9.
+  ///
+  /// In en, this message translates to:
+  /// **'Flåm – Small scenic train, big emotions & pure Norway vibes 🚂🌄'**
+  String get norwegenDayTitle9;
+
+  /// No description provided for @norwegenDayTitle10.
+  ///
+  /// In en, this message translates to:
+  /// **'Stavanger – White houses, shopping success & a relaxed evening 🌤️🌊'**
+  String get norwegenDayTitle10;
+
+  /// No description provided for @norwegenDayTitle11.
+  ///
+  /// In en, this message translates to:
+  /// **'A day at sea – Sailing towards Hamburg 🌊🛳️🌅'**
+  String get norwegenDayTitle11;
+
+  /// No description provided for @norwegenDayTitle12.
+  ///
+  /// In en, this message translates to:
+  /// **'Disembarkation day – Heading home after an unforgettable cruise 🚗🛳️💖'**
+  String get norwegenDayTitle12;
+
+  /// No description provided for @norwegenDay1.
+  ///
+  /// In en, this message translates to:
+  /// **'Our second Norway cruise was finally about to begin, booked once again quite spontaneously about two weeks in advance. Together with my mum and my great-grandmother, we made our way to Hamburg, a city we have visited many times and that has become one of our favourites ❤️.\n\nOn our first day in Hamburg, we arrived at midday and immediately headed to the Blockbräu brewery restaurant 🍺, which is a must on every visit. The food, as always, was excellent – hearty dishes, freshly prepared and beautifully served. We enjoyed our meal together in a relaxed atmosphere, a perfect start to our stay in Hamburg. Afterwards, we took a walk through the old Elbe Tunnel, which is always impressive. On the other side, we had a stunning view of the Elbphilharmonie, the harbour, and the passing ships. We took our time to really soak in the scenery before walking back through the tunnel. Later, we returned to the hotel and ended the day in peace.\n\nOn the second day, we went on a hop-on hop-off bus tour. We started at the Landungsbrücken and enjoyed a great overview of Hamburg’s harbour 🌊. The tour passed the Überseequartier, the modern district with its elegant buildings, and we enjoyed the mix of old and contemporary architecture. We continued past the main train station, where we briefly got off to watch the busy city life. The tour also took us along the Alster, where the water and surrounding parks created a beautiful, typical Hamburg atmosphere 🌿.\n\nWe also passed elegant villa districts such as Uhlenhorst, admiring the historic buildings and gardens. A highlight was HafenCity, the modern waterfront district with its futuristic architecture. We drove past the City Hall and St. Michael’s Church – two landmarks that make Hamburg so special. A funny insider on the tour was learning that one one-way street actually changes direction once a day 😄. We also passed the exhibition halls and explored parts of the city on foot before returning to the Landungsbrücken. After grabbing a small bite to eat, we visited the Reeperbahn in the Penny Kiez before heading back to the hotel.\n\nOn the third day, we explored Hamburg from a different perspective. We walked through HafenCity and the Speicherstadt, taking in the water, the old warehouses, and modern architecture. Our main destination was the Westfield shopping centre 🛍️, where we enjoyed some shopping. I treated myself to a Franzbrötchen with Smarties at Cinnaversum – absolutely delicious 😋. Afterwards, we returned to the hotel for a short nap before heading to the musical “& Julia” in the evening 🎭, located right next to our hotel. The show was entertaining, beautifully staged, and we all really enjoyed it.\n\nOn the fourth morning, it was finally time to board the AIDA Prima 🛳️. We had booked the AIDA early check-in and were able to board already at 10:30 a.m., which we really appreciate as it makes the start of the cruise so much more relaxed. Everything went smoothly without any stress.\n\nWe were especially happy to hear that our cabin was already ready, so we went straight to our veranda cabin 9286 on the port side, located quite far aft. It was actually the first time we stayed so far back on the ship. It was absolutely fine and we felt comfortable, but we also realised that we prefer cabins more in the middle of the ship.\n\nThe cabin itself was very practical: a double bed, a sofa bed, a nice balcony, and two bathrooms, which is incredibly convenient when travelling as three generations. One bathroom had the toilet and sink, the other the shower and sink – making life onboard much easier.\n\nAfter settling in, we went for lunch around noon, and shortly after returning to the cabin, our suitcases arrived. We unpacked, got comfortable, and truly arrived onboard. Even though we already knew the AIDA Prima, it always feels special walking the decks and experiencing that cruise atmosphere again.\n\nIn the early evening, around 6 p.m., we finally set sail from Hamburg. Departing there is always something special: the Elbe, the cranes, the slowly disappearing city, and the feeling that the holiday has truly begun. For dinner, we went to the Buffalo Steakhouse 🍽️, which was once again excellent. Afterwards, I couldn’t resist and bought a few AIDA charms for my Pandora bracelet – a lovely memory of the trip.\n\nWe ended the evening quietly on our balcony, even bringing a small string of lights to create a cozy atmosphere ✨🌊. Sitting outside, listening to the sea and watching the darkness, these are exactly the moments that make cruising so special.'**
+  String get norwegenDay1;
+
+  /// No description provided for @norwegenDay2.
+  ///
+  /// In en, this message translates to:
+  /// **'Our first sea day felt exactly like what a holiday should feel like: calm, unhurried, and completely stress-free. No schedules, no pressure – just arriving and enjoying the moment.\n\nWe started the day very relaxed with breakfast at the Buffalo Steakhouse ☕🥐. The breakfast there is paid, but that is exactly what makes it special for us: a quiet atmosphere, a small but refined buffet, and overall much more peaceful than the main buffet restaurants. It was the perfect start to a sea day.\n\nAfterwards, we took the time to show my great-grandmother the AIDA Prima, as she had only sailed on the AIDA Nova with us before. So we slowly walked across the different decks, explored restaurants, lounges, and outdoor areas, and kept stopping to enjoy the view of the open sea. It was lovely to see her discovering the ship step by step and how much she liked the Prima.\n\nOf course, no sea day would be complete without a classic: currywurst from the Scharfe Ecke 🌭🔥. The currywurst on AIDA is always a highlight – really tasty, perfect for a snack, and something that has become a fixed part of our sea day routine.\n\nIn between, we simply drifted through the day: some quiet time on the balcony, the sound of the sea in the background, small walks around the ship, and plenty of moments just sitting and breathing 🌊. This is exactly the kind of sea day we love – no need to achieve anything, just being present.\n\nThis day was the perfect start to the cruise. Before the upcoming sightseeing days and new ports, we were able to fully arrive onboard – in the holiday, on the ship, and in our minds ❤️.'**
+  String get norwegenDay2;
+
+  /// No description provided for @norwegenDay3.
+  ///
+  /// In en, this message translates to:
+  /// **'After the relaxed sea day, we woke up full of anticipation because Bergen was waiting for us – a city we already knew and had loved so much on our first visit that we immediately said: we have to come back here 🧡.\n\nAlready in the morning we realised how lucky we were with the weather. For Bergen, it was almost unusually warm: I was just wearing a sweater with a vest over it. No rain, no wind – just perfect conditions to explore the city on foot ☀️✨.\n\nAs the day before, we started relaxed with breakfast at the Buffalo Steakhouse ☕🥐. Calm, cozy, and the perfect way to begin before heading ashore. Then it was time: jackets on, camera ready – Bergen was waiting 📸.\n\nOur first stop was a hop-on hop-off bus tour, ideal for getting an overview of the city 🚌. We got off at the famous Bryggen district. This area is truly special: narrow, colorful wooden houses full of history, right next to the harbour. Bergen shows its most beautiful side here ⚓🏠.\n\nWe walked through the fish market (Fisketorget), took in the atmosphere, and strolled along the harbour. With the sun on our faces, the water beside us, and the surrounding mountains, everything felt perfect 🌊☀️.\n\nThen came a real highlight: the Fløibanen funicular. Last time we didn’t manage to go up, so this time it was a must. The ride itself was already exciting, but the view from the top left us speechless 😍.\n\nSeeing Bergen from above, surrounded by mountains and water – and spotting the AIDA ship below – was simply breathtaking. We spent about an hour up there, walking around, sitting down, and fully taking in the moment 💙.\n\nBack in the city, we treated ourselves to something sweet: soft ice cream at Tjommis 🍦. At first I was unsure, but after hearing an elderly couple rave about it, we tried it. I chose vanilla soft serve with strawberries and strawberry sauce – and it was absolutely delicious 🍓😋.\n\nWe then wandered through a few shops, including a small Christmas store hidden up a steep staircase 🎄.\n\nIn the afternoon, we took the hop-on hop-off bus back to the ship. Perfect timing, because at 3 p.m. cake was waiting onboard 🍰 – strawberry cake with fresh berries from Karls Erdbeerhof, light and delicious after an active day.\n\nAt 5 p.m. it was time to say goodbye to Bergen. Sailing out under the Askøy Bridge was again a special moment, as we watched the city slowly disappear from our balcony 🌉⚓.\n\nIn the evening we returned to the Buffalo Steakhouse. I had a burger again, my mum had a steak – both were excellent as always 🍔🥩. Afterwards we strolled a bit through the onboard shops, including the LEGO store, before ending the day quietly.\n\nLate at night we sat on our balcony for a long time, watching the sunset, listening to the sea, and reflecting on this beautiful day 🌅🌊. Bergen did not disappoint on our second visit – on the contrary. It felt a bit like coming home 🧡.'**
+  String get norwegenDay3;
+
+  /// No description provided for @norwegenDay4.
+  ///
+  /// In en, this message translates to:
+  /// **'The next morning we arrived in Ålesund, and we were really excited to be back in this beautiful town. Even before arrival, we had booked tickets for the scenic little train online 🚋 so we could sit in the front and start the tour comfortably. Right after leaving the ship, we boarded and headed up to the Aksla viewpoint 🌄.\n\nOnce at the top, we had about 20 minutes to enjoy the view. The colourful rooftops, the sparkling harbour, and the calm water below – everything felt peaceful and idyllic. I have to admit that Bergen had the more spectacular view, but this one had its very own charm 💛. We took a deep breath, took some photos, and simply absorbed the moment.\n\nAfter the train ride, we walked through the streets of Ålesund and admired the stunning Art Nouveau architecture 🏛️. Everywhere we looked there were detailed façades, small balconies, and beautiful decorative elements that make the town so special. We also stopped by a few souvenir shops, looked at handmade crafts, and enjoyed the relaxed atmosphere. Afterwards, we continued along the harbour, watched the boats, and breathed in the fresh sea air 🚤🌊.\n\nIn the evening we returned to the ship and at 8 p.m. we set sail ⛴️. We sat on our balcony with our drinks, listening to the sound of the sea while the sky turned into shades of orange and pink 🌅💛. We ended the day in Ålesund with beautiful impressions, relaxed moments, and that special feeling that Norway always manages to enchant us 🛳️✨.'**
+  String get norwegenDay4;
+
+  /// No description provided for @norwegenDay5.
+  ///
+  /// In en, this message translates to:
+  /// **'The next morning we finally reached Geirangerfjord again, a place we simply love 💛. This time everything was slightly different: we arrived about two hours earlier than the year before, which meant we actually slept through the first part of the entrance 😅. Luckily, we woke up right in time for the passage of the Seven Sisters waterfalls – perfectly timed to still see them in all their beauty.\n\nThe Seven Sisters – seven separate waterfalls cascading down the steep cliffs – come with an old legend: a troll once tried to marry the seven sisters, but they escaped him by turning into waterfalls. This story made the fjord feel even more magical as we watched it in awe 🌟💦.\n\nAs soon as we had docked, we went straight to the Buffalo Steakhouse for breakfast 🍳🥓. The small breakfast buffet there costs extra, but it was absolutely worth it. We sat comfortably, enjoyed the view of the fjord, and eased into the day.\n\nAfterwards, we stepped off the ship and wandered through the small village of Geiranger. We browsed souvenir shops, visited the Joker store, and tried the famous chocolate waffle from Geiranger Sjokolade 🍫🧇 – crispy on the outside, soft inside, covered in white chocolate, simply amazing! The small Christmas shop was also really cute 🎄✨.\n\nA real highlight was the Seawalk, which stretches from the ship out into the fjord. You literally walk above the water while the ship sits in the middle of the fjord, surrounded by towering mountains. It was quite windy even in the sunshine 🌞, and the walkway swayed slightly, which made the experience even more exciting – a true little adventure with breathtaking views 🏔️💨.\n\nBack onboard, we treated ourselves to a milkshake prepared especially for us by a very kind waiter 🥤💛. My great-grandmother and I had milkshakes, while my mum enjoyed a cocktail 🍹. Afterwards we sat on our balcony, breathing in the fresh fjord air and simply taking it all in.\n\nAt 6 p.m. we set sail again, sitting comfortably on the balcony as we passed cliffs and the troll-shaped rock formation. The sun painted the fjord in warm colours, the water sparkled, and we enjoyed the gentle sound of the sea 🌅💖.\n\nDinner on board was once again delicious – I had a burger, my mum had a steak 🍽️ – and afterwards we ended the day quietly on the balcony. So many impressions, so much calm, so much beauty – Geirangerfjord enchanted us once again and reminded us why we keep coming back.'**
+  String get norwegenDay5;
+
+  /// No description provided for @norwegenDay6.
+  ///
+  /// In en, this message translates to:
+  /// **'The next morning we arrived in Trondheim at 10 a.m. ⛴️. Before leaving the ship, we started the day as usual with breakfast at the Buffalo Steakhouse 🍳🥐. Even though it comes at an extra cost, it is absolutely worth it: freshly prepared food, a cozy atmosphere, and a perfect start to the day while the sun slowly rose over Trondheim 🌞.\n\nAfterwards, we set out to explore Trondheim on our own 🚶‍♀️🚶‍♀️. Our first walk took us along the harbour, past the colourful warehouses standing on stilts right by the water. These old wooden buildings, so typical for Norway, have a very special charm – you immediately feel like you’ve stepped back in time 🌊🏘️.\n\nWe then walked to Gamle Bybro, the old city bridge of Trondheim, also known as the “Red Bridge”. From here we had a beautiful view of the wooden houses on the other side of the Nidelva river and the old town surroundings. The bridge itself is a popular photo spot, and you can really feel the history embedded in its structure 📸✨.\n\nWe continued strolling through the city streets. Trondheim is a bit larger than the small fjord ports we had visited before, but still very charming and relaxed. There were small cafés, shops, and typical Nordic houses everywhere. My mum and I had already been here on previous trips, but we still enjoyed discovering a few new corners 💛.\n\nAt 7 p.m. we set sail again and enjoyed a beautiful sunset over the fjord 🌅💖. Back onboard, we visited the AIDA shops, where I bought a really nice handbag – a little souvenir that will always remind me of this day 👜✨.\n\nWe ended the evening on our balcony, drinking our beverages, listening to the gentle sound of the sea, and watching Trondheim slowly disappear in the distance 🌊💫. It was a perfect day between city exploration, Nordic charm, and relaxed cruise life – one of those days you simply remember forever ❤️.'**
+  String get norwegenDay6;
+
+  /// No description provided for @norwegenDay7.
+  ///
+  /// In en, this message translates to:
+  /// **'The next morning we already arrived in Molde at 8 a.m. ⛴️. As we entered the harbour, we could already spot the striking Scandic Seilet building in the distance – an architectural highlight of the city. From our balcony we also immediately had a view of Molde Cathedral, standing proudly among the city’s rose gardens ⛪🌹.\n\nAfter leaving the ship, we were greeted straight away by Dodo 🐾 – of course, we had to film a quick TikTok video right away! We already knew Molde a little from previous visits, but it is simply always beautiful. The city is called the “City of Roses” for a reason – roses in all colours were blooming everywhere, filling the air with a fresh, lovely scent 🌹💛.\n\nFirst, we walked to the pier right in front of the ship, which was still quiet and empty in the morning. The rose planters along the walkway made the place feel especially idyllic and cozy 🌸✨. From there, we continued towards the cathedral, passed the town hall, and arrived at a small tour pavilion where excursions were offered. We decided on a shorter tour leading to a spectacular viewpoint – the Molde Panorama. Once at the top, we were rewarded with a breathtaking view over the town, the sea, and the surrounding mountains 🏞️😍. It was a wonderful moment to breathe in the fresh air, feel the sun on our skin, and simply take in the beauty of Norway.\n\nOn the way back, we stopped at the Romsdal Museum. It was really interesting and a bit surreal – you could look through the windows and see how people once lived there, with kitchens, furniture, and even dogs 🏠🐶. This little journey back in time gave us a great impression of life in Molde in earlier days.\n\nAfter the tour, we returned to the town hall, and then something special happened: I stepped into my first café in Molde – the Macé Café AS ☕🥪🍓. I don’t usually go to cafés often, but this one immediately drew me in. The selection was amazing: fresh sandwiches, waffles, smoothies, and cakes. We had sandwiches and smoothies – everything was fresh, delicious, and made with love 😋💛. It wasn’t exactly cheap, but absolutely worth it, and I can already imagine coming back here on future visits to Molde.\n\nIn the late afternoon, we returned to the ship, and at 6 p.m. we set sail again. Dinner was, as always, at the Buffalo Steakhouse, where we reflected on the day 🥩🍽️. Afterwards, we enjoyed the evening on our balcony, listening to the gentle sound of the sea, watching the warm sunset colours spread across the sky 🌅🌊, and ending a truly wonderful day in Molde full of beautiful impressions, delicious food, and Nordic charm ❤️✨.'**
+  String get norwegenDay7;
+
+  /// No description provided for @norwegenDay8.
+  ///
+  /// In en, this message translates to:
+  /// **'The next morning we arrived in Måløy (on the island of Måløyna) at 8 a.m. ⛴️, a port we had never been to before, and we were really excited to discover something new 🌟. Even while entering the harbour, we kept looking out at the scenery the whole time – everything felt so calm and typically Nordic that we immediately knew: today would be something special 📍.\n\nSince we were only allowed to leave the ship at 9 a.m., we first went to breakfast at the Buffalo Steakhouse 🥐☕. It was very relaxed and gave us plenty of energy before finally going ashore. As soon as we got off the ship, several friendly locals and tour operators were already waiting, offering excursions – and we spontaneously decided on a guided minibus tour 🚐.\n\nThe driver was an absolute highlight 😄! He was super friendly, had loud music playing, occasionally grabbed a microphone, and even did karaoke with us – we were sitting right behind him and it felt like a mini road-trip concert 🎤🎶. There were about 15 people in total, and it was just incredibly fun.\n\nOur first stop was a purple house 🟣, where we stopped because the driver told us a woman from Thailand lives there and painted her house with a stone-inspired design. In the same street there were several colourful houses – a real eye-catcher and extremely photogenic 📸.\n\nThe next stop was one of the main highlights of the day: Kannesteinen – a unique rock formation shaped over thousands of years by wind and the waves of the North Atlantic 🪨💦. This mushroom-shaped stone in Oppedal is about three metres high and is a perfect example of nature’s artwork. Our driver showed us photos he had taken there: one at sunset, another with the northern lights – absolutely stunning ✨. The limestone erosion from the waves has created its unique shape – a true natural masterpiece 📷.\n\nWe continued to Kråkenes Lighthouse 🗼, where we stopped for about 45 minutes and took a 10-minute hike to the viewpoint. Even the path there was beautiful: wild nature, fresh air, and endless ocean views – pure Norway 🌬️🌊. At the top we had time to enjoy the view and take photos before heading back to the bus. Unfortunately, the terrain was not suitable for people with walkers, which was a bit of a shame, but for us it was a real nature experience 🌿.\n\nThe final stop was Refviksanden beach 🏖️ – a white sandy beach often described as one of the most beautiful in Norway, stretching about 1.5 km 💙. It was on our bucket list to at least once “swim” in the fjords – so we just walked into the water in our clothes. With around 15°C, it was chilly but surprisingly pleasant and not uncomfortable at all ❄️😊. We were really lucky with the weather – sunshine, blue skies, and this incredible Nordic beach scenery.\n\nThe entire tour lasted about four hours and was an absolute highlight of the day – landscapes, laughter on the bus, nature, sea, and a super friendly driver who kept telling stories along the way 🚌✨.\n\nAt 4 p.m. we set sail again, and there was even a small beach party during departure 🎉: an Elvis impersonator performed with full energy, and German and Norwegian flags were waving everywhere 🇩🇪🇳🇴. It was such a surreal, beautiful moment that we will never forget.\n\nIn the evening we had dinner at the AIDA tapas bar 🍽️ – so delicious and cozy – and afterwards we ended the day again on our balcony 🌅🌊. We listened to the gentle sound of the sea, looked out over the water, and simply felt grateful for such a beautiful, varied day ❤️.'**
+  String get norwegenDay8;
+
+  /// No description provided for @norwegenDay9.
+  ///
+  /// In en, this message translates to:
+  /// **'The next morning we arrived punctually in Flåm at 8 a.m. ⛴️. Even the harbour itself is an experience: nestled between steep green mountains and right on the Aurlandsfjord – a place that immediately creates that special Norway feeling 🌲🖼️.\n\nOf course, we wanted to take the famous Flåm Railway – the legendary train route known as one of the most spectacular train journeys in the world. Unfortunately, it was already sold out that day, and we couldn’t get any tickets 😕. That was a bit disappointing, but we still didn’t want to just sit around.\n\nSo we looked for alternatives – and even though Flåm is small, it is very cosy and welcoming. We found a little sightseeing train tour starting at 10 a.m. 🚋 and booked it spontaneously. Before that, we still had some time, so we went back onboard and had breakfast again at the Buffalo Steakhouse 🥐☕ – our usual start for port days when we arrive early.\n\nAfter breakfast, we boarded the little train in good spirits. The ride lasted about an hour and took us at a relaxed pace through the village and a small part of the surrounding nature 🌳🚂. Along the way we saw the pretty Flåm Church (Flåmskyrkja), whose white tower stands beautifully against the mountains ⛪. There were no dramatic waterfalls or steep cliffs like on the Flåm Railway, but that actually made it even more relaxed: small houses, meadows, and the fresh Norwegian air all around us 🌬️💚.\n\nBack in the harbour, we walked a bit over the rocks right in front of the ship. We found a nice spot, sat down together, and enjoyed the view over the water 🌊. We had to be careful not to step on loose rocks 🪨😅 – little risks are just part of nature experiences like this. Afterwards, we strolled through the souvenir shops, looked at local items, and enjoyed the calm atmosphere of Flåm 🛍️✨.\n\nAround 1 p.m. we were back onboard and treated ourselves to a really tasty currywurst 🌭 before the afternoon continued. But the evening still had more to offer:\n\nFor dinner we went again to the Buffalo Steakhouse 🍽️ – our favourite place on port days because it always feels so cosy and welcoming after a long day. Afterwards, we went to the ice cream bar where I got a huge strawberry sundae with strawberries from Karls Erdbeerhof 🍓🍨 – and yes, it was so good that I had it several more times during the trip 😍.\n\nIn the evening we joined the Silent Party 🎧 – a real highlight onboard: music played directly into your headphones, people dancing, laughing, and just having fun. After that, it was time for a calm ending to the day. We sat on our balcony, listened to the gentle sound of the sea, looked up at the starry sky, and ended this beautiful Flåm day in complete peace 🌌💫.'**
+  String get norwegenDay9;
+
+  /// No description provided for @norwegenDay10.
+  ///
+  /// In en, this message translates to:
+  /// **'When we arrived in Stavanger the next morning, we were instantly excited again. We already knew this port from a previous trip, but every time you approach the city and see the white houses right by the water, it’s simply a beautiful sight 🏘️✨. Even during arrival, we had one of those magical moments: the sun shining on the rooftops, a clear sky, and the combination of old town and sea looked like a perfect postcard 📸.\n\nWe docked at 10 a.m. and couldn’t wait to explore the city. Right after disembarking, we walked past small street stalls towards the city centre 🚶‍♀️🚶‍♀️. Somehow, the very first shoe shop caught our attention 😉 – and what can I say… we had a real shopping success! 🛍️👟✨ We ended up buying four pairs of shoes in total: two for me and two for my mom. That alone made our day – finding great shoes just puts you in a good mood 😄.\n\nAfterwards, we continued strolling through the city, letting ourselves wander and enjoying the urban atmosphere. One of the highlights was the area with the typical white houses that give Stavanger its unique charm 🏡🤍. This area is called Gamle Stavanger – a historic district with narrow streets, old houses, and a cozy atmosphere that invites you to slow down and explore. We even rediscovered the tiny gnome door, a small charming detail we remembered from our last visit, and it made us smile once again 🧝‍♂️🚪.\n\nWe wandered through the little streets of Gamle Stavanger, browsed small boutiques, and simply enjoyed the mix of history, modern shops, and Nordic lifestyle 🌤️. Stavanger offers exactly that balance: charming, not too big, but full of beautiful corners to discover.\n\nIn the late afternoon, we returned to the ship, and at 7:30 p.m. we set sail again 🌅⚓. Leaving Stavanger was once again stunning – the setting sun, a light breeze, and the sparkling sea ahead of us – the perfect ending to a truly wonderful day in the city.\n\nWe spent the evening onboard: we went to the D6 nightclub, danced, laughed, and simply enjoyed the moment 🕺🎶. Afterwards, we sat on our balcony, listened to the calming sound of the sea, looked out over the dark water, and ended the day in complete peace 🌊💜✨.'**
+  String get norwegenDay10;
+
+  /// No description provided for @norwegenDay11.
+  ///
+  /// In en, this message translates to:
+  /// **'The day actually started like a relaxed sea day, but already the evening before, the captain had informed us that we needed to head toward Hamburg as quickly as possible, as the Elbe might be closed due to a potential storm ⛈️😯. Originally, we were supposed to arrive in Hamburg the next morning, but now it was clear: we had to enjoy the sea day while keeping up the pace.\n\nWe began the day in a relaxed way and went for breakfast at the Buffalo Steakhouse 🥓🥐☕. As always, there was a delicious small breakfast buffet, and we really enjoyed starting the day calmly. After that, it was time to pack our suitcases and explore the AIDA Prima one last time. We wandered through the shops, looked at a few more souvenirs, and made the most of our final hours onboard 😄🛍️.\n\nIn the afternoon, we took the opportunity to relax on our balcony, enjoy the view of the open sea, and simply unwind 🌊💺. It was a beautiful day at sea, the sun was shining, and we could feel the fresh ocean breeze.\n\nIn the evening, we returned once more to the Buffalo Steakhouse for dinner 🥩🍔 – the perfect way to end a sea day. Afterwards, we sat on our balcony again, as the Elbe was already calling us back. While sitting there, we watched an MSC ship pass by, followed shortly by a Norwegian cruise ship. It was fascinating to see these huge ships passing each other – a real cruise highlight 🚢✨.\n\nAround 11 p.m., we finally reached Hamburg – earlier than originally planned. We passed the container port, saw Planten un Blomen, and the city lights were already sparkling in the darkness 🌃🌟. At midnight, we officially docked. Finally Hamburg! It felt so good to see the city again and to have solid ground beneath our feet after the long journey 😍🏙️.\n\nAfter this exciting evening, we only went to sleep for a few hours, as the alarm would ring early to start the final part of our stay in Hamburg ⏰💤.'**
+  String get norwegenDay11;
+
+  /// No description provided for @norwegenDay12.
+  ///
+  /// In en, this message translates to:
+  /// **'The final day of our second Norway cruise began in a relaxed but slightly bittersweet way. We started the morning with breakfast at the Buffalo Steakhouse 🥓🥐☕ – our very last breakfast onboard the AIDA Prima. As always, it was delicious, and while sitting there, I could hardly believe how quickly those eleven days had passed 😌💭.\n\nAt 10 a.m., it was finally time to say goodbye. We left the ship, got into the car, and prepared for our journey back home to Cologne 🚗💨. Packing was a little adventure in itself – we had brought so much with us that we felt like true Tetris masters trying to fit everything into the car 😅📦.\n\nOnce everything was finally packed, we started the long drive – about four and a half hours ahead of us. But while driving on the highway, we felt incredibly grateful: we had been lucky with the Elbe and the weather, were able to dock in Hamburg on time, and didn’t have to skip any ports. In fact, the following cruise experienced severe weather 🌧️⚡. Ships had to stay in Hamburg for several days, departures were delayed, and some ports were even canceled. We truly felt lucky that we were able to enjoy our full itinerary without any issues – and that we could experience the city one last time in peace.\n\nDuring the drive, there was a calm and reflective feeling: we talked about our favorite moments, laughed about little mishaps, remembered the beautiful sunsets from our balcony 🌅🛳️, the breathtaking fjords, the delicious food onboard and in the ports, and all the special moments the three of us – me, my mom, and my great-grandma – were able to share 💖.\n\nAnd just like that, another unforgettable chapter of our cruise came to an end. We left Hamburg behind, drove away from the storm, and headed home – filled with happy memories and already making plans for our next adventure 🛳️✨.'**
+  String get norwegenDay12;
+
+  /// No description provided for @titleHighlights.
+  ///
+  /// In en, this message translates to:
+  /// **'Mediterranean Highlights'**
+  String get titleHighlights;
+
+  /// No description provided for @titleMetropolen.
+  ///
+  /// In en, this message translates to:
+  /// **'Metropolises'**
+  String get titleMetropolen;
+
+  /// No description provided for @metropolenDay1.
+  ///
+  /// In en, this message translates to:
+  /// **'⚓ Hamburg & Start of our Metropolitan Cruise – AIDA Prima'**
+  String get metropolenDay1;
+
+  /// No description provided for @metropolenDay2.
+  ///
+  /// In en, this message translates to:
+  /// **'✨ Day 2 on AIDA Prima – Pure relaxation at sea'**
+  String get metropolenDay2;
+
+  /// No description provided for @metropolenDay3.
+  ///
+  /// In en, this message translates to:
+  /// **'🛳️ Day 3 – Exploring Southampton & Portsmouth'**
+  String get metropolenDay3;
+
+  /// No description provided for @metropolenDay4.
+  ///
+  /// In en, this message translates to:
+  /// **'🚢 Day 4 – Le Havre: A relaxed port day on the French coast'**
+  String get metropolenDay4;
+
+  /// No description provided for @metropolenDay5.
+  ///
+  /// In en, this message translates to:
+  /// **'🇧🇪 Day 5 – Zeebrugge & Brussels: Port charm meets capital city flair'**
+  String get metropolenDay5;
+
+  /// No description provided for @metropolenDay6.
+  ///
+  /// In en, this message translates to:
+  /// **'⚓ Day 6 – Rotterdam: Skyline, Cube Houses & urban highlights'**
+  String get metropolenDay6;
+
+  /// No description provided for @metropolenDay7.
+  ///
+  /// In en, this message translates to:
+  /// **'🌇 Day 7 – Back to Hamburg: Farewell & final port moments'**
+  String get metropolenDay7;
+
+  /// No description provided for @metropolen1.
+  ///
+  /// In en, this message translates to:
+  /// **'Our metropolitan cruise with the AIDA Prima began with our journey to Hamburg 🚗🌆. We arrived the day before so we could start the next morning relaxed and stress-free. For the night, we chose the Holiday Inn Berliner Tor, a hotel we really appreciate. It’s located quite close to the Steinwerder port, making the drive to the ship the next morning short and convenient. The rooms are modern, bright, and welcoming – perfect for arriving after the journey and recharging for the cruise ✨.\n\nOn the morning of departure, we headed straight to the port. Hamburg has a big advantage here: parking spaces directly in front of the ship allow for easy unloading of luggage and a quick check-in. We had reserved a 12 p.m. check-in time, and everything went smoothly without long waiting times ⏱️.\n\nAfter check-in, we went for lunch first. Shortly afterwards, our luggage arrived, and we moved into our cabin 11.122 on deck 11 – a veranda cabin on the starboard side, located between midship and the front. We unpacked, settled in, and immediately felt at home. It’s no surprise that the AIDA Prima is our favorite ship: the perfect size – not too big, not too small – and the Skywalk is a highlight we absolutely love 🛳️❤️. This was our second cruise on the Prima, but our first metropolitan itinerary, and we were so excited to be back onboard.\n\nAfter settling in, we briefly explored the ship, enjoyed the onboard atmosphere, and started the cruise full of anticipation. At 5 p.m., we set sail from Hamburg, and as always, departing from Hamburg is something truly special. We stayed outside on deck for a long time, enjoying the panorama as we passed Cuxhaven – the hours on the Elbe, with the city lights and the water around us, are simply unforgettable 🌊✨.\n\nIn the evening, we attended the welcome reception and the first show. We ended the day relaxing on our balcony, enjoying the fresh air and the soft evening light over the water before going to bed tired but happy 🌅💤.'**
+  String get metropolen1;
+
+  /// No description provided for @metropolen2.
+  ///
+  /// In en, this message translates to:
+  /// **'The second day of our cruise was all about relaxation – the perfect way to truly arrive after the journey and explore the ship at a calm pace ✨. We started the morning very slowly, took our time, and enjoyed a long, restful sleep 🛌💛.\n\nAfterwards, we explored the AIDA Prima in a relaxed way. The ship is simply perfect for strolling around: across the decks, past the pool area, bars, and cozy lounges – there’s something to discover everywhere. We made ourselves comfortable on the sun loungers by the pool, soaked up the sun, and enjoyed the fresh sea breeze 🌞🍃. Since it was Easter time, there was a particularly शांत and almost magical atmosphere onboard, making the day even more enjoyable.\n\nIn between, we moved effortlessly between our balcony, cabin, hammocks, and pool loungers, enjoying the peacefulness at sea and simply unwinding 🌊💛. For lunch, we went to the buffet restaurant – varied, delicious, and exactly what you want on a relaxing sea day. Afterwards, we took a small walk around the ship or spent some quiet time in the cabin before slowly winding down the day.\n\nIn the evening, we enjoyed a delicious dinner onboard and ended the day in a calm and cozy way 🍽️✨. Sea days like this are simply wonderful – the perfect mix of relaxation, indulgence, and time for yourself before the exciting port days ahead.'**
+  String get metropolen2;
+
+  /// No description provided for @metropolen3.
+  ///
+  /// In en, this message translates to:
+  /// **'On the third day of our cruise, we arrived at the port of Southampton, one of England’s most important cruise ports. The city is not only known for its cruise history but also as the starting point of many famous ships – a place where history can truly be felt 🛳️✨.\n\nSouthampton’s waterfront promenade is beautiful: historic buildings stand alongside modern shopping centres, and everywhere you can feel the maritime atmosphere. Many guests took the opportunity to travel to London. AIDA offered a bus excursion for this – about a two-hour journey each way. We decided against it, as we had already been to London and didn’t want to spend so much time on a bus 🚍💨. A great alternative for families is the direct train connection from the port to central London – comfortable, fast, and stress-free. That would definitely be an option for us next time.\n\nInstead, we travelled to Portsmouth to visit Gunwharf Quays Designer Outlet. A modern shopping area right by the water, perfect for all shopping lovers 🛍️🌊. Brand stores, restaurants, and the maritime atmosphere made our visit especially enjoyable. Afterwards, we returned to Southampton and visited the Titanic Museum. Exciting stories, impressive exhibits, and insights into the famous ship disaster made this a real highlight of the day 🛳️💡.\n\nA small adventure awaited us on the way back to the ship: due to stormy weather, the mooring lines snapped while the ship was in port. Fortunately, we were able to return onboard in time, while other passengers had to wait several hours and could no longer use the port facilities 🌬️⚓.\n\nThis day clearly showed how important flexibility is on a cruise. Even in unexpected situations like storms or delayed departures, you stay relaxed, enjoy the moment, and collect special memories. Southampton and Portsmouth impressed us with their historic atmosphere, architecture, and maritime charm – a perfect mix of culture, history, and shopping delights ❤️.'**
+  String get metropolen3;
+
+  /// No description provided for @metropolen4.
+  ///
+  /// In en, this message translates to:
+  /// **'The next day we arrived in Le Havre, a charming port on the French coast. Even as we stepped ashore, we immediately felt the fresh sea breeze, heard the gentle sound of waves against the harbour walls, and were surrounded by that unmistakable maritime feeling 🌊✨.\n\nOn site, there was the option to book an excursion to Paris – about two and a half hours each way. We decided against it, as we could easily drive there ourselves in about four to four and a half hours and we already know Paris quite well 🏙️🚗.\n\nInstead, we simply enjoyed the calm and relaxed atmosphere of the port. We strolled along the promenade, watched ships passing by, and let the maritime surroundings sink in. The light scent of salt in the air, the sound of seagulls, and the warm sunlight made the stay especially pleasant ☀️🕊️.\n\nFor anyone considering the Paris excursion: the trip offers a perfect opportunity to experience the City of Light – its world-famous landmarks, vibrant atmosphere, and French charm. For us, however, it was wonderful to spend the day at the harbour, enjoy the peace, and recharge for the upcoming adventures of our cruise ❤️⚓.'**
+  String get metropolen4;
+
+  /// No description provided for @metropolen5.
+  ///
+  /// In en, this message translates to:
+  /// **'Our journey after Le Havre continued to Zeebrugge, the charming Belgian port on the North Sea. Even as we stepped off the ship, we immediately felt the fresh sea air, heard the gentle sound of the water, and sensed the relaxed atmosphere of this small harbour 🌊✨.\n\nFrom Zeebrugge, we had the option of taking a shuttle bus directly to Brussels – a very convenient way to explore the Belgian capital on a day trip 🚌.\n\nOnce in Brussels, we strolled leisurely through the streets and took in the vibrant life of the city. Of course, a visit to the Grand Place was a must – the beautiful historic square with its impressive guild houses. The stunning town hall with its Gothic façade stood out from afar 🏰.\n\nAnother highlight was the Atomium, Brussels’ famous landmark, which impresses with its futuristic architecture. We also made sure to see the small, world-famous Manneken Pis statue – a charming symbol of the city that you simply have to visit 👫✨.\n\nCulinary delights were also part of the day: Belgian fries, traditionally double-fried and wonderfully crispy, as well as freshly made waffles were absolute must-tries 😋🍴.\n\nWhat makes Brussels especially beautiful is the harmonious mix of medieval charm and modern architecture. Everywhere we discovered small cafés, colourful streets, and impressive squares inviting us to linger. The ornate façades, historic fountains, and lovingly designed street cafés made our walk through the city a little adventure full of details and impressions 🌿🏙️.\n\nAfter several hours of exploring, we returned comfortably to Zeebrugge to rejoin the ship. The excursion was a perfect blend of culture, history, food, and relaxed sightseeing – a day we will remember for a long time ❤️⚓.'**
+  String get metropolen5;
+
+  /// No description provided for @metropolen6.
+  ///
+  /// In en, this message translates to:
+  /// **'On our final day, we arrived in Rotterdam, docking right at the famous Erasmus Bridge, often also called the “Swan Bridge” 🌉. Even as we stepped off the ship, we were greeted by the impressive skyline of the city, which has earned Rotterdam the nickname “Manhattan on the Maas.” Tall glass façades, modern architecture, and futuristic buildings define the cityscape and immediately create a feeling of dynamism and urban energy 🏙️✨.\n\nFrom the port, we walked straight across the Erasmus Bridge and enjoyed the breathtaking views of the harbour areas, modern skyscrapers, and the wide River Maas. The reflections on the glass buildings combined with the water created a fascinating light scene – a real highlight for photography lovers 📸💛.\n\nOnce in the city, we immersed ourselves in Rotterdam’s unique urban atmosphere. The mix of modern architecture, historic harbour areas, and small charming streets makes the city truly special. One of the most impressive sights were the Cube Houses, tilted yellow homes built on stilts – an architectural masterpiece that you simply have to see 🏠✨. The Markthal, with its enormous glass arch and stunning interior design, was also an absolute must-visit.\n\nWe strolled through the city centre, let ourselves wander, discovered small cafés, and enjoyed the unique atmosphere. Rotterdam is a city that boldly embraces modern architecture, while still reflecting its maritime heritage through its strong connection to the port and shipping industry 🌊⚓.\n\nRotterdam is a place where tradition meets modernity – and that is exactly what makes this excursion so special. The combination of Erasmus Bridge, skyline, Cube Houses, and lively streets created an unforgettable experience and made this day a perfect finale to our cruise ❤️✨.'**
+  String get metropolen6;
+
+  /// No description provided for @metropolen7.
+  ///
+  /// In en, this message translates to:
+  /// **'After an eventful day in Rotterdam, our journey took us back to Hamburg. In the morning, we had to leave our cabin by 9:00 a.m. and complete check-out by 10:30 a.m. – standard procedure in German ports ⏰. Before finally disembarking, we enjoyed one last relaxed breakfast at the Buffalo Steakhouse, starting the day in a calm and enjoyable way 🥐☕.\n\nThe departure process is really well organised: in the onboard manifest, you can choose in advance whether to settle your onboard expenses via debit or credit card – everything is then automatically charged to your cruise card 💳. If you prefer to pay in cash, this must be done the evening before, but we always prefer the cashless option – simple and stress-free.\n\nAnother highlight is the convenient luggage service: on the last evening, suitcases can be placed outside the cabin door until 2:00 a.m. If you leave your cabin by 9:00 a.m. like we did, the luggage is automatically taken to the terminal – a real luxury that makes departure much more relaxed 🧳✨. Those leaving earlier, however, must collect their luggage from the ship themselves.\n\nAfter breakfast, we picked up our suitcases at the terminal, loaded them into the car, and used the remaining time to enjoy Hamburg a little more. The final hours offered the chance for a walk along the Elbe or a glimpse of the historic Speicherstadt – a beautiful closing moment to an unforgettable cruise 🌇🚢.\n\nAnd just like that, our journey from Hamburg came to an end, filled with special moments, breathtaking ports, and unforgettable experiences – memories that will stay with us for a long time ❤️✨.'**
+  String get metropolen7;
+
+  /// No description provided for @aidaDay1_de.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 1 - Travel to Hamburg & embarkation on the AIDA Perla 🛳️'**
+  String get aidaDay1_de;
+
+  /// No description provided for @aidaDay2_de.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 2 - Sea day en route to Bergen 🌊🛳️'**
+  String get aidaDay2_de;
+
+  /// No description provided for @aidaDay3_de.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 3 - Welcome to Bergen 🧌🇳🇴'**
+  String get aidaDay3_de;
+
+  /// No description provided for @aidaDay4_de.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 4 - Geirangerfjord: A picture-perfect day 🗻🇳🇴'**
+  String get aidaDay4_de;
+
+  /// No description provided for @aidaDay5_de.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 5 - Two ports, one day: Åndalsnes & Molde 🌹'**
+  String get aidaDay5_de;
+
+  /// No description provided for @aidaDay6_de.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 6 - Trondheim - Norwegian charm & waterfronts 🏠'**
+  String get aidaDay6_de;
+
+  /// No description provided for @aidaDay7_de.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 7 - Ålesund: colors, Art Nouveau & a little tram 🇳🇴'**
+  String get aidaDay7_de;
+
+  /// No description provided for @aidaDay8_de.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 8 - Eidfjord: misty magic and troll train romance 😶‍🌫️🇳🇴'**
+  String get aidaDay8_de;
+
+  /// No description provided for @aidaDay9_de.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 9 - Between white houses and fairy doors: exploring Stavanger 🧚🏼'**
+  String get aidaDay9_de;
+
+  /// No description provided for @aidaDay10_de.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 10 - Last day at sea 🌊🛳️'**
+  String get aidaDay10_de;
+
+  /// No description provided for @aidaDay11_de.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 11 - Back in Hamburg ⚓️'**
+  String get aidaDay11_de;
+
+  /// No description provided for @norwegenPrequelDay1.
+  ///
+  /// In en, this message translates to:
+  /// **'Our very first Norway cruise – and honestly, we were really excited! Norway had been recommended to us by so many people as an absolute highlight: 🌲❄️ breathtaking nature and endless peace. We were a bit sceptical whether it would really suit us, as we usually prefer sunshine, action, and lively destinations. Still, we wanted to experience it ourselves and try something completely different.\n\nOn 14 September 2024, we travelled comfortably to Hamburg and stayed overnight at the Holiday Inn Berliner Tor 🏨 – a really good hotel, perfectly located near the Steinwerder port, so we could head to the ship the next morning without any stress.\n\nOn 15 September 2024, our adventure on the AIDA Perla began. We arrived early and dropped off our luggage (after our three-week road trip through Italy, we had both summer and warm clothing for Norway). Fortunately, thanks to early check-in, our cabin was ready right away. It was really nice, with a walk-in wardrobe – a bit tight for all our jackets, but still cool 😊.\nLooking back, however, we would never book a walk-in wardrobe again. We would much rather choose two bathrooms, with separate shower and toilet, as we’ve had before. A normal wardrobe in the cabin is completely sufficient – in Norway, with all the layers of clothing, a walk-in wardrobe simply doesn’t leave enough space to move comfortably.\n\nAfter check-in, we went straight to the Markt Restaurant for lunch. Shortly afterwards, our luggage arrived as well – everything perfectly organised. At 6 p.m., it was finally time to cast off! ⚓ The AIDA Perla left the port of Hamburg, passing Blankenese and Cuxhaven, before heading out into the open sea – a dreamlike start to our adventure!\n\nIn the evening, we enjoyed a delicious dinner at the Buffalo Steakhouse 🥩, our favourite onboard restaurant, followed by AIDA Primetime with Eva 🎤, where the best social media posts of the day were awarded. Afterwards, we watched the show *Shine* in the Theatrium – highly recommended – and the laser show in the Beach Club 🌌. One especially magical moment was seeing a Costa cruise ship pass us at night – fully illuminated, a stunning sight.\n\nTired but happy, we eventually went to bed. A calm but perfect start – full of anticipation for Norway! 💛'**
+  String get norwegenPrequelDay1;
+
+  /// No description provided for @norwegenPrequelDay2.
+  ///
+  /// In en, this message translates to:
+  /// **'The rest of the afternoon was all about pure relaxation. We unwound, enjoyed a short nap, and were then treated to a lovely surprise. Our cabin had been lovingly prepared, and the housekeeping team had shaped our blankets into a beautiful heart ❤️ – such attention to detail, simply magical!\n\nA real highlight of the day was the croissant waffle with fresh strawberries from the ice cream bar. 🍓 The strawberries came from Karls Erlebnis-Erdbeerhof, and together with a light dusting of powdered sugar, it was a heavenly treat – perfectly sweet and absolutely irresistible.\n\nIn the afternoon, we tried our luck at the big AIDA bingo show. 🎉 Even though we didn’t win, we were genuinely happy for the lucky winners – the fun was clearly the main focus!\n\nIn the evening, we went to the tapas bar, where many small delicacies were waiting for us – perfect for sharing, enjoying, and simply indulging. 😋 Afterwards, we attended the show by magician Brayden Morris, and what can we say: we were in tears from laughing. His unique mix of magic and comedy was absolutely brilliant and truly amazed us.\n\nThis was followed, as usual, by Primetime, this time with a very special guest – the captain himself. ⛴️ Super likeable, relaxed, and full of fascinating insights into his daily life on board, he made the evening even more special for us.\n\nTo finish the day, we took a short walk on deck, breathed in the fresh sea air, and watched the glittering ocean. 🌅 Afterwards, we spent some time on the balcony, enjoying the moment before finally falling into bed happy and content. A perfect, relaxed sea day full of small highlights – exactly what we needed. We absolutely love sea days! 💛'**
+  String get norwegenPrequelDay2;
+
+  /// No description provided for @norwegenPrequelDay3.
+  ///
+  /// In en, this message translates to:
+  /// **'On the third day, it was finally time – our very first stop in Norway! 😍 We set foot on Norwegian soil for the very first time and were excited to see whether the country would live up to our expectations. We were a little nervous, but Bergen immediately surprised us in the best possible way. At 9 a.m., the AIDA Perla docked in the port of Bergen, and we couldn’t wait to explore the city.\n\nSince we had arrived a bit later, we used the morning for a relaxed and hearty breakfast at the Buffalo Steakhouse 🥓🍳🥐. We simply love the cosy atmosphere, the view of the water, and the calm surroundings – for us, the perfect way to start the day. Our favourites: the juicy breakfast steak, the fresh fruit plate, and the delicious pancakes.\n\nAfter breakfast, we went straight ashore, and not even two minutes later we were already at the hop-on hop-off bus stop right at the port 🚍. Just walk left out of the harbour, follow the “Welcome” sign, and you’re there. Conveniently, you could easily pay with your cruise card – super easy!\n\nOur first stop was the famous Hanseatic Quarter with its colourful wooden houses 🏘️. A truly picturesque place, perfect for strolling and exploring. We treated ourselves to some Norwegian pastries in a small bakery 🥐, and while wandering through the narrow streets, we discovered typical Norwegian trolls and many charming little shops – really cute and authentic.\n\nOn the way back, we first headed towards the ship again, but along the way we spotted a viewpoint we absolutely wanted to visit. Unfortunately, we initially missed the chance to get off the bus, so we returned to the ship and then walked back on foot – and it was absolutely worth it! From the harbour, you simply walk left, up a few stairs, a gentle incline – less than a 10-minute walk in total. At the top, we were rewarded with a breathtaking view of the AIDA Perla and the port of Bergen 📸.\n\nAfter this highlight, we returned onboard. At 6 p.m., it was time to set sail, and we watched the departure from the deck. A beautiful moment as Bergen slowly disappeared behind us while the AIDA headed towards new adventures ⚓.\n\nWe ended the evening very calmly in the buffet restaurant 🍽️. After an eventful day, we fell into bed tired but happy – full of anticipation for the upcoming adventures in Norway 💛.'**
+  String get norwegenPrequelDay3;
+
+  /// No description provided for @norwegenPrequelDay4.
+  ///
+  /// In en, this message translates to:
+  /// **'After a beautiful day in Bergen, we finally headed deep into the heart of Norway’s natural masterpiece – the Geiranger Fjord 💚. And this day was truly something special! Already at 5:49 a.m., we were sailing through the first bends of the fjord. Of course, we were already standing on our balcony, warmly wrapped up, unable to believe this spectacular arrival. The scenery was simply breathtaking: steep, moss-covered cliffs, roaring waterfalls, shimmering water, and absolute silence – it felt almost like another world 🌊🏞️.\n\nWhile we slowly glided through the fjord, the onboard lecturer told the famous Norwegian legend of the “Seven Sisters and the Suitor” 👑. Seven waterfalls cascade side by side like sisters into the valley, while a single powerful waterfall – the Suitor – stands opposite them, trying to win their attention. The combination of this old tale and the stunning natural scenery gave us goosebumps. You could almost imagine the sisters dancing while the Suitor called out to them, all while the water thundered into the valley.\n\nSince we only docked in Geiranger around 11 a.m., we used the time beforehand for a relaxed breakfast at the Buffalo Steakhouse 🥐🥓 – our favourite place onboard for a high-quality breakfast with a calm atmosphere and a direct view of the sea. While the SeaWalk – a movable gangway connecting the ship to the shore – was being extended, we enjoyed our meal and soaked in the moment.\n\nGeiranger itself is a tiny but incredibly charming village. No hustle, no rush – just nature, wooden houses, and peace. We strolled through the village, past small souvenir shops and cafés. Then came our highlight: the legendary chocolate waffle that several crew members had recommended 🍫🧇. And they were absolutely right! In a small shop run by an elderly lady, we got this waffle: warm, sweet, and loaded with chocolate – simply divine. Behind the shop, we discovered a nearly empty spot with an old overturned boat used as decoration. From there, we had a unique view of the AIDA Perla – a true photography paradise, peaceful and far away from the crowds 📸.\n\nA small tip about our cabin: we had a cabin on the left side of the ship, port side ⚓. During the arrival into Geiranger, we had the perfect view of the Seven Sisters, and on departure we could admire the impressive “Suitor” waterfall – a contrast that made this day even more magical.\n\nAt around 8 p.m., it was time to set sail again. Of course, we watched the departure once more from our balcony 🌅. The scenery was simply unforgettable: perfect weather, clear blue skies, sunlight shimmering on the cliffs and water. Norway showed itself at its absolute best that day.\n\nIt was a truly magical day we will never forget. Geiranger was peaceful, authentic, and simply stunning – exactly what makes Norway so special 💛.'**
+  String get norwegenPrequelDay4;
+
+  /// No description provided for @norwegenDoublePortDay.
+  ///
+  /// In en, this message translates to:
+  /// **'A very special travel day awaited us, as we were heading to two ports in Norway in a single day: Andalsnes and Molde ✨. Even though both places are rather small, the day was once again packed with impressions, calm moments, and beautiful scenery.\n\nWe already docked in Andalsnes around 8 a.m. The small village is nestled within a stunning fjord landscape 🌄. The view of the AIDA Perla from shore was simply breathtaking: clear colours, deep green mountains, and calm waters – Norway once again left us in awe. Andalsnes also has a cable car that takes visitors up to a viewing platform – for many, definitely a highlight. This time, however, we deliberately chose to take it slow and explore the town at a relaxed pace instead of rushing to attractions. We wandered through the small streets, breathed in the fresh fjord air, and simply enjoyed the moment 🌿.\n\nAt 1 p.m., it was already time to set sail again, as Molde was waiting ⚓. We made sure not to miss the departure, once again surrounded by impressive mountains and fjords – an unforgettable sight. Before arriving in Molde, we treated ourselves to a relaxed lunch at the onboard brewery-style restaurant 🍽️, followed by a cocktail at the bar – because what would a holiday be without a little indulgence? 🍹\n\nWe arrived in Molde around 4 p.m. The town is also quite peaceful but beautifully located, with a long pier right by the water, perfect for photographing the AIDA 📸. Molde is known as the \"City of Roses,\" and you notice it immediately: roses are everywhere – in flower beds and planters along the waterfront, creating a dreamy backdrop, especially with the ship in view. We strolled through the town, absorbed the relaxed atmosphere, and enjoyed the calm. Molde may not have major tourist attractions, but that is exactly what made the day so special: slow, peaceful, and full of small unforgettable moments 🌸.\n\nWe set sail again around 8:30 p.m. in that magical evening light: golden reflections on the water, a gentle breeze, and the fjord shimmering all around us 🌅. It was an incredible experience to arrive and depart twice in a single day. Simply perfect!\n\nIn the evening, we ended the day comfortably at the buffet restaurant and later on our balcony, reflecting on everything and letting the experiences sink in 💛. A day with two ports, no stress, full of nature, calm, and memories that will last forever.'**
+  String get norwegenDoublePortDay;
+
+  /// No description provided for @norwegenTrondheimDay.
+  ///
+  /// In en, this message translates to:
+  /// **'After the calm, smaller fjord towns of the previous days, today a larger city was on the itinerary: Trondheim. And we were really excited to see what awaited us here ✨.\n\nAs on almost every morning of this trip, we once again started the day with a relaxed breakfast at the Buffalo Steakhouse 🥐🍳. The calm atmosphere, the view over the water, and the delicious breakfast selection – for us, simply the perfect start to the day.\n\nTrondheim was noticeably larger than the ports we had visited so far, and you could feel it immediately: wider streets, more life in the city, plenty of small museums, and beautiful historic buildings. What impressed us most was the waterfront with its colourful houses standing on wooden stilts in the water, perfectly mirrored on the surface 🌈🏠. A truly amazing photo spot – exactly what you imagine a charming Scandinavian town to look like.\n\nWe simply strolled through the city, admired the architecture, and soaked in the special atmosphere – without any time pressure or fixed plan 🏞️. For us, Trondheim is not a city of major attractions, but rather a place to walk, look around, and enjoy.\n\nAfter a relaxed day in the city, we returned to the ship in the afternoon. Just in time for departure, we enjoyed watching the ship slowly pull away from the harbour from our balcony. The light lay softly over the water, and the city gradually disappeared in the background – an indescribably beautiful feeling 🌅.\n\nTrondheim truly surprised us. Not with action or spectacular attractions, but with its authenticity, its colours, its atmosphere, and this very special light that wrapped around the city 💛. A place we would definitely love to return to again.'**
+  String get norwegenTrondheimDay;
+
+  /// No description provided for @norwegenAlesundDay.
+  ///
+  /// In en, this message translates to:
+  /// **'After the relaxed city visit in Trondheim, our next stop was Ålesund. Right in front of the ship, a little highlight was already waiting for us: a charming little sightseeing train 🚋. We absolutely love riding these trains and of course couldn’t resist! We enjoyed a relaxed ride through the streets of Ålesund, taking in the atmosphere and getting a comfortable overview of the city 🏘️🌊.\n\nIt’s good to know: if you want a specific seat or prefer sitting at the front, it’s recommended to book your ticket online in advance 🎫. However, there are also seats available on site, so no need to worry.\n\nOur destination was the Aksla viewpoint (also known as Fjellstua) ⛰️. From the top, we were rewarded with a breathtaking view over the city, the sea, the surrounding islands, and the mountains 🏞️🌅. A true postcard moment 📸.\n\nThe city itself showed its most beautiful side: colourful Art Nouveau houses, sparkling fjord waters, and the soft Norwegian light ✨. It simply felt like pure Norway.\n\nThe rest of the day was relaxed: lunch at the buffet restaurant 🍽️, a bit of strolling on board 🚶‍♀️, enjoying the sea views 🌊, and finally watching the departure. The sun was shining, the water was glistening, and the city slowly faded into the distance — a dreamlike day ☀️💙.\n\nÅlesund may have been a short stop, but it left a lasting impression: the colours of the town, the view from above, and the peaceful atmosphere all combined into an unforgettable experience 🌸🛳️.'**
+  String get norwegenAlesundDay;
+
+  /// No description provided for @norwegenEidfjordDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Sleeping in? Not in Eidfjord – at least not for almost everyone on board. During the night, the entire ship was repeatedly woken up by the deep, vibrating sound of the foghorn 🌫️📢. The fog was so dense that you could barely see a metre ahead. The ship slowly glided through this milky wall, wrapped in silence… only interrupted by the foghorn.\n\nAnd the funniest part? Everyone was awake – except me (Katharina) 😴😂. My mum even left the door open, the foghorn was incredibly loud… and me? I just kept sleeping like a rock. The whole ship was talking about it – and I was the only one who had “slept perfectly”.\n\nAfter breakfast, we went ashore to take the Troll Train 🚂💚. A super cute little tour that takes you through the idyllic Eidfjord – past rivers, mountains, and that calm, powerful Norwegian nature.\n\nThe village itself felt like something out of a fantasy film that day: thick fog hanging over the water 🌫️, steep mountain slopes barely visible through the grey ⛰️, and the green-blue fjord lying still like a mirror. Simply magical – a mix of fairy-tale forest, fjord romance, and natural wonder ✨. Especially the view of the AIDA Perla sitting in the fog, embedded in this dramatic scenery… a dream 🛳️💕. We took so many beautiful photos – every angle looked like a painting.\n\nBack on board, we warmed up with lunch in the restaurant 🍲❄️, as the fjord air was quite fresh. But Eidfjord still had one more little highlight for us: from our balcony, we spotted a large wooden swing right by the water! Of course, we had to go back ashore and try it 🙌🎠. The view while swinging? Priceless. Fjord, mountains, fog, silence – an absolute goosebump moment.\n\nAround 8 p.m., it was time to say goodbye to Eidfjord 👋. We stood on deck, the fog slowly lifted, and we could hardly believe how quickly this special day had passed.\n\nEidfjord was a true highlight for us – maybe precisely because of the fog. That atmosphere, that calm, those little moments… they stay with you 💛.\n\nAnd here’s a fun little anecdote the captain told us: right in front of our ship stood a hotel, and rooms there easily cost over €500 per night 😳💸. And guests pay that much – just to open their curtains in the morning and see a massive AIDA right outside their window 😂🛳️. We found that both crazy and kind of funny.\n\nEidfjord truly enchanted us – and we will definitely come back 🌫️💙⛰️.'**
+  String get norwegenEidfjordDay;
+
+  /// No description provided for @norwegenStavangerDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Stavanger was simply beautiful — almost like something out of a picture book 😊. We stepped off the ship and immediately started with a hop-on hop-off tour to get to know the city. 🚍 But to be honest: even though the bus drove us comfortably through the city and we saw many lovely spots, we would never do a tour like this in Stavanger again. We also wouldn’t recommend it, because Stavanger is so wonderfully easy to explore on foot.\n\nSo we got off — and started walking. We enjoyed a stroll through the old town of Stavanger, passing the charming white wooden houses in Gamle Stavanger 🏠✨ — very characteristic of the city and incredibly photogenic.\n\nOn the way, we discovered a cute little door — like a tiny “elf door” attached to one of the houses 😊 — which made us smile. There were also little moments that brought out our inner child: at a small playground, we even went on the swings and slides, despite being adults — but it just shows that the child in you never really disappears! 🎠💛\n\nLater, we treated ourselves to something to drink at Starbucks — not necessarily coffee, more something refreshing and relaxing ☕ — just enjoying the moment and watching life go by around us.\n\nIn the evening, we stood on our balcony, watched the ship sail away, and saw the sunset over the water 🌅. And we just felt: yes — this day was truly beautiful. Stavanger, with its white houses, its mix of old and new, its relaxed city vibe and our peaceful walk — is something we won’t forget anytime soon.'**
+  String get norwegenStavangerDay;
+
+  /// No description provided for @norwegenSeetagFinalDay.
+  ///
+  /// In en, this message translates to:
+  /// **'The last day of our trip was a classic sea day — calm, relaxed, and with a touch of melancholy, because we knew it would all be over soon. We actually slept through breakfast again 🙈 … but at this point, that’s almost tradition for us. Instead, we went to the Tapas Bar for lunch, and the food was absolutely delicious — exactly what you want on a relaxed final day 😋.\n\nIn the afternoon, we mainly focused on packing our suitcases. Not exactly the most fun part, but it’s simply part of the journey. In between, we took a short break and went to the AIDA Shopping World. There, we found a lucky wheel where you always win a discount 🎡💸. You just spin and see how much percentage you get. Of course, we took the opportunity and then browsed through the shops a bit more. A few magnets from the route had to come with us — no trip is complete without souvenirs 🧲❤️.\n\nIn between, we also treated ourselves to a short nap 😴 — the final sea day is basically made for that. Just breathing out, dozing off a little, and doing absolutely nothing.\n\nIn the evening, we went to the Buffalo Steakhouse 🥩✨. A perfect final dinner with great food, a nice atmosphere, and that feeling of really enjoying the last moments of the journey.\n\nAnd so our last day at sea came to a calm end — peaceful, cosy, and with a gentle sense of farewell. A perfect closing chapter before the journey sadly ended the next morning 💙🌅.'**
+  String get norwegenSeetagFinalDay;
+
+  /// No description provided for @norwegenFinalDeparture.
+  ///
+  /// In en, this message translates to:
+  /// **'The final day of our trip began quite early — honestly, too early when you consider how much we had enjoyed this journey. But before heading home, we simply had to treat ourselves one last time: a final breakfast at the Buffalo Steakhouse 😍🥞✨.\n\nWe love this breakfast so much that it has almost become a tradition to start the last day here. Warm bread, fresh dishes, that relaxed atmosphere… and at the same time, that quiet feeling that this is the last time for a while. Until the next trip, of course. We sat there, enjoyed every bite, and just thought: how nice would it be to have a reset button right now? 💛\n\nAfter breakfast, everything moved very quickly. Check-out. Our suitcases, which we had placed outside the door the night before, were already waiting in the large luggage hall. A quick look, grab the bags — and just a few minutes later we were sitting in the car 🚗💨.\n\nAnd just like that, a wonderful holiday came to an end: five weeks full of impressions, combining our big Italy world trip and immediately afterwards ten dreamlike days in Norway. A fast, almost abrupt ending after so much time on the road — but filled with memories that will stay 🇮🇹🇳🇴✨.\n\nPS: If you want to read the first part of our journey, the Italy world trip, you can find it in the category ‘World Trips Europe’ under Italy World Trip 🌍📖.'**
+  String get norwegenFinalDeparture;
+
+  /// No description provided for @titleDenmark.
+  ///
+  /// In en, this message translates to:
+  /// **'Denmark & Sweden'**
+  String get titleDenmark;
+
+  /// No description provided for @aidaDenmarkDay1.
+  ///
+  /// In en, this message translates to:
+  /// **'⚓ Day 1 & 2 – Warnemünde & start of the Denmark/Sweden cruise with AIDA Diva'**
+  String get aidaDenmarkDay1;
+
+  /// No description provided for @aidaDenmarkDay2.
+  ///
+  /// In en, this message translates to:
+  /// **'🌞 Day 3 – Aarhus: Colourful streets, art & harbour vibes'**
+  String get aidaDenmarkDay2;
+
+  /// No description provided for @aidaDenmarkDay3.
+  ///
+  /// In en, this message translates to:
+  /// **'🏰 Copenhagen: Castles, Nyhavn & endless walks'**
+  String get aidaDenmarkDay3;
+
+  /// No description provided for @aidaDenmarkDay4.
+  ///
+  /// In en, this message translates to:
+  /// **'🌊 Sea day: Relaxation & sunset'**
+  String get aidaDenmarkDay4;
+
+  /// No description provided for @aidaDenmarkDay5.
+  ///
+  /// In en, this message translates to:
+  /// **'🏰 Visby: Pippi Longstocking town & cosy exploration'**
+  String get aidaDenmarkDay5;
+
+  /// No description provided for @aidaDenmarkDay6.
+  ///
+  /// In en, this message translates to:
+  /// **'🎶 Stockholm: ABBA, cinnamon buns & Swedish highlights'**
+  String get aidaDenmarkDay6;
+
+  /// No description provided for @aidaDenmarkDay7.
+  ///
+  /// In en, this message translates to:
+  /// **'🛳️ Sea day: Farewell to an unforgettable cruise'**
+  String get aidaDenmarkDay7;
+
+  /// No description provided for @aidaDenmarkDay8.
+  ///
+  /// In en, this message translates to:
+  /// **'🏠 Departure day: Heading home after an unforgettable journey'**
+  String get aidaDenmarkDay8;
+
+  /// No description provided for @aidaDenmark1.
+  ///
+  /// In en, this message translates to:
+  /// **'Our little adventure began on 7 October 2022 🌟. Full of anticipation, we made our way to Warnemünde, our very first visit to this charming coastal town 🌊. We arrived early in the morning, checked into the Hotel ‘Am Alten Strom’, and could hardly wait to explore the surroundings.\n\nAfter dropping off our luggage, we immediately started a relaxed walk along the harbour. The weather for October was absolutely perfect: 17°C, sunny, and pleasantly mild 🍂☀️ — ideal for enjoying the fresh sea air in just a light sweater.\n\nAlong the way, we discovered a cute ice cream shop called ‘Fröhlich’, where we treated ourselves to frozen yoghurt with toppings like Smarties, marshmallows, strawberries, and strawberry sauce 🍓🍦. Simply heavenly! Afterwards, we strolled across the small funfair at the harbour, where my mum enjoyed a cocktail and I had a Wildberry Lillet 🍹.\n\nWe continued walking to the lighthouse and even spotted small penguins along the way 🐧 — so adorable! We also caught a perfect sunset by the water 🌅, which made the moment feel truly magical. Later, we went for dinner at Peter Pane, where we had some of the best burgers we had ever eaten 🍔😋 — truly the best Peter Pane experience we’ve ever had!\n\nIn the evening, we took a final walk back to the hotel along the harbour in the dark — and incredibly, we even heard whales 🐋. It was such an unforgettable experience. Afterwards, we fell into bed tired but happy.\n\nOn the morning of 8 October 2022, we woke up and stepped out onto our balcony 🏨✨. From there, we had a direct view of the harbour and could already see the AIDA Diva waiting in the water — a beautiful start to the day 🚢💛.\n\nWe then checked out of the hotel. The Hotel ‘Am Alten Strom’ really impressed us, and we can highly recommend it.\n\nAfterwards, we headed towards the port: the parking garage was directly next to the ship. We dropped off our luggage at the shuttle point by the garage so we didn’t have to carry it all the way to the ship. Then we walked comfortably to the ship — everything was perfectly organised and stress-free 🚶‍♀️🚢.\n\nOnce on board, we went straight for breakfast before moving into our cabin 6107, a balcony cabin. It was beautifully furnished and very cosy — we felt at home immediately 🛏️✨.\n\nWe explored the ship with excitement, curious to see how our fourth AIDA cruise would feel on a smaller ship, after already travelling on AIDA Prima, Stella, and Nova. In the afternoon, there were small desserts — including cute kiss-shaped sweets — and we enjoyed some relaxing time onboard 🍰💛.\n\nIn the evening, we had dinner at the steakhouse before the ship set sail towards Århus. The departure from Warnemünde was a dream 🌊⚓, and we agreed: we really, really loved Warnemünde. A place we would definitely return to again.'**
+  String get aidaDenmark1;
+
+  /// No description provided for @aidaDenmark2.
+  ///
+  /// In en, this message translates to:
+  /// **'The second day of our cruise started just as beautifully as the first — with warm, sunny weather, perfect for a light sweater ☀️🧥.\n\nWe explored Aarhus on our own and began our little city walk at Aarhus Cathedral ⛪. Even the first impression and atmosphere inside the cathedral were impressive and made us want to discover more of the city.\n\nWe continued to Møllestien, a colourful, charming alley full of small houses 🏘️🎨. The bright façades and cosy atmosphere immediately enchanted us. It was such a pleasant place to stroll through, and it almost felt like we had the little colourful street all to ourselves.\n\nOn a whim, we decided to visit the ARoS Aarhus Art Museum 🖼️. The museum was not only filled with impressive artworks but also had a viewing platform on top. From there, we could see the entire city — and even spot the AIDA Diva in the harbour 🚢✨. Especially fascinating was the circular rainbow installation on the roof, which we could walk through. This play of colours felt truly magical and made the museum visit something very special.\n\nIn the evening, we set sail and passed the impressive modern architecture of Aarhus during departure — including the Isbjerget, the ‘Iceberg’ building in the city ❄️🏢. Watching the city slowly drift by in the evening light from the ship was a beautiful moment and set the tone for the days ahead.\n\nAarhus truly impressed us — the colourful streets, modern architecture, and the touch of art throughout the city made the day unforgettable. We already know one thing for sure: we definitely want to come back here again 💛.'**
+  String get aidaDenmark2;
+
+  /// No description provided for @aidaDenmark3.
+  ///
+  /// In en, this message translates to:
+  /// **'The third day of our cruise took us to the beautiful city of Copenhagen — and even when we woke up, we could already feel the excitement for a full day of exploring ahead 🌞. We had plenty of time to discover the city at our own pace, which meant: a lot of walking, but also an endless amount of wonderful impressions.\n\nOur first stop was, of course, the famous Little Mermaid statue by the harbour 🧜‍♀️. Even though she was much smaller than we had imagined, it was a magical moment standing there and seeing the statue right by the water. The combination of the sea, the seagulls, and the iconic sculpture made the perfect start to our day.\n\nWe then continued on a castle discovery tour. Copenhagen is truly a city of palaces! We first walked to Amalienborg Palace, the residence of the Danish royal family. The elegant architecture and perfectly maintained square immediately captivated us. Our next stop was Rosenborg Castle — a small, fairy-tale-like 17th-century castle that once served as a summer residence for King Christian IV. The surrounding gardens and intricate details made it feel like stepping back in time. Christiansborg Palace, Frederik’s Church, and the Town Hall Square were also on our route — everywhere we looked, there were little details and stories that fascinated us.\n\nOf course, we couldn’t miss Nyhavn either — the colourful canal houses, small cafés, and boats gave the whole area such a lively and joyful atmosphere. We took our time soaking in the vibe, enjoying the moment, and capturing all the beautiful spots with our camera 📸.\n\nAfter hours full of impressions, sunshine on our faces, and countless steps, we only set sail again around 10 p.m. Tired but happy, with many new memories in our hearts, we left the lights of Copenhagen behind us at the harbour. Copenhagen truly enchanted us — a city we would definitely love to return to ❤️.'**
+  String get aidaDenmark3;
+
+  /// No description provided for @aidaDenmark4.
+  ///
+  /// In en, this message translates to:
+  /// **'After the exciting day in Copenhagen, the next day at sea felt absolutely perfect 🌞. After all the walking and steps, it was like a little break right in the middle of our cruise. We could finally switch off properly and just let our minds drift.\n\nWe slept in — really properly, without an alarm 😴. We actually missed breakfast, but instead went straight to lunch, which we enjoyed in complete peace. Afterwards came the perfect mix of relaxation and small activities: we took part in a photo shoot on board AIDA 📸 — a lovely memory from this relaxed day. We also enjoyed a short nap in our cabin to recharge even more for the evening.\n\nIn the afternoon, we watched a few shows in the Theatrium, where the atmosphere on board was relaxed and cheerful. Around 6 p.m. we went for dinner at the steakhouse — I treated myself to a really tasty burger 🍔, while my mum enjoyed a delicious steak 🥩. For dessert, we had a smooth crème brûlée, which perfectly rounded off the day.\n\nBefore heading back to our cabin, we watched the beautiful sunset over the sea 🌅. It was a magical moment that ended the day perfectly. The sea day gave us new energy, and we were full of excitement for the upcoming adventures in Visby and Stockholm.'**
+  String get aidaDenmark4;
+
+  /// No description provided for @aidaDenmark5.
+  ///
+  /// In en, this message translates to:
+  /// **'After the relaxing sea day, we continued on to Visby — and I was honestly really, really excited 😍. Visby is the town where the Pippi Longstocking films were shot, and I absolutely loved those stories as a child. It felt so special to finally walk through these historic streets and discover all the little details in real life.\n\nIn Visby, we took a hop-on hop-off bus tour 🚍 to explore the city in a relaxed way. Our very first stop was Villa Kunterbunt — the famous Pippi Longstocking house located in a theme park. Unfortunately, the park was closed that day, so we could only admire the villa from the outside. But even that was already fun and brought back a real childhood feeling 🎈.\n\nThe tour then continued along the waterfront, where we kept catching beautiful views of our AIDA Diva 🚢. The city looked incredibly idyllic from the bus — colourful houses, small alleyways, and the harbour all felt like a postcard. One highlight was our stop at Visby Cathedral ⛪: from up there, we had a stunning view over the rooftops of the city and could really take in the atmosphere.\n\nWe really enjoyed the bus tour, and Visby itself was simply magical 🌸. It was a very relaxed day, and we truly soaked in the calm and charm of the town. In the evening, the AIDA Diva set sail towards Stockholm, while we watched the sunset and departure from Visby from our balcony 🌅 — a perfect ending to a beautiful day.'**
+  String get aidaDenmark5;
+
+  /// No description provided for @aidaDenmark6.
+  ///
+  /// In en, this message translates to:
+  /// **'After our magical day in Visby, we continued on to Stockholm — the city that is practically inseparable from ABBA 🇸🇪. Even as we arrived, we were incredibly excited to explore the city and immediately started with a hop-on hop-off bus tour 🚍 to discover the many sights at a relaxed pace.\n\nDuring the tour, we got off at the ABBA Museum because it was at the very top of our must-see list 🎤✨. And we absolutely loved it! You could stand on stage with virtual versions of the band, take fun photos, and learn more about ABBA’s history. It was very interactive and so much fun — a true highlight of our day.\n\nAfter the museum visit, we treated ourselves to a cinnamon bun 🥐 — an absolute must in Stockholm! They were huge and incredibly delicious, almost too big for the two of us, but simply heavenly in taste. I would eat one again in a heartbeat!\n\nOn our way back to the ship, we met Dodo who was waiting for us for a photo 📸 — a lovely little souvenir from our Stockholm day. In the evening, the AIDA Diva set sail again, heading back towards Warnemünde, but we knew one more relaxing sea day was ahead of us to recharge for the final days of the trip. 🌅'**
+  String get aidaDenmark6;
+
+  /// No description provided for @aidaDenmark7.
+  ///
+  /// In en, this message translates to:
+  /// **'After our fantastic day in Stockholm, our final sea day aboard AIDA Diva began 🌊. We used the time to take one last look around the ship — and realised that we actually didn’t really like the design of AIDA Diva at all 😅. It felt much too small for us, and somehow we just couldn’t fully warm to it. The larger ships weren’t perfect either — we almost found AIDA Nova too big — but for us, AIDA Prima remains the absolute favourite, because it had the perfect size. ❤️\n\nOtherwise, the day was all about packing our suitcases and enjoying relaxed life on board 🧳. We missed breakfast, but had a calm lunch instead. In between, we took a short nap, watched a few shows, and slowly reflected on all the impressions of the trip.\n\nIn the evening, something very special happened: there was a beautiful cake decorated with our cruise name and travel period — such a lovely farewell surprise 🎂. After that, we enjoyed a delicious dinner at the steakhouse: I had a burger, my mum had a juicy steak — everything was perfect.\n\nAfter placing our fully packed suitcases outside the cabin door, it slowly dawned on us that this wonderful cruise was soon coming to an end 😢. The trip had been absolutely amazing — the destinations were stunning, every day filled with adventure, experiences, and unforgettable moments. We already know that we definitely want to return to many of these places again. And honestly, we would do this exact cruise all over again — it was that perfect for us 💖.'**
+  String get aidaDenmark7;
+
+  /// No description provided for @aidaDenmark8.
+  ///
+  /// In en, this message translates to:
+  /// **'On our departure day, it was time to say goodbye to AIDA Diva and all the beautiful places we had visited over the past days 😢. Early in the morning, we disembarked, checked out, and collected our luggage. After that, we walked together to our car, which was waiting for us.\n\nBefore heading straight home, we decided to extend the day a little — and drove to the Designer Outlet in Neumünster 🛍️. We spent two to three relaxed hours there, strolling through the shops, browsing for little treasures, and simply enjoying the final moments of our holiday.\n\nAnd then the journey home truly began 🚗💨. With many wonderful memories, photos, small souvenirs, and above all a happy heart, this trip came to an end. The cruise was simply amazing — the perfect mix of exciting cities, relaxing sea days, delicious food, and unforgettable moments 💖. We will be talking about this adventure for a long time, and we already know: this was definitely not our last cruise!'**
+  String get aidaDenmark8;
+
+  /// No description provided for @titleMedTreasures.
+  ///
+  /// In en, this message translates to:
+  /// **'Mediterranean Treasures'**
+  String get titleMedTreasures;
+
+  /// No description provided for @novaTitleDay1.
+  ///
+  /// In en, this message translates to:
+  /// **'🚢 Day 1 – Our first cruise: Four generations, one ship & lots of excitement'**
+  String get novaTitleDay1;
+
+  /// No description provided for @novaTitleDay2.
+  ///
+  /// In en, this message translates to:
+  /// **'🌊 Day 2 – Sea day on the open ocean'**
+  String get novaTitleDay2;
+
+  /// No description provided for @novaTitleDay3.
+  ///
+  /// In en, this message translates to:
+  /// **'🏛️ Day 3 – Rome: sightseeing & XXL shopping'**
+  String get novaTitleDay3;
+
+  /// No description provided for @novaTitleDay4.
+  ///
+  /// In en, this message translates to:
+  /// **'🗼 Day 4 – Pisa & Florence: lots of bus, little feeling'**
+  String get novaTitleDay4;
+
+  /// No description provided for @novaTitleDay5.
+  ///
+  /// In en, this message translates to:
+  /// **'🌊 Day 5 – An unexpected sea day & lots of family time'**
+  String get novaTitleDay5;
+
+  /// No description provided for @novaTitleDay6.
+  ///
+  /// In en, this message translates to:
+  /// **'🌆 Days 6 & 7 – Barcelona: big city vibes, tapas & first impressions'**
+  String get novaTitleDay6;
+
+  /// No description provided for @novaTitleDay7.
+  ///
+  /// In en, this message translates to:
+  /// **'🌆 Days 6 & 7 – Barcelona: big city vibes, tapas & first impressions'**
+  String get novaTitleDay7;
+
+  /// No description provided for @novaTitleDay8.
+  ///
+  /// In en, this message translates to:
+  /// **'🌅 Day 8 – Return to Mallorca: goodbye & anticipation for what’s next'**
+  String get novaTitleDay8;
+
+  /// No description provided for @novaDay1.
+  ///
+  /// In en, this message translates to:
+  /// **'Our very first cruise took place during the Easter holidays in 2019 – and it was on AIDAnova, the largest ship in the AIDA fleet at that time 🚢✨.\n\nWe honestly never thought we would end up going on a cruise. My mom and I were quite skeptical at first. But my grandma was very clear: ‘Let’s just give it a try!’ – and suddenly we were traveling as four generations together: me, my mom, my grandma, and even my great-grandma 💕👵👩‍👧.\n\nIn the middle of the night, we set off for Cologne-Bonn Airport, from where we flew with Eurowings to Palma de Mallorca ✈️🌴. Everything went smoothly, and right after arriving on the island, we were taken by shuttle to the ship. On board AIDAnova, we started our day relaxed with breakfast in the Market Restaurant 🍳🥐 – while still waiting for our luggage. Afterwards, we were able to move into our balcony cabin on deck 15 (cabin 15.121), centrally located on the starboard side of the ship. For four people, we surprisingly had plenty of space: a double bed, a sofa bed, and a pull-down bunk bed – absolutely perfect for us 🛏️✨.\n\nIn the evening, we watched the departure from Palma, a very special moment on our first cruise 🌅⚓. Afterwards we went to dinner before starting our first night on board – tired but happy.\n\nThe day was filled with excitement, amazement, and so much anticipation – we were incredibly curious about what this journey would bring for us 💫❤️.'**
+  String get novaDay1;
+
+  /// No description provided for @novaDay2.
+  ///
+  /// In en, this message translates to:
+  /// **'The second day of our cruise was a true sea day – and what a day it was! ⚓🌊\n\nAlready in the morning during breakfast, we could feel the heavy seas. It was so stormy that my mom and my grandma went back to the cabin during breakfast because they felt really sick 🤢. My mom even said she felt like she was about to throw up right over the table – and in that moment she confidently declared: ‘I will never go on a cruise again!’\n\nMy great-grandma and I, however, stayed completely relaxed and were not bothered at all. After breakfast, we walked around the ship, explored a bit, and even watched a small show in the Theatrium 🎭✨.\n\nIn between, we picked up some motion sickness tablets at reception for my mom and grandma – just to be safe. They stayed in the cabin for the rest of the time, where they felt much better.\n\nAt lunchtime, my great-grandma and I were out again on our own, before we all met up in the evening for dinner at the steakhouse 🥩🍷. Despite the storm and heavy seas, it turned out to be a very special day on board, and we were already looking forward to the next day – as we were getting closer to Rome, a city we both absolutely love ❤️🏛️.'**
+  String get novaDay2;
+
+  /// No description provided for @novaDay3.
+  ///
+  /// In en, this message translates to:
+  /// **'The next morning we arrived in Civitavecchia – our gateway to Rome 🏛️❤️. For this day, we had booked an excursion via GetYourGuide: a bus transfer to the Eternal City, which we could use completely independently once we arrived.\n\nTogether we traveled from the port towards Rome. Even during the journey, we realized how far the city actually is from the port – depending on traffic, the bus ride takes about one and a half to two hours each way. Still, we were incredibly excited to finally be back in Rome, a city we truly love.\n\nOnce in Rome, we were dropped off in the city center and had about four and a half hours of free time. For my grandma and my great-grandma, it was their first visit to Rome, while my mom and I already knew the city. It was therefore even more special to show them the main highlights: the Colosseum, the Spanish Steps, St. Peter’s Basilica, and of course the Trevi Fountain, where we threw a coin into the water – wishing for a return to this special city 💦✨.\n\nBetween the sights, we wandered through the streets, strolled around, and enjoyed the typical Roman atmosphere. And as always for us, the day also turned into an extended shopping trip 😄🛍️. In the end, we were carrying several – and very large – shopping bags as we slowly made our way back to the bus.\n\nThe return journey to the port took longer due to traffic. In total, we spent almost four hours on the bus that day when combining both directions. Back at the port, we were greeted by a long queue during check-in. It was extremely crowded and hectic, and with our big shopping bags we attracted quite a few curious looks 😅.\n\nEven though everything worked out fine, we realized how short and intense this visit to Rome actually was. For us, Rome is not a city you just ‘quickly visit’. When we travel to Rome, we usually stay for three or four days, with time to stroll, explore, and truly enjoy it – not just a few hours squeezed between bus rides and departure times. We are glad we experienced it once, but we would not plan this excursion the same way again, as it was quite stressful.\n\nBack on board, we ended the day more calmly. Shortly after, AIDAnova departed from Civitavecchia, we had dinner together, and looked back on an intense but very beautiful family day in Rome ❤️👨‍👩‍👧‍👵.'**
+  String get novaDay3;
+
+  /// No description provided for @novaDay4.
+  ///
+  /// In en, this message translates to:
+  /// **'In the morning we arrived in La Spezia 🚢⚓ – another port on our route through the Mediterranean. For this day, we had booked an excursion with AIDA that would first take us to Pisa and then continue on to Florence 🚌🇮🇹.\n\nFrom the port, we first traveled by bus towards Pisa. The journey took about one hour ⏳🚌. It was our first time in Pisa, and of course we were excited to finally see the famous Leaning Tower with our own eyes 🗼📸. Once there, we had a bit of time to look around – but honestly, we were quickly disappointed. Pisa did not impress either of us 😕. It felt very touristy and not very welcoming, and we were actually relieved when it was time to move on again.\n\nAfter the short stop, we got back on the bus – this time heading to Florence 🚌➡️🌆. The ride from Pisa to Florence took about another hour and a half, and it was becoming more and more obvious that this day would turn into a true bus day 😅.\n\nOnce we arrived in Florence, the impressions were very mixed: my mom found the city beautiful and impressive 🥰, while I personally could not really connect with Florence. For me, it didn’t feel special – very crowded, hectic, and simply not a place where I felt comfortable 🚶‍♀️🏙️.\n\nAfter our stay, we headed back to the ship. The return journey from Florence to La Spezia took around two hours 🚌⏰. In total, we spent an extreme amount of time on the bus that day – even more than during our day in Rome. It made us realize that these kinds of long excursions are simply not our thing 🙈.\n\nBy then, it was clear to us: if we ever dock in Civitavecchia or La Spezia again, we would prefer to stay directly in the port area 🌊⚓. Cities like Pisa or Florence, if at all, we would rather visit separately by car or plane in order to truly appreciate them ✈️🚗.\n\nIn the evening we returned on board the AIDAnova tired but also relieved ❤️🚢. We slowly set course towards Barcelona, and we were very happy that a sea day was waiting for us next – time to breathe, relax, and process all the impressions 🌊💙.'**
+  String get novaDay4;
+
+  /// No description provided for @novaDay5.
+  ///
+  /// In en, this message translates to:
+  /// **'This day was originally supposed to take us to Marseille 🇫🇷⚓ – but due to a strike, the port could not be called at. Instead, plans were changed at short notice: Marseille was canceled, we were given an extra sea day as a ‘gift’, and we would later spend an additional day in Barcelona 🛳️✨.\n\nFor us, this was honestly not a disadvantage at all – quite the opposite! 💙\n\nAfter the very full and exhausting days in Civitavecchia and La Spezia, where we were almost constantly on the move, this extra sea day came at exactly the right time.\n\nThe sea showed itself from its calm side that day 🌊☀️. No storm, no rough waters – and finally we were all able to move around the ship together in a completely relaxed way. It was especially nice that my mom and my grandma finally had the time to properly get to know AIDAnova. In the previous days, we were always off the ship early and back late, but now there was space to explore, discover, and settle in 🧭🚢.\n\nWe walked across the decks together, discovered new corners of the ship, and quickly realized:\nYes – AIDAnova is huge. Almost a bit too big for us! 😅\nStill, the ship was impressive, and it was fun to explore everything at a relaxed pace.\n\nThe day was wonderfully calm:\nWe had breakfast together 🥐☕, enjoyed a nice lunch 🍽️, even took a short nap in between 😴, and spent time on the balcony while the sea gently passed by 🌊💙. We also watched a few shows 🎭✨ and ended the day with a relaxed dinner together 🍷🍝.\n\nNo rushing, no schedule, no pressure – just family time ❤️\n\nSometimes, it is exactly these unexpected days that turn out to be the most precious in hindsight.\n\nAnd while AIDAnova continued gliding towards Barcelona, the excitement slowly grew again – because thanks to the change of plans, even more time was waiting for us there 🇪🇸✨.'**
+  String get novaDay5;
+
+  /// No description provided for @novaDay6.
+  ///
+  /// In en, this message translates to:
+  /// **'Docking in Barcelona felt very special – it was actually our very first time in this city 🇪🇸✨. We had already heard so much about it: how beautiful, how vibrant, how unique Barcelona is. So our curiosity was huge when we arrived in the port in the morning ⚓💙.\n\nFrom the cruise terminal, we took the shuttle bus into the city 🚌. The ride only took about five minutes, so it was super quick. The shuttle cost €12 per person for a round trip, which was not exactly cheap for such a short distance, but it was convenient and hassle-free.\n\nSince we didn’t know Barcelona at all yet, we decided to do a hop-on hop-off bus tour 🧭🚍 – perfect for a first overview. Conveniently, the bus started right where the shuttle dropped us off. In Barcelona there are two routes, and we chose the green one.\nAnd it was truly impressive 😍\nWe drove across the entire city, passed Camp Nou, went through different neighborhoods, saw many of the famous highlights, and even reached a viewpoint from where we could see Barcelona from above 🌇✨. For a first impression, this tour was ideal – sitting back, watching, and simply taking everything in.\n\nAt some point, hunger kicked in 😅🍽️\nSo we got off the bus and spontaneously looked for something to eat. After a bit of searching on Google, we ended up at El Pintxo De Petritxol, right next to the cathedral, just a two-minute walk away – super convenient 🤍🥘. Small pintxos, tapas, paella – everything was incredibly delicious and exactly what you imagine Spanish cuisine to be.\n\nAfter refueling, we continued walking along La Rambla and through Mercat de la Boqueria 🥩🍖🍓. There we bought Spanish salami, Iberian ham, and fresh smoothies – all absolutely delicious. Afterwards, we strolled through the streets, let ourselves drift, and enjoyed that typical Barcelona feeling: lively, warm, loud, and colorful 🌞🎶.\n\nThe special part:\nWe stayed overnight in the port of Barcelona 🚢🌙. The next day, we used the extra time to explore even more. Without any fixed plan, we wandered through the city again, just enjoying the atmosphere – and of course, we went shopping 🛍️😄. Barcelona is truly perfect for that, and we quickly agreed:\n👉 This is an amazing city for shopping.\n\nIn the evening, it was time to say goodbye. With many impressions, full shopping bags, and the feeling of having seen Barcelona for the first time but definitely not the last, we left the city behind ❤️🇪🇸. As we sailed away, Barcelona slowly disappeared in the distance – and we knew: these two days had been a real highlight of our first cruise ✨🛳️.'**
+  String get novaDay6;
+
+  /// No description provided for @novaDay7.
+  ///
+  /// In en, this message translates to:
+  /// **'On the last day of our trip, we arrived in Mallorca ⚓🇪🇸, and our very first cruise slowly came to an end. Looking back, we can say it was a truly beautiful itinerary, full of new impressions, exciting cities, and unforgettable moments 🛳️✨.\n\nWe checked out from the ship, collected our luggage, and boarded the shuttle to the airport 🚌. On the way there, my mom once again stated very firmly: “I am never going on a cruise again” 🙈😂.\n\nHowever, once we were on the plane, the mood immediately changed: “As soon as we get home, before even unpacking our suitcases, we’re booking the next trip” 📲❤️.\n\nAnd that is exactly what happened: as soon as we arrived home, we sat down together on the couch with the iPad 🛋️📱 and immediately booked our next route. This time, we chose the “Mediterranean Highlights 2” cruise with AIDA Stella, including the Côte d’Azur 🌊🏖️. Because my mom knew: if we didn’t book right away, she would probably never step on a cruise ship again.\n\nSo our first cruise ended with a calm but exciting finish, full of family moments, laughter, and anticipation for the next adventure 🌞💜.'**
+  String get novaDay7;
+
+  /// No description provided for @schatzeTitleDay1.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 1 - Arrival in Mallorca & Embarkation on AIDA Cosma'**
+  String get schatzeTitleDay1;
+
+  /// No description provided for @schatzeTitleDay2.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 2 - Relaxing at Sea: Our Perfect Sea Day 🌊🛳️'**
+  String get schatzeTitleDay2;
+
+  /// No description provided for @schatzeTitleDay3.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 3 - Relaxed Stroll Through La Spezia 🌿'**
+  String get schatzeTitleDay3;
+
+  /// No description provided for @schatzeTitleDay4.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 4 - Spontaneous Sightseeing in Civitavecchia Despite the Strike 🌿'**
+  String get schatzeTitleDay4;
+
+  /// No description provided for @schatzeTitleDay5.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 5 - In Love with Corsica: Sunshine and Enjoyment Moments ☀️'**
+  String get schatzeTitleDay5;
+
+  /// No description provided for @schatzeTitleDay6.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 6 - Last Sea Day: Our Little AIDA Ritual 🌊🛳️'**
+  String get schatzeTitleDay6;
+
+  /// No description provided for @schatzeTitleDay7.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 7 - Barcelona: Market Delights and Shopping Happiness ☀️'**
+  String get schatzeTitleDay7;
+
+  /// No description provided for @schatzeTitleDay8.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 8 - Goodbye AIDA 👋🏽🛳️'**
+  String get schatzeTitleDay8;
+
+  /// No description provided for @schaetzeDay1.
+  ///
+  /// In en, this message translates to:
+  /// **'Our cruise adventure on AIDA Cosma began with something truly special this time – a real three-generation trip 👵👩‍🧑❤️. I was traveling with my mom and my great-grandma, a heartfelt project we had been planning for a long time. Three generations, one goal: sunshine, sea, and unforgettable memories 🌊✨.\n\nAround 12 p.m. our flight departed from Cologne/Bonn Airport heading to Mallorca – and what can we say? We absolutely love this island ❤️🇪🇸. The excitement was huge, but the flight was completely smooth and without any issues. Once we arrived in Mallorca, we quickly collected our luggage and were warmly welcomed by the AIDA staff. Right at the airport exit, they were waiting for us, kindly guiding us to the correct shuttle bus and providing all the important information. Everything was perfectly organized, just as you would expect from AIDA 🙌.\n\nAnd that special Mallorca feeling – you know, when you step through the famous glass sliding doors into the open air, feel the warm breeze, and instantly switch into holiday mode – simply typical Mallorca! ☀️💛 But this time it wasn’t a party holiday – our journey was heading out to sea.\n\nOn the shuttle, we could hardly wait to finally board the ship. And once we arrived at the port, everything was wonderfully simple: just leave the luggage on the bus (AIDA makes it possible), check in relaxed – and boom, our cabin was already ready. No surprise, since we boarded at around 4:30 p.m.\n\nWe had a Veranda Deluxe cabin, and what can we say? An absolute dream 😍⚓. The balcony was huge – about 4 × 6 meters, beautifully curved, and equipped with two loungers and two chairs. A place to breathe, arrive, and feel at home. We fell in love instantly.\n\nSince it was already late, we took things easy: showering, unpacking, organizing – all very relaxed. Afterwards, we enjoyed a drink 🍹 and slowly got into the onboard life. Our first little explorations, the first impressions, that familiar feeling: finally AIDA again! And for us, even the first time on Cosma – double the excitement ✨.\n\nThe highlight of the evening was of course the sail-away – our favorite moment of every cruise. We got comfortable on our beautiful balcony and watched AIDA Cosma slowly leaving the port and starting her journey. That magical moment when the engines start, the ship begins to move, and you feel the first meters toward the open sea… simply goosebumps every time 🛳️💫.\n\nThat we didn’t go back into Palma that evening because it was already late? Not a problem. We know Mallorca inside out and used to go there almost every year. Today was about arriving, being together, and letting go. And that is exactly what we enjoyed to the fullest that evening ✨❤️.'**
+  String get schaetzeDay1;
+
+  /// No description provided for @schaetzeDay2.
+  ///
+  /// In en, this message translates to:
+  /// **'The next morning our first sea day began – time to arrive, slow down, and simply do nothing 🛳️💛. Normally, we tend to sleep through breakfast on sea days and end up spontaneously at the buffet restaurant for lunch. But that morning we were surprisingly awake early – and we made the most of it.\n\nWe headed to the steakhouse for breakfast 🥐☕ – and it was a really great decision. The calm, almost meditative atmosphere, the endless view of the sparkling sea, the beautifully prepared dishes, and the first hot chocolate of the day – simply perfect. This is how you start a sea day! And from there, the day continued exactly as you would hope: relaxing on our huge balcony, enjoying the warm sun on our skin, and just letting our minds drift 🌞✨. Every now and then we would look out over the endless blue, listen to the soft sound of the water, and instantly feel settled, free, and completely happy.\n\nLater in the afternoon, we treated ourselves to a drink at the bar 🍹. While my mom took a short nap, my great-grandma and I went to the cake buffet – because at 3 p.m. it’s cake time on AIDA 🍰💛. A little sweet treat, a smile here and there, a small chat – pure sea day happiness.\n\nIn the evening, the big AIDA bingo show awaited us 🎉. Unfortunately, we didn’t win this time, but that didn’t matter at all – it was so much fun, the excitement was real, and the joy of the winners was contagious. Afterwards, we watched the show “Nashville – Just Good Music” 🎶. Perfect entertainment, great live music, and lots of good vibes. To end the day, we had dinner at Best Burger at Sea 🍔 before once again finishing the evening peacefully on our balcony.\n\nThe sea was gently rolling, the sky was full of stars ✨, and we sat there filled with calm, gratitude, and anticipation for everything still to come. A sea day exactly as it should be – simply perfect.'**
+  String get schaetzeDay2;
+
+  /// No description provided for @schaetzeDay3.
+  ///
+  /// In en, this message translates to:
+  /// **'After a quiet sea day, we arrived the next morning in the small, charming town of La Spezia on the Ligurian coast 🇮🇹. Many people use this port as a starting point for day trips to Pisa or Florence, but since we already know both cities quite well, we deliberately chose something more relaxing this time: simply exploring La Spezia itself – and it turned out to be exactly the right decision!\n\nRight at the port, a beautifully decorated little tourist train was waiting for us, covered in colorful flowers 🌸. So cute! We boarded it and rode comfortably into the town. There we had a small stop that gave us enough time to stroll through the streets, take photos, and simply soak up the atmosphere. The train did a small loop and returned about every 50 minutes – perfect for a relaxed walk through La Spezia and a bit of Italian lifestyle.\n\nBack on board, we first treated ourselves to a delicious milkshake at the bar, all three of us together 🥤💛. My personal highlight: the strawberry milkshake – fresh, creamy, and an absolute must-have on every trip. Later, we couldn’t resist getting some ice cream from the ice cream bar either – because, why not? 🍦\n\nWe watched the sail-away from La Spezia around 6 p.m. as usual from our balcony. Even though the view of the container port wasn’t the most scenic, the feeling of departure is always magical. Pure goosebumps, accompanied by the soft sound of the sea.\n\nIn the evening, we went to Mamma Mia, the Italian specialty restaurant on board 🇮🇹🍝. What can we say? Ten out of ten! The pasta, the starters, the atmosphere – everything was simply perfect and beautifully balanced.\n\nWe ended the day very relaxed, of course once again enjoying a quiet moment on our large balcony under the starry sky 🌌 and accompanied by the gentle sound of the sea. A day full of enjoyment, relaxation, and Italian flair – exactly what we love about cruising.'**
+  String get schaetzeDay3;
+
+  /// No description provided for @schaetzeDay4.
+  ///
+  /// In en, this message translates to:
+  /// **'Our fourth day on board AIDA Cosma began, as usual, with a relaxed breakfast in the steakhouse 🥐🍳 – by now almost a tradition. The atmosphere there is simply something special: quiet, cozy, with a view of the sea – the perfect start to the day.\n\nOriginally, we had planned to visit Rome, as many guests on board do – either through an organized AIDA excursion or on our own. We wanted to take the train from Civitavecchia to Rome. But on that very day, the Italian railway went on strike, and our planned Rome trip was canceled 🚫.\n\nBut as life often goes, a nice alternative appeared. Right outside the port entrance, we discovered a small stand offering a hop-on hop-off bus tour 🚌. Very spontaneously, we decided to go for it, and off we went – the bus slowly drove through the city and gave us a relaxed first impression of the charming port town.\n\nCivitavecchia pleasantly surprised us. It may not be a world wonder, but it was much nicer than expected. We even liked the harbor more than the one in La Spezia. After the short city tour, we returned comfortably to the ship. There we first enjoyed a drink at the bar and then settled in at the Theatrium – the perfect place to end the day calmly 🍹.\n\nFor the sail-away around 8 p.m., we made ourselves comfortable on our balcony as usual. A truly goosebump moment: the warm light, the soft humming of the ship, the gentle sound of the sea – simply indescribable 🌅💛. We ended the evening in complete peace, our thoughts relaxed, our hearts content, accompanied by that unmistakable cruise feeling.'**
+  String get schaetzeDay4;
+
+  /// No description provided for @schaetzeDay5.
+  ///
+  /// In en, this message translates to:
+  /// **'Corsica, welcome! And initially… in the rain 🌧️. As we entered Ajaccio, the capital of the island, it was pouring heavily – we already thought: great, everyone raves about Corsica and here we are in the rain. But as soon as we had docked, the grey sky magically cleared, and we were greeted by bright sunshine ☀️.\n\nEven at first glance from the ship, we were completely amazed: colorful houses on the hills, the sparkling sea, mountains in the background – Ajaccio looked like something out of a fairytale.\n\nRight after leaving the ship, we explored the area around the port. There we found a provider for a small sightseeing bus tour that runs through the city in the morning without stops. The little train only started later in the day, so the bus tour was perfect. It took us past pretty alleys, along the waterfront, and through small residential areas – truly charming and relaxed 🌿.\n\nAfter the tour, we immediately came across a small market at the port. There was a stand selling crispy fried balls filled with olives, Nutella, cheese, and more. At first, we were skeptical, but another AIDA guest convinced us – and we were amazed! So much that we went back for seconds 😋.\n\nAnother culinary tip came directly from a follower: the pâtisserie Galeani, just a short uphill walk away. And she was right – the strawberry tart we tried there was absolutely dreamy 🍓✨.\n\nWe strolled a bit more through the city, discovered small souvenirs (I found Uno with Lilo & Stitch – so cute!), and snacked on a few treats from the market. Around noon we returned to the ship, enjoyed a typical Cologne-style meal at the onboard brewery – pasta with goulash and applesauce, just like we Rhinelanders love 😄 – and then relaxed in the sun on our balcony ☀️.\n\nIn the evening, we went again to Mamma Mia, the Italian restaurant on board – as always a 10 out of 10. In between, we wandered through the town once more, enjoyed the atmosphere at the harbor, the sunset over the boats, and the AIDA glowing in golden light 🌅. A moment to breathe deeply and truly take in Corsica.\n\nLater back on board, we waited with a drink for the sail-away at 10 p.m. And what a view it was! Corsica at night, the ship’s lights, the glowing hills in the background – pure goosebumps ✨. We immediately knew: we want to come back here again – maybe for a weekend, maybe just because. Corsica has a permanent place in our hearts ❤️.'**
+  String get schaetzeDay5;
+
+  /// No description provided for @schaetzeDay6.
+  ///
+  /// In en, this message translates to:
+  /// **'Our last sea day began just as relaxed as always, filled with anticipation for the small rituals that make an AIDA cruise so special. We started the morning, as on so many previous days, with a delicious breakfast in the steakhouse. The atmosphere there is simply unbeatable: calm, cozy, and with a view of the endless ocean. For us, the perfect start to a relaxed holiday day 🌅.\n\nAfterwards, we headed straight to the AIDA shop, because on the last sea day, spinning the lucky wheel is a must. A little tradition of ours: spin, get a discount for our shopping, and secure a few more lovely souvenirs. This time, we bought magnets from the ports we visited – a fixed part of every one of our trips 🧲.\n\nA real highlight this time was the Pandora shop on board. There we actually discovered AIDA charms and the little AIDA mascots – and just like that, we were completely sold 😍. In love, bought, happy! (Small note: the AIDA charms are not officially from Pandora, but they fit perfectly on the Pandora bracelet 😉.)\n\nThe rest of the day was all about relaxation. We withdrew, packed our suitcases, enjoyed our balcony, breathed in the sea air, and simply savored that feeling of freedom and peace one last time 🌊✨.\n\nIn the evening, we treated ourselves to a very special highlight: dinner in the steakhouse. And what can we say? It was simply heavenly. For our last sea day, it was a culinary highlight that perfectly rounded off this relaxed day 🥩🍷.'**
+  String get schaetzeDay6;
+
+  /// No description provided for @schaetzeDay7.
+  ///
+  /// In en, this message translates to:
+  /// **'Early in the morning, we arrived in Barcelona, and we immediately headed into the city. From the port, we took the shuttle bus towards the center. Small tip: there is also a cheaper shuttle that stops right in front of the ship and takes you to the center just as well – we only discovered it too late 😉.\n\nOur first destination was Mercat de la Boqueria. What an experience! Fresh colors, delicious aromas, and us right in the middle of it all. With an ice-cold smoothie in hand that tasted absolutely heavenly, we instantly felt at home. We also tried Spanish salami from one of the many stalls – a true dream. And then the fresh strawberries with Nutella – no further comment needed, just pure love 🍓🍫.\n\nAfterwards, I actually wanted to buy an FC Barcelona jersey but ended up in the official Real Madrid store instead. And what can I say? I immediately fell in love with a purple tracksuit – too beautiful to leave behind. So I bought it and wore it right away. Yes, of all places, in Barcelona wearing a Real Madrid outfit through the streets – no problem 😅.\n\nWhile strolling through the city, we came across a real highlight: the Rituals Lina Edition “The Ritual of Yozakura.” It was hard to get at the time, and for us it was an absolute must-buy.\n\nWhen we arrived at Barcelona Cathedral, it was unfortunately closed off because a traditional children’s dance was taking place. It was so beautiful to watch that we paused for a moment to enjoy it before continuing to lunch.\n\nCulinary-wise, we had a déjà vu: at the restaurant “El Pintxo de Petritxol,” right near the cathedral, we had already eaten during our 2019 Mediterranean cruise. The tapas were just as delicious as we remembered – a little culinary piece of nostalgia 🍽️.\n\nIn the afternoon, we returned to the ship, treated ourselves to a milkshake, and then enjoyed some time on the balcony. A special moment awaited us: a small, beautiful butterfly had settled on the rope of our hanging hammock – such a quiet, sweet visitor 🦋.\n\nAt 6 p.m. it was time to say goodbye – Adiós Barcelona. The sail-away was once again a beautiful experience. Afterwards, we started packing our suitcases, had one last drink on the balcony, enjoyed the sound of the sea – and then went to bed early, ready for our return to Mallorca 🛳️🌙.'**
+  String get schaetzeDay7;
+
+  /// No description provided for @schaetzeDay8.
+  ///
+  /// In en, this message translates to:
+  /// **'Early in the morning, we arrived back in Mallorca – the place where our adventure had begun. And this time, it was unfortunately time to say goodbye.\n\nSince our shuttle bus was already leaving at 5:30 a.m., we had to take our suitcases off the ship ourselves. Normally, you simply leave them outside your cabin door the evening before, and they are collected and brought ashore – super convenient. But with such an early departure, that wasn’t possible. So we grabbed our suitcases early in the morning, checked out, and made our way out. The shuttle bus took us directly to Palma de Mallorca Airport. Everything was completely smooth – the airport was almost empty, check-in was quick, and our luggage was already on its way.\n\nThen it was time for takeoff back to Cologne. A special highlight on our return flight: it was the first time we had a female pilot. And she was amazing! The takeoff was calm, the flight pleasant, and the landing one of the smoothest we’ve ever experienced – a perfect ending, especially compared to our rather bumpy outbound flight.\n\nOnce we arrived home, it was time for the usual routine: unpacking suitcases, doing laundry, and switching off holiday mode. But before fully returning to everyday life, we treated ourselves to one last culinary highlight: a delicious lunch at Habakkus Steakhouse in Cologne.\n\nAnd just like that, our three-generation cruise aboard AIDA Cosma officially came to an end. But the memories remain – unforgettable, filled with sunshine, sea, enjoyment, and shared moments. So we say: see you on AIDA! ⚓✨'**
+  String get schaetzeDay8;
+
+  /// No description provided for @caribeanTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Caribbean Islands'**
+  String get caribeanTitle;
+
+  /// No description provided for @aidaKaribikDay1.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 1 – Arrival in La Romana & Embarkation on AIDA 🛳️🌴'**
+  String get aidaKaribikDay1;
+
+  /// No description provided for @aidaKaribikDay2.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 2 – A Relaxing Sea Day on AIDA 🌊☀️'**
+  String get aidaKaribikDay2;
+
+  /// No description provided for @aidaKaribikDay3.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 3 – Oranjestad, Aruba 🏖️🇦🇼'**
+  String get aidaKaribikDay3;
+
+  /// No description provided for @aidaKaribikDay4.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 4 – Curaçao: Willemstad, Beaches & Nature Experiences 🌺🌊'**
+  String get aidaKaribikDay4;
+
+  /// No description provided for @aidaKaribikDay5.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 5 – Bonaire: Salt Lake, Flamingos & Sorobon Beach 🦩🏝️'**
+  String get aidaKaribikDay5;
+
+  /// No description provided for @aidaKaribikDay6.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 6 – Sea Day: Relaxation at Sea ☀️🛳️'**
+  String get aidaKaribikDay6;
+
+  /// No description provided for @aidaKaribikDay7.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 7 – Grenada: Sightseeing Train Ride in St. George’s 🚂🌿'**
+  String get aidaKaribikDay7;
+
+  /// No description provided for @aidaKaribikDay8.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 8 – Barbados: Harrison’s Cave & Harbour Day 🏞️🍹'**
+  String get aidaKaribikDay8;
+
+  /// No description provided for @aidaKaribikDay9.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 9 – St. Vincent: Wallilabou Heritage Park & Pirates of the Caribbean 🏝️⚓'**
+  String get aidaKaribikDay9;
+
+  /// No description provided for @aidaKaribikDay10.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 10 – St. Lucia: Relaxing at the Patio Bar 🍹🌅'**
+  String get aidaKaribikDay10;
+
+  /// No description provided for @aidaKaribikDay11.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 11 – Dominica: Roseau & Nature Highlights 🌴💦'**
+  String get aidaKaribikDay11;
+
+  /// No description provided for @aidaKaribikDay12.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 12 – Pointe-à-Pitre, Guadeloupe: City & Rickshaw Tour 🚲🏙️'**
+  String get aidaKaribikDay12;
+
+  /// No description provided for @aidaKaribikDay13.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 13 – Antigua: English Harbour, Saint Mary Beach & Dickenson Bay 🏖️⛵'**
+  String get aidaKaribikDay13;
+
+  /// No description provided for @aidaKaribikDay14.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 14 – Sea Day & Preparation for Departure 🛳️🧳'**
+  String get aidaKaribikDay14;
+
+  /// No description provided for @aidaKaribikDay15.
+  ///
+  /// In en, this message translates to:
+  /// **'Day 15 – Departure Day: Goodbye Caribbean ✈️🏠'**
+  String get aidaKaribikDay15;
+
+  /// No description provided for @aidaKaribik1.
+  ///
+  /// In en, this message translates to:
+  /// **'Finally the moment had come – our Caribbean adventure with the Caribbean islands starting from the Dominican Republic began! We set off early in the morning from Cologne ✈️ and landed in La Romana around 3 p.m. Just stepping off the plane, we already felt it: now the real vacation begins 🌺.\n\nLa Romana airport is small, charming, and feels more like a tropical little house with a palm-leaf roof 🌴🏠 – no long walking distances, no crowds. Right after leaving the aircraft stairs, we were already standing in front of the shuttle bus to AIDA Perla 🚍🛳️. Completely relaxed! Our suitcases were already taken from the plane by staff and delivered directly to our junior suite 🎒✨.\n\nThe ride from the airport to the port took only about 15 minutes. Even on arrival, we could feel the Caribbean atmosphere: palm trees swaying in the wind 🌴🍃, colorful houses along the harbor 🏘️, small souvenir shops and street food stalls spreading vacation vibes 🌞🍹. A pool right at the harbor even allowed us our first glimpse of the ship – simply dreamy 🏊‍♂️💦.\n\nCheck-in on AIDA was super quick – no queues, no stress, just friendly faces 😊. Shortly after, we were able to enter our junior suite on deck 8 on the port side. Thanks to the suite, we also had access to the exclusive Patchouli Deck 🌊🍸, a separate area for suite guests with infinity pools, loungers, beach chairs, and its own bar – perfect for relaxing moments above the decks of AIDA.\n\nOur cabin was bright, modern, and spacious 🛏️🌺. Fresh towels, cozy beds, and a small balcony with sea view 🌅 made us feel at home instantly. The only small downside: between the bed and the balcony there is a lounge area, so you cannot look directly at the sea from the bed. Still, we immediately felt comfortable in the cabin.\n\nAbout two hours after arrival, our luggage was delivered, so we unpacked and took a refreshing shower 🚿💦. Afterwards, we explored the ship: decks, restaurants 🍽️, bars 🍹 – everything felt inviting and made us excited for the days ahead. Thanks to our suite access, we also had entry to an exclusive area on deck 8 with comfortable indoor and outdoor seating 🪑☀️ as well as complimentary drinks 🥤.\n\nIn the evening, we enjoyed our complimentary dinner as suite guests 🥂. Normally, guests are assigned to the Rossini restaurant, but we asked at reception if we could instead go to the Buffalo Steakhouse, since we regularly dine there and Rossini is not really our style. AIDA allowed it without any issues ✅ – so we spent our first evening in our favorite restaurant 🥩🍷.\n\nWell fed and happy, we then experienced the sail-away from La Romana at 10 p.m. 🌙✨: music on board 🎶, warm wind on our faces 🌬️, and the lights of the harbor glowing behind us 🌟 – the perfect start to our Caribbean journey.'**
+  String get aidaKaribik1;
+
+  /// No description provided for @aidaKaribik2.
+  ///
+  /// In en, this message translates to:
+  /// **'After the exciting arrival day and our first evening on board AIDA, this sea day was exactly what we needed. We absolutely love sea days – one or two in a row are a dream, but by the third it might get a little boring 😅. Luckily, today we only had one, and it was perfect.\n\nAs junior suite guests, we started the morning with breakfast at French Kiss 🥐☕. We had our fixed table every morning, and everything was very relaxed and delicious. There were fresh baguettes 🥖, pancakes 🥞, French specialties, and much more. Of course, we occasionally treated ourselves to a little detour to the Buffalo Steakhouse, but breakfast at French Kiss was already a highlight in itself 😋.\n\nAround midday, we got ready and slowly made our way to lunch. The feeling of walking across the ship while the deep blue Caribbean sea passes by outside 🌊💙 is simply magical. The wind gently sweeps across the deck, and the soft rocking and creaking of the railings immediately create that true holiday feeling 🌴✨.\n\nWe spent the rest of the day completely relaxed and in different ways. Enjoying the sunshine on the Patchouli Deck ☀️, breathing in the fresh sea air at the stern of the ship 🌬️, and listening to the gentle sound of the ocean with our balcony door open in our cabin 🌊 – pure relaxation. In between, we continued exploring the ship: small bars 🍹, cozy lounges 🪑, and beautiful decks. AIDA Perla is simply our favorite ship ❤️, and discovering it even more made so much fun.\n\nAmidst all of this, we also did absolutely nothing at times – just enjoying the sun, letting our eyes wander over the sea, and letting the anticipation for the upcoming island adventures grow 🌺🌴.\n\nIn the evening, we enjoyed a delicious dinner 🍽️ and ended the day in a completely relaxed mood. A perfect sea day – exactly what you need to recharge and fully enjoy a Caribbean cruise 🌊✨.'**
+  String get aidaKaribik2;
+
+  /// No description provided for @aidaKaribik3.
+  ///
+  /// In en, this message translates to:
+  /// **'We arrived in Oranjestad, the lively capital of Aruba, in the morning and set off right away. From the port, everything was super easy: together with other passengers, we took a taxi based on the official price list at the harbor exit — no negotiating, everything clearly regulated and hassle-free ✅.\n\nOur destination was the stunning Eagle Beach. Stepping onto the beach instantly felt like pure vacation: white sand, deep blue ocean, and the sun on our skin ☀️. There we also found a very special tree – the Divi-Divi tree – known for its iconic wind-shaped form, a true symbol of Aruba 🌿. A perfect photo spot and an instant Caribbean feeling.\n\nLater, we headed to Palm Beach. Parasailing was on the agenda 🪂. The whole process was super relaxed and well organized: we took a boat from the beach out to sea, switched to another boat, got our life vests, and then went up into the sky. High above the turquoise water with views of the coastline, we felt like birds in flight 🐦🌊. Afterward, we safely landed back on the boat and were brought back to shore. Much more comfortable and relaxed than our previous experience at the Côte d’Azur!\n\nAfter the adrenaline rush, we briefly returned to the ship: a refreshing cocktail at the bar 🍹, a shower, and then we headed out again. In the afternoon, we strolled through the Royal Plaza Mall — the famous pink shopping center right by the water. From the upper floor, we had a great view of the AIDA and the harbor — perfect for photos 📸. We then explored the Renaissance Mall and the colorful streets of downtown Oranjestad with its pastel houses in yellow, pink, mint, and blue — pure Aruba vibes 🌈.\n\nWe also discovered Fort Zoutman (sometimes referred to as “Fort Southman”), the oldest fort on Aruba. From there, we enjoyed a beautiful view over the harbor and city — a piece of island history in a very relaxed setting 🏰🌅.\n\nAt sunset, we ended up at a small beach bar right by the water — flamingos on the beach, a romantic swing decorated with flowers, soft golden light, and the sound of the waves… the perfect way to end the day 🌺🦩.\n\nIn the evening, we returned to AIDA and enjoyed a cozy dinner, reflected on the experiences of the day, and already looked forward to the next islands and adventures of our Caribbean route 🛳️✨.'**
+  String get aidaKaribik3;
+
+  /// No description provided for @aidaKaribik4.
+  ///
+  /// In en, this message translates to:
+  /// **'The next morning, we arrived in Willemstad, the colorful capital of Curaçao, and immediately immersed ourselves in the Caribbean island feeling. Palm trees above us, brightly colored houses everywhere, and the relaxed vibe of an island city — instant good mood 🌴🎨.\n\nRight at the port exit, taxi drivers were already waiting. We had two wishes: swimming with sea turtles 🐢 and seeing flamingos 🦩. But the offers were far from reasonable — no fixed prices, constant negotiations, and the more we talked, the higher the prices got. It felt quite unreliable, so we decided not to go with it — we wanted to enjoy the day, not start a stressful bargaining battle 🚫💸.\n\nInstead, we met a German tour guide at the port entrance — let’s call him “Nils” — who offered a full-day tour for 100 euros per person. Everything included: transport in an old, charming American school bus, several diverse stops, food, and guidance — a fair and transparent deal. We said yes ✅.\n\nWe grabbed our swimwear, hopped on the bus, and off we went. The first highlight was a striking pink tree that immediately caught our attention 🌳 — whether art or landmark, it was a great photo spot. Then we continued to the creative district of Pietermaai: a colorful artistic neighborhood with charming streets, small cafés, street art, and playful installations — exactly what we love about traveling and discovering new places. Wooden crates, flowers, art everywhere — very warm, very Caribbean 🎨🌺.\n\nA little later, we visited a small liqueur factory called Kuraçao Liqueur Factory. There we saw how the famous island liqueur is made. We got to taste it — and of course bought a few bottles as souvenirs 🍹.\n\nThe tour then took us to a nature reserve where we actually saw flamingos — beautiful, elegant birds with pink-white feathers 🦩. A true dream for nature lovers. After that, we continued to Playa Grandi (also known as “Playa Piskado”) — and with a bit of luck, we even saw sea turtles and swam in the crystal-clear water 🐢🌊.\n\nLunch was at Playa Forti restaurant: we sat outside on a platform overlooking the ocean, feeling the breeze and watching the water sparkle beneath us. And — yes — I think I even saw a dolphin 🐬. The atmosphere, the view, the ocean — pure goosebumps!\n\nSome of us also dared a spontaneous jump off the cliff — a small adrenaline moment before we headed to the beach to relax, soak up the sun, and enjoy the peace 🌞. Afterwards, we continued to Grote Knip beach — one of the most beautiful beaches in Curaçao with turquoise water, white sand, and rocky scenery. Perfect for snorkeling, swimming, and simply unwinding 🏖️💙.\n\nAt the end of the day, the bus took us back to Willemstad. Some of the group got off at the Queen Emma Bridge to take photos and see the city lit up at night — pastel-colored houses, lights, harbor, water — pure Caribbean magic 🌉🌙. Finally, we returned to the ship, full of impressions from a day filled with adventure, nature, and cultural diversity.\n\nIn the evening, we ended the day with a delicious dinner — tired, happy, and already excited for what was still to come. A day we will not forget anytime soon ❤️✨.'**
+  String get aidaKaribik4;
+
+  /// No description provided for @aidaKaribik5.
+  ///
+  /// In en, this message translates to:
+  /// **'We then arrived in Kralendijk on Bonaire, full of excitement for a noticeably different kind of day — not just beach relaxation, but nature, history, and true island feeling.\n\nAs we left the port area, we found several small pavilions from different tour providers, all offering island excursions. For us, there were two options: a northern tour and a southern tour. The northern route was not available that day — and honestly, the providers were so transparent and honest that they immediately said the southern tour alone was the best choice. So we booked that half-island tour — by minibus, accompanied by a super friendly driver 🚌.\n\nOur first stop was the famous salt flats and salt pans in the southern part of the island. There we experienced an impressive landscape: bright white salt fields, crystal-clear water, and in between — soft pink tones 😍. A scenery like out of a picture book. These old salt pans are not only beautiful but also historically significant, representing centuries of salt production on Bonaire.\n\nNot far away, we also saw the remains of the former slave huts — the so-called White Slave Huts (and the reddish “Red Slave Huts”). These small, simple houses were built in the mid-19th century and served as shelters for people working in the salt industry — a reminder of a darker chapter in the island’s history.\n\nWe used a creative photo idea: an old hut with two opposite openings. One person stands behind the structure, the other in front. When photographed together, you get a striking contrast — old stone walls inside, turquoise sea outside — a unique and powerful image.\n\nWe continued our journey and unexpectedly spotted flamingos along the way. Not in a protected area, but freely in nature — elegant pink-white birds standing in the water, perfect for photos and a true natural highlight 🦩. It felt almost magical.\n\nLater, we headed to the coastline near Sorobon Beach — a paradise for windsurfers and spectators alike. Some in our group went surfing, while we enjoyed the sun, sand, and relaxed atmosphere. Afterward, we returned to Kralendijk.\n\nWe ended the day strolling through the town: colorful houses, small boutiques, and a relaxed Caribbean vibe — simply enjoying this mix of calm, color, and island serenity.\n\nIn the evening, we returned to the ship. We were filled with impressions: salt flats, history, nature, flamingos — a day that showed us the full diversity of Bonaire 🌅.'**
+  String get aidaKaribik5;
+
+  /// No description provided for @aidaKaribik6.
+  ///
+  /// In en, this message translates to:
+  /// **'After the exciting day on Bonaire, today was a well-deserved sea day that we were able to enjoy completely relaxed. No early wake-up was needed — we slept in, enjoyed a cozy breakfast at French Kiss, and let ourselves be carried by the gentle rocking of the sea 🌴☕.\n\nWe spent the morning continuing to explore the ship. New restaurants, cozy lounges, and small hidden corners we hadn’t discovered yet were explored. In between, we had a refreshing drink on the sun deck, took a little walk past the shops, and simply breathed in the fresh Caribbean air while enjoying the endless blue ocean 🌊🍹.\n\nAt midday, we treated ourselves to something delicious at one of the buffet restaurants before spending a relaxed afternoon in our cabin. A short nap, listening to the sound of the sea, and simply enjoying the ocean view — the feeling of being on the move without any schedule or obligations made this day especially restful 😌💛.\n\nIn the evening, as the sun slowly set into the ocean, we were enchanted by the glowing lights of the ship. On deck, we enjoyed our first cocktail of the day 🍸, chatted, and looked forward to the upcoming Caribbean islands waiting for us in the next days.\n\nA day full of relaxation, calmness, and pure anticipation — perfect to recharge and fully enjoy the special atmosphere on board ✨🛳️.'**
+  String get aidaKaribik6;
+
+  /// No description provided for @aidaKaribik7.
+  ///
+  /// In en, this message translates to:
+  /// **'On day 7 of our Caribbean cruise, we arrived in St. George’s, the capital of Grenada. A charming city located in a sheltered bay, framed by green hills and colorful houses that immediately catch the eye 🌿🏘️. Grenada, also known as the Spice Island, impressed us with its tropical nature, endless sandy beaches, and the famous nutmeg, which can be found everywhere in the city and on the markets 🌰🌺.\n\nOur first activity was a sightseeing train ride through the city 🚋. The small train took us past the colorful houses, through the hills, and to beautiful viewpoints where we enjoyed a stunning view over the harbor and the sparkling Caribbean Sea 🌊☀️. Along the way, our guide shared exciting stories about the island’s history, its colonial past, and the spice plantations that make Grenada so unique.\n\nThe tropical vegetation was also impressive: exotic plants were blooming everywhere, and we discovered small cultural and architectural details that are easy to miss otherwise 🌺🌴. The sightseeing train was perfect to explore the city at a relaxed pace without long walking distances, while still experiencing Grenada’s authentic atmosphere up close.\n\nA relaxed and colorful day where we fully enjoyed the unique mix of nature, culture, and Caribbean charm the island has to offer 💛✨. A beautiful continuation of our unforgettable Caribbean journey.'**
+  String get aidaKaribik7;
+
+  /// No description provided for @aidaKaribik8.
+  ///
+  /// In en, this message translates to:
+  /// **'On day 8, we arrived in Bridgetown, Barbados. The sun was shining, palm trees were gently swaying in the wind, and the Caribbean showed itself from its most beautiful side 🌞🌴.\n\nFor our shore excursion, we spontaneously decided to visit the impressive Harrison’s Cave — one of the most remarkable limestone caves on the island. We took a taxi directly there 🚖. What stood out especially: our driver waited for us as long as we needed, and he was very honest from the beginning — saying we only pay once we are safely back and satisfied. People like that are truly priceless 😊.\n\nThe ride was a bit adventurous, as our taxi was full — many AIDA guests were dropped off at different beaches and spots along the way. It quickly became clear: whoever boards last gets picked up last. For us, that meant Harrison’s Cave was the final stop — perfectly timed.\n\nAt the cave, we had to wait briefly as tickets were sold out at first. No stress though — we simply waited, met other travelers, and had some nice conversations. When our time slot came, we went in: a small tram took us through dark passages, past stalactites and stalagmites, and along underground streams — even a waterfall with bright blue water 🌊🕳️. We wore helmets for safety, and the mix of cool cave air and impressive light effects made it a beautiful contrast to the warm sunshine outside.\n\nThe cave tour was a real highlight — pure nature, mysterious and impressive.\n\nOn the way back to the port, something unexpected happened: the tire of our taxi loosened in the middle of the road 🚗😮. But our driver reacted immediately: he stopped, called a colleague, we paid him, and shortly after a replacement taxi arrived — free of charge and safely took us back. So instead of panic, it turned into a small adventure with a happy ending 🚖👍.\n\nBack at the port, we still had time for some photos, a short walk, and a bit of sun — enjoying the relaxed harbor atmosphere of Barbados 🌅📸. A day full of wonder, adventure, and Caribbean vibes — exactly what a holiday should feel like 🏝️❤️.'**
+  String get aidaKaribik8;
+
+  /// No description provided for @aidaKaribik9.
+  ///
+  /// In en, this message translates to:
+  /// **'Today we arrived in Kingstown, St. Vincent – the sun was shining, the Caribbean sea sparkled in deep blue, and the tropical landscape welcomed us with lush greenery and colorful houses 🌴☀️🌊.\n\nWe had not booked an excursion in advance, but instead spontaneously joined a small group of nine people. This kept everything flexible, personal, and relaxed – exactly our style ✨👫.\n\nFirst, we drove to several viewpoints offering fantastic views of the AIDA and the coastline of St. Vincent – perfect photo opportunities 📸🌅. Afterwards, we continued to Wallilabou Heritage Park, where we explored a small waterfall and had plenty of time for photos and to enjoy the nature 💦🌺.\n\nA special highlight was visiting the Pirates of the Caribbean filming locations: historic sets and the nearby black sand beach area – it almost felt like stepping onto a movie set 🏖️⚓🎬. The tour lasted about two and a half hours and was a perfect mix of nature, history, and movie adventure.\n\nBack on board, we spent the rest of the day relaxing on deck, strolling along the promenade, and enjoying the Caribbean breeze 🌬️🌴. At sunset, we took more photos: the AIDA in port, the sky turning orange and pink – pure holiday vibes 🌅🚢✨.\n\nThe evening ended with a delicious dinner on board and the feeling of having experienced another unforgettable Caribbean day ❤️🍹🌴.'**
+  String get aidaKaribik9;
+
+  /// No description provided for @aidaKaribik10.
+  ///
+  /// In en, this message translates to:
+  /// **'The next day we arrived in Port Castries, Point Seraphim, on St. Lucia. As soon as we left the ship, our eyes fell on the famous St. Lucia sign right at the harbor — a must-stop for a souvenir photo 📸🌴.\n\nFor this day, we deliberately didn’t plan any excursions. Instead, pure relaxation was on the agenda. We retreated to our junior suite with Patchouli access and enjoyed peace, comfort, and the fresh Caribbean sea breeze 🌊💨.\n\nWe briefly considered trying the zip-line through the jungle, where even monkeys live 🐒. It sounded like an amazing adventure — but it would have required a one-hour drive, and after the past days full of excursions, we decided to save this highlight for next time.\n\nSo we spent most of the day enjoying cool drinks and small snacks on the Patchouli Deck 🍹☀️. The ship was pleasantly quiet, the atmosphere relaxed, and the sun gently warmed our skin. We let our eyes wander across the endless Caribbean Sea, felt the light breeze, and listened to the soft sound of the waves 🌊✨.\n\nA day to unwind, fully enjoy the Caribbean vibe, and completely leave everyday life behind. A calm, luxurious day on board that gave us new energy for the upcoming adventures ❤️🛳️.'**
+  String get aidaKaribik10;
+
+  /// No description provided for @aidaKaribik11.
+  ///
+  /// In en, this message translates to:
+  /// **'On day 11, we arrived in Roseau, the capital of Dominica. The island immediately enchanted us – so green, so untouched, and full of tropical beauty 🌴💚.\n\nRight from the port, we joined a spontaneous two-and-a-half-hour tour that we booked on site. Our small group consisted of only a few people, which made the trip very pleasant and personal 🚐✨.\n\nOur first stop was the Dominica Botanic Garden, a true paradise full of exotic plants, colorful blossoms, and tropical tranquility 🌺🍃. We walked through lush greenery and had the botanical highlights explained to us by our guide.\n\nNext, we continued to Trafalgar Falls, an impressive natural wonder. Two waterfalls plunge into a deep emerald-green gorge here. The sound of rushing water, the vibrant colors of nature, and the fresh breeze made this moment unforgettable 🌊💚.\n\nThe tour then took us to Wotten Waven, the island’s hot springs. The mineral-rich water was steaming from the ground, surrounded by dense tropical vegetation. A place where you could truly feel the island’s energy 🔥🌿.\n\nAfter the tour, we returned to the ship and spent the rest of the day relaxing on the Patchouli Deck 🍹☀️. With a cold drink in hand, we reflected on the impressions of the day, enjoying the sun and the gentle breeze.\n\nDominica impressed us with its wild nature, rolling green mountains, and countless small waterfalls. Every moment on the island felt intense, alive, and like a true natural dream 🌴💦.'**
+  String get aidaKaribik11;
+
+  /// No description provided for @aidaKaribik12.
+  ///
+  /// In en, this message translates to:
+  /// **'On day 12 of our Caribbean cruise, we arrived in Pointe-à-Pitre on Guadeloupe. Right at the port, we were greeted by various tour providers. We spontaneously chose a rickshaw ride that lasted about one hour 🚲💨.\n\nOur driver guided us through the city in a very personal and charming way, sharing exciting details about the island’s history and culture while letting us experience the atmosphere up close 🌺🏘️. A real highlight was the Pointe-à-Pitre sign, made from recycled car parts, bicycle parts, and various other materials ♻️📸 — a truly unique and creative photo spot!\n\nWe wound our way through the colorful streets, discovered the Pointe-à-Pitre museum, and admired a large wall painting featuring a clock and various symbols — an unusual artwork that perfectly reflects the city’s charm 🎨🖌️.\n\nThe rickshaw tour was relaxed, entertaining, and a wonderful way to explore the city at an easy pace. Our driver initially wanted to wait until his rickshaw was full, but thanks to the police directly at the harbor exit, the ride could start on time — very well organized and completely stress-free 👮‍♀️👍.\n\nAfter the tour, we returned to the ship and spent the afternoon relaxing. Enjoying the sun, feeling the gentle rocking of the sea, and reflecting on the impressions of the city — exactly the right feeling to recharge with Caribbean joy 🌞🍹.\n\nPointe-à-Pitre showed itself on this day from its colorful, lively, and charming side — a perfect mix of culture, creativity, and Caribbean flair 🌴✨.'**
+  String get aidaKaribik12;
+
+  /// No description provided for @aidaKaribik13.
+  ///
+  /// In en, this message translates to:
+  /// **'On day 13 of our Caribbean cruise, we arrived in St. John’s, Antigua. After disembarking, we spontaneously booked a private excursion with a small group of fellow travelers — perfect for a relaxed exploration of the island 🛥️✨.\n\nOur first stop was English Harbour, a historic yachting harbor. We paused briefly, took some photos, and admired the impressive sailboats and luxury yachts ⛵📸.\n\nWe then continued to St. Mary Beach, where we enjoyed the breathtaking view and took a few memorable pictures 🌊🌞. After that, we headed to Raleigh Church Beach, where guests could optionally dip their feet in the water and enjoy the sand. Some of our group stayed there, but we decided to continue 🏖️.\n\nOur highlight of the day was Dickinson Bay, known for its iconic red telephone booth on the beach ☎️📸 — an unusual but extremely photogenic spot. At first, our driver was hesitant to go there because it was logistically complicated due to other guests being spread across different beaches. After a bit of convincing, we managed to persuade him, and we agreed to spend two hours there before being picked up again ⏳🚤.\n\nOur time at Dickinson Bay was magical: we enjoyed the turquoise water, soft sand, and the relaxed atmosphere of the small beachfront bar and restaurant 🍹🏖️. The two hours flew by, and then our driver picked us up and safely brought us back to the ship.\n\nOn the way back, we used the remaining time to stroll through the harbor town of St. John’s, shop for souvenirs, and fully enjoy the Caribbean vibe 🛍️🌴.\n\nA diverse day full of nature, beaches, history, and Caribbean charm — exactly why we love this journey so much ❤️✨.'**
+  String get aidaKaribik13;
+
+  /// No description provided for @aidaKaribik14.
+  ///
+  /// In en, this message translates to:
+  /// **'On day 14 of our Caribbean cruise, we enjoyed one final sea day — the perfect opportunity to once again take full advantage of everything AIDA has to offer 🛳️☀️.\n\nWe started the morning slowly with a relaxed breakfast, followed by a stroll across the ship. We explored all the decks one last time, took photos of the sparkling ocean, and enjoyed the peaceful atmosphere 📸🌊. In between, we found sunny spots, enjoyed small snacks 🍓🥐, and simply let the final hours at sea sink in.\n\nThis day was the perfect balance after the eventful shore excursions of the previous days. We especially appreciated having boarded in La Romana: this way, we enjoyed the full vacation experience at the beginning and the more relaxed sea days at the end — a real advantage compared to those who boarded in Barbados and started with calmer days 🌴🛳️.\n\nIn the afternoon, we already began packing our suitcases, sorting our belongings, and preparing everything for the journey home 🧳✨. To finish the day, we enjoyed a final dinner at the Buffalo Steakhouse while gazing out over the endless Caribbean blue 🍽️🌅.\n\nBefore going to bed, we placed our suitcases outside our cabin door so they could be collected overnight. A calm and beautiful conclusion to an unforgettable cruise full of memories, relaxation, and magical moments 🌟❤️.'**
+  String get aidaKaribik14;
+
+  /// No description provided for @aidaKaribik15.
+  ///
+  /// In en, this message translates to:
+  /// **'On the last day of our Caribbean journey, it was time to say goodbye to sun, sea, and the AIDA. Our return flight was scheduled for 5 p.m., and at 2 p.m. we were picked up by the shuttle to the airport 🚌. Already in the morning, between 10 and 11 a.m., we dropped off our luggage directly at the port. Conveniently, temporary check-in counters were set up right next to the ship, where the suitcases were weighed and luggage tags were attached 🧳. Most bags were simply accepted without issue, only a few were briefly weighed — very smooth and hassle-free.\n\nAfterwards, we still had some time on board to enjoy the final moments on the AIDA ☀️🛳️. Then the shuttle took us to the airport. During the ride, we already learned that our flight was delayed by three hours — instead of 5 p.m., it would now depart at 8 p.m. ✈️. Despite the delay, we were still transferred to the airport early so the ship could be cleared on time.\n\nThe airport in La Romana was small, with limited seating, very few toilets 🚻 (which unfortunately were out of order), and extremely high prices for drinks 💸 — a real challenge for families with children. Nevertheless, check-in went smoothly and we dropped off our luggage.\n\nWhen we finally boarded the plane, we were the first passengers on board. Normally, we are always among the last to board 😅. We even asked the flight attendant for a quick bathroom break before taking our seats — no problem, she was familiar with the La Romana situation.\n\nThe flight itself was quite an adventure: instead of the planned 11 hours, we flew only 7 hours at around 800 km/h and an altitude of about 15,000 meters ✈️💨. It felt almost like being in a Formula 1 car — heavily pushed into the seat, but the time passed surprisingly quickly. Thanks to the pilot, who clearly just wanted to get home, we landed exactly at the time we would have arrived without the delay — a true professional 👏.\n\nThe next morning we arrived in Cologne, tired but extremely happy 😴❤️. The temperature difference was intense — after two weeks of sunshine, it was back to sweaters and jackets, brrr 🥶. But the memories of two unforgettable weeks full of adventure, relaxation, and magical Caribbean moments will stay with us for a long time 🌴🌊✨.'**
+  String get aidaKaribik15;
+
+  /// No description provided for @titleOrientDubai.
+  ///
+  /// In en, this message translates to:
+  /// **'Orient from Dubai'**
+  String get titleOrientDubai;
+
+  /// No description provided for @share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get share;
+}
+
+class _SDelegate extends LocalizationsDelegate<S> {
+  const _SDelegate();
+
+  @override
+  Future<S> load(Locale locale) {
+    return SynchronousFuture<S>(lookupS(locale));
+  }
+
+  @override
+  bool isSupported(Locale locale) =>
+      <String>['de', 'en'].contains(locale.languageCode);
+
+  @override
+  bool shouldReload(_SDelegate old) => false;
+}
+
+S lookupS(Locale locale) {
+  // Lookup logic when only language code is specified.
+  switch (locale.languageCode) {
+    case 'de':
+      return SDe();
+    case 'en':
+      return SEn();
+  }
+
+  throw FlutterError(
+    'S.delegate failed to load unsupported locale "$locale". This is likely '
+    'an issue with the localizations generation tool. Please file an issue '
+    'on GitHub with a reproducible sample app and the gen-l10n configuration '
+    'that was used.',
+  );
+}
