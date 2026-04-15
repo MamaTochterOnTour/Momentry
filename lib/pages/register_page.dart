@@ -10,6 +10,7 @@ import '../einstellungen/privacy_policy_page.dart';
 import '../einstellungen/terms_conditions_page.dart';
 import 'dart:developer';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'username_setup_page.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -28,6 +29,9 @@ class _RegisterPageState extends State<RegisterPage> {
 
   final _authService = AuthService();
   final _firestore = FirebaseFirestore.instance;
+
+  bool _obscurePassword = true;
+  bool _obscureConfirmPassword = true;
 
   bool _isLoading = false;
   bool _agreedToTerms = false;
@@ -206,7 +210,7 @@ class _RegisterPageState extends State<RegisterPage> {
             uid: user.uid,
             firstName: firstName,
             lastName: lastName,
-            username: user.displayName ?? firstName,
+            username: "",
             email: user.email ?? "",
             displayName: user.displayName ?? "$firstName $lastName",
           );
@@ -232,7 +236,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const MainNavigationPage()),
+          MaterialPageRoute(builder: (_) => UsernameSetupPage(uid: user.uid)),
         );
       }
     } catch (e) {
@@ -270,7 +274,7 @@ class _RegisterPageState extends State<RegisterPage> {
             uid: user.uid,
             firstName: firstName,
             lastName: lastName,
-            username: user.displayName ?? firstName,
+            username: "",
             email: user.email ?? "",
             displayName: user.displayName ?? "$firstName $lastName",
           );
@@ -293,7 +297,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const MainNavigationPage()),
+          MaterialPageRoute(builder: (_) => UsernameSetupPage(uid: user.uid)),
         );
       }
     } catch (e) {
@@ -311,8 +315,10 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Konto erstellen"),
-        automaticallyImplyLeading: false,
+        title: const Text("Account erstellen"),
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
       ),
       body: Stack(
         children: [
@@ -355,15 +361,41 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(height: 10),
                 TextField(
                   controller: _passwordController,
-                  obscureText: true,
-                  decoration: const InputDecoration(labelText: "Passwort"),
+                  obscureText: _obscurePassword,
+                  decoration: InputDecoration(
+                    labelText: "Passwort",
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _obscurePassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _obscurePassword = !_obscurePassword;
+                        });
+                      },
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 10),
                 TextField(
                   controller: _confirmPasswordController,
-                  obscureText: true,
-                  decoration: const InputDecoration(
+                  obscureText: _obscureConfirmPassword,
+                  decoration: InputDecoration(
                     labelText: "Passwort wiederholen",
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _obscureConfirmPassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _obscureConfirmPassword = !_obscureConfirmPassword;
+                        });
+                      },
+                    ),
                   ),
                 ),
                 const SizedBox(height: 10),

@@ -26,6 +26,8 @@ class _LoginPageState extends State<LoginPage> {
   bool _isLoading = false;
   String? _errorMessage;
 
+  bool _obscurePassword = true;
+
   Future<void> _saveFCMToken(String uid) async {
     try {
       final token = await FirebaseMessaging.instance.getToken();
@@ -224,12 +226,24 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 16),
               TextField(
                 controller: _passwordController,
-                obscureText: true,
+                obscureText: _obscurePassword,
                 style: TextStyle(color: labelColor),
                 decoration: InputDecoration(
                   labelText: "Passwort",
                   labelStyle: TextStyle(color: labelColor),
                   border: const OutlineInputBorder(),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      _obscurePassword
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _obscurePassword = !_obscurePassword;
+                      });
+                    },
+                  ),
                 ),
               ),
               const SizedBox(height: 24),
