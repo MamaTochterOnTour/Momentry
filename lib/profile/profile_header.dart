@@ -98,7 +98,7 @@ class ProfileHeader extends StatelessWidget {
               : "Noch keine Bio hinzugefügt",
           style: TextStyle(
             fontSize: 13,
-            color: textColor.withOpacity(0.6),
+            color: textColor.withValues(alpha: 0.6),
             height: 1.3,
           ),
         ),
@@ -121,7 +121,7 @@ class ProfileHeader extends StatelessWidget {
         const SizedBox(height: 2),
         Text(
           label,
-          style: TextStyle(fontSize: 12, color: color.withOpacity(0.7)),
+          style: TextStyle(fontSize: 12, color: color.withValues(alpha: 0.7)),
         ),
       ],
     );

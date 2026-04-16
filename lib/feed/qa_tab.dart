@@ -228,14 +228,17 @@ class _QuestionCardState extends State<_QuestionCard> {
           ElevatedButton(
             child: const Text("Speichern"),
             onPressed: () async {
+              final text = controller.text.trim();
               await FirebaseFirestore.instance
                   .collection('Questions')
                   .doc(widget.questionId)
                   .collection('Answers')
                   .doc(answerId)
-                  .update({'answer': controller.text.trim()});
+                  .update({'answer': text});
 
-              Navigator.pop(context);
+              if (!mounted) return;
+
+              Navigator.of(context).pop();
             },
           ),
         ],
@@ -259,12 +262,15 @@ class _QuestionCardState extends State<_QuestionCard> {
           ElevatedButton(
             child: const Text("Speichern"),
             onPressed: () async {
+              final text = controller.text.trim();
               await FirebaseFirestore.instance
                   .collection('Questions')
                   .doc(widget.questionId)
-                  .update({'question': controller.text.trim()});
+                  .update({'question': text});
 
-              Navigator.pop(context);
+              if (!mounted) return;
+
+              Navigator.of(context).pop;
             },
           ),
         ],
