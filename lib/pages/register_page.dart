@@ -74,6 +74,7 @@ class _RegisterPageState extends State<RegisterPage> {
       'displayName': displayName,
       'createdAt': FieldValue.serverTimestamp(),
       'isPremium': isPremium,
+      'language': "de",
     });
 
     await _saveFCMToken(uid);
@@ -223,6 +224,7 @@ class _RegisterPageState extends State<RegisterPage> {
             'email': user.email ?? "",
             'displayName': user.displayName ?? "$firstName $lastName",
             'createdAt': FieldValue.serverTimestamp(),
+            'language': "de",
           }, SetOptions(merge: true));
 
           // FCM Token aktualisieren
@@ -286,6 +288,7 @@ class _RegisterPageState extends State<RegisterPage> {
             'email': user.email ?? "",
             'displayName': user.displayName ?? "$firstName $lastName",
             'createdAt': FieldValue.serverTimestamp(),
+            'language': "de",
           }, SetOptions(merge: true));
 
           await _saveFCMToken(user.uid);

@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../pages/premium_verwalten_page.dart';
 import '../../l10n/s.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../providers/premium_provider.dart';
+import '../providers/dark_mode_provider.dart';
 
-class PacklisteDetailPage extends StatefulWidget {
+class PacklisteDetailPage extends ConsumerStatefulWidget {
   final String packlisteId;
   final String userId;
   final String tripId;
-  final Color color;
   final String title;
   final bool isPremium;
   final VoidCallback onUpdate;
@@ -19,23 +20,23 @@ class PacklisteDetailPage extends StatefulWidget {
     required this.packlisteId,
     required this.userId,
     required this.tripId,
-    required this.color,
     required this.title,
     required this.isPremium,
     required this.onUpdate,
   });
 
   @override
-  State<PacklisteDetailPage> createState() => _PacklisteDetailPageState();
+  ConsumerState<PacklisteDetailPage> createState() =>
+      _PacklisteDetailPageState();
 }
 
-class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
+class _PacklisteDetailPageState extends ConsumerState<PacklisteDetailPage> {
   late TextEditingController _titleController;
-  late Color _color;
   final Map<String, List<Map<String, dynamic>>> _categorizedItems = {};
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   bool isSaving = false;
   bool _loading = true;
+  final Map<String, TextEditingController> _controllers = {};
 
   DocumentReference get _packlisteRef => _firestore
       .collection('trips')
@@ -49,7 +50,6 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
   void initState() {
     super.initState();
     _titleController = TextEditingController(text: widget.title);
-    _color = widget.color;
     _fetchItems();
   }
 
@@ -63,9 +63,6 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
         final data = packlisteDoc.data() as Map<String, dynamic>;
 
         _titleController.text = data['title'] ?? widget.title;
-        _color = Color(
-          int.parse((data['color'] ?? "#FF8C77FF").replaceAll("#", "0xff")),
-        );
       }
 
       // Items laden
@@ -81,7 +78,13 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
             : strings.otherCategory;
 
         _categorizedItems.putIfAbsent(cat, () => []);
-        _categorizedItems[cat]!.add(item);
+        _categorizedItems[cat]!.add({
+          'id': doc.id,
+          'name': item['name'] ?? '',
+          'completed': item['completed'] ?? false,
+          'category': item['category'] ?? cat,
+          'quantity': item['quantity'] ?? 1,
+        });
       }
     } catch (e) {
       debugPrint("Error loading packing list: $e");
@@ -98,20 +101,19 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
       // Packliste speichern
       await _packlisteRef.set({
         'title': _titleController.text.trim(),
-        'color': "#${_color.toARGB32().toRadixString(16)}",
         'updatedAt': FieldValue.serverTimestamp(),
       }, SetOptions(merge: true));
 
-      // Alte Items löschen
-      final existing = await _itemsRef.get();
-      for (var doc in existing.docs) {
-        await doc.reference.delete();
-      }
-
-      // Neue Items speichern
       for (var entry in _categorizedItems.entries) {
         for (var item in entry.value) {
-          await _itemsRef.add(item);
+          final id = item['id'];
+
+          await _itemsRef.doc(id).set({
+            'name': item['name'] ?? '',
+            'completed': item['completed'] ?? false,
+            'category': entry.key,
+            'quantity': item['quantity'] ?? 1,
+          }, SetOptions(merge: true));
         }
       }
       if (!mounted) return;
@@ -138,7 +140,17 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
 
     final totalItems = _categorizedItems.values.expand((list) => list).length;
 
-    if (!widget.isPremium && totalItems >= 5) {
+    final isPremiumAsync = ref.watch(premiumProvider);
+
+    final isPremium = isPremiumAsync.maybeWhen(
+      data: (value) => value,
+      loading: () =>
+          widget.isPremium, // fallback (oder false, aber besser: widget)
+      error: (_, _) => widget.isPremium,
+      orElse: () => widget.isPremium,
+    );
+
+    if (!isPremium && totalItems >= 5) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: GestureDetector(
@@ -167,22 +179,25 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
     if (!_categorizedItems.containsKey(cat)) _categorizedItems[cat] = [];
     setState(() {
       _categorizedItems[cat]!.add({
+        'id': UniqueKey().toString(),
         'name': '',
         'completed': false,
-        'category': category ?? '',
+        'category': cat,
         'quantity': 1,
       });
     });
   }
 
-  void _removeItem(String category, int index) {
-    final strings = S.of(context)!;
+  void _removeItem(String category, int index) async {
+    final item = _categorizedItems[category]![index];
+    final id = item['id'];
+
+    if (id != null) {
+      await _itemsRef.doc(id).delete();
+    }
+
     setState(() {
       _categorizedItems[category]!.removeAt(index);
-      if (_categorizedItems[category]!.isEmpty &&
-          category != strings.otherCategory) {
-        _categorizedItems.remove(category);
-      }
     });
   }
 
@@ -192,7 +207,16 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
         .where((key) => key != strings.otherCategory)
         .length;
 
-    if (!widget.isPremium && totalCategories >= 2) {
+    final isPremiumAsync = ref.watch(premiumProvider);
+
+    final isPremium = isPremiumAsync.maybeWhen(
+      data: (value) => value,
+      loading: () => widget.isPremium,
+      error: (_, _) => widget.isPremium,
+      orElse: () => widget.isPremium,
+    );
+
+    if (!isPremium && totalCategories >= 2) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: GestureDetector(
@@ -266,84 +290,67 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
       ),
     );
     if (confirm == true) {
+      final batch = _firestore.batch();
+
+      for (var item in _categorizedItems[category] ?? []) {
+        final id = item['id'];
+        if (id != null) {
+          batch.delete(_itemsRef.doc(id));
+        }
+      }
+
+      batch.commit();
+
       setState(() {
         _categorizedItems.remove(category);
       });
     }
   }
 
-  Future<void> _pickColor() async {
-    final strings = S.of(context)!;
-    Color tempColor = _color;
-    await showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(strings.pickColor),
-        content: SingleChildScrollView(
-          child: ColorPicker(
-            pickerColor: tempColor,
-            onColorChanged: (color) => tempColor = color,
-            labelTypes: [],
-            pickerAreaHeightPercent: 0.7,
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: Text(strings.cancel),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              setState(() => _color = tempColor);
-              Navigator.pop(context);
-            },
-            child: Text(strings.ok),
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-    final textColor = isDarkMode ? Colors.white : Colors.black;
-    final iconColor = isDarkMode ? Colors.white : Colors.black;
+    final darkModeAsync = ref.watch(darkModeProvider);
+
+    final darkMode = darkModeAsync.maybeWhen(
+      data: (v) => v,
+      orElse: () => false,
+    );
     final strings = S.of(context)!;
+
+    final backgroundColor = darkMode ? Colors.black : Colors.white;
+    final appBarColor = darkMode ? Colors.black : Colors.white;
+
+    final textColor = darkMode ? Colors.white : Colors.black;
+    final iconColor = darkMode ? Colors.white : Colors.black;
 
     final completed = _categorizedItems.values
         .expand((l) => l)
         .where((i) => i['completed'] == true)
         .length;
+
     final totalItems = _categorizedItems.values.expand((l) => l).length;
 
     return Scaffold(
+      backgroundColor: backgroundColor,
+
       appBar: AppBar(
-        backgroundColor: _color.withAlpha(50),
+        backgroundColor: appBarColor,
+        elevation: 0,
         centerTitle: true,
-        title: TextField(
-          controller: _titleController,
+
+        iconTheme: IconThemeData(color: iconColor),
+
+        title: Text(
+          "Packliste",
           textAlign: TextAlign.center,
-          style: GoogleFonts.pacifico(
-            fontSize: 24,
-            color: isDarkMode ? Colors.black : textColor,
-          ),
-          decoration: const InputDecoration(border: InputBorder.none),
+          style: GoogleFonts.pacifico(fontSize: 24, color: iconColor),
         ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.palette,
-              color: isDarkMode ? Colors.black : iconColor,
-            ),
-            onPressed: _pickColor,
-          ),
-        ],
       ),
+
       body: _loading
           ? const Center(child: CircularProgressIndicator())
           : Container(
-              color: isDarkMode ? Colors.black : Colors.white,
+              color: backgroundColor,
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
@@ -357,11 +364,13 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
                         style: TextStyle(color: textColor, fontSize: 16),
                       ),
                     ),
+
                   Expanded(
                     child: ListView(
                       children: _categorizedItems.entries.map((entry) {
                         final category = entry.key;
                         final items = entry.value;
+
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -377,13 +386,16 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
                                     ),
                                   ),
                                 ),
+
                                 PopupMenuButton<String>(
                                   icon: Icon(Icons.more_vert, color: iconColor),
+
                                   onSelected: (value) async {
                                     if (value == 'edit') {
                                       final controller = TextEditingController(
                                         text: category,
                                       );
+
                                       final newName = await showDialog<String>(
                                         context: context,
                                         builder: (context) => AlertDialog(
@@ -418,6 +430,7 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
                                           _categorizedItems[newName] =
                                               _categorizedItems[category]!;
                                           _categorizedItems.remove(category);
+
                                           for (var item
                                               in _categorizedItems[newName]!) {
                                             item['category'] = newName;
@@ -428,6 +441,7 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
                                       _deleteCategory(category);
                                     }
                                   },
+
                                   itemBuilder: (context) => [
                                     PopupMenuItem(
                                       value: 'edit',
@@ -441,25 +455,35 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
                                 ),
                               ],
                             ),
+
                             ...List.generate(items.length, (i) {
                               final item = items[i];
+
                               return Dismissible(
                                 key: Key('${category}_$i'),
                                 direction: DismissDirection.endToStart,
+
                                 onDismissed: (_) => _removeItem(category, i),
+
                                 background: Container(
                                   color: Colors.red,
                                   alignment: Alignment.centerRight,
                                   padding: const EdgeInsets.only(right: 20),
-                                  child: Icon(Icons.delete, color: iconColor),
+                                  child: Icon(
+                                    Icons.delete,
+                                    color: Colors.white,
+                                  ),
                                 ),
+
                                 child: Row(
                                   children: [
                                     Checkbox(
                                       value: item['completed'],
                                       onChanged: (v) =>
                                           _toggleItem(category, i, v),
+
                                       checkColor: Colors.white,
+
                                       fillColor:
                                           WidgetStateProperty.resolveWith<
                                             Color
@@ -469,16 +493,18 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
                                             )) {
                                               return const Color(0xFF8C77FF);
                                             }
-                                            return isDarkMode
+                                            return darkMode
                                                 ? Colors.grey[800]!
                                                 : Colors.grey[200]!;
                                           }),
                                     ),
+
                                     SizedBox(
                                       width: 40,
                                       child: TextFormField(
                                         initialValue: '${item['quantity']}x',
                                         keyboardType: TextInputType.number,
+
                                         onChanged: (v) {
                                           final val =
                                               int.tryParse(
@@ -488,33 +514,48 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
                                                 ),
                                               ) ??
                                               1;
+
                                           setState(() {
                                             _categorizedItems[category]![i]['quantity'] =
                                                 val;
                                           });
                                         },
+
                                         style: TextStyle(color: textColor),
+
                                         decoration: const InputDecoration(
                                           border: InputBorder.none,
                                           isDense: true,
                                           contentPadding: EdgeInsets.zero,
                                         ),
+
                                         textAlign: TextAlign.right,
                                       ),
                                     ),
+
                                     const SizedBox(width: 4),
+
                                     Expanded(
                                       child: TextField(
-                                        onChanged: (v) =>
-                                            _categorizedItems[category]![i]['name'] =
-                                                v,
-                                        controller: null,
+                                        controller: _controllers.putIfAbsent(
+                                          item['id'],
+                                          () => TextEditingController(
+                                            text: item['name'] ?? '',
+                                          ),
+                                        ),
+
+                                        onChanged: (v) {
+                                          _categorizedItems[category]![i]['name'] =
+                                              v;
+                                        },
+
                                         decoration: InputDecoration(
                                           hintText: strings.itemHint,
                                           border: InputBorder.none,
                                         ),
                                       ),
                                     ),
+
                                     IconButton(
                                       icon: Icon(Icons.add, color: iconColor),
                                       onPressed: () =>
@@ -524,22 +565,22 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
                                 ),
                               );
                             }),
+
                             const SizedBox(height: 10),
                           ],
                         );
                       }).toList(),
                     ),
                   ),
+
                   Row(
                     children: [
                       Expanded(
                         child: ElevatedButton(
                           onPressed: () => _addItem(),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: isDarkMode
-                                ? Colors.grey[800]
-                                : null,
-                            foregroundColor: isDarkMode ? Colors.white : null,
+                            backgroundColor: darkMode ? Colors.grey[900] : null,
+                            foregroundColor: darkMode ? Colors.white : null,
                           ),
                           child: Text(strings.addItem),
                         ),
@@ -549,17 +590,17 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
                         child: ElevatedButton(
                           onPressed: _addCategory,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: isDarkMode
-                                ? Colors.grey[800]
-                                : null,
-                            foregroundColor: isDarkMode ? Colors.white : null,
+                            backgroundColor: darkMode ? Colors.grey[900] : null,
+                            foregroundColor: darkMode ? Colors.white : null,
                           ),
                           child: Text(strings.addCategory),
                         ),
                       ),
                     ],
                   ),
+
                   const SizedBox(height: 20),
+
                   ElevatedButton(
                     onPressed: isSaving ? null : _saveDetail,
                     style: ElevatedButton.styleFrom(
@@ -571,6 +612,7 @@ class _PacklisteDetailPageState extends State<PacklisteDetailPage> {
                       style: const TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),
+
                   const SizedBox(height: 20),
                 ],
               ),

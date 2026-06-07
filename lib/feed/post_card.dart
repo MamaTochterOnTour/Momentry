@@ -10,6 +10,7 @@ import '../pages/edit_post_page.dart';
 import '../pages/premium_verwalten_page.dart';
 import '../l10n/s.dart';
 import 'video_post_payer.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 // ---------------- PostCard mit Herz-Animation und korrektem Premium Save ----------------
 class PostCard extends StatefulWidget {
@@ -473,11 +474,18 @@ class _PostCardState extends State<PostCard>
                               );
                             },
                             child: Text(
-                              widget.post['username'] ?? 'User',
-                              style: TextStyle(
+                              userSnapshot.hasData &&
+                                      userSnapshot.data!.data() != null
+                                  ? (userSnapshot.data!.data()
+                                            as Map<
+                                              String,
+                                              dynamic
+                                            >)['username'] ??
+                                        'User'
+                                  : 'User',
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Colors
-                                    .blueAccent, // Optional: Macht klar, dass es klickbar ist
+                                color: Colors.blueAccent,
                               ),
                             ),
                           ),
@@ -532,10 +540,39 @@ class _PostCardState extends State<PostCard>
                             );
 
                             if (confirmed ?? false) {
+                              final postId = widget.post['id'];
+                              final uid =
+                                  FirebaseAuth.instance.currentUser!.uid;
+
+                              // 1. Post-Dokument löschen
                               await FirebaseFirestore.instance
                                   .collection('Posts')
-                                  .doc(widget.post['id'])
+                                  .doc(postId)
                                   .delete();
+
+                              // 2. Storage Dateien löschen (Media + Thumbnails)
+                              final storageRef = FirebaseStorage.instance
+                                  .ref()
+                                  .child('users/$uid/posts/$postId');
+
+                              try {
+                                final listResult = await storageRef.listAll();
+
+                                // alle Dateien löschen
+                                for (var file in listResult.items) {
+                                  await file.delete();
+                                }
+
+                                // auch Unterordner (z.B. thumbnails)
+                                for (var prefix in listResult.prefixes) {
+                                  final subList = await prefix.listAll();
+                                  for (var file in subList.items) {
+                                    await file.delete();
+                                  }
+                                }
+                              } catch (e) {
+                                debugPrint('Storage delete error: $e');
+                              }
                             }
                           }
                         } else {

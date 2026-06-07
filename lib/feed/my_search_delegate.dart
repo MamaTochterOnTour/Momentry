@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+enum SearchMode { feed, qa }
 
 class MySearchDelegate extends SearchDelegate<String> {
   final String initialQuery;
+  final SearchMode mode;
 
-  MySearchDelegate({required this.initialQuery}) {
-    query = initialQuery; // Startwert setzen
+  MySearchDelegate({required this.mode, required this.initialQuery}) {
+    query = initialQuery;
   }
 
   @override
@@ -31,29 +35,82 @@ class MySearchDelegate extends SearchDelegate<String> {
 
   @override
   Widget buildResults(BuildContext context) {
-    // Hier gibst du das Ergebnis zurück
-    // z.B. einfach den String
-    return Center(child: Text('Suchergebnis für "$query"'));
+    if (mode == SearchMode.qa) {
+      return StreamBuilder<QuerySnapshot>(
+        stream: FirebaseFirestore.instance
+            .collection('Questions')
+            .orderBy('question')
+            .startAt([query])
+            .endAt([query + '\uf8ff'])
+            .snapshots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          final docs = snapshot.data!.docs;
+
+          return ListView.builder(
+            itemCount: docs.length,
+            itemBuilder: (context, index) {
+              final data = docs[index].data() as Map<String, dynamic>;
+
+              return ListTile(
+                title: Text(data['question'] ?? ''),
+                subtitle: Text(data['username'] ?? ''),
+              );
+            },
+          );
+        },
+      );
+    }
+
+    // DEFAULT = FEED SUCHE (später erweitern)
+    return Center(child: Text('Feed Suche: $query'));
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    // Vorschläge während der Eingabe
-    final suggestions = query.isEmpty
-        ? []
-        : ['Beispiel 1', 'Beispiel 2', 'Beispiel 3']
-              .where((s) => s.toLowerCase().contains(query.toLowerCase()))
-              .toList();
+    if (query.isEmpty) {
+      return const Center(child: Text('Tippe um zu suchen...'));
+    }
 
-    return ListView.builder(
-      itemCount: suggestions.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text(suggestions[index]),
-          onTap: () {
-            query = suggestions[index];
-            showResults(context);
-          },
+    return StreamBuilder<QuerySnapshot>(
+      stream: mode == SearchMode.qa
+          ? FirebaseFirestore.instance
+                .collection('Questions')
+                .orderBy('question')
+                .startAt([query])
+                .endAt([query + '\uf8ff'])
+                .snapshots()
+          : FirebaseFirestore.instance
+                .collection('Posts') // falls du Feed hast
+                .orderBy('text')
+                .startAt([query])
+                .endAt([query + '\uf8ff'])
+                .snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) return const SizedBox();
+
+        final docs = snapshot.data!.docs;
+
+        return ListView(
+          children: docs.map((doc) {
+            final data = doc.data() as Map<String, dynamic>;
+
+            return ListTile(
+              title: Text(
+                mode == SearchMode.qa
+                    ? data['question'] ?? ''
+                    : data['text'] ?? '',
+              ),
+              onTap: () {
+                query = mode == SearchMode.qa ? data['question'] : data['text'];
+
+                showResults(context);
+              },
+            );
+          }).toList(),
         );
       },
     );

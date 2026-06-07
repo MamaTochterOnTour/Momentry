@@ -160,7 +160,7 @@ abstract class S {
   /// No description provided for @mallorcaSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Island of our hearts'**
+  /// **'Join our journey'**
   String get mallorcaSubtitle;
 
   /// No description provided for @aidaCruisesTitle.
@@ -264,12 +264,6 @@ abstract class S {
   /// In en, this message translates to:
   /// **'The world is huge – come, we will show it to you!\n\nWe are a well-coordinated team of 15 passionate travel experts, who have been creating unforgettable vacation moments together for many years.'**
   String get previewTextReisebuero;
-
-  /// No description provided for @readMore.
-  ///
-  /// In en, this message translates to:
-  /// **'... read more'**
-  String get readMore;
 
   /// No description provided for @readLess.
   ///
@@ -504,6 +498,12 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Our most beautiful seaside experiences 🌊🌅💙\n\nSalt air, sunsets and that feeling of freedom – these are our favorite sea moments.'**
   String get auszeitenAmMeerIntro;
+
+  /// No description provided for @mallorcaTitle1.
+  ///
+  /// In en, this message translates to:
+  /// **'Liveboard'**
+  String get mallorcaTitle1;
 
   /// No description provided for @scheveningenTitle.
   ///
@@ -910,32 +910,26 @@ abstract class S {
   /// No description provided for @premiumBenefit1.
   ///
   /// In en, this message translates to:
-  /// **'Access to all travel journals from MamaTochterOnTour'**
+  /// **'Access to all travel diaries from MamaTochterOnTour'**
   String get premiumBenefit1;
 
   /// No description provided for @premiumBenefit2.
   ///
   /// In en, this message translates to:
-  /// **'Includes insider tips for each location'**
+  /// **'Travel planning: packing lists, budget planner, notes, emergency contacts & to-do lists'**
   String get premiumBenefit2;
 
   /// No description provided for @premiumBenefit3.
   ///
   /// In en, this message translates to:
-  /// **'Create a packing list for your trips'**
+  /// **'Travel countdown for your next trip'**
   String get premiumBenefit3;
 
   /// No description provided for @premiumBenefit4.
   ///
   /// In en, this message translates to:
-  /// **'Travel countdown for your next trip'**
+  /// **'Save posts for later'**
   String get premiumBenefit4;
-
-  /// No description provided for @premiumBenefit5.
-  ///
-  /// In en, this message translates to:
-  /// **'Save posts'**
-  String get premiumBenefit5;
 
   /// No description provided for @premiumComingSoon.
   ///
@@ -1942,19 +1936,19 @@ abstract class S {
   /// No description provided for @uploadPost.
   ///
   /// In en, this message translates to:
-  /// **'Beitrag hochladen'**
+  /// **'Upload post'**
   String get uploadPost;
 
   /// No description provided for @addLocation.
   ///
   /// In en, this message translates to:
-  /// **'Ort hinzufügen'**
+  /// **'Add location'**
   String get addLocation;
 
   /// No description provided for @description.
   ///
   /// In en, this message translates to:
-  /// **'Beschreibung'**
+  /// **'Description & Hashtags'**
   String get description;
 
   /// No description provided for @hashtags.
@@ -1966,25 +1960,25 @@ abstract class S {
   /// No description provided for @publishPost.
   ///
   /// In en, this message translates to:
-  /// **'Beitrag veröffentlichen'**
+  /// **'Publish post'**
   String get publishPost;
 
   /// No description provided for @maxMedia.
   ///
   /// In en, this message translates to:
-  /// **'Maximal 10 Medien pro Beitrag erlaubt'**
+  /// **'Maximum of 10 media items per post allowed'**
   String get maxMedia;
 
   /// No description provided for @uploadError.
   ///
   /// In en, this message translates to:
-  /// **'Fehler beim Hochladen'**
+  /// **'Upload error'**
   String get uploadError;
 
   /// No description provided for @cropImage.
   ///
   /// In en, this message translates to:
-  /// **'Bild zuschneiden'**
+  /// **'Crop image'**
   String get cropImage;
 
   /// No description provided for @travelDiary.
@@ -2770,7 +2764,7 @@ abstract class S {
   /// No description provided for @packingProgress.
   ///
   /// In en, this message translates to:
-  /// **'{completed} of {total} items completed'**
+  /// **'{completed} of {total} items packed'**
   String packingProgress(Object completed, Object total);
 
   /// No description provided for @editCategory.
@@ -3174,6 +3168,12 @@ abstract class S {
   /// In en, this message translates to:
   /// **'You are not a premium member and cannot save posts. Tap here to unlock Premium ✨'**
   String get premiumSaveWarning;
+
+  /// No description provided for @readMore.
+  ///
+  /// In en, this message translates to:
+  /// **'... read more'**
+  String get readMore;
 
   /// No description provided for @likesTextSingle.
   ///
@@ -5964,6 +5964,162 @@ abstract class S {
   /// In en, this message translates to:
   /// **'Share'**
   String get share;
+
+  /// No description provided for @noQuestions.
+  ///
+  /// In en, this message translates to:
+  /// **'No questions available'**
+  String get noQuestions;
+
+  /// No description provided for @hideAnswers.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide answers'**
+  String get hideAnswers;
+
+  /// No description provided for @showAnswers.
+  ///
+  /// In en, this message translates to:
+  /// **'Show answers ({count})'**
+  String showAnswers(Object count);
+
+  /// No description provided for @justNow0.
+  ///
+  /// In en, this message translates to:
+  /// **'just now'**
+  String get justNow0;
+
+  /// No description provided for @minutesAgo1.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} min ago'**
+  String minutesAgo1(Object count);
+
+  /// No description provided for @hoursAgo2.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} hr ago'**
+  String hoursAgo2(Object count);
+
+  /// No description provided for @daysAgo3.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} days ago'**
+  String daysAgo3(Object count);
+
+  /// No description provided for @formatDate4.
+  ///
+  /// In en, this message translates to:
+  /// **'{month}/{day}/{year}'**
+  String formatDate4(Object day, Object month, Object year);
+
+  /// No description provided for @activityLike.
+  ///
+  /// In en, this message translates to:
+  /// **' liked your post ❤️'**
+  String get activityLike;
+
+  /// No description provided for @activityComment.
+  ///
+  /// In en, this message translates to:
+  /// **' commented 💬'**
+  String get activityComment;
+
+  /// No description provided for @activityReply.
+  ///
+  /// In en, this message translates to:
+  /// **' replied to your comment 💬'**
+  String get activityReply;
+
+  /// No description provided for @activityFollow.
+  ///
+  /// In en, this message translates to:
+  /// **' started following you 👋'**
+  String get activityFollow;
+
+  /// No description provided for @activityDefault.
+  ///
+  /// In en, this message translates to:
+  /// **' did something'**
+  String get activityDefault;
+
+  /// No description provided for @activityTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Activity'**
+  String get activityTitle;
+
+  /// No description provided for @noActivities.
+  ///
+  /// In en, this message translates to:
+  /// **'No activities yet'**
+  String get noActivities;
+
+  /// No description provided for @following2.
+  ///
+  /// In en, this message translates to:
+  /// **'Following'**
+  String get following2;
+
+  /// No description provided for @followBack2.
+  ///
+  /// In en, this message translates to:
+  /// **'Follow back'**
+  String get followBack2;
+
+  /// No description provided for @show2.
+  ///
+  /// In en, this message translates to:
+  /// **'Show'**
+  String get show2;
+
+  /// No description provided for @comingSoon3.
+  ///
+  /// In en, this message translates to:
+  /// **'This page is only available for premium users.'**
+  String get comingSoon3;
+
+  /// No description provided for @noFollowers3.
+  ///
+  /// In en, this message translates to:
+  /// **'You don\'t have any followers yet.'**
+  String get noFollowers3;
+
+  /// No description provided for @notFollowingAnyone3.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re not following anyone yet.'**
+  String get notFollowingAnyone3;
+
+  /// No description provided for @noBio3.
+  ///
+  /// In en, this message translates to:
+  /// **'No bio added yet'**
+  String get noBio3;
+
+  /// No description provided for @trips3.
+  ///
+  /// In en, this message translates to:
+  /// **'Trips'**
+  String get trips3;
+
+  /// No description provided for @posts3.
+  ///
+  /// In en, this message translates to:
+  /// **'Posts'**
+  String get posts3;
+
+  /// No description provided for @followers3.
+  ///
+  /// In en, this message translates to:
+  /// **'Followers'**
+  String get followers3;
+
+  /// No description provided for @following3.
+  ///
+  /// In en, this message translates to:
+  /// **'Following'**
+  String get following3;
 }
 
 class _SDelegate extends LocalizationsDelegate<S> {

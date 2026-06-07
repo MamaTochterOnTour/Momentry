@@ -72,7 +72,16 @@ class _VideoPostPlayerState extends State<VideoPostPlayer> {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            VideoPlayer(_controller),
+            ClipRect(
+              child: FittedBox(
+                fit: BoxFit.cover,
+                child: SizedBox(
+                  width: _controller.value.size.width,
+                  height: _controller.value.size.height,
+                  child: VideoPlayer(_controller),
+                ),
+              ),
+            ),
             if (!_controller.value.isPlaying && _isManuallyPaused)
               const Icon(
                 Icons.play_circle_fill,

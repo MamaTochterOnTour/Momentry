@@ -8,20 +8,15 @@ import '../tagebuecher/staedtereisen_page.dart';
 import '../tagebuecher/auszeiten_am_meer_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../partner/tui_reisebuero_page.dart';
-import '../insider/insider_page.dart';
-import 'mallorca_page.dart';
 import '../../l10n/s.dart';
+import '../providers/premium_provider.dart';
+import '../liveboard/liveboard_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MamaTochterTagebuchPage extends StatefulWidget {
   final String? userId; // UID für Navigationszwecke
-  final bool isDarkMode;
 
-  const MamaTochterTagebuchPage({
-    super.key,
-    this.userId,
-    required this.isDarkMode,
-  });
+  const MamaTochterTagebuchPage({super.key, this.userId});
 
   @override
   State<MamaTochterTagebuchPage> createState() =>
@@ -75,7 +70,7 @@ class _MamaTochterTagebuchPageState extends State<MamaTochterTagebuchPage> {
     final userId = widget.userId ?? FirebaseAuth.instance.currentUser?.uid;
 
     return DefaultTabController(
-      length: 3,
+      length: 1,
       child: Scaffold(
         backgroundColor: _isDarkMode ? Colors.black : Colors.white,
         appBar: AppBar(
@@ -85,16 +80,6 @@ class _MamaTochterTagebuchPageState extends State<MamaTochterTagebuchPage> {
           title: Text(
             strings.pageTitle,
             style: GoogleFonts.pacifico(fontSize: 28, color: textColor),
-          ),
-          bottom: TabBar(
-            indicatorColor: darkPurple,
-            labelColor: darkPurple,
-            unselectedLabelColor: secondaryColor,
-            tabs: [
-              Tab(text: strings.tabTagebuecher),
-              Tab(text: strings.tabInsider),
-              Tab(text: strings.tabTipps),
-            ],
           ),
         ),
         body: TabBarView(
@@ -181,19 +166,38 @@ class _MamaTochterTagebuchPageState extends State<MamaTochterTagebuchPage> {
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
-                      _buildCategoryBox(
-                        strings.mallorcaTitle,
-                        strings.mallorcaSubtitle,
-                        Icons.explore,
-                        lightPurple,
-                        darkPurple,
-                        onTap: () {
-                          if (userId == null) return;
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MallorcaHubPage(),
-                            ),
+                      Consumer(
+                        builder: (context, ref, _) {
+                          final isPremium =
+                              ref.watch(premiumProvider).value ?? false;
+
+                          return _buildCategoryBox(
+                            strings.mallorcaTitle1,
+                            strings.mallorcaSubtitle,
+                            Icons.explore,
+                            lightPurple,
+                            darkPurple,
+                            onTap: () {
+                              if (isPremium) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) =>
+                                        const MallorcaLiveboardPage(),
+                                  ),
+                                );
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text(strings.comingSoon3),
+                                    backgroundColor: const Color(0xFF7B4DE8),
+                                    behavior: SnackBarBehavior.floating,
+                                    margin: const EdgeInsets.all(16),
+                                    duration: const Duration(seconds: 2),
+                                  ),
+                                );
+                              }
+                            },
                           );
                         },
                       ),
@@ -386,122 +390,6 @@ class _MamaTochterTagebuchPageState extends State<MamaTochterTagebuchPage> {
                 ],
               ),
             ),
-
-            // ------------------ TAB 2: Insider ------------------
-            InsiderPage(userId: userId),
-
-            // ------------------ TAB 3: Tipps ------------------
-            Column(
-              children: [
-                // Hinweis-Text ganz oben, direkt sichtbar
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 16,
-                  ),
-                  child: GestureDetector(
-                    onTap: () =>
-                        _launchURL('mailto:mamatochterontour@outlook.de'),
-                    child: Text(
-                      strings.becomePartnerText('mamatochterontour@outlook.de'),
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: darkPurple,
-                        decoration: TextDecoration.underline,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-
-                // Scrollbarer Bereich für Partner-Cards
-                Expanded(
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        // Beispiel Partner-Card
-                        _buildModernRecommendationCard(
-                          title: strings.tuiAschaffenburgTitle,
-                          subtitle: strings.tuiAschaffenburgSubtitle,
-                          cardColor: lightPurple,
-                          textColor: darkPurple,
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    ReisebuerosPage(isDarkMode: _isDarkMode),
-                              ),
-                            );
-                          },
-                        ),
-
-                        // Weitere Partner-Cards hier hinzufügen
-                        // _buildModernRecommendationCard(...),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildModernRecommendationCard({
-    required String title,
-    required String subtitle,
-    required Color cardColor,
-    required Color textColor,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 8),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-        decoration: BoxDecoration(
-          color: cardColor,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withValues(alpha: 0.05),
-              blurRadius: 6,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: textColor,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    subtitle,
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: textColor.withValues(alpha: 0.8),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Icon(Icons.arrow_forward_ios, size: 16, color: textColor),
           ],
         ),
       ),

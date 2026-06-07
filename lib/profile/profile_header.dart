@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../l10n/s.dart';
+import '../pages/edit_profile_page.dart';
 
 class ProfileHeader extends StatelessWidget {
   final Map<String, dynamic>? userData;
@@ -46,6 +48,7 @@ class ProfileHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final textColor = isDarkMode ? Colors.white : Colors.black;
     final profileImage = userData?['profilePicture'];
+    final strings = S.of(context)!;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,13 +58,45 @@ class ProfileHeader extends StatelessWidget {
           children: [
             // 👤 Avatar (CLICKABLE FIXED)
             GestureDetector(
-              onTap: () => _openImage(context, profileImage),
-              child: CircleAvatar(
-                radius: 38,
-                backgroundImage: profileImage != null
-                    ? NetworkImage(profileImage)
-                    : const AssetImage('assets/images/avatar_placeholder.png')
-                          as ImageProvider,
+              onTap: profileImage == null
+                  ? () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const EditProfilePage(),
+                        ),
+                      );
+                    }
+                  : () => _openImage(context, profileImage),
+              child: Stack(
+                children: [
+                  CircleAvatar(
+                    radius: 38,
+                    backgroundImage: profileImage != null
+                        ? NetworkImage(profileImage)
+                        : const AssetImage(
+                                'assets/images/avatar_placeholder.png',
+                              )
+                              as ImageProvider,
+                  ),
+
+                  if (profileImage == null)
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.redAccent,
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(
+                          Icons.add,
+                          size: 18,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                ],
               ),
             ),
 
@@ -72,15 +107,23 @@ class ProfileHeader extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildStat("Reisen", reisenCount, textColor),
-                  _buildStat("Beiträge", beitraegeCount, textColor),
+                  _buildStat(strings.trips3, reisenCount, textColor),
+                  _buildStat(strings.posts3, beitraegeCount, textColor),
                   GestureDetector(
                     onTap: onFollowersTap,
-                    child: _buildStat("Follower", followerCount, textColor),
+                    child: _buildStat(
+                      strings.followers3,
+                      followerCount,
+                      textColor,
+                    ),
                   ),
                   GestureDetector(
                     onTap: onFollowingTap,
-                    child: _buildStat("Gefolgt", followingCount, textColor),
+                    child: _buildStat(
+                      strings.following3,
+                      followingCount,
+                      textColor,
+                    ),
                   ),
                 ],
               ),
@@ -91,15 +134,32 @@ class ProfileHeader extends StatelessWidget {
         const SizedBox(height: 14),
 
         // 📝 BIO
-        Text(
-          (userData?['bio'] != null &&
-                  userData!['bio'].toString().trim().isNotEmpty)
-              ? userData!['bio']
-              : "Noch keine Bio hinzugefügt",
-          style: TextStyle(
-            fontSize: 13,
-            color: textColor.withValues(alpha: 0.6),
-            height: 1.3,
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const EditProfilePage()),
+            );
+          },
+          child: Text(
+            (userData?['bio'] != null &&
+                    userData!['bio'].toString().trim().isNotEmpty)
+                ? userData!['bio']
+                : "✏️ Biografie hinzufügen",
+            style: TextStyle(
+              fontSize: 13,
+              color:
+                  (userData?['bio'] == null ||
+                      userData!['bio'].toString().trim().isEmpty)
+                  ? Colors.redAccent
+                  : textColor.withValues(alpha: 0.6),
+              fontWeight:
+                  (userData?['bio'] == null ||
+                      userData!['bio'].toString().trim().isEmpty)
+                  ? FontWeight.w600
+                  : FontWeight.normal,
+              height: 1.3,
+            ),
           ),
         ),
       ],

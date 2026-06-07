@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'edit_profile_page.dart';
 import '../profile/profile_tabs.dart';
 import '../profile/profile_app_bar.dart';
 import '../profile/followers_bottom_sheet.dart'; // <<< WICHTIG: anpassen falls anderer Name
@@ -125,29 +124,6 @@ class _ProfilePageState extends State<ProfilePage> with RouteAware {
                     ),
 
                     const SizedBox(height: 16),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: purple,
-                              foregroundColor: Colors.white,
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const EditProfilePage(),
-                                ),
-                              );
-                            },
-                            child: Text(S.of(context)!.editProfile),
-                          ),
-                        ),
-                      ],
-                    ),
-
-                    const SizedBox(height: 24),
 
                     ProfileTabs(
                       reisen: _reisen,

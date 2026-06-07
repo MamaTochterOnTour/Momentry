@@ -9,7 +9,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../providers/dark_mode_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../pages/premium_verwalten_page.dart';
-import '../pages/main_navigation.dart';
 import '../providers/premium_provider.dart';
 import '../../l10n/s.dart';
 
@@ -115,12 +114,7 @@ class _BudgetPageState extends ConsumerState<BudgetPage> {
     final amount = await showDialog<double>(
       context: context,
       builder: (_) => AlertDialog(
-        title: Text(
-          (strings.addAmountDialogTitle as String).replaceFirst(
-            "{category}",
-            category['title'],
-          ),
-        ),
+        title: Text(strings.addAmountDialogTitle(category['title'].toString())),
         content: TextField(
           controller: controller,
           keyboardType: TextInputType.number,
@@ -344,13 +338,7 @@ class _BudgetPageState extends ConsumerState<BudgetPage> {
           icon: const Icon(Icons.arrow_back),
           color: text,
           onPressed: () {
-            Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(
-                builder: (_) => const MainNavigationPage(initialProfileTab: 2),
-              ),
-              (route) => false, // löscht den bisherigen Stack
-            );
+            Navigator.pop(context);
           },
         ),
         title: Text(
@@ -427,8 +415,9 @@ class _BudgetPageState extends ConsumerState<BudgetPage> {
                             ? (spent / target).clamp(0.0, 1.0)
                             : 0.0;
 
-                        final history = (cat['history'] ?? [])
-                            .cast<Map<String, dynamic>>();
+                        final history = List<Map<String, dynamic>>.from(
+                          (cat['history'] ?? []).whereType<Map>(),
+                        );
                         final expanded = _expandedCategories.contains(
                           cat['id'],
                         );
@@ -529,13 +518,17 @@ class _BudgetPageState extends ConsumerState<BudgetPage> {
                                           ),
                                           onPressed: () {
                                             setState(() {
-                                              expanded
-                                                  ? _expandedCategories.remove(
-                                                      cat['id'],
-                                                    )
-                                                  : _expandedCategories.add(
-                                                      cat['id'],
-                                                    );
+                                              if (_expandedCategories.contains(
+                                                cat['id'],
+                                              )) {
+                                                _expandedCategories.remove(
+                                                  cat['id'],
+                                                );
+                                              } else {
+                                                _expandedCategories.add(
+                                                  cat['id'],
+                                                );
+                                              }
                                             });
                                           },
                                         ),
@@ -594,7 +587,10 @@ class _HistoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final date = DateTime.parse(entry['createdAt']);
+    final rawDate = entry['createdAt'];
+    final date = rawDate != null
+        ? DateTime.tryParse(rawDate.toString()) ?? DateTime.now()
+        : DateTime.now();
     final strings = S.of(context)!;
 
     return GestureDetector(

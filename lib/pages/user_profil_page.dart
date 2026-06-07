@@ -223,6 +223,14 @@ class _OtherUserProfilePageState extends State<OtherUserProfilePage> {
           'followingId': widget.userId,
           'timestamp': FieldValue.serverTimestamp(),
         });
+
+        // ⭐ NEU: Activity für den Profilinhaber
+        await _firestore.collection('activities').add({
+          'type': 'follow',
+          'fromUserId': currentUid,
+          'toUserId': widget.userId,
+          'createdAt': FieldValue.serverTimestamp(),
+        });
         setState(() {
           _isFollowing = true;
           _followerCount++;

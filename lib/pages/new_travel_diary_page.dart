@@ -122,8 +122,7 @@ class _NewTravelDiaryPageState extends ConsumerState<NewTravelDiaryPage> {
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: (_) =>
-              MainNavigationPage(initialProfileTab: 0), // 0 = Tagebuch Tab
+          builder: (_) => MainNavigationPage(), // 0 = Tagebuch Tab
         ),
         (route) => false, // entfernt alle vorherigen Seiten aus dem Stack
       );

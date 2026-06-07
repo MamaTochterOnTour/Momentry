@@ -120,6 +120,7 @@ class _LoginPageState extends State<LoginPage> {
             'displayName': user.displayName ?? "",
             'createdAt': FieldValue.serverTimestamp(),
             'isPremium': false,
+            'language': "de",
           });
         }
 
@@ -162,6 +163,7 @@ class _LoginPageState extends State<LoginPage> {
             'displayName': user.displayName ?? "",
             'createdAt': FieldValue.serverTimestamp(),
             'isPremium': false,
+            'language': "de",
           });
         }
 

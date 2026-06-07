@@ -152,21 +152,6 @@ class _TodoPageState extends ConsumerState<TodoPage> {
     ).showSnackBar(SnackBar(content: Text(strings.todosSaved)));
   }
 
-  Future<void> _updateSingleTodo(int index) async {
-    final todo = _todos[index];
-    final controller = _controllers[index];
-
-    if (todo['id'] != null) {
-      await _firestore
-          .collection('trips')
-          .doc(widget.tripId)
-          .collection('todos')
-          .doc(todo['id'])
-          .update({'title': controller.text, 'done': todo['done'] ?? false});
-      todo['title'] = controller.text;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final isDarkMode = ref
@@ -177,8 +162,14 @@ class _TodoPageState extends ConsumerState<TodoPage> {
     final textColor = isDarkMode ? Colors.white : Colors.black;
     final strings = S.of(context)!;
 
+    final total = _todos.length;
+    final completed = _todos.where((e) => e['done'] == true).length;
+    final progress = total == 0 ? 0.0 : completed / total;
+
     return Scaffold(
       backgroundColor: bgColor,
+
+      // ================= APP BAR =================
       appBar: AppBar(
         title: Text(
           strings.todoTitle,
@@ -188,98 +179,171 @@ class _TodoPageState extends ConsumerState<TodoPage> {
         elevation: 0,
         centerTitle: true,
         iconTheme: IconThemeData(color: textColor),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.save, color: Colors.deepPurple),
-            onPressed: _saveTodos,
-          ),
-        ],
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: textColor),
+          onPressed: () async {
+            await _saveTodos();
+            if (mounted) Navigator.pop(context);
+          },
+        ),
       ),
+
+      // ================= BODY =================
       body: _loading
           ? const Center(child: CircularProgressIndicator())
-          : Padding(
-              padding: const EdgeInsets.all(16),
-              child: ListView.builder(
-                itemCount: _todos.length,
-                itemBuilder: (context, index) {
-                  final todo = _todos[index];
-                  final controller = _controllers[index];
-                  final isLast = index == _todos.length - 1;
-
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 6.0),
-                    child: Focus(
-                      onFocusChange: (hasFocus) {
-                        setState(() {
-                          todo['focused'] = hasFocus;
-                        });
-                      },
-                      child: Row(
-                        children: [
-                          Checkbox(
-                            value: todo['done'] ?? false,
-                            onChanged: (v) async {
-                              setState(() {
-                                todo['done'] = v;
-                              });
-                              await _updateSingleTodo(index);
-                            },
-                          ),
-                          Expanded(
-                            child: TextField(
-                              controller: controller, // <-- DAS ist die Lösung
-                              style: TextStyle(color: textColor),
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: strings.todoHint,
-                              ),
-                              maxLines: 1,
-                              inputFormatters: [
-                                LengthLimitingTextInputFormatter(30),
-                              ],
-                              onChanged: (val) {
-                                todo['title'] = val;
-                              },
-                            ),
-                          ),
-
-                          if (isLast)
-                            IconButton(
-                              icon: Icon(
-                                Icons.add_circle_outline,
-                                color: Colors.deepPurple,
-                              ),
-                              onPressed: _addTodo,
-                            ),
-                          // Mini-Löschen-Icon nur sichtbar bei Fokus
-                          if (todo['focused'] ?? false)
-                            IconButton(
-                              icon: const Icon(
-                                Icons.close,
-                                size: 20,
-                                color: Colors.redAccent,
-                              ),
-                              onPressed: () async {
-                                if (todo['id'] != null) {
-                                  await _firestore
-                                      .collection('trips')
-                                      .doc(widget.tripId)
-                                      .collection('todos')
-                                      .doc(todo['id'])
-                                      .delete();
-                                }
-                                setState(() {
-                                  _todos.removeAt(index);
-                                  _controllers.removeAt(index);
-                                });
-                              },
-                            ),
-                        ],
+          : Column(
+              children: [
+                // ================= PROGRESS HEADER =================
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  margin: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: isDarkMode
+                        ? Colors.grey.shade900
+                        : Colors.grey.shade100,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Vor der Reise erledigen",
+                        style: TextStyle(
+                          color: textColor,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
+                      const SizedBox(height: 8),
+                      Text(
+                        "$completed von $total erledigt",
+                        style: TextStyle(color: textColor),
+                      ),
+                      const SizedBox(height: 8),
+                      LinearProgressIndicator(
+                        value: progress,
+                        minHeight: 8,
+                        backgroundColor: Colors.grey.shade300,
+                        valueColor: const AlwaysStoppedAnimation(
+                          Color(0xFF8C77FF),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                // ================= LIST =================
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: ListView.builder(
+                      itemCount: _todos.length,
+                      itemBuilder: (context, index) {
+                        final todo = _todos[index];
+                        final controller = _controllers[index];
+                        final isLastItem = index == _todos.length - 1;
+
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 6),
+
+                          child: Dismissible(
+                            key: Key(todo['id'] ?? index.toString()),
+                            direction: DismissDirection.endToStart,
+
+                            background: Container(
+                              alignment: Alignment.centerRight,
+                              padding: const EdgeInsets.only(right: 20),
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Icon(
+                                Icons.delete,
+                                color: Colors.white,
+                              ),
+                            ),
+
+                            onDismissed: (_) async {
+                              if (todo['id'] != null) {
+                                await _firestore
+                                    .collection('trips')
+                                    .doc(widget.tripId)
+                                    .collection('todos')
+                                    .doc(todo['id'])
+                                    .delete();
+                              }
+
+                              setState(() {
+                                _todos.removeAt(index);
+                                _controllers.removeAt(index);
+                              });
+                            },
+
+                            child: Row(
+                              children: [
+                                // ===== CHECKBOX =====
+                                Checkbox(
+                                  value: todo['done'] ?? false,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(6),
+                                  ),
+                                  fillColor:
+                                      WidgetStateProperty.resolveWith<Color>((
+                                        states,
+                                      ) {
+                                        if (states.contains(
+                                          WidgetState.selected,
+                                        )) {
+                                          return const Color(0xFF8C77FF);
+                                        }
+                                        return isDarkMode
+                                            ? Colors.grey.shade800
+                                            : Colors.grey.shade200;
+                                      }),
+                                  onChanged: (v) async {
+                                    setState(() {
+                                      todo['done'] = v;
+                                    });
+
+                                    await _saveTodos();
+                                  },
+                                ),
+
+                                // ===== TEXT =====
+                                Expanded(
+                                  child: TextField(
+                                    controller: controller,
+                                    style: TextStyle(color: textColor),
+                                    decoration: InputDecoration(
+                                      border: InputBorder.none,
+                                      hintText: strings.todoHint,
+                                    ),
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(30),
+                                    ],
+                                    onChanged: (val) {
+                                      todo['title'] = val;
+                                    },
+                                  ),
+                                ),
+
+                                // ===== ADD BUTTON =====
+                                if (isLastItem)
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.add_circle_outline,
+                                      color: Colors.deepPurple,
+                                    ),
+                                    onPressed: _addTodo,
+                                  ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
                     ),
-                  );
-                },
-              ),
+                  ),
+                ),
+              ],
             ),
     );
   }

@@ -41,7 +41,7 @@ class SEn extends S {
   String get mallorcaTitle => 'Mallorca';
 
   @override
-  String get mallorcaSubtitle => 'Island of our hearts';
+  String get mallorcaSubtitle => 'Join our journey';
 
   @override
   String get aidaCruisesTitle => 'AIDA Cruises';
@@ -96,9 +96,6 @@ class SEn extends S {
   @override
   String get previewTextReisebuero =>
       'The world is huge – come, we will show it to you!\n\nWe are a well-coordinated team of 15 passionate travel experts, who have been creating unforgettable vacation moments together for many years.';
-
-  @override
-  String get readMore => '... read more';
 
   @override
   String get readLess => 'Read less';
@@ -224,6 +221,9 @@ class SEn extends S {
   @override
   String get auszeitenAmMeerIntro =>
       'Our most beautiful seaside experiences 🌊🌅💙\n\nSalt air, sunsets and that feeling of freedom – these are our favorite sea moments.';
+
+  @override
+  String get mallorcaTitle1 => 'Liveboard';
 
   @override
   String get scheveningenTitle => 'Scheveningen';
@@ -436,19 +436,17 @@ class SEn extends S {
 
   @override
   String get premiumBenefit1 =>
-      'Access to all travel journals from MamaTochterOnTour';
+      'Access to all travel diaries from MamaTochterOnTour';
 
   @override
-  String get premiumBenefit2 => 'Includes insider tips for each location';
+  String get premiumBenefit2 =>
+      'Travel planning: packing lists, budget planner, notes, emergency contacts & to-do lists';
 
   @override
-  String get premiumBenefit3 => 'Create a packing list for your trips';
+  String get premiumBenefit3 => 'Travel countdown for your next trip';
 
   @override
-  String get premiumBenefit4 => 'Travel countdown for your next trip';
-
-  @override
-  String get premiumBenefit5 => 'Save posts';
+  String get premiumBenefit4 => 'Save posts for later';
 
   @override
   String get premiumComingSoon =>
@@ -1005,28 +1003,28 @@ class SEn extends S {
   String get unblock => 'Unblock';
 
   @override
-  String get uploadPost => 'Beitrag hochladen';
+  String get uploadPost => 'Upload post';
 
   @override
-  String get addLocation => 'Ort hinzufügen';
+  String get addLocation => 'Add location';
 
   @override
-  String get description => 'Beschreibung';
+  String get description => 'Description & Hashtags';
 
   @override
   String get hashtags => 'Hashtags';
 
   @override
-  String get publishPost => 'Beitrag veröffentlichen';
+  String get publishPost => 'Publish post';
 
   @override
-  String get maxMedia => 'Maximal 10 Medien pro Beitrag erlaubt';
+  String get maxMedia => 'Maximum of 10 media items per post allowed';
 
   @override
-  String get uploadError => 'Fehler beim Hochladen';
+  String get uploadError => 'Upload error';
 
   @override
-  String get cropImage => 'Bild zuschneiden';
+  String get cropImage => 'Crop image';
 
   @override
   String get travelDiary => 'Travel Diary';
@@ -1451,7 +1449,7 @@ class SEn extends S {
 
   @override
   String packingProgress(Object completed, Object total) {
-    return '$completed of $total items completed';
+    return '$completed of $total items packed';
   }
 
   @override
@@ -1668,6 +1666,9 @@ class SEn extends S {
   @override
   String get premiumSaveWarning =>
       'You are not a premium member and cannot save posts. Tap here to unlock Premium ✨';
+
+  @override
+  String get readMore => '... read more';
 
   @override
   String likesTextSingle(Object firstUsername) {
@@ -3417,4 +3418,92 @@ class SEn extends S {
 
   @override
   String get share => 'Share';
+
+  @override
+  String get noQuestions => 'No questions available';
+
+  @override
+  String get hideAnswers => 'Hide answers';
+
+  @override
+  String showAnswers(Object count) {
+    return 'Show answers ($count)';
+  }
+
+  @override
+  String get justNow0 => 'just now';
+
+  @override
+  String minutesAgo1(Object count) {
+    return '$count min ago';
+  }
+
+  @override
+  String hoursAgo2(Object count) {
+    return '$count hr ago';
+  }
+
+  @override
+  String daysAgo3(Object count) {
+    return '$count days ago';
+  }
+
+  @override
+  String formatDate4(Object day, Object month, Object year) {
+    return '$month/$day/$year';
+  }
+
+  @override
+  String get activityLike => ' liked your post ❤️';
+
+  @override
+  String get activityComment => ' commented 💬';
+
+  @override
+  String get activityReply => ' replied to your comment 💬';
+
+  @override
+  String get activityFollow => ' started following you 👋';
+
+  @override
+  String get activityDefault => ' did something';
+
+  @override
+  String get activityTitle => 'Activity';
+
+  @override
+  String get noActivities => 'No activities yet';
+
+  @override
+  String get following2 => 'Following';
+
+  @override
+  String get followBack2 => 'Follow back';
+
+  @override
+  String get show2 => 'Show';
+
+  @override
+  String get comingSoon3 => 'This page is only available for premium users.';
+
+  @override
+  String get noFollowers3 => 'You don\'t have any followers yet.';
+
+  @override
+  String get notFollowingAnyone3 => 'You\'re not following anyone yet.';
+
+  @override
+  String get noBio3 => 'No bio added yet';
+
+  @override
+  String get trips3 => 'Trips';
+
+  @override
+  String get posts3 => 'Posts';
+
+  @override
+  String get followers3 => 'Followers';
+
+  @override
+  String get following3 => 'Following';
 }

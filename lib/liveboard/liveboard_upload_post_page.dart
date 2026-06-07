@@ -1,27 +1,27 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:wechat_assets_picker/wechat_assets_picker.dart';
+import 'package:image_cropper/image_cropper.dart';
 import 'package:video_player/video_player.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:video_thumbnail/video_thumbnail.dart';
 import '../l10n/s.dart';
-import 'main_navigation.dart';
-import '../providers/dark_mode_provider.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../pages/main_navigation.dart';
 
-class UploadPostPage extends ConsumerStatefulWidget {
-  const UploadPostPage({super.key});
+class MallorcaUploadPostPage extends StatefulWidget {
+  final bool isDarkMode;
+  const MallorcaUploadPostPage({super.key, required this.isDarkMode});
 
   @override
-  ConsumerState<UploadPostPage> createState() => _UploadPostPageState();
+  State<MallorcaUploadPostPage> createState() => _MallorcaUploadPostPageState();
 }
 
-class _UploadPostPageState extends ConsumerState<UploadPostPage> {
+class _MallorcaUploadPostPageState extends State<MallorcaUploadPostPage> {
   final _locationController = TextEditingController();
   final _descriptionController = TextEditingController();
+  final _hashtagsController = TextEditingController();
 
   bool _isUploading = false;
 
@@ -36,7 +36,8 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
   bool get _isFormValid =>
       _mediaFiles.isNotEmpty &&
       _locationController.text.trim().isNotEmpty &&
-      _descriptionController.text.trim().isNotEmpty;
+      _descriptionController.text.trim().isNotEmpty &&
+      _hashtagsController.text.trim().isNotEmpty;
 
   @override
   void dispose() {
@@ -45,6 +46,7 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
     }
     _locationController.dispose();
     _descriptionController.dispose();
+    _hashtagsController.dispose();
     super.dispose();
   }
 
@@ -72,11 +74,27 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
       if (file == null) continue;
 
       if (asset.type == AssetType.image) {
-        setState(() {
-          _mediaFiles.add(file);
-          _mediaTypes.add('image');
-          _videoControllers.add(null);
-        });
+        final croppedFile = await ImageCropper().cropImage(
+          sourcePath: file.path,
+          aspectRatio: const CropAspectRatio(ratioX: 4, ratioY: 5),
+          uiSettings: [
+            AndroidUiSettings(
+              toolbarTitle: strings.cropImage,
+              toolbarColor: Colors.deepPurple,
+              toolbarWidgetColor: Colors.white,
+              lockAspectRatio: true,
+            ),
+            IOSUiSettings(aspectRatioLockEnabled: true),
+          ],
+        );
+
+        if (croppedFile != null) {
+          setState(() {
+            _mediaFiles.add(File(croppedFile.path));
+            _mediaTypes.add('image');
+            _videoControllers.add(null);
+          });
+        }
       } else if (asset.type == AssetType.video) {
         final controller = VideoPlayerController.file(file);
         await controller.initialize();
@@ -95,8 +113,6 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
 
   Future<void> _uploadPost() async {
     final strings = S.of(context)!;
-    final postRef = _firestore.collection('Posts').doc();
-    final postId = postRef.id;
     if (!_isFormValid) return;
     setState(() => _isUploading = true);
 
@@ -105,7 +121,6 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
       if (user == null) return;
 
       List<String> mediaUrls = [];
-      List<String> thumbnailUrls = [];
 
       for (int i = 0; i < _mediaFiles.length; i++) {
         final file = _mediaFiles[i];
@@ -113,65 +128,31 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
         final ext = type == 'image' ? 'jpg' : 'mp4';
 
         final ref = _storage.ref().child(
-          'users/${user.uid}/posts/$postId/$i.$ext',
+          'mallorca_liveboard/${user.uid}/${DateTime.now().millisecondsSinceEpoch}_$i.$ext',
         );
-
         await ref.putFile(file);
         final url = await ref.getDownloadURL();
         mediaUrls.add(url);
-
-        if (type == 'video') {
-          final thumbData = await VideoThumbnail.thumbnailData(
-            video: file.path,
-            imageFormat: ImageFormat.JPEG,
-            quality: 75,
-          );
-          if (thumbData != null) {
-            final thumbRef = _storage.ref().child(
-              'users/${user.uid}/posts/$postId/thumbnails/$i.jpg',
-            );
-            await thumbRef.putData(thumbData);
-            final thumbUrl = await thumbRef.getDownloadURL();
-            thumbnailUrls.add(thumbUrl);
-          } else {
-            thumbnailUrls.add('');
-          }
-        } else {
-          thumbnailUrls.add('');
-        }
       }
 
-      final rawText = _descriptionController.text.trim();
+      final hashtags = _hashtagsController.text
+          .split(RegExp(r'\s+'))
+          .map((e) => e.trim())
+          .where((e) => e.isNotEmpty)
+          .toList();
 
-      // Hashtags MIT # speichern
-      final hashtags = RegExp(
-        r'#\w+',
-      ).allMatches(rawText).map((m) => m.group(0)!).toList();
-
-      // Caption OHNE Hashtags speichern
-      final cleanCaption = rawText
-          .replaceAll(RegExp(r'#\w+'), '')
-          .replaceAll(RegExp(r'\s+'), ' ')
-          .trim();
-
-      String username = 'User';
-      final userDoc = await _firestore.collection('Users').doc(user.uid).get();
-      if (userDoc.exists && userDoc.data()?['username'] != null) {
-        username = userDoc.data()!['username'];
-      }
-
-      await postRef.set({
-        'postId': postId,
-        'mediaUrls': mediaUrls,
+      await _firestore.collection('mallorca_liveboard').doc().set({
+        'media': mediaUrls,
         'mediaTypes': _mediaTypes,
-        'thumbnailUrls': thumbnailUrls, // 👈 DAS FEHLT
+
         'location': _locationController.text.trim(),
-        'caption': cleanCaption,
-        'hashtag': hashtags,
-        'createdTime': Timestamp.now(),
+        'caption': _descriptionController.text.trim(),
+        'hashtags': hashtags,
+
+        'createdAt': Timestamp.now(),
+
         'uid': user.uid,
-        'username': username,
-        'commentCount': 0,
+        'username': 'MamaTochterOnTour',
       });
 
       if (!mounted) return;
@@ -194,22 +175,16 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
   @override
   Widget build(BuildContext context) {
     final strings = S.of(context)!;
-
-    final isDark = ref.watch(darkModeProvider).value ?? false;
-
-    final backgroundColor = isDark ? Colors.black : Colors.white;
-    final textColor = isDark ? Colors.white : Colors.black;
-    final labelColor = isDark ? Colors.white70 : Colors.black54;
-    final cardColor = isDark ? Colors.grey.shade900 : Colors.grey.shade200;
+    final textColor = Colors.white;
+    final labelColor = Colors.white70;
     final accentColor = Colors.deepPurple;
 
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        iconTheme: IconThemeData(color: textColor),
         title: Text(
           strings.uploadPost,
           style: GoogleFonts.pacifico(color: textColor, fontSize: 28),
@@ -220,9 +195,8 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            _buildMediaPreview(cardColor, isDark),
+            _buildMediaPreview(),
             const SizedBox(height: 16),
-
             _buildTextField(
               controller: _locationController,
               label: strings.addLocation,
@@ -230,9 +204,7 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
               labelColor: labelColor,
               accentColor: accentColor,
             ),
-
             const SizedBox(height: 16),
-
             _buildTextField(
               controller: _descriptionController,
               label: strings.description,
@@ -241,17 +213,23 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
               accentColor: accentColor,
               maxLines: 3,
             ),
-
+            const SizedBox(height: 16),
+            _buildTextField(
+              controller: _hashtagsController,
+              label: strings.hashtags,
+              textColor: textColor,
+              labelColor: labelColor,
+              accentColor: accentColor,
+            ),
             const SizedBox(height: 24),
-
             SizedBox(
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
                 onPressed: _isUploading ? null : _uploadPost,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepPurple.withOpacity(
-                    _isFormValid ? 1 : 0.5,
+                  backgroundColor: Colors.purple.withAlpha(
+                    _isFormValid ? 255 : (255 * 0.5).toInt(),
                   ),
                 ),
                 child: _isUploading
@@ -293,9 +271,9 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
     );
   }
 
-  Widget _buildMediaPreview(Color cardColor, bool isDark) {
+  Widget _buildMediaPreview() {
     return SizedBox(
-      height: 260,
+      height: 120,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: _mediaFiles.length + (_mediaFiles.length < 10 ? 1 : 0),
@@ -304,16 +282,14 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
             return GestureDetector(
               onTap: _pickMedia,
               child: Container(
-                width: 180,
-                margin: const EdgeInsets.only(right: 12),
+                width: 100,
+                margin: const EdgeInsets.only(right: 8),
                 decoration: BoxDecoration(
-                  color: cardColor,
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(
-                    color: isDark ? Colors.white24 : Colors.black12,
-                  ),
+                  color: Colors.grey[900],
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.grey),
                 ),
-                child: const Center(child: Icon(Icons.add, size: 40)),
+                child: const Icon(Icons.add, color: Colors.white70, size: 40),
               ),
             );
           }
@@ -321,63 +297,81 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
           final file = _mediaFiles[index];
           final type = _mediaTypes[index];
 
-          return Container(
-            width: 180,
-            margin: const EdgeInsets.only(right: 12),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: cardColor,
-            ),
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                if (type == 'image')
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: Image.file(file, fit: BoxFit.cover),
-                  ),
-
-                if (type == 'video')
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: VideoPlayer(_videoControllers[index]!),
-                  ),
-
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Colors.transparent,
-                        Colors.black.withOpacity(0.3),
+          return Stack(
+            children: [
+              GestureDetector(
+                onTap: () async {
+                  if (type == 'image') {
+                    final croppedFile = await ImageCropper().cropImage(
+                      sourcePath: file.path,
+                      aspectRatio: const CropAspectRatio(ratioX: 4, ratioY: 5),
+                      uiSettings: [
+                        AndroidUiSettings(
+                          toolbarTitle: S.of(context)!.cropImage,
+                          toolbarColor: Colors.deepPurple,
+                          toolbarWidgetColor: Colors.white,
+                          lockAspectRatio: true,
+                        ),
+                        IOSUiSettings(aspectRatioLockEnabled: true),
                       ],
-                    ),
+                    );
+                    if (croppedFile != null) {
+                      setState(
+                        () => _mediaFiles[index] = File(croppedFile.path),
+                      );
+                    }
+                  } else if (type == 'video') {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => VideoPreviewPage(
+                          controller: _videoControllers[index]!,
+                        ),
+                      ),
+                    );
+                  }
+                },
+                child: Container(
+                  width: 100,
+                  margin: const EdgeInsets.only(right: 8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    image: type == 'image'
+                        ? DecorationImage(
+                            image: FileImage(file),
+                            fit: BoxFit.cover,
+                          )
+                        : null,
+                    color: type == 'video' ? Colors.black : null,
+                  ),
+                  child: type == 'video'
+                      ? ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: VideoPlayer(_videoControllers[index]!),
+                        )
+                      : null,
+                ),
+              ),
+              Positioned(
+                right: 2,
+                top: 2,
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _videoControllers[index]?.dispose();
+                      _videoControllers.removeAt(index);
+                      _mediaFiles.removeAt(index);
+                      _mediaTypes.removeAt(index);
+                    });
+                  },
+                  child: const CircleAvatar(
+                    radius: 12,
+                    backgroundColor: Colors.red,
+                    child: Icon(Icons.close, size: 16, color: Colors.white),
                   ),
                 ),
-
-                Positioned(
-                  right: 8,
-                  top: 8,
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _videoControllers[index]?.dispose();
-                        _videoControllers.removeAt(index);
-                        _mediaFiles.removeAt(index);
-                        _mediaTypes.removeAt(index);
-                      });
-                    },
-                    child: const CircleAvatar(
-                      radius: 14,
-                      backgroundColor: Colors.black54,
-                      child: Icon(Icons.close, size: 16, color: Colors.white),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           );
         },
       ),

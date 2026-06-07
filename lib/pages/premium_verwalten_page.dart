@@ -108,10 +108,6 @@ class _PremiumPageState extends State<PremiumPage> {
                       strings.premiumBenefit4,
                       featureTextColor,
                     ),
-                    _buildFeatureItem(
-                      strings.premiumBenefit5,
-                      featureTextColor,
-                    ),
                     const SizedBox(height: 10),
                     Text(
                       strings.premiumComingSoon,

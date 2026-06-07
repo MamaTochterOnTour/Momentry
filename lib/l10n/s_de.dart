@@ -41,7 +41,7 @@ class SDe extends S {
   String get mallorcaTitle => 'Mallorca';
 
   @override
-  String get mallorcaSubtitle => 'Insel unserer Herzen';
+  String get mallorcaSubtitle => 'Begleite unsere Reise';
 
   @override
   String get aidaCruisesTitle => 'AIDA-Kreuzfahrten';
@@ -97,9 +97,6 @@ class SDe extends S {
   @override
   String get previewTextReisebuero =>
       'Die Welt ist groß – komm, wir zeigen sie dir!\n\nWir sind ein eingespieltes Team aus 15 leidenschaftlichen Reiseexperten, die seit vielen Jahren gemeinsam für unvergessliche Urlaubsmomente sorgen.';
-
-  @override
-  String get readMore => '... read more';
 
   @override
   String get readLess => 'Weniger anzeigen';
@@ -225,6 +222,9 @@ class SDe extends S {
   @override
   String get auszeitenAmMeerIntro =>
       'Unsere schönsten Erlebnisse am Meer 🌊🌅💙\n\nSalzluft, Sonnenuntergänge und dieses Gefühl von Freiheit – das sind unsere liebsten Meeresmomente.';
+
+  @override
+  String get mallorcaTitle1 => 'Liveboard';
 
   @override
   String get scheveningenTitle => 'Scheveningen';
@@ -440,16 +440,13 @@ class SDe extends S {
 
   @override
   String get premiumBenefit2 =>
-      'Inklusive Insider-Tipps zu den jeweiligen Orten';
+      'Reiseplanung: Packliste, Budgetplaner, Notizen, Notfallkontakte & To-Do-Listen';
 
   @override
-  String get premiumBenefit3 => 'Packliste für deine Reisen erstellen';
+  String get premiumBenefit3 => 'Reise-Countdown für deine nächste Reise';
 
   @override
-  String get premiumBenefit4 => 'Reise-Countdown für deine nächste Reise';
-
-  @override
-  String get premiumBenefit5 => 'Beiträge speichern';
+  String get premiumBenefit4 => 'Beiträge speichern';
 
   @override
   String get premiumComingSoon =>
@@ -1014,7 +1011,7 @@ class SDe extends S {
   String get addLocation => 'Ort hinzufügen';
 
   @override
-  String get description => 'Beschreibung';
+  String get description => 'Beschreibung & Hashtags';
 
   @override
   String get hashtags => 'Hashtags';
@@ -1455,7 +1452,7 @@ class SDe extends S {
 
   @override
   String packingProgress(Object completed, Object total) {
-    return '$completed von $total Items erledigt';
+    return '$completed von $total Items gepackt';
   }
 
   @override
@@ -1673,6 +1670,9 @@ class SDe extends S {
   @override
   String get premiumSaveWarning =>
       'Du bist kein Premium-Mitglied und kannst keine Beiträge speichern. Tippe hier, um Premium freizuschalten ✨';
+
+  @override
+  String get readMore => ' … mehr lesen';
 
   @override
   String likesTextSingle(Object firstUsername) {
@@ -3432,4 +3432,92 @@ class SDe extends S {
 
   @override
   String get share => 'Teilen';
+
+  @override
+  String get noQuestions => 'Keine Fragen vorhanden';
+
+  @override
+  String get hideAnswers => 'Antworten ausblenden';
+
+  @override
+  String showAnswers(Object count) {
+    return 'Antworten anzeigen ($count)';
+  }
+
+  @override
+  String get justNow0 => 'gerade eben';
+
+  @override
+  String minutesAgo1(Object count) {
+    return 'vor $count Min';
+  }
+
+  @override
+  String hoursAgo2(Object count) {
+    return 'vor $count Std';
+  }
+
+  @override
+  String daysAgo3(Object count) {
+    return 'vor $count Tagen';
+  }
+
+  @override
+  String formatDate4(Object day, Object month, Object year) {
+    return '$day.$month.$year';
+  }
+
+  @override
+  String get activityLike => ' hat deinen Beitrag geliked ❤️';
+
+  @override
+  String get activityComment => ' hat kommentiert 💬';
+
+  @override
+  String get activityReply => ' hat auf deinen Kommentar geantwortet 💬';
+
+  @override
+  String get activityFollow => ' folgt dir jetzt 👋';
+
+  @override
+  String get activityDefault => ' hat etwas gemacht';
+
+  @override
+  String get activityTitle => 'Aktivität';
+
+  @override
+  String get noActivities => 'Noch keine Aktivitäten';
+
+  @override
+  String get following2 => 'Gefolgt';
+
+  @override
+  String get followBack2 => 'Auch folgen';
+
+  @override
+  String get show2 => 'Anzeigen';
+
+  @override
+  String get comingSoon3 => 'Diese Seite ist nur für Premium User.';
+
+  @override
+  String get noFollowers3 => 'Du hast noch keine Follower.';
+
+  @override
+  String get notFollowingAnyone3 => 'Du folgst noch niemandem.';
+
+  @override
+  String get noBio3 => 'Noch keine Bio hinzugefügt';
+
+  @override
+  String get trips3 => 'Trips';
+
+  @override
+  String get posts3 => 'Beiträge';
+
+  @override
+  String get followers3 => 'Follower';
+
+  @override
+  String get following3 => 'Gefolgt';
 }

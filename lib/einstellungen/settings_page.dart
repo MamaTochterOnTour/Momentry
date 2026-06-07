@@ -13,6 +13,7 @@ import '../pages/contact_feedback_page.dart';
 import 'impressum_page.dart';
 import '../providers/language_provider.dart';
 import '../../l10n/s.dart';
+import '../pages/edit_profile_page.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -385,6 +386,15 @@ class _SettingsPageState extends State<SettingsPage> {
 
             const SizedBox(height: 8),
 
+            // ⭐ NEU: Profil bearbeiten Button
+            ElevatedButton(
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const EditProfilePage()),
+              ),
+              child: Text('Profil bearbeiten'),
+            ),
+
             // Passwort zurücksetzen
             ElevatedButton(
               onPressed: () async {
@@ -477,7 +487,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
             Center(
               child: Text(
-                strings.appVersion("2.0.5"),
+                strings.appVersion("2.1.4"),
                 style: GoogleFonts.nunito(color: textColor, fontSize: 16),
               ),
             ),

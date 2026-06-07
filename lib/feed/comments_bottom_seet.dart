@@ -31,21 +31,64 @@ class _CommentsBottomSheetState extends State<CommentsBottomSheet> {
   // ---------------- Kommentar posten ----------------
   Future<void> _postComment() async {
     final user = _auth.currentUser;
+
     if (user == null || _commentController.text.trim().isEmpty) return;
 
-    await _firestore.collection('Comments').add({
+    final commentText = _commentController.text.trim();
+
+    // 1. Kommentar speichern
+    final commentRef = await _firestore.collection('Comments').add({
       'postId': widget.postId,
       'userId': user.uid,
-      'text': _commentController.text.trim(),
+      'text': commentText,
       'createdAt': FieldValue.serverTimestamp(),
       'parentCommentId': _replyToCommentId,
+      'likesCount': 0,
+      'likedBy': [],
     });
 
-    // Kommentaranzahl im Post-Dokument erhöhen
-    final postRef = _firestore.collection('Posts').doc(widget.postId);
-    await postRef.update({'commentCount': FieldValue.increment(1)});
+    // 2. Post Kommentar Count
+    await _firestore.collection('Posts').doc(widget.postId).update({
+      'commentCount': FieldValue.increment(1),
+    });
 
+    // 3. 🔥 ACTIVITY LOGIK START
+    String? toUserId;
+
+    // CASE A: COMMENT (kein Reply)
+    if (_replyToCommentId == null) {
+      final postSnap = await _firestore
+          .collection('Posts')
+          .doc(widget.postId)
+          .get();
+
+      toUserId = postSnap.data()?['uid'];
+    }
+    // CASE B: REPLY
+    else {
+      final parentCommentSnap = await _firestore
+          .collection('Comments')
+          .doc(_replyToCommentId)
+          .get();
+
+      toUserId = parentCommentSnap.data()?['userId'];
+    }
+
+    // 4. Activity speichern (nur wenn nicht eigene Aktion)
+    if (toUserId != null && toUserId != user.uid) {
+      await _firestore.collection('activities').add({
+        'type': _replyToCommentId == null ? 'comment' : 'reply',
+        'fromUserId': user.uid,
+        'toUserId': toUserId,
+        'postId': widget.postId,
+        'commentId': commentRef.id,
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+    }
+
+    // 5. Reset UI
     _commentController.clear();
+
     setState(() {
       _replyToCommentId = null;
       _replyToUsername = null;
@@ -406,11 +449,37 @@ class CommentTile extends StatelessWidget {
     return timeago.format(dateTime, locale: 'de'); // vor x Stunden/Minuten
   }
 
+  Future<void> _toggleLike(String commentId, List likedBy) async {
+    final uid = FirebaseAuth.instance.currentUser!.uid;
+    final ref = FirebaseFirestore.instance
+        .collection('Comments')
+        .doc(commentId);
+
+    final isLiked = likedBy.contains(uid);
+
+    if (isLiked) {
+      await ref.update({
+        'likedBy': FieldValue.arrayRemove([uid]),
+        'likesCount': FieldValue.increment(-1),
+      });
+    } else {
+      await ref.update({
+        'likedBy': FieldValue.arrayUnion([uid]),
+        'likesCount': FieldValue.increment(1),
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final textColor = isDarkMode ? Colors.white : Colors.black;
     final currentUserId = FirebaseAuth.instance.currentUser?.uid;
     final strings = S.of(context)!;
+    final data = comment.data() as Map<String, dynamic>;
+
+    final likesCount = data['likesCount'] ?? 0;
+    final likedBy = List<String>.from(data['likedBy'] ?? []);
+    final isLiked = likedBy.contains(currentUserId);
 
     return FutureBuilder<DocumentSnapshot>(
       future: FirebaseFirestore.instance
@@ -475,9 +544,41 @@ class CommentTile extends StatelessWidget {
                           comment['text'],
                           style: TextStyle(color: textColor),
                         ),
-                        Text(
-                          formatTimestamp(comment['createdAt']),
-                          style: TextStyle(color: Colors.grey, fontSize: 11),
+                        Row(
+                          children: [
+                            Text(
+                              formatTimestamp(comment['createdAt']),
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 11,
+                              ),
+                            ),
+                            const Spacer(),
+
+                            // ❤️ LIKE BUTTON
+                            GestureDetector(
+                              onTap: () => _toggleLike(comment.id, likedBy),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    isLiked
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    size: 16,
+                                    color: isLiked ? Colors.red : Colors.grey,
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    likesCount.toString(),
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                         const SizedBox(height: 4),
                         GestureDetector(
@@ -571,6 +672,12 @@ class CommentTile extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 40, top: 8),
                   child: Column(
                     children: replies.map((reply) {
+                      final replyData = reply.data() as Map<String, dynamic>;
+                      final replyLikes = replyData['likesCount'] ?? 0;
+                      final replyLikedBy = List<String>.from(
+                        replyData['likedBy'] ?? [],
+                      );
+                      final isReplyLiked = replyLikedBy.contains(currentUserId);
                       return FutureBuilder<DocumentSnapshot>(
                         future: FirebaseFirestore.instance
                             .collection('Users')
@@ -636,12 +743,45 @@ class CommentTile extends StatelessWidget {
                                           color: textColor,
                                         ),
                                       ),
-                                      Text(
-                                        formatTimestamp(reply['createdAt']),
-                                        style: const TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 11,
-                                        ),
+
+                                      Row(
+                                        children: [
+                                          Text(
+                                            formatTimestamp(reply['createdAt']),
+                                            style: const TextStyle(
+                                              color: Colors.grey,
+                                              fontSize: 11,
+                                            ),
+                                          ),
+                                          const Spacer(),
+                                          GestureDetector(
+                                            onTap: () => _toggleLike(
+                                              reply.id,
+                                              replyLikedBy,
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                Icon(
+                                                  isReplyLiked
+                                                      ? Icons.favorite
+                                                      : Icons.favorite_border,
+                                                  size: 14,
+                                                  color: isReplyLiked
+                                                      ? Colors.red
+                                                      : Colors.grey,
+                                                ),
+                                                const SizedBox(width: 4),
+                                                Text(
+                                                  replyLikes.toString(),
+                                                  style: const TextStyle(
+                                                    fontSize: 11,
+                                                    color: Colors.grey,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                       const SizedBox(height: 2),
                                       GestureDetector(

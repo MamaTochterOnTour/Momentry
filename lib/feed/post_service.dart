@@ -15,10 +15,13 @@ class PostService {
     String postId,
     List<dynamic> hearts,
     String userId,
+    String postOwnerId,
   ) async {
     final current = List<String>.from(hearts);
 
-    if (current.contains(userId)) {
+    final isLiked = current.contains(userId);
+
+    if (isLiked) {
       current.remove(userId);
     } else {
       current.add(userId);

@@ -3,7 +3,7 @@ import 'product.dart';
 final List<Product> travelGiudes = [
   Product(
     id: 'guide_0',
-    name: 'Barcelona Highlights\n(Digital)',
+    name: 'Barcelona Highlights',
     price: 2.49,
     description:
         'Entdecke Barcelona mit den besten Geheimtipps und Highlights! 🌟 Unsere digitale Fernwehkarte als PDF-Download zeigt dir nicht nur die berühmtesten Sehenswürdigkeiten Barcelonas, sondern auch ruhige Orte abseits der Touristenpfade. Erlebe kulinarische Genussmomente in sorgfältig ausgewählten Restaurants, Tapas-Bars und Märkten: von mediterraner Küche mit Hafenblick über authentische Paella bis hin zu katalanischen Tapas in einzigartiger Atmosphäre. 🥘🍷 Neben den Must-Sees findest du auf der Karte auch echte Insider-Tipps 📝 – liebevoll ausgewählt, damit dein Aufenthalt besonders wird. So entdeckst du Barcelona mit all seinen Facetten: lebendig, genussvoll und ganz persönlich 🧡 Perfekt für alle, die den idealen Mix aus ikonischen Highlights und echten Lieblingsplätzen der Locals suchen. Hol dir jetzt deine Barcelona Highlights und mach deine Reise unvergesslich! ✈️✨',
@@ -13,7 +13,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Barcelona',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FBarcelona.pdf?alt=media&token=e0b71433-97ef-4a64-b63e-aa061c36a315',
-    categories: ['Fernweh-Karten'],
+    categories: ['spanien'],
   ),
   Product(
     id: 'guide_1',
@@ -27,7 +27,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Rom',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FRom.pdf?alt=media&token=7ebea4af-6a1a-40df-bb2b-0b2ec2230acb',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_2',
@@ -41,7 +41,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Paris',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FParis.pdf?alt=media&token=fc63f19d-5f4e-4141-9ce7-17c1bc135bec',
-    categories: ['Fernweh-Karten'],
+    categories: ['frankreich'],
   ),
   Product(
     id: 'guide_4',
@@ -55,7 +55,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Mallorca',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FMallorca.pdf?alt=media&token=26e65729-d8dd-4588-b595-8878afab2755',
-    categories: ['Fernweh-Karten'],
+    categories: ['spanien'],
   ),
   Product(
     id: 'guide_5',
@@ -69,7 +69,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'London',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FLondon.pdf?alt=media&token=9b5e172e-d312-48d3-a1ac-9ba4cabc1dff',
-    categories: ['Fernweh-Karten'],
+    categories: ['england'],
   ),
   Product(
     id: 'guide_6',
@@ -83,7 +83,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Florenz',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FFlorenz.pdf?alt=media&token=e80bcc58-0957-42d8-b0d7-e73e1cae4e1c',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_7',
@@ -97,7 +97,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Mailand',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FMailand.pdf?alt=media&token=11bc8a4b-256f-40e2-869b-ed82869cbc6c',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_8',
@@ -111,7 +111,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Venedig',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FVenedig.pdf?alt=media&token=753cc8bd-d293-41d6-83ee-3a654ad21ac2',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_9',
@@ -125,7 +125,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Neapel',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FNeapel.pdf?alt=media&token=ac05aee2-e450-4981-86f5-c8395902d365',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_10',
@@ -139,7 +139,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Genua',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FGenua.pdf?alt=media&token=18e6a74c-75f8-432b-b34a-c9d5b3b5dba6',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_11',
@@ -153,7 +153,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Rotterdam',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FRotterdam.pdf?alt=media&token=31221144-b618-4fbd-bcd8-9b8fc188b4c9',
-    categories: ['Fernweh-Karten'],
+    categories: ['niederlande'],
   ),
   Product(
     id: 'guide_12',
@@ -167,7 +167,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Palma',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FPalmadeMallorca.pdf?alt=media&token=5fd06168-d84a-4acf-9c82-f72e8db8cf31',
-    categories: ['Fernweh-Karten'],
+    categories: ['spanien'],
   ),
   Product(
     id: 'guide_13',
@@ -181,7 +181,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Ajaccio',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FAjaccio.pdf?alt=media&token=ff4bd98f-3b90-41b8-9a30-6747b1b17148',
-    categories: ['Fernweh-Karten'],
+    categories: ['Karibik'],
   ),
   Product(
     id: 'guide_14',
@@ -195,7 +195,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Pisa',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FPisa.pdf?alt=media&token=f156153d-7988-48f3-b874-9938cc8f27c6',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_15',
@@ -209,7 +209,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Capri',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FCapri.pdf?alt=media&token=ca608dbe-bdba-4c41-a2cd-074f5c4c34ba',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_16',
@@ -223,7 +223,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Amalfi',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FAmalfi.pdf?alt=media&token=67253b55-4ac0-4826-bb7c-3300ecfc3130',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_17',
@@ -237,7 +237,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Amalfiküste',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FAmalfikueste.pdf?alt=media&token=8c23d152-182a-4b11-9511-9b45cf0215d0',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_18',
@@ -251,7 +251,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'CinqueTerre',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FCinqueTerre.pdf?alt=media&token=d1124c87-1fe5-4b18-83f2-c9201224b9f5',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_19',
@@ -265,7 +265,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Civitavecchia',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FCivitavecchia.pdf?alt=media&token=da1626b2-b8b8-466e-a553-9f0ddd920dc7',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_20',
@@ -279,7 +279,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Lucca',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FLucca.pdf?alt=media&token=57d9f82d-d2f8-437b-80e2-a200475066d3',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_21',
@@ -293,7 +293,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'LaSpezia',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FLaSpezia.pdf?alt=media&token=17ffbd8e-38e0-4813-9adf-fe44b66c559e',
-    categories: ['Fernweh-Karten'],
+    categories: ['italien'],
   ),
   Product(
     id: 'guide_22',
@@ -307,7 +307,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'LeHavre',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FLeHavre.pdf?alt=media&token=6ea58d48-03f4-4b03-906b-6c3c035875f5',
-    categories: ['Fernweh-Karten'],
+    categories: ['frankreich'],
   ),
   Product(
     id: 'guide_23',
@@ -321,7 +321,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Brüssel',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FBruessel.pdf?alt=media&token=97a07431-7b20-45ad-9860-8714ed34f78a',
-    categories: ['Fernweh-Karten'],
+    categories: ['belgien'],
   ),
   Product(
     id: 'guide_24',
@@ -335,7 +335,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Zeebrügge',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FZeebrügge.pdf?alt=media&token=3c904705-4255-41ed-99bf-8b7fa0213d58',
-    categories: ['Fernweh-Karten'],
+    categories: ['belgien'],
   ),
   Product(
     id: 'guide_25',
@@ -349,7 +349,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Korsika',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FKorsika.pdf?alt=media&token=0329ad03-4bbc-4041-b358-0014fbfdc521',
-    categories: ['Fernweh-Karten'],
+    categories: ['frankreich'],
   ),
   Product(
     id: 'guide_26',
@@ -363,7 +363,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Southampton',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FSouthampton.pdf?alt=media&token=eb237d71-d504-4826-b59b-2f88d891576a',
-    categories: ['Fernweh-Karten'],
+    categories: ['england'],
   ),
   Product(
     id: 'guide_27',
@@ -377,7 +377,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Stavanger',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FStavanger.pdf?alt=media&token=f9df787c-2b30-4d0d-a2fe-0e41d6d752d5',
-    categories: ['Fernweh-Karten'],
+    categories: ['norwegen'],
   ),
   Product(
     id: 'guide_28',
@@ -391,7 +391,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Eidfjord',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FEidfjord.pdf?alt=media&token=314cd4f6-979b-45c0-8f09-1000afc4e056',
-    categories: ['Fernweh-Karten'],
+    categories: ['norwegen'],
   ),
   Product(
     id: 'guide_29',
@@ -405,7 +405,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Geirangerfjord',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FGeirangerfjord.pdf?alt=media&token=e5eac77e-082e-49be-97cc-47802b7030e8',
-    categories: ['Fernweh-Karten'],
+    categories: ['norwegen'],
   ),
   Product(
     id: 'guide_30',
@@ -419,7 +419,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Flam',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FFlam.pdf?alt=media&token=6bffefa1-10e8-46a9-a6d7-03b9903a2f04',
-    categories: ['Fernweh-Karten'],
+    categories: ['norwegen'],
   ),
   Product(
     id: 'guide_31',
@@ -433,7 +433,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Alesund',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FAlesund.pdf?alt=media&token=0666bf56-cbf9-4dd0-83e0-4ad9c35f1947',
-    categories: ['Fernweh-Karten'],
+    categories: ['norwegen'],
   ),
   Product(
     id: 'guide_32',
@@ -447,7 +447,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Molde',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FMolde.pdf?alt=media&token=8ec46c7f-a10d-40c5-86a8-b7672c89a4d8',
-    categories: ['Fernweh-Karten'],
+    categories: ['norwegen'],
   ),
   Product(
     id: 'guide_33',
@@ -461,7 +461,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Trondheim',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FTrondheim.pdf?alt=media&token=52843be4-fb97-4c73-b39a-f6548be89be3',
-    categories: ['Fernweh-Karten'],
+    categories: ['norwegen'],
   ),
   Product(
     id: 'guide_34',
@@ -475,7 +475,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Maloy',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FMaloy.pdf?alt=media&token=07c149f0-e3d6-4ceb-abed-998d5d28318e',
-    categories: ['Fernweh-Karten'],
+    categories: ['norwegen'],
   ),
   Product(
     id: 'guide_35',
@@ -489,7 +489,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Andalsnes',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FAndalsnes.pdf?alt=media&token=bb3526de-b814-40a1-b33b-97c6d95cbf0a',
-    categories: ['Fernweh-Karten'],
+    categories: ['norwegen'],
   ),
   Product(
     id: 'guide_36',
@@ -503,7 +503,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Bergen',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FBergen.pdf?alt=media&token=9f4326fa-dcdf-49ef-9ff9-1bf00752aef7',
-    categories: ['Fernweh-Karten'],
+    categories: ['norwegen'],
   ),
   Product(
     id: 'guide_37',
@@ -517,7 +517,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Berlin',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FBerlin.pdf?alt=media&token=a546c44e-c9e8-4786-82ef-2913f8591dd4',
-    categories: ['Fernweh-Karten'],
+    categories: ['deutschland'],
   ),
   Product(
     id: 'guide_38',
@@ -531,7 +531,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Hamburg',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FHamburg.pdf?alt=media&token=e5c61d25-69de-4fe0-83d9-954eb38abdbe',
-    categories: ['Fernweh-Karten'],
+    categories: ['deutschland'],
   ),
   Product(
     id: 'guide_39',
@@ -545,7 +545,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Köln',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FKoeln.pdf?alt=media&token=3acbd29b-dd7f-4075-87e0-55c6cc4f7aa3',
-    categories: ['Fernweh-Karten'],
+    categories: ['deutschland'],
   ),
   Product(
     id: 'guide_40',
@@ -559,7 +559,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'München',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FMuenchen.pdf?alt=media&token=249bbd3c-08d6-491a-85a6-76b55f0e8b19',
-    categories: ['Fernweh-Karten'],
+    categories: ['deutschland'],
   ),
   Product(
     id: 'guide_41',
@@ -573,7 +573,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'LaRomana',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FLaRomana.pdf?alt=media&token=cb29b112-3d9f-44aa-ab25-70a2bcbc8e05',
-    categories: ['Fernweh-Karten'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_42',
@@ -587,7 +587,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Aruba',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FAruba.pdf?alt=media&token=1d15e061-f17a-4833-9de1-ba4d5fe9fe32',
-    categories: ['Fernweh-Karten'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_43',
@@ -601,7 +601,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Curacao',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FCuracao.pdf?alt=media&token=2e58a9f4-0aaf-4c72-8984-a2e87790c38c',
-    categories: ['Fernweh-Karten'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_44',
@@ -615,7 +615,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Kralendijk',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FKralendijk.pdf?alt=media&token=ff965fb3-9b0d-4a87-a5fa-52fd11b5cd7a',
-    categories: ['Fernweh-Karten'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_45',
@@ -629,7 +629,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Grenada',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FGrenada.pdf?alt=media&token=54168297-b333-4cc3-9836-cbe1aacaa68c',
-    categories: ['Fernweh-Karten'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_46',
@@ -643,7 +643,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Barbados',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FBarbados.pdf?alt=media&token=fae8c5fd-675b-403d-9637-ac349c7d2163',
-    categories: ['Fernweh-Karten'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_47',
@@ -657,7 +657,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'StVincent',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FStVincent.pdf?alt=media&token=3c1fa850-a59a-44f6-a2db-6dff162711d5',
-    categories: ['Fernweh-Karten'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_48',
@@ -671,7 +671,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Antigua',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FAntigua.pdf?alt=media&token=c8339de8-6c2d-456c-a774-be165b593607',
-    categories: ['Fernweh-Karten'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_49',
@@ -685,7 +685,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'StLucia',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FStLucia.pdf?alt=media&token=324967a7-528b-4ba0-b7b3-c8b08ee94b4a',
-    categories: ['Fernweh-Karten'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_50',
@@ -699,7 +699,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Guadeloupe',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FGuadeloupe.pdf?alt=media&token=eb4f62e7-0de5-4769-a6a8-7272e0440b95',
-    categories: ['Fernweh-Karten'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_51',
@@ -713,7 +713,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Dominica',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FDominicaRoseau.pdf?alt=media&token=36250381-32d9-4119-a4c9-e45218a30c0c',
-    categories: ['Fernweh-Karten'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_52',
@@ -727,7 +727,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'LasPalmas',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FLasPalmas.pdf?alt=media&token=57a6b1a9-a412-477c-997a-13e4d6eda3d0',
-    categories: ['Fernweh-Karten'],
+    categories: ['kanaren'],
   ),
   Product(
     id: 'guide_53',
@@ -741,7 +741,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Madeira',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FMadeira.pdf?alt=media&token=9da1c45e-f612-49eb-beeb-670aa42269ea',
-    categories: ['Fernweh-Karten'],
+    categories: ['kanaren'],
   ),
   Product(
     id: 'guide_54',
@@ -755,7 +755,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Teneriffa',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FTeneriffa.pdf?alt=media&token=4090a778-f537-4b79-aab4-aa47ae4c9611',
-    categories: ['Fernweh-Karten'],
+    categories: ['kanaren'],
   ),
   Product(
     id: 'guide_55',
@@ -769,7 +769,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Fuerteventura',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FFuerteventura.pdf?alt=media&token=63148f19-a5e7-491b-8a41-89e8a4e262db',
-    categories: ['Fernweh-Karten'],
+    categories: ['kanaren'],
   ),
   Product(
     id: 'guide_55',
@@ -783,7 +783,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Lanzarote',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FLanzarote.pdf?alt=media&token=b51a0eae-ea87-48df-885a-f0e935f6fcae',
-    categories: ['Fernweh-Karten'],
+    categories: ['kanaren'],
   ),
   Product(
     id: 'guide_56',
@@ -797,7 +797,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'NorwegenKreuzfahrt',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FNorwegensFjordeHamburg.pdf?alt=media&token=dfa9cec9-72c9-4a8e-a2be-33127c70e2a4',
-    categories: ['Kreuzfahrten', 'Bundles'],
+    categories: ['aida', 'bundle'],
   ),
   Product(
     id: 'guide_57',
@@ -811,7 +811,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'KanarenKreuzfahrt',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FKanarenMadeira.pdf?alt=media&token=5897be59-579b-46b7-a08c-6caad56ed60a',
-    categories: ['Kreuzfahrten', 'Bundles'],
+    categories: ['aida', 'bundle'],
   ),
   Product(
     id: 'guide_58',
@@ -825,7 +825,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'MedSchätzeKreuzfahrt',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FMediterraneSchaetze.pdf?alt=media&token=5d428b61-718c-465f-bb3a-ec45b35eb0d0',
-    categories: ['Kreuzfahrten', 'Bundles'],
+    categories: ['aida', 'bundle'],
   ),
   Product(
     id: 'guide_59',
@@ -839,7 +839,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'MetropolenKreuzfahrt',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FKreuzfahrtMetropolenHamburg.pdf?alt=media&token=0d76fec1-efdf-489f-8842-09b2a8c247ef',
-    categories: ['Kreuzfahrten', 'Bundles'],
+    categories: ['aida', 'bundle'],
   ),
   Product(
     id: 'guide_60',
@@ -853,7 +853,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'NorwegenKreuzfahrt2',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FNorwegensFjordemitGeirangerTrondheim.pdf?alt=media&token=e90b1cea-c53b-44d3-af8f-9bdc84dbbcd0',
-    categories: ['Kreuzfahrten', 'Bundles'],
+    categories: ['aida', 'bundle'],
   ),
   Product(
     id: 'guide_61',
@@ -867,7 +867,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'KaribischeInselnKreuzfahrt',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FKaribik.pdf?alt=media&token=676caa99-ab2b-4671-939f-70db91fd4e2d',
-    categories: ['Kreuzfahrten', 'Bundles'],
+    categories: ['aida', 'bundle'],
   ),
   Product(
     id: 'guide_62',
@@ -881,7 +881,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'PacklisteUrlaub',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FPackliste.pdf?alt=media&token=bb160fe6-16c4-4e37-bb1a-debcd8b1fb6f',
-    categories: ['Reiseplanung'],
+    categories: ['reiseplanung'],
   ),
   Product(
     id: 'guide_63',
@@ -895,7 +895,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'PacklisteNorwegen',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FPacklisteNorwegen.pdf?alt=media&token=c0bf623b-5464-4016-a1ae-2895b900d4c3',
-    categories: ['Reiseplanung'],
+    categories: ['reiseplanung', 'norwegen'],
   ),
   Product(
     id: 'guide_64',
@@ -909,7 +909,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'PacklisteKreuzfahrt',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FPacklisteKreuzfahrt.pdf?alt=media&token=6e45eced-887f-41e7-a25a-55b6df78d5a8',
-    categories: ['Reiseplanung', 'Kreuzfahrten'],
+    categories: ['aida', 'reiseplanung'],
   ),
   Product(
     id: 'guide_70',
@@ -937,7 +937,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'ChecklisteKreuzfahrt',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FKreuzfahrtCheckliste.pdf?alt=media&token=f3bde97c-1d7d-46db-9fda-677f422ee7c3',
-    categories: ['Reiseplanung', 'Kreuzfahrten'],
+    categories: ['reiseplanung', 'aida'],
   ),
   Product(
     id: 'guide_69',
@@ -965,7 +965,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'ChecklisteUrlaub',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FCheckliste.pdf?alt=media&token=73db0868-5aaa-480c-864e-89677b64c746',
-    categories: ['Reiseplanung'],
+    categories: ['reiseplanung'],
   ),
   Product(
     id: 'guide_67',
@@ -979,7 +979,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'KreuzfahrtPlaner',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FKreuzfahrtPlaner.pdf?alt=media&token=3baefc2d-36d6-49a4-8e51-0fd03b917551',
-    categories: ['Reiseplanung', 'Kreuzfahrten'],
+    categories: ['reiseplanung', 'aida'],
   ),
   Product(
     id: 'guide_68',
@@ -1007,7 +1007,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'AIDAAllgemein',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FAidaAllgemein.pdf?alt=media&token=59c5666d-4e10-41a7-8243-441070b6096c',
-    categories: ['Kreuzfahrten'],
+    categories: ['aida'],
   ),
   Product(
     id: 'guide_72',
@@ -1021,7 +1021,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'AIDAPrimaGuide',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FAIDAPrima.pdf?alt=media&token=a3097b32-28a9-48cf-93d3-0420e373123a',
-    categories: ['Kreuzfahrten'],
+    categories: ['aida'],
   ),
   Product(
     id: 'guide_73',
@@ -1134,7 +1134,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'Lissabon72',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FLissabon72Stunden.pdf?alt=media&token=b54cab84-4496-430d-be86-b0455be077c4',
-    categories: ['Kurztrips'],
+    categories: ['beliebt'],
   ),
   Product(
     id: 'guide_81',
@@ -1148,21 +1148,21 @@ final List<Product> travelGiudes = [
     rcProductId: 'Barcelona48',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FBarcelona48Stunden.pdf?alt=media&token=4f9cf91d-a727-4b25-9e5b-605d7ea8c7e5',
-    categories: ['Kurztrips'],
+    categories: ['spanien', 'beliebt'],
   ),
   Product(
     id: 'guide_82',
-    name: 'Rom in 48 Stunden\n(Digital)',
+    name: 'Rom in 48 Stunden',
     price: 4.99,
     description:
-        'Entdecke die Ewige Stadt in nur zwei Tagen! Unser digitaler Rom-Guide zeigt dir, wie du die Highlights der Stadt effizient erlebst, wo du lecker essen gehen kannst 🍕🍷 und welche versteckten Orte einen besonderen Moment wert sind. Für wen ist dieser Guide geeignet? Für Kurzurlauber, die in 48 Stunden das Beste von Rom erleben möchten ⏰ Für Familien, Paare oder Freundesgruppen, die eine stressfreie Planung lieben 👨👩👧👦💑 Für alle, die Tipps aus erster Hand und Insider-Empfehlungen schätzen 🗺️ Für wen ist er eher nicht geeignet? Für Langzeitreisende, die Rom in Ruhe über Wochen erkunden möchten. Für Reisende, die nur Sightseeing-Listen ohne persönliche Tipps suchen. ✨ Dieser Guide ist liebevoll erlebt und zusammengestellt von MamaTochterOnTour – damit eure Rom-Reise unvergesslich wird! ❤️',
+        'Entdecke Rom in nur 48 Stunden! 🇮🇹✨\n\nDieser digitale Reiseguide zeigt dir, wie du die Highlights der Ewigen Stadt stressfrei erleben kannst – von weltberühmten Sehenswürdigkeiten bis hin zu versteckten Lieblingsorten. Freue dich auf persönliche Empfehlungen, praktische Zeitpläne und ausgewählte Restauranttipps. 🍕🍷\n\n💡 Perfekt für:\n• Kurzurlauber, die das Beste aus zwei Tagen herausholen möchten\n• Familien, Paare und Freundesgruppen\n• Reisende, die eine entspannte Planung mit echten Insider-Tipps schätzen\n\n📍 Das erwartet dich:\n• Die wichtigsten Sehenswürdigkeiten kompakt geplant\n• Restaurant- und Café-Empfehlungen\n• Persönliche Tipps & versteckte Highlights\n• Ein erprobter 48-Stunden-Reiseplan\n\nMit Liebe erlebt und zusammengestellt von MamaTochterOnTour ❤️\n\nDamit eure Reise nach Rom unvergesslich wird.',
     imageUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/guides_bilder%2FRom48.png?alt=media&token=a424ebbb-ff62-443a-b173-aa5744c690f0',
     tab: 2,
     rcProductId: 'Rom48',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FRom48Stunden.pdf?alt=media&token=12fe4854-2bd9-4c37-b474-4902b121817f',
-    categories: ['Kurztrips'],
+    categories: ['beliebt', 'italien'],
   ),
   Product(
     id: 'guide_83',
@@ -1176,7 +1176,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'SanFranciscoRoadtrip',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FSanFranciscoRoadtrip.pdf?alt=media&token=3e304345-a0ef-4f02-a0b3-7ac91f172f5c',
-    categories: ['Fernreisen'],
+    categories: ['beliebt'],
   ),
   Product(
     id: 'guide_84',
@@ -1190,7 +1190,7 @@ final List<Product> travelGiudes = [
     rcProductId: 'ArubaHafentag',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FArubaHafentag.pdf?alt=media&token=c874399b-af7b-454d-8593-82e0683912cb',
-    categories: ['Hafentage'],
+    categories: ['karibik'],
   ),
   Product(
     id: 'guide_85',
@@ -1204,6 +1204,6 @@ final List<Product> travelGiudes = [
     rcProductId: 'ParisHafentag',
     pdfUrl:
         'https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/travel_guides%2FParisHafentag.pdf?alt=media&token=e0b3b8a0-0289-42b0-94ab-727b3f903f33',
-    categories: ['Hafentage'],
+    categories: ['frankreich'],
   ),
 ];

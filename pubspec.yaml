@@ -2,7 +2,7 @@ name: reisetagebuch
 description: "A new Flutter project."
 publish_to: 'none' # private project
 
-version: 2.1.0+24
+version: 2.1.4+35
 
 environment:
   sdk: ^3.10.1
@@ -27,7 +27,7 @@ dependencies:
   flutter_colorpicker: ^1.1.0
   flutter_slidable: ^4.0.3
   crop_your_image: ^2.0.0
-  cached_network_image: ^3.2.3
+  cached_network_image: ^3.4.1
   timeago: ^3.3.0
   intl: ^0.20.2
   percent_indicator: ^4.2.2

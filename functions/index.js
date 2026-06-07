@@ -234,7 +234,6 @@ exports.qaAnswerNotification = onDocumentCreated(
 
       const questionId = event.params.questionId;
 
-      // Frage-Dokument holen
       const questionDoc = await admin
           .firestore()
           .collection("Questions")
@@ -242,27 +241,128 @@ exports.qaAnswerNotification = onDocumentCreated(
           .get();
 
       if (!questionDoc.exists) return;
-      const question = questionDoc.data();
-      const questionUserId = question.userId;
 
-      // User, der die Benachrichtigung bekommen soll
-      const questionUserDoc = await admin
+      const question = questionDoc.data();
+      const questionOwnerId = question.userId;
+
+      // Kein Self-Push
+      if (questionOwnerId === answer.userId) return;
+
+      const questionOwnerDoc = await admin
           .firestore()
           .collection("Users")
-          .doc(questionUserId)
+          .doc(questionOwnerId)
           .get();
 
-      if (!questionUserDoc.exists || !questionUserDoc.data().fcmToken) return;
+      if (!questionOwnerDoc.exists) return;
 
-      const replierUsername = answer.username || "Jemand";
+      const questionOwner = questionOwnerDoc.data();
 
-      // Push senden
+      if (!questionOwner.fcmToken) return;
+
       await sendPush(
-          questionUserDoc.data().fcmToken,
+          questionOwner.fcmToken,
           "Neue Antwort auf deine Frage",
-          `${replierUsername} hat auf deine Frage im Q&A-Board geantwortet: "${answer.answer}"`,
-          {type: "qaAnswer", questionId, answerId: event.params.answerId},
+          `${answer.username} hat auf deine Frage geantwortet.`,
+          {
+            type: "qaAnswer",
+            questionId,
+            answerId: event.params.answerId,
+          },
       );
+    },
+);
+
+// ---------------------------------------------------
+// Q&A-Board Antwort Benachrichtigung (Subcollection Replies)
+// ---------------------------------------------------
+exports.qaReplyNotification = onDocumentCreated(
+    "Questions/{questionId}/Answers/{answerId}/Replies/{replyId}",
+    async (event) => {
+      const reply = event.data.data();
+      if (!reply) return;
+
+      const {questionId, answerId} = event.params;
+
+      const answerDoc = await admin
+          .firestore()
+          .collection("Questions")
+          .doc(questionId)
+          .collection("Answers")
+          .doc(answerId)
+          .get();
+
+      if (!answerDoc.exists) return;
+
+      const answer = answerDoc.data();
+
+      const questionDoc = await admin
+          .firestore()
+          .collection("Questions")
+          .doc(questionId)
+          .get();
+
+      if (!questionDoc.exists) return;
+
+      const question = questionDoc.data();
+
+      const recipients = new Set();
+
+      // Besitzer der Frage
+      if (question.userId !== reply.userId) {
+        recipients.add(question.userId);
+      }
+
+      // Besitzer der Antwort
+      if (answer.userId !== reply.userId) {
+        recipients.add(answer.userId);
+      }
+
+      // Alle bisherigen Reply-Schreiber
+      const repliesSnapshot = await admin
+          .firestore()
+          .collection("Questions")
+          .doc(questionId)
+          .collection("Answers")
+          .doc(answerId)
+          .collection("Replies")
+          .get();
+
+      repliesSnapshot.forEach((doc) => {
+        const r = doc.data();
+
+        if (
+          r.userId &&
+        r.userId !== reply.userId
+        ) {
+          recipients.add(r.userId);
+        }
+      });
+
+      for (const uid of recipients) {
+        const userDoc = await admin
+            .firestore()
+            .collection("Users")
+            .doc(uid)
+            .get();
+
+        if (!userDoc.exists) continue;
+
+        const user = userDoc.data();
+
+        if (!user.fcmToken) continue;
+
+        await sendPush(
+            user.fcmToken,
+            "Neue Aktivität im Q&A",
+            `${reply.username} hat geantwortet.`,
+            {
+              type: "qaReply",
+              questionId,
+              answerId,
+            },
+        );
+      }
     },
 );
 

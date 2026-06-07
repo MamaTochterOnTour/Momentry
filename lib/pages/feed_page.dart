@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../feed/post_card.dart';
 import 'package:intl/intl.dart';
-import 'story_viewer_page.dart';
 import '../feed/feed_filter.dart';
 import '../feed/feed_app_bar.dart';
 import '../../l10n/s.dart';
@@ -108,7 +107,12 @@ class _FeedPageState extends State<FeedPage> {
     return RefreshIndicator(
       onRefresh: () async => setState(() {}),
       child: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        padding: const EdgeInsets.only(
+          left: 12,
+          right: 12,
+          top: 6,
+          bottom: 100, // 👈 sorgt dafür, dass der letzte Post höher sitzt
+        ),
         itemCount: posts.length,
         itemBuilder: (context, index) {
           final post = posts[index];
@@ -129,6 +133,7 @@ class _FeedPageState extends State<FeedPage> {
               post['id'],
               hearts,
               _auth.currentUser!.uid,
+              post['uid'], // 👈 DAS FEHLT
             ),
             showComments: () => _showCommentsSheet(post['id']),
           );
@@ -235,105 +240,6 @@ class _FeedPageState extends State<FeedPage> {
     );
   }
 
-  Widget buildStoryList({List<String>? filterUIDs}) {
-    final cutoff = DateTime.now().subtract(const Duration(hours: 24));
-
-    return StreamBuilder<QuerySnapshot>(
-      stream: _firestore
-          .collection('stories')
-          .where('createdAt', isGreaterThan: Timestamp.fromDate(cutoff))
-          .orderBy('createdAt', descending: true)
-          .snapshots(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) return const SizedBox.shrink();
-
-        final stories = snapshot.data!.docs;
-        List<String> uids = filterUIDs != null
-            ? stories
-                  .map((s) => s['userId'] as String)
-                  .where((uid) => filterUIDs.contains(uid))
-                  .toSet()
-                  .toList()
-            : stories.map((s) => s['userId'] as String).toSet().toList();
-
-        if (uids.isEmpty) return const SizedBox.shrink();
-
-        return SizedBox(
-          height: 100,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            itemCount: uids.length,
-            itemBuilder: (context, index) {
-              final uid = uids[index];
-              return FutureBuilder<DocumentSnapshot>(
-                future: _firestore.collection('Users').doc(uid).get(),
-                builder: (context, userSnapshot) {
-                  if (!userSnapshot.hasData ||
-                      userSnapshot.data!.data() == null) {
-                    return const SizedBox.shrink();
-                  }
-
-                  final userData =
-                      userSnapshot.data!.data() as Map<String, dynamic>;
-                  final profilePic = userData['profilePicture'] ?? '';
-                  final username = userData['username'] ?? 'User';
-
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: GestureDetector(
-                      onTap: () {
-                        final storyDoc = stories.firstWhere(
-                          (s) => s['userId'] == uid,
-                        );
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => StoryViewerPage(
-                              userId: storyDoc['userId'],
-                              isDarkMode: _isDarkMode,
-                              startStoryId: storyDoc.id,
-                            ),
-                          ),
-                        );
-                      },
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                            radius: 35,
-                            backgroundColor: Colors.grey[300],
-                            backgroundImage: profilePic.isNotEmpty
-                                ? NetworkImage(profilePic)
-                                : null,
-                          ),
-                          const SizedBox(height: 4),
-                          SizedBox(
-                            width: 70,
-                            child: Text(
-                              username,
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: _isDarkMode
-                                    ? Colors.white
-                                    : Colors.black,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              );
-            },
-          ),
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final bgColor = _isDarkMode ? Colors.black : Colors.white;
@@ -388,21 +294,6 @@ class _FeedPageState extends State<FeedPage> {
                       // Feed-Tab
                       Column(
                         children: [
-                          const SizedBox(height: 8),
-                          if (_currentFilter != FeedFilter.favorites)
-                            _currentFilter == FeedFilter.friends
-                                ? FutureBuilder<List<String>>(
-                                    future: _getFollowingUIDs(),
-                                    builder: (context, snapshot) {
-                                      if (!snapshot.hasData) {
-                                        return const SizedBox.shrink();
-                                      }
-                                      return buildStoryList(
-                                        filterUIDs: snapshot.data,
-                                      );
-                                    },
-                                  )
-                                : buildStoryList(),
                           Expanded(
                             child: buildFeedStream(
                               showOnlyFriends:
@@ -414,7 +305,7 @@ class _FeedPageState extends State<FeedPage> {
                         ],
                       ),
                       // --- Q&A Tab ---
-                      QATab(isDarkMode: _isDarkMode),
+                      QATab(),
                     ],
                   ),
                 ),

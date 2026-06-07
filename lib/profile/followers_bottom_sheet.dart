@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../pages/user_profil_page.dart';
+import '../../l10n/s.dart';
 
 void openUserListSheet({
   required BuildContext context,
@@ -10,6 +11,7 @@ void openUserListSheet({
 }) {
   final isDarkMode = Theme.of(context).brightness == Brightness.dark;
   final firestore = FirebaseFirestore.instance;
+  final strings = S.of(context)!;
 
   showModalBottomSheet(
     context: context,
@@ -40,8 +42,8 @@ void openUserListSheet({
                   ? Center(
                       child: Text(
                         isFollowerList
-                            ? "Du hast noch keine Follower."
-                            : "Du folgst noch niemandem.",
+                            ? strings.noFollowers3
+                            : strings.notFollowingAnyone3,
                         style: TextStyle(
                           color: isDarkMode ? Colors.white70 : Colors.black54,
                         ),

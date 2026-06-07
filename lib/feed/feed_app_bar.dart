@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../l10n/s.dart';
+import '../pages/follow_suggestions_page.dart';
 
 class FeedAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool isDarkMode;
@@ -22,6 +24,8 @@ class FeedAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final strings = S.of(context)!;
+
     return AppBar(
       backgroundColor: isDarkMode ? Colors.black : Colors.white,
       elevation: 0,
@@ -44,27 +48,30 @@ class FeedAppBar extends StatelessWidget implements PreferredSizeWidget {
           ? TextField(
               controller: searchController,
               autofocus: true,
-              decoration: const InputDecoration(
-                hintText: "Suche...",
+              decoration: InputDecoration(
+                hintText: strings.searchHint,
                 border: InputBorder.none,
               ),
               onChanged: onSearchChanged,
             )
           : Text(
-              title,
+              "Explore",
               style: GoogleFonts.pacifico(
                 fontSize: 26,
                 color: isDarkMode ? Colors.white : Colors.black,
               ),
             ),
-
-      // RECHTS: HERZ
       actions: [
         IconButton(
-          icon: const Icon(Icons.favorite_border),
-          color: isDarkMode ? Colors.white : Colors.black,
+          icon: Icon(
+            Icons.person_add_alt_1, // 👈 "Person + Icon"
+            color: isDarkMode ? Colors.white : Colors.black,
+          ),
           onPressed: () {
-            // später Activity Feed
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => FollowSuggestionsPage()),
+            );
           },
         ),
       ],

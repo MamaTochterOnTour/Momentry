@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../profile/profile_journals_list.dart';
 import '../profile/profile_posts_grid.dart';
-import '../reiseplanung/reiseplanung_page.dart';
 import '../l10n/s.dart';
 
 class ProfileTabs extends StatelessWidget {
@@ -25,7 +24,7 @@ class ProfileTabs extends StatelessWidget {
     final textColor = isDarkMode ? Colors.white : Colors.black;
 
     return DefaultTabController(
-      length: 3,
+      length: 2,
       initialIndex: initialTabIndex,
       child: Column(
         children: [
@@ -34,9 +33,8 @@ class ProfileTabs extends StatelessWidget {
             unselectedLabelColor: textColor,
             indicatorColor: purple,
             tabs: [
-              Tab(text: S.of(context)!.journals),
               Tab(text: S.of(context)!.posts),
-              Tab(text: S.of(context)!.planning),
+              Tab(text: S.of(context)!.journals),
             ],
           ),
           const SizedBox(height: 8),
@@ -46,17 +44,16 @@ class ProfileTabs extends StatelessWidget {
             child: TabBarView(
               physics: const BouncingScrollPhysics(),
               children: [
-                ProfileJournalsList(
-                  reisen: reisen,
-                  isDarkMode: isDarkMode,
-                  purple: purple,
-                ),
                 ProfilePostsGrid(
                   posts: beitraege,
                   isDarkMode: isDarkMode,
                   purple: purple,
                 ),
-                TripsOverviewPage(),
+                ProfileJournalsList(
+                  reisen: reisen,
+                  isDarkMode: isDarkMode,
+                  purple: purple,
+                ),
               ],
             ),
           ),

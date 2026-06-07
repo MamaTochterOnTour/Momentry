@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import '../einstellungen/settings_page.dart';
 import '../pages/premium_verwalten_page.dart';
+import '../pages/edit_profile_page.dart';
 
 class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
   final User? user;
@@ -41,12 +42,26 @@ class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
 
       // 👤 MITTE (Instagram Style)
-      title: Text(
-        username ?? "",
-        style: TextStyle(
-          color: textColor,
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
+      title: GestureDetector(
+        onTap: () {
+          if (username == null || username!.trim().isEmpty) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (_) => const EditProfilePage()),
+            );
+          }
+        },
+        child: Text(
+          (username == null || username!.trim().isEmpty)
+              ? "Username hinzufügen"
+              : username!,
+          style: TextStyle(
+            color: (username == null || username!.trim().isEmpty)
+                ? Colors.redAccent
+                : textColor,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ),
 
