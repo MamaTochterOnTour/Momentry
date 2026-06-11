@@ -21,7 +21,6 @@ class RoadtripEuropaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final strings = S.of(context)!;
     final textColor = isDarkMode ? Colors.white : Colors.black;
-    final lightPurple = const Color(0xFFE6E0F8);
     final darkPurple = const Color(0xFF7B4DE8);
 
     return Scaffold(
@@ -118,24 +117,19 @@ class RoadtripEuropaPage extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                _buildReiseBox(
-                  strings.cotedazurTitle,
-                  strings.cotedazurSubtitle,
-                  Icons.beach_access,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+                _buildReiseThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2Fcotedazur.png?alt=media&token=d64d7968-8cb2-4634-8b9b-9ef55d4fc577",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     CoteDAzurPage(isDarkMode: isDarkMode, userId: userId),
                   ),
                 ),
-                _buildReiseBox(
-                  strings.italienTitle,
-                  strings.italienSubtitle,
-                  Icons.terrain,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildReiseThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2Fitalien.png?alt=media&token=d061eb8e-9467-40bd-ad15-1706d4c25c83",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     ItalienPage(isDarkMode: isDarkMode, userId: userId),
                   ),
@@ -204,43 +198,30 @@ class RoadtripEuropaPage extends StatelessWidget {
     }
   }
 
-  Widget _buildReiseBox(
-    String title,
-    String subtitle,
-    IconData icon,
-    Color bgColor,
-    Color iconColor,
-    VoidCallback onTap,
-  ) {
+  Widget _buildReiseThumbnail({
+    required String imageUrl,
+    required VoidCallback onTap,
+  }) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(16),
+        height: 160,
         decoration: BoxDecoration(
-          color: bgColor,
           borderRadius: BorderRadius.circular(16),
+          image: DecorationImage(
+            image: NetworkImage(imageUrl),
+            fit: BoxFit.cover,
+          ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 40, color: iconColor),
-            const SizedBox(height: 12),
-            Text(
-              title,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                color: iconColor,
-              ),
-              textAlign: TextAlign.center,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              colors: [Colors.black.withValues(alpha: 0.1), Colors.transparent],
             ),
-            const SizedBox(height: 6),
-            Text(
-              subtitle,
-              style: TextStyle(fontSize: 12, color: iconColor),
-              textAlign: TextAlign.center,
-            ),
-          ],
+          ),
         ),
       ),
     );

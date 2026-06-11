@@ -29,7 +29,6 @@ class AidaKreuzfahrtenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final strings = S.of(context)!;
     final textColor = isDarkMode ? Colors.white : Colors.black;
-    final lightPurple = const Color(0xFFE6E0F8);
     final darkPurple = const Color(0xFF7B4DE8);
 
     return Scaffold(
@@ -134,79 +133,64 @@ class AidaKreuzfahrtenPage extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                _buildKreuzfahrtBox(
-                  strings.aidaMediterraneSchaetze,
-                  strings.aidaMediterraneSchaetzeSubtitle,
-                  Icons.sailing,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+                _buildKreuzfahrtThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FMedSchaetze.png?alt=media&token=6571cc73-5ceb-4b05-a23b-8e275573de06",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     MediterraneSchaetzeNovaPage(isDarkMode: isDarkMode),
                   ),
                 ),
-                _buildKreuzfahrtBox(
-                  strings.aidaMediterraneHighlights,
-                  strings.aidaMediterraneHighlightsSubtitle,
-                  Icons.sailing,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildKreuzfahrtThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FMedHighlights.png?alt=media&token=fd2b9dbf-c1c2-4542-b397-bdf755212ae8",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     MediterraneSchaetzeStellaPage(isDarkMode: isDarkMode),
                   ),
                 ),
-                _buildKreuzfahrtBox(
-                  strings.aidaOrient,
-                  strings.aidaOrientSubtitle,
-                  Icons.landscape,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildKreuzfahrtThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FOrient.png?alt=media&token=3a9de5fd-fde6-40f5-92da-f2c8fa36851d",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     DubaiKreuzfahrtPage(isDarkMode: isDarkMode),
                   ),
                 ),
-                _buildKreuzfahrtBox(
-                  strings.aidaDaenemarkSchweden,
-                  strings.aidaDaenemarkSchwedenSubtitle,
-                  Icons.flag,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildKreuzfahrtThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FDaenemarkSchweden.png?alt=media&token=c2fe3039-d373-4caa-abbb-cde76b5341bc",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     DaenemarkSchwedenKreuzfahrtPage(isDarkMode: isDarkMode),
                   ),
                 ),
-                _buildKreuzfahrtBox(
-                  strings.aidaMetropolen,
-                  strings.aidaMetropolenSubtitle,
-                  Icons.location_city,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildKreuzfahrtThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FMetropolen.png?alt=media&token=1abd663a-ca05-473a-9f41-51d8e5e469e3",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     MetropolenAbHamburgPage(isDarkMode: isDarkMode),
                   ),
                 ),
-                _buildKreuzfahrtBox(
-                  strings.aidaSpanienPortugal,
-                  strings.aidaSpanienPortugalSubtitle,
-                  Icons.beach_access,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildKreuzfahrtThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FSpanienPortugal.png?alt=media&token=98b382e2-3b63-4c12-8499-2a6ba6e10da1",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     SpanienPortugalPage(isDarkMode: isDarkMode),
                   ),
                 ),
-                _buildKreuzfahrtBox(
-                  strings.aidaKaribik,
-                  strings.aidaKaribikSubtitle,
-                  Icons.waves,
-                  lightPurple,
-                  darkPurple,
-                  () {
+
+                _buildKreuzfahrtThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FKaribik.png?alt=media&token=7eafbf2a-dfd8-4c8f-9c89-69698b4e33a5",
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -216,35 +200,29 @@ class AidaKreuzfahrtenPage extends StatelessWidget {
                     );
                   },
                 ),
-                _buildKreuzfahrtBox(
-                  strings.aidaNorwegensFjorde,
-                  strings.aidaNorwegensFjordeSubtitle,
-                  Icons.terrain,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildKreuzfahrtThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FNorwegen.png?alt=media&token=2bc2f799-83c3-4fdd-9346-29550762677b",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     NorwegenKreuzfahrtPage(isDarkMode: isDarkMode),
                   ),
                 ),
-                _buildKreuzfahrtBox(
-                  strings.aidaMediterraneMitKorsika,
-                  strings.aidaMediterraneMitKorsikaSubtitle,
-                  Icons.sailing,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildKreuzfahrtThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FMedSchaetzeMitKorsika.png?alt=media&token=501fccb7-7c5c-4102-9fdf-893056d8422a",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     MediterraneSchaetzeMitKorsikaPage(isDarkMode: isDarkMode),
                   ),
                 ),
-                _buildKreuzfahrtBox(
-                  strings.aidaNorwegensFjordeGeiranger,
-                  strings.aidaNorwegensFjordeGeirangerSubtitle,
-                  Icons.terrain,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildKreuzfahrtThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FNorwegen2.png?alt=media&token=ba6fd7a0-b436-4916-bccb-29b99f99e66a",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     NorwegenFjordePage(isDarkMode: isDarkMode),
                   ),
@@ -312,43 +290,30 @@ class AidaKreuzfahrtenPage extends StatelessWidget {
     }
   }
 
-  Widget _buildKreuzfahrtBox(
-    String title,
-    String subtitle,
-    IconData icon,
-    Color bgColor,
-    Color iconColor,
-    VoidCallback onTap,
-  ) {
+  Widget _buildKreuzfahrtThumbnail({
+    required String imageUrl,
+    required VoidCallback onTap,
+  }) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(16),
+        height: 160,
         decoration: BoxDecoration(
-          color: bgColor,
           borderRadius: BorderRadius.circular(16),
+          image: DecorationImage(
+            image: NetworkImage(imageUrl),
+            fit: BoxFit.cover,
+          ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 40, color: iconColor),
-            const SizedBox(height: 12),
-            Text(
-              title,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                color: iconColor,
-              ),
-              textAlign: TextAlign.center,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              colors: [Colors.black.withValues(alpha: 0.1), Colors.transparent],
             ),
-            const SizedBox(height: 6),
-            Text(
-              subtitle,
-              style: TextStyle(fontSize: 12, color: iconColor),
-              textAlign: TextAlign.center,
-            ),
-          ],
+          ),
         ),
       ),
     );

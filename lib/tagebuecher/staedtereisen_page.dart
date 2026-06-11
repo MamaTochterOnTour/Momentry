@@ -29,7 +29,6 @@ class StaedtereisenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final strings = S.of(context)!;
     final textColor = isDarkMode ? Colors.white : Colors.black;
-    final lightPurple = const Color(0xFFE6E0F8);
     final darkPurple = const Color(0xFF7B4DE8);
 
     return Scaffold(
@@ -132,79 +131,64 @@ class StaedtereisenPage extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                _buildCityBox(
-                  strings.parisTitle,
-                  strings.parisSubtitle,
-                  Icons.favorite,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+                _buildCityThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FParis.png?alt=media&token=13fe372c-0e34-49ec-a1a2-c155557b5ba7",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     ParisPage(isDarkMode: isDarkMode, userId: userId),
                   ),
                 ),
-                _buildCityBox(
-                  strings.berlinTitle,
-                  strings.berlinSubtitle,
-                  Icons.location_city,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildCityThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FBerlin.png?alt=media&token=4a175d43-a322-4a02-9d63-73322359f963",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     BerlinPage(isDarkMode: isDarkMode, userId: userId),
                   ),
                 ),
-                _buildCityBox(
-                  strings.hamburgTitle,
-                  strings.hamburgSubtitle,
-                  Icons.sailing,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildCityThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FHamburg.png?alt=media&token=87375cc9-2931-4383-b243-5cee23789735",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     HamburgPage(isDarkMode: isDarkMode, userId: userId),
                   ),
                 ),
-                _buildCityBox(
-                  strings.londonTitle,
-                  strings.londonSubtitle,
-                  Icons.account_balance,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildCityThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FLondon.png?alt=media&token=5e0afa35-3840-4970-9b85-89249d6d89fa",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     LondonPage(isDarkMode: isDarkMode, userId: userId),
                   ),
                 ),
-                _buildCityBox(
-                  strings.romTitle,
-                  strings.romSubtitle,
-                  Icons.account_balance_wallet,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildCityThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FRom.png?alt=media&token=0589fd33-6236-4c7b-95ab-4754f1fadfde",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     RomPage(isDarkMode: isDarkMode, userId: userId),
                   ),
                 ),
-                _buildCityBox(
-                  strings.wienTitle,
-                  strings.wienSubtitle,
-                  Icons.star,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildCityThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FWien.png?alt=media&token=e762b09d-9ea7-4eb4-8639-d3259e65e7b5",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     WienPage(isDarkMode: isDarkMode, userId: userId),
                   ),
                 ),
-                _buildCityBox(
-                  strings.genuaTitle,
-                  strings.genuaSubtitle,
-                  Icons.map,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildCityThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FGenua.png?alt=media&token=c8f51a48-6d65-491a-b19f-fd78488c2f0e",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     GenuaPage(isDarkMode: isDarkMode, userId: userId),
                   ),
@@ -271,43 +255,30 @@ class StaedtereisenPage extends StatelessWidget {
     }
   }
 
-  Widget _buildCityBox(
-    String title,
-    String subtitle,
-    IconData icon,
-    Color bgColor,
-    Color iconColor,
-    VoidCallback? onTap,
-  ) {
+  Widget _buildCityThumbnail({
+    required String imageUrl,
+    required VoidCallback onTap,
+  }) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(16),
+        height: 160,
         decoration: BoxDecoration(
-          color: bgColor,
           borderRadius: BorderRadius.circular(16),
+          image: DecorationImage(
+            image: NetworkImage(imageUrl),
+            fit: BoxFit.cover,
+          ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 40, color: iconColor),
-            const SizedBox(height: 12),
-            Text(
-              title,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                color: iconColor,
-              ),
-              textAlign: TextAlign.center,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              colors: [Colors.black.withValues(alpha: 0.1), Colors.transparent],
             ),
-            const SizedBox(height: 6),
-            Text(
-              subtitle,
-              style: TextStyle(fontSize: 12, color: iconColor),
-              textAlign: TextAlign.center,
-            ),
-          ],
+          ),
         ),
       ),
     );

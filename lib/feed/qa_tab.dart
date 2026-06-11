@@ -48,7 +48,9 @@ class _QATabState extends State<QATab> {
                     style: TextStyle(color: textColor),
                     decoration: InputDecoration(
                       hintText: "Fragen suchen...",
-                      hintStyle: TextStyle(color: textColor.withOpacity(0.6)),
+                      hintStyle: TextStyle(
+                        color: textColor.withValues(alpha: 0.6),
+                      ),
                       border: InputBorder.none,
                     ),
                     onChanged: (value) {
@@ -831,8 +833,9 @@ class _CommentSheetState extends ConsumerState<_CommentSheet> {
                                         .orderBy('createdTime')
                                         .snapshots(),
                                     builder: (context, snap) {
-                                      if (!snap.hasData)
+                                      if (!snap.hasData) {
                                         return const SizedBox();
+                                      }
 
                                       final replies = snap.data!.docs;
                                       final count = replies.length;
@@ -994,8 +997,9 @@ class _CommentSheetState extends ConsumerState<_CommentSheet> {
                                                                     .instance
                                                                     .currentUser
                                                                     ?.uid;
-                                                            if (uid == null)
+                                                            if (uid == null) {
                                                               return;
+                                                            }
 
                                                             if (isReplyLiked) {
                                                               await replyRef

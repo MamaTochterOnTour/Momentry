@@ -25,7 +25,7 @@ class SDe extends S {
       'Willkommen in unserem Reisetagebuch! Hier sammeln wir all unsere wundervollen Erinnerungen, kleine und große Abenteuer, spontane Erlebnisse und ganz besondere Herzensmomente, die wir als Mama und Tochter gemeinsam erlebt haben. 💖\n\nWir waren unter anderem in Norwegen, Italien, der Karibik, den UAE, USA, Spanien, Portugal, Frankreich und vieles mehr. 🌏\n\nZudem warten Hotelempfehlungen 🏨, Restauranttipps 🍽️ und exklusive Insider-Tipps 🔍 auf dich.';
 
   @override
-  String get ourDestinations => 'Unsere Reiseziele 🌟';
+  String get ourDestinations => 'Unsere Reisetagebücher 🌟';
 
   @override
   String get discoverAdventures => 'Entdecke unsere Abenteuer rund um die Welt';
@@ -59,14 +59,14 @@ class SDe extends S {
   String get roadtripEuropeTitle => 'Roadtrips Europa';
 
   @override
-  String get roadtripEuropeSubtitle => 'Mit dem Auto durch Europas Wunder 🚗💜';
+  String get roadtripEuropeSubtitle =>
+      'Europas Straßen, unzählige Abenteuer 🚗💜';
 
   @override
   String get cityTripsTitle => 'Städtereisen';
 
   @override
-  String get cityTripsSubtitle =>
-      'Zwischen Türmen, Cafés & Kopfsteinpflaster 🏰✨';
+  String get cityTripsSubtitle => 'Zwischen Kultur, Genuss und Geschichte ✨';
 
   @override
   String get seasideGetawaysTitle => 'Auszeiten am Meer';

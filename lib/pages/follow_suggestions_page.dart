@@ -265,8 +265,9 @@ class _FollowSuggestionsPageState extends State<FollowSuggestionsPage> {
                                       .collection('Users')
                                       .snapshots(),
                                   builder: (context, userSnap) {
-                                    if (!userSnap.hasData)
+                                    if (!userSnap.hasData) {
                                       return const SizedBox();
+                                    }
 
                                     final users = userSnap.data!.docs.where((
                                       doc,

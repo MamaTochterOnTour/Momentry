@@ -250,8 +250,8 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
               child: ElevatedButton(
                 onPressed: _isUploading ? null : _uploadPost,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepPurple.withOpacity(
-                    _isFormValid ? 1 : 0.5,
+                  backgroundColor: Colors.deepPurple.withValues(
+                    alpha: _isFormValid ? 1 : 0.5,
                   ),
                 ),
                 child: _isUploading
@@ -351,7 +351,7 @@ class _UploadPostPageState extends ConsumerState<UploadPostPage> {
                       end: Alignment.bottomCenter,
                       colors: [
                         Colors.transparent,
-                        Colors.black.withOpacity(0.3),
+                        Colors.black.withValues(alpha: 0.3),
                       ],
                     ),
                   ),

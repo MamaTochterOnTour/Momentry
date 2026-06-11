@@ -104,7 +104,7 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
                         'createdTime': Timestamp.now(),
                       });
 
-                      if (!mounted) return;
+                      if (!context.mounted) return;
                       Navigator.pop(context);
                     } catch (e) {
                       debugPrint("Q&A Error: $e");

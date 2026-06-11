@@ -41,7 +41,7 @@ class MySearchDelegate extends SearchDelegate<String> {
             .collection('Questions')
             .orderBy('question')
             .startAt([query])
-            .endAt([query + '\uf8ff'])
+            .endAt(['$query\uf8ff'])
             .snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
@@ -81,13 +81,13 @@ class MySearchDelegate extends SearchDelegate<String> {
                 .collection('Questions')
                 .orderBy('question')
                 .startAt([query])
-                .endAt([query + '\uf8ff'])
+                .endAt(['$query\uf8ff'])
                 .snapshots()
           : FirebaseFirestore.instance
                 .collection('Posts') // falls du Feed hast
                 .orderBy('text')
                 .startAt([query])
-                .endAt([query + '\uf8ff'])
+                .endAt(['$query\uf8ff'])
                 .snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return const SizedBox();

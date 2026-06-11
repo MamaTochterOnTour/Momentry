@@ -183,7 +183,9 @@ class _TodoPageState extends ConsumerState<TodoPage> {
           icon: Icon(Icons.arrow_back, color: textColor),
           onPressed: () async {
             await _saveTodos();
-            if (mounted) Navigator.pop(context);
+
+            if (!context.mounted) return;
+            Navigator.pop(context);
           },
         ),
       ),

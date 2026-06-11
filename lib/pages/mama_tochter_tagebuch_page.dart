@@ -5,13 +5,9 @@ import '../tagebuecher/aida_kreuzfahrten_page.dart';
 import '../tagebuecher/fernreisen_page.dart';
 import '../tagebuecher/roadtrip_europa_page.dart';
 import '../tagebuecher/staedtereisen_page.dart';
-import '../tagebuecher/auszeiten_am_meer_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../l10n/s.dart';
-import '../providers/premium_provider.dart';
-import '../liveboard/liveboard_page.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class MamaTochterTagebuchPage extends StatefulWidget {
   final String? userId; // UID für Navigationszwecke
@@ -104,7 +100,7 @@ class _MamaTochterTagebuchPageState extends State<MamaTochterTagebuchPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(16),
                       child: Text(
-                        strings.welcomeText,
+                        'Willkommen in unserem Reisetagebuch!\nHier sammeln wir all unsere wundervollen Erinnerungen, kleine und große Abenteuer, spontane Erlebnisse und ganz besondere Herzensmomente, die wir als Mama und Tochter gemeinsam erlebt haben. 💖',
                         style: TextStyle(
                           color: textColor,
                           fontSize: 14,
@@ -166,41 +162,6 @@ class _MamaTochterTagebuchPageState extends State<MamaTochterTagebuchPage> {
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
-                      Consumer(
-                        builder: (context, ref, _) {
-                          final isPremium =
-                              ref.watch(premiumProvider).value ?? false;
-
-                          return _buildCategoryBox(
-                            strings.mallorcaTitle1,
-                            strings.mallorcaSubtitle,
-                            Icons.explore,
-                            lightPurple,
-                            darkPurple,
-                            onTap: () {
-                              if (isPremium) {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) =>
-                                        const MallorcaLiveboardPage(),
-                                  ),
-                                );
-                              } else {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text(strings.comingSoon3),
-                                    backgroundColor: const Color(0xFF7B4DE8),
-                                    behavior: SnackBarBehavior.floating,
-                                    margin: const EdgeInsets.all(16),
-                                    duration: const Duration(seconds: 2),
-                                  ),
-                                );
-                              }
-                            },
-                          );
-                        },
-                      ),
                       _buildCategoryBox(
                         strings.aidaCruisesTitle,
                         strings.aidaCruisesSubtitle,
@@ -270,25 +231,6 @@ class _MamaTochterTagebuchPageState extends State<MamaTochterTagebuchPage> {
                             context,
                             MaterialPageRoute(
                               builder: (context) => StaedtereisenPage(
-                                isDarkMode: _isDarkMode,
-                                userId: userId,
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                      _buildCategoryBox(
-                        strings.seasideGetawaysTitle,
-                        strings.seasideGetawaysSubtitle,
-                        Icons.beach_access,
-                        lightPurple,
-                        darkPurple,
-                        onTap: () {
-                          if (userId == null) return;
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => AuszeitenAmMeerPage(
                                 isDarkMode: _isDarkMode,
                                 userId: userId,
                               ),
@@ -366,26 +308,6 @@ class _MamaTochterTagebuchPageState extends State<MamaTochterTagebuchPage> {
 
                   const SizedBox(height: 30),
 
-                  // Hinweis & Disclaimer
-                  Text(
-                    strings.note,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: secondaryColor,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    strings.disclaimer,
-                    style: TextStyle(
-                      color: secondaryColor,
-                      fontSize: 12,
-                      height: 1.4,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
                   const SizedBox(height: 40),
                 ],
               ),

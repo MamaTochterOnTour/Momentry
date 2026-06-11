@@ -23,7 +23,6 @@ class FernreisenPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final strings = S.of(context)!;
     final textColor = isDarkMode ? Colors.white : Colors.black;
-    final lightPurple = const Color(0xFFE6E0F8);
     final darkPurple = const Color(0xFF7B4DE8);
 
     return Scaffold(
@@ -127,46 +126,37 @@ class FernreisenPage extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                _buildReiseBox(
-                  strings.floridaTitle,
-                  strings.floridaSubtitle,
-                  Icons.beach_access,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+                _buildReiseThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FFlorida.png?alt=media&token=6c9b1132-ea9e-4a10-9aa0-18bec6c93929",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     FloridaPage(isDarkMode: isDarkMode, userId: userId),
                   ),
                 ),
-                _buildReiseBox(
-                  strings.kalifornienTitle,
-                  strings.kalifornienSubtitle,
-                  Icons.terrain,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildReiseThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FKalifornien.png?alt=media&token=8055d4d5-4272-41de-a9da-36229f4b0377",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     KalifornienPage(isDarkMode: isDarkMode, userId: userId),
                   ),
                 ),
-                _buildReiseBox(
-                  strings.dubaiTitle,
-                  strings.dubaiSubtitle,
-                  Icons.location_city,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildReiseThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FDubai.png?alt=media&token=e755b513-ec19-4721-b27b-5964a45f2876",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     DubaiPage(isDarkMode: isDarkMode, userId: userId),
                   ),
                 ),
-                _buildReiseBox(
-                  strings.newyorkTitle,
-                  strings.newyorkSubtitle,
-                  Icons.location_city,
-                  lightPurple,
-                  darkPurple,
-                  () => checkPremiumAndNavigate(
+
+                _buildReiseThumbnail(
+                  imageUrl:
+                      "https://firebasestorage.googleapis.com/v0/b/reiseapp-mamatocherontour.firebasestorage.app/o/bilder%2FThumbnails%2FNewYork.png?alt=media&token=08c3c3be-369c-48c7-b19f-7d9bae1e5d6a",
+                  onTap: () => checkPremiumAndNavigate(
                     context,
                     NewYorkPage(isDarkMode: isDarkMode, userId: userId),
                   ),
@@ -235,43 +225,30 @@ class FernreisenPage extends StatelessWidget {
     }
   }
 
-  Widget _buildReiseBox(
-    String title,
-    String subtitle,
-    IconData icon,
-    Color bgColor,
-    Color iconColor,
-    VoidCallback onTap,
-  ) {
+  Widget _buildReiseThumbnail({
+    required String imageUrl,
+    required VoidCallback onTap,
+  }) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(16),
+        height: 160,
         decoration: BoxDecoration(
-          color: bgColor,
           borderRadius: BorderRadius.circular(16),
+          image: DecorationImage(
+            image: NetworkImage(imageUrl),
+            fit: BoxFit.cover,
+          ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 40, color: iconColor),
-            const SizedBox(height: 12),
-            Text(
-              title,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-                color: iconColor,
-              ),
-              textAlign: TextAlign.center,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              colors: [Colors.black.withValues(alpha: 0.1), Colors.transparent],
             ),
-            const SizedBox(height: 6),
-            Text(
-              subtitle,
-              style: TextStyle(fontSize: 12, color: iconColor),
-              textAlign: TextAlign.center,
-            ),
-          ],
+          ),
         ),
       ),
     );

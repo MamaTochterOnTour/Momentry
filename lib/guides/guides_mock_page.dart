@@ -60,15 +60,26 @@ class GuidesMockPage extends ConsumerWidget {
                       : const Color(0xFFE6E0F8),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Center(
-                  child: Text(
-                    "❤️ Mama-Tochter Reisetagebücher",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: textColor,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "❤️ Mama-Tochter Reisetagebücher",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: textColor,
+                      ),
                     ),
-                  ),
+                    const SizedBox(height: 6),
+                    Text(
+                      "Tippe hier zum Entdecken",
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: textColor.withValues(alpha: 0.7),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -128,39 +139,6 @@ class GuidesMockPage extends ConsumerWidget {
 
           const SizedBox(height: 16),
 
-          _SubSection(title: "Norwegen", isDarkMode: isDarkMode),
-
-          _HorizontalList(
-            products: travelGiudes
-                .where((p) => p.categories.contains('norwegen'))
-                .toList(),
-            isDarkMode: isDarkMode,
-          ),
-
-          const SizedBox(height: 16),
-
-          _SubSection(title: "Kanaren", isDarkMode: isDarkMode),
-
-          _HorizontalList(
-            products: travelGiudes
-                .where((p) => p.categories.contains('kanaren'))
-                .toList(),
-            isDarkMode: isDarkMode,
-          ),
-
-          const SizedBox(height: 16),
-
-          _SubSection(title: "Karibik", isDarkMode: isDarkMode),
-
-          _HorizontalList(
-            products: travelGiudes
-                .where((p) => p.categories.contains('karibik'))
-                .toList(),
-            isDarkMode: isDarkMode,
-          ),
-
-          const SizedBox(height: 16),
-
           _SubSection(title: "Deutschland", isDarkMode: isDarkMode),
 
           _HorizontalList(
@@ -180,52 +158,6 @@ class GuidesMockPage extends ConsumerWidget {
                 .toList(),
             isDarkMode: isDarkMode,
           ),
-
-          const SizedBox(height: 16),
-
-          _SubSection(title: "Niederlande", isDarkMode: isDarkMode),
-
-          _HorizontalList(
-            products: travelGiudes
-                .where((p) => p.categories.contains('niederlande'))
-                .toList(),
-            isDarkMode: isDarkMode,
-          ),
-
-          const SizedBox(height: 16),
-
-          _SubSection(title: "England", isDarkMode: isDarkMode),
-
-          _HorizontalList(
-            products: travelGiudes
-                .where((p) => p.categories.contains('england'))
-                .toList(),
-            isDarkMode: isDarkMode,
-          ),
-
-          const SizedBox(height: 16),
-
-          _SubSection(title: "Belgien", isDarkMode: isDarkMode),
-
-          _HorizontalList(
-            products: travelGiudes
-                .where((p) => p.categories.contains('belgien'))
-                .toList(),
-            isDarkMode: isDarkMode,
-          ),
-
-          const SizedBox(height: 28),
-
-          // ================= REISEPLANUNG =================
-          _SectionTitle(title: "🧭 Reiseplanung", isDarkMode: isDarkMode),
-
-          _HorizontalList(
-            products: travelGiudes
-                .where((p) => p.categories.contains('reiseplanung'))
-                .toList(),
-            isDarkMode: isDarkMode,
-          ),
-
           const SizedBox(height: 40),
         ],
       ),
