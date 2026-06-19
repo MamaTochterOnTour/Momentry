@@ -487,7 +487,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
             Center(
               child: Text(
-                strings.appVersion("2.1.4"),
+                strings.appVersion("3.0.0"),
                 style: GoogleFonts.nunito(color: textColor, fontSize: 16),
               ),
             ),

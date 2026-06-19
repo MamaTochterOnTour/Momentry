@@ -6,11 +6,12 @@ import 'package:timeago/timeago.dart' as timeago;
 import 'user_profil_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'edit_post_page.dart';
-import 'package:logger/logger.dart';
 import 'premium_verwalten_page.dart';
 import 'package:video_player/video_player.dart';
 import '../../l10n/s.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 // -------------------- Hauptseite --------------------
 class PostDetailPage extends StatelessWidget {
@@ -27,7 +28,6 @@ class PostDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final logger = Logger();
     final strings = S.of(context)!;
     return Scaffold(
       appBar: AppBar(
@@ -44,15 +44,15 @@ class PostDetailPage extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: isDarkMode ? Colors.black : Colors.grey[200],
+      backgroundColor: isDarkMode ? Colors.black : Colors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: FutureBuilder<DocumentSnapshot>(
-            future: FirebaseFirestore.instance
+          child: StreamBuilder<DocumentSnapshot>(
+            stream: FirebaseFirestore.instance
                 .collection('Posts')
                 .doc(postId)
-                .get(),
+                .snapshots(),
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
                 return const Center(child: CircularProgressIndicator());
@@ -64,8 +64,15 @@ class PostDetailPage extends StatelessWidget {
                 post: {'id': snapshot.data!.id, ...data},
                 userLiked: userLiked,
                 isDarkMode: isDarkMode,
-                toggleLike: () {
-                  logger.i("Toggle Like");
+                toggleLike: () async {
+                  final userId = FirebaseAuth.instance.currentUser!.uid;
+
+                  await PostService().toggleLike(
+                    snapshot.data!.id,
+                    List<dynamic>.from(data['hearts'] ?? []),
+                    userId,
+                    data['uid'],
+                  );
                 },
                 showComments: () {
                   showModalBottomSheet(
@@ -113,8 +120,11 @@ class _PostCardState extends State<PostCard>
   bool _showHeart = false;
   bool _isExpanded = false; // NEU: steuert Caption/Hashtags einklappen
   late AnimationController _controller;
+
   PageController? _pageController;
   int _currentPage = 0;
+
+  bool _shouldLoadMedia = false;
 
   @override
   void initState() {
@@ -137,95 +147,45 @@ class _PostCardState extends State<PostCard>
     final mediaUrls = widget.post['mediaUrls'] as List<dynamic>?;
     final mediaTypes = widget.post['mediaTypes'] as List<dynamic>?;
 
-    // Fallback für alte Posts
-    if ((mediaUrls == null || mediaUrls.isEmpty) &&
-        widget.post['image'] != null) {
-      final url = widget.post['image'];
-      final type = widget.post['mediaType'] ?? 'image';
-      return AspectRatio(
-        aspectRatio: 3 / 4,
-        child: GestureDetector(
-          onDoubleTap: _onDoubleTapLike,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              type == 'video'
-                  ? VideoPostPlayer(videoUrl: url)
-                  : Image.network(url, fit: BoxFit.cover),
-              if (_showHeart)
-                ScaleTransition(
-                  scale: _controller,
-                  child: const Icon(
-                    Icons.favorite,
-                    color: Colors.red,
-                    size: 100,
-                  ),
-                ),
-            ],
-          ),
-        ),
-      );
-    }
-
-    // Keine Medien vorhanden
-    if (mediaUrls == null || mediaUrls.isEmpty) return const SizedBox.shrink();
-
-    // Einzel-Medium
-    if (mediaUrls.length == 1) {
-      final url = mediaUrls[0];
-      final type = mediaTypes != null && mediaTypes.isNotEmpty
-          ? mediaTypes[0]
-          : 'image';
-      return AspectRatio(
-        aspectRatio: 3 / 4,
-        child: GestureDetector(
-          onDoubleTap: _onDoubleTapLike,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              type == 'video'
-                  ? VideoPostPlayer(videoUrl: url)
-                  : Image.network(url, fit: BoxFit.cover),
-              if (_showHeart)
-                ScaleTransition(
-                  scale: _controller,
-                  child: const Icon(
-                    Icons.favorite,
-                    color: Colors.red,
-                    size: 100,
-                  ),
-                ),
-            ],
-          ),
-        ),
-      );
-    }
-
-    // Mehrere Medien → PageView + Punkte + Double-Tap
-    return Column(
-      children: [
-        AspectRatio(
-          aspectRatio: 3 / 4,
-          child: PageView.builder(
-            controller: _pageController,
-            itemCount: mediaUrls.length,
-            onPageChanged: (index) {
-              setState(() => _currentPage = index);
-            },
-            itemBuilder: (context, index) {
-              final url = mediaUrls[index];
-              final type = mediaTypes != null && index < mediaTypes.length
-                  ? mediaTypes[index]
-                  : 'image';
-
-              return GestureDetector(
+    // Wrap the media rendering with VisibilityDetector
+    return VisibilityDetector(
+      key: Key(
+        'post_media_${widget.post['id']}',
+      ), // Eindeutiger Schlüssel für jeden Post
+      onVisibilityChanged: (info) {
+        // Laden, wenn mindestens 50% sichtbar sind
+        if (info.visibleFraction >= 0.5 && !_shouldLoadMedia) {
+          setState(() {
+            _shouldLoadMedia = true;
+          });
+        }
+      },
+      child: _shouldLoadMedia
+          ? AspectRatio(
+              aspectRatio: 3 / 4,
+              child: GestureDetector(
                 onDoubleTap: _onDoubleTapLike,
                 child: Stack(
                   alignment: Alignment.center,
                   children: [
-                    type == 'video'
-                        ? VideoPostPlayer(videoUrl: url)
-                        : Image.network(url, fit: BoxFit.cover),
+                    // Fallback für alte Posts mit einzelnem Bild/Video
+                    if ((mediaUrls == null || mediaUrls.isEmpty) &&
+                        widget.post['image'] != null)
+                      _buildSingleMediaContent(
+                        widget.post['image'],
+                        widget.post['mediaType'] ?? 'image',
+                      ),
+                    // Einzelnes Medium (moderne Posts)
+                    if (mediaUrls != null && mediaUrls.length == 1)
+                      _buildSingleMediaContent(
+                        mediaUrls[0],
+                        mediaTypes != null && mediaTypes.isNotEmpty
+                            ? mediaTypes[0]
+                            : 'image',
+                      ),
+                    // Mehrere Medien → PageView + Punkte
+                    if (mediaUrls != null && mediaUrls.length > 1)
+                      _buildMultiMediaContent(mediaUrls, mediaTypes),
                     if (_showHeart)
                       ScaleTransition(
                         scale: _controller,
@@ -237,7 +197,45 @@ class _PostCardState extends State<PostCard>
                       ),
                   ],
                 ),
-              );
+              ),
+            )
+          : const SizedBox(
+              height: 300, // Platzhalterhöhe, kann angepasst werden
+              child: Center(
+                child: CircularProgressIndicator(),
+              ), // Ladeindikator oder leeres Widget
+            ),
+    );
+  }
+
+  // Helper method for single media content
+  Widget _buildSingleMediaContent(String url, String type) {
+    return type == 'video'
+        ? VideoPostPlayer(videoUrl: url)
+        : Image.network(url, fit: BoxFit.cover);
+  }
+
+  // Helper method for multiple media content (PageView)
+  Widget _buildMultiMediaContent(
+    List<dynamic> mediaUrls,
+    List<dynamic>? mediaTypes,
+  ) {
+    return Column(
+      children: [
+        Expanded(
+          child: PageView.builder(
+            controller: _pageController,
+            itemCount: mediaUrls.length,
+            onPageChanged: (index) => setState(() => _currentPage = index),
+            itemBuilder: (context, index) {
+              final url = mediaUrls[index];
+              final type = mediaTypes != null && index < mediaTypes.length
+                  ? mediaTypes[index]
+                  : 'image';
+              return _buildSingleMediaContent(
+                url,
+                type,
+              ); // Wiederverwendung des Single Media Builders
             },
           ),
         ),
@@ -271,52 +269,31 @@ class _PostCardState extends State<PostCard>
     return truncated.substring(0, lastSpace);
   }
 
-  String _getTimeAgo(Timestamp createdTime) {
-    final now = DateTime.now();
-    final date = createdTime.toDate();
-    final diff = now.difference(date);
+  // String _getTimeAgo(Timestamp createdTime) {
+  //  final now = DateTime.now();
+  //  final now = DateTime.now();
+  // final date = createdTime.toDate();
+  // final diff = now.difference(date);
 
-    if (diff.inDays >= 7) {
-      return '${date.day}.${date.month}.${date.year}';
-    } else if (diff.inDays >= 1) {
-      return 'vor ${diff.inDays} Tag${diff.inDays > 1 ? 'en' : ''}';
-    } else if (diff.inHours >= 1) {
-      return 'vor ${diff.inHours} Stunde${diff.inHours > 1 ? 'n' : ''}';
-    } else if (diff.inMinutes >= 1) {
-      return 'vor ${diff.inMinutes} Minute${diff.inMinutes > 1 ? 'n' : ''}';
-    } else {
-      return 'gerade eben';
-    }
-  }
+  // final strings = S.of(context)!; // generierte Strings
 
-  void _toggleLike() async {
-    final currentUserId = FirebaseAuth.instance.currentUser!.uid;
-    List<dynamic> hearts = List.from(widget.post['hearts'] ?? []);
-
-    setState(() {
-      if (hearts.contains(currentUserId)) {
-        hearts.remove(currentUserId);
-      } else {
-        hearts.add(currentUserId);
-      }
-      widget.post['hearts'] =
-          hearts; // lokal aktualisieren, damit UI sofort reagiert
-    });
-
-    // Firestore aktualisieren
-    await FirebaseFirestore.instance
-        .collection('Posts')
-        .doc(widget.post['id'])
-        .update({'hearts': hearts});
-  }
+  // if (diff.inDays >= 7) {
+  //   return '${date.day}.${date.month}.${date.year}'; // immer noch Datum, kein Text
+  // } else if (diff.inDays >= 1) {
+  //   return strings.timeAgoDays(diff.inDays);
+  // } else if (diff.inHours >= 1) {
+  //   return strings.timeAgoHours(diff.inHours);
+  // } else if (diff.inMinutes >= 1) {
+  //   return strings.timeAgoMinutes(diff.inMinutes);
+  // } else {
+  //   return strings.timeAgoJustNow;
+  // }
+  // }
 
   // Funktion zum Öffnen des Likes-BottomSheets
   void _showLikesSheet(List<dynamic> hearts) {
     final isDarkMode = widget.isDarkMode;
     final strings = S.of(context)!;
-    final firstUsername =
-        'User'; // Platzhalter, hier solltest du den echten Usernamen holen
-    final othersCount = hearts.length - 1;
 
     showModalBottomSheet(
       context: context,
@@ -343,10 +320,7 @@ class _PostCardState extends State<PostCard>
               Padding(
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Text(
-                  strings.likesCount(
-                    firstUsername,
-                    othersCount,
-                  ), // zwei Argumente!
+                  strings.likesCount2(hearts.length),
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -399,10 +373,8 @@ class _PostCardState extends State<PostCard>
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (_) => OtherUserProfilePage(
-                                  userId: uid,
-                                  isDarkMode: widget.isDarkMode,
-                                ),
+                                builder: (_) =>
+                                    OtherUserProfilePage(userId: uid),
                               ),
                             );
                           },
@@ -421,7 +393,6 @@ class _PostCardState extends State<PostCard>
 
   // -------------------- Gefällt mir Text --------------------
   Widget buildLikesText() {
-    final strings = S.of(context)!;
     final hearts = widget.post['hearts'] as List<dynamic>? ?? [];
     if (hearts.isEmpty) {
       return const SizedBox.shrink(); // nichts anzeigen, wenn niemand geliked hat
@@ -441,7 +412,14 @@ class _PostCardState extends State<PostCard>
         final profilePic = userData['profilePicture'] ?? '';
         final othersCount = hearts.length - 1;
 
-        final text = strings.likesCount(firstUsername, othersCount);
+        final strings = S.of(context)!;
+        String text;
+
+        if (othersCount > 0) {
+          text = strings.likesTextMultiple(firstUsername, othersCount);
+        } else {
+          text = strings.likesTextSingle(firstUsername);
+        }
 
         return Padding(
           padding: const EdgeInsets.only(top: 4, bottom: 4),
@@ -487,9 +465,17 @@ class _PostCardState extends State<PostCard>
   }
 
   void _onDoubleTapLike() {
-    _toggleLike(); // Herz wird aktualisiert + Firestore
+    final hearts = widget.post['hearts'] as List<dynamic>? ?? [];
+    final userId = FirebaseAuth.instance.currentUser!.uid;
+    final isLiked = hearts.contains(userId);
+
+    if (!isLiked) {
+      widget.toggleLike();
+    }
+
     setState(() => _showHeart = true);
     _controller.forward(from: 0.5);
+
     Future.delayed(const Duration(milliseconds: 800), () {
       setState(() => _showHeart = false);
     });
@@ -518,6 +504,9 @@ class _PostCardState extends State<PostCard>
     final postOwnerId = widget.post['uid'];
     final isOwnPost = currentUserId == postOwnerId;
     final strings = S.of(context)!;
+    final hearts = widget.post['hearts'] as List<dynamic>? ?? [];
+    final userId = FirebaseAuth.instance.currentUser!.uid;
+    final isLiked = hearts.contains(userId);
 
     return StreamBuilder<DocumentSnapshot>(
       stream: FirebaseFirestore.instance
@@ -566,19 +555,24 @@ class _PostCardState extends State<PostCard>
                                 context,
                                 MaterialPageRoute(
                                   builder: (_) => OtherUserProfilePage(
-                                    userId: widget
-                                        .post['uid'], // DIE UID DES POSTS → PROFIL DES USERS
-                                    isDarkMode: widget.isDarkMode,
+                                    userId: widget.post['uid'],
                                   ),
                                 ),
                               );
                             },
                             child: Text(
-                              widget.post['username'] ?? 'User',
-                              style: TextStyle(
+                              userSnapshot.hasData &&
+                                      userSnapshot.data!.data() != null
+                                  ? (userSnapshot.data!.data()
+                                            as Map<
+                                              String,
+                                              dynamic
+                                            >)['username'] ??
+                                        'User'
+                                  : 'User',
+                              style: const TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Colors
-                                    .blueAccent, // Optional: Macht klar, dass es klickbar ist
+                                color: Colors.blueAccent,
                               ),
                             ),
                           ),
@@ -633,10 +627,39 @@ class _PostCardState extends State<PostCard>
                             );
 
                             if (confirmed ?? false) {
+                              final postId = widget.post['id'];
+                              final uid =
+                                  FirebaseAuth.instance.currentUser!.uid;
+
+                              // 1. Post-Dokument löschen
                               await FirebaseFirestore.instance
                                   .collection('Posts')
-                                  .doc(widget.post['id'])
+                                  .doc(postId)
                                   .delete();
+
+                              // 2. Storage Dateien löschen (Media + Thumbnails)
+                              final storageRef = FirebaseStorage.instance
+                                  .ref()
+                                  .child('users/$uid/posts/$postId');
+
+                              try {
+                                final listResult = await storageRef.listAll();
+
+                                // alle Dateien löschen
+                                for (var file in listResult.items) {
+                                  await file.delete();
+                                }
+
+                                // auch Unterordner (z.B. thumbnails)
+                                for (var prefix in listResult.prefixes) {
+                                  final subList = await prefix.listAll();
+                                  for (var file in subList.items) {
+                                    await file.delete();
+                                  }
+                                }
+                              } catch (e) {
+                                debugPrint('Storage delete error: $e');
+                              }
                             }
                           }
                         } else {
@@ -679,9 +702,11 @@ class _PostCardState extends State<PostCard>
                                     'createdAt': FieldValue.serverTimestamp(),
                                   });
 
-                              if (!context.mounted) return;
+                              if (!context.mounted) return; // <-- richtig
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text(strings.postReported)),
+                                SnackBar(
+                                  content: Text(strings.reportedSuccess),
+                                ),
                               );
                             }
                           }
@@ -691,11 +716,11 @@ class _PostCardState extends State<PostCard>
                           ? [
                               PopupMenuItem(
                                 value: 'edit',
-                                child: Text(strings.editPost),
+                                child: Text(strings.edit),
                               ),
                               PopupMenuItem(
                                 value: 'delete',
-                                child: Text(strings.deletePost),
+                                child: Text(strings.delete),
                               ),
                             ]
                           : [
@@ -709,28 +734,32 @@ class _PostCardState extends State<PostCard>
                 ),
                 const SizedBox(height: 12),
 
-                // Post Media (Bild oder Video) mit Herz-Animation
-                GestureDetector(
-                  onDoubleTap: _onDoubleTapLike,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: _buildMedia(),
-                      ),
-                      if (_showHeart)
-                        ScaleTransition(
-                          scale: _controller,
-                          child: const Icon(
-                            Icons.favorite,
-                            color: Colors.red,
-                            size: 100,
-                          ),
+                // Post Image mit Herz-Animation
+                // Alte und neue Posts
+                if ((widget.post['image'] != null) ||
+                    (widget.post['mediaUrls'] != null &&
+                        (widget.post['mediaUrls'] as List).isNotEmpty))
+                  GestureDetector(
+                    onDoubleTap: _onDoubleTapLike,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: _buildMedia(),
                         ),
-                    ],
+                        if (_showHeart)
+                          ScaleTransition(
+                            scale: _controller,
+                            child: const Icon(
+                              Icons.favorite,
+                              color: Colors.red,
+                              size: 100,
+                            ),
+                          ),
+                      ],
+                    ),
                   ),
-                ),
                 const SizedBox(height: 12),
 
                 // Caption + Hashtags
@@ -757,7 +786,7 @@ class _PostCardState extends State<PostCard>
                               if (!_isExpanded &&
                                   widget.post['caption'].length > 50)
                                 TextSpan(
-                                  text: ' … mehr lesen',
+                                  text: strings.readMore,
                                   style: TextStyle(color: Colors.blueAccent),
                                 ),
                             ],
@@ -791,25 +820,10 @@ class _PostCardState extends State<PostCard>
                       children: [
                         // Herz-Button
                         GestureDetector(
-                          onTap: _toggleLike, // <-- vorher widget.toggleLike
+                          onTap: widget.toggleLike,
                           child: Icon(
-                            (widget.post['hearts'] as List<dynamic>?)?.contains(
-                                      FirebaseAuth.instance.currentUser!.uid,
-                                    ) ??
-                                    false
-                                ? Icons.favorite
-                                : Icons.favorite_border,
-                            color:
-                                (widget.post['hearts'] as List<dynamic>?)
-                                        ?.contains(
-                                          FirebaseAuth
-                                              .instance
-                                              .currentUser!
-                                              .uid,
-                                        ) ??
-                                    false
-                                ? Colors.red
-                                : Colors.grey,
+                            isLiked ? Icons.favorite : Icons.favorite_border,
+                            color: isLiked ? Colors.red : Colors.grey,
                           ),
                         ),
                         const SizedBox(width: 4),
@@ -890,7 +904,9 @@ class _PostCardState extends State<PostCard>
                                               ),
                                             );
                                           },
-                                          child: Text(strings.premiumSavePost),
+                                          child: Text(
+                                            strings.premiumSaveWarning,
+                                          ),
                                         ),
                                         backgroundColor: const Color(
                                           0xFF7B4DE8,
@@ -985,14 +1001,14 @@ class _PostCardState extends State<PostCard>
                     buildLikesText(),
 
                     // Zeit unter der Row
-                    if (widget.post['createdTime'] != null)
-                      Padding(
-                        padding: const EdgeInsets.only(top: 4),
-                        child: Text(
-                          _getTimeAgo(widget.post['createdTime']),
-                          style: TextStyle(color: secondaryColor, fontSize: 12),
-                        ),
-                      ),
+                    // if (widget.post['createdTime'] != null)
+                    //  Padding(
+                    //  padding: const EdgeInsets.only(top: 4),
+                    //   child: Text(
+                    //    _getTimeAgo(widget.post['createdTime']),
+                    //      style: TextStyle(color: secondaryColor, fontSize: 12),
+                    //    ),
+                    //  ),
                   ],
                 ),
               ],
@@ -1015,7 +1031,8 @@ class VideoPostPlayer extends StatefulWidget {
 
 class _VideoPostPlayerState extends State<VideoPostPlayer> {
   late VideoPlayerController _controller;
-  bool _isMuted = false;
+  bool _isMuted = true;
+  bool _isManuallyPaused = false; // <-- NEU
 
   @override
   void initState() {
@@ -1024,10 +1041,9 @@ class _VideoPostPlayerState extends State<VideoPostPlayer> {
     _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl))
       ..initialize().then((_) {
         setState(() {});
-        _controller.play();
-      })
-      ..setLooping(true)
-      ..setVolume(1.0);
+        _controller.setLooping(true);
+        _controller.setVolume(0); // stumm
+      });
   }
 
   @override
@@ -1042,40 +1058,73 @@ class _VideoPostPlayerState extends State<VideoPostPlayer> {
       return const Center(child: CircularProgressIndicator());
     }
 
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          _controller.value.isPlaying
-              ? _controller.pause()
-              : _controller.play();
-        });
+    return VisibilityDetector(
+      key: Key(widget.videoUrl),
+      onVisibilityChanged: (info) {
+        if (info.visibleFraction >= 0.5) {
+          if (!_controller.value.isPlaying && !_isManuallyPaused) {
+            _controller.play(); // automatisch starten
+            setState(() {}); // damit Play-Button verschwindet
+          }
+        } else {
+          if (_controller.value.isPlaying) {
+            _controller.pause();
+            setState(() {
+              _isManuallyPaused = false; // Reset manuelles Pausieren
+            });
+          }
+        }
       },
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          VideoPlayer(_controller),
-
-          if (!_controller.value.isPlaying)
-            const Icon(Icons.play_circle_fill, size: 64, color: Colors.white70),
-
-          Positioned(
-            bottom: 10,
-            right: 10,
-            child: GestureDetector(
-              onTap: () {
-                setState(() {
-                  _isMuted = !_isMuted;
-                  _controller.setVolume(_isMuted ? 0 : 1);
-                });
-              },
-              child: Icon(
-                _isMuted ? Icons.volume_off : Icons.volume_up,
-                color: Colors.white,
-                size: 26,
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            if (_controller.value.isPlaying) {
+              _controller.pause();
+              _isManuallyPaused = true; // manuell pausiert
+            } else {
+              _controller.play();
+              _isManuallyPaused = false; // wieder abspielen
+            }
+          });
+        },
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            ClipRect(
+              child: FittedBox(
+                fit: BoxFit.cover,
+                child: SizedBox(
+                  width: _controller.value.size.width,
+                  height: _controller.value.size.height,
+                  child: VideoPlayer(_controller),
+                ),
               ),
             ),
-          ),
-        ],
+            if (!_controller.value.isPlaying && _isManuallyPaused)
+              const Icon(
+                Icons.play_circle_fill,
+                size: 64,
+                color: Colors.white70,
+              ), // nur bei manuellem Pausieren
+            Positioned(
+              bottom: 10,
+              right: 10,
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _isMuted = !_isMuted;
+                    _controller.setVolume(_isMuted ? 0 : 1);
+                  });
+                },
+                child: Icon(
+                  _isMuted ? Icons.volume_off : Icons.volume_up,
+                  color: Colors.white,
+                  size: 26,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -1107,21 +1156,64 @@ class _CommentsBottomSheetState extends State<CommentsBottomSheet> {
   // ---------------- Kommentar posten ----------------
   Future<void> _postComment() async {
     final user = _auth.currentUser;
+
     if (user == null || _commentController.text.trim().isEmpty) return;
 
-    await _firestore.collection('Comments').add({
+    final commentText = _commentController.text.trim();
+
+    // 1. Kommentar speichern
+    final commentRef = await _firestore.collection('Comments').add({
       'postId': widget.postId,
       'userId': user.uid,
-      'text': _commentController.text.trim(),
+      'text': commentText,
       'createdAt': FieldValue.serverTimestamp(),
       'parentCommentId': _replyToCommentId,
+      'likesCount': 0,
+      'likedBy': [],
     });
 
-    // Kommentaranzahl im Post-Dokument erhöhen
-    final postRef = _firestore.collection('Posts').doc(widget.postId);
-    await postRef.update({'commentCount': FieldValue.increment(1)});
+    // 2. Post Kommentar Count
+    await _firestore.collection('Posts').doc(widget.postId).update({
+      'commentCount': FieldValue.increment(1),
+    });
 
+    // 3. 🔥 ACTIVITY LOGIK START
+    String? toUserId;
+
+    // CASE A: COMMENT (kein Reply)
+    if (_replyToCommentId == null) {
+      final postSnap = await _firestore
+          .collection('Posts')
+          .doc(widget.postId)
+          .get();
+
+      toUserId = postSnap.data()?['uid'];
+    }
+    // CASE B: REPLY
+    else {
+      final parentCommentSnap = await _firestore
+          .collection('Comments')
+          .doc(_replyToCommentId)
+          .get();
+
+      toUserId = parentCommentSnap.data()?['userId'];
+    }
+
+    // 4. Activity speichern (nur wenn nicht eigene Aktion)
+    if (toUserId != null && toUserId != user.uid) {
+      await _firestore.collection('activities').add({
+        'type': _replyToCommentId == null ? 'comment' : 'reply',
+        'fromUserId': user.uid,
+        'toUserId': toUserId,
+        'postId': widget.postId,
+        'commentId': commentRef.id,
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+    }
+
+    // 5. Reset UI
     _commentController.clear();
+
     setState(() {
       _replyToCommentId = null;
       _replyToUsername = null;
@@ -1137,12 +1229,12 @@ class _CommentsBottomSheetState extends State<CommentsBottomSheet> {
     await showDialog(
       context: context,
       builder: (_) => AlertDialog(
-        title: Text(strings.editComment),
+        title: Text(strings.editContact),
         content: TextField(controller: controller, maxLines: null),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(strings.cancel),
+            child: Text(strings.cancelButton),
           ),
           TextButton(
             onPressed: () async {
@@ -1158,11 +1250,11 @@ class _CommentsBottomSheetState extends State<CommentsBottomSheet> {
               } catch (e) {
                 if (!mounted) return;
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('${strings.saveError} $e')),
+                  SnackBar(content: Text('Fehler beim Speichern: $e')),
                 );
               }
             },
-            child: Text(strings.save),
+            child: Text(strings.saveButton),
           ),
         ],
       ),
@@ -1292,19 +1384,22 @@ class _CommentsBottomSheetState extends State<CommentsBottomSheet> {
                                               'text': controller.text.trim(),
                                             });
 
-                                        // DialogContext verwenden, um den Dialog sicher zu schließen
-                                        if (!context.mounted) return;
+                                        if (!context.mounted) {
+                                          return;
+                                        }
                                         Navigator.pop(
                                           context,
-                                        ); // oder Navigator.pop(dialogContext) wenn du den Builder-Context benutzt
+                                        ); // Dialog schließen
                                       } catch (e) {
-                                        if (!mounted) return;
+                                        if (!context.mounted) {
+                                          return;
+                                        }
                                         ScaffoldMessenger.of(
                                           context,
                                         ).showSnackBar(
                                           SnackBar(
                                             content: Text(
-                                              '${strings.saveError} $e',
+                                              'Fehler beim Speichern: $e',
                                             ),
                                           ),
                                         );
@@ -1320,8 +1415,8 @@ class _CommentsBottomSheetState extends State<CommentsBottomSheet> {
                             final confirm = await showDialog<bool>(
                               context: context,
                               builder: (_) => AlertDialog(
-                                title: Text(strings.deleteComment),
-                                content: Text(strings.deleteCommentConfirm),
+                                title: Text(strings.deleteCommentTitle),
+                                content: Text(strings.deleteCommentContent),
                                 actions: [
                                   TextButton(
                                     onPressed: () =>
@@ -1370,7 +1465,7 @@ class _CommentsBottomSheetState extends State<CommentsBottomSheet> {
                     children: [
                       Expanded(
                         child: Text(
-                          '${strings.replyTo} $_replyToUsername',
+                          strings.replyingTo(_replyToUsername ?? 'User'),
                           style: const TextStyle(color: Colors.blueAccent),
                         ),
                       ),
@@ -1413,8 +1508,8 @@ class _CommentsBottomSheetState extends State<CommentsBottomSheet> {
                             style: TextStyle(color: textColor),
                             decoration: InputDecoration(
                               hintText: _replyToUsername != null
-                                  ? strings.writeReply
-                                  : strings.writeComment,
+                                  ? strings.writeReplyHint
+                                  : strings.writeCommentHint,
                               hintStyle: TextStyle(color: secondaryColor),
                               filled: true,
                               fillColor: widget.isDarkMode
@@ -1479,11 +1574,37 @@ class CommentTile extends StatelessWidget {
     return timeago.format(dateTime, locale: 'de'); // vor x Stunden/Minuten
   }
 
+  Future<void> _toggleLike(String commentId, List likedBy) async {
+    final uid = FirebaseAuth.instance.currentUser!.uid;
+    final ref = FirebaseFirestore.instance
+        .collection('Comments')
+        .doc(commentId);
+
+    final isLiked = likedBy.contains(uid);
+
+    if (isLiked) {
+      await ref.update({
+        'likedBy': FieldValue.arrayRemove([uid]),
+        'likesCount': FieldValue.increment(-1),
+      });
+    } else {
+      await ref.update({
+        'likedBy': FieldValue.arrayUnion([uid]),
+        'likesCount': FieldValue.increment(1),
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final textColor = isDarkMode ? Colors.white : Colors.black;
     final currentUserId = FirebaseAuth.instance.currentUser?.uid;
     final strings = S.of(context)!;
+    final data = comment.data() as Map<String, dynamic>;
+
+    final likesCount = data['likesCount'] ?? 0;
+    final likedBy = List<String>.from(data['likedBy'] ?? []);
+    final isLiked = likedBy.contains(currentUserId);
 
     return FutureBuilder<DocumentSnapshot>(
       future: FirebaseFirestore.instance
@@ -1531,7 +1652,6 @@ class CommentTile extends StatelessWidget {
                               MaterialPageRoute(
                                 builder: (_) => OtherUserProfilePage(
                                   userId: comment['userId'],
-                                  isDarkMode: isDarkMode,
                                 ),
                               ),
                             );
@@ -1548,9 +1668,41 @@ class CommentTile extends StatelessWidget {
                           comment['text'],
                           style: TextStyle(color: textColor),
                         ),
-                        Text(
-                          formatTimestamp(comment['createdAt']),
-                          style: TextStyle(color: Colors.grey, fontSize: 11),
+                        Row(
+                          children: [
+                            Text(
+                              formatTimestamp(comment['createdAt']),
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 11,
+                              ),
+                            ),
+                            const Spacer(),
+
+                            // ❤️ LIKE BUTTON
+                            GestureDetector(
+                              onTap: () => _toggleLike(comment.id, likedBy),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    isLiked
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    size: 16,
+                                    color: isLiked ? Colors.red : Colors.grey,
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    likesCount.toString(),
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                         const SizedBox(height: 4),
                         GestureDetector(
@@ -1579,7 +1731,6 @@ class CommentTile extends StatelessWidget {
                       } else if (value == 'delete') {
                         onDelete(comment);
                       } else if (value == 'report') {
-                        // Kommentar melden
                         await FirebaseFirestore.instance
                             .collection('commentReports')
                             .add({
@@ -1590,10 +1741,9 @@ class CommentTile extends StatelessWidget {
                               'createdAt': FieldValue.serverTimestamp(),
                             });
 
-                        if (!context.mounted) return;
-
+                        if (!context.mounted) return; // <-- WICHTIG
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(strings.reportedSuccess)),
+                          SnackBar(content: Text(strings.commentReported)),
                         );
                       }
                     },
@@ -1603,7 +1753,7 @@ class CommentTile extends StatelessWidget {
                             PopupMenuItem(
                               value: 'edit',
                               child: Text(
-                                strings.editComment,
+                                strings.editAction,
                                 style: TextStyle(
                                   color: isDarkMode
                                       ? Colors.white
@@ -1614,7 +1764,7 @@ class CommentTile extends StatelessWidget {
                             PopupMenuItem(
                               value: 'delete',
                               child: Text(
-                                strings.deleteComment,
+                                strings.deleteButton,
                                 style: TextStyle(
                                   color: isDarkMode
                                       ? Colors.white
@@ -1646,6 +1796,12 @@ class CommentTile extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 40, top: 8),
                   child: Column(
                     children: replies.map((reply) {
+                      final replyData = reply.data() as Map<String, dynamic>;
+                      final replyLikes = replyData['likesCount'] ?? 0;
+                      final replyLikedBy = List<String>.from(
+                        replyData['likedBy'] ?? [],
+                      );
+                      final isReplyLiked = replyLikedBy.contains(currentUserId);
                       return FutureBuilder<DocumentSnapshot>(
                         future: FirebaseFirestore.instance
                             .collection('Users')
@@ -1690,7 +1846,6 @@ class CommentTile extends StatelessWidget {
                                               builder: (_) =>
                                                   OtherUserProfilePage(
                                                     userId: reply['userId'],
-                                                    isDarkMode: isDarkMode,
                                                   ),
                                             ),
                                           );
@@ -1711,12 +1866,45 @@ class CommentTile extends StatelessWidget {
                                           color: textColor,
                                         ),
                                       ),
-                                      Text(
-                                        formatTimestamp(reply['createdAt']),
-                                        style: const TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 11,
-                                        ),
+
+                                      Row(
+                                        children: [
+                                          Text(
+                                            formatTimestamp(reply['createdAt']),
+                                            style: const TextStyle(
+                                              color: Colors.grey,
+                                              fontSize: 11,
+                                            ),
+                                          ),
+                                          const Spacer(),
+                                          GestureDetector(
+                                            onTap: () => _toggleLike(
+                                              reply.id,
+                                              replyLikedBy,
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                Icon(
+                                                  isReplyLiked
+                                                      ? Icons.favorite
+                                                      : Icons.favorite_border,
+                                                  size: 14,
+                                                  color: isReplyLiked
+                                                      ? Colors.red
+                                                      : Colors.grey,
+                                                ),
+                                                const SizedBox(width: 4),
+                                                Text(
+                                                  replyLikes.toString(),
+                                                  style: const TextStyle(
+                                                    fontSize: 11,
+                                                    color: Colors.grey,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                       const SizedBox(height: 2),
                                       GestureDetector(
@@ -1759,14 +1947,16 @@ class CommentTile extends StatelessWidget {
                                                 FieldValue.serverTimestamp(),
                                           });
 
-                                      if (!context.mounted) return;
+                                      if (!context.mounted) {
+                                        return; // <- WICHTIG
+                                      }
 
                                       ScaffoldMessenger.of(
                                         context,
                                       ).showSnackBar(
                                         SnackBar(
                                           content: Text(
-                                            strings.reportedSuccess,
+                                            strings.commentReported,
                                           ),
                                         ),
                                       );
@@ -1777,7 +1967,7 @@ class CommentTile extends StatelessWidget {
                                           PopupMenuItem(
                                             value: 'edit',
                                             child: Text(
-                                              strings.editComment,
+                                              strings.editAction,
                                               style: TextStyle(
                                                 color: isDarkMode
                                                     ? Colors.white
@@ -1788,7 +1978,7 @@ class CommentTile extends StatelessWidget {
                                           PopupMenuItem(
                                             value: 'delete',
                                             child: Text(
-                                              strings.deleteComment,
+                                              strings.deleteButton,
                                               style: TextStyle(
                                                 color: isDarkMode
                                                     ? Colors.white
@@ -1827,5 +2017,38 @@ class CommentTile extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+class PostService {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  Stream<QuerySnapshot> getPostsStream({int limit = 50}) {
+    return _firestore
+        .collection('Posts')
+        .orderBy('createdTime', descending: true)
+        .limit(limit)
+        .snapshots();
+  }
+
+  Future<void> toggleLike(
+    String postId,
+    List<dynamic> hearts,
+    String userId,
+    String postOwnerId,
+  ) async {
+    final current = List<String>.from(hearts);
+
+    final isLiked = current.contains(userId);
+
+    if (isLiked) {
+      current.remove(userId);
+    } else {
+      current.add(userId);
+    }
+
+    await _firestore.collection('Posts').doc(postId).update({
+      'hearts': current,
+    });
   }
 }

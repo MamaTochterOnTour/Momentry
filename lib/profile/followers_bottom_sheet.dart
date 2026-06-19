@@ -91,10 +91,8 @@ void openUserListSheet({
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (_) => OtherUserProfilePage(
-                                      userId: uid,
-                                      isDarkMode: isDarkMode,
-                                    ),
+                                    builder: (_) =>
+                                        OtherUserProfilePage(userId: uid),
                                   ),
                                 );
                               },

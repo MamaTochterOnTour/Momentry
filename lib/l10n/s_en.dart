@@ -2493,7 +2493,7 @@ class SEn extends S {
 
   @override
   String get it1Title =>
-      'Days 1–2: Our Italian start in Milan – art, ice cream & city charm 🏰🌟';
+      'Day 1–2: From Cologne to Milan – The Start of Our Italian Road Trip 🇩🇪🚗🇮🇹';
 
   @override
   String get it2Title =>

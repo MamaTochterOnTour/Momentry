@@ -105,27 +105,36 @@ class _PacklisteDetailPageState extends ConsumerState<PacklisteDetailPage> {
       }, SetOptions(merge: true));
 
       for (var entry in _categorizedItems.entries) {
+        final category = entry.key;
+
         for (var item in entry.value) {
-          final id = item['id'];
+          String id = item['id'];
+
+          // 🔥 FIX: neue Items haben evtl. keinen echten Firestore-ID
+          if (id.startsWith('Instance') || id.length < 10) {
+            final newDoc = _itemsRef.doc();
+            id = newDoc.id;
+            item['id'] = id; // wichtig zurückschreiben!
+          }
 
           await _itemsRef.doc(id).set({
             'name': item['name'] ?? '',
             'completed': item['completed'] ?? false,
-            'category': entry.key,
+            'category': category,
             'quantity': item['quantity'] ?? 1,
           }, SetOptions(merge: true));
         }
       }
-      if (!mounted) return;
 
       widget.onUpdate();
-      Navigator.pop(context);
+      if (mounted) Navigator.pop(context);
     } catch (e) {
       debugPrint("Error saving: $e");
     }
 
-    if (!mounted) return;
-    setState(() => isSaving = false);
+    if (mounted) {
+      setState(() => isSaving = false);
+    }
   }
 
   void _toggleItem(String category, int index, bool? value) {

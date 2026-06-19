@@ -291,10 +291,8 @@ class _PostCardState extends State<PostCard>
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (_) => OtherUserProfilePage(
-                                  userId: uid,
-                                  isDarkMode: widget.isDarkMode,
-                                ),
+                                builder: (_) =>
+                                    OtherUserProfilePage(userId: uid),
                               ),
                             );
                           },
@@ -466,9 +464,7 @@ class _PostCardState extends State<PostCard>
                                 context,
                                 MaterialPageRoute(
                                   builder: (_) => OtherUserProfilePage(
-                                    userId: widget
-                                        .post['uid'], // DIE UID DES POSTS → PROFIL DES USERS
-                                    isDarkMode: widget.isDarkMode,
+                                    userId: widget.post['uid'],
                                   ),
                                 ),
                               );

@@ -4,22 +4,20 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../l10n/s.dart';
 import 'post_detail_page.dart';
+import '../providers/dark_mode_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class OtherUserProfilePage extends StatefulWidget {
+class OtherUserProfilePage extends ConsumerStatefulWidget {
   final String userId;
-  final bool isDarkMode;
 
-  const OtherUserProfilePage({
-    super.key,
-    required this.userId,
-    this.isDarkMode = true,
-  });
+  const OtherUserProfilePage({super.key, required this.userId});
 
   @override
-  State<OtherUserProfilePage> createState() => _OtherUserProfilePageState();
+  ConsumerState<OtherUserProfilePage> createState() =>
+      _OtherUserProfilePageState();
 }
 
-class _OtherUserProfilePageState extends State<OtherUserProfilePage> {
+class _OtherUserProfilePageState extends ConsumerState<OtherUserProfilePage> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -200,6 +198,19 @@ class _OtherUserProfilePageState extends State<OtherUserProfilePage> {
     ).showSnackBar(SnackBar(content: Text(S.of(context)!.userUnblocked)));
   }
 
+  Widget _buildStatColumn(String label, String value) {
+    return Column(
+      children: [
+        Text(
+          value,
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 2),
+        Text(label, style: const TextStyle(fontSize: 12)),
+      ],
+    );
+  }
+
   Future<void> _toggleFollow() async {
     final currentUid = _auth.currentUser!.uid;
     final followRef = _firestore.collection('Follow');
@@ -248,18 +259,19 @@ class _OtherUserProfilePageState extends State<OtherUserProfilePage> {
   @override
   Widget build(BuildContext context) {
     final strings = S.of(context)!;
-    final textColor = widget.isDarkMode ? Colors.white : Colors.black;
+    final isDarkMode = ref.watch(darkModeProvider).value ?? false;
+    final textColor = isDarkMode ? Colors.white : Colors.black;
     final purpleButtonColor = const Color(0xFF8C77FF);
 
     return Scaffold(
-      backgroundColor: widget.isDarkMode ? Colors.black : Colors.white,
+      backgroundColor: isDarkMode ? Colors.black : Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: BackButton(color: textColor),
         centerTitle: true,
         title: Text(
-          strings.profile,
+          _userData?['username'] ?? strings.user,
           style: GoogleFonts.pacifico(fontSize: 28, color: textColor),
         ),
         toolbarHeight: 80,
@@ -289,93 +301,69 @@ class _OtherUserProfilePageState extends State<OtherUserProfilePage> {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        radius: 40,
-                        backgroundImage: _userData?['profilePicture'] != null
-                            ? NetworkImage(_userData!['profilePicture'])
-                            : const AssetImage(
-                                    'assets/images/avatar_placeholder.png',
-                                  )
-                                  as ImageProvider,
-                      ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              _userData?['username'] ?? strings.user,
-                              style: TextStyle(
-                                color: textColor,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              CircleAvatar(
+                                radius: 40,
+                                backgroundImage:
+                                    _userData?['profilePicture'] != null
+                                    ? NetworkImage(_userData!['profilePicture'])
+                                    : const AssetImage(
+                                            'assets/images/avatar_placeholder.png',
+                                          )
+                                          as ImageProvider,
+                              ),
+
+                              const SizedBox(width: 16),
+
+                              Expanded(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    _buildStatColumn(
+                                      strings.posts,
+                                      "${_beitraege.length}",
+                                    ),
+                                    _buildStatColumn(
+                                      strings.followers,
+                                      "$_followerCount",
+                                    ),
+                                    _buildStatColumn(
+                                      strings.following,
+                                      "$_followingCount",
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+
+                          const SizedBox(height: 12),
+
+                          // BIO unter Avatar, links bündig
+                          SizedBox(
+                            width: double.infinity,
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                (_userData?['bio']?.toString().isNotEmpty ??
+                                        false)
+                                    ? _userData!['bio']
+                                    : strings.noBio,
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color: textColor),
                               ),
                             ),
-                            const SizedBox(height: 4),
-                            Text(
-                              _userData?['bio'] ?? strings.noBio,
-                              style: TextStyle(color: textColor),
-                            ),
-                            const SizedBox(height: 8),
-                            Row(
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      strings.posts,
-                                      style: TextStyle(
-                                        color: textColor,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      "${_beitraege.length}",
-                                      style: TextStyle(color: textColor),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(width: 24),
-                                Column(
-                                  children: [
-                                    Text(
-                                      strings.followers,
-                                      style: TextStyle(
-                                        color: textColor,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      "$_followerCount",
-                                      style: TextStyle(color: textColor),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(width: 24),
-                                Column(
-                                  children: [
-                                    Text(
-                                      strings.following,
-                                      style: TextStyle(
-                                        color: textColor,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    const SizedBox(height: 4),
-                                    Text(
-                                      "$_followingCount",
-                                      style: TextStyle(color: textColor),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -449,7 +437,7 @@ class _OtherUserProfilePageState extends State<OtherUserProfilePage> {
                               MaterialPageRoute(
                                 builder: (_) => PostDetailPage(
                                   postId: item['id'],
-                                  isDarkMode: widget.isDarkMode,
+                                  isDarkMode: isDarkMode,
                                 ),
                               ),
                             );
@@ -509,7 +497,7 @@ class _OtherUserProfilePageState extends State<OtherUserProfilePage> {
                               MaterialPageRoute(
                                 builder: (_) => PostDetailPage(
                                   postId: item['id'],
-                                  isDarkMode: widget.isDarkMode,
+                                  isDarkMode: isDarkMode,
                                 ),
                               ),
                             );
@@ -538,7 +526,7 @@ class _OtherUserProfilePageState extends State<OtherUserProfilePage> {
                               MaterialPageRoute(
                                 builder: (_) => PostDetailPage(
                                   postId: item['id'],
-                                  isDarkMode: widget.isDarkMode,
+                                  isDarkMode: isDarkMode,
                                 ),
                               ),
                             );

@@ -302,9 +302,30 @@ class _QuestionCardState extends ConsumerState<_QuestionCard> {
               stream: FirebaseFirestore.instance
                   .collection('Questions')
                   .doc(widget.questionId)
-                  .collection('Answers')
                   .snapshots()
-                  .map((s) => s.docs.length),
+                  .asyncMap((_) async {
+                    final answersSnap = await FirebaseFirestore.instance
+                        .collection('Questions')
+                        .doc(widget.questionId)
+                        .collection('Answers')
+                        .get();
+
+                    int replyCount = 0;
+
+                    for (final answer in answersSnap.docs) {
+                      final repliesSnap = await FirebaseFirestore.instance
+                          .collection('Questions')
+                          .doc(widget.questionId)
+                          .collection('Answers')
+                          .doc(answer.id)
+                          .collection('Replies')
+                          .get();
+
+                      replyCount += repliesSnap.docs.length;
+                    }
+
+                    return answersSnap.docs.length + replyCount;
+                  }),
               builder: (context, snapshot) {
                 final count = snapshot.data ?? 0;
 
@@ -721,10 +742,22 @@ class _CommentSheetState extends ConsumerState<_CommentSheet> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    a['username'] ?? '',
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) => OtherUserProfilePage(
+                                            userId: a['userId'],
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    child: Text(
+                                      a['username'] ?? '',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
 
@@ -969,13 +1002,26 @@ class _CommentSheetState extends ConsumerState<_CommentSheet> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                reply['username'] ??
-                                                                    '',
-                                                                style: const TextStyle(
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
+                                                              GestureDetector(
+                                                                onTap: () {
+                                                                  Navigator.push(
+                                                                    context,
+                                                                    MaterialPageRoute(
+                                                                      builder: (_) => OtherUserProfilePage(
+                                                                        userId:
+                                                                            reply['userId'],
+                                                                      ),
+                                                                    ),
+                                                                  );
+                                                                },
+                                                                child: Text(
+                                                                  reply['username'] ??
+                                                                      '',
+                                                                  style: const TextStyle(
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .bold,
+                                                                  ),
                                                                 ),
                                                               ),
                                                               const SizedBox(

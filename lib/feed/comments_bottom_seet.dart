@@ -527,7 +527,6 @@ class CommentTile extends StatelessWidget {
                               MaterialPageRoute(
                                 builder: (_) => OtherUserProfilePage(
                                   userId: comment['userId'],
-                                  isDarkMode: isDarkMode,
                                 ),
                               ),
                             );
@@ -722,7 +721,6 @@ class CommentTile extends StatelessWidget {
                                               builder: (_) =>
                                                   OtherUserProfilePage(
                                                     userId: reply['userId'],
-                                                    isDarkMode: isDarkMode,
                                                   ),
                                             ),
                                           );

@@ -2,7 +2,7 @@ name: reisetagebuch
 description: "A new Flutter project."
 publish_to: 'none' # private project
 
-version: 2.1.5+37
+version: 3.0.0+41
 
 environment:
   sdk: ^3.10.1
@@ -61,6 +61,8 @@ dependencies:
   flutter_localizations: 
     sdk: flutter
   app_links: ^7.0.0
+  geolocator: ^14.0.2
+  permission_handler: ^12.0.3
 
 dev_dependencies:
   flutter_test:

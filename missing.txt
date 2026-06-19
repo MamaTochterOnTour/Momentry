@@ -1,8 +1,5 @@
 {
   "de": [
-    "cruiseHighlightsTitle1",
-    "norwegenDay1",
-    "norwegenDay2",
     "novaTitleDay8"
   ]
 }

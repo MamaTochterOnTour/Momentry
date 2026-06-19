@@ -183,15 +183,28 @@ class TripPlanningPage extends ConsumerWidget {
 
         if (lists.isEmpty) {
           return _DashboardTile(
-            onTap: () {
+            onTap: () async {
               final user = FirebaseAuth.instance.currentUser;
               if (user == null) return;
+
+              final packlisteRef = FirebaseFirestore.instance
+                  .collection('trips')
+                  .doc(tripId)
+                  .collection('packlisten')
+                  .doc();
+
+              await packlisteRef.set({
+                'title': 'Packliste',
+                'createdAt': FieldValue.serverTimestamp(),
+              });
+
+              if (!context.mounted) return;
 
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (_) => PacklisteDetailPage(
-                    packlisteId: '',
+                    packlisteId: packlisteRef.id,
                     userId: user.uid,
                     tripId: tripId,
                     title: "Packliste",

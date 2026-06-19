@@ -158,6 +158,29 @@ class GuidesMockPage extends ConsumerWidget {
                 .toList(),
             isDarkMode: isDarkMode,
           ),
+
+          const SizedBox(height: 16),
+
+          _SubSection(title: "Österreich", isDarkMode: isDarkMode),
+
+          _HorizontalList(
+            products: travelGiudes
+                .where((p) => p.categories.contains('oesterreich'))
+                .toList(),
+            isDarkMode: isDarkMode,
+          ),
+
+          const SizedBox(height: 16),
+
+          _SubSection(title: "Vereinigtes Königreich", isDarkMode: isDarkMode),
+
+          _HorizontalList(
+            products: travelGiudes
+                .where((p) => p.categories.contains('vereinigteskönigreich'))
+                .toList(),
+            isDarkMode: isDarkMode,
+          ),
+
           const SizedBox(height: 40),
         ],
       ),

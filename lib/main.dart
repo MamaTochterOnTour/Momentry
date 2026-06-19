@@ -15,6 +15,7 @@ import 'pages/login_page.dart';
 import 'pages/post_detail_page.dart';
 import 'reiseplanung/reiseplanung_page.dart';
 import 'pages/main_navigation.dart';
+import 'pages/user_profil_page.dart';
 
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -103,7 +104,8 @@ void main() async {
   } catch (_) {}
 
   FirebaseMessaging.onMessage.listen((message) {
-    if (message.notification != null && navigatorKey.currentContext != null) {
+    final context = navigatorKey.currentContext;
+    if (message.notification != null && context != null) {
       ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(
         SnackBar(content: Text(message.notification!.body ?? 'Neue Nachricht')),
       );
@@ -144,22 +146,35 @@ void main() async {
           );
           break;
 
-        case "countdown_end":
-          final snapshot = await FirebaseFirestore.instance
-              .collection('trips')
-              .limit(1)
-              .get();
+        case "reply":
+          final postId = data["postId"];
+          if (postId == null) return;
 
-          if (snapshot.docs.isNotEmpty) {
-            final tripId = snapshot.docs.first.id;
-            navigatorKey.currentState?.push(
-              MaterialPageRoute(builder: (_) => TripDetailPage(tripId: tripId)),
-            );
-          }
+          navigatorKey.currentState?.push(
+            MaterialPageRoute(builder: (_) => PostDetailPage(postId: postId)),
+          );
           break;
 
-        case "packlist":
-          debugPrint("Packlist removed");
+        // 🔥 NEU: Kommentar-Like
+        case "comment_like":
+        case "reply_like":
+          final postId = data["postId"];
+          if (postId == null) return;
+
+          navigatorKey.currentState?.push(
+            MaterialPageRoute(builder: (_) => PostDetailPage(postId: postId)),
+          );
+          break;
+
+        case "follow":
+          final followerId = data["followerId"];
+          if (followerId == null) return;
+
+          navigatorKey.currentState?.push(
+            MaterialPageRoute(
+              builder: (_) => OtherUserProfilePage(userId: followerId),
+            ),
+          );
           break;
       }
     });
@@ -167,6 +182,39 @@ void main() async {
 
   timeago.setLocaleMessages('de', timeago.DeMessages());
   await initDeepLinks();
+
+  FirebaseMessaging.instance.getInitialMessage().then((message) async {
+    if (message == null) return;
+
+    final data = message.data;
+
+    switch (data["type"]) {
+      case "like":
+      case "comment":
+        final postId = data["postId"];
+        if (postId == null) return;
+
+        navigatorKey.currentState?.push(
+          MaterialPageRoute(builder: (_) => PostDetailPage(postId: postId)),
+        );
+        break;
+
+      case "countdown_end":
+        final snapshot = await FirebaseFirestore.instance
+            .collection('trips')
+            .limit(1)
+            .get();
+
+        if (snapshot.docs.isNotEmpty) {
+          final tripId = snapshot.docs.first.id;
+
+          navigatorKey.currentState?.push(
+            MaterialPageRoute(builder: (_) => TripDetailPage(tripId: tripId)),
+          );
+        }
+        break;
+    }
+  });
 
   runApp(const ProviderScope(child: MyApp()));
 }

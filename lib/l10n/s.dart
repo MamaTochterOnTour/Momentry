@@ -4516,7 +4516,7 @@ abstract class S {
   /// No description provided for @it1Title.
   ///
   /// In en, this message translates to:
-  /// **'Days 1–2: Our Italian start in Milan – art, ice cream & city charm 🏰🌟'**
+  /// **'Day 1–2: From Cologne to Milan – The Start of Our Italian Road Trip 🇩🇪🚗🇮🇹'**
   String get it1Title;
 
   /// No description provided for @it2Title.

@@ -19,12 +19,11 @@ class MainNavigationPage extends StatefulWidget {
 
 class _MainNavigationPageState extends State<MainNavigationPage> {
   int _selectedIndex = 0;
+  int _exploreRefreshKey = 0;
 
-  final List<Widget> _pages = [
-    FeedPage(isDarkMode: false), // oder true / dynamic später
-
+  List<Widget> get _pages => [
+    FeedPage(key: ValueKey(_exploreRefreshKey), isDarkMode: false),
     GuidesMockPage(),
-
     const Center(child: Text('Erstellen')),
     TripsOverviewPage(),
     ProfilePage(),
@@ -33,6 +32,14 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
   void _onItemTapped(int index) {
     if (index == 2) {
       _showCreateSheet();
+      return;
+    }
+
+    // 🔄 WICHTIG: wenn Explore (Index 0) nochmal gedrückt wird → refresh
+    if (index == 0 && _selectedIndex == 0) {
+      setState(() {
+        _exploreRefreshKey++;
+      });
       return;
     }
 
