@@ -22,12 +22,29 @@ async function sendPush(fcmToken, title, body, data = {}) {
 
   const message = {
     token: fcmToken,
-    notification: {title, body},
+
+    notification: {
+      title,
+      body,
+    },
+
     data,
+
+    android: {
+      priority: "high",
+      notification: {
+        channelId: "high_importance_channel",
+        sound: "default",
+      },
+    },
+
     apns: {
       payload: {
         aps: {
-          alert: {title, body},
+          alert: {
+            title,
+            body,
+          },
           sound: "default",
         },
       },
@@ -94,7 +111,13 @@ exports.likeNotification = onDocumentUpdated(
       const after = event.data.after.data();
       if (!before || !after) return;
 
-      const newLikes = after.hearts.filter((uid) => !before.hearts.includes(uid)) || [];
+      const oldLikes = before.hearts || [];
+      const currentLikes = after.hearts || [];
+
+      const newLikes = currentLikes.filter(
+          (uid) => !oldLikes.includes(uid),
+      );
+
       if (newLikes.length === 0) return;
 
       const postOwnerDoc = await admin
@@ -315,8 +338,8 @@ exports.commentLikeNotification = onDocumentUpdated(
 
       if (!before || !after) return;
 
-      const beforeLikes = before.likedBy || [];
-      const afterLikes = after.likedBy || [];
+      const beforeLikes = before.likes || [];
+      const afterLikes = after.likes || [];
 
       // 🔥 nur neue Likes
       const newLikes = afterLikes.filter(
@@ -557,6 +580,72 @@ exports.tripStartReminder = onSchedule(
             "Wir wünschen dir eine tolle Reise! Vergiss nicht, deine schönsten Momente mit der Community zu teilen.",
             {
               type: "trip_start",
+            },
+        );
+      }
+    },
+);
+
+// ---------------------------------------------------
+// 10. Gruppenchat-Nachricht
+// ---------------------------------------------------
+exports.groupMessageNotification = onDocumentCreated(
+    "groups/{groupId}/messages/{messageId}",
+    async (event) => {
+      const message = event.data.data();
+      if (!message) return;
+
+      const groupId = event.params.groupId;
+
+      // Gruppe laden
+      const groupSnap = await admin
+          .firestore()
+          .collection("groups")
+          .doc(groupId)
+          .get();
+
+      if (!groupSnap.exists) return;
+
+      const group = groupSnap.data();
+
+      const members = group.members || [];
+      const groupTitle = group.title || "Gruppe";
+
+      // Absender laden
+      const senderSnap = await admin
+          .firestore()
+          .collection("Users")
+          .doc(message.userId)
+          .get();
+
+      const senderName =
+        senderSnap.exists && senderSnap.data().username ?
+          senderSnap.data().username :
+          "Jemand";
+
+      // Push an alle Mitglieder außer dem Absender
+      for (const uid of members) {
+        if (uid === message.userId) continue;
+
+        const userSnap = await admin
+            .firestore()
+            .collection("Users")
+            .doc(uid)
+            .get();
+
+        if (!userSnap.exists) continue;
+
+        const user = userSnap.data();
+
+        if (!user?.fcmToken) continue;
+
+        await sendPush(
+            user.fcmToken,
+            `💬 ${groupTitle}`,
+            `${senderName}: ${message.text}`,
+            {
+              type: "group_message",
+              groupId: groupId,
             },
         );
       }

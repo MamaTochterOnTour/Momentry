@@ -11,11 +11,7 @@ import 'package:app_links/app_links.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 import 'firebase_options.dart';
-import 'pages/login_page.dart';
-import 'pages/post_detail_page.dart';
-import 'reiseplanung/reiseplanung_page.dart';
-import 'pages/main_navigation.dart';
-import 'pages/user_profil_page.dart';
+import 'erstellen_tab/post_detail_page.dart';
 
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -24,6 +20,8 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'l10n/s.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'providers/language_provider.dart';
+import '../registrierung/auth_gate_page.dart';
+import 'services/push_navigation_service.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
@@ -73,14 +71,15 @@ void main() async {
   await initializeDateFormatting('de_DE', null);
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  if (defaultTargetPlatform != TargetPlatform.macOS) {
+    FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
-  // Permissions
-  await FirebaseMessaging.instance.requestPermission(
-    alert: true,
-    badge: true,
-    sound: true,
-  );
+    await FirebaseMessaging.instance.requestPermission(
+      alert: true,
+      badge: true,
+      sound: true,
+    );
+  }
 
   const AndroidNotificationChannel channel = AndroidNotificationChannel(
     'high_importance_channel',
@@ -95,13 +94,22 @@ void main() async {
       >()
       ?.createNotificationChannel(channel);
 
-  final revenueCatApiKey = defaultTargetPlatform == TargetPlatform.iOS
-      ? 'appl_gmnyKKlTRKodMPplBKxcOZakfCp'
-      : 'goog_NfVXmTIFmqrGxsuyGWDsWhqxnbf';
+  String? revenueCatApiKey;
 
-  try {
-    await Purchases.configure(PurchasesConfiguration(revenueCatApiKey));
-  } catch (_) {}
+  if (defaultTargetPlatform == TargetPlatform.iOS ||
+      defaultTargetPlatform == TargetPlatform.macOS) {
+    revenueCatApiKey = 'appl_gmnyKKlTRKodMPplBKxcOZakfCp';
+  } else if (defaultTargetPlatform == TargetPlatform.android) {
+    revenueCatApiKey = 'goog_NfVXmTIFmqrGxsuyGWDsWhqxnbf';
+  }
+
+  if (revenueCatApiKey != null) {
+    try {
+      await Purchases.configure(PurchasesConfiguration(revenueCatApiKey));
+    } catch (e) {
+      debugPrint("RevenueCat error: $e");
+    }
+  }
 
   FirebaseMessaging.onMessage.listen((message) {
     final context = navigatorKey.currentContext;
@@ -112,111 +120,39 @@ void main() async {
     }
   });
 
-  // ✅ TOKEN LOGIC FIXED (overwrite always safe)
-  WidgetsBinding.instance.addPostFrameCallback((_) async {
-    final user = FirebaseAuth.instance.currentUser;
+  final user = FirebaseAuth.instance.currentUser;
 
-    if (user != null) {
-      await Purchases.logIn(user.uid);
+  if (user != null) {
+    await Purchases.logIn(user.uid);
 
-      Future<void> saveToken(String token) async {
-        await FirebaseFirestore.instance.collection('Users').doc(user.uid).set({
-          'fcmToken': token,
-        }, SetOptions(merge: true));
-      }
-
-      final token = await FirebaseMessaging.instance.getToken();
-      if (token != null) await saveToken(token);
-
-      FirebaseMessaging.instance.onTokenRefresh.listen(saveToken);
+    Future<void> saveToken(String token) async {
+      await FirebaseFirestore.instance.collection('Users').doc(user.uid).set({
+        'fcmToken': token,
+      }, SetOptions(merge: true));
     }
 
-    // ✅ PUSH NAVIGATION FIXED (no nested listener)
-    FirebaseMessaging.onMessageOpenedApp.listen((message) async {
-      final data = message.data;
+    final token = await FirebaseMessaging.instance.getToken();
+    if (token != null) {
+      await saveToken(token);
+    }
 
-      switch (data["type"]) {
-        case "like":
-        case "comment":
-          final postId = data["postId"];
-          if (postId == null) return;
-
-          navigatorKey.currentState?.push(
-            MaterialPageRoute(builder: (_) => PostDetailPage(postId: postId)),
-          );
-          break;
-
-        case "reply":
-          final postId = data["postId"];
-          if (postId == null) return;
-
-          navigatorKey.currentState?.push(
-            MaterialPageRoute(builder: (_) => PostDetailPage(postId: postId)),
-          );
-          break;
-
-        // 🔥 NEU: Kommentar-Like
-        case "comment_like":
-        case "reply_like":
-          final postId = data["postId"];
-          if (postId == null) return;
-
-          navigatorKey.currentState?.push(
-            MaterialPageRoute(builder: (_) => PostDetailPage(postId: postId)),
-          );
-          break;
-
-        case "follow":
-          final followerId = data["followerId"];
-          if (followerId == null) return;
-
-          navigatorKey.currentState?.push(
-            MaterialPageRoute(
-              builder: (_) => OtherUserProfilePage(userId: followerId),
-            ),
-          );
-          break;
-      }
-    });
-  });
+    FirebaseMessaging.instance.onTokenRefresh.listen(saveToken);
+  }
 
   timeago.setLocaleMessages('de', timeago.DeMessages());
   await initDeepLinks();
 
-  FirebaseMessaging.instance.getInitialMessage().then((message) async {
-    if (message == null) return;
+  FirebaseMessaging.onMessageOpenedApp.listen(handlePushNavigation);
 
-    final data = message.data;
-
-    switch (data["type"]) {
-      case "like":
-      case "comment":
-        final postId = data["postId"];
-        if (postId == null) return;
-
-        navigatorKey.currentState?.push(
-          MaterialPageRoute(builder: (_) => PostDetailPage(postId: postId)),
-        );
-        break;
-
-      case "countdown_end":
-        final snapshot = await FirebaseFirestore.instance
-            .collection('trips')
-            .limit(1)
-            .get();
-
-        if (snapshot.docs.isNotEmpty) {
-          final tripId = snapshot.docs.first.id;
-
-          navigatorKey.currentState?.push(
-            MaterialPageRoute(builder: (_) => TripDetailPage(tripId: tripId)),
-          );
-        }
-        break;
-    }
-  });
+  final initialMessage = await FirebaseMessaging.instance.getInitialMessage();
 
   runApp(const ProviderScope(child: MyApp()));
+
+  if (initialMessage != null) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      handlePushNavigation(initialMessage);
+    });
+  }
 }
 
 class MyApp extends ConsumerWidget {
@@ -243,9 +179,7 @@ class MyApp extends ConsumerWidget {
       ],
       locale: Locale(language),
       supportedLocales: const [Locale('en'), Locale('de')],
-      home: FirebaseAuth.instance.currentUser == null
-          ? const LoginPage()
-          : const MainNavigationPage(),
+      home: const AuthGate(),
     );
   }
 }

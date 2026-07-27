@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -63,10 +57,30 @@ class DefaultFirebaseOptions {
     messagingSenderId: '85269677127',
     projectId: 'reiseapp-mamatocherontour',
     storageBucket: 'reiseapp-mamatocherontour.firebasestorage.app',
-    androidClientId:
-        '85269677127-d7abbgic474h8s27il55li3bqamtnbt3.apps.googleusercontent.com',
-    iosClientId:
-        '85269677127-s20qhf4m07pl3d01upnc3rlrt7cd2bcn.apps.googleusercontent.com',
+    androidClientId: '85269677127-d7abbgic474h8s27il55li3bqamtnbt3.apps.googleusercontent.com',
+    iosClientId: '85269677127-s20qhf4m07pl3d01upnc3rlrt7cd2bcn.apps.googleusercontent.com',
     iosBundleId: 'com.mycompany.reisetagebuch',
   );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyBlCfr6X3q_qvMtK7ePjsIaDQzJ2ekyljI',
+    appId: '1:85269677127:ios:9ae6aaac2af69a9d9a1d62',
+    messagingSenderId: '85269677127',
+    projectId: 'reiseapp-mamatocherontour',
+    storageBucket: 'reiseapp-mamatocherontour.firebasestorage.app',
+    androidClientId: '85269677127-d7abbgic474h8s27il55li3bqamtnbt3.apps.googleusercontent.com',
+    iosClientId: '85269677127-s20qhf4m07pl3d01upnc3rlrt7cd2bcn.apps.googleusercontent.com',
+    iosBundleId: 'com.mycompany.reisetagebuch',
+  );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDoBJKv2nutJU4ykMcHrpaGjDa86L3bGZ0',
+    appId: '1:85269677127:web:8cdf91178639aaf79a1d62',
+    messagingSenderId: '85269677127',
+    projectId: 'reiseapp-mamatocherontour',
+    authDomain: 'reiseapp-mamatocherontour.firebaseapp.com',
+    storageBucket: 'reiseapp-mamatocherontour.firebasestorage.app',
+    measurementId: 'G-99DNSQ38XW',
+  );
+
 }
